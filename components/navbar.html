@@ -1,0 +1,1512 @@
+<!-- Scrolling Progress Bar -->
+<div id="progress-bar" class="fixed top-0 left-0 w-full h-1 bg-yellow-400 transform -translate-x-full transition-transform duration-300 z-50"></div>
+
+<!-- Top Bar -->
+<div class="bg-black backdrop-blur-3xl text-white border-t border-white/20 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.95),inset_0_2px_0_rgba(255,255,255,0.3),inset_0_-1px_0_rgba(255,255,255,0.1),0_0_40px_rgba(0,0,0,0.5)] py-2 px-4 fixed top-0 left-0 right-0 z-40 top-bar">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col sm:flex-row justify-between items-center text-sm">
+            <!-- Contact Information -->
+            <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 mb-2 sm:mb-0 w-full sm:w-auto">
+                <div class="flex items-center gap-1">
+                    <i class="fas fa-map-marker-alt text-xs"></i>
+                    <span class="hidden sm:inline">Opp.pillar no.150 PVN, Attapur, Hyderabad</span>
+                    <span class="sm:hidden">Attapur, Hyderabad</span>
+                </div>
+                <div class="flex items-center gap-1">
+                    <i class="fas fa-envelope text-xs"></i>
+                    <a href="mailto:info@germantenhospitals.com" class="hover:text-yellow-200 transition-colors">info@germantenhospitals.com</a>
+                </div>
+                <div class="flex items-center gap-1">
+                    <i class="fas fa-phone text-xs"></i>
+                    <a href="tel:+919989635555" class="hover:text-yellow-200 transition-colors">+91 998 963 5555</a>
+                </div>
+            </div>
+            
+            <!-- Social Media Icons -->
+            <div class="flex items-center gap-3 mt-0 sm:mt-0">
+                <a href="https://www.youtube.com/c/DrMirJawadZarKhan" target="_blank" rel="noopener noreferrer" class="text-red-500 hover:text-red-400 transition-colors transform hover:scale-110">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://x.com/Germantenhospit" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 transition-colors transform hover:scale-110">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.facebook.com/Germantenhospital/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-500 transition-colors transform hover:scale-110">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    nav a:hover,
+    nav button:hover {
+        color: #f59e0b !important;
+    }
+    
+    /* Adjust main navbar position to account for top bar */
+    nav {
+        top: 36px !important;
+    }
+    
+    /* Adjust progress bar position to account for top bar */
+    #progress-bar {
+        top: 36px !important;
+    }
+    
+    /* Responsive adjustments - Hide top bar on mobile */
+    @media (max-width: 768px) {
+        .top-bar {
+            display: none;
+        }
+        
+        nav {
+            top: 0px !important;
+        }
+        
+        #progress-bar {
+            top: 0px !important;
+        }
+    }
+    
+    @media (max-width: 640px) {
+        /* Mobile menu improvements */
+        #mobile-menu {
+            max-height: 60vh;
+        }
+        
+        #mobile-menu .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        
+        #mobile-menu .py-3 {
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+        }
+        
+        #mobile-menu .py-2 {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        /* Additional mobile menu improvements */
+        #mobile-menu {
+            max-height: 70vh;
+        }
+        
+        #mobile-menu .px-4 {
+            padding-left: 0.75rem;
+            padding-right: 0.75rem;
+        }
+        
+        #mobile-menu .py-3 {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+        
+        #mobile-menu .py-2 {
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+        }
+    }
+</style>
+
+<!-- Main Navbar -->
+<nav class="bg-white/70 backdrop-blur-xl shadow-xl fixed top-0 left-0 right-0 z-50 border-b border-white/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="home.html" class="flex-shrink-0 flex items-center group">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-amber-600 to-yellow-600 rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                        <img src="Images/GERMANTANLOGO.webp"alt="Dr. Germanten" class="relative h-16 w-auto transform transition-transform duration-300 group-hover:scale-105 drop-shadow-lg">
+                    </div>
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden lg:flex items-center justify-center space-x-8 xl:space-x-12">
+                <a href="home.html" class="relative text-gray-700 hover:text-amber-500 font-semibold transition-all duration-300 group">
+                    <span class="relative z-10">Home</span>
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-400 to-yellow-500 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                
+                <!-- About Us Dropdown -->
+                <div class="relative group">
+                    <button class="relative text-gray-700 hover:text-amber-500 font-semibold transition-all duration-300 flex items-center">
+                        <span class="relative z-10">About Us</span>
+                        <i class="fas fa-chevron-down ml-1 text-xs transition-transform duration-300 group-hover:rotate-180"></i>
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-400 to-yellow-500 transition-all duration-300 group-hover:w-full"></span>
+                    </button>
+                    <div class="absolute left-1/2 transform -translate-x-1/2 mt-2 w-80 bg-white rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 border border-gray-100">
+                        <div class="p-3">
+                            <a href="AboutDrjaved.html" class="block px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-500 rounded-xl transition-all duration-300 font-medium">
+                                 About Dr. Jawad
+                            </a>
+                            <a href="infrastructure.html" class="block px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-500 rounded-xl transition-all duration-300 font-medium">
+                                Infrastructure
+                            </a>
+                            <a href="research-and-collaboration.html" class="block px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-500 rounded-xl transition-all duration-300 font-medium">
+                                Research Collaboration
+                            </a>
+                            <a href="news-and-awards.html" class="block px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-500 rounded-xl transition-all duration-300 font-medium">
+                                News & Awards
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Patient Info Dropdown -->
+                <div class="relative group">
+                    <button class="relative text-gray-700 hover:text-amber-600 font-semibold transition-all duration-300 flex items-center">
+                        <span class="relative z-10">Patient Info</span>
+                        <i class="fas fa-chevron-down ml-1 text-xs transition-transform duration-300 group-hover:rotate-180"></i>
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-600 to-yellow-600 transition-all duration-300 group-hover:w-full"></span>
+                    </button>
+                    <div class="absolute left-1/2 transform -translate-x-1/2 mt-2 w-80 bg-white rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 border border-gray-100">
+                        <div class="p-3 max-h-96 overflow-y-auto">
+                            <div class="space-y-3">
+                                <!-- International Patients Section -->
+                                <div>
+                                    <div class="px-4 py-2 text-sm font-semibold text-amber-300 border-b border-gray-200">
+                                        INTERNATIONAL PATIENTS
+                                    </div>
+                                    <div class="space-y-1">
+                                        <a href="international-patient-faqs.html" class="block px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium">
+                                            • International Patients Faq's
+                                        </a>
+                                        <a href="international-patients-relation.html" class="block px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium">
+                                            • International Patients Relation
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <!-- Organizations Section -->
+                                <div>
+                                    <div class="px-4 py-2 text-sm font-semibold text-amber-300 border-b border-gray-200">
+                                        ORGANIZATIONS
+                                    </div>
+                                    <div class="space-y-1">
+                                        <a href="empanelled-organizations.html" class="block px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium">
+                                            • Empanelled Organizations
+                                        </a>
+                                        <a href="insurance-companies-tpas.html" class="block px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium">
+                                            • Insurance Companies & TPA's
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <!-- Cost Section -->
+                                <div>
+                                    <div class="px-4 py-2 text-sm font-semibold text-amber-300 border-b border-gray-200">
+                                        COST INFORMATION
+                                    </div>
+                                    <div class="space-y-1">
+                                        <a href="knee-replacement-surgery-cost-hyderabad.html" class="block px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium">
+                                            • Knee Replacement Surgery Cost
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Treatments Dropdown -->
+                <div class="relative group">
+                    <button class="relative text-gray-700 hover:text-amber-600 font-semibold transition-all duration-300 flex items-center group">
+                        <span class="relative z-10">Treatments</span>
+                        <i class="fas fa-chevron-down ml-1 text-xs transition-transform duration-300 group-hover:rotate-180"></i>
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-600 to-yellow-600 transition-all duration-300 group-hover:w-full"></span>
+                    </button>
+                    <div class="absolute left-1/2 transform -translate-x-1/2 mt-3 w-[1000px] bg-white rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 border border-gray-100">
+                        <div class="p-4">
+                            <div class="grid grid-cols-4 gap-2">
+                                <!-- Column 1 -->
+                                <div class="space-y-1">
+                                    <a href="Terminals/modal-eswt.html" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
+                                        • ESWT
+                                    </a>
+                                    <a href="knee-replacement.html" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
+                                        • Knee Replacement
+                                    </a>
+                                    <a href="Terminals/modal-hip-replacement.html" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
+                                        • Hip Replacement
+                                    </a>
+                                    <a href="Terminals/modal-oats-procedure.html" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
+                                        • OATS Procedure
+                                    </a>
+                                    <a href="Terminals/modal-spine-surgeon.html" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
+                                        • Spine Center
+                                    </a>
+                                    <!-- <a href="Terminals/modal-gynecology.html" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
+                                        • Gynecology
+                                    </a>
+                                    <a href="Terminals/modal-neurology.html" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
+                                        • Neurology
+                                    </a> -->
+                                  
+                                </div>
+                                
+                                <!-- Column 2 -->
+                                <div class="space-y-1">
+                                    <!-- <a href="Terminals/modal-critical-care.html" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
+                                        • Critical Care
+                                    </a> -->
+                                    <a href="Terminals/modal-joint-replacement.html" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
+                                        • Joint Replacement
+                                    </a>
+                                    <!-- <a href="Terminals/modal-dental-maxillofacial.html" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
+                                        • Dental & Maxillofacial
+                                    </a> -->
+                                    <a href="Terminals/modal-shoulder-surgery.html" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
+                                        • Shoulder Surgery
+                                    </a>
+                                    <a href="Terminals/modal-foot-ankle-surgery.html" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
+                                        • Foot & Ankle Surgery
+                                    </a>
+                                    <!-- <a href="Terminals/modal-plastic-surgery.html" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
+                                        • Plastics Surgery
+                                    </a> -->
+                                    <a href="Terminals/modal-trauma-fractures.html" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
+                                        • Trauma And Fractures
+                                    </a>
+                                    <a href="Terminals/modal-general-orthopedics.html" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
+                                        • General Orthopedics
+                                    </a>
+                                </div>
+                                
+                                <!-- Column 3 -->
+                                <div class="space-y-1">
+                                    <!-- <a href="Terminals/modal-laparoscopic-surgery.html" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
+                                        • Laparoscopic Surgery
+                                    </a> -->
+                                    <!-- <a href="Terminals/modal-internal-medicine.html" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
+                                        • Internal Medicine
+                                    </a> -->
+                                    <a href="Terminals/modal-partial-knee-replacement.html" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
+                                        • Partial Knee Replacement
+                                    </a>
+                                    <a href="Terminals/modal-hand-microvascular-surgery.html" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
+                                        • Hand & Microvascular Surgery
+                                    </a>
+                                    <a href="Terminals/modal-rheumatoid-arthritis.html" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
+                                        • Rheumatoid Arthritis
+                                    </a>
+                                    <!-- <a href="#" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
+                                        • VISCO Supplementation
+                                    </a> -->
+                                    <a href="Terminals/modal-spine-surgical-treatment.html" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
+                                        • Spine Surgical Treatment
+                                    </a>
+                                    <a href="Terminals/modal-arthroscopy-sports-injuries.html" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
+                                        • Arthroscopy & Sports Injuries
+                                    </a>
+                                </div>
+                                
+                                <!-- Column 4 -->
+                                <div class="space-y-1">
+                                      <a href="Terminals/modal-pain-management.html" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
+                                        • Pain Medicine
+                                    </a>
+                                    <a href="Terminals/modal-spine-non-surgical-treatment.html" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
+                                        • Spine Non Surgical Treatment
+                                    </a>
+                                    <a href="Terminals/modal-cartilage-transplantation.html" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
+                                        • Cartilage Transplantation
+                                    </a>
+                                    <!-- <a href="Terminals/modal-plastic-reconstructive-surgery.html" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
+                                        • Plastic & Reconstructive Surgery
+                                    </a> -->
+                                    <!-- <a href="Terminals/modal-pulmonology-sleep-medicine.html" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
+                                        • Pulmonology & Sleep Medicine
+                                    </a> -->
+                                    <a href="Terminals/modal-alternative-treatments.html" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
+                                        • Treatments for Knee & Back Problems
+                                    </a>
+                                    <!-- <a href="Terminals/modal-dermatology.html" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
+                                        • Department of Dermatology
+                                    </a> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            
+                <a href="testimonials.html" class="relative text-gray-700 hover:text-amber-600 font-semibold transition-all duration-300 group">
+                    <span class="relative z-10">Testimonials</span>
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-600 to-yellow-600 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                
+                <a href="contact.html" class="relative text-gray-700 hover:text-amber-600 font-semibold transition-all duration-300 group">
+                    <span class="relative z-10">Contact</span>
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-600 to-yellow-600 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                
+                <a href="blog.html" class="relative text-gray-700 hover:text-amber-600 font-semibold transition-all duration-300 group">
+                    <span class="relative z-10">Blog</span>
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-600 to-yellow-600 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </div>
+
+            
+            <!-- Mobile menu button -->
+            <div class="lg:hidden flex items-center">
+                <button id="mobile-menu-button" class="text-gray-700 hover:text-amber-600 focus:outline-none p-3 rounded-xl hover:bg-gray-50 transition-all duration-300">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-200 max-h-[70vh] overflow-y-auto">
+        <div class="px-4 py-3 space-y-2">
+            <a href="home.html" class="block py-2 text-gray-700 hover:text-amber-600 font-medium">Home</a>
+            
+            <!-- Mobile About Us Dropdown -->
+            <div class="border-t border-gray-200 pt-2">
+                <button class="w-full text-left py-2 text-gray-700 hover:text-amber-600 font-medium flex items-center justify-between" onclick="toggleMobileDropdown('about-us')">
+                    About Us
+                    <i class="fas fa-chevron-down text-xs"></i>
+                </button>
+                <div id="about-us-dropdown" class="hidden pl-4 space-y-1 max-h-40 overflow-y-auto">
+                    <a href="AboutDrjaved.html" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• About Dr. Jawad</a>
+                    <a href="infrastructure.html" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Infrastructure</a>
+                    <a href="research-and-collaboration.html" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Research Collaboration</a>
+                    <a href="news-and-awards.html" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• News & Awards</a>
+                </div>
+            </div>
+
+            <!-- Mobile Patient Info Dropdown -->
+            <div class="border-t border-gray-200 pt-2">
+                <button class="w-full text-left py-2 text-gray-700 hover:text-amber-600 font-medium flex items-center justify-between" onclick="toggleMobileDropdown('patient')">
+                    Patient Info
+                    <i class="fas fa-chevron-down text-xs"></i>
+                </button>
+                <div id="patient-dropdown" class="hidden pl-4 space-y-1 max-h-48 overflow-y-auto">
+                    <div class="border-t border-gray-100 mt-2 pt-2">
+                        <div class="text-xs font-semibold text-amber-300 mb-1">INTERNATIONAL PATIENTS</div>
+                        <div class="space-y-1">
+                            <a href="international-patient-faqs.html" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• International Patients Faq's</a>
+                            <a href="international-patients-relation.html" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• International Patients Relation</a>
+                        </div>
+                    </div>
+                    <div class="border-t border-gray-100 mt-2 pt-2">
+                        <div class="text-xs font-semibold text-amber-300 mb-1">ORGANIZATIONS</div>
+                        <div class="space-y-1">
+                            <a href="empanelled-organizations.html" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Empanelled Organizations</a>
+                            <a href="insurance-companies-tpas.html" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Insurance Companies & TPA's</a>
+                        </div>
+                    </div>
+                    <div class="border-t border-gray-100 mt-2 pt-2">
+                        <div class="text-xs font-semibold text-amber-300 mb-1">COST INFORMATION</div>
+                        <div class="space-y-1">
+                            <a href="knee-replacement-surgery-cost-hyderabad.html" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Knee Replacement Surgery Cost</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Treatments Dropdown -->
+            <div class="border-t border-gray-200 pt-2">
+                <button class="w-full text-left py-2 text-gray-700 hover:text-amber-600 font-medium flex items-center justify-between" onclick="toggleMobileDropdown('treatments')">
+                    Treatments
+                    <i class="fas fa-chevron-down text-xs"></i>
+                </button>
+                <div id="treatments-dropdown" class="hidden pl-4 space-y-1 max-h-64 overflow-y-auto">
+                    <div class="border-t border-gray-100 mt-2 pt-2">
+                        <div class="text-xs font-semibold text-amber-300 mb-1">KNEE</div>
+                        <div class="space-y-1">
+                            <a href="knee-replacement.html" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Knee Replacement</a>
+                            <a href="Terminals/modal-partial-knee-replacement.html" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Partial Knee Replacement</a>
+                            <a href="Terminals/modal-trauma-fractures.html" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• TRAUMA AND FRACTURES</a>
+                            <a href="Terminals/modal-arthroscopy-sports-injuries.html" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• ARTHROSCOPY & SPORTS INJURIES</a>
+                        </div>
+                    </div>
+                    <div class="border-t border-gray-100 mt-2 pt-2">
+                        <div class="text-xs font-semibold text-amber-300 mb-1">HIP</div>
+                        <div class="space-y-1">
+                            <a href="Terminals/modal-hip-replacement.html" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• HIP REPLACEMENT</a>
+                            <a href="Terminals/modal-joint-replacement.html" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Joint Replacement</a>
+                        </div>
+                    </div>
+                    <div class="border-t border-gray-100 mt-2 pt-2">
+                        <div class="text-xs font-semibold text-amber-300 mb-1">SPINE</div>
+                        <div class="space-y-1">
+                            <a href="Terminals/modal-spine-surgeon.html" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Spine Center</a>
+                            <a href="Terminals/modal-spine-surgical-treatment.html" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• SPINE SURGICAL TREATMENT</a>
+                            <a href="Terminals/modal-spine-non-surgical-treatment.html" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• SPINE NON SURGICAL TREATMENT</a>
+                        </div>
+                    </div>
+                    <div class="border-t border-gray-100 mt-2 pt-2">
+                        <div class="text-xs font-semibold text-amber-300 mb-1">ALTERNATIVE TREATMENTS</div>
+                        <div class="space-y-1">
+                            <a href="Terminals/modal-alternative-treatments.html" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Treatments for Knee & Back Problems</a>
+                            <a href="Terminals/modal-cartilage-transplantation.html" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• CARTILAGE TRANSPLANTATION</a>
+                            <a href="Terminals/modal-oats-procedure.html" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• OATS Procedure</a>
+                            <a href="Terminals/modal-eswt.html" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• ESWT</a>
+                        </div>
+                    </div>
+                    <div class="border-t border-gray-100 mt-2 pt-2">
+                        <div class="text-xs font-semibold text-amber-300 mb-1">SPECIALIZED SURGERIES</div>
+                        <div class="space-y-1">
+                            <a href="Terminals/modal-shoulder-surgery.html" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• SHOULDER SURGERY</a>
+                            <!-- <a href="Terminals/modal-neurology.html" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• NEUROLOGY</a> -->
+                            <a href="Terminals/modal-general-orthopedics.html" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• GENERAL ORTHOPEDICS</a>
+                            <a href="Terminals/modal-rheumatoid-arthritis.html" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• RHEUMATOID ARTHRITIS</a>
+                            <!-- <a href="Terminals/modal-plastic-reconstructive-surgery.html" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• PLASTIC & RECONSTRUCTIVE SURGERY</a> -->
+                            <a href="Terminals/modal-hand-microvascular-surgery.html" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Hand & Microvascular Surgery</a>
+                            <a href="Terminals/modal-pain-management.html" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Pain Medicine</a>
+                            <a href="Terminals/modal-foot-ankle-surgery.html" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Foot & Ankle Surgery</a>
+                        </div>
+                    </div>
+                    <div class="border-t border-gray-100 mt-2 pt-2">
+                        <div class="text-xs font-semibold text-amber-300 mb-1">OTHER SPECIALTIES</div>
+                        <div class="space-y-1">
+                            <!-- <a href="Terminals/modal-gynecology.html" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Gynecology</a> -->
+                            <!-- <a href="Terminals/modal-pulmonology-sleep-medicine.html" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Pulmonology & Sleep Medicine</a> -->
+                            <!-- <a href="Terminals/modal-laparoscopic-surgery.html" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Laparoscopic Surgery</a> -->
+                            <!-- <a href="Terminals/modal-internal-medicine.html" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Internal Medicine</a> -->
+                            <!-- <a href="Terminals/modal-critical-care.html" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Critical Care</a> -->
+                            <!-- <a href="Terminals/modal-plastic-surgery.html" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Plastics Surgery</a> -->
+                            <!-- <a href="Terminals/modal-dermatology.html" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Department of Dermatology</a> -->
+                            <!-- <a href="Terminals/modal-dental-maxillofacial.html" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Dental & Maxillofacial</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="border-t border-gray-200 pt-2 space-y-2">
+                <a href="news-and-awards.html" class="block py-2 text-gray-700 hover:text-amber-600 font-medium">News & Awards</a>
+                <a href="testimonials.html" class="block py-2 text-gray-700 hover:text-amber-600 font-medium">Testimonials</a>
+                <a href="contact.html" class="block py-2 text-gray-700 hover:text-amber-600 font-medium">Contact</a>
+                <a href="blog.html" class="block py-2 text-gray-700 hover:text-amber-600 font-medium">Blog</a>
+            </div>
+
+       
+        </div>
+    </div>
+</nav>
+<script>
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(event) {
+        const aboutDropdown = document.getElementById('about-dropdown');
+        const patientDropdown = document.getElementById('patient-dropdown');
+        const treatmentsDropdown = document.getElementById('treatments-dropdown');
+        
+        if (aboutDropdown && !aboutDropdown.contains(event.target) && !event.target.closest('[onclick*="about-dropdown"]')) {
+            aboutDropdown.classList.add('invisible');
+            aboutDropdown.classList.remove('opacity-100');
+            const icon = document.getElementById('about-dropdown-icon');
+            if (icon) icon.classList.remove('rotate-180');
+        }
+        
+        if (patientDropdown && !patientDropdown.contains(event.target) && !event.target.closest('[onclick*="patient-dropdown"]')) {
+            patientDropdown.classList.add('invisible');
+            patientDropdown.classList.remove('opacity-100');
+            const icon = document.getElementById('patient-dropdown-icon');
+            if (icon) icon.classList.remove('rotate-180');
+        }
+        
+        
+        if (treatmentsDropdown && !treatmentsDropdown.contains(event.target) && !event.target.closest('[onclick*="treatments"]')) {
+            treatmentsDropdown.classList.add('hidden');
+        }
+    });
+
+    // Toggle dropdown function for desktop
+    function toggleDropdown(dropdownId) {
+        const dropdown = document.getElementById(dropdownId);
+        const icon = document.getElementById(dropdownId.replace('-dropdown', '-dropdown-icon'));
+        
+        if (dropdown) {
+            // Close all other dropdowns first
+            const allDropdowns = document.querySelectorAll('[id$="-dropdown"]');
+            allDropdowns.forEach(d => {
+                if (d.id !== dropdownId) {
+                    d.classList.add('invisible');
+                    d.classList.remove('opacity-100');
+                }
+            });
+            
+            // Toggle current dropdown
+            if (dropdown.classList.contains('invisible')) {
+                dropdown.classList.remove('invisible');
+                dropdown.classList.add('opacity-100');
+                if (icon) icon.classList.add('rotate-180');
+            } else {
+                dropdown.classList.add('invisible');
+                dropdown.classList.remove('opacity-100');
+                if (icon) icon.classList.remove('rotate-180');
+            }
+        }
+    }
+
+    // Mobile menu toggle
+    function toggleMobileDropdown(dropdownId) {
+        const dropdown = document.getElementById(dropdownId);
+        
+        if (dropdown) {
+            dropdown.classList.toggle('hidden');
+        }
+    }
+
+    // Mobile menu functionality
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+            
+            // Toggle hamburger icon
+            const icon = mobileMenuButton.querySelector('i');
+            if (icon) {
+                if (mobileMenu.classList.contains('hidden')) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                } else {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                }
+            }
+        });
+    }
+
+    // Top bar scroll functionality
+    let lastScrollTop = 0;
+    let scrollThreshold = 100; // Scroll threshold before hiding top bar
+    const topBar = document.querySelector('.top-bar');
+    const navbar = document.querySelector('nav');
+    const progressBar = document.getElementById('progress-bar');
+
+    function isMobileView() {
+        return window.innerWidth <= 768;
+    }
+
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const mobileView = isMobileView();
+        
+        if (mobileView) {
+            // On mobile, navbar and progress bar stay at top
+            navbar.style.top = '0px';
+            progressBar.style.top = '0px';
+        } else {
+            // On desktop, hide/show top bar based on scroll direction
+            if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
+                // Scrolling down
+                topBar.style.transform = 'translateY(-100%)';
+                navbar.style.top = '0px';
+                progressBar.style.top = '0px';
+            } else {
+                // Scrolling up or at top
+                topBar.style.transform = 'translateY(0)';
+                navbar.style.top = '36px';
+                progressBar.style.top = '36px';
+            }
+        }
+        
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    }, false);
+
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        const mobileView = isMobileView();
+        if (mobileView) {
+            navbar.style.top = '0px';
+            progressBar.style.top = '0px';
+        } else {
+            navbar.style.top = '36px';
+            progressBar.style.top = '36px';
+        }
+    }, false);
+
+    // Function to open Partial Knee Replacement modal with blurred background
+    function openPartialKneeModal() {
+        const modal = document.getElementById('partialKneeModal');
+        
+        // Show modal with blur effect
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+
+    // Function to close Partial Knee Replacement modal
+    function closePartialKneeModal() {
+        const modal = document.getElementById('partialKneeModal');
+        
+        // Hide modal
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+
+    // Function to open Hip Replacement modal with blurred background
+    function openHipReplacementModal() {
+        const modal = document.getElementById('hipReplacementModal');
+        
+        // Show modal with blur effect
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+
+    // Function to close Hip Replacement modal
+    function closeHipReplacementModal() {
+        const modal = document.getElementById('hipReplacementModal');
+        
+        // Hide modal
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+
+    // Function to open Trauma and Fractures modal with blurred background
+    function openTraumaFracturesModal() {
+        const modal = document.getElementById('traumaFracturesModal');
+        
+        if (!modal) {
+            console.log('Trauma Fractures modal not found. Make sure knee-replacement.html is loaded.');
+            return;
+        }
+        
+        // Show modal with blur effect
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+
+    // Function to close Trauma and Fractures modal
+    function closeTraumaFracturesModal() {
+        const modal = document.getElementById('traumaFracturesModal');
+        
+        if (!modal) return;
+        
+        // Hide modal
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+
+    // Function to open Arthroscopy & Sports Injuries modal with blurred background
+    function openArthroscopySportsModal() {
+        const modal = document.getElementById('arthroscopySportsModal');
+        
+        if (!modal) {
+            console.log('Arthroscopy Sports modal not found. Make sure knee-replacement.html is loaded.');
+            return;
+        }
+        
+        // Show modal with blur effect
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+
+    // Function to close Arthroscopy & Sports Injuries modal
+    function closeArthroscopySportsModal() {
+        const modal = document.getElementById('arthroscopySportsModal');
+        
+        if (!modal) return;
+        
+        // Hide modal
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+
+    // Function to open Spine Surgeon modal with blurred background
+    function openSpineSurgeonModal() {
+        const modal = document.getElementById('spineSurgeonModal');
+        
+        if (!modal) {
+            console.log('Spine Surgeon modal not found. Make sure knee-replacement.html is loaded.');
+            return;
+        }
+        
+        // Show modal with blur effect
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+
+    // Function to close Spine Surgeon modal
+    function closeSpineSurgeonModal() {
+        const modal = document.getElementById('spineSurgeonModal');
+        
+        if (!modal) return;
+        
+        // Hide modal
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+
+    // Function to open Spine Surgical modal with blurred background
+    function openSpineSurgicalModal() {
+        const modal = document.getElementById('spineSurgicalModal');
+        
+        if (!modal) {
+            console.log('Spine Surgical modal not found. Make sure knee-replacement.html is loaded.');
+            return;
+        }
+        
+        // Show modal with blur effect
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+
+    // Function to close Spine Surgical modal
+    function closeSpineSurgicalModal() {
+        const modal = document.getElementById('spineSurgicalModal');
+        
+        if (!modal) return;
+        
+        // Hide modal
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+
+    // Function to open Spine Non Surgical modal with blurred background
+    function openSpineNonSurgicalModal() {
+        const modal = document.getElementById('spineNonSurgicalModal');
+        
+        if (!modal) {
+            console.log('Spine Non Surgical modal not found. Make sure knee-replacement.html is loaded.');
+            return;
+        }
+        
+        // Show modal with blur effect
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+
+    // Function to close Spine Non Surgical modal
+    function closeSpineNonSurgicalModal() {
+        const modal = document.getElementById('spineNonSurgicalModal');
+        
+        if (!modal) return;
+        
+        // Hide modal
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+
+    // Function to open Alternative Treatments modal with blurred background
+    function openAlternativeTreatmentsModal() {
+        const modal = document.getElementById('alternativeTreatmentsModal');
+        
+        if (!modal) {
+            console.log('Alternative Treatments modal not found. Make sure knee-replacement.html is loaded.');
+            return;
+        }
+        
+        // Show modal with blur effect
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+
+    // Function to close Alternative Treatments modal
+    function closeAlternativeTreatmentsModal() {
+        const modal = document.getElementById('alternativeTreatmentsModal');
+        
+        if (!modal) return;
+        
+        // Hide modal
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+
+    // Function to open Cartilage Transplantation modal with blurred background
+    function openCartilageTransplantationModal() {
+        const modal = document.getElementById('cartilageTransplantationModal');
+        
+        if (!modal) {
+            console.log('Cartilage Transplantation modal not found. Make sure knee-replacement.html is loaded.');
+            return;
+        }
+        
+        // Show modal with blur effect
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+
+    // Function to close Cartilage Transplantation modal
+    function closeCartilageTransplantationModal() {
+        const modal = document.getElementById('cartilageTransplantationModal');
+        
+        if (!modal) return;
+        
+        // Hide modal
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+
+    // Function to open OATS Procedure modal with blurred background
+    function openOatsProcedureModal() {
+        const modal = document.getElementById('oatsProcedureModal');
+        
+        if (!modal) {
+            console.log('OATS Procedure modal not found. Make sure knee-replacement.html is loaded.');
+            return;
+        }
+        
+        // Show modal with blur effect
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+
+    // Function to close OATS Procedure modal
+    function closeOatsProcedureModal() {
+        const modal = document.getElementById('oatsProcedureModal');
+        
+        if (!modal) return;
+        
+        // Hide modal
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+
+    // Function to open ESWT modal with blurred background
+    function openEswtModal() {
+        const modal = document.getElementById('eswtModal');
+        
+        if (!modal) {
+            console.log('ESWT modal not found. Make sure knee-replacement.html is loaded.');
+            return;
+        }
+        
+        // Show modal with blur effect
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+
+    // Function to close ESWT modal
+    function closeEswtModal() {
+        const modal = document.getElementById('eswtModal');
+        
+        if (!modal) return;
+        
+        // Hide modal
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+
+    // Function to open Shoulder Surgery modal with blurred background
+    function openShoulderSurgeryModal() {
+        const modal = document.getElementById('shoulderSurgeryModal');
+        
+        if (!modal) {
+            console.log('Shoulder Surgery modal not found. Make sure knee-replacement.html is loaded.');
+            return;
+        }
+        
+        // Show modal with blur effect
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+
+    // Function to close Shoulder Surgery modal
+    function closeShoulderSurgeryModal() {
+        const modal = document.getElementById('shoulderSurgeryModal');
+        
+        if (!modal) return;
+        
+        // Hide modal
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+
+    // Function to open Neurology modal with blurred background
+    function openNeurologyModal() {
+        const modal = document.getElementById('neurologyModal');
+        
+        if (!modal) {
+            console.log('Neurology modal not found. Make sure knee-replacement.html is loaded.');
+            return;
+        }
+        
+        // Show modal with blur effect
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+
+    // Function to close Neurology modal
+    function closeNeurologyModal() {
+        const modal = document.getElementById('neurologyModal');
+        
+        if (!modal) return;
+        
+        // Hide modal
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+
+    // Function to open Rheumatoid Arthritis modal with blurred background
+    function openRheumatoidArthritisModal() {
+        const modal = document.getElementById('rheumatoidArthritisModal');
+        
+        if (!modal) {
+            console.log('Rheumatoid Arthritis modal not found. Make sure knee-replacement.html is loaded.');
+            return;
+        }
+        
+        // Show modal with blur effect
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+
+    // Function to close Rheumatoid Arthritis modal
+    function closeRheumatoidArthritisModal() {
+        const modal = document.getElementById('rheumatoidArthritisModal');
+        
+        if (!modal) return;
+        
+        // Hide modal
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+
+    // Function to open Joint Replacement modal with blurred background
+    function openJointReplacementModal() {
+        const modal = document.getElementById('jointReplacementModal');
+        
+        if (!modal) {
+            console.log('Joint Replacement modal not found. Make sure knee-replacement.html is loaded.');
+            return;
+        }
+        
+        // Show modal with blur effect
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+
+    // Function to close Joint Replacement modal
+    function closeJointReplacementModal() {
+        const modal = document.getElementById('jointReplacementModal');
+        
+        if (!modal) return;
+        
+        // Hide modal
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+
+    // Function to open Plastic Surgery modal with blurred background
+    function openPlasticSurgeryModal() {
+        const modal = document.getElementById('plasticSurgeryModal');
+        
+        if (!modal) {
+            console.log('Plastic Surgery modal not found. Make sure knee-replacement.html is loaded.');
+            return;
+        }
+        
+        // Show modal with blur effect
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+
+    // Function to close Plastic Surgery modal
+    function closePlasticSurgeryModal() {
+        const modal = document.getElementById('plasticSurgeryModal');
+        
+        if (!modal) return;
+        
+        // Hide modal
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+
+    // Function to open Hand & Microvascular Surgery modal with blurred background
+    function openHandMicrovascularSurgeryModal() {
+        const modal = document.getElementById('handMicrovascularSurgeryModal');
+        
+        if (!modal) {
+            console.log('Hand & Microvascular Surgery modal not found. Make sure knee-replacement.html is loaded.');
+            return;
+        }
+        
+        // Show modal with blur effect
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+
+    // Function to close Hand & Microvascular Surgery modal
+    function closeHandMicrovascularSurgeryModal() {
+        const modal = document.getElementById('handMicrovascularSurgeryModal');
+        
+        if (!modal) return;
+        
+        // Hide modal
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+
+    // Function to open Pain Management modal with blurred background
+    function openPainManagementModal() {
+        const modal = document.getElementById('painManagementModal');
+        
+        if (!modal) {
+            console.log('Pain Management modal not found. Make sure knee-replacement.html is loaded.');
+            return;
+        }
+        
+        // Show modal with blur effect
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+
+    // Function to close Pain Management modal
+    function closePainManagementModal() {
+        const modal = document.getElementById('painManagementModal');
+        
+        if (!modal) return;
+        
+        // Hide modal
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+
+    // Function to open Foot & Ankle Surgery modal with blurred background
+    function openFootAnkleSurgeryModal() {
+        const modal = document.getElementById('footAnkleSurgeryModal');
+        
+        if (!modal) {
+            console.log('Foot & Ankle Surgery modal not found. Make sure knee-replacement.html is loaded.');
+            return;
+        }
+        
+        // Show modal with blur effect
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+
+    // Function to close Foot & Ankle Surgery modal
+    function closeFootAnkleSurgeryModal() {
+        const modal = document.getElementById('footAnkleSurgeryModal');
+        
+        if (!modal) return;
+        
+        // Hide modal
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+
+    // Function to open Gynecology modal with blurred background
+    function openGynecologyModal() {
+        const modal = document.getElementById('gynecologyModal');
+        
+        if (!modal) {
+            console.log('Gynecology modal not found. Make sure knee-replacement.html is loaded.');
+            return;
+        }
+        
+        // Show modal with blur effect
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+
+    // Function to close Gynecology modal
+    function closeGynecologyModal() {
+        const modal = document.getElementById('gynecologyModal');
+        
+        if (!modal) return;
+        
+        // Hide modal
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+
+    // Function to open Pulmonology & Sleep Medicine modal with blurred background
+    function openPulmonologySleepMedicineModal() {
+        const modal = document.getElementById('pulmonologySleepMedicineModal');
+        
+        if (!modal) {
+            console.log('Pulmonology & Sleep Medicine modal not found. Make sure knee-replacement.html is loaded.');
+            return;
+        }
+        
+        // Show modal with blur effect
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+
+    // Function to close Pulmonology & Sleep Medicine modal
+    function closePulmonologySleepMedicineModal() {
+        const modal = document.getElementById('pulmonologySleepMedicineModal');
+        
+        if (!modal) return;
+        
+        // Hide modal
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+
+    // Function to open Laparoscopic Surgery modal with blurred background
+    function openLaparoscopicSurgeryModal() {
+        const modal = document.getElementById('laparoscopicSurgeryModal');
+        
+        if (!modal) {
+            console.log('Laparoscopic Surgery modal not found. Make sure knee-replacement.html is loaded.');
+            return;
+        }
+        
+        // Show modal with blur effect
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+
+    // Function to close Laparoscopic Surgery modal
+    function closeLaparoscopicSurgeryModal() {
+        const modal = document.getElementById('laparoscopicSurgeryModal');
+        
+        if (!modal) return;
+        
+        // Hide modal
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+
+    // Function to open Internal Medicine modal with blurred background
+    function openInternalMedicineModal() {
+        const modal = document.getElementById('internalMedicineModal');
+        
+        if (!modal) {
+            console.log('Internal Medicine modal not found. Make sure knee-replacement.html is loaded.');
+            return;
+        }
+        
+        // Show modal with blur effect
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+
+    // Function to close Internal Medicine modal
+    function closeInternalMedicineModal() {
+        const modal = document.getElementById('internalMedicineModal');
+        
+        if (!modal) return;
+        
+        // Hide modal
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+
+    // Function to open Critical Care modal with blurred background
+    function openCriticalCareModal() {
+        const modal = document.getElementById('criticalCareModal');
+        
+        if (!modal) {
+            console.log('Critical Care modal not found. Make sure knee-replacement.html is loaded.');
+            return;
+        }
+        
+        // Show modal with blur effect
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+
+    // Function to close Critical Care modal
+    function closeCriticalCareModal() {
+        const modal = document.getElementById('criticalCareModal');
+        
+        if (!modal) return;
+        
+        // Hide modal
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+
+    // Function to open Dermatology modal with blurred background
+    function openDermatologyModal() {
+        const modal = document.getElementById('dermatologyModal');
+        
+        if (!modal) {
+            console.log('Dermatology modal not found. Make sure knee-replacement.html is loaded.');
+            return;
+        }
+        
+        // Show modal with blur effect
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+
+    // Function to close Dermatology modal
+    function closeDermatologyModal() {
+        const modal = document.getElementById('dermatologyModal');
+        
+        if (!modal) return;
+        
+        // Hide modal
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+
+    // Function to open Dental & Maxillofacial modal with blurred background
+    function openDentalMaxillofacialModal() {
+        const modal = document.getElementById('dentalMaxillofacialModal');
+        
+        if (!modal) {
+            console.log('Dental & Maxillofacial modal not found. Make sure knee-replacement.html is loaded.');
+            return;
+        }
+        
+        // Show modal with blur effect
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+
+    // Function to close Dental & Maxillofacial modal
+    function closeDentalMaxillofacialModal() {
+        const modal = document.getElementById('dentalMaxillofacialModal');
+        
+        if (!modal) return;
+        
+        // Hide modal
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+
+    // Close modal when clicking outside
+    document.addEventListener('click', function(event) {
+        const partialKneeModal = document.getElementById('partialKneeModal');
+        const hipReplacementModal = document.getElementById('hipReplacementModal');
+        const traumaFracturesModal = document.getElementById('traumaFracturesModal');
+        const arthroscopySportsModal = document.getElementById('arthroscopySportsModal');
+        const spineSurgeonModal = document.getElementById('spineSurgeonModal');
+        const spineSurgicalModal = document.getElementById('spineSurgicalModal');
+        const spineNonSurgicalModal = document.getElementById('spineNonSurgicalModal');
+        const alternativeTreatmentsModal = document.getElementById('alternativeTreatmentsModal');
+        const cartilageTransplantationModal = document.getElementById('cartilageTransplantationModal');
+        const oatsProcedureModal = document.getElementById('oatsProcedureModal');
+        const eswtModal = document.getElementById('eswtModal');
+        const shoulderSurgeryModal = document.getElementById('shoulderSurgeryModal');
+        const neurologyModal = document.getElementById('neurologyModal');
+        const rheumatoidArthritisModal = document.getElementById('rheumatoidArthritisModal');
+        const jointReplacementModal = document.getElementById('jointReplacementModal');
+        const plasticSurgeryModal = document.getElementById('plasticSurgeryModal');
+        const handMicrovascularSurgeryModal = document.getElementById('handMicrovascularSurgeryModal');
+        const painManagementModal = document.getElementById('painManagementModal');
+        const footAnkleSurgeryModal = document.getElementById('footAnkleSurgeryModal');
+        const gynecologyModal = document.getElementById('gynecologyModal');
+        const pulmonologySleepMedicineModal = document.getElementById('pulmonologySleepMedicineModal');
+        const laparoscopicSurgeryModal = document.getElementById('laparoscopicSurgeryModal');
+        const internalMedicineModal = document.getElementById('internalMedicineModal');
+        const criticalCareModal = document.getElementById('criticalCareModal');
+        const dermatologyModal = document.getElementById('dermatologyModal');
+        const dentalMaxillofacialModal = document.getElementById('dentalMaxillofacialModal');
+        
+        // Check Partial Knee Replacement modal
+        if (partialKneeModal && partialKneeModal.style.display === 'flex' && 
+            !partialKneeModal.contains(event.target) && 
+            !event.target.closest('[onclick*="openPartialKneeModal"]')) {
+            closePartialKneeModal();
+        }
+        
+        // Check Hip Replacement modal
+        if (hipReplacementModal && hipReplacementModal.style.display === 'flex' && 
+            !hipReplacementModal.contains(event.target) && 
+            !event.target.closest('[onclick*="openHipReplacementModal"]')) {
+            closeHipReplacementModal();
+        }
+        
+        // Check Trauma and Fractures modal
+        if (traumaFracturesModal && traumaFracturesModal.style.display === 'flex' && 
+            !traumaFracturesModal.contains(event.target) && 
+            !event.target.closest('[onclick*="openTraumaFracturesModal"]')) {
+            closeTraumaFracturesModal();
+        }
+        
+        // Check Arthroscopy & Sports Injuries modal
+        if (arthroscopySportsModal && arthroscopySportsModal.style.display === 'flex' && 
+            !arthroscopySportsModal.contains(event.target) && 
+            !event.target.closest('[onclick*="openArthroscopySportsModal"]')) {
+            closeArthroscopySportsModal();
+        }
+        
+        // Check Spine Surgeon modal
+        if (spineSurgeonModal && spineSurgeonModal.style.display === 'flex' && 
+            !spineSurgeonModal.contains(event.target) && 
+            !event.target.closest('[onclick*="openSpineSurgeonModal"]')) {
+            closeSpineSurgeonModal();
+        }
+        
+        // Check Spine Surgical modal
+        if (spineSurgicalModal && spineSurgicalModal.style.display === 'flex' && 
+            !spineSurgicalModal.contains(event.target) && 
+            !event.target.closest('[onclick*="openSpineSurgicalModal"]')) {
+            closeSpineSurgicalModal();
+        }
+        
+        // Check Spine Non Surgical modal
+        if (spineNonSurgicalModal && spineNonSurgicalModal.style.display === 'flex' && 
+            !spineNonSurgicalModal.contains(event.target) && 
+            !event.target.closest('[onclick*="openSpineNonSurgicalModal"]')) {
+            closeSpineNonSurgicalModal();
+        }
+        
+        // Check Alternative Treatments modal
+        if (alternativeTreatmentsModal && alternativeTreatmentsModal.style.display === 'flex' && 
+            !alternativeTreatmentsModal.contains(event.target) && 
+            !event.target.closest('[onclick*="openAlternativeTreatmentsModal"]')) {
+            closeAlternativeTreatmentsModal();
+        }
+        
+        // Check Cartilage Transplantation modal
+        if (cartilageTransplantationModal && cartilageTransplantationModal.style.display === 'flex' && 
+            !cartilageTransplantationModal.contains(event.target) && 
+            !event.target.closest('[onclick*="openCartilageTransplantationModal"]')) {
+            closeCartilageTransplantationModal();
+        }
+        
+        // Check OATS Procedure modal
+        if (oatsProcedureModal && oatsProcedureModal.style.display === 'flex' && 
+            !oatsProcedureModal.contains(event.target) && 
+            !event.target.closest('[onclick*="openOatsProcedureModal"]')) {
+            closeOatsProcedureModal();
+        }
+        
+        // Check ESWT modal
+        if (eswtModal && eswtModal.style.display === 'flex' && 
+            !eswtModal.contains(event.target) && 
+            !event.target.closest('[onclick*="openEswtModal"]')) {
+            closeEswtModal();
+        }
+        
+        // Check Shoulder Surgery modal
+        if (shoulderSurgeryModal && shoulderSurgeryModal.style.display === 'flex' && 
+            !shoulderSurgeryModal.contains(event.target) && 
+            !event.target.closest('[onclick*="openShoulderSurgeryModal"]')) {
+            closeShoulderSurgeryModal();
+        }
+        
+        // Check Neurology modal
+        if (neurologyModal && neurologyModal.style.display === 'flex' && 
+            !neurologyModal.contains(event.target) && 
+            !event.target.closest('[onclick*="openNeurologyModal"]')) {
+            closeNeurologyModal();
+        }
+        
+        // Check Rheumatoid Arthritis modal
+        if (rheumatoidArthritisModal && rheumatoidArthritisModal.style.display === 'flex' && 
+            !rheumatoidArthritisModal.contains(event.target) && 
+            !event.target.closest('[onclick*="openRheumatoidArthritisModal"]')) {
+            closeRheumatoidArthritisModal();
+        }
+        
+        // Check Joint Replacement modal
+        if (jointReplacementModal && jointReplacementModal.style.display === 'flex' && 
+            !jointReplacementModal.contains(event.target) && 
+            !event.target.closest('[onclick*="openJointReplacementModal"]')) {
+            closeJointReplacementModal();
+        }
+        
+        // Check Plastic Surgery modal
+        if (plasticSurgeryModal && plasticSurgeryModal.style.display === 'flex' && 
+            !plasticSurgeryModal.contains(event.target) && 
+            !event.target.closest('[onclick*="openPlasticSurgeryModal"]')) {
+            closePlasticSurgeryModal();
+        }
+        
+        // Check Hand & Microvascular Surgery modal
+        if (handMicrovascularSurgeryModal && handMicrovascularSurgeryModal.style.display === 'flex' && 
+            !handMicrovascularSurgeryModal.contains(event.target) && 
+            !event.target.closest('[onclick*="openHandMicrovascularSurgeryModal"]')) {
+            closeHandMicrovascularSurgeryModal();
+        }
+        
+        // Check Pain Management modal
+        if (painManagementModal && painManagementModal.style.display === 'flex' && 
+            !painManagementModal.contains(event.target) && 
+            !event.target.closest('[onclick*="openPainManagementModal"]')) {
+            closePainManagementModal();
+        }
+        
+        // Check Foot & Ankle Surgery modal
+        if (footAnkleSurgeryModal && footAnkleSurgeryModal.style.display === 'flex' && 
+            !footAnkleSurgeryModal.contains(event.target) && 
+            !event.target.closest('[onclick*="openFootAnkleSurgeryModal"]')) {
+            closeFootAnkleSurgeryModal();
+        }
+        
+        // Check Gynecology modal
+        if (gynecologyModal && gynecologyModal.style.display === 'flex' && 
+            !gynecologyModal.contains(event.target) && 
+            !event.target.closest('[onclick*="openGynecologyModal"]')) {
+            closeGynecologyModal();
+        }
+        
+        // Check Pulmonology & Sleep Medicine modal
+        if (pulmonologySleepMedicineModal && pulmonologySleepMedicineModal.style.display === 'flex' && 
+            !pulmonologySleepMedicineModal.contains(event.target) && 
+            !event.target.closest('[onclick*="openPulmonologySleepMedicineModal"]')) {
+            closePulmonologySleepMedicineModal();
+        }
+        
+        // Check Laparoscopic Surgery modal
+        if (laparoscopicSurgeryModal && laparoscopicSurgeryModal.style.display === 'flex' && 
+            !laparoscopicSurgeryModal.contains(event.target) && 
+            !event.target.closest('[onclick*="openLaparoscopicSurgeryModal"]')) {
+            closeLaparoscopicSurgeryModal();
+        }
+        
+        // Check Internal Medicine modal
+        if (internalMedicineModal && internalMedicineModal.style.display === 'flex' && 
+            !internalMedicineModal.contains(event.target) && 
+            !event.target.closest('[onclick*="openInternalMedicineModal"]')) {
+            closeInternalMedicineModal();
+        }
+        
+        // Check Critical Care modal
+        if (criticalCareModal && criticalCareModal.style.display === 'flex' && 
+            !criticalCareModal.contains(event.target) && 
+            !event.target.closest('[onclick*="openCriticalCareModal"]')) {
+            closeCriticalCareModal();
+        }
+        
+        // Check Dermatology modal
+        if (dermatologyModal && dermatologyModal.style.display === 'flex' && 
+            !dermatologyModal.contains(event.target) && 
+            !event.target.closest('[onclick*="openDermatologyModal"]')) {
+            closeDermatologyModal();
+        }
+        
+        // Check Dental & Maxillofacial modal
+        if (dentalMaxillofacialModal && dentalMaxillofacialModal.style.display === 'flex' && 
+            !dentalMaxillofacialModal.contains(event.target) && 
+            !event.target.closest('[onclick*="openDentalMaxillofacialModal"]')) {
+            closeDentalMaxillofacialModal();
+        }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closePartialKneeModal();
+            closeHipReplacementModal();
+            closeTraumaFracturesModal();
+            closeArthroscopySportsModal();
+            closeSpineSurgeonModal();
+            closeSpineSurgicalModal();
+            closeSpineNonSurgicalModal();
+            closeAlternativeTreatmentsModal();
+            closeCartilageTransplantationModal();
+            closeOatsProcedureModal();
+            closeEswtModal();
+            closeShoulderSurgeryModal();
+            closeNeurologyModal();
+            closeRheumatoidArthritisModal();
+            closeJointReplacementModal();
+            closePlasticSurgeryModal();
+            closeHandMicrovascularSurgeryModal();
+            closePainManagementModal();
+            closeFootAnkleSurgeryModal();
+            closeGynecologyModal();
+            closePulmonologySleepMedicineModal();
+            closeLaparoscopicSurgeryModal();
+            closeInternalMedicineModal();
+            closeCriticalCareModal();
+            closeDermatologyModal();
+            closeDentalMaxillofacialModal();
+        }
+    });
+</script>

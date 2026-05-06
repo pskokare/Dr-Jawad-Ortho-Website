@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+    <meta name="google-site-verification" content="FZvqVhgXRwPeTt4sGaPKVk0ijOoWKVHENa2uiJI4y7I" />    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Companies & TPA's - Dr. Germanten</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/webp" href="Images/GERMANTANLOGO.webp">
+    <style>
+        /* Scroll Progress Bar Styles */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.2);
+            z-index: 9999;
+            transition: opacity 0.3s ease;
+        }
+
+        .scroll-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #ff4d01 0%, #eab308 50%, #facc15 100%);
+            border-radius: 0 1px 1px 0;
+            transition: width 0.1s ease-out;
+            box-shadow: 0 0 10px rgba(202, 138, 4, 0.5);
+        }
+
+
+        .scroll-progress.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* Enhanced responsive hero section */
+        .hero-section {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 60vh;
+            min-height: 400px;
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        /* Large Desktop */
+        @media (min-width: 1536px) {
+            .hero-image {
+                height: 70vh;
+                min-height: 500px;
+            }
+        }
+        
+        /* Desktop */
+        @media (min-width: 1280px) and (max-width: 1535px) {
+            .hero-image {
+                height: 65vh;
+                min-height: 450px;
+            }
+        }
+        
+        /* Large Tablets */
+        @media (min-width: 1024px) and (max-width: 1279px) {
+            .hero-image {
+                height: 60vh;
+                min-height: 400px;
+            }
+        }
+        
+        /* Tablets */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .hero-image {
+                height: 50vh;
+                min-height: 350px;
+            }
+        }
+        
+        /* Large Mobile */
+        @media (min-width: 640px) and (max-width: 767px) {
+            .hero-image {
+                height: 45vh;
+                min-height: 300px;
+            }
+        }
+        
+        /* Mobile */
+        @media (min-width: 480px) and (max-width: 639px) {
+            .hero-image {
+                height: 40vh;
+                min-height: 280px;
+            }
+        }
+        
+        /* Small Mobile */
+        @media (min-width: 380px) and (max-width: 479px) {
+            .hero-image {
+                height: 35vh;
+                min-height: 250px;
+            }
+        }
+        
+        /* Very Small Mobile */
+        @media (max-width: 379px) {
+            .hero-image {
+                height: 30vh;
+                min-height: 220px;
+            }
+        }
+        
+        /* Desktop hero section positioning */
+        @media (min-width: 769px) {
+            .hero-desktop-fix {
+                padding-top: 100px; /* Account for navbar and top bar on desktop */
+            }
+        }
+        
+        /* Hero overlay content */
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+        
+        .hero-content {
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            max-width: 1200px;
+        }
+        
+        .hero-title {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            font-weight: 400;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+            line-height: 1.5;
+            opacity: 0.95;
+        }
+        
+        /* Responsive border */
+        .hero-border {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+            z-index: 20;
+        }
+        
+        @media (max-width: 640px) {
+            .hero-border {
+                height: 3px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-border {
+                height: 2px;
+            }
+        }
+        .insurance-card {
+            transition: all 0.3s ease;
+            border: 2px solid #e5e7eb;
+        }
+
+        .insurance-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-color: #3b82f6;
+        }
+
+        /* TPA Section Styles */
+        .tpa-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        /* Insurance Company Badge */
+        .insurance-badge {
+            background: linear-gradient(45deg, #f59e0b, #ef4444);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+    </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JW9RNJ0QK2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JW9RNJ0QK2');
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6GP8VG7PKC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6GP8VG7PKC');
+</script>
+
+</head>
+
+<body class="bg-gray-50">
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress">
+        <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+    </div>
+
+    <!-- Navbar Component -->
+    <div id="navbar-container"></div>
+
+    <!-- Enhanced Hero Section -->
+    <section class="hero-section relative w-full hero-desktop-fix">
+        <!-- Hero Image with responsive sizing -->
+        <div class="relative w-full">
+            <img src="Images/Patient-Info/insurance.jpg"
+                alt="Insurance Companies & TPA's - Germanten Hospitals" 
+                class="hero-image w-full"
+                onerror="this.onerror=null; this.src='https://via.placeholder.com/1920x1080?text=Insurance+Companies+and+TPAs';">
+            
+            <!-- Black Overlay Effect -->
+            <div class="absolute inset-0 bg-black/40 pointer-events-none"></div>
+            
+            <!-- Gradient Border -->
+            <div class="hero-border"></div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb Navigation -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <nav class="flex text-sm text-gray-600" aria-label="Breadcrumb">
+            <a href="home.html" class="hover:text-blue-600 transition-colors duration-200">PatientInfo</a>
+            <span class="mx-2 text-gray-400">»</span>
+            <span class="text-gray-900 font-semibold">Insurance Companies & TPA's</span>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- TPA Companies Section -->
+        <section class="mb-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Column 1 -->
+                    <div class="space-y-2">
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-building text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">United Health Care Parekh Insurance TPA Private Limited</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-hand-holding-medical text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">Medi Assist Insurance TPA Private Limited</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-shield-alt text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">MDIndia Health Insurance TPA Private Limited</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-laptop-medical text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">E-Meditek Insurance TPA Limited</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-monument text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">Heritage Health Insurance TPA Private Limited</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-crosshairs text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">Focus Health Insurance (TPA) Private Limited</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-heartbeat text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">Medicare Insurance TPA Services (India) Private Limited</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-users text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">Family Health Plan Insurance TPA Limited</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-shield-virus text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">Raksha Health Insurance TPA Private Limited</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-video text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">Vidal Health Insurance TPA Private Limited</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-globe text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">Anyuta Insuance TPA In Health Care Private Limited</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-compass text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">East West Assist Insurance TPA Private Limited</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-piggy-bank text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">Medsave Health Insurance TPA Limited</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-dna text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">Genins India Insurance TPA Limited</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-link text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">Alankit Insurance TPA Limited</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-hospital text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">Health India Insurance TPA Services Private Limited</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-thumbs-up text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">Good Health Insurance TPA Limited</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-handshake text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">Vipul Medcorp Insurance TPA Private Limited</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-parking text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">Park Mediclaim Insurance TPA Private Limited</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-road text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">Safeway Insurance TPA Private Limited</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-star text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">Anmol Medicare Insurance TPA Limited</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-user-md text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">Dedicated Healthcare Services TPA (India) Private</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-flag text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">Health Insurance TPA of India Limited</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-star-of-life text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">Star Health Insurance TPA</span>
+                        </div>
+                    </div>
+
+                    <!-- Column 2 -->
+                    <div class="space-y-2">
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-rocket text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">Apollo Munich Insurance</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-shield-alt text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">ICICI Lombard Health Insurance</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-crown text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">Max Bupa Health Insurance</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-umbrella text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">Bajaj Allianz General Insurance Company Limited</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-globe-asia text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">Bharti AXA General Insurance Company Limited</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-temple text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">Cholamandalam MS General Insurance Company Limited</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-heart text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">Cigna TTK Health Insurance Company Limited</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-compass text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">Future Generali India Insurance Company Limited</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-seedling text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">IFFCO Tokio General Insurance Company</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-tower text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">Reliance General Insurance Company Limited</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-infinity text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">Religare health Insurance Company Limited</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-sun text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">Royal Sundaram Alliance Insurance Company Limited</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-university text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">SBI General Insurance Company Limited</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-industry text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">Tata AIG General Insurance Company Limited</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-landmark text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">The New India Assurance Company Limited</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-compass text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">The Oriental Insurance Company Limited</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-globe-asia text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">Universal Sompo General Insurance Company Limited</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-parking text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">Park Mediclaim Insurance TPA Private Limited</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-road text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">Safeway Insurance TPA Private Limited</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-star text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">Anmol Medicare Insurance TPA Limited</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-user-md text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">Dedicated Healthcare Services TPA (India) Private</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-flag text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">Health Insurance TPA of India Limited</span>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-all duration-200 cursor-pointer">
+                            <i class="fas fa-star-of-life text-black text-lg mt-1"></i>
+                            <span class="text-gray-700 hover:text-red-600 transition-colors duration-200">Star Health Insurance TPA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+
+    <!-- Scroll Progress Bar JavaScript -->
+    <script>
+        // Scroll Progress Bar Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollProgressBar = document.getElementById('scrollProgressBar');
+            
+            // Update scroll progress
+            function updateScrollProgress() {
+                const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrollPercentage = (scrollTop / scrollHeight) * 100;
+                
+                // Update progress bar width
+                scrollProgressBar.style.width = scrollPercentage + '%';
+                
+                // Show/hide progress bar based on scroll position
+                if (scrollTop > 100) {
+                    scrollProgress.classList.remove('hidden');
+                } else {
+                    scrollProgress.classList.add('hidden');
+                }
+            }
+            
+            // Throttle function for performance
+            function throttle(func, limit) {
+                let inThrottle;
+                return function() {
+                    const args = arguments;
+                    const context = this;
+                    if (!inThrottle) {
+                        func.apply(context, args);
+                        inThrottle = true;
+                        setTimeout(() => inThrottle = false, limit);
+                    }
+                }
+            }
+            
+            // Add scroll event listener with throttling
+            window.addEventListener('scroll', throttle(updateScrollProgress, 10));
+            
+            // Initial update
+            updateScrollProgress();
+            
+            // Smooth scroll to top when progress bar is clicked
+            scrollProgress.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Add hover effect for progress bar
+            scrollProgress.addEventListener('mouseenter', function() {
+                scrollProgressBar.style.boxShadow = '0 0 20px rgba(202, 138, 4, 0.8)';
+            });
+            
+            scrollProgress.addEventListener('mouseleave', function() {
+                scrollProgressBar.style.boxShadow = '0 0 10px rgba(202, 138, 4, 0.5)';
+            });
+        });
+    </script>
+    <script src="js/script.js"></script>
+    </body>
+</html>
