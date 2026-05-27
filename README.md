@@ -23,7 +23,7 @@ A professional and modern healthcare website built with HTML, Tailwind CSS, and 
 
 ```
 Dr.GERMANTAN_WEBSITE/
-├── index.html          # Main HTML file
+├── index          # Main HTML file
 ├── styles.css          # Custom CSS styles and animations
 ├── script.js           # JavaScript functionality
 └── README.md           # Project documentation
@@ -41,7 +41,7 @@ Dr.GERMANTAN_WEBSITE/
 ## Getting Started
 
 1. Clone or download the project files
-2. Open `index.html` in your web browser
+2. Open `index` in your web browser
 3. The website will load with all functionality working immediately
 
 ## Customization
