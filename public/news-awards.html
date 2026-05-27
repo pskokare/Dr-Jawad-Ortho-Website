@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="google-site-verification" content="gyGSLLzdQLlIEsLrhnGzWjOoQDhyTo8sxocDXKNkG7w" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>News and Awards - Germanten Hospitals</title>
+    <meta name="description" content="Read the latest news, milestones, recognitions, and awards from Germanten Hospitals, highlighting medical excellence and patient-focused care.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/webp" href="Images/GERMANTANLOGO.webp">
+    <link rel="canonical" href="https://drjawadortho.com/news-awards">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <style>
+        /* Scroll Progress Bar Styles */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.2);
+            z-index: 9999;
+            transition: opacity 0.3s ease;
+        }
+
+        .scroll-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #ff4d01 0%, #eab308 50%, #facc15 100%);
+            border-radius: 0 1px 1px 0;
+            transition: width 0.1s ease-out;
+            box-shadow: 0 0 10px rgba(202, 138, 4, 0.5);
+        }
+
+
+        .scroll-progress.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* Mobile menu styles */
+        .mobile-menu-open {
+            overflow: hidden;
+        }
+
+        .mobile-menu-open::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 40;
+        }
+
+        #mobile-menu {
+            z-index: 50 !important;
+            transition: all 0.3s ease-in-out;
+        }
+
+        #mobile-menu a,
+        #mobile-menu button {
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            padding: 12px 16px !important;
+            width: 100%;
+            text-align: left;
+        }
+
+        #mobile-menu-button {
+            min-width: 44px;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        /* Hero section responsive styles */
+        .hero-section {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        /* Mobile banner positioning to account for navbar */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding-top: 64px;
+                /* Account for navbar height on mobile */
+            }
+        }
+
+        /* Desktop banner positioning to account for navbar and top bar */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .hero-section {
+                padding-top: 100px;
+                /* Account for navbar height only (top bar hidden on tablet) */
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .hero-section {
+                padding-top: 100px;
+                /* Account for both top bar (36px) and navbar (64px) */
+            }
+        }
+
+        .hero-image {
+            width: 100%;
+            height: auto;
+            max-height: 90vh;
+            object-fit: contain;
+            background-color: #f3f4f6;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .hero-image {
+                max-height: 60vh;
+                object-fit: contain;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-image {
+                max-height: 50vh;
+                object-fit: contain;
+            }
+        }
+
+        /* Breadcrumb responsive */
+        .breadcrumb-container {
+            padding: 1rem 1rem;
+        }
+
+        @media (max-width: 640px) {
+            .breadcrumb-container {
+                padding: 0.75rem 1rem;
+            }
+        }
+
+        /* Content responsive */
+        .content-section {
+            padding: 2rem 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .content-section {
+                padding: 1.5rem 1rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .content-section {
+                padding: 1rem 0.75rem;
+            }
+        }
+
+        /* Dropdown styles */
+        .mobile-dropdown-menu {
+            transition: all 0.3s ease;
+        }
+
+        .mobile-dropdown button i {
+            transition: transform 0.3s ease;
+        }
+
+        /* Responsive typography and spacing */
+        @media (max-width: 640px) {
+            .section-padding {
+                padding: 1.5rem 0.75rem !important;
+            }
+
+            .card-padding {
+                padding: 1rem !important;
+            }
+
+            .hero-title {
+                font-size: 1.5rem !important;
+            }
+
+            .content-text {
+                font-size: 0.9rem !important;
+            }
+
+            .section-title {
+                font-size: 1.5rem !important;
+            }
+
+            .gallery-img {
+                max-height: 200px !important;
+            }
+
+            .award-img {
+                max-height: 150px !important;
+            }
+
+            .modal-btn {
+                width: 40px !important;
+                height: 40px !important;
+                font-size: 1.5rem !important;
+            }
+        }
+
+        @media (min-width: 641px) and (max-width: 768px) {
+            .section-title {
+                font-size: 1.75rem !important;
+            }
+
+            .gallery-img {
+                max-height: 250px !important;
+            }
+
+            .award-img {
+                max-height: 200px !important;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .section-title {
+                font-size: 2rem !important;
+            }
+        }
+
+        /* Prevent horizontal scroll */
+        html,
+        body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        /* Touch-friendly on mobile */
+        @media (max-width: 768px) {
+
+            .gallery-item,
+            .award-item {
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B7BXJEHXWK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-B7BXJEHXWK');
+    </script>
+
+</head>
+
+<body class="bg-gray-50 antialiased">
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress">
+        <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+    </div>
+
+    <!-- Navbar Container -->
+    <div id="navbar-container"></div>
+
+    <!-- Hero Section - Fixed for all devices -->
+    <section class="hero-section relative w-full banner-section">
+        <!-- Image with bottom border only -->
+        <div class="border-b-4 border-yellow-400 w-full">
+            <img src="Images/AboutUs-page-Images/News-Awards/Herosectionimage.webp"
+                alt="News and Awards - Germanten Hospitals" class="hero-image w-full"
+                onerror="this.onerror=null; this.src='https://via.placeholder.com/1920x1080?text=News+and+Awards';">
+        </div>
+    </section>
+
+    <!-- Breadcrumb Section -->
+    <div class="bg-white border-b border-gray-200 shadow-sm breadcrumb-container">
+        <div class="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-3 md:py-4">
+            <nav class="flex items-center flex-wrap text-xs sm:text-sm" aria-label="Breadcrumb">
+                <ol class="flex items-center flex-wrap list-none m-0 p-0">
+                    <li class="flex items-center">
+                        <a href="/"
+                            class="inline-flex items-center text-gray-600 hover:text-blue-700 transition font-medium">
+                            <i class="fa-solid fa-home mr-1 text-[10px] sm:text-xs"></i>
+                            <span class="hidden sm:inline">Home</span>
+                        </a>
+                    </li>
+                    <li class="flex items-center px-1 sm:px-2">
+                        <i class="fa-solid fa-chevron-right text-[8px] sm:text-[10px] text-gray-400"></i>
+                    </li>
+                    <li class="flex items-center">
+                        <a href="#"
+                            class="text-gray-600 hover:text-blue-700 transition font-medium truncate max-w-[80px] sm:max-w-none">AboutUs</a>
+                    </li>
+                    <li class="flex items-center px-1 sm:px-2">
+                        <i class="fa-solid fa-chevron-right text-[8px] sm:text-[10px] text-gray-400"></i>
+                    </li>
+                    <li class="flex items-center">
+                        <span class="text-blue-700 font-semibold truncate max-w-[150px] sm:max-w-[200px] md:max-w-none"
+                            aria-current="page">News & Awards</span>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content - Fully Responsive -->
+    <main class="content-section py-4 sm:py-6 md:py-8">
+        <!-- News & Awards Section -->
+        <section class="py-6 sm:py-8 bg-gradient-to-br from-gray-50 to-white">
+            <div class="max-w-full mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+                <div class="text-center mb-8 sm:mb-10 md:mb-12">
+                    <h1
+                        class="section-title text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
+                        News & Awards
+                    </h1>
+                    <div class="w-16 sm:w-20 md:w-24 h-1 bg-gray-300 rounded-full mx-auto mb-6 sm:mb-8"></div>
+                </div>
+
+                <!-- Awards Content -->
+                <div
+                    class="bg-white rounded-xl sm:rounded-2xl shadow-lg p-3 sm:p-4 md:p-6 relative mx-2 sm:mx-4 md:mx-8 lg:mx-12">
+                    <!-- Award Image Top Right -->
+                    <div class="absolute top-2 sm:top-4 right-2 sm:right-4 opacity-60">
+                        <img src="Images/AboutUs-page-Images/News-Awards/staraward.png" alt="Award"
+                            class="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 object-contain">
+                    </div>
+
+                    <!-- Award Image Bottom Left -->
+                    <div class="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 opacity-60">
+                        <img src="Images/AboutUs-page-Images/News-Awards/staraward.png" alt="Award"
+                            class="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 object-contain">
+                    </div>
+
+                    <div class="space-y-4 sm:space-y-6 px-2 sm:px-4 md:px-8 lg:px-28">
+                        <p
+                            class="content-text text-gray-700 leading-relaxed text-sm sm:text-base md:text-lg text-justify">
+                            Dr. jawad is receipient of many national and international awards. Due to his outstanding
+                            services in the field of joint replacement surgeries he has been felicitated by H.E Andrew
+                            Flemings,British Deputy High Commissioner, Shri.K.Rosiayyah Ex chief Minister of Andhra
+                            Pradesh and many other promient personalites have conferred awards to him.
+                        </p>
+
+                        <p
+                            class="content-text text-gray-700 leading-relaxed text-sm sm:text-base md:text-lg text-justify">
+                            Dr. Mir Jawad Zar Khan is honoured with "Champions Of Change Award" by the Hon'ble 14th
+                            President of India Shri Ram Nath Kovind on 26th Feb '23 at Vignan Bhavan, New Delhi.
+                        </p>
+
+                        <p
+                            class="content-text text-gray-700 leading-relaxed text-sm sm:text-base md:text-lg text-justify">
+                            Dr. Mir Jawad Zar Khan was honored with the Pride of the Nation Award 2024 on December 21,
+                            2024. The award was presented by Shri Jishnu Dev Varma, the Honourable Governor of
+                            Telangana.
+                        </p>
+
+                        <p
+                            class="content-text text-gray-700 leading-relaxed text-sm sm:text-base md:text-lg text-justify">
+                            Dr. Mir Jawad Zar Khan, received Times of India Award of "Iconic Joint Replacement Surgeon
+                            Of Telangana" by the State Hon'ble Governor Dr. Tamilisai Soundarajan on 6th Dec 2022.,
+                        </p>
+
+                        <p
+                            class="content-text text-gray-700 leading-relaxed text-sm sm:text-base md:text-lg text-justify">
+                            Dr.Jawad has been listed as one of Indias Top Orthopedic Doctors along with other Top
+                            Orthopaedic Doctors from all states in India in coffee table book published by medgate today
+                            magazine which was launched by shri Ashwini Kumar Choubey Minister of State for health and
+                            Family Welfare Govt.of India on 21st feb 2019 in Delhi
+                        </p>
+
+                        <p
+                            class="content-text text-gray-700 leading-relaxed text-sm sm:text-base md:text-lg font-semibold">
+                            Times all India Orthopedic Hospital Ranking Survey -2022
+                        </p>
+
+                        <p
+                            class="content-text text-gray-700 leading-relaxed text-sm sm:text-base md:text-lg text-justify">
+                            Germanten Hospitals secure a position among the Top 20 orthopedic hospitals in India, the
+                            Top 10 in South India & Top 3 in Hyderabad.
+                        </p>
+
+                        <p
+                            class="content-text text-gray-700 leading-relaxed text-sm sm:text-base md:text-lg text-justify">
+                            Insights Success Magazine Features Germanten Hospital As India's Most Trusted Orthopedic
+                            Treatment Centers-2022.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards Gallery Section -->
+        <section class="py-8 sm:py-10 md:py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-blue-50">
+            <div class="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+
+                <!-- Gallery Grid : 5 Images Single Row -->
+                <div
+                    class="flex justify-center items-center gap-3 sm:gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto flex-wrap">
+
+                    <!-- Image 1 -->
+                    <div
+                        class="gallery-item relative group cursor-pointer transition-all duration-300 hover:-translate-y-2">
+                        <img src="Images/AboutUs-page-Images/News-Awards/Image1.webp" alt="Award 1"
+                            class="gallery-img max-h-40 sm:max-h-48 md:max-h-56 lg:max-h-64 object-contain border-4 border-yellow-400 rounded-xl sm:rounded-2xl transition-transform duration-300 group-hover:scale-105"
+                            onclick="openGallery(0)">
+                    </div>
+
+                    <!-- Image 2 -->
+                    <div
+                        class="gallery-item relative group cursor-pointer transition-all duration-300 hover:-translate-y-2">
+                        <img src="Images/AboutUs-page-Images/News-Awards/image2.webp" alt="Award 2"
+                            class="gallery-img max-h-40 sm:max-h-48 md:max-h-56 lg:max-h-64 object-contain border-4 border-yellow-400 rounded-xl sm:rounded-2xl transition-transform duration-300 group-hover:scale-105"
+                            onclick="openGallery(1)">
+                    </div>
+
+                    <!-- Image 3 -->
+                    <div
+                        class="gallery-item relative group cursor-pointer transition-all duration-300 hover:-translate-y-2">
+                        <img src="Images/AboutUs-page-Images/News-Awards/image3.webp" alt="Award 3"
+                            class="gallery-img max-h-40 sm:max-h-48 md:max-h-56 lg:max-h-64 object-contain border-4 border-yellow-400 rounded-xl sm:rounded-2xl transition-transform duration-300 group-hover:scale-105"
+                            onclick="openGallery(2)">
+                    </div>
+
+                    <!-- Image 4 -->
+                    <div
+                        class="gallery-item relative group cursor-pointer transition-all duration-300 hover:-translate-y-2">
+                        <img src="Images/AboutUs-page-Images/News-Awards/image4.webp" alt="Award 4"
+                            class="gallery-img max-h-40 sm:max-h-48 md:max-h-56 lg:max-h-64 object-contain border-4 border-yellow-400 rounded-xl sm:rounded-2xl transition-transform duration-300 group-hover:scale-105"
+                            onclick="openGallery(3)">
+                    </div>
+
+                    <!-- Image 5 -->
+                    <div
+                        class="gallery-item relative group cursor-pointer transition-all duration-300 hover:-translate-y-2">
+                        <img src="Images/AboutUs-page-Images/News-Awards/image5.webp" alt="Award 5"
+                            class="gallery-img max-h-40 sm:max-h-48 md:max-h-56 lg:max-h-64 object-contain border-4 border-yellow-400 rounded-xl sm:rounded-2xl transition-transform duration-300 group-hover:scale-105"
+                            onclick="openGallery(4)">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Yellow Line Below Images -->
+        <div class="flex justify-center items-center mt-0">
+            <div class="h-0.5 w-full bg-yellow-200"></div>
+        </div>
+    </main>
+
+    <!-- Awards Grid Section -->
+    <section class="py-8 sm:py-10 md:py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+
+            <!-- Awards Grid - All Images -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4 md:gap-5 lg:gap-6">
+
+                <!-- Award 1 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(1)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/Home-Page-Images/Award1.webp" alt="Award 1"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- Award 2 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(2)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/Home-Page-Images/Award2.webp" alt="Award 2"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- Award 3 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(3)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/Home-Page-Images/Award3.webp" alt="Award 3"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- Award 4 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(4)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/Home-Page-Images/Award4.webp" alt="Award 4"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- Award 5 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(5)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/Home-Page-Images/Award5.webp" alt="Award 5"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- Award 6 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(6)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/Home-Page-Images/Award6.webp" alt="Award 6"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- Award 7 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(7)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/Home-Page-Images/Award7.webp" alt="Award 7"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- Award 8 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(8)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/Home-Page-Images/Award8.jpg" alt="Award 8"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- Award 9 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(9)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/Home-Page-Images/Award9.webp" alt="Award 9"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- Award 10 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(10)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/Home-Page-Images/Award10.webp" alt="Award 10"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- Award 11 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(11)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/Home-Page-Images/Award11.webp" alt="Award 11"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- Award 12 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(12)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/Home-Page-Images/Award12.webp" alt="Award 12"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- Award 13 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(13)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/Home-Page-Images/Award13.webp" alt="Award 13"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- Award 14 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(14)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/Home-Page-Images/Award14.webp" alt="Award 14"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- Award 15 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(15)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/Home-Page-Images/Award15.webp" alt="Award 15"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- Award 16 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(16)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/Home-Page-Images/Award16.webp" alt="Award 16"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- Award 17 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(17)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/Home-Page-Images/Award17.webp" alt="Award 17"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- Award 18 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(18)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/Home-Page-Images/Award18.webp" alt="Award 18"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- Award 19 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(19)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/Home-Page-Images/award19.webp" alt="Award 19"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- Award 20 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(20)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/Home-Page-Images/Award20.webp" alt="Award 20"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- Award 21 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(21)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/Home-Page-Images/Award21.webp" alt="Award 21"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- Award 22 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(22)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/Home-Page-Images/Award22.webp" alt="Award 22"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- Award 23 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(23)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/Home-Page-Images/Award23.webp" alt="Award 23"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- Award 24 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(24)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/Home-Page-Images/Award24.webp" alt="Award 24"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- Award 25 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(25)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/Home-Page-Images/Award25.webp" alt="Award 25"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- Award 26 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(26)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/Home-Page-Images/Award26.webp" alt="Award 26"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- Award 27 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(27)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/Home-Page-Images/Award27.webp" alt="Award 27"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- Award 28 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(28)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/Home-Page-Images/Award28.jpg" alt="Award 28"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- Award 29 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(29)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/Home-Page-Images/Award29.webp" alt="Award 29"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Awards Images -->
+                <!-- News Award 1 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(30)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/Image1.webp" alt="News Award 1"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Award 2 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(31)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/image2.webp" alt="News Award 2"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Award 3 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(32)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/image3.webp" alt="News Award 3"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Award 4 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(33)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/image4.webp" alt="News Award 4"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Award 5 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(34)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/image5.webp" alt="News Award 5"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Award 6 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(35)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/image6.webp" alt="News Award 6"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Award 7 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(36)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/image7.webp" alt="News Award 7"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Award 8 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(37)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/image8.webp" alt="News Award 8"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Award 9 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(38)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/image9.webp" alt="News Award 9"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Award 10 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(39)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/image10.webp" alt="News Award 10"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Award 11 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(40)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/image11.webp" alt="News Award 11"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Award 12 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(41)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/image12.webp" alt="News Award 12"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Award 13 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(42)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/image13.webp" alt="News Award 13"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Award 14 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(43)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/image14.webp" alt="News Award 14"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Award 15 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(44)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/image15.webp" alt="News Award 15"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Award 16 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(45)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/image16.webp" alt="News Award 16"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Award 17 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(46)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/image17.jpg" alt="News Award 17"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Award 18 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(47)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/image18.jpg" alt="News Award 18"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Award 19 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(48)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/image19.webp" alt="News Award 19"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Award 20 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(49)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/image20.webp" alt="News Award 20"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Award 21 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(50)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/image21.webp" alt="News Award 21"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Award 22 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(51)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/image22.webp" alt="News Award 22"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Award 23 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(52)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/image23.webp" alt="News Award 23"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Award 24 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(53)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/image24.webp" alt="News Award 24"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Award 25 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(54)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/image25.webp" alt="News Award 25"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Award 26 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(55)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/image26.jpg" alt="News Award 26"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Award 27 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(56)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/image27.webp" alt="News Award 27"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Award 28 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(57)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/image28.webp" alt="News Award 28"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Award 29 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(58)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/image29.webp" alt="News Award 29"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Award 30 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(59)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/image30.webp" alt="News Award 30"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Award 31 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(60)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/image31.webp" alt="News Award 31"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Award 32 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(61)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/image32.webp" alt="News Award 32"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Award 33 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(62)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/image33.webp" alt="News Award 33"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Award 34 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(63)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/image34.webp" alt="News Award 34"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Awards Carousel Modal -->
+    <div id="awards-modal"
+        class="fixed inset-0 bg-black bg-opacity-75 backdrop-blur-lg z-50 hidden flex items-center justify-center p-2 sm:p-4"
+        style="backdrop-filter: blur(8px);">
+        <div class="relative max-w-7xl w-full mx-auto">
+            <!-- Close Button -->
+            <button onclick="closeAwardsModal()"
+                class="modal-btn absolute top-2 sm:top-4 right-2 sm:right-4 text-white text-2xl sm:text-4xl hover:text-gray-300 transition-colors z-10 bg-black bg-opacity-50 rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
+                <i class="fas fa-times text-sm sm:text-base"></i>
+            </button>
+
+            <!-- Navigation Buttons -->
+            <button onclick="navigateAwards(-1)"
+                class="modal-btn absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 text-white text-2xl sm:text-4xl hover:text-gray-300 transition-colors z-10 bg-black bg-opacity-50 rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
+                <i class="fas fa-chevron-left text-sm sm:text-base"></i>
+            </button>
+            <button onclick="navigateAwards(1)"
+                class="modal-btn absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 text-white text-2xl sm:text-4xl hover:text-gray-300 transition-colors z-10 bg-black bg-opacity-50 rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
+                <i class="fas fa-chevron-right text-sm sm:text-base"></i>
+            </button>
+
+            <!-- Image Container -->
+            <div class="flex items-center justify-center h-[80vh] sm:h-[90vh]">
+                <img id="awards-image" src="" alt="Award" class="max-w-full max-h-full object-contain">
+            </div>
+
+            <!-- Image Counter -->
+            <div
+                class="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 text-white text-sm sm:text-lg bg-black bg-opacity-50 px-3 py-1 sm:px-4 sm:py-2 rounded-full">
+                <span id="awards-counter">1 / 62</span>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <!-- Gallery Carousel Modal -->
+    <div id="gallery-modal"
+        class="fixed inset-0 bg-black bg-opacity-95 backdrop-blur-lg z-50 hidden flex items-center justify-center p-2 sm:p-4">
+        <div class="relative max-w-7xl w-full mx-auto">
+            <!-- Close Button -->
+            <button onclick="closeGallery()"
+                class="modal-btn absolute top-2 sm:top-4 right-2 sm:right-4 text-white text-2xl sm:text-4xl hover:text-gray-300 transition-colors z-10 bg-black bg-opacity-50 rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
+                <i class="fas fa-times text-sm sm:text-base"></i>
+            </button>
+
+            <!-- Navigation Buttons -->
+            <button onclick="navigateGallery(-1)"
+                class="modal-btn absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 text-white text-2xl sm:text-4xl hover:text-gray-300 transition-colors z-10 bg-black bg-opacity-50 rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
+                <i class="fas fa-chevron-left text-sm sm:text-base"></i>
+            </button>
+            <button onclick="navigateGallery(1)"
+                class="modal-btn absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 text-white text-2xl sm:text-4xl hover:text-gray-300 transition-colors z-10 bg-black bg-opacity-50 rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
+                <i class="fas fa-chevron-right text-sm sm:text-base"></i>
+            </button>
+
+            <!-- Image Container -->
+            <div class="flex items-center justify-center h-[80vh] sm:h-[90vh]">
+                <img id="gallery-image" src="" alt="Award" class="max-w-full max-h-full object-contain">
+            </div>
+
+            <!-- Image Counter -->
+            <div
+                class="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 text-white text-sm sm:text-lg bg-black bg-opacity-50 px-3 py-1 sm:px-4 sm:py-2 rounded-full">
+                <span id="image-counter">1 / 2</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // ========== GALLERY IMAGES ARRAY ==========
+        const galleryImages = [
+            { src: 'Images/AboutUs-page-Images/News-Awards/Image1.webp', alt: 'Award 1' },
+            { src: 'Images/AboutUs-page-Images/News-Awards/image2.webp', alt: 'Award 2' }
+        ];
+
+        let currentImageIndex = 0;
+
+        // ========== GALLERY CAROUSEL FUNCTIONS ==========
+        function openGallery(index) {
+            currentImageIndex = index;
+            updateGalleryImage();
+            const modal = document.getElementById('gallery-modal');
+
+            // Add fade-in effect
+            modal.classList.remove('hidden');
+            modal.style.opacity = '0';
+            modal.classList.add('flex');
+
+            setTimeout(() => {
+                modal.style.opacity = '1';
+                modal.style.transition = 'opacity 0.3s ease-in-out';
+            }, 10);
+
+            document.body.style.overflow = 'hidden';
+
+            // Add blur effect to main content
+            document.querySelector('main').classList.add('blur-md');
+        }
+
+        function closeGallery() {
+            const modal = document.getElementById('gallery-modal');
+
+            // Add fade-out effect
+            modal.style.opacity = '0';
+
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 300);
+
+            document.body.style.overflow = 'auto';
+
+            // Remove blur effect from main content
+            document.querySelector('main').classList.remove('blur-md');
+        }
+
+        function navigateGallery(direction) {
+            currentImageIndex += direction;
+
+            // Loop through images
+            if (currentImageIndex >= galleryImages.length) {
+                currentImageIndex = 0;
+            } else if (currentImageIndex < 0) {
+                currentImageIndex = galleryImages.length - 1;
+            }
+
+            updateGalleryImage();
+        }
+
+        function updateGalleryImage() {
+            const image = document.getElementById('gallery-image');
+            const counter = document.getElementById('image-counter');
+
+            // Fade out
+            image.style.opacity = '0';
+
+            setTimeout(() => {
+                image.src = galleryImages[currentImageIndex].src;
+                image.alt = galleryImages[currentImageIndex].alt;
+                counter.textContent = `${currentImageIndex + 1} / ${galleryImages.length}`;
+
+                // Fade in
+                image.style.opacity = '1';
+            }, 200);
+        }
+
+        // ========== KEYBOARD NAVIGATION ==========
+        document.addEventListener('keydown', (e) => {
+            const modal = document.getElementById('gallery-modal');
+            if (!modal.classList.contains('hidden')) {
+                if (e.key === 'Escape') closeGallery();
+                if (e.key === 'ArrowLeft') navigateGallery(-1);
+                if (e.key === 'ArrowRight') navigateGallery(1);
+            }
+        });
+
+        // ========== GALLERY ANIMATION ==========
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add animation styles
+            const style = document.createElement('style');
+            style.textContent = `
+                .gallery-item {
+                    animation: fadeInUp 0.6s ease-out;
+                }
+                
+                .gallery-item:nth-child(2) {
+                    animation-delay: 0.2s;
+                }
+                
+                @keyframes fadeInUp {
+                    from {
+                        opacity: 0;
+                        transform: translateY(30px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+                
+                #gallery-image {
+                    transition: opacity 0.3s ease-in-out;
+                }
+                
+                #gallery-modal {
+                    transition: opacity 0.3s ease-in-out;
+                }
+                
+                @media (max-width: 768px) {
+                    .gallery-item img {
+                        max-height: 300px;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+
+        // ========== MODAL FUNCTIONS (if needed) ==========
+        function openModal(imageSrc) {
+            // Add modal functionality if needed
+        }
+
+        function closeModal() {
+            // Add modal functionality if needed
+        }
+
+        // ========== LOAD NAVBAR ==========
+        function loadNavbar() {
+            const navContainer = document.getElementById('navbar-container');
+            if (navContainer) {
+                fetch('components/navbar')
+                    .then(response => {
+                        if (!response.ok) throw new Error('Navbar not found');
+                        return response.text();
+                    })
+                    .then(html => {
+                        navContainer.innerHTML = html;
+                        setTimeout(initializeMobileMenu, 100);
+                    })
+                    .catch(error => {
+                        console.error('Error loading navbar:', error);
+                        // Fallback navbar
+                        navContainer.innerHTML = `
+                            <header class="bg-white shadow-md sticky top-0 z-50 w-full">
+                                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                                    <div class="flex justify-between items-center py-4">
+                                        <a href="index" class="text-xl sm:text-2xl font-bold text-blue-900">
+                                            GERMANTEN <span class="text-blue-600">HOSPITALS</span>
+                                        </a>
+                                        <button id="mobile-menu-button" class="md:hidden w-12 h-12 flex items-center justify-center text-2xl text-gray-700 hover:bg-gray-100 rounded-lg transition">
+                                            <i class="fas fa-bars"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200 px-4 py-4 shadow-lg">
+                                    <div class="space-y-2">
+                                        <a href="index" class="block py-3 px-4 text-gray-700 hover:bg-blue-50 rounded-lg">Home</a>
+                                        <div class="mobile-dropdown">
+                                            <button onclick="toggleMobileDropdown('about')" class="w-full flex items-center justify-between py-3 px-4 text-gray-700 hover:bg-blue-50 rounded-lg">
+                                                <span>About Us</span>
+                                                <i class="fas fa-chevron-down text-xs" id="about-chevron"></i>
+                                            </button>
+                                            <div id="about-dropdown" class="hidden pl-6 mt-1">
+                                                <a href="/infrastructure" class="block py-3 px-4 text-gray-600 hover:bg-blue-50">Infrastructure</a>
+                                                <a href="research" class="block py-3 px-4 text-gray-600 hover:bg-blue-50">Research</a>
+                                            </div>
+                                        </div>
+                                        <a href="/contact" class="block py-3 px-4 text-gray-700 hover:bg-blue-50 rounded-lg">Contact</a>
+                                    </div>
+                                </div>
+                            </header>
+                        `;
+                        initializeMobileMenu();
+                    });
+            }
+        }
+
+        // ========== LOAD FOOTER ==========
+        function loadFooter() {
+            const footerDiv = document.getElementById('footer-container');
+            if (footerDiv) {
+                fetch('components/footer')
+                    .then(response => {
+                        if (!response.ok) throw new Error('Footer not found');
+                        return response.text();
+                    })
+                    .then(html => {
+                        footerDiv.innerHTML = html;
+                    })
+                    .catch(error => {
+                        console.error('Error loading footer:', error);
+                        // Responsive fallback footer
+                        footerDiv.innerHTML = `
+                            <footer class="bg-gray-900 text-gray-300 pt-8 md:pt-12 lg:pt-16 pb-4 md:pb-6 lg:pb-8 mt-8 md:mt-12">
+                                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-center md:text-left">
+                                        <div>
+                                            <h3 class="text-white font-bold text-lg md:text-xl mb-3 md:mb-4">Germanten Hospital</h3>
+                                            <p class="text-sm md:text-base">Excellence in healthcare</p>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-white font-semibold mb-3 md:mb-4">Quick Links</h4>
+                                            <ul class="space-y-2 text-sm">
+                                                <li><a href="#" class="hover:text-white transition">About Us</a></li>
+                                                <li><a href="#" class="hover:text-white transition">Contact</a></li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-white font-semibold mb-3 md:mb-4">Contact</h4>
+                                            <p class="text-sm">info@germantenhospital.com</p>
+                                        </div>
+                                    </div>
+                                    <div class="border-t border-gray-800 mt-6 md:mt-8 pt-4 md:pt-6 text-center text-xs md:text-sm">
+                                        <p>© 2025 Germanten Hospitals. All rights reserved.</p>
+                                    </div>
+                                </div>
+                            </footer>
+                        `;
+                    });
+            }
+        }
+
+        // ========== MOBILE MENU FUNCTIONALITY ==========
+        function initializeMobileMenu() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuButton && mobileMenu) {
+                // Remove existing listeners
+                const newButton = mobileMenuButton.cloneNode(true);
+                mobileMenuButton.parentNode.replaceChild(newButton, mobileMenuButton);
+
+                newButton.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    mobileMenu.classList.toggle('hidden');
+
+                    // Toggle icon
+                    const icon = newButton.querySelector('i');
+                    if (icon) {
+                        if (mobileMenu.classList.contains('hidden')) {
+                            icon.className = 'fas fa-bars';
+                            document.body.classList.remove('mobile-menu-open');
+                        } else {
+                            icon.className = 'fas fa-times';
+                            document.body.classList.add('mobile-menu-open');
+                        }
+                    }
+                });
+
+                // Close on link click
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                        document.body.classList.remove('mobile-menu-open');
+                        const icon = newButton.querySelector('i');
+                        if (icon) icon.className = 'fas fa-bars';
+                    });
+                });
+
+                // Close on outside click
+                document.addEventListener('click', (e) => {
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden') &&
+                        !mobileMenu.contains(e.target) && !newButton.contains(e.target)) {
+                        mobileMenu.classList.add('hidden');
+                        document.body.classList.remove('mobile-menu-open');
+                        const icon = newButton.querySelector('i');
+                        if (icon) icon.className = 'fas fa-bars';
+                    }
+                });
+            }
+        }
+
+        // ========== MOBILE DROPDOWN TOGGLE ==========
+        window.toggleMobileDropdown = function (dropdownId) {
+            const dropdown = document.getElementById(dropdownId + '-dropdown');
+            const button = event.currentTarget;
+            const chevron = button.querySelector('i');
+
+            if (dropdown) {
+                // Close all other dropdowns
+                document.querySelectorAll('[id$="-dropdown"]').forEach(d => {
+                    if (d.id !== dropdownId + '-dropdown' && !d.classList.contains('hidden')) {
+                        d.classList.add('hidden');
+                        const otherBtn = d.previousElementSibling;
+                        if (otherBtn) {
+                            const otherChevron = otherBtn.querySelector('i');
+                            if (otherChevron) otherChevron.style.transform = 'rotate(0deg)';
+                        }
+                    }
+                });
+
+                // Toggle current dropdown
+                if (dropdown.classList.contains('hidden')) {
+                    dropdown.classList.remove('hidden');
+                    if (chevron) chevron.style.transform = 'rotate(180deg)';
+                } else {
+                    dropdown.classList.add('hidden');
+                    if (chevron) chevron.style.transform = 'rotate(0deg)';
+                }
+            }
+        };
+
+        // ========== RESPONSIVE IMAGE HANDLING ==========
+        function handleResponsiveImages() {
+            const heroImage = document.querySelector('.hero-image');
+            if (heroImage) {
+                // Add resize listener for responsive behavior
+                window.addEventListener('resize', () => {
+                    // Force reflow if needed
+                    heroImage.style.height = 'auto';
+                });
+            }
+        }
+
+        // ========== INITIALIZE EVERYTHING ==========
+        window.addEventListener('DOMContentLoaded', () => {
+            loadNavbar();
+            loadFooter();
+            handleResponsiveImages();
+        });
+
+        // Handle escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const mobileMenu = document.getElementById('mobile-menu');
+                const mobileMenuButton = document.getElementById('mobile-menu-button');
+                if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    document.body.classList.remove('mobile-menu-open');
+                    if (mobileMenuButton) {
+                        const icon = mobileMenuButton.querySelector('i');
+                        if (icon) icon.className = 'fas fa-bars';
+                    }
+                }
+            }
+        });
+
+        // ========== AWARDS CAROUSEL FUNCTIONALITY ==========
+        const awardsImages = [
+            // Original Awards (1-28)
+            'Images/Home-Page-Images/Award1.webp',
+            'Images/Home-Page-Images/Award2.webp',
+            'Images/Home-Page-Images/Award3.webp',
+            'Images/Home-Page-Images/Award4.webp',
+            'Images/Home-Page-Images/Award5.webp',
+            'Images/Home-Page-Images/Award6.webp',
+            'Images/Home-Page-Images/Award7.webp',
+            'Images/Home-Page-Images/Award8.jpg',
+            'Images/Home-Page-Images/Award9.webp',
+            'Images/Home-Page-Images/Award10.webp',
+            'Images/Home-Page-Images/Award11.webp',
+            'Images/Home-Page-Images/Award12.webp',
+            'Images/Home-Page-Images/Award13.webp',
+            'Images/Home-Page-Images/Award14.webp',
+            'Images/Home-Page-Images/Award15.webp',
+            'Images/Home-Page-Images/Award16.webp',
+            'Images/Home-Page-Images/Award17.webp',
+            'Images/Home-Page-Images/Award18.webp',
+            'Images/Home-Page-Images/award19.webp',
+            'Images/Home-Page-Images/Award20.webp',
+            'Images/Home-Page-Images/Award21.webp',
+            'Images/Home-Page-Images/Award22.webp',
+            'Images/Home-Page-Images/Award23.webp',
+            'Images/Home-Page-Images/Award24.webp',
+            'Images/Home-Page-Images/Award25.webp',
+            'Images/Home-Page-Images/Award26.webp',
+            'Images/Home-Page-Images/Award27.webp',
+            'Images/Home-Page-Images/Award28.jpg',
+            'Images/Home-Page-Images/Award29.webp',
+            // News Awards Images (30-63)
+            'Images/AboutUs-page-Images/News-Awards/Image1.webp',
+            'Images/AboutUs-page-Images/News-Awards/image2.webp',
+            'Images/AboutUs-page-Images/News-Awards/image3.webp',
+            'Images/AboutUs-page-Images/News-Awards/image4.webp',
+            'Images/AboutUs-page-Images/News-Awards/image5.webp',
+            'Images/AboutUs-page-Images/News-Awards/image6.webp',
+            'Images/AboutUs-page-Images/News-Awards/image7.webp',
+            'Images/AboutUs-page-Images/News-Awards/image8.webp',
+            'Images/AboutUs-page-Images/News-Awards/image9.webp',
+            'Images/AboutUs-page-Images/News-Awards/image10.webp',
+            'Images/AboutUs-page-Images/News-Awards/image11.webp',
+            'Images/AboutUs-page-Images/News-Awards/image12.webp',
+            'Images/AboutUs-page-Images/News-Awards/image13.webp',
+            'Images/AboutUs-page-Images/News-Awards/image14.webp',
+            'Images/AboutUs-page-Images/News-Awards/image15.webp',
+            'Images/AboutUs-page-Images/News-Awards/image16.webp',
+            'Images/AboutUs-page-Images/News-Awards/image17.jpg',
+            'Images/AboutUs-page-Images/News-Awards/image18.jpg',
+            'Images/AboutUs-page-Images/News-Awards/image19.webp',
+            'Images/AboutUs-page-Images/News-Awards/image20.webp',
+            'Images/AboutUs-page-Images/News-Awards/image21.webp',
+            'Images/AboutUs-page-Images/News-Awards/image22.webp',
+            'Images/AboutUs-page-Images/News-Awards/image23.webp',
+            'Images/AboutUs-page-Images/News-Awards/image24.webp',
+            'Images/AboutUs-page-Images/News-Awards/image25.webp',
+            'Images/AboutUs-page-Images/News-Awards/image26.jpg',
+            'Images/AboutUs-page-Images/News-Awards/image27.webp',
+            'Images/AboutUs-page-Images/News-Awards/image28.webp',
+            'Images/AboutUs-page-Images/News-Awards/image29.webp',
+            'Images/AboutUs-page-Images/News-Awards/image30.webp',
+            'Images/AboutUs-page-Images/News-Awards/image31.webp',
+            'Images/AboutUs-page-Images/News-Awards/image32.webp',
+            'Images/AboutUs-page-Images/News-Awards/image33.webp',
+            'Images/AboutUs-page-Images/News-Awards/image34.webp'
+        ];
+
+        let currentAwardIndex = 0;
+
+        function openAwardsModal(awardNumber) {
+            currentAwardIndex = awardNumber - 1; // Convert to 0-based index
+            updateAwardsImage();
+            const modal = document.getElementById('awards-modal');
+
+            // Add fade-in effect
+            modal.classList.remove('hidden');
+            modal.style.opacity = '0';
+            modal.classList.add('flex');
+
+            setTimeout(() => {
+                modal.style.opacity = '1';
+                modal.style.transition = 'opacity 0.3s ease-in-out';
+            }, 10);
+
+            document.body.style.overflow = 'hidden';
+
+            // Add blur to main content
+            const mainContent = document.querySelector('main');
+            if (mainContent) {
+                mainContent.style.filter = 'blur(8px)';
+                mainContent.style.transition = 'filter 0.3s ease-in-out';
+            }
+        }
+
+        function closeAwardsModal() {
+            const modal = document.getElementById('awards-modal');
+
+            // Add fade-out effect
+            modal.style.opacity = '0';
+
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 300);
+
+            document.body.style.overflow = 'auto';
+
+            // Remove blur from main content
+            const mainContent = document.querySelector('main');
+            if (mainContent) {
+                mainContent.style.filter = 'none';
+            }
+        }
+
+        function navigateAwards(direction) {
+            currentAwardIndex += direction;
+
+            // Loop through images
+            if (currentAwardIndex >= awardsImages.length) {
+                currentAwardIndex = 0;
+            } else if (currentAwardIndex < 0) {
+                currentAwardIndex = awardsImages.length - 1;
+            }
+
+            updateAwardsImage();
+        }
+
+        function updateAwardsImage() {
+            const image = document.getElementById('awards-image');
+            const counter = document.getElementById('awards-counter');
+
+            // Fade out
+            image.style.opacity = '0';
+
+            setTimeout(() => {
+                image.src = awardsImages[currentAwardIndex];
+                image.alt = `Award ${currentAwardIndex + 1}`;
+                counter.textContent = `${currentAwardIndex + 1} / ${awardsImages.length}`;
+
+                // Fade in
+                image.style.opacity = '1';
+            }, 200);
+        }
+
+        // Keyboard navigation for awards modal
+        document.addEventListener('keydown', (e) => {
+            const modal = document.getElementById('awards-modal');
+            if (!modal.classList.contains('hidden')) {
+                if (e.key === 'Escape') closeAwardsModal();
+                if (e.key === 'ArrowLeft') navigateAwards(-1);
+                if (e.key === 'ArrowRight') navigateAwards(1);
+            }
+        });
+
+        // Add transition styles for awards modal
+        document.addEventListener('DOMContentLoaded', () => {
+            const style = document.createElement('style');
+            style.textContent = `
+                #awards-image {
+                    transition: opacity 0.3s ease-in-out;
+                }
+                
+                #awards-modal {
+                    transition: opacity 0.3s ease-in-out;
+                }
+            `;
+            document.head.appendChild(style);
+        });
+
+        // Scroll Progress Bar Functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollProgressBar = document.getElementById('scrollProgressBar');
+
+            // Update scroll progress
+            function updateScrollProgress() {
+                const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrollPercentage = (scrollTop / scrollHeight) * 100;
+
+                // Update progress bar width
+                scrollProgressBar.style.width = scrollPercentage + '%';
+
+                // Show/hide progress bar based on scroll position
+                if (scrollTop > 100) {
+                    scrollProgress.classList.remove('hidden');
+                } else {
+                    scrollProgress.classList.add('hidden');
+                }
+            }
+
+            // Throttle function for performance
+            function throttle(func, limit) {
+                let inThrottle;
+                return function () {
+                    const args = arguments;
+                    const context = this;
+                    if (!inThrottle) {
+                        func.apply(context, args);
+                        inThrottle = true;
+                        setTimeout(() => inThrottle = false, limit);
+                    }
+                }
+            }
+
+            // Add scroll event listener with throttling
+            window.addEventListener('scroll', throttle(updateScrollProgress, 10));
+
+            // Initial update
+            updateScrollProgress();
+
+            // Smooth scroll to top when progress bar is clicked
+            scrollProgress.addEventListener('click', function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Add hover effect for progress bar
+            scrollProgress.addEventListener('mouseenter', function () {
+                scrollProgressBar.style.boxShadow = '0 0 20px rgba(202, 138, 4, 0.8)';
+            });
+
+            scrollProgress.addEventListener('mouseleave', function () {
+                scrollProgressBar.style.boxShadow = '0 0 10px rgba(202, 138, 4, 0.5)';
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <meta name="google-site-verification" content="gyGSLLzdQLlIEsLrhnGzWjOoQDhyTo8sxocDXKNkG7w" />    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>International Patients Relation - Germanten Hospital</title>
+    <meta name="description" content="Comprehensive international patient services at Germanten Hospitals. Expert care for all your internal health needs.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+       <link rel="icon" type="image/webp" href="Images/GERMANTANLOGO.webp">
+       <link rel="canonical" href="https://drjawadortho.com/international-patients-relation">
+       <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <style>
+        /* Scroll Progress Bar Styles */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.2);
+            z-index: 9999;
+            transition: opacity 0.3s ease;
+        }
+
+        .scroll-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #ff4d01 0%, #eab308 50%, #facc15 100%);
+            border-radius: 0 1px 1px 0;
+            transition: width 0.1s ease-out;
+            box-shadow: 0 0 10px rgba(202, 138, 4, 0.5);
+        }
+
+
+        .scroll-progress.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* Responsive hero section */
+        .hero-international {
+            height: 60vh !important;
+            min-height: 400px;
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-international {
+                height: 50vh !important;
+                min-height: 350px;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .hero-international {
+                height: 40vh !important;
+                min-height: 300px;
+            }
+        }
+        
+        .hero-overlay-text {
+            background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+        }
+        
+        /* breadcrumb modern style */
+        .breadcrumb-glass {
+            background: rgba(255,255,255,0.75);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 60px;
+            padding: 8px 20px;
+            display: inline-block;
+            border: 1px solid rgba(255,255,255,0.6);
+            box-shadow: 0 10px 25px -8px rgba(0,0,0,0.2);
+        }
+        
+        /* Responsive card styles */
+        .service-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: #dc2626;
+        }
+        
+        /* Responsive typography */
+        @media (max-width: 640px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            h3 { font-size: 1.25rem; }
+        }
+        
+        /* Desktop hero section positioning */
+        @media (min-width: 769px) {
+            .hero-desktop-fix {
+                padding-top: 100px; /* Account for navbar and top bar on desktop */
+            }
+        }
+        
+        /* Responsive spacing */
+        @media (max-width: 640px) {
+            .section-padding { padding: 3rem 1rem !important; }
+            .card-padding { padding: 1.5rem !important; }
+        }
+    </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B7BXJEHXWK"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-B7BXJEHXWK');
+</script>
+
+</head>
+<body class="bg-gray-50">
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress">
+        <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+    </div>
+
+    <!-- Navbar Component placeholder -->
+    <div id="navbar-container" class="shadow-sm"></div>
+
+    <!-- ===== HERO SECTION ===== -->
+      <section class="relative w-full overflow-hidden hero-desktop-fix">
+        <!-- Hero Image with Bottom Border Only -->
+        <div class="border-b-4 border-red-700 relative">
+            <img src="Images/Patient-Info/PatientRealation.webp" 
+                 alt="Patient Relation" 
+                 class="w-full h-56 sm:h-64 md:h-72 lg:h-96 xl:h-[28rem] 2xl:h-[70vh] object-cover block lg:translate-y-4 lg:pt-10 pt-5">
+            
+            <!-- Light Black Overlay Effect -->
+            <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/25 to-black/30 pointer-events-none"></div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb below hero image in left corner -->
+    <div class="bg-soft-light py-4 px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center space-x-2 text-sm text-gray-600">
+            <a href="#" class="hover:text-blue-700 transition-colors duration-300">Patient Info</a>
+            <i class="fa-solid fa-chevron-right text-xs text-blue-600"></i>
+            <span class="text-blue-800 font-semibold">International Patients Relation</span>
+        </div>
+    </div>
+
+    <!-- International Patients Relations Section -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 px-4 py-2 border-2 border-transparent bg-gradient-to-r from-yellow-400 to-red-600 bg-clip-text text-transparent">International Patients Relations</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto text-lg text-justify">Real stories from our international patients who experienced world-class healthcare at Germanten Hospital</p>
+            </div>
+
+            <!-- Patient Stories Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <!-- Patient 1: Mr Abdul Ali -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-gradient-to-r hover:from-yellow-400 hover:to-red-600">
+                    <div class="relative">
+                        <img src="https://img.youtube.com/vi/n87nDU8z6BY/hqdefault.jpg" 
+                             alt="Mr Abdul Ali ACL Reconstruction" 
+                             class="w-full h-48 object-cover">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <a href="https://youtu.be/n87nDU8z6BY" target="_blank" 
+                               class="bg-red-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-colors duration-300">
+                                <i class="fas fa-play mr-2"></i>Watch Video
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Mr. Abdul Ali, From Kenya</h3>
+                        <p class="text-gray-600 mb-4 text-justify">ACL Reconstruction Surgery by Dr Mir Jawad Zar Khan. Watch video here for patient experience at Germanten Hospital.</p>
+                        <a href="https://youtu.be/n87nDU8z6BY" target="_blank" 
+                           class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold transition-colors duration-300">
+                            Watch Full Story <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Patient 2: Mr. Ibrahim -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-gradient-to-r hover:from-yellow-400 hover:to-red-600">
+                    <div class="relative">
+                        <img src="https://img.youtube.com/vi/OiS_OJy9jpU/hqdefault.jpg" 
+                             alt="Mr Ibrahim ACL Surgery" 
+                             class="w-full h-48 object-cover">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <a href="https://youtu.be/OiS_OJy9jpU" target="_blank" 
+                               class="bg-red-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-colors duration-300">
+                                <i class="fas fa-play mr-2"></i>Watch Video
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Mr. Ibrahim, 25 years old from Dubai</h3>
+                        <p class="text-gray-600 mb-4 text-justify">Foot ball player. ACL surgery done at Germanten Hospital. Watch here patient testimonial video.</p>
+                        <a href="https://youtu.be/OiS_OJy9jpU" target="_blank" 
+                           class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold transition-colors duration-300">
+                            Watch Full Story <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Patient 3: Patient from Africa -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-gradient-to-r hover:from-yellow-400 hover:to-red-600">
+                    <div class="relative">
+                        <img src="https://img.youtube.com/vi/OEPHOu5JfEo/hqdefault.jpg" 
+                             alt="Patient from Africa Hip Replacement" 
+                             class="w-full h-48 object-cover">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <a href="https://youtu.be/OEPHOu5JfEo" target="_blank" 
+                               class="bg-red-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-colors duration-300">
+                                <i class="fas fa-play mr-2"></i>Watch Video
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Patient from Africa</h3>
+                        <p class="text-gray-600 mb-4 text-justify">Sharing his Experience after Total Hip Replacement Surgery at Germanten Hospital Hyderabad, India.</p>
+                        <a href="https://youtu.be/OEPHOu5JfEo" target="_blank" 
+                           class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold transition-colors duration-300">
+                            Watch Full Story <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Our Specialities Section -->        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 px-4 py-2 border-2 border-transparent bg-gradient-to-r from-yellow-400 to-red-600 bg-clip-text text-transparent">Our Specialities</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-yellow-400 to-red-600 mx-auto rounded-full mb-6"></div>
+            </div>
+
+            <!-- Main Content with Image -->
+            <div class="grid lg:grid-cols-2 gap-12 items-start mb-16">
+                <!-- Left: Image -->
+                <div class="order-2 lg:order-1">
+                    <img src="Images/Patient-Info/ourspecialities.webp" 
+                         alt="Our Specialities" 
+                         class="w-full rounded-2xl shadow-xl">
+                </div>
+
+                <!-- Right: Content -->
+                <div class="order-1 lg:order-2">
+                    <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-red-600">
+                        <div class="space-y-4">
+                            <p class="text-gray-700 leading-relaxed text-lg text-justify">
+                                Our Orthopaedic Specialty Centre offers its overseas patients world-class treatment, personalized attention, and a comfortable stay.
+                            </p>
+                            <p class="text-gray-700 leading-relaxed text-justify">
+                                Patients can email us about their medical condition, along with the investigation reports. Based on the transaction, we can arrive at a likely diagnosis and treatment and suggest a travel itinerary. A fully furnished Guest House near our hospital is available for patients and attendants. If needed, local transportation can also be arranged by our travel desk.
+                            </p>
+                            <p class="text-gray-700 leading-relaxed text-justify">
+                                Overseas patients are assisted by our Public Relations Executive for doctor's consults, lab, radiology reports, follow-ups and appointments, to enable hassle-free procedures.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WE PROVIDE Section -->
+            <div class="mb-16">
+                <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+                    <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-6 text-center">We Provide</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <i class="fas fa-plane text-red-600 text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2">Airport Assistance</h4>
+                                    <p class="text-gray-600 text-justify">A special team is available to meet the patient (if required). From the moment he/she lands at our Shamshabad Airport, we ensure patients reach our hospital safely</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <i class="fas fa-phone text-blue-600 text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2">Communication Facilities</h4>
+                                    <p class="text-gray-600 text-justify">All communication facilities, like telephone, fax, and Internet are available for easy access to patients across the Globe</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <i class="fas fa-bed text-green-600 text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2">Accommodation</h4>
+                                    <p class="text-gray-600 text-justify">Air-conditioned Deluxe Rooms and other rooms are available with telephone, television, and other essential amenities</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <i class="fas fa-users text-yellow-600 text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2">Staff & Environment</h4>
+                                    <p class="text-gray-600 text-justify">A wonderful ambience and friendly hospitable staff to assist for speedy recovery</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <i class="fas fa-credit-card text-purple-600 text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2">Payment Options</h4>
+                                    <p class="text-gray-600 text-justify">All major credit cards are accepted. We also have a currency exchange desk to convert foreign currency to Indian Rupees. We help with visa formalities, ticket booking etc.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div class="bg-gradient-to-r from-blue-50 to-red-50 rounded-xl p-6">
+                                <h4 class="font-semibold text-gray-800 mb-4 text-xl">OVERSEAS PATIENTS AT OUR HOSPITAL</h4>
+                                <p class="text-gray-700 mb-4 text-justify">
+                                    We frequently provide treatment for patients from Middle East and South East Asian countries including NRIs.
+                                </p>
+                                <p class="text-gray-700 mb-4 text-justify">
+                                    The number of overseas patients being treated at our hospital has risen steadily due to the following reasons.
+                                </p>
+                                <ul class="space-y-2 text-gray-700">
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-check text-green-600 mt-1 flex-shrink-0"></i>
+                                        <span>Top notch Health Care System and Practices</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-check text-green-600 mt-1 flex-shrink-0"></i>
+                                        <span>German based latest precision technology for joint replacement, Sports Injuries, Spine Surgeries</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-check text-green-600 mt-1 flex-shrink-0"></i>
+                                        <span>Reliable medical reports</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-check text-green-600 mt-1 flex-shrink-0"></i>
+                                        <span>Proper maintenance and confidentiality of patient records</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-check text-green-600 mt-1 flex-shrink-0"></i>
+                                        <span>Clean and serene atmosphere</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-check text-green-600 mt-1 flex-shrink-0"></i>
+                                        <span>NABH accreditation international standards</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-check text-green-600 mt-1 flex-shrink-0"></i>
+                                        <span>Competitive rates</span>
+                                    </li>
+                                </ul>
+                                <p class="text-gray-700 mt-4 font-medium text-justify">
+                                    Recently, we have had patients from many countries like Maldives, Sri Lanka, UAE, Oman, USA, United Kingdom, Germany, Malaysia, Bahrain, Qatar, South Africa, Nigeria, France, Ghana, Bangladesh, Kuwait, Australia, Singapore, and Dubai.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROCEDURE Section -->
+            <div class="mb-16">
+                <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+                    <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-8 text-center">Procedure</h3>
+                    
+                    <div class="space-y-6">
+                        <!-- Step 1 -->
+                        <div class="flex items-start space-x-6 p-6 bg-gray-50 rounded-lg border-l-4 border-blue-600">
+                            <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">
+                                1
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 text-lg mb-2">Patients History and Reports</h4>
+                                <p class="text-gray-700 text-justify">Patients History and previous reports to be sent to us on e-mail</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="flex items-start space-x-6 p-6 bg-gray-50 rounded-lg border-l-4 border-green-600">
+                            <div class="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">
+                                2
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 text-lg mb-2">Doctor Review</h4>
+                                <p class="text-gray-700 text-justify">Our doctors will go through the reports and get in touch with you</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="flex items-start space-x-6 p-6 bg-gray-50 rounded-lg border-l-4 border-yellow-600">
+                            <div class="w-12 h-12 bg-yellow-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">
+                                3
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 text-lg mb-2">Consultation</h4>
+                                <p class="text-gray-700 text-justify">If needed, a skype consultation or live chat, with our doctor, can be arranged to understand your medical status</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="flex items-start space-x-6 p-6 bg-gray-50 rounded-lg border-l-4 border-red-600">
+                            <div class="w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">
+                                4
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 text-lg mb-2">Customized Packages</h4>
+                                <p class="text-gray-700 text-justify">Customised packages will be worked out, while taking price and short stay in consideration</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 5 -->
+                        <div class="flex items-start space-x-6 p-6 bg-gray-50 rounded-lg border-l-4 border-purple-600">
+                            <div class="w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">
+                                5
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 text-lg mb-2">Visa Documentation</h4>
+                                <p class="text-gray-700 text-justify">Passport copies of the patient and attendant to be sent for medical visa invitation letter (in case of International patients)</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 6 -->
+                        <div class="flex items-start space-x-6 p-6 bg-gray-50 rounded-lg border-l-4 border-indigo-600">
+                            <div class="w-12 h-12 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">
+                                6
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 text-lg mb-2">Visa Assistance</h4>
+                                <p class="text-gray-700 text-justify">Visa assistance will be provided by our team (in case of International Patients)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional Services -->
+                    <div class="mt-12 grid md:grid-cols-2 gap-8">
+                        <div class="bg-gray-50 rounded-lg p-6 border-l-4 border-gray-400">
+                            <h4 class="font-semibold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-car text-gray-600 mr-2"></i>
+                                Transportation & Travel
+                            </h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start space-x-2">
+                                    <i class="fas fa-check text-gray-600 mt-1 flex-shrink-0"></i>
+                                    <span>Free Transfer (Pick-up/Drop) Facility from airport, railway station, state transport stand</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <i class="fas fa-check text-gray-600 mt-1 flex-shrink-0"></i>
+                                    <span>Travel assistance for best flight routes. In case of emergencies, Air-Ambulance is available on request</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <i class="fas fa-check text-gray-600 mt-1 flex-shrink-0"></i>
+                                    <span>Complete assistance for hotel reservations</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-gray-50 rounded-lg p-6 border-l-4 border-gray-400">
+                            <h4 class="font-semibold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-hospital text-gray-600 mr-2"></i>
+                                Hospital Services
+                            </h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start space-x-2">
+                                    <i class="fas fa-check text-gray-600 mt-1 flex-shrink-0"></i>
+                                    <span>Hassle-free hospital stay from admission to discharge</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <i class="fas fa-check text-gray-600 mt-1 flex-shrink-0"></i>
+                                    <span>Language interpretation services available</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <i class="fas fa-check text-gray-600 mt-1 flex-shrink-0"></i>
+                                    <span>Multicuisine diet and International channels are available as part of our package</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-gray-50 rounded-lg p-6 border-l-4 border-gray-400">
+                            <h4 class="font-semibold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-globe text-gray-600 mr-2"></i>
+                                International Support
+                            </h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start space-x-2">
+                                    <i class="fas fa-check text-gray-600 mt-1 flex-shrink-0"></i>
+                                    <span>Assistance offered by our International Relations Desk</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <i class="fas fa-check text-gray-600 mt-1 flex-shrink-0"></i>
+                                    <span>Mediclaim insurance/TPA & corporate tie-ups with leading companies can be availed</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <i class="fas fa-check text-gray-600 mt-1 flex-shrink-0"></i>
+                                    <span>Hassle-free payment options</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-gray-50 rounded-lg p-6 border-l-4 border-gray-400">
+                            <h4 class="font-semibold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-user-tie text-gray-600 mr-2"></i>
+                                International Doctors
+                            </h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start space-x-2">
+                                    <i class="fas fa-check text-gray-600 mt-1 flex-shrink-0"></i>
+                                    <span>International Doctors visiting on regular basis to our Hospital</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <i class="fas fa-check text-gray-600 mt-1 flex-shrink-0"></i>
+                                    <span>Visiting Dates published in advance on our website</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <i class="fas fa-check text-gray-600 mt-1 flex-shrink-0"></i>
+                                    <span>Available to International patients as well as Local patients</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 border-l-4 border-gray-400">
+                <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center">Contact Our International Team</h3>
+                <div class="max-w-3xl mx-auto text-center">
+                    <p class="text-gray-700 text-lg mb-8 text-justify">
+International Doctors will be visiting on Regular basis to our Hospital, their expertise can be found on our website. We will in advance publish the Visiting Dates of International doctors for patients who are willing to get treated by our International Doctors Team.
+
+This facility is available to International patient as well as Local patients. We will assign a relationship manager to every patient to ease your process. Patients can mail us at <span style="color: #dc2626;">mjzk5565@gmail.com</span> for International doctor’s Appointments.                    </p>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+
+    <!-- Scroll Progress Bar JavaScript -->
+    <script>
+        // Scroll Progress Bar Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollProgressBar = document.getElementById('scrollProgressBar');
+            
+            // Update scroll progress
+            function updateScrollProgress() {
+                const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrollPercentage = (scrollTop / scrollHeight) * 100;
+                
+                // Update progress bar width
+                scrollProgressBar.style.width = scrollPercentage + '%';
+                
+                // Show/hide progress bar based on scroll position
+                if (scrollTop > 100) {
+                    scrollProgress.classList.remove('hidden');
+                } else {
+                    scrollProgress.classList.add('hidden');
+                }
+            }
+            
+            // Throttle function for performance
+            function throttle(func, limit) {
+                let inThrottle;
+                return function() {
+                    const args = arguments;
+                    const context = this;
+                    if (!inThrottle) {
+                        func.apply(context, args);
+                        inThrottle = true;
+                        setTimeout(() => inThrottle = false, limit);
+                    }
+                }
+            }
+            
+            // Add scroll event listener with throttling
+            window.addEventListener('scroll', throttle(updateScrollProgress, 10));
+            
+            // Initial update
+            updateScrollProgress();
+            
+            // Smooth scroll to top when progress bar is clicked
+            scrollProgress.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Add hover effect for progress bar
+            scrollProgress.addEventListener('mouseenter', function() {
+                scrollProgressBar.style.boxShadow = '0 0 20px rgba(202, 138, 4, 0.8)';
+            });
+            
+            scrollProgress.addEventListener('mouseleave', function() {
+                scrollProgressBar.style.boxShadow = '0 0 10px rgba(202, 138, 4, 0.5)';
+            });
+        });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html>
