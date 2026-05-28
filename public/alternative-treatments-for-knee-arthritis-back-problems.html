@@ -9,7 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Alternative Treatments For Knee Arthritis & Back Problems - Germanten Hospitals</title>
-     <meta name="description" content="Explore alternative treatments for knee arthritis and back problems at Germanten Hospitals. Learn about non-surgical options, pain management, and holistic approaches to joint health.">
+    <meta name="description"
+        content="Explore alternative treatments for knee arthritis and back problems at Germanten Hospitals. Learn about non-surgical options, pain management, and holistic approaches to joint health.">
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -37,6 +38,10 @@
         gtag('config', 'G-B7BXJEHXWK');
     </script>
 
+    <!-- Apex cura web forms script start -->
+    <script src="https://suite.apexcura.com/api/public/scripts/germantenContactForm.js"></script>
+    <!-- Apex cura web forms script end -->
+
 </head>
 
 <body class="bg-gray-50">
@@ -53,7 +58,8 @@
     <!-- Hero Section -->
     <section class="relative hero-desktop-fix">
         <div class="w-full h-64 sm:h-80 md:h-96 lg:h-[450px] xl:h-[520px] 2xl:h-[600px] overflow-hidden relative">
-            <img src="../Images/Treatment/alternative-treatments-for-knee-arthritis-back-problems.webp" alt="Alternative Treatments"
+            <img src="../Images/Treatment/alternative-treatments-for-knee-arthritis-back-problems.webp"
+                alt="Alternative Treatments"
                 class="w-full h-full object-cover object-center scale-100 lg:scale-105 transition-transform duration-300">
             <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-red-950/80 to-black/70"></div>
             <div class="absolute inset-0 flex items-center justify-center">
@@ -97,7 +103,8 @@
                         <a href="/arthroscopy" class="block hover:text-gray-900">Arthroscopy &
                             Sports
                             Injuries</a>
-                        <a href="/best-spine-surgeon-in-hyderabad" class="block hover:text-gray-900">Best Spine Surgeon in
+                        <a href="/best-spine-surgeon-in-hyderabad" class="block hover:text-gray-900">Best Spine Surgeon
+                            in
                             Hyderabad</a>
                         <a href="/spine-surgical-treatment" class="block hover:text-gray-900">Spine Surgical
                             Treatment</a>
@@ -558,10 +565,10 @@
                             <div
                                 class="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch min-h-[450px] lg:min-h-[500px]">
                                 <!-- Left: Get A Quick Callback Form -->
-                                <div
-                                    class="p-6 lg:p-8 bg-gradient-to-br from-yellow-100 via-yellow-50 to-white order-2 lg:order-1 flex flex-col justify-center">
+                                <div class="p-6 lg:p-8 bg-gradient-to-br from-yellow-100 via-yellow-50 to-white order-2 lg:order-1 flex flex-col justify-center">
 
-                                    <form class="space-y-3 lg:space-y-4 max-w-md mx-auto w-full">
+                                    <form class="space-y-3 lg:space-y-4 max-w-md mx-auto w-full"
+                                        action="https://old.germantenhospitals.com/send_email.php" method="post">
                                         <h2
                                             class="text-lg lg:text-xl font-bold mb-4 lg:mb-5 text-red-700 tracking-tight flex items-center gap-2">
                                             <span class="text-xl lg:text-2xl">📞</span> Get A Quick Callback
@@ -569,28 +576,39 @@
                                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-4">
                                             <div>
                                                 <label class="block text-sm font-medium mb-2 text-gray-700">Full
-                                                    Name</label>
-                                                <input type="text" placeholder="Enter your full name"
+                                                    Name<span class="text-red-500">*</span></label>
+                                                <input type="text" id="customFirstName" name="name"
+                                                    placeholder="Enter your full name" required
                                                     class="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 focus:outline-none focus:border-red-300 transition-all">
                                             </div>
                                             <div>
                                                 <label class="block text-sm font-medium mb-2 text-gray-700">Mobile
                                                     Number</label>
-                                                <input type="tel" placeholder="Enter your mobile number"
+                                                <input type="tel" id="customPhone" name="phone" placeholder="+91"
+                                                    required
                                                     class="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 focus:outline-none focus:border-red-300 transition-all">
                                             </div>
+                                        </div>
+                                        <div style="position:absolute; left:-9999px;">
+                                            <label>Website</label>
+                                            <input type="text" name="website" value="">
                                         </div>
                                         <div>
                                             <label class="block text-sm font-medium mb-2 text-gray-700">Email
                                                 Address</label>
-                                            <input type="email" placeholder="Enter your email address"
+                                            <input type="email" id="customEmail" name="email"
+                                                placeholder="Enter your email address" required
                                                 class="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 focus:outline-none focus:border-red-300 transition-all">
                                         </div>
                                         <div>
                                             <label class="block text-sm font-medium mb-2 text-gray-700">Message</label>
-                                            <textarea rows="3 lg:rows-4" placeholder="Enter your query"
+                                            <textarea id="customMessage" name="notes" rows="3 lg:rows-4"
+                                                placeholder="Enter your query"
                                                 class="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 focus:outline-none focus:border-red-300 transition-all resize-none"></textarea>
                                         </div>
+                                        <input type="hidden" name="form_name" id="form_name" value="Appointment Form" />
+                                        <input type="hidden" name="page_link" id="page_link" />
+                                        <input type="hidden" name="source" id="source" value="web-ads" />
                                         <button type="submit"
                                             class="w-full font-semibold py-3 px-6 rounded-lg transition-all duration-300 text-base shadow-md hover:shadow-lg transform hover:scale-[1.02] bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white">
                                             ✨ Submit Appointment

@@ -29,6 +29,10 @@ gtag('js', new Date());
 gtag('config', 'G-B7BXJEHXWK');
 </script>
 
+<!-- Apex cura web forms script start -->
+    <script src="https://suite.apexcura.com/api/public/scripts/germantenContactForm.js"></script>
+    <!-- Apex cura web forms script end -->
+
 </head>
 <body class="bg-gray-50">
     <!-- Navbar Component -->    <div id="navbar-container" ></div>
@@ -313,7 +317,7 @@ gtag('config', 'G-B7BXJEHXWK');
                                 <!-- Left: Get A Quick Callback Form -->
                                 <div class="p-6 lg:p-8 bg-gradient-to-br from-yellow-100 via-yellow-50 to-white order-2 lg:order-1 flex flex-col justify-center">
 
-                                    <form class="space-y-3 lg:space-y-4 max-w-md mx-auto w-full">
+                                    <form class="space-y-3 lg:space-y-4 max-w-md mx-auto w-full" action="https://old.germantenhospitals.com/send_email.php" method="post">
                                         <h2
                                             class="text-lg lg:text-xl font-bold mb-4 lg:mb-5 text-red-700 tracking-tight flex items-center gap-2">
                                             <span class="text-xl lg:text-2xl">📞</span> Get A Quick Callback
@@ -321,28 +325,35 @@ gtag('config', 'G-B7BXJEHXWK');
                                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-4">
                                             <div>
                                                 <label class="block text-sm font-medium mb-2 text-gray-700">Full
-                                                    Name</label>
-                                                <input type="text" placeholder="Enter your full name"
+                                                    Name<span class="text-red-500">*</span></label>
+                                                <input type="text" id="customFirstName" name="name" placeholder="Enter your full name" required
                                                     class="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 focus:outline-none focus:border-red-300 transition-all">
                                             </div>
                                             <div>
                                                 <label class="block text-sm font-medium mb-2 text-gray-700">Mobile
                                                     Number</label>
-                                                <input type="tel" placeholder="Enter your mobile number"
+                                                <input type="tel" id="customPhone" name="phone" placeholder="+91" required
                                                     class="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 focus:outline-none focus:border-red-300 transition-all">
                                             </div>
+                                        </div>
+                                        <div style="position:absolute; left:-9999px;">
+                                            <label>Website</label>
+                                            <input type="text" name="website" value="">
                                         </div>
                                         <div>
                                             <label class="block text-sm font-medium mb-2 text-gray-700">Email
                                                 Address</label>
-                                            <input type="email" placeholder="Enter your email address"
+                                            <input type="email" id="customEmail" name="email" placeholder="Enter your email address" required
                                                 class="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 focus:outline-none focus:border-red-300 transition-all">
                                         </div>
                                         <div>
                                             <label class="block text-sm font-medium mb-2 text-gray-700">Message</label>
-                                            <textarea rows="3 lg:rows-4" placeholder="Enter your query"
+                                            <textarea id="customMessage" name="notes" rows="3 lg:rows-4" placeholder="Enter your query"
                                                 class="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 focus:outline-none focus:border-red-300 transition-all resize-none"></textarea>
                                         </div>
+                                        <input type="hidden" name="form_name" id="form_name" value="Appointment Form" />
+                                        <input type="hidden" name="page_link" id="page_link" />
+                                        <input type="hidden" name="source" id="source" value="web-ads" />
                                         <button type="submit"
                                             class="w-full font-semibold py-3 px-6 rounded-lg transition-all duration-300 text-base shadow-md hover:shadow-lg transform hover:scale-[1.02] bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white">
                                             ✨ Submit Appointment
