@@ -1,21 +1,21 @@
 // Load navbar component
 async function loadNavbar() {
     try {
-        // Check if we're in the treatments folder and adjust path accordingly
-        const navbarPath = window.location.pathname.includes('/treatments/') || window.location.pathname.includes('/latestnews/') || window.location.pathname.includes('/recentpost/') ? '../components/navbar.html' : 'components/navbar.html';
+        // Check if we're in the treatments, blogs, latestnews, or recentpost folder and adjust path accordingly
+        const navbarPath = window.location.pathname.includes('/treatments/') || window.location.pathname.includes('/blogs/') || window.location.pathname.includes('/latestnews/') || window.location.pathname.includes('/recentpost/') ? '../components/navbar.html' : 'components/navbar.html';
         const response = await fetch(navbarPath);
         const navbarHTML = await response.text();
         document.getElementById('navbar-container').innerHTML = navbarHTML;
 
-        // Fix paths if we're in treatments, latestnews, or recentpost folder
-        if (window.location.pathname.includes('/treatments/') || window.location.pathname.includes('/latestnews/') || window.location.pathname.includes('/recentpost/')) {
+        // Fix paths if we're in treatments, blogs, latestnews, or recentpost folder
+        if (window.location.pathname.includes('/treatments/') || window.location.pathname.includes('/blogs/') || window.location.pathname.includes('/latestnews/') || window.location.pathname.includes('/recentpost/')) {
             // Fix image paths
             const logoImg = document.querySelector('#navbar-container img[src="Images/GERMANTANLOGO.webp"]');
             if (logoImg) {
                 logoImg.src = '../Images/GERMANTANLOGO.webp';
             }
 
-            // Fix all navigation links that don't start with treatments/, latestnews/, or recentpost/
+            // Fix all navigation links that don't start with treatments/, blogs/, latestnews/, or recentpost/
             const navLinks = document.querySelectorAll('#navbar-container a[href]');
             navLinks.forEach(link => {
                 const href = link.getAttribute('href');
@@ -24,6 +24,14 @@ async function loadNavbar() {
                         if (href.startsWith('treatments/')) {
                             // If already in treatments folder, remove treatments/ prefix
                             link.href = href.replace('treatments/', '');
+                        } else {
+                            // For other links, add ../ prefix
+                            link.href = '../' + href;
+                        }
+                    } else if (window.location.pathname.includes('/blogs/')) {
+                        if (href.startsWith('blogs/')) {
+                            // If already in blogs folder, remove blogs/ prefix
+                            link.href = href.replace('blogs/', '');
                         } else {
                             // For other links, add ../ prefix
                             link.href = '../' + href;
@@ -46,14 +54,14 @@ async function loadNavbar() {
 // Load footer component
 async function loadFooter() {
     try {
-        // Check if we're in the treatments folder and adjust path accordingly
-        const footerPath = window.location.pathname.includes('/treatments/') || window.location.pathname.includes('/latestnews/') || window.location.pathname.includes('/recentpost/') ? '../components/footer.html' : 'components/footer.html';
+        // Check if we're in the treatments, blogs, latestnews, or recentpost folder and adjust path accordingly
+        const footerPath = window.location.pathname.includes('/treatments/') || window.location.pathname.includes('/blogs/') || window.location.pathname.includes('/latestnews/') || window.location.pathname.includes('/recentpost/') ? '../components/footer.html' : 'components/footer.html';
         const response = await fetch(footerPath);
         const footerHTML = await response.text();
         document.getElementById('footer-container').innerHTML = footerHTML;
 
-        // Fix paths if we're in treatments, latestnews, or recentpost folder
-        if (window.location.pathname.includes('/treatments/') || window.location.pathname.includes('/latestnews/') || window.location.pathname.includes('/recentpost/')) {
+        // Fix paths if we're in treatments, blogs, latestnews, or recentpost folder
+        if (window.location.pathname.includes('/treatments/') || window.location.pathname.includes('/blogs/') || window.location.pathname.includes('/latestnews/') || window.location.pathname.includes('/recentpost/')) {
             // Fix image paths in footer
             const footerImages = document.querySelectorAll('#footer-container img[src^="Images/"]');
             footerImages.forEach(img => {
@@ -70,6 +78,14 @@ async function loadFooter() {
                         if (href.startsWith('treatments/')) {
                             // If already in treatments folder, remove treatments/ prefix
                             link.href = href.replace('treatments/', '');
+                        } else {
+                            // For other links, add ../ prefix
+                            link.href = '../' + href;
+                        }
+                    } else if (window.location.pathname.includes('/blogs/')) {
+                        if (href.startsWith('blogs/')) {
+                            // If already in blogs folder, remove blogs/ prefix
+                            link.href = href.replace('blogs/', '');
                         } else {
                             // For other links, add ../ prefix
                             link.href = '../' + href;

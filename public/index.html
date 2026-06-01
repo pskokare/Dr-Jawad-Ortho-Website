@@ -553,7 +553,7 @@
                                 <div>
                                     <h4 class="font-semibold text-gray-900 mb-1">Record Breaking Experience</h4>
                                     <p class="text-gray-700 text-sm sm:text-base leading-relaxed">
-                                        25 years experience, 10,000+ joint replacements, arthroscopic reconstructions &
+                                        26 years experience, 10,000+ joint replacements, arthroscopic reconstructions &
                                         spine surgeries.
                                     </p>
                                 </div>
@@ -1501,7 +1501,7 @@
                 <div class="p-6 border-2 border-red-200 rounded-xl">
 
                     <p id="clinical" class="tab-content text-gray-700 leading-relaxed text-justify">
-                        Dr.Mir Jawad Zar Khan has 25 yrs Expertise. He has done Masters that is M.S (Orthopedics)
+                        Dr.Mir Jawad Zar Khan has 26 yrs Expertise. He has done Masters that is M.S (Orthopedics)
                         from Osmania University ,He was awarded best outgoing postgraduate with highest marks in
                         Telangana state, Hyderabad and M.Ch Orthopedics from Usaim, Seychelles. He has done a
                         fellowship in arthroplasty in world renowned orthopedic institute in Munich Germany where he
@@ -3347,6 +3347,26 @@
 
     <!-- Footer Component -->
     <div id="footer-container"></div>
+
+    <!-- Inline Navbar Loading - Loads immediately for faster display -->
+    <script>
+        (function() {
+            const navContainer = document.getElementById('navbar-container');
+            if (navContainer && !navContainer.innerHTML.trim()) {
+                fetch('components/navbar.html')
+                    .then(response => {
+                        if (!response.ok) throw new Error('Navbar not found');
+                        return response.text();
+                    })
+                    .then(html => {
+                        navContainer.innerHTML = html;
+                    })
+                    .catch(error => {
+                        console.error('Error loading navbar:', error);
+                    });
+            }
+        })();
+    </script>
 
     <script src="js/script.js"></script>
 </body>
