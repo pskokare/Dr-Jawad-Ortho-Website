@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+    <meta name="google-site-verification" content="gyGSLLzdQLlIEsLrhnGzWjOoQDhyTo8sxocDXKNkG7w" />    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Dr. Jawad - Germanten Health Care</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/webp" href="Images/GERMANTANLOGO.webp">
+    <link rel="canonical" href="https://drjawadortho.com/about-us">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <style>
+        /* Scroll Progress Bar Styles */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.2);
+            z-index: 9999;
+            transition: opacity 0.3s ease;
+        }
+
+        .scroll-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #ff4d01 0%, #eab308 50%, #facc15 100%);
+            border-radius: 0 1px 1px 0;
+            transition: width 0.1s ease-out;
+            box-shadow: 0 0 10px rgba(202, 138, 4, 0.5);
+        }
+
+
+        .scroll-progress.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* Responsive typography and spacing */
+        @media (max-width: 640px) {
+            .section-padding { padding: 2rem 0.75rem !important; }
+            .card-padding { padding: 1rem !important; }
+            .hero-height { height: 200px !important; min-height: 180px; }
+            .hero-title { font-size: 1.5rem !important; }
+            .hero-subtitle { font-size: 0.875rem !important; }
+            .banner-height { height: 35vh !important; min-height: 250px; }
+            .quote-text { font-size: 0.9rem !important; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr) !important; }
+            .parallax-height { height: auto !important; min-height: 600px; }
+            .vision-card { padding: 1.5rem !important; }
+            .vision-title { font-size: 1.25rem !important; }
+            .vision-text { font-size: 0.9rem !important; }
+            .faq-title { font-size: 1.75rem !important; }
+            .faq-question { font-size: 0.9rem !important; }
+            .doctor-image { width: 160px !important; height: 160px !important; }
+            .doctor-credentials { font-size: 0.8rem !important; }
+            .content-text { font-size: 0.9rem !important; }
+        }
+        
+        /* Desktop banner positioning to account for navbar and top bar */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .banner-section {
+                padding-top: 64px; /* Account for navbar height only (top bar hidden on tablet) */
+            }
+        }
+        
+        @media (min-width: 1025px) {
+            .banner-section {
+                padding-top: 40px; /* Account for both top bar (36px) and navbar (64px) */
+            }
+        }
+        
+        @media (min-width: 641px) and (max-width: 768px) {
+            .hero-height { height: 280px !important; min-height: 250px; }
+            .banner-height { height: 45vh !important; min-height: 300px; }
+            .parallax-height { height: auto !important; min-height: 500px; }
+            .doctor-image { width: 200px !important; height: 200px !important; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+        
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .banner-height { height: 50vh !important; min-height: 350px; }
+            .parallax-height { height: auto !important; min-height: 450px; }
+            .doctor-image { width: 240px !important; height: 240px !important; }
+        }
+        
+        @media (min-width: 1025px) {
+            .banner-height { height: 60vh !important; min-height: 400px; }
+            .parallax-height { height: 500px !important; }
+            .doctor-image { width: 256px !important; height: 256px !important; }
+        }
+        
+        /* Prevent horizontal scroll */
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        
+        /* Touch-friendly on mobile */
+        @media (max-width: 768px) {
+            .faq-button {
+                padding: 0.75rem 1rem !important;
+            }
+            .vision-card {
+                margin-bottom: 1rem;
+            }
+            .gallery-item img {
+                height: 120px !important;
+            }
+        }
+    </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B7BXJEHXWK"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-B7BXJEHXWK');
+</script>
+
+</head>
+
+<body class="bg-gray-50">
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress">
+        <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+    </div>
+
+    <!-- Navbar Component -->
+    <div id="navbar-container" style="height: 60px;"></div>
+
+    <!-- Header Banner with Wavy Bottom -->
+    <div class="relative w-full banner-height overflow-hidden banner-section">
+        <img src="Images/AboutUs-page-Images/AboutUsheaderbanner.webp" alt="About Dr. Jawad"
+            class="w-full h-full object-cover object-center" width="1920" height="800">
+
+        <!-- Wavy Shape at Bottom -->
+        <div class="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none">
+            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" 
+                 class="w-full h-[40px] sm:h-[60px] md:h-[80px] lg:h-[100px] xl:h-[120px] block"
+                 preserveAspectRatio="none">
+                <path
+                    d="M0,96L48,90.7C96,85,192,75,288,80C384,85,480,107,576,112C672,117,768,107,864,96C960,85,1056,75,1152,74.7C1248,75,1344,85,1392,90.7L1440,96L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"
+                    fill="#F9FAFB" />
+            </svg>
+        </div>
+    </div>
+
+    <!-- Breadcrumb Section Below Hero -->
+    <!-- Breadcrumb Section Below Hero -->
+    <div class="bg-white border-b border-gray-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-3 md:py-4">
+            <nav class="flex items-center flex-wrap gap-1 sm:gap-2 text-xs sm:text-sm" aria-label="Breadcrumb">
+                <!-- Home Link -->
+                <a href="/" class="inline-flex items-center text-gray-600 hover:text-blue-700 transition-colors duration-200 font-medium">
+                    <i class="fa-solid fa-home mr-1 text-[10px] sm:text-xs"></i>
+                    <span>AboutUs</span>
+                </a>
+                
+                <!-- Separator -->
+                <i class="fa-solid fa-chevron-right text-gray-400 text-[8px] sm:text-[10px] mx-1"></i>
+                
+                <!-- Current Page -->
+                <span class="text-blue-700 font-semibold truncate max-w-[150px] sm:max-w-[200px] md:max-w-none" aria-current="page">
+                    About DR. MIR JAWAD
+                </span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="w-full mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-8 sm:py-10 md:py-12">
+        <div class="bg-white rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 lg:p-12">
+
+            <!-- Quote with Yellow Border -->
+            <div class="max-w-4xl mx-auto mb-8 sm:mb-10 md:mb-12">
+                <div class="border-2 border-yellow-400 p-4 sm:p-6 rounded-xl bg-yellow-50/30">
+                    <p class="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed text-center italic quote-text text-justify">
+                        "We had taken a great initiative to start a new hospital with German collaboration. To bridge
+                        gap between India and advanced countries like Germany by forming a collaboration with Germany
+                        for technology sharing. Also to make such advanced technologies available at cost effective
+                        rates."
+                    </p>
+                </div>
+            </div>
+
+            <!-- Doctor Profile Section -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 items-center mb-10 sm:mb-12">
+                <!-- Doctor Image -->
+                <div class="flex justify-center">
+                    <div class="relative doctor-image w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden border-4 border-yellow-400 shadow-xl">
+                        <img src="Images/AboutUs-page-Images/Dr.javedImage.jpg" alt="Dr. Mir Jawad Zar Khan" width="256" height="256"
+                            class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Doctor Credentials -->
+                <div class="md:col-span-2 text-center md:text-left">
+                    <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-red-600 mb-3 sm:mb-4 doctor-credentials">DR. MIR JAWAD ZAR KHAN</h2>
+                    <div class="space-y-1 sm:space-y-2 text-gray-700 doctor-credentials">
+                        <p class="font-medium text-sm sm:text-base">MBBS, MS-(ORTHO), M.CH-(ORTHO)</p>
+                        <p class="font-medium text-sm sm:text-base">FELLOWSHIP IN ARTHOPLASTY (GERMANY)</p>
+                        <p class="font-medium text-sm sm:text-base">ORTHOPEDIST, JOINT REPLACEMENT SURGEON, SPINE SURGEON</p>
+                        <p class="font-medium text-base sm:text-lg text-blue-600">26 YEARS EXPERIENCE</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prose max-w-none">
+
+                <!-- Image Gallery Section -->
+                <div class="mt-8 sm:mt-10 md:mt-12">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 gallery-grid">
+                        <div class="gallery-item cursor-pointer transform transition-transform duration-300 hover:scale-105"
+                            onclick="openModal('Images/AboutUs-page-Images/Img1.webp')">
+                            <img src="Images/AboutUs-page-Images/Img1.webp" alt="Gallery Image 1" width="128" height="128"
+                                class="w-full h-28 sm:h-32 object-cover rounded-lg shadow-md">
+                        </div>
+                        <div class="gallery-item cursor-pointer transform transition-transform duration-300 hover:scale-105"
+                            onclick="openModal('Images/AboutUs-page-Images/img2.webp')">
+                            <img src="Images/AboutUs-page-Images/img2.webp" alt="Gallery Image 2" width="128" height="128"
+                                class="w-full h-28 sm:h-32 object-cover rounded-lg shadow-md">
+                        </div>
+                        <div class="gallery-item cursor-pointer transform transition-transform duration-300 hover:scale-105"
+                            onclick="openModal('Images/AboutUs-page-Images/img3.webp')">
+                            <img src="Images/AboutUs-page-Images/img3.webp" alt="Gallery Image 3" width="128" height="128"
+                                class="w-full h-28 sm:h-32 object-cover rounded-lg shadow-md">
+                        </div>
+                        <div class="gallery-item cursor-pointer transform transition-transform duration-300 hover:scale-105"
+                            onclick="openModal('Images/AboutUs-page-Images/img4.webp')">
+                            <img src="Images/AboutUs-page-Images/img4.webp" alt="Gallery Image 4" width="128" height="128"
+                                class="w-full h-28 sm:h-32 object-cover rounded-lg shadow-md">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hospital Information Section -->
+                <div class="mt-12 sm:mt-14 md:mt-16">
+                    <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-red-400 mb-6 sm:mb-8 text-center content-text">Best Orthopedic Hospital in Hyderabad
+                    </h3>
+
+                    <div class="prose max-w-none text-gray-700 leading-relaxed content-text">
+                        <p class="mb-4 sm:mb-6 text-sm sm:text-base text-justify">
+                            Germanten Hospital, established by Dr. Mir Jawad Zar Khan in Hyderabad, India is a Advanced
+                            Orthopedic & multispeciality hospital with fully furnished sophisticated equipment. Dr Mir
+                            Jawad has strived hard to bring the recognition and fame it has gained today. The hospital
+                            was found with the vision and mission to offer world class orthopaedic treatment to patients
+                            suffering from severe knee, joint and spine problems.
+                        </p>
+
+                        <p class="mb-4 sm:mb-6 text-sm sm:text-base text-justify">
+                            Dr. Mir Jawad Zar Khan who is the Chairman and Managing Director has gained immense
+                            recognition as a joint replacement surgeon in India & Abroad. With almost a two-decade
+                            experience, Dr.Jawad Khan is one of the top surgeons currently working in Orthopedics and
+                            Join Replacement Surgeon in Hyderabad. Having worked with world-renowned surgeons in Munich,
+                            Germany, Dr.Jawad has been an expert in Computer Navigated Hip & Joint Replacement Surgery
+                            right from his heydays in Germany.
+                        </p>
+
+                        <p class="mb-4 sm:mb-6 text-sm sm:text-base text-justify">
+                            Dr.Jawad Khan is a classic success story of talent and hard work which met their due
+                            success. A brilliant student throughout his academic career, Dr.Jawad Khan has no dearth of
+                            role models in his family.Hailing from a family of respected Doctors his father Dr.
+                            Amanullah Khan was a Medical Stalwart who went on to become the Commissioner of Vaidhya
+                            Vidhana Parishad for the combined state of Andhra Pradesh and Telangana. Having finished his
+                            post graduation from Osmania University, with a gold medal for highest marks in the Andhra
+                            Pradesh State, Dr, Jawad had successfully completed the much coveted M.Ch Orthopedics from
+                            Usaim, Seychelles.USA. Following an advanced training in Joint Replacements under
+                            International experts in prestigious Lilavati and Max hospitals, he went to secure a
+                            fellowship in Arthroplasty that presented him an opportunity work in world-renowned
+                            Orthopedic Institute in Munich Germany.
+                        </p>
+
+                        <h4 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-4 sm:mb-6 mt-6 sm:mt-8 content-text">Awards and Recognitions</h4>
+
+                        <p class="mb-4 sm:mb-6 text-sm sm:text-base text-justify">
+                            Dr.Mir Jawad Zar Khan has been listed among Indias Top Orthopaedic Doctors in leading
+                            healthcare magazines in india and internationally. A devout medical researcher, Dr.Jawad has
+                            presented numerous research papers & articles in highly acclaimed journals around the world.
+                            He is currently an active member of prestigious medical associations that include:
+                        </p>
+
+                        <ul class="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
+                            <li class="flex items-start text-sm sm:text-base">
+                                <span class="text-yellow-500 mr-2 sm:mr-3 mt-1">•</span>
+                                <span>Indo-German Orthopedic Foundation</span>
+                            </li>
+                            <li class="flex items-start text-sm sm:text-base">
+                                <span class="text-yellow-500 mr-2 sm:mr-3 mt-1">•</span>
+                                <span>Internationale De Chirurgie Orthopedic Et De Traumatologie (SICOT)</span>
+                            </li>
+                            <li class="flex items-start text-sm sm:text-base">
+                                <span class="text-yellow-500 mr-2 sm:mr-3 mt-1">•</span>
+                                <span>International Society For Orthopedic Surgery & Traumatology</span>
+                            </li>
+                            <li class="flex items-start text-sm sm:text-base">
+                                <span class="text-yellow-500 mr-2 sm:mr-3 mt-1">•</span>
+                                <span>International Cartilage Research Society International Society For Knowledge For
+                                    Surgeons On Arthroscopy & Arthroplasty</span>
+                            </li>
+                            <li class="flex items-start text-sm sm:text-base">
+                                <span class="text-yellow-500 mr-2 sm:mr-3 mt-1">•</span>
+                                <span>International Society Of Arthroscopy, Knee Surgery And Orthopedic Sports
+                                    Medicine</span>
+                            </li>
+                            <li class="flex items-start text-sm sm:text-base">
+                                <span class="text-yellow-500 mr-2 sm:mr-3 mt-1">•</span>
+                                <span>Indian Orthopedic Association</span>
+                            </li>
+                            <li class="flex items-start text-sm sm:text-base">
+                                <span class="text-yellow-500 mr-2 sm:mr-3 mt-1">•</span>
+                                <span>Orthopedic Surgeons Society Of A.P</span>
+                            </li>
+                            <li class="flex items-start text-sm sm:text-base">
+                                <span class="text-yellow-500 mr-2 sm:mr-3 mt-1">•</span>
+                                <span>Indian Medical Association (IMA)</span>
+                            </li>
+                            <li class="flex items-start text-sm sm:text-base">
+                                <span class="text-yellow-500 mr-2 sm:mr-3 mt-1">•</span>
+                                <span>Indian Arthroplasty Association</span>
+                            </li>
+                        </ul>
+
+                        <p class="mb-4 sm:mb-6 text-sm sm:text-base text-justify">
+                            With so many laurels to his name, Dr.Mir Jawad Zar khan has been a vehement supporter of
+                            affordable medical care for the general public. It was this strong vision that culminated in
+                            the set-up of Germanten Hospitals where he finds himself at home employing his extensive
+                            experience in diagnosing orthopedic conditions for the general public at a cost-effective
+                            price. Dr.Jawad and his team work in tandem to provide best possible medical care the
+                            fastest recovery at an affordable price.
+                        </p>
+
+                        <p class="mb-4 sm:mb-6 text-sm sm:text-base text-justify">
+                            Dr. jawad is recipient of many national and international awards. Due to his outstanding
+                            services in the field of joint replacement surgeries he has been felicitated by H.E Andrew
+                            Flemings,British Deputy High Commissioner, Shri.K.Rosiayyah Ex chief Minister of Andhra
+                            Pradesh and many other prominent personalities have conferred awards to him. Dr.Jawad has
+                            been listed as one of India's Top Orthopedic Doctors along with other Top Orthopaedic
+                            Doctors from all states in India in coffee table book published by medgate today magazine
+                            which was launched by shri Ashwini Kumar Choubey Minister of State for health and Family
+                            Welfare Govt.of India on 21st feb 2019 in Delhi.
+                        </p>
+
+                        <ul class="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
+                            <li class="flex items-start text-sm sm:text-base">
+                                <span class="text-yellow-500 mr-2 sm:mr-3 mt-1">•</span>
+                                <span>Dr. Mir Jawad Zar Khan, Chairman & Managing Director of Germanten Hospitals is
+                                    honored with "Champions Of Change Award" by the Hon'ble 14th President of India Shri
+                                    Ram Nath Kovind on 26th Feb '23 at Vignan Bhavan, New Delhi.</span>
+                            </li>
+                            <li class="flex items-start text-sm sm:text-base">
+                                <span class="text-yellow-500 mr-2 sm:mr-3 mt-1">•</span>
+                                <span>Honored with the Pride of the Nation Award 2024 on December 21, 2024, presented by
+                                    Shri Jishnu Dev Varma, Honourable Governor of Telangana.</span>
+                            </li>
+                            <li class="flex items-start text-sm sm:text-base">
+                                <span class="text-yellow-500 mr-2 sm:mr-3 mt-1">•</span>
+                                <span>Insights Success Magazine Features Germanten Hospital As India's Most Trusted
+                                    Orthopedic Treatment Centers-2022.</span>
+                            </li>
+                            <li class="flex items-start text-sm sm:text-base">
+                                <span class="text-yellow-500 mr-2 sm:mr-3 mt-1">•</span>
+                                <span>Times all India Orthopedic Hospital Ranking Survey -2022, Germanten Hospitals
+                                    secure a position among the Top 20 orthopedic hospitals in India, the Top 10 in
+                                    South India & Top 3 in Hyderabad.</span>
+                            </li>
+                            <li class="flex items-start text-sm sm:text-base">
+                                <span class="text-yellow-500 mr-2 sm:mr-3 mt-1">•</span>
+                                <span>Dr. Mir Jawad Zar Khan, Senior Orthopaedic Surgeon and Chairman of Germanten
+                                    Hospitals Hyderabad received Times of India Award of "Iconic Joint Replacement
+                                    Surgeon Of Telangana" by the State Hon'ble Governor Dr. Tamilisai Soundarajan on 6th
+                                    Dec 2022.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Vision Mission Values Parallax Section -->
+                <section class="relative mt-12 sm:mt-14 md:mt-16 parallax-height overflow-hidden rounded-xl sm:rounded-2xl">
+
+                    <!-- Parallax Background -->
+                    <div class="absolute inset-0 bg-fixed bg-center bg-cover"
+                        style="background-image: url('Images/AboutUs-page-Images/hospitalimage.jpg');">
+                    </div>
+
+                    <!-- Dark Overlay -->
+                    <div class="absolute inset-0 bg-black/60"></div>
+
+                    <!-- Content -->
+                    <div class="relative z-10 h-full flex items-center justify-center px-4 sm:px-6 py-8 sm:py-12">
+                        <div class="max-w-6xl mx-auto text-center text-white">
+
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+
+                                <!-- Vision -->
+                                <div class="vision-card border-2 border-yellow-400 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8">
+                                    <i class="fas fa-eye text-2xl sm:text-3xl md:text-4xl text-yellow-400 mb-3 sm:mb-4"></i>
+                                    <h3 class="vision-title text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 text-white">Vision</h3>
+                                    <p class="vision-text text-white text-sm sm:text-base text-justify">
+                                        Our vision is to be a renowned provider of medical care by leveraging
+                                        exceptional services in Orthopedics.
+                                    </p>
+                                </div>
+
+                                <!-- Mission -->
+                                <div class="vision-card border-2 border-yellow-400 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8">
+                                    <i class="fas fa-bullseye text-2xl sm:text-3xl md:text-4xl text-yellow-400 mb-3 sm:mb-4"></i>
+                                    <h3 class="vision-title text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 text-white">Our Mission</h3>
+                                    <p class="vision-text text-white text-sm sm:text-base text-justify">
+                                        To be a global provider in joint replacement & orthopedic services by delivering
+                                        quality healthcare at an affordable price.
+                                    </p>
+                                </div>
+
+                                <!-- Values -->
+                                <div class="vision-card border-2 border-yellow-400 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8">
+                                    <i class="fas fa-heart text-2xl sm:text-3xl md:text-4xl text-yellow-400 mb-3 sm:mb-4"></i>
+                                    <h3 class="vision-title text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 text-white">Our Values</h3>
+                                    <p class="vision-text text-white text-sm sm:text-base text-justify">
+                                        We strive to meet patient expectations by maintaining the highest standards of
+                                        service and medical ethics.
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+                
+                <!-- FAQ Section -->
+                <div class="mt-12 sm:mt-14 md:mt-16">
+                    <div class="text-center mb-8 sm:mb-10 md:mb-12">
+                        <h2 class="faq-title text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Frequently Asked Questions</h2>
+                        <div class="w-16 sm:w-20 md:w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
+                        <p class="text-gray-600 mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-justify">Everything you need to know about Germanten Hospital</p>
+                    </div>
+                    
+                    <div class="w-full space-y-3 sm:space-y-4">
+                        <!-- FAQ Item 1 -->
+                        <div class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                            <button class="faq-button w-full px-4 sm:px-6 py-3 sm:py-4 text-left flex items-center justify-between bg-gradient-to-r from-blue-50 to-purple-50 hover:from-blue-100 hover:to-purple-100 transition-colors duration-200" onclick="toggleFAQ('faq1')">
+                                <span class="faq-question font-semibold text-gray-900 pr-4 text-sm sm:text-base">Why is Germanten Hospital considered the best orthopedic hospital in Hyderabad?</span>
+                                <i class="fas fa-chevron-down text-blue-600 transition-transform duration-300 flex-shrink-0" id="faq1-icon"></i>
+                            </button>
+                            <div id="faq1" class="hidden px-4 sm:px-6 py-3 sm:py-4 bg-white">
+                                <p class="text-gray-700 leading-relaxed text-sm sm:text-base text-justify">
+                                    Germanten Hospital is consistently ranked among the best orthopedic hospitals in Hyderabad due to its cutting-edge surgical expertise, German-imported technology, internationally trained orthopedic surgeons, and high success rates in joint replacements, spine procedures, and trauma care.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 2 -->
+                        <div class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                            <button class="faq-button w-full px-4 sm:px-6 py-3 sm:py-4 text-left flex items-center justify-between bg-gradient-to-r from-blue-50 to-purple-50 hover:from-blue-100 hover:to-purple-100 transition-colors duration-200" onclick="toggleFAQ('faq2')">
+                                <span class="faq-question font-semibold text-gray-900 pr-4 text-sm sm:text-base">What orthopedic services are offered at Germanten Hospital, Hyderabad?</span>
+                                <i class="fas fa-chevron-down text-blue-600 transition-transform duration-300 flex-shrink-0" id="faq2-icon"></i>
+                            </button>
+                            <div id="faq2" class="hidden px-4 sm:px-6 py-3 sm:py-4 bg-white">
+                                <p class="text-gray-700 leading-relaxed mb-3 sm:mb-4 text-sm sm:text-base text-justify">We provide Advanced orthopedic treatments, including:</p>
+                                <ul class="space-y-1 sm:space-y-2 text-gray-700 text-sm sm:text-base">
+                                    <li class="flex items-center">
+                                        <span class="text-blue-600 mr-2">•</span>
+                                        <span>Total Knee & Hip Replacement</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="text-blue-600 mr-2">•</span>
+                                        <span>Arthroscopic (Keyhole) Surgeries</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="text-blue-600 mr-2">•</span>
+                                        <span>Sports Injury Medicine</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="text-blue-600 mr-2">•</span>
+                                        <span>Spine Surgery</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="text-blue-600 mr-2">•</span>
+                                        <span>Trauma Care</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="text-blue-600 mr-2">•</span>
+                                        <span>Pediatric Orthopedics</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="text-blue-600 mr-2">•</span>
+                                        <span>Physiotherapy & Post-Surgical Rehabilitation</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="text-blue-600 mr-2">•</span>
+                                        <span>Non Surgical Orthopedic Treatments</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 3 -->
+                        <div class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                            <button class="faq-button w-full px-4 sm:px-6 py-3 sm:py-4 text-left flex items-center justify-between bg-gradient-to-r from-blue-50 to-purple-50 hover:from-blue-100 hover:to-purple-100 transition-colors duration-200" onclick="toggleFAQ('faq3')">
+                                <span class="faq-question font-semibold text-gray-900 pr-4 text-sm sm:text-base">Who is Dr. Mir Jawad Zar Khan?</span>
+                                <i class="fas fa-chevron-down text-blue-600 transition-transform duration-300 flex-shrink-0" id="faq3-icon"></i>
+                            </button>
+                            <div id="faq3" class="hidden px-4 sm:px-6 py-3 sm:py-4 bg-white">
+                                <p class="text-gray-700 leading-relaxed text-sm sm:text-base">
+                                    Dr. Mir Jawad Zar Khan is a renowned orthopaedic and joint replacement surgeon with over 26 years of experience in the field. He is the founder of Germanten Hospital and serves as Chairman and Managing Director, introducing advanced, minimally invasive orthopaedic procedures in Hyderabad.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 4 -->
+                        <div class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                            <button class="faq-button w-full px-4 sm:px-6 py-3 sm:py-4 text-left flex items-center justify-between bg-gradient-to-r from-blue-50 to-purple-50 hover:from-blue-100 hover:to-purple-100 transition-colors duration-200" onclick="toggleFAQ('faq4')">
+                                <span class="faq-question font-semibold text-gray-900 pr-4 text-sm sm:text-base">Does Germanten Hospital use advanced technology for joint replacement?</span>
+                                <i class="fas fa-chevron-down text-blue-600 transition-transform duration-300 flex-shrink-0" id="faq4-icon"></i>
+                            </button>
+                            <div id="faq4" class="hidden px-4 sm:px-6 py-3 sm:py-4 bg-white">
+                                <p class="text-gray-700 leading-relaxed text-sm sm:text-base">
+                                    Absolutely. We utilize German precision systems, 3D computer navigation, minimally invasive methods, and robotic-assisted surgery to ensure highly accurate, safe, and faster recovery outcomes.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 5 -->
+                        <div class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                            <button class="faq-button w-full px-4 sm:px-6 py-3 sm:py-4 text-left flex items-center justify-between bg-gradient-to-r from-blue-50 to-purple-50 hover:from-blue-100 hover:to-purple-100 transition-colors duration-200" onclick="toggleFAQ('faq5')">
+                                <span class="faq-question font-semibold text-gray-900 pr-4 text-sm sm:text-base">Do you treat international patients at Germanten Hospital?</span>
+                                <i class="fas fa-chevron-down text-blue-600 transition-transform duration-300 flex-shrink-0" id="faq5-icon"></i>
+                            </button>
+                            <div id="faq5" class="hidden px-4 sm:px-6 py-3 sm:py-4 bg-white">
+                                <p class="text-gray-700 leading-relaxed text-sm sm:text-base text-justify">
+                                    Yes. Germanten Hospital has a dedicated international patient care team that offers travel assistance, visa coordination, accommodation, language interpreters, and personalized treatment planning, making us a preferred orthopedic destination in Hyderabad.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 6 -->
+                        <div class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                            <button class="faq-button w-full px-4 sm:px-6 py-3 sm:py-4 text-left flex items-center justify-between bg-gradient-to-r from-blue-50 to-purple-50 hover:from-blue-100 hover:to-purple-100 transition-colors duration-200" onclick="toggleFAQ('faq6')">
+                                <span class="faq-question font-semibold text-gray-900 pr-4 text-sm sm:text-base">What is the success rate of orthopedic surgeries at Germanten Hospital?</span>
+                                <i class="fas fa-chevron-down text-blue-600 transition-transform duration-300 flex-shrink-0" id="faq6-icon"></i>
+                            </button>
+                            <div id="faq6" class="hidden px-4 sm:px-6 py-3 sm:py-4 bg-white">
+                                <p class="text-gray-700 leading-relaxed text-sm sm:text-base">
+                                    We take pride in our consistently high success rates for knee, hip, and spine surgeries, supported by our expert surgical teams, modern facilities, and comprehensive post-operative care protocols.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 7 -->
+                        <div class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                            <button class="faq-button w-full px-4 sm:px-6 py-3 sm:py-4 text-left flex items-center justify-between bg-gradient-to-r from-blue-50 to-purple-50 hover:from-blue-100 hover:to-purple-100 transition-colors duration-200" onclick="toggleFAQ('faq7')">
+                                <span class="faq-question font-semibold text-gray-900 pr-4 text-sm sm:text-base">Is cashless treatment or insurance available at Germanten Hospital?</span>
+                                <i class="fas fa-chevron-down text-blue-600 transition-transform duration-300 flex-shrink-0" id="faq7-icon"></i>
+                            </button>
+                            <div id="faq7" class="hidden px-4 sm:px-6 py-3 sm:py-4 bg-white">
+                                <p class="text-gray-700 leading-relaxed text-sm sm:text-base">
+                                    Yes. We are affiliated with all major insurance companies and offer cashless hospitalization facilities. Our finance team ensures smooth insurance processing and assistance.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 8 -->
+                        <div class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                            <button class="faq-button w-full px-4 sm:px-6 py-3 sm:py-4 text-left flex items-center justify-between bg-gradient-to-r from-blue-50 to-purple-50 hover:from-blue-100 hover:to-purple-100 transition-colors duration-200" onclick="toggleFAQ('faq8')">
+                                <span class="faq-question font-semibold text-gray-900 pr-4 text-sm sm:text-base">Where is Germanten Hospital located in Hyderabad?</span>
+                                <i class="fas fa-chevron-down text-blue-600 transition-transform duration-300 flex-shrink-0" id="faq8-icon"></i>
+                            </button>
+                            <div id="faq8" class="hidden px-4 sm:px-6 py-3 sm:py-4 bg-white">
+                                <p class="text-gray-700 leading-relaxed text-sm sm:text-base">
+                                    Germanten Hospital is situated in Attapur, Hyderabad, allowing easy access from all parts of the city, including Rajiv Gandhi International Airport.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 9 -->
+                        <div class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                            <button class="faq-button w-full px-4 sm:px-6 py-3 sm:py-4 text-left flex items-center justify-between bg-gradient-to-r from-blue-50 to-purple-50 hover:from-blue-100 hover:to-purple-100 transition-colors duration-200" onclick="toggleFAQ('faq9')">
+                                <span class="faq-question font-semibold text-gray-900 pr-4 text-sm sm:text-base">How can I book an appointment with an orthopedic specialist at Germanten Hospital?</span>
+                                <i class="fas fa-chevron-down text-blue-600 transition-transform duration-300 flex-shrink-0" id="faq9-icon"></i>
+                            </button>
+                            <div id="faq9" class="hidden px-4 sm:px-6 py-3 sm:py-4 bg-white">
+                                <p class="text-gray-700 leading-relaxed text-sm sm:text-base">
+                                    To schedule your consultation, please call us at <span class="font-semibold text-blue-600">9989635555</span> or visit <span class="font-semibold text-blue-600">www.drjawadortho.com</span> for online appointments.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 10 -->
+                        <div class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                            <button class="faq-button w-full px-4 sm:px-6 py-3 sm:py-4 text-left flex items-center justify-between bg-gradient-to-r from-blue-50 to-purple-50 hover:from-blue-100 hover:to-purple-100 transition-colors duration-200" onclick="toggleFAQ('faq10')">
+                                <span class="faq-question font-semibold text-gray-900 pr-4 text-sm sm:text-base">What makes Germanten Hospital stand out as the best orthopedic hospital in Hyderabad?</span>
+                                <i class="fas fa-chevron-down text-blue-600 transition-transform duration-300 flex-shrink-0" id="faq10-icon"></i>
+                            </button>
+                            <div id="faq10" class="hidden px-4 sm:px-6 py-3 sm:py-4 bg-white">
+                                <p class="text-gray-700 leading-relaxed text-sm sm:text-base">
+                                    Germanten Hospital is NABH-accredited and has received honors from Times of India and other leading institutions for its orthopedic excellence. Under the leadership of Dr. Mir Jawad Zar Khan, our hospital combines world-class infrastructure, expert care, and innovation to achieve superior outcomes in orthopedic and joint care.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+
+    <!-- Modal/Lightbox for Images -->
+    <div id="imageModal" class="fixed inset-0 z-50 hidden">
+        <!-- Blurred Background -->
+        <div class="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm" onclick="closeModal()"></div>
+
+        <!-- Modal Content -->
+        <div class="relative flex items-center justify-center min-h-screen p-4">
+            <div class="relative max-w-4xl max-h-full">
+                <!-- Close Button -->
+                <button onclick="closeModal()"
+                    class="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors duration-200">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+
+                <!-- Image -->
+                <img id="modalImage" src="" alt="Gallery Image"
+                    class="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl">
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+
+    <!-- Progress Bar Script for this page -->
+    <script>
+        // Initialize progress bar immediately
+        document.addEventListener('DOMContentLoaded', function () {
+            const progressBar = document.getElementById('progress-bar');
+
+            if (progressBar) {
+                // Set initial state
+                progressBar.style.opacity = '0';
+                progressBar.style.transform = 'translateX(-100%)';
+
+                // Handle scroll events
+                window.addEventListener('scroll', function () {
+                    const scrollTop = window.scrollY;
+                    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                    const scrollPercent = (scrollTop / docHeight) * 100;
+
+                    // Update progress bar
+                    progressBar.style.transform = `translateX(-${100 - scrollPercent}%)`;
+
+                    // Show/hide based on scroll position
+                    if (scrollTop > 10) {
+                        progressBar.style.opacity = '1';
+                    } else {
+                        progressBar.style.opacity = '0';
+                    }
+                });
+
+                // Check initial scroll position
+                const initialScrollTop = window.scrollY;
+                if (initialScrollTop > 10) {
+                    progressBar.style.opacity = '1';
+                    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                    const scrollPercent = (initialScrollTop / docHeight) * 100;
+                    progressBar.style.transform = `translateX(-${100 - scrollPercent}%)`;
+                }
+            }
+        });
+
+        // Modal functions
+        function openModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+
+            modalImage.src = imageSrc;
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent background scroll
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Restore background scroll
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+        
+        // FAQ Toggle Function
+        function toggleFAQ(faqId) {
+            const faqContent = document.getElementById(faqId);
+            const faqIcon = document.getElementById(faqId + '-icon');
+            
+            if (faqContent.classList.contains('hidden')) {
+                // Close all other FAQs
+                document.querySelectorAll('[id^="faq"]').forEach(element => {
+                    if (element.id !== faqId && !element.id.includes('-icon')) {
+                        element.classList.add('hidden');
+                    }
+                });
+                
+                // Reset all icons
+                document.querySelectorAll('[id$="-icon"]').forEach(icon => {
+                    icon.style.transform = 'rotate(0deg)';
+                });
+                
+                // Open clicked FAQ
+                faqContent.classList.remove('hidden');
+                faqIcon.style.transform = 'rotate(180deg)';
+            } else {
+                // Close clicked FAQ
+                faqContent.classList.add('hidden');
+                faqIcon.style.transform = 'rotate(0deg)';
+            }
+        }
+        
+        // Parallax effect for vision section
+        window.addEventListener('scroll', function () {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.vision-parallax-bg');
+
+            parallaxElements.forEach(function (element) {
+                const speed = 0.5;
+                const yPos = -(scrolled * speed);
+                element.style.transform = `translateY(${yPos}px)`;
+            });
+        });
+
+        // Smooth scroll behavior for parallax section
+        document.addEventListener('DOMContentLoaded', function () {
+            const parallaxSection = document.querySelector('.vision-parallax-bg');
+            if (parallaxSection) {
+                // Initial position setup
+                parallaxSection.style.transform = 'translateY(0px)';
+                parallaxSection.style.transition = 'transform 0.1s ease-out';
+            }
+        });
+
+        // Scroll Progress Bar Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollProgressBar = document.getElementById('scrollProgressBar');
+            
+            // Update scroll progress
+            function updateScrollProgress() {
+                const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrollPercentage = (scrollTop / scrollHeight) * 100;
+                
+                // Update progress bar width
+                scrollProgressBar.style.width = scrollPercentage + '%';
+                
+                // Show/hide progress bar based on scroll position
+                if (scrollTop > 100) {
+                    scrollProgress.classList.remove('hidden');
+                } else {
+                    scrollProgress.classList.add('hidden');
+                }
+            }
+            
+            // Throttle function for performance
+            function throttle(func, limit) {
+                let inThrottle;
+                return function() {
+                    const args = arguments;
+                    const context = this;
+                    if (!inThrottle) {
+                        func.apply(context, args);
+                        inThrottle = true;
+                        setTimeout(() => inThrottle = false, limit);
+                    }
+                }
+            }
+            
+            // Add scroll event listener with throttling
+            window.addEventListener('scroll', throttle(updateScrollProgress, 10));
+            
+            // Initial update
+            updateScrollProgress();
+            
+            // Smooth scroll to top when progress bar is clicked
+            scrollProgress.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Add hover effect for progress bar
+            scrollProgress.addEventListener('mouseenter', function() {
+                scrollProgressBar.style.boxShadow = '0 0 20px rgba(202, 138, 4, 0.8)';
+            });
+            
+            scrollProgress.addEventListener('mouseleave', function() {
+                scrollProgressBar.style.boxShadow = '0 0 10px rgba(202, 138, 4, 0.5)';
+            });
+        });
+    </script>
+
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

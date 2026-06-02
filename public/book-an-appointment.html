@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <meta name="google-site-verification" content="gyGSLLzdQLlIEsLrhnGzWjOoQDhyTo8sxocDXKNkG7w" />   
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Book an Appointment - Germanten Hospital</title>
+    <meta name="description" content="Book an appointment with our expert doctors at Germanten Hospitals. Expert care for all your internal health needs.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+       <link rel="icon" type="image/webp" href="Images/GERMANTANLOGO.webp">
+       <link rel="canonical" href="https://drjawadortho.com/book-an-appointment">
+       <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <style>
+        /* Scroll Progress Bar Styles */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.2);
+            z-index: 9999;
+            transition: opacity 0.3s ease;
+        }
+
+        .scroll-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #ff4d01 0%, #eab308 50%, #facc15 100%);
+            border-radius: 0 1px 1px 0;
+            transition: width 0.1s ease-out;
+            box-shadow: 0 0 10px rgba(202, 138, 4, 0.5);
+        }
+
+
+        .scroll-progress.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* Responsive hero section */
+        .hero-international {
+            height: 60vh !important;
+            min-height: 400px;
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-international {
+                height: 50vh !important;
+                min-height: 350px;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .hero-international {
+                height: 40vh !important;
+                min-height: 300px;
+            }
+        }
+        
+        .hero-overlay-text {
+            background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+        }
+        
+        /* breadcrumb modern style */
+        .breadcrumb-glass {
+            background: rgba(255,255,255,0.75);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 60px;
+            padding: 8px 20px;
+            display: inline-block;
+            border: 1px solid rgba(255,255,255,0.6);
+            box-shadow: 0 10px 25px -8px rgba(0,0,0,0.2);
+        }
+        
+        /* Responsive card styles */
+        .service-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: #dc2626;
+        }
+        
+        /* Responsive typography */
+        @media (max-width: 640px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            h3 { font-size: 1.25rem; }
+        }
+        
+        /* Desktop hero section positioning */
+        @media (min-width: 769px) {
+            .hero-desktop-fix {
+                padding-top: 100px; /* Account for navbar and top bar on desktop */
+            }
+        }
+        
+        /* Responsive spacing */
+        @media (max-width: 640px) {
+            .section-padding { padding: 3rem 1rem !important; }
+            .card-padding { padding: 1.5rem !important; }
+        }
+    </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B7BXJEHXWK"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-B7BXJEHXWK');
+</script>
+
+</head>
+<body class="bg-gray-50">
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress">
+        <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+    </div>
+
+    <!-- Navbar Component placeholder -->
+    <div id="navbar-container" class="shadow-sm"></div>
+
+  
+
+    <!-- International Patients Relations Section -->
+    <section class="px-8 py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+            <!-- Doctor Callback Section - Slightly Increased Section Height, Compact Form & Image -->
+                    <div class="rounded-xl shadow-md border border-gray-200 pt-6 pb-6"
+                        style="background-color: #FFFFFF; max-width: 100%; padding: 1.5rem 1rem;">
+                        <div class="grid md:grid-cols-2 gap-4 items-stretch">
+                            <!-- Left: Get A Quick Callback Form - White Background -->
+                            <div class="rounded-lg p-4 pt-8 flex flex-col h-full"
+                                style="background-color: #FFFFFF; border: 1px solid #E5E7EB; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+                                <h2 class="text-lg font-bold mb-3 text-red-700 tracking-tight flex items-center gap-1"
+                                    style="font-family: system-ui, -apple-system, sans-serif;">
+                                    <span>📞</span> Get A Quick Callback
+                                </h2>
+                                <form class="flex flex-col h-full" style="gap: 1.5rem;">
+                                    <div>
+                                        <label class="block text-sm font-medium mb-3 text-gray-700">Full
+                                            Name</label>
+                                        <input type="text" placeholder="Enter your full name"
+                                            class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 focus:outline-none focus:border-red-300 transition-all"
+                                            style="background-color: #FFFFFF; color: #1F2937;">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-3 text-gray-700">Mobile
+                                            Number</label>
+                                        <input type="tel" placeholder="Enter your mobile number"
+                                            class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 focus:outline-none focus:border-red-300 transition-all"
+                                            style="background-color: #FFFFFF; color: #1F2937;">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-3 text-gray-700">Email
+                                            Address</label>
+                                        <input type="email" placeholder="Enter your email address"
+                                            class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 focus:outline-none focus:border-red-300 transition-all"
+                                            style="background-color: #FFFFFF; color: #1F2937;">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-3 text-gray-700">Message</label>
+                                        <textarea rows="2" placeholder="Enter your query"
+                                            class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 focus:outline-none focus:border-red-300 transition-all resize-none"
+                                            style="background-color: #FFFFFF; color: #1F2937;"></textarea>
+                                    </div>
+                                    <button type="submit"
+                                        class="w-full font-semibold py-2.5 px-3 rounded-lg transition-all duration-300 text-sm shadow-md hover:shadow-lg transform hover:scale-[1.01] mt-0"
+                                        style="background: #EF4444; color: white; border: none; cursor: pointer;">
+                                        ✨ Submit Appointment
+                                    </button>
+                                </form>
+                            </div>
+
+                            <!-- Right: Dr. Mir Jawad Khan Image - Same Height as Form -->
+                            <div class="rounded-lg overflow-hidden shadow-sm flex items-center justify-center"
+                                style="background: #FEF3C7; min-height: 100%;">
+                                <img src="../Images/Doctors/dr-mir-jawad-khan.webp" alt="Dr. Mir Jawad Zar Khan"
+                                    class="w-full h-full object-cover rounded-lg" style="display: block;">
+                            </div>
+                        </div>
+                    </div>
+
+        </div>
+
+    </section>
+
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+
+    <!-- Scroll Progress Bar JavaScript -->
+    <script>
+        // Scroll Progress Bar Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollProgressBar = document.getElementById('scrollProgressBar');
+            
+            // Update scroll progress
+            function updateScrollProgress() {
+                const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrollPercentage = (scrollTop / scrollHeight) * 100;
+                
+                // Update progress bar width
+                scrollProgressBar.style.width = scrollPercentage + '%';
+                
+                // Show/hide progress bar based on scroll position
+                if (scrollTop > 100) {
+                    scrollProgress.classList.remove('hidden');
+                } else {
+                    scrollProgress.classList.add('hidden');
+                }
+            }
+            
+            // Throttle function for performance
+            function throttle(func, limit) {
+                let inThrottle;
+                return function() {
+                    const args = arguments;
+                    const context = this;
+                    if (!inThrottle) {
+                        func.apply(context, args);
+                        inThrottle = true;
+                        setTimeout(() => inThrottle = false, limit);
+                    }
+                }
+            }
+            
+            // Add scroll event listener with throttling
+            window.addEventListener('scroll', throttle(updateScrollProgress, 10));
+            
+            // Initial update
+            updateScrollProgress();
+            
+            // Smooth scroll to top when progress bar is clicked
+            scrollProgress.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Add hover effect for progress bar
+            scrollProgress.addEventListener('mouseenter', function() {
+                scrollProgressBar.style.boxShadow = '0 0 20px rgba(202, 138, 4, 0.8)';
+            });
+            
+            scrollProgress.addEventListener('mouseleave', function() {
+                scrollProgressBar.style.boxShadow = '0 0 10px rgba(202, 138, 4, 0.5)';
+            });
+        });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html>

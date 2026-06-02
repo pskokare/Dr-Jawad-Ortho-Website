@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+    <meta name="google-site-verification" content="gyGSLLzdQLlIEsLrhnGzWjOoQDhyTo8sxocDXKNkG7w" />    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research and Collaboration - Germanten Hospitals</title>
+    <meta name="description" content="Driving medical progress through research, clinical partnerships, and collaborative healthcare initiatives at Germanten Hospitals for better patient care.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/webp" href="Images/GERMANTANLOGO.webp">
+    <link rel="canonical" href="https://drjawadortho.com/international-research-collaboration">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <style>
+        /* Scroll Progress Bar Styles */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.2);
+            z-index: 9999;
+            transition: opacity 0.3s ease;
+        }
+
+        .scroll-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #ff4d01 0%, #eab308 50%, #facc15 100%);
+            border-radius: 0 1px 1px 0;
+            transition: width 0.1s ease-out;
+            box-shadow: 0 0 10px rgba(202, 138, 4, 0.5);
+        }
+
+
+        .scroll-progress.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* Mobile menu overlay styles */
+        .mobile-menu-open {
+            overflow: hidden;
+        }
+        
+        .mobile-menu-open::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 40;
+        }
+        
+        /* Ensure mobile menu has proper z-index */
+        #mobile-menu {
+            z-index: 50 !important;
+        }
+        
+        /* Touch-friendly menu items */
+        #mobile-menu a {
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            padding: 12px 16px !important;
+        }
+        
+        /* Mobile dropdown styles */
+        #mobile-menu .mobile-dropdown {
+            max-height: none;
+            overflow: visible;
+        }
+        
+        /* Smooth transitions */
+        #mobile-menu {
+            transition: all 0.3s ease-in-out;
+        }
+        
+        /* Hamburger button styling */
+        #mobile-menu-button {
+            min-width: 44px;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Responsive typography and spacing */
+        @media (max-width: 640px) {
+            .section-padding { padding: 2rem 0.75rem !important; }
+            .card-padding { padding: 1rem !important; }
+            .hero-height { height: 30vh !important; min-height: 200px; }
+            .hero-title { font-size: 1.5rem !important; }
+            .hero-subtitle { font-size: 0.875rem !important; }
+            .content-text { font-size: 0.9rem !important; }
+            .section-title { font-size: 1.5rem !important; }
+            .doctor-image { width: 100px !important; height: 100px !important; }
+            .doctor-name { font-size: 0.9rem !important; }
+            .doctor-title { font-size: 0.75rem !important; }
+            .doctor-desc { font-size: 0.75rem !important; }
+            .collab-title { font-size: 0.9rem !important; }
+            .collab-text { font-size: 0.8rem !important; }
+        }
+        
+        @media (min-width: 641px) and (max-width: 768px) {
+            .hero-height { height: 35vh !important; min-height: 250px; }
+            .section-title { font-size: 1.75rem !important; }
+            .doctor-image { width: 120px !important; height: 120px !important; }
+        }
+        
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .hero-height { height: 40vh !important; min-height: 300px; }
+            .doctor-image { width: 128px !important; height: 128px !important; }
+        }
+        
+        @media (min-width: 1025px) {
+            .hero-height { height: 50vh !important; min-height: 400px; }
+        }
+        
+        /* Prevent horizontal scroll */
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        
+        /* Desktop banner positioning to account for navbar and top bar */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .banner-section {
+                padding-top: 64px; /* Account for navbar height only (top bar hidden on tablet) */
+            }
+        }
+        
+        @media (min-width: 1025px) {
+            .banner-section {
+                padding-top: 40px; /* Account for both top bar (36px) and navbar (64px) */
+            }
+        }
+        
+        /* Touch-friendly on mobile */
+        @media (max-width: 768px) {
+            .collab-card {
+                padding: 0.75rem !important;
+            }
+            .doctor-card {
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B7BXJEHXWK"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-B7BXJEHXWK');
+</script>
+
+</head>
+
+<body class="bg-gray-50">
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress">
+        <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+    </div>
+
+    <!-- Navbar Component -->
+    <div id="navbar-container" style="height: 60px;"></div>
+
+    <!-- Hero Section with Image -->
+    <section class="relative w-full overflow-hidden banner-section">
+        <!-- Hero Image with Bottom Border Only -->
+        <div class="border-b-4 border-yellow-400">
+            <img src="Images/AboutUs-page-Images/Reasearch-Collaboration/HeroSectionImage.webp" 
+                 alt="Research and Collaboration" width="1920" height="1080"
+                 class="w-full h-[30vh] sm:h-[35vh] md:h-[40vh] lg:h-[50vh] object-cover block">
+        </div>
+    </section>
+    
+    <!-- Breadcrumb Section -->
+    <div class="bg-white border-b border-gray-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-3 md:py-4">
+            <nav class="flex items-center flex-wrap gap-1 sm:gap-2 text-xs sm:text-sm" aria-label="Breadcrumb">
+                <!-- Home Link -->
+                <a href="#" class="inline-flex items-center text-gray-600 hover:text-blue-700 transition-colors duration-200 font-medium">
+                    <i class="fa-solid fa-home mr-1 text-[10px] sm:text-xs"></i>
+                    <span>AboutUs</span>
+                </a>
+                
+                <!-- Separator -->
+                <i class="fa-solid fa-chevron-right text-gray-400 text-[8px] sm:text-[10px] mx-1"></i>
+                
+                <!-- Current Page -->
+                <span class="text-blue-700 font-semibold truncate max-w-[150px] sm:max-w-[200px] md:max-w-none" aria-current="page">
+                    Reasearch-Collaboration
+                </span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- International Research Collaboration Section -->
+        <section class="py-6 sm:py-8 md:py-10 bg-gradient-to-br from-gray-50 to-white">
+            <div class="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+                <div class="text-center mb-8 sm:mb-10 md:mb-12">
+                    <h1 class="section-title text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
+                        International Research Collaboration
+                    </h1>
+                    <div class="w-16 sm:w-20 md:w-24 h-1 bg-gray-300 rounded-full mx-auto mb-6 sm:mb-8"></div>
+                </div>
+                
+                <div class="bg-white rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-6 md:p-8">
+                    <div class="max-w-5xl mx-auto">
+                        <div class="text-center">
+                            <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-red-900 mb-4 sm:mb-6">Dr. Mir Jawad Zar Khan</h3>
+                            <p class="content-text text-gray-700 leading-relaxed text-sm sm:text-base md:text-lg text-justify">
+                                Dr. Mir Jawad Zar Khan has done his Masters, M.S (Orthopaedics) from Osmania University, Hyderabad and M.Ch Orthopedics from Usaim, Seychelles. He has done fellowship in arthroplasty in world prestigious orthopedic institute in Munich Germany where he has worked with international experts in joint replacements surgeries. He was awarded best outgoing postgraduate with highest marks in Andhra Pradesh state.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+<section class="py-12 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Heading -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Our Team of German Doctors
+      </h2>
+      <div class="w-24 h-1 bg-yellow-500 mx-auto rounded-full"></div>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      <!-- Doctor Card -->
+      <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 text-center overflow-hidden">
+        
+        <!-- Top Strip -->
+        <div class="bg-yellow-500 text-white text-xs font-bold py-2 uppercase">
+          Orthopedic Specialist
+        </div>
+
+        <!-- Image -->
+        <div class="flex justify-center mt-6">
+          <div class="w-32 h-32 rounded-full p-1 border-4 border-yellow-400 shadow-md">
+            <img src="Images/Home-Page-Images/OUR TEAM OF DOCTORS/German1-Dr-Valadmir.webp"
+              alt="Dr. Vladimir Martinek" width="128" height="128"
+              class="w-full h-full object-cover rounded-full">
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="p-6">
+          <h3 class="text-lg font-bold text-gray-900 mb-1">
+            Dr. Vladimir Martinek
+          </h3>
+          <p class="text-red-600 font-semibold text-sm mb-2">
+            Honory Prof
+          </p>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Head Knee Replacement University Hospital, Munich, Germany.
+          </p>
+        </div>
+      </div>
+
+      <!-- Doctor 2 -->
+      <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 text-center overflow-hidden">
+        <div class="bg-yellow-500 text-white text-xs font-bold py-2 uppercase">
+          Orthopedic Specialist
+        </div>
+
+        <div class="flex justify-center mt-6">
+          <div class="w-32 h-32 rounded-full p-1 border-4 border-yellow-400 shadow-md">
+            <img src="Images/Home-Page-Images/OUR TEAM OF DOCTORS/German2-Dr-Stephan-Schill.webp"
+              alt="Dr. Stephan Schill" width="128" height="128"
+              class="w-full h-full object-cover rounded-full">
+          </div>
+        </div>
+
+        <div class="p-6">
+          <h3 class="text-lg font-bold text-gray-900 mb-1">
+            Dr. Stephan Schill
+          </h3>
+          <p class="text-red-600 font-semibold text-sm mb-2">
+            Honory Professor
+          </p>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Dept of Foot Hand Replacement Surgery, University Hospital, Munich, Germany.
+          </p>
+        </div>
+      </div>
+
+      <!-- Doctor 3 -->
+      <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 text-center overflow-hidden">
+        <div class="bg-yellow-500 text-white text-xs font-bold py-2 uppercase">
+          Orthopedic Specialist
+        </div>
+
+        <div class="flex justify-center mt-6">
+          <div class="w-32 h-32 rounded-full p-1 border-4 border-yellow-400 shadow-md">
+            <img src="Images/Home-Page-Images/OUR TEAM OF DOCTORS/German3-Prof-Dr-Roland-Wetzel.webp"
+              alt="Dr. Roland Wetzel" width="128" height="128"
+              class="w-full h-full object-cover rounded-full">
+          </div>
+        </div>
+
+        <div class="p-6">
+          <h3 class="text-lg font-bold text-gray-900 mb-1">
+            Dr. Roland Wetzel
+          </h3>
+          <p class="text-red-600 font-semibold text-sm mb-2">
+            Honory Department
+          </p>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Head Hip & Knee Joint Replacement Surgery, University Hospital, Munich, Germany.
+          </p>
+        </div>
+      </div>
+
+      <!-- Doctor 4 -->
+      <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 text-center overflow-hidden">
+        <div class="bg-yellow-500 text-white text-xs font-bold py-2 uppercase">
+          Rehabilitation Specialist
+        </div>
+
+        <div class="flex justify-center mt-6">
+          <div class="w-32 h-32 rounded-full p-1 border-4 border-yellow-400 shadow-md">
+            <img src="Images/Home-Page-Images/OUR TEAM OF DOCTORS/German4-langmeier-photo.webp"
+              alt="Dr. Langmeier" width="128" height="128"
+              class="w-full h-full object-cover rounded-full">
+          </div>
+        </div>
+
+        <div class="p-6">
+          <h3 class="text-lg font-bold text-gray-900 mb-1">
+            Dr. Langmeier
+          </h3>
+          <p class="text-red-600 font-semibold text-sm mb-2">
+            Physiotherapy Expert
+          </p>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Head of Physiotherapy & Rehabilitation Unit, University Hospital, Munich, Germany.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    <!-- Collaboration Details Section -->
+    <section class="py-8 sm:py-10 md:py-12 bg-gray-50">
+        <div class="max-w-full mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+             <div class="text-center mb-6 sm:mb-8">
+                    <h2 class="section-title text-xl sm:text-2xl md:text-3xl font-bold text-gray-500 mb-3 sm:mb-4">
+                        International Collaboration & Expertise
+                    </h2>
+                </div>
+            <div class="border-2 border-dashed border-black rounded-lg p-3 sm:p-4 md:p-6 mx-0 sm:mx-4 md:mx-8">
+               
+                
+                <div class="space-y-4 sm:space-y-6">
+                    <div class="collab-card bg-white rounded-lg p-4 sm:p-6 shadow-sm">
+                        <h3 class="collab-title text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3 text-red-600">Academic & Training Background</h3>
+                        <p class="collab-text text-gray-700 leading-relaxed text-xs sm:text-sm md:text-base text-justify">
+                            During his academic career and training at Institute in Advanced orthopedics in Munich Germany, Dr Mir Jawad Zar Khan had the opportunity to work with world renowned International orthopedic surgeons and gained vast experience in Joint replacements and Arthroscopy surgeries and Spine Surgeries. Dr Mir Jawad Zar Khan has performed more than 10,000 Joint replacements Arthroscopic and Spine Surgeries & vast number of complex Trauma cases over a period of 22 years at Germany and in India, and also experienced in non operative modes of treatments.
+                        </p>
+                    </div>
+                    
+                    <div class="collab-card bg-white rounded-lg p-4 sm:p-6 shadow-sm">
+                        <h3 class="collab-title text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3 text-red-600">International Recognition</h3>
+                        <p class="collab-text text-gray-700 leading-relaxed text-xs sm:text-sm md:text-base text-justify">
+                            Impressed by Dr Mir Jawad Zar Khan's work and dedication towards patients, this International doctors have extended their association with him in setting up an advanced orthopedic, Neuro with Multi specialty services Hospital in Hyderabad with their collaboration.
+                        </p>
+                    </div>
+                    
+                    <div class="collab-card bg-white rounded-lg p-4 sm:p-6 shadow-sm">
+                        <h3 class="collab-title text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3 text-red-600">Research Foundation Collaboration</h3>
+                        <p class="collab-text text-gray-700 leading-relaxed text-xs sm:text-sm md:text-base text-justify">
+                            Dr Mir Jawad Zar Khan and his International doctors Team are collaborating an Orthopedic Research Foundation with all the International doctors in the Panel dedicated to stimulation of Orthopedic and musculoskeletal Research in fields of Arthroscopy, Traumatology and Joint Surgeries and Spine surgeries. The principal aim of this Research is to create long-term, sustainable solutions to the growing burden of musculoskeletal injuries and disorders through academic partnership. Mainly focusing on both operative & Non operative techniques in Orthopedics and neurology. This collaboration seeks to facilitate communication with member organisations to enhance international research collaborations and to promote the development of new international orthopedic and musculoskeletal research organisations. All the associate Doctors have more than two decades of teaching and research expertise in German University Hospital apart from performing thousands of orthopedic and Spine Surgeries.
+                        </p>
+                    </div>
+                    
+                    <div class="collab-card bg-white rounded-lg p-4 sm:p-6 shadow-sm">
+                        <h3 class="collab-title text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3 text-red-600">Advanced Medical Services</h3>
+                        <p class="collab-text text-gray-700 leading-relaxed text-xs sm:text-sm md:text-base text-justify">
+                            Our collaboration mainly focuses on Special anesthetic techniques, with combined spinal epidural anesthesia and nerve blocks enable the department to offer knee replacement to elderly with multiple, coexisting medical disease conditions.
+                        </p>
+                    </div>
+                    
+                    <div class="collab-card bg-white rounded-lg p-4 sm:p-6 shadow-sm">
+                        <h3 class="collab-title text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3 text-red-600">Hospital Support & Visit Schedule</h3>
+                        <p class="collab-text text-gray-700 leading-relaxed text-xs sm:text-sm md:text-base text-justify">
+                            During this course all the International expertise doctors will be visiting our Hospital on regular basis and support doctors. We have well experienced team of neurosurgeons, maxillofacial surgeons, anesthesiologists, Hand and Vascular Surgeons, Physicians, Pulmonologists, pediatricians with good ICU support and world class Operation Theatres.
+                        </p>
+                    </div>
+                    
+                    <div class="collab-card bg-white rounded-lg p-4 sm:p-6 shadow-sm">
+                        <h3 class="collab-title text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3 text-red-600">Patient Information & Appointments</h3>
+                        <p class="collab-text text-gray-700 leading-relaxed text-xs sm:text-sm md:text-base text-justify">
+                            International Doctors visit dates will be published in our website well in advance so that any of our local or International patients can also book their appointments with the help of our Team.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script>
+        // Load navbar component
+        fetch('components/navbar')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('navbar-container').innerHTML = html;
+                
+                // Initialize mobile menu functionality after navbar loads
+                initializeMobileMenu();
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+
+        // Load footer component
+        fetch('components/footer')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('footer-container').innerHTML = html;
+                
+                // Initialize footer functionality after footer loads
+                initializeFooter();
+            })
+            .catch(error => console.error('Error loading footer:', error));
+
+        // Mobile menu functionality
+        function initializeMobileMenu() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('mobile-menu-enter');
+                        // Add overlay to prevent interaction with background
+                        document.body.classList.add('mobile-menu-open');
+                    } else {
+                        mobileMenu.classList.remove('mobile-menu-enter');
+                        document.body.classList.remove('mobile-menu-open');
+                    }
+                });
+            }
+
+            // Close mobile menu when clicking on a link
+            const mobileLinks = mobileMenu ? mobileMenu.querySelectorAll('a') : [];
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('mobile-menu-enter');
+                    document.body.classList.remove('mobile-menu-open');
+                });
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (mobileMenu && !mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('mobile-menu-enter');
+                    document.body.classList.remove('mobile-menu-open');
+                }
+            });
+
+            // Close mobile menu with Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('mobile-menu-enter');
+                    document.body.classList.remove('mobile-menu-open');
+                }
+            });
+        }
+
+        // Mobile dropdown toggle functionality
+        function toggleMobileDropdown(dropdownId) {
+            const dropdown = document.getElementById(dropdownId + '-dropdown');
+            const button = event.target;
+            const chevron = button.querySelector('i');
+            
+            if (dropdown) {
+                const isHidden = dropdown.classList.contains('hidden');
+                
+                // Close all other dropdowns first
+                const allDropdowns = document.querySelectorAll('[id$="-dropdown"]');
+                allDropdowns.forEach(d => {
+                    d.classList.add('hidden');
+                    const otherButton = d.previousElementSibling;
+                    const otherChevron = otherButton.querySelector('i');
+                    if (otherChevron) {
+                        otherChevron.style.transform = 'rotate(0deg)';
+                    }
+                });
+                
+                // Toggle current dropdown
+                if (isHidden) {
+                    dropdown.classList.remove('hidden');
+                    if (chevron) {
+                        chevron.style.transform = 'rotate(180deg)';
+                    }
+                } else {
+                    dropdown.classList.add('hidden');
+                    if (chevron) {
+                        chevron.style.transform = 'rotate(0deg)';
+                    }
+                }
+            }
+        }
+
+        // Footer functionality
+        function initializeFooter() {
+            // Back to Top Button
+            const backToTopButton = document.getElementById('backToTop');
+            
+            if (backToTopButton) {
+                // Show/hide back to top button
+                window.addEventListener('scroll', function() {
+                    if (window.pageYOffset > 300) {
+                        backToTopButton.classList.remove('opacity-0', 'pointer-events-none');
+                        backToTopButton.classList.add('opacity-100');
+                    } else {
+                        backToTopButton.classList.add('opacity-0', 'pointer-events-none');
+                        backToTopButton.classList.remove('opacity-100');
+                    }
+                });
+                
+                // Scroll to top when button is clicked
+                backToTopButton.addEventListener('click', function() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        }
+
+        // Smooth scrolling for navigation links
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('nav');
+            if (navbar && window.scrollY > 50) {
+                navbar.classList.add('shadow-xl');
+            } else if (navbar) {
+                navbar.classList.remove('shadow-xl');
+            }
+        });
+
+        // Scroll Progress Bar Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollProgressBar = document.getElementById('scrollProgressBar');
+            
+            // Update scroll progress
+            function updateScrollProgress() {
+                const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrollPercentage = (scrollTop / scrollHeight) * 100;
+                
+                // Update progress bar width
+                scrollProgressBar.style.width = scrollPercentage + '%';
+                
+                // Show/hide progress bar based on scroll position
+                if (scrollTop > 100) {
+                    scrollProgress.classList.remove('hidden');
+                } else {
+                    scrollProgress.classList.add('hidden');
+                }
+            }
+            
+            // Throttle function for performance
+            function throttle(func, limit) {
+                let inThrottle;
+                return function() {
+                    const args = arguments;
+                    const context = this;
+                    if (!inThrottle) {
+                        func.apply(context, args);
+                        inThrottle = true;
+                        setTimeout(() => inThrottle = false, limit);
+                    }
+                }
+            }
+            
+            // Add scroll event listener with throttling
+            window.addEventListener('scroll', throttle(updateScrollProgress, 10));
+            
+            // Initial update
+            updateScrollProgress();
+            
+            // Smooth scroll to top when progress bar is clicked
+            scrollProgress.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Add hover effect for progress bar
+            scrollProgress.addEventListener('mouseenter', function() {
+                scrollProgressBar.style.boxShadow = '0 0 20px rgba(202, 138, 4, 0.8)';
+            });
+            
+            scrollProgress.addEventListener('mouseleave', function() {
+                scrollProgressBar.style.boxShadow = '0 0 10px rgba(202, 138, 4, 0.5)';
+            });
+        });
+    </script>
+</body>
+
+</html>

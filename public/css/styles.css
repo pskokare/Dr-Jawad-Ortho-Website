@@ -1,0 +1,550 @@
+/* Custom styles for the navbar */
+
+/* Smooth dropdown animations */
+.dropdown-menu {
+    transform-origin: top;
+    transition: all 0.3s ease;
+}
+
+/* Mobile menu animations */
+.mobile-menu-enter {
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hover effects for dropdown items */
+.dropdown-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.dropdown-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: #3B82F6;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.dropdown-item:hover::before {
+    transform: translateX(0);
+}
+
+/* Top bar styling */
+.top-bar {
+    background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+}
+
+/* Navbar shadow on scroll */
+.navbar-scrolled {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Button hover effects */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn-primary:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Mobile dropdown transitions */
+.mobile-dropdown {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.mobile-dropdown.open {
+    max-height: 500px;
+    transition: max-height 0.5s ease-in;
+}
+
+/* Active state for mobile menu buttons */
+.mobile-menu-button.active {
+    color: #3B82F6;
+    background-color: #F3F4F6;
+}
+
+/* Chevron rotation for dropdowns */
+.chevron-rotate {
+    transition: transform 0.3s ease;
+}
+
+.chevron-rotate.rotated {
+    transform: rotate(180deg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .desktop-menu {
+        display: none;
+    }
+}
+
+@media (min-width: 1025px) {
+    .mobile-menu {
+        display: none;
+    }
+}
+
+/* Accessibility improvements */
+.dropdown-menu:focus-within {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+    transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Hero Slider Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.animation-delay-200 {
+    animation-delay: 0.2s;
+}
+
+.animation-delay-400 {
+    animation-delay: 0.4s;
+}
+
+/* Slide Indicator Active State */
+.slide-indicator.active {
+    background-color: white;
+    width: 2rem;
+}
+
+/* Hero Slider Specific Styles */
+.slide {
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+/* ==================== RESPONSIVE DESIGN MEDIA QUERIES ==================== */
+
+/* Mobile: 320px - 480px */
+@media (max-width: 480px) {
+    /* Statistics Section - Stack to 2 columns on small mobile */
+    .grid.grid-cols-5 {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    .grid.grid-cols-5 > div:nth-child(5) {
+        grid-column: span 2;
+    }
+    
+    /* Expertise Section Cards */
+    .flex-wrap.justify-center.gap-12 > div {
+        width: 140px !important;
+        height: 160px !important;
+    }
+    
+    /* Hero Slider Height */
+    #heroSlider {
+        height: 200px !important;
+    }
+    
+    /* Why Choose Us Tabs */
+    .grid.md\:grid-cols-3.border-b {
+        grid-template-columns: 1fr !important;
+    }
+    .grid.md\:grid-cols-3.border-b > div {
+        border-right: none !important;
+        border-bottom: 1px solid #fecaca;
+    }
+    .grid.md\:grid-cols-3.border-b > div:last-child {
+        border-bottom: none;
+    }
+    
+    /* German Doctors Grid */
+    .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-4 {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    /* Doctor carousel images */
+    .grid.grid-cols-2.md\:grid-cols-3.lg\:grid-cols-4 {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    /* YouTube Videos */
+    .grid.grid-cols-1.md\:grid-cols-2.gap-8 {
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* About Us Grid */
+    .grid.grid-cols-1.lg\:grid-cols-2.gap-8 {
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* Facilities Images */
+    .grid.grid-cols-2.md\:grid-cols-4.gap-6 {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    /* Articles Grid */
+    .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3.gap-6 {
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* Professional Section Grid */
+    .grid.lg\:grid-cols-2.gap-8 {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .grid.grid-cols-1.sm\:grid-cols-2.gap-6 {
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* Content blocks */
+    .grid.grid-cols-1.lg\:grid-cols-2.gap-8 > div {
+        padding: 1.5rem !important;
+    }
+    
+    /* Navigation arrows positioning */
+    #prev-doctor, #next-doctor {
+        padding: 0.5rem !important;
+    }
+    
+    /* Awards marquee */
+    .animate-marquee > div {
+        width: 120px !important;
+        height: 120px !important;
+    }
+    
+    /* Footer social icons */
+    .flex.justify-center.lg\:justify-end.space-x-3 {
+        justify-content: center;
+    }
+    
+    /* Testimonial buttons */
+    button[onclick="previousTestimonial()"] {
+        left: -10px !important;
+    }
+    button[onclick="nextTestimonial()"] {
+        right: -10px !important;
+    }
+    
+    /* Tab content padding */
+    #clinical, #technology, #legacy {
+        font-size: 0.875rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    /* Banner text */
+    .text-base.sm\:text-lg.md\:text-xl {
+        font-size: 0.875rem !important;
+    }
+}
+
+/* Tablet: 481px - 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+    /* Doctors carousel tablet styles - show 1 card per row */
+    #doctors-carousel > div {
+        grid-template-columns: 1fr !important;
+    }
+    /* Statistics Section - 3 columns on tablet */
+    .grid.grid-cols-5 {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+    .grid.grid-cols-5 > div:nth-child(4),
+    .grid.grid-cols-5 > div:nth-child(5) {
+        grid-column: span 1;
+    }
+    
+    /* Expertise Section Cards */
+    .flex-wrap.justify-center.gap-12 > div {
+        width: 150px !important;
+        height: 170px !important;
+    }
+    
+    /* Hero Slider */
+    #heroSlider {
+        height: 300px !important;
+    }
+    
+    /* Why Choose Us Tabs */
+    .grid.md\:grid-cols-3.border-b {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+    
+    /* German Doctors Grid */
+    .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-4 {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    /* Doctor carousel */
+    .grid.grid-cols-2.md\:grid-cols-3.lg\:grid-cols-4 {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+    
+    /* Content blocks side by side */
+    .grid.grid-cols-1.lg\:grid-cols-2.gap-8 {
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* Facilities Images */
+    .grid.grid-cols-2.md\:grid-cols-4.gap-6 {
+        grid-template-columns: repeat(4, 1fr) !important;
+    }
+    
+    /* Articles Grid */
+    .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3.gap-6 {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    /* Professional Section */
+    .grid.lg\:grid-cols-2.gap-8 {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .grid.grid-cols-1.sm\:grid-cols-2.gap-6 {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* Laptop: 769px - 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Statistics Section - keep 5 columns but reduce gaps */
+    .grid.grid-cols-5 {
+        gap: 1rem !important;
+    }
+    
+    /* Hero Slider */
+    #heroSlider {
+        height: 400px !important;
+    }
+    
+    /* German Doctors Grid */
+    .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-4 {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    /* Content blocks side by side */
+    .grid.grid-cols-1.lg\:grid-cols-2.gap-8 {
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* Professional Section */
+    .grid.lg\:grid-cols-2.gap-8 {
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* Articles Grid */
+    .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3.gap-6 {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* Desktop: 1025px and above - Default styles apply */
+@media (min-width: 1025px) {
+    /* Ensure full layout works on desktop */
+    #heroSlider {
+        height: 500px !important;
+    }
+}
+
+/* ==================== GENERAL RESPONSIVE FIXES ==================== */
+
+/* Prevent horizontal scroll on all devices */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Responsive typography */
+@media (max-width: 640px) {
+    h1, h2.text-3xl, h2.text-4xl {
+        font-size: 1.5rem !important;
+    }
+    h2.text-2xl, h2.text-3xl {
+        font-size: 1.25rem !important;
+    }
+}
+
+/* Image responsiveness */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Container responsiveness */
+.max-w-7xl, .max-w-6xl, .max-w-5xl {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+    .max-w-7xl, .max-w-6xl, .max-w-5xl {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .max-w-7xl, .max-w-6xl, .max-w-5xl {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+/* Touch-friendly buttons on mobile */
+@media (max-width: 768px) {
+    button, a {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Increase tap targets */
+    .slide-indicator {
+        width: 10px !important;
+        height: 10px !important;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Fix for fixed elements on mobile */
+@media (max-width: 768px) {
+    .fixed {
+        position: fixed;
+    }
+}
+
+/* Navbar mobile improvements */
+@media (max-width: 1024px) {
+    #navbar-container {
+        height: 70px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    #navbar-container {
+        height: 60px !important;
+    }
+}
+
+/* Doctors carousel responsive styles */
+#doctors-carousel {
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.doctor-card {
+    scroll-snap-align: start;
+}
+
+/* Mobile: 1 card per view */
+@media (max-width: 767px) {
+    .doctor-card {
+        width: 100% !important;
+        padding: 0 1rem;
+    }
+    
+    /* Show navigation buttons on mobile */
+    #prev-doctor,
+    #next-doctor {
+        opacity: 0.8;
+        pointer-events: auto;
+    }
+    
+    #doctors-indicators {
+        justify-content: center;
+        flex-wrap: wrap;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    #doctors-indicators button {
+        width: 6px;
+        height: 6px;
+        margin: 2px;
+    }
+}
+
+/* Tablet: 3 cards per view */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .doctor-card {
+        width: 33.333% !important;
+    }
+    
+    #doctors-indicators {
+        max-width: 200px;
+    }
+    
+    #doctors-indicators button {
+        width: 8px;
+        height: 8px;
+        margin: 3px;
+    }
+}
+
+/* Desktop: 3 cards per view */
+@media (min-width: 1024px) {
+    .doctor-card {
+        width: 33.333% !important;
+    }
+    
+    #doctors-indicators {
+        max-width: 150px;
+    }
+    
+    #doctors-indicators button {
+        width: 10px;
+        height: 10px;
+        margin: 4px;
+    }
+}
+
