@@ -39,6 +39,217 @@
       opacity: 0;
       pointer-events: none;
     }
+
+    /* Parallax Background Styles */
+    .parallax-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('Images/Blog/HeaderCommon.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      z-index: -1;
+      opacity: 0.15;
+      filter: blur(1px);
+    }
+
+    /* Enhanced Body Styles */
+    body {
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Enhanced Hero Section */
+    .hero-section {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(202, 138, 4, 0.1) 0%, rgba(234, 179, 8, 0.1) 50%, rgba(250, 204, 21, 0.1) 100%);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Enhanced Blog Cards */
+    .blog-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(202, 138, 4, 0.2);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .blog-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(202, 138, 4, 0.1), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .blog-card:hover::before {
+      left: 100%;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(202, 138, 4, 0.15);
+      border-color: rgba(202, 138, 4, 0.4);
+    }
+
+    .blog-card img {
+      transition: transform 0.5s ease, filter 0.3s ease;
+    }
+
+    .blog-card:hover img {
+      transform: scale(1.1);
+      filter: brightness(1.1);
+    }
+
+    /* Date Badge Enhancement */
+    .date-badge {
+      background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+      box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .date-badge::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.3) 50%, transparent 70%);
+      animation: shimmer 3s infinite;
+    }
+
+    @keyframes shimmer {
+      0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+      }
+
+      100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+      }
+    }
+
+    /* Section Backgrounds */
+    .section-bg-white {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(5px);
+      position: relative;
+    }
+
+    .section-bg-gray {
+      background: rgba(249, 250, 251, 0.9);
+      backdrop-filter: blur(5px);
+      position: relative;
+    }
+
+    /* Enhanced Category Buttons */
+    .category-btn {
+      background: linear-gradient(135deg, #facc15 0%, #eab308 50%, #ca8a04 100%);
+      color: #1f2937;
+      border: none;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(202, 138, 4, 0.2);
+    }
+
+    .category-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .category-btn:hover::before {
+      left: 100%;
+    }
+
+    .category-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(202, 138, 4, 0.3);
+    }
+
+    /* Enhanced Form Section */
+    .form-section {
+      background: linear-gradient(135deg, rgba(254, 242, 242, 0.9) 0%, rgba(254, 252, 232, 0.9) 100%);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(202, 138, 4, 0.2);
+    }
+
+    /* Enhanced Typography */
+    .section-title {
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #ca8a04 0%, #eab308 50%, #facc15 100%);
+      border-radius: 2px;
+    }
+
+    /* Floating Animation */
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .floating {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    /* Responsive Enhancements */
+    @media (max-width: 768px) {
+      .parallax-bg {
+        background-attachment: scroll;
+      }
+
+      .blog-card:hover {
+        transform: translateY(-4px) scale(1.01);
+      }
+    }
   </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-B7BXJEHXWK"></script>
   <script>
@@ -52,6 +263,8 @@
 </head>
 
 <body class="bg-gray-50">
+  <!-- Parallax Background -->
+  <div class="parallax-bg"></div>
   <!-- Scroll Progress Bar -->
   <div class="scroll-progress" id="scrollProgress">
     <div class="scroll-progress-bar" id="scrollProgressBar"></div>
@@ -61,9 +274,10 @@
   <div id="navbar-container"></div>
 
   <!-- Hero Section -->
-  <section class="relative">
-    <div class="w-full h-64 sm:h-80 md:h-96 lg:h-[450px] xl:h-[520px] 2xl:h-[600px] overflow-hidden relative">
-      <img src="Images/Blog/blog-banner.webp" alt="Blog"
+  <section class="hero-section relative">
+    <div
+      class="hero-content w-full h-64 sm:h-80 md:h-96 lg:h-[450px] xl:h-[520px] 2xl:h-[600px] overflow-hidden relative">
+      <img src="Images/Blog/blog-banner1.webp" alt="Blog"
         class="w-full h-full object-cover object-center scale-100 lg:scale-105 transition-transform duration-300">
       <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60"></div>
       <div class="absolute inset-0 flex items-center justify-center">
@@ -88,17 +302,22 @@
 
 
   <!-- Recent Posts Section - Horizontal Layout Below -->
-  <section class="py-8 bg-white">
+  <section class="py-8 section-bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Recent Posts</h3>
+      <div class="text-center mb-8">
+        <h3 class="text-2xl font-bold text-gray-900 section-title">Recent Posts</h3>
+        <p class="text-gray-600 mt-3 max-w-2xl mx-auto">Discover the latest insights and advancements in orthopedic
+          care, treatments, and patient success stories from our expert medical team.</p>
+      </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
 
-         <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+        <div
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/blogs/understanding-eswt-therapy-chronic-joint-pain-hyderabad" class="block relative">
             <div class="absolute top-0 left-0 z-10">
-              <div class="bg-red-500 text-white px-2 py-1 rounded-tr-lg rounded-bl-lg text-center shadow-md flex items-center gap-1">
+              <div
+                class="bg-red-500 text-white px-2 py-1 rounded-tr-lg rounded-bl-lg text-center shadow-md flex items-center gap-1">
                 <span class="text-sm font-bold">28</span>
                 <span class="text-[10px] font-semibold">May</span>
               </div>
@@ -111,16 +330,17 @@
               Understanding ESWT Therapy for Chronic Joint Pain in Hyderabad</h4>
           </a>
           <a href="/blogs/understanding-eswt-therapy-chronic-joint-pain-hyderabad"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
 
         <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/blogs/arthroscopy-sports-injuries-fastest-recovery-hyderabad" class="block relative">
-             <div class="absolute top-0 left-0 z-10">
-              <div class="bg-red-500 text-white px-2 py-1 rounded-tr-lg rounded-bl-lg text-center shadow-md flex items-center gap-1">
+            <div class="absolute top-0 left-0 z-10">
+              <div
+                class="bg-red-500 text-white px-2 py-1 rounded-tr-lg rounded-bl-lg text-center shadow-md flex items-center gap-1">
                 <span class="text-sm font-bold">25</span>
                 <span class="text-[10px] font-semibold">May</span>
               </div>
@@ -133,7 +353,7 @@
               Arthroscopy for Sports Injuries: Fastest Recovery in Hyderabad</h4>
           </a>
           <a href="/blogs/arthroscopy-sports-injuries-fastest-recovery-hyderabad"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
@@ -141,10 +361,11 @@
 
 
         <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/blogs/hip-replacement-recovery-timeline-exercises-hyderabad" class="block relative">
             <div class="absolute top-0 left-0 z-10">
-              <div class="bg-red-500 text-white px-2 py-1 rounded-tr-lg rounded-bl-lg text-center shadow-md flex items-center gap-1">
+              <div
+                class="bg-red-500 text-white px-2 py-1 rounded-tr-lg rounded-bl-lg text-center shadow-md flex items-center gap-1">
                 <span class="text-sm font-bold">19</span>
                 <span class="text-[10px] font-semibold">May</span>
               </div>
@@ -157,16 +378,17 @@
               Life After Hip Replacement: Complete Recovery Timeline and Essential Exercises</h4>
           </a>
           <a href="/blogs/hip-replacement-recovery-timeline-exercises-hyderabad"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
 
-         <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+        <div
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/blogs/choose-right-joint-replacement-surgeon-hyderabad" class="block relative">
             <div class="absolute top-0 left-0 z-10">
-              <div class="bg-red-500 text-white px-2 py-1 rounded-tr-lg rounded-bl-lg text-center shadow-md flex items-center gap-1">
+              <div
+                class="bg-red-500 text-white px-2 py-1 rounded-tr-lg rounded-bl-lg text-center shadow-md flex items-center gap-1">
                 <span class="text-sm font-bold">18</span>
                 <span class="text-[10px] font-semibold">May</span>
               </div>
@@ -179,16 +401,17 @@
               Choose the Right Joint Replacement Surgeon in Hyderabad</h4>
           </a>
           <a href="/blogs/choose-right-joint-replacement-surgeon-hyderabad"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
 
         <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/blogs/orthopedic-specialist-hyderabad-warning-signs" class="block relative">
             <div class="absolute top-0 left-0 z-10">
-              <div class="bg-red-500 text-white px-2 py-1 rounded-tr-lg rounded-bl-lg text-center shadow-md flex items-center gap-1">
+              <div
+                class="bg-red-500 text-white px-2 py-1 rounded-tr-lg rounded-bl-lg text-center shadow-md flex items-center gap-1">
                 <span class="text-sm font-bold">16</span>
                 <span class="text-[10px] font-semibold">May</span>
               </div>
@@ -201,14 +424,14 @@
               Orthopedic Specialist in Hyderabad: Warning Signs You Should Not Ignore</h4>
           </a>
           <a href="/blogs/orthopedic-specialist-hyderabad-warning-signs"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
 
         <!-- Post 1 -->
         <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/acl-tear-treatment" class="block">
             <img src="Images/Blog/Recent1.webp" alt="ACL Tear Treatment"
               class="w-full h-40 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
@@ -218,13 +441,13 @@
               Arthroscopy Help You Return to Sports Faster?</h4>
           </a>
           <a href="/acl-tear-treatment"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
         <!-- Post 2 -->
         <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/knee-replacement-hyderabad" class="block">
             <img src="Images/Blog/Recent2.webp" alt="Knee Replacement"
               class="w-full h-40 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
@@ -234,13 +457,13 @@
               Cost, Recovery, and What to Expect</h4>
           </a>
           <a href="/knee-replacement-hyderabad"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
         <!-- Post 3 -->
         <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/best-orthopedic-doctor-hyderabad" class="block">
             <img src="Images/Blog/Recent3.webp" alt="Best Orthopedic Doctor"
               class="w-full h-40 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
@@ -250,13 +473,13 @@
               Hyderabad for Knee, Back & Shoulder Pain</h4>
           </a>
           <a href="/best-orthopedic-doctor-hyderabad"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
         <!-- Post 4 -->
         <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/chondrofiller-injection-the-future-of-non-surgical-cartilage-repair" class="block">
             <img src="Images/Blog/Recent4.webp" alt="ChondroFiller Injection"
               class="w-full h-40 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
@@ -266,13 +489,13 @@
               Future of Non-Surgical Cartilage Repair</h4>
           </a>
           <a href="/chondrofiller-injection-the-future-of-non-surgical-cartilage-repair"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
         <!-- Post 5 -->
         <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/stem-cell-therapy-for-joint-pain-what-you-need-to-know" class="block">
             <img src="Images/Blog/Recent5.webp" alt="Stem Cell Therapy"
               class="w-full h-40 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
@@ -282,13 +505,13 @@
               Pain: What You Need to Know</h4>
           </a>
           <a href="/stem-cell-therapy-for-joint-pain-what-you-need-to-know"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
         <!-- Post 6 -->
         <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/nutrition-for-bone-and-joint-health" class="block">
             <img src="Images/Blog/Recent6.webp" alt="Nutrition for Bone and Joint Health"
               class="w-full h-40 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
@@ -298,13 +521,13 @@
               Health</h4>
           </a>
           <a href="/nutrition-for-bone-and-joint-health"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
         <!-- Post 7 -->
         <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/genicular-artery-embolisation-a-breakthrough-for-knee-osteoarthritis" class="block">
             <img src="Images/Blog/Recent7.webp" alt="Genicular Artery Embolisation"
               class="w-full h-40 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
@@ -314,13 +537,13 @@
               Breakthrough for Knee Osteoarthritis</h4>
           </a>
           <a href="/genicular-artery-embolisation-a-breakthrough-for-knee-osteoarthritis"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
         <!-- Post 8 -->
         <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/prp-therapy-for-joint-pain-does-it-really-work" class="block">
             <img src="Images/Blog/Recent8.webp" alt="PRP Therapy for Joint Pain"
               class="w-full h-40 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
@@ -330,13 +553,13 @@
               Work?</h4>
           </a>
           <a href="/prp-therapy-for-joint-pain-does-it-really-work"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
         <!-- Post 9 -->
         <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/minimally-invasive-orthopedic-procedures-in-hyderabad" class="block">
             <img src="Images/Blog/Recent9.webp" alt="Minimally Invasive Orthopedic Procedures"
               class="w-full h-40 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
@@ -346,13 +569,13 @@
               Hyderabad</h4>
           </a>
           <a href="/minimally-invasive-orthopedic-procedures-in-hyderabad"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
         <!-- Post 10 -->
         <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/sports-injury-treatment-in-hyderabad-acl-tears-rotator-cuff" class="block">
             <img src="Images/Blog/Recent10.webp" alt="Sports Injury Treatment"
               class="w-full h-40 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
@@ -362,13 +585,13 @@
               tears, rotator cuff</h4>
           </a>
           <a href="/sports-injury-treatment-in-hyderabad-acl-tears-rotator-cuff"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
         <!-- Post 11 -->
         <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/robotic-knee-replacement-in-hyderabad-a-complete-guide" class="block">
             <img src="Images/Blog/Recent11.webp" alt="Robotic Knee Replacement"
               class="w-full h-40 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
@@ -378,13 +601,13 @@
               Complete Guide</h4>
           </a>
           <a href="/robotic-knee-replacement-in-hyderabad-a-complete-guide"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
         <!-- Post 12 -->
         <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/non-surgical-knee-pain-treatment-in-hyderabad" class="block">
             <img src="Images/Blog/Recent12.webp" alt="Non-Surgical Knee Pain Treatment"
               class="w-full h-40 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
@@ -394,13 +617,13 @@
               Hyderabad</h4>
           </a>
           <a href="/non-surgical-knee-pain-treatment-in-hyderabad"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
         <!-- Post 13 -->
         <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/how-much-does-acl-surgery-cost-in-india" class="block">
             <img src="Images/Blog/Recent13.webp" alt="ACL Surgery Cost in India"
               class="w-full h-40 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
@@ -410,13 +633,13 @@
             </h4>
           </a>
           <a href="/how-much-does-acl-surgery-cost-in-india"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
         <!-- Post 14 -->
         <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/arthroscopic-acl-surgery" class="block">
             <img src="Images/Blog/Recent14.webp" alt="Arthroscopic ACL Surgery"
               class="w-full h-40 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
@@ -426,13 +649,13 @@
               Tear?</h4>
           </a>
           <a href="/arthroscopic-acl-surgery"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
         <!-- Post 15 -->
         <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/robotic-knee-replacement-vs-traditional-knee-replacement-whats-the-difference" class="block">
             <img src="Images/Blog/Recent15.webp" alt="Robotic vs Traditional Knee Replacement"
               class="w-full h-40 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
@@ -442,13 +665,13 @@
               Knee Replacement: What's the Difference?</h4>
           </a>
           <a href="/robotic-knee-replacement-vs-traditional-knee-replacement-whats-the-difference"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
         <!-- Post 16 -->
         <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/top-orthopedic-specialist-hyderabad" class="block">
             <img src="Images/Blog/Recent16.webp" alt="Top Orthopedic Specialist"
               class="w-full h-40 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
@@ -458,13 +681,13 @@
               Finding the Best Care</h4>
           </a>
           <a href="/top-orthopedic-specialist-hyderabad"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
         <!-- Post 17 -->
         <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/hip-replacement-healing-time" class="block">
             <img src="Images/Blog/Recent17.webp" alt="Hip Replacement Healing Time"
               class="w-full h-40 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
@@ -474,13 +697,13 @@
               at Every Stage of Recovery</h4>
           </a>
           <a href="/hip-replacement-healing-time"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
         <!-- Post 18 -->
         <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/bone-health-and-nutrition-essential-nutrients-for-stronger-bones" class="block">
             <img src="Images/Blog/Recent18.webp" alt="Bone Health and Nutrition"
               class="w-full h-40 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
@@ -490,13 +713,13 @@
               Nutrients for Stronger Bones</h4>
           </a>
           <a href="/bone-health-and-nutrition-essential-nutrients-for-stronger-bones"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
         <!-- Post 19 -->
         <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/top-5-mistakes-to-avoid-after-knee-replacement-surgery" class="block">
             <img src="Images/Blog/Recent19.webp" alt="Top 5 Mistakes After Knee Replacement"
               class="w-full h-40 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
@@ -506,13 +729,13 @@
               Replacement Surgery</h4>
           </a>
           <a href="/top-5-mistakes-to-avoid-after-knee-replacement-surgery"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
         <!-- Post 20 -->
         <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/knee-replacement-major-operation" class="block">
             <img src="Images/Blog/Recent20.webp" alt="Knee Replacement Major Operation"
               class="w-full h-40 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
@@ -522,13 +745,13 @@
             </h4>
           </a>
           <a href="/knee-replacement-major-operation"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
         <!-- Post 21 -->
         <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/what-is-the-knee-replacement-surgery-success-rate-in-india" class="block">
             <img src="Images/Blog/Recent21.webp" alt="Knee Replacement Success Rate in India"
               class="w-full h-40 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
@@ -538,13 +761,13 @@
               rate in India?</h4>
           </a>
           <a href="/what-is-the-knee-replacement-surgery-success-rate-in-india"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
         <!-- Post 22 -->
         <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/knee-arthroscopy-procedure-preparation-and-recovery" class="block">
             <img src="Images/Blog/Recent22.webp" alt="Knee Arthroscopy Procedure"
               class="w-full h-40 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
@@ -554,13 +777,13 @@
               Recovery</h4>
           </a>
           <a href="/knee-arthroscopy-procedure-preparation-and-recovery"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
         <!-- Post 23 -->
         <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/effective-robotic-joint-replacement-backed-by-german-precision" class="block">
             <img src="Images/Blog/Recent23.webp" alt="Robotic Joint Replacement"
               class="w-full h-40 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
@@ -570,13 +793,13 @@
               by German Precision</h4>
           </a>
           <a href="/effective-robotic-joint-replacement-backed-by-german-precision"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
         <!-- Post 24 -->
         <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/mr-abdul-ali-patient-story" class="block">
             <img src="Images/Blog/Recent24.webp" alt="Mr.Abdul Ali Patient Story"
               class="w-full h-40 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
@@ -586,13 +809,13 @@
               Germanten Hospital Hyderabad</h4>
           </a>
           <a href="/mr-abdul-ali-patient-story"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
         <!-- Post 25 -->
         <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/knee-replacement-surgery-patient-story" class="block">
             <img src="Images/Blog/Recent25.webp" alt="Knee Replacement Surgery Patient Story"
               class="w-full h-40 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
@@ -602,13 +825,13 @@
               Surgery</h4>
           </a>
           <a href="/knee-replacement-surgery-patient-story"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
         <!-- Post 26 -->
         <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/happy-patients-story-germanten-hospital" class="block">
             <img src="Images/Blog/Recent26.webp" alt="Mr.Rabul Islam Hip Replacement Story"
               class="w-full h-40 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
@@ -618,13 +841,13 @@
               Hyderabad</h4>
           </a>
           <a href="/happy-patients-story-germanten-hospital"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
         <!-- Post 27 -->
         <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/happy-patient-mr-anil-ahuja-total-knee-replacement-testimonial" class="block">
             <img src="Images/Blog/Recent27.webp" alt="Mr.Anil Ahuja Knee Replacement Testimonial"
               class="w-full h-40 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
@@ -634,13 +857,13 @@
               Replacement Testimonial</h4>
           </a>
           <a href="/happy-patient-mr-anil-ahuja-total-knee-replacement-testimonial"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
         <!-- Post 28 -->
         <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/immune-system-supplements" class="block">
             <img src="Images/Blog/Recent28.webp" alt="Immune System Supplements"
               class="w-full h-40 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
@@ -650,13 +873,13 @@
               System Right Now</h4>
           </a>
           <a href="/immune-system-supplements"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
         <!-- Post 29 -->
         <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/eswt-treatment-at-germanten-hospital-hyderabad" class="block">
             <img src="Images/Blog/Recent29.webp" alt="ESWT Treatment at Germanten Hospital"
               class="w-full h-40 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
@@ -666,13 +889,13 @@
               HYDERABAD</h4>
           </a>
           <a href="/eswt-treatment-at-germanten-hospital-hyderabad"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
         <!-- Post 30 -->
         <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/leg-bone-fracture-treatment-experience-at-germanten-hospital-by-mrs-shravani-g" class="block">
             <img src="Images/Blog/Recent30.webp" alt="Mrs. Shravani G Leg Fracture Treatment"
               class="w-full h-40 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
@@ -682,13 +905,13 @@
               Germanten Hospital By Mrs. Shravani G</h4>
           </a>
           <a href="/leg-bone-fracture-treatment-experience-at-germanten-hospital-by-mrs-shravani-g"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
         <!-- Post 31 -->
         <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/patients-testimonials-after-successful-acl-surgery-by-dr-mir-jawad-zar-khan" class="block">
             <img src="Images/Blog/Recent31.webp" alt="ACL Surgery Testimonials"
               class="w-full h-40 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
@@ -698,13 +921,13 @@
               Surgery By Dr Mir Jawad Zar Khan</h4>
           </a>
           <a href="/patients-testimonials-after-successful-acl-surgery-by-dr-mir-jawad-zar-khan"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
         <!-- Post 32 -->
         <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/total-knee-replacement-success-story" class="block">
             <img src="Images/Blog/Recent32.webp" alt="total-knee-replacement-success-story"
               class="w-full h-40 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
@@ -713,13 +936,13 @@
               total-knee-replacement-success-story</h4>
           </a>
           <a href="/total-knee-replacement-success-story"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
         <!-- Post 33 -->
         <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/dancer-injuries-germanten-hospital-hyderabad-offers-best-treatment-for-dance-injuries"
             class="block">
             <img src="Images/Blog/Recent33.webp" alt="Dancer Injuries"
@@ -730,13 +953,13 @@
               Hyderabad offers Best treatment for Dance Injuries</h4>
           </a>
           <a href="/dancer-injuries-germanten-hospital-hyderabad-offers-best-treatment-for-dance-injuries"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
         <!-- Post 34 -->
         <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/tennis-elbow-causes-treatments" class="block">
             <img src="Images/Blog/Recent34.webp" alt="Tennis Elbow, causes, and Treatments"
               class="w-full h-40 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
@@ -745,13 +968,13 @@
               Tennis Elbow, causes, and Treatments</h4>
           </a>
           <a href="/tennis-elbow-causes-treatments"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
         <!-- Post 35 -->
         <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/heel-pain-causes-treatments" class="block">
             <img src="Images/Blog/Recent35.webp" alt="Heel Pain -Causes and Treatments"
               class="w-full h-40 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
@@ -760,7 +983,7 @@
               Heel Pain -Causes and Treatments</h4>
           </a>
           <a href="/heel-pain-causes-treatments"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
@@ -773,59 +996,55 @@
             <h4 class="text-gray-900 mb-2 line-clamp-2 text-sm font-semibold hover:text-red-600 transition-colors duration-200">Best Orthopedic Hospital in Hyderabad</h4>
           </a>
           <a href="/best-orthopedic-hospital-in-hyderabad"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
 
-        <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+        <div class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/best-orthopedic-surgeon-in-hyderabad" class="block">
             <img src="Images/Blog/Recent37.webp" alt="Best Orthopedic Surgeon in Hyderabad"
               class="w-full h-40 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
             <h4 class="text-gray-900 mb-2 line-clamp-2 text-sm font-semibold hover:text-red-600 transition-colors duration-200">Best Orthopedic Surgeon in Hyderabad</h4>
           </a>
           <a href="/best-orthopedic-surgeon-in-hyderabad"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
 
-        <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+        <div class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/hip-replacement-healing-time-what-to-expect-at-every-stage-of-recovery" class="block">
             <img src="Images/Blog/Recent38.webp" alt="Hip Replacement Healing Time: What to Expect at Every Stage of Recovery"
               class="w-full h-40 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
             <h4 class="text-gray-900 mb-2 line-clamp-2 text-sm font-semibold hover:text-red-600 transition-colors duration-200">Hip Replacement Healing Time: What to Expect at Every Stage of Recovery</h4>
           </a>
           <a href="/hip-replacement-healing-time-what-to-expect-at-every-stage-of-recovery"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div> 
         
-        <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+        <div class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/knee-replacement-in-hyderabad-cost-recovery-and-what-to-expect" class="block">
             <img src="Images/Blog/Recent38.webp" alt="Knee Replacement in Hyderabad: Cost, Recovery, and What to Expect"
               class="w-full h-40 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
             <h4 class="text-gray-900 mb-2 line-clamp-2 text-sm font-semibold hover:text-red-600 transition-colors duration-200">Knee Replacement in Hyderabad: Cost, Recovery, and What to Expect</h4>
           </a>
           <a href="/knee-replacement-in-hyderabad-cost-recovery-and-what-to-expect"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div> 
 
-        <div
-          class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+        <div class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="/is-arthroscopic-surgery-right-for-your-acl-tear" class="block">
             <img src="Images/Blog/Recent38.webp" alt="Is Arthroscopic Surgery Right for Your ACL Tear?"
               class="w-full h-40 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
             <h4 class="text-gray-900 mb-2 line-clamp-2 text-sm font-semibold hover:text-red-600 transition-colors duration-200">Is Arthroscopic Surgery Right for Your ACL Tear?</h4>
           </a>
           <a href="/is-arthroscopic-surgery-right-for-your-acl-tear"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200">
+            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
             Read More »
           </a>
         </div>
@@ -839,28 +1058,32 @@
 
 
   <!-- Categories Section -->
-  <section class="py-8 bg-gray-50">
+  <section class="py-8 section-bg-gray">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Categories</h3>
+      <div class="text-center mb-8">
+        <h3 class="text-2xl font-bold text-gray-900 section-title">Categories</h3>
+        <p class="text-gray-600 mt-3 max-w-2xl mx-auto">Explore our comprehensive range of orthopedic specialties and
+          find the information you need about specific treatments and conditions.</p>
+      </div>
       <div class="flex flex-wrap justify-center gap-4">
         <button onclick="window.location.href='arthroscopy'"
-          class="px-6 py-3 bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold rounded-lg border-2 border-yellow-600 transition-colors duration-200">
+          class="category-btn px-6 py-3 text-gray-900 font-semibold rounded-lg transition-colors duration-200">
           Arthroscopy
         </button>
-        <button onclick="window.location.href='treatments/modal-hip-replacement'"
-          class="px-6 py-3 bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold rounded-lg border-2 border-yellow-600 transition-colors duration-200">
+        <button onclick="window.location.href='hip-replacement'"
+          class="category-btn px-6 py-3 text-gray-900 font-semibold rounded-lg transition-colors duration-200">
           Hip Replacement
         </button>
         <button onclick="window.location.href='best-knee-replacement-surgeon-in-hyderabad'"
-          class="px-6 py-3 bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold rounded-lg border-2 border-yellow-600 transition-colors duration-200">
+          class="category-btn px-6 py-3 text-gray-900 font-semibold rounded-lg transition-colors duration-200">
           Knee Replacement
         </button>
-        <button onclick="window.location.href='treatments/modal-spine-non-surgical-treatment'"
-          class="px-6 py-3 bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold rounded-lg border-2 border-yellow-600 transition-colors duration-200">
+        <button onclick="window.location.href='spine-non-surgical-treatment'"
+          class="category-btn px-6 py-3 text-gray-900 font-semibold rounded-lg transition-colors duration-200">
           Non Surgical
         </button>
-        <button onclick="window.location.href='treatments/modal-general-orthopedics'"
-          class="px-6 py-3 bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold rounded-lg border-2 border-yellow-600 transition-colors duration-200">
+        <button onclick="window.location.href='general-orthopedics'"
+          class="category-btn px-6 py-3 text-gray-900 font-semibold rounded-lg transition-colors duration-200">
           Orthopedic
         </button>
       </div>
@@ -869,40 +1092,53 @@
 
 
   <!-- Benefits Section - Modified: Replaced Quick Enquiry with Latest News Box -->
-  <section class="py-8 bg-gray-50">
+  <section class="py-8 section-bg-gray">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-2 gap-6 mt-8">
         <!-- Form 1: Book Appointment (Kept as is) -->
-        <div class="bg-gradient-to-br from-red-50 to-yellow-50 rounded-xl p-4 shadow-md border border-red-200">
-          <h3 class="text-lg font-bold text-gray-900 mb-3">Get A Quick Callback</h3>
-          <form class="space-y-3">
-            <div>
-              <label class="block text-xs font-medium text-gray-700 mb-1">Full Name</label>
-              <input type="text"
-                class="w-full px-3 py-1.5 text-sm border border-gray-300 rounded-md focus:ring-1 focus:ring-red-500 focus:border-transparent"
-                placeholder="Enter your full name">
+        <div
+          class="bg-gradient-to-br from-red-50 to-yellow-50 rounded-xl p-4 shadow-md border border-red-200 order-2 lg:order-1 flex flex-col justify-center">
+
+          <form class="space-y-3 lg:space-y-4 max-w-md mx-auto w-full"
+            action="https://old.germantenhospitals.com/send_email.php" method="post">
+            <h2 class="text-lg lg:text-xl font-bold mb-4 lg:mb-5 text-red-700 tracking-tight flex items-center gap-2">
+              <span class="text-xl lg:text-2xl">📞</span> Get A Quick Callback
+            </h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-4">
+              <div>
+                <label class="block text-sm font-medium mb-2 text-gray-700">Full
+                  Name<span class="text-red-500">*</span></label>
+                <input type="text" id="customFirstName" name="name" placeholder="Enter your full name" required
+                  class="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 focus:outline-none focus:border-red-300 transition-all">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-2 text-gray-700">Mobile
+                  Number</label>
+                <input type="tel" id="customPhone" name="phone" placeholder="+91" required
+                  class="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 focus:outline-none focus:border-red-300 transition-all">
+              </div>
+            </div>
+            <div style="position:absolute; left:-9999px;">
+              <label>Website</label>
+              <input type="text" name="website" value="">
             </div>
             <div>
-              <label class="block text-xs font-medium text-gray-700 mb-1">Mobile Number</label>
-              <input type="tel"
-                class="w-full px-3 py-1.5 text-sm border border-gray-300 rounded-md focus:ring-1 focus:ring-red-500 focus:border-transparent"
-                placeholder="Enter your mobile number">
+              <label class="block text-sm font-medium mb-2 text-gray-700">Email
+                Address</label>
+              <input type="email" id="customEmail" name="email" placeholder="Enter your email address" required
+                class="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 focus:outline-none focus:border-red-300 transition-all">
             </div>
             <div>
-              <label class="block text-xs font-medium text-gray-700 mb-1">Email Address</label>
-              <input type="email"
-                class="w-full px-3 py-1.5 text-sm border border-gray-300 rounded-md focus:ring-1 focus:ring-red-500 focus:border-transparent"
-                placeholder="Enter your email address">
+              <label class="block text-sm font-medium mb-2 text-gray-700">Message</label>
+              <textarea id="customMessage" name="notes" rows="3 lg:rows-4" placeholder="Enter your query"
+                class="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 focus:outline-none focus:border-red-300 transition-all resize-none"></textarea>
             </div>
-            <div>
-              <label class="block text-xs font-medium text-gray-700 mb-1">Message</label>
-              <textarea
-                class="w-full px-3 py-1.5 text-sm border border-gray-300 rounded-md focus:ring-1 focus:ring-red-500 focus:border-transparent"
-                rows="3" placeholder="Enter your query"></textarea>
-            </div>
+            <input type="hidden" name="form_name" id="form_name" value="Appointment Form" />
+            <input type="hidden" name="page_link" id="page_link" />
+            <input type="hidden" name="source" id="source" value="web-ads" />
             <button type="submit"
-              class="w-full bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700 transition-colors duration-300 font-medium text-sm">
-              Submit Appointment
+              class="w-full font-semibold py-3 px-6 rounded-lg transition-all duration-300 text-base shadow-md hover:shadow-lg transform hover:scale-[1.02] bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white">
+              ✨ Submit Appointment
             </button>
           </form>
         </div>

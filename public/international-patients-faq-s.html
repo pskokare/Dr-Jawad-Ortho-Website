@@ -2,10 +2,12 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-    <meta name="google-site-verification" content="gyGSLLzdQLlIEsLrhnGzWjOoQDhyTo8sxocDXKNkG7w" />    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta charset="UTF-8">
+    <meta name="google-site-verification" content="gyGSLLzdQLlIEsLrhnGzWjOoQDhyTo8sxocDXKNkG7w" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>International Patient FAQs - Germanten Hospitals</title>
-    <meta name="description" content="Get answers to frequently asked questions about international patient care at Germanten Hospitals. Your guide to medical tourism in India.">
+    <meta name="description"
+        content="Get answers to frequently asked questions about international patient care at Germanten Hospitals. Your guide to medical tourism in India.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/webp" href="Images/GERMANTANLOGO.webp">
@@ -85,25 +87,25 @@
         .rotate-180 {
             transform: rotate(180deg);
         }
-        
+
         .mobile-dropdown {
             transition: all 0.3s ease;
         }
-        
+
         .mobile-dropdown button {
             position: relative;
         }
-        
+
         .mobile-dropdown button i {
             transition: transform 0.3s ease;
         }
-        
+
         .mobile-dropdown [id$="-dropdown"] {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease-out;
         }
-        
+
         .mobile-dropdown [id$="-dropdown"]:not(.hidden) {
             max-height: 500px;
             overflow: visible;
@@ -118,11 +120,12 @@
             position: relative;
             background-color: #f3f4f6;
         }
-        
+
         /* Mobile hero section positioning */
         @media (max-width: 768px) {
             .hero-section {
-                margin-top: 4rem; /* Reduce margin for mobile to account for navbar */
+                margin-top: 4rem;
+                /* Reduce margin for mobile to account for navbar */
             }
         }
 
@@ -257,61 +260,68 @@
                 font-size: 0.875rem !important;
                 line-height: 1.4 !important;
             }
+
             .faq-answer p {
                 font-size: 0.8rem !important;
             }
+
             .section-title {
                 font-size: 1.25rem !important;
             }
+
             .info-card-title {
                 font-size: 0.9rem !important;
             }
+
             .info-card-text {
                 font-size: 0.8rem !important;
             }
         }
-        
+
         @media (min-width: 641px) and (max-width: 768px) {
             .section-title {
                 font-size: 1.5rem !important;
             }
         }
-        
+
         /* Prevent horizontal scroll */
-        html, body {
+        html,
+        body {
             max-width: 100%;
             overflow-x: hidden;
         }
-        
+
         /* FAQ accordion mobile optimization */
         @media (max-width: 768px) {
             .faq-item {
                 margin-bottom: 0.75rem;
             }
+
             .faq-icon {
                 font-size: 0.875rem;
             }
         }
-        
+
         /* Service info cards responsive */
         @media (max-width: 640px) {
             .service-icon {
                 width: 2.5rem !important;
                 height: 2.5rem !important;
             }
+
             .service-icon i {
                 font-size: 1rem !important;
             }
         }
     </style>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-B7BXJEHXWK"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B7BXJEHXWK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-gtag('config', 'G-B7BXJEHXWK');
-</script>
+        gtag('config', 'G-B7BXJEHXWK');
+    </script>
 
 </head>
 
@@ -328,12 +338,13 @@ gtag('config', 'G-B7BXJEHXWK');
     <section class="hero-section relative w-full h-48 sm:h-64 md:h-80">
         <div class="border-b-4 border-yellow-400 w-full h-full relative">
             <img src="Images/Patient-Info/InternationalPatientFaq.webp" width="1920" height="1080"
-                 alt="International Patient Information - Germanten Hospitals"
+                alt="International Patient Information - Germanten Hospitals"
                 class="hero-image w-full h-full object-cover"
                 onerror="this.onerror=null; this.src='https://via.placeholder.com/1920x800?text=International+Patient+FAQs';">
-            
+
             <!-- Black Overlay Effect -->
-            <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60 pointer-events-none"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60 pointer-events-none">
+            </div>
         </div>
     </section>
 
@@ -343,7 +354,8 @@ gtag('config', 'G-B7BXJEHXWK');
             <nav class="flex items-center flex-wrap text-xs sm:text-sm" aria-label="Breadcrumb">
                 <ol class="flex items-center flex-wrap list-none m-0 p-0">
                     <li class="flex items-center">
-                        <a href="/" class="inline-flex items-center text-gray-600 hover:text-blue-700 transition font-medium">
+                        <a href="/"
+                            class="inline-flex items-center text-gray-600 hover:text-blue-700 transition font-medium">
                             <i class="fa-solid fa-home mr-1 text-[10px] sm:text-xs"></i>
                             <span class="hidden sm:inline">Home</span>
                         </a>
@@ -352,13 +364,16 @@ gtag('config', 'G-B7BXJEHXWK');
                         <i class="fa-solid fa-chevron-right text-[8px] sm:text-[10px] text-gray-400"></i>
                     </li>
                     <li class="flex items-center">
-                        <a href="#" class="text-gray-600 hover:text-blue-700 transition font-medium truncate max-w-[80px] sm:max-w-none">Patient Info</a>
+                        <a href="#"
+                            class="text-gray-600 hover:text-blue-700 transition font-medium truncate max-w-[80px] sm:max-w-none">Patient
+                            Info</a>
                     </li>
                     <li class="flex items-center px-1 sm:px-2">
                         <i class="fa-solid fa-chevron-right text-[8px] sm:text-[10px] text-gray-400"></i>
                     </li>
                     <li class="flex items-center">
-                        <span class="text-blue-700 font-semibold truncate max-w-[150px] sm:max-w-[200px] md:max-w-none" aria-current="page">International Patient FAQs</span>
+                        <span class="text-blue-700 font-semibold truncate max-w-[150px] sm:max-w-[200px] md:max-w-none"
+                            aria-current="page">International Patient FAQs</span>
                     </li>
                 </ol>
             </nav>
@@ -370,11 +385,14 @@ gtag('config', 'G-B7BXJEHXWK');
         <div class="container-custom">
             <!-- Section Header -->
             <div class="text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12">
-                <h1 class="section-title text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
+                <h1
+                    class="section-title text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
                     International Patient <span class="text-red-600">FAQs</span>
                 </h1>
-                <div class="w-16 sm:w-20 md:w-24 h-1 bg-gradient-to-r from-red-500 to-red-700 rounded-full mx-auto"></div>
-                <p class="text-xs sm:text-sm md:text-base text-gray-600 mt-3 sm:mt-4 max-w-2xl mx-auto px-2 sm:px-4 text-justify">
+                <div class="w-16 sm:w-20 md:w-24 h-1 bg-gradient-to-r from-red-500 to-red-700 rounded-full mx-auto">
+                </div>
+                <p
+                    class="text-xs sm:text-sm md:text-base text-gray-600 mt-3 sm:mt-4 max-w-2xl mx-auto px-2 sm:px-4 text-justify">
                     Find answers to commonly asked questions about our international patient services
                 </p>
             </div>
@@ -469,12 +487,14 @@ gtag('config', 'G-B7BXJEHXWK');
                             <div class="text-sm sm:text-base text-gray-700 leading-relaxed space-y-3">
                                 <p><span class="font-bold">Cash, Credit Card, VISA Card and International Debit
                                         Card</span> are accepted. However, we do not accept American Express card.</p>
-                                <p class="text-xs sm:text-sm text-gray-600">Kindly note that an additional charge of taxes over and
+                                <p class="text-xs sm:text-sm text-gray-600">Kindly note that an additional charge of
+                                    taxes over and
                                     above the bill amount of debit / credit card will be applied.</p>
                                 <p>We also provide assistance with currency conversions. Hospital's bank details can be
                                     provided for Transfer of amount. Once our finance department confirms the receipt of
                                     payment, we can take the process further and start the treatment.</p>
-                                <p class="bg-blue-50 p-3 rounded-lg text-sm">Alternatively, patients can also carry the required
+                                <p class="bg-blue-50 p-3 rounded-lg text-sm">Alternatively, patients can also carry the
+                                    required
                                     amount in USD, while travelling to India for their medical treatment and to meet
                                     other necessary expenses.</p>
                             </div>
@@ -499,7 +519,8 @@ gtag('config', 'G-B7BXJEHXWK');
                             <p class="text-sm sm:text-base text-gray-700 leading-relaxed text-justify">
                                 <span class="font-bold">Yes.</span> The Patient can email us at <a
                                     href="mailto:mjzk5565@gmail.com"
-                                    class="text-blue-600 hover:underline font-medium break-all">mjzk5565@gmail.com</a> to share
+                                    class="text-blue-600 hover:underline font-medium break-all">mjzk5565@gmail.com</a>
+                                to share
                                 his/her X-rays / Medical reports and Symptoms. Our expert doctor's opinion would be
                                 shared within 48 hours along with an estimated cost of the treatment.
                             </p>
@@ -526,11 +547,13 @@ gtag('config', 'G-B7BXJEHXWK');
                                     expertise can be found on our website.</p>
                                 <p>We will in advance publish the Visiting Dates of International doctors for patients
                                     who are willing to get treated by our International Doctors Team.</p>
-                                <p class="bg-yellow-50 p-3 rounded-lg text-sm">This facility is available to International
+                                <p class="bg-yellow-50 p-3 rounded-lg text-sm">This facility is available to
+                                    International
                                     patient as well as Local patients. We will assign a relationship manager to every
                                     patient to ease your process.</p>
                                 <p>Patients can mail us at <a href="mailto:mjzk5565@gmail.com"
-                                        class="text-blue-600 hover:underline font-medium break-all">mjzk5565@gmail.com</a> for
+                                        class="text-blue-600 hover:underline font-medium break-all">mjzk5565@gmail.com</a>
+                                    for
                                     International doctor's Appointments.</p>
                             </div>
                         </div>
@@ -540,160 +563,257 @@ gtag('config', 'G-B7BXJEHXWK');
 
             <!-- Additional Hospital Information -->
             <div class="mt-6 sm:mt-8 md:mt-10 lg:mt-12">
-                <div class="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 lg:p-8 shadow-xl border border-blue-100">
-                    <h3 class="info-card-title text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 flex items-center">
+                <div
+                    class="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 lg:p-8 shadow-xl border border-blue-100">
+                    <h3
+                        class="info-card-title text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 flex items-center">
                         <i class="fas fa-award text-yellow-500 mr-2 md:mr-3 text-lg md:text-2xl"></i>
                         Hospital Excellence & International Patient Services
                     </h3>
 
                     <div class="space-y-3 sm:space-y-4 md:space-y-6 text-gray-700 leading-relaxed">
                         <!-- Communication Support -->
-                        <div class="flex flex-col sm:flex-row items-start bg-white/70 p-3 sm:p-4 md:p-5 rounded-lg sm:rounded-xl hover:bg-white transition-all duration-300 shadow-sm">
+                        <div
+                            class="flex flex-col sm:flex-row items-start bg-white/70 p-3 sm:p-4 md:p-5 rounded-lg sm:rounded-xl hover:bg-white transition-all duration-300 shadow-sm">
                             <div class="flex-shrink-0 mb-2 sm:mb-0 sm:mr-3 md:mr-4">
-                                <div class="service-icon w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-green-100 rounded-full flex items-center justify-center">
+                                <div
+                                    class="service-icon w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-green-100 rounded-full flex items-center justify-center">
                                     <i class="fas fa-language text-green-600 text-sm sm:text-lg md:text-xl"></i>
                                 </div>
                             </div>
                             <div>
-                                <h4 class="info-card-title font-bold text-green-700 mb-1 text-sm sm:text-base md:text-lg">English-Speaking Representatives</h4>
-                                <p class="info-card-text text-xs sm:text-sm md:text-base text-justify">The hospital also provides English-speaking representatives to ensure the smooth flow of communication between hospital staff and patients.</p>
+                                <h4
+                                    class="info-card-title font-bold text-green-700 mb-1 text-sm sm:text-base md:text-lg">
+                                    English-Speaking Representatives</h4>
+                                <p class="info-card-text text-xs sm:text-sm md:text-base text-justify">The hospital also
+                                    provides English-speaking representatives to ensure the smooth flow of communication
+                                    between hospital staff and patients.</p>
                             </div>
                         </div>
 
                         <!-- Advanced Technology -->
-                        <div class="flex flex-col sm:flex-row items-start bg-white/70 p-3 sm:p-4 md:p-5 rounded-lg sm:rounded-xl hover:bg-white transition-all duration-300 shadow-sm">
+                        <div
+                            class="flex flex-col sm:flex-row items-start bg-white/70 p-3 sm:p-4 md:p-5 rounded-lg sm:rounded-xl hover:bg-white transition-all duration-300 shadow-sm">
                             <div class="flex-shrink-0 mb-2 sm:mb-0 sm:mr-3 md:mr-4">
-                                <div class="service-icon w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                                <div
+                                    class="service-icon w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-blue-100 rounded-full flex items-center justify-center">
                                     <i class="fas fa-microscope text-blue-600 text-sm sm:text-lg md:text-xl"></i>
                                 </div>
                             </div>
                             <div>
-                                <h4 class="info-card-title font-bold text-blue-700 mb-1 text-sm sm:text-base md:text-lg">Advanced Medical Technology</h4>
-                                <p class="info-card-text text-xs sm:text-sm md:text-base text-justify">The hospital also offers the most advanced medical technology and equipment. Our prices are competitive as the integrated medical center stems from a commitment to corporate social responsibility.</p>
+                                <h4
+                                    class="info-card-title font-bold text-blue-700 mb-1 text-sm sm:text-base md:text-lg">
+                                    Advanced Medical Technology</h4>
+                                <p class="info-card-text text-xs sm:text-sm md:text-base text-justify">The hospital also
+                                    offers the most advanced medical technology and equipment. Our prices are
+                                    competitive as the integrated medical center stems from a commitment to corporate
+                                    social responsibility.</p>
                             </div>
                         </div>
 
                         <!-- Operating Theatres & German Collaboration -->
-                        <div class="flex flex-col sm:flex-row items-start bg-white/70 p-3 sm:p-4 md:p-5 rounded-lg sm:rounded-xl hover:bg-white transition-all duration-300 shadow-sm">
+                        <div
+                            class="flex flex-col sm:flex-row items-start bg-white/70 p-3 sm:p-4 md:p-5 rounded-lg sm:rounded-xl hover:bg-white transition-all duration-300 shadow-sm">
                             <div class="flex-shrink-0 mb-2 sm:mb-0 sm:mr-3 md:mr-4">
-                                <div class="service-icon w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                                <div
+                                    class="service-icon w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-purple-100 rounded-full flex items-center justify-center">
                                     <i class="fas fa-hospital text-purple-600 text-sm sm:text-lg md:text-xl"></i>
                                 </div>
                             </div>
                             <div>
-                                <h4 class="info-card-title font-bold text-purple-700 mb-1 text-sm sm:text-base md:text-lg">World-Class Infrastructure</h4>
-                                <p class="info-card-text text-xs sm:text-sm md:text-base text-justify">We have class 100 operating theatres with provisions for video teleconferencing in case there is a need to consult with specialists from anywhere in the world. The hospital has ties with German Expert Doctors.</p>
+                                <h4
+                                    class="info-card-title font-bold text-purple-700 mb-1 text-sm sm:text-base md:text-lg">
+                                    World-Class Infrastructure</h4>
+                                <p class="info-card-text text-xs sm:text-sm md:text-base text-justify">We have class 100
+                                    operating theatres with provisions for video teleconferencing in case there is a
+                                    need to consult with specialists from anywhere in the world. The hospital has ties
+                                    with German Expert Doctors.</p>
                             </div>
                         </div>
 
                         <!-- Relationship Manager -->
-                        <div class="flex flex-col sm:flex-row items-start bg-white/70 p-3 sm:p-4 md:p-5 rounded-lg sm:rounded-xl hover:bg-white transition-all duration-300 shadow-sm">
+                        <div
+                            class="flex flex-col sm:flex-row items-start bg-white/70 p-3 sm:p-4 md:p-5 rounded-lg sm:rounded-xl hover:bg-white transition-all duration-300 shadow-sm">
                             <div class="flex-shrink-0 mb-2 sm:mb-0 sm:mr-3 md:mr-4">
-                                <div class="service-icon w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-amber-100 rounded-full flex items-center justify-center">
+                                <div
+                                    class="service-icon w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-amber-100 rounded-full flex items-center justify-center">
                                     <i class="fas fa-user-tie text-amber-600 text-sm sm:text-lg md:text-xl"></i>
                                 </div>
                             </div>
                             <div>
-                                <h4 class="info-card-title font-bold text-amber-700 mb-1 text-sm sm:text-base md:text-lg">Relationship Manager (SPOC)</h4>
-                                <p class="info-card-text text-xs sm:text-sm md:text-base text-justify">We assign Single point of contact (SPOC) for each patient for better coordination. SPOC assists patient and accompanying attendant throughout their stay in hospital for all non-medical assistance like registration, admission and discharge formalities, sim card, mobile, interpreter etc.</p>
+                                <h4
+                                    class="info-card-title font-bold text-amber-700 mb-1 text-sm sm:text-base md:text-lg">
+                                    Relationship Manager (SPOC)</h4>
+                                <p class="info-card-text text-xs sm:text-sm md:text-base text-justify">We assign Single
+                                    point of contact (SPOC) for each patient for better coordination. SPOC assists
+                                    patient and accompanying attendant throughout their stay in hospital for all
+                                    non-medical assistance like registration, admission and discharge formalities, sim
+                                    card, mobile, interpreter etc.</p>
                             </div>
                         </div>
 
                         <!-- Interpretation Services -->
-                        <div class="flex flex-col sm:flex-row items-start bg-white/70 p-3 sm:p-4 md:p-5 rounded-lg sm:rounded-xl hover:bg-white transition-all duration-300 shadow-sm">
+                        <div
+                            class="flex flex-col sm:flex-row items-start bg-white/70 p-3 sm:p-4 md:p-5 rounded-lg sm:rounded-xl hover:bg-white transition-all duration-300 shadow-sm">
                             <div class="flex-shrink-0 mb-2 sm:mb-0 sm:mr-3 md:mr-4">
-                                <div class="service-icon w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-teal-100 rounded-full flex items-center justify-center">
+                                <div
+                                    class="service-icon w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-teal-100 rounded-full flex items-center justify-center">
                                     <i class="fas fa-headset text-teal-600 text-sm sm:text-lg md:text-xl"></i>
                                 </div>
                             </div>
                             <div>
-                                <h4 class="info-card-title font-bold text-teal-700 mb-1 text-sm sm:text-base md:text-lg">Interpretation Services</h4>
-                                <p class="info-card-text text-xs sm:text-sm md:text-base text-justify">In-house interpreters are available within the hospital.</p>
+                                <h4
+                                    class="info-card-title font-bold text-teal-700 mb-1 text-sm sm:text-base md:text-lg">
+                                    Interpretation Services</h4>
+                                <p class="info-card-text text-xs sm:text-sm md:text-base text-justify">In-house
+                                    interpreters are available within the hospital.</p>
                             </div>
                         </div>
 
                         <!-- Visa Assistance -->
-                        <div class="flex flex-col sm:flex-row items-start bg-white/70 p-3 sm:p-4 md:p-5 rounded-lg sm:rounded-xl hover:bg-white transition-all duration-300 shadow-sm">
+                        <div
+                            class="flex flex-col sm:flex-row items-start bg-white/70 p-3 sm:p-4 md:p-5 rounded-lg sm:rounded-xl hover:bg-white transition-all duration-300 shadow-sm">
                             <div class="flex-shrink-0 mb-2 sm:mb-0 sm:mr-3 md:mr-4">
-                                <div class="service-icon w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-indigo-100 rounded-full flex items-center justify-center">
+                                <div
+                                    class="service-icon w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-indigo-100 rounded-full flex items-center justify-center">
                                     <i class="fas fa-passport text-indigo-600 text-sm sm:text-lg md:text-xl"></i>
                                 </div>
                             </div>
                             <div>
-                                <h4 class="info-card-title font-bold text-indigo-700 mb-1 text-sm sm:text-base md:text-lg">Visa Assistance</h4>
-                                <p class="info-card-text text-xs sm:text-sm md:text-base text-justify">International Patient Services team helps in arranging visa by writing a letter to Indian High Commission in the patient's country. This helps to obtain medical visa not only for patient but also for the accompanying attendant.</p>
+                                <h4
+                                    class="info-card-title font-bold text-indigo-700 mb-1 text-sm sm:text-base md:text-lg">
+                                    Visa Assistance</h4>
+                                <p class="info-card-text text-xs sm:text-sm md:text-base text-justify">International
+                                    Patient Services team helps in arranging visa by writing a letter to Indian High
+                                    Commission in the patient's country. This helps to obtain medical visa not only for
+                                    patient but also for the accompanying attendant.</p>
                             </div>
                         </div>
 
                         <!-- Estimated Cost of Treatment -->
-                        <div class="flex flex-col sm:flex-row items-start bg-white/70 p-3 sm:p-4 md:p-5 rounded-lg sm:rounded-xl hover:bg-white transition-all duration-300 shadow-sm">
+                        <div
+                            class="flex flex-col sm:flex-row items-start bg-white/70 p-3 sm:p-4 md:p-5 rounded-lg sm:rounded-xl hover:bg-white transition-all duration-300 shadow-sm">
                             <div class="flex-shrink-0 mb-2 sm:mb-0 sm:mr-3 md:mr-4">
-                                <div class="service-icon w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-emerald-100 rounded-full flex items-center justify-center">
+                                <div
+                                    class="service-icon w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-emerald-100 rounded-full flex items-center justify-center">
                                     <i class="fas fa-rupee-sign text-emerald-600 text-sm sm:text-lg md:text-xl"></i>
                                 </div>
                             </div>
                             <div>
-                                <h4 class="info-card-title font-bold text-emerald-700 mb-1 text-sm sm:text-base md:text-lg">Estimated Cost of Treatment</h4>
-                                <p class="info-card-text text-xs sm:text-sm md:text-base text-justify">Once treatment plan is advised by specialist, International Patient Services team arranges quotation or estimated cost of the treatment and hotel stay.</p>
-                                <p class="info-card-text mt-1 sm:mt-2 text-xs sm:text-sm md:text-base">Once you are briefed by the specialist, our SPOC will provide you with a complete plan, approximating the length of your stay, costs, and necessary pre and post-treatment care packages.</p>
+                                <h4
+                                    class="info-card-title font-bold text-emerald-700 mb-1 text-sm sm:text-base md:text-lg">
+                                    Estimated Cost of Treatment</h4>
+                                <p class="info-card-text text-xs sm:text-sm md:text-base text-justify">Once treatment
+                                    plan is advised by specialist, International Patient Services team arranges
+                                    quotation or estimated cost of the treatment and hotel stay.</p>
+                                <p class="info-card-text mt-1 sm:mt-2 text-xs sm:text-sm md:text-base">Once you are
+                                    briefed by the specialist, our SPOC will provide you with a complete plan,
+                                    approximating the length of your stay, costs, and necessary pre and post-treatment
+                                    care packages.</p>
                             </div>
                         </div>
 
                         <!-- Registration Requirements -->
-                        <div class="flex flex-col sm:flex-row items-start bg-white/70 p-3 sm:p-4 md:p-5 rounded-lg sm:rounded-xl hover:bg-white transition-all duration-300 shadow-sm">
+                        <div
+                            class="flex flex-col sm:flex-row items-start bg-white/70 p-3 sm:p-4 md:p-5 rounded-lg sm:rounded-xl hover:bg-white transition-all duration-300 shadow-sm">
                             <div class="flex-shrink-0 mb-2 sm:mb-0 sm:mr-3 md:mr-4">
-                                <div class="service-icon w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-red-100 rounded-full flex items-center justify-center">
+                                <div
+                                    class="service-icon w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-red-100 rounded-full flex items-center justify-center">
                                     <i class="fas fa-id-card text-red-600 text-sm sm:text-lg md:text-xl"></i>
                                 </div>
                             </div>
                             <div>
-                                <h4 class="info-card-title font-bold text-red-700 mb-1 text-sm sm:text-base md:text-lg">Registration Requirements</h4>
-                                <p class="info-card-text text-xs sm:text-sm md:text-base text-justify">You must produce your passport to get registered at the hospital. We will keep a copy of your photo page and visa page in your hospital records. This is a mandatory step required by the Government of India.</p>
+                                <h4 class="info-card-title font-bold text-red-700 mb-1 text-sm sm:text-base md:text-lg">
+                                    Registration Requirements</h4>
+                                <p class="info-card-text text-xs sm:text-sm md:text-base text-justify">You must produce
+                                    your passport to get registered at the hospital. We will keep a copy of your photo
+                                    page and visa page in your hospital records. This is a mandatory step required by
+                                    the Government of India.</p>
                             </div>
                         </div>
 
                         <!-- International Reputation -->
-                        <div class="flex flex-col sm:flex-row items-start bg-white/70 p-3 sm:p-4 md:p-5 rounded-lg sm:rounded-xl hover:bg-white transition-all duration-300 shadow-sm">
+                        <div
+                            class="flex flex-col sm:flex-row items-start bg-white/70 p-3 sm:p-4 md:p-5 rounded-lg sm:rounded-xl hover:bg-white transition-all duration-300 shadow-sm">
                             <div class="flex-shrink-0 mb-2 sm:mb-0 sm:mr-3 md:mr-4">
-                                <div class="service-icon w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-cyan-100 rounded-full flex items-center justify-center">
+                                <div
+                                    class="service-icon w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-cyan-100 rounded-full flex items-center justify-center">
                                     <i class="fas fa-globe text-cyan-600 text-sm sm:text-lg md:text-xl"></i>
                                 </div>
                             </div>
                             <div>
-                                <h4 class="info-card-title font-bold text-cyan-700 mb-1 text-sm sm:text-base md:text-lg">Global Reputation</h4>
-                                <p class="info-card-text text-xs sm:text-sm md:text-base text-justify">Patients of many nationalities come to us for treatment. Thanks to our successful treatment methods and our internationally recognised first class physicians we have an international reputation attracting many patients from overseas. We enjoy a high level of respect, particularly in Hyderabad. Skilled members of our support staff take care of all the many needs of our international patients and ensure that things go smoothly. They work together with a well-versed team which has adjusted to the particular needs of our international patients.</p>
+                                <h4
+                                    class="info-card-title font-bold text-cyan-700 mb-1 text-sm sm:text-base md:text-lg">
+                                    Global Reputation</h4>
+                                <p class="info-card-text text-xs sm:text-sm md:text-base text-justify">Patients of many
+                                    nationalities come to us for treatment. Thanks to our successful treatment methods
+                                    and our internationally recognised first class physicians we have an international
+                                    reputation attracting many patients from overseas. We enjoy a high level of respect,
+                                    particularly in Hyderabad. Skilled members of our support staff take care of all the
+                                    many needs of our international patients and ensure that things go smoothly. They
+                                    work together with a well-versed team which has adjusted to the particular needs of
+                                    our international patients.</p>
                             </div>
                         </div>
 
                         <!-- Specialized Treatments -->
-                        <div class="flex flex-col sm:flex-row items-start bg-white/70 p-3 sm:p-4 md:p-5 rounded-lg sm:rounded-xl hover:bg-white transition-all duration-300 shadow-sm">
+                        <div
+                            class="flex flex-col sm:flex-row items-start bg-white/70 p-3 sm:p-4 md:p-5 rounded-lg sm:rounded-xl hover:bg-white transition-all duration-300 shadow-sm">
                             <div class="flex-shrink-0 mb-2 sm:mb-0 sm:mr-3 md:mr-4">
-                                <div class="service-icon w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-orange-100 rounded-full flex items-center justify-center">
+                                <div
+                                    class="service-icon w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-orange-100 rounded-full flex items-center justify-center">
                                     <i class="fas fa-bone text-orange-600 text-sm sm:text-lg md:text-xl"></i>
                                 </div>
                             </div>
                             <div>
-                                <h4 class="info-card-title font-bold text-orange-700 mb-1 text-sm sm:text-base md:text-lg">Specialized Orthopaedic Treatments</h4>
-                                <p class="info-card-text text-xs sm:text-sm md:text-base text-justify">Besides the treatment of injuries and all types of orthopaedic disorders, our Hospital is particularly focused on endoprosthetic hip and knee replacement surgery. We carry orthopaedic hip and knee replacements and revision surgery procedures.</p>
-                                <p class="info-card-text mt-1 sm:mt-2 text-xs sm:text-sm md:text-base">Sport orthopaedics and foot surgery are also specialist areas of our orthopaedic department in Hospital and include arthroscopic surgery of the shoulder, elbow, hips, ankles and feet. In the Hospital, we also treat acute spinal injuries and vertebral body fractures resulting from osteoporosis and a range of other orthopaedic disorders.</p>
-                                <p class="info-card-text mt-1 sm:mt-2 text-xs sm:text-sm md:text-base">Besides primary operations performed in the orthopaedic unit, we also perform many revision procedures, mostly on orthopaedic patients referred from elsewhere.</p>
+                                <h4
+                                    class="info-card-title font-bold text-orange-700 mb-1 text-sm sm:text-base md:text-lg">
+                                    Specialized Orthopaedic Treatments</h4>
+                                <p class="info-card-text text-xs sm:text-sm md:text-base text-justify">Besides the
+                                    treatment of injuries and all types of orthopaedic disorders, our Hospital is
+                                    particularly focused on endoprosthetic hip and knee replacement surgery. We carry
+                                    orthopaedic hip and knee replacements and revision surgery procedures.</p>
+                                <p class="info-card-text mt-1 sm:mt-2 text-xs sm:text-sm md:text-base">Sport
+                                    orthopaedics and foot surgery are also specialist areas of our orthopaedic
+                                    department in Hospital and include arthroscopic surgery of the shoulder, elbow,
+                                    hips, ankles and feet. In the Hospital, we also treat acute spinal injuries and
+                                    vertebral body fractures resulting from osteoporosis and a range of other
+                                    orthopaedic disorders.</p>
+                                <p class="info-card-text mt-1 sm:mt-2 text-xs sm:text-sm md:text-base">Besides primary
+                                    operations performed in the orthopaedic unit, we also perform many revision
+                                    procedures, mostly on orthopaedic patients referred from elsewhere.</p>
                             </div>
                         </div>
 
                         <!-- Lead Orthopaedic Surgeon -->
-                        <div class="flex flex-col sm:flex-row items-start bg-gradient-to-r from-yellow-50 to-amber-50 p-3 sm:p-4 md:p-5 rounded-lg sm:rounded-xl border-2 border-yellow-200 shadow-md">
+                        <div
+                            class="flex flex-col sm:flex-row items-start bg-gradient-to-r from-yellow-50 to-amber-50 p-3 sm:p-4 md:p-5 rounded-lg sm:rounded-xl border-2 border-yellow-200 shadow-md">
                             <div class="flex-shrink-0 mb-2 sm:mb-0 sm:mr-3 md:mr-4">
-                                <div class="service-icon w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-full flex items-center justify-center shadow-lg">
+                                <div
+                                    class="service-icon w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-full flex items-center justify-center shadow-lg">
                                     <i class="fas fa-user-md text-white text-lg sm:text-xl md:text-2xl"></i>
                                 </div>
                             </div>
                             <div>
-                                <h4 class="info-card-title font-bold text-amber-800 mb-1 sm:mb-2 text-sm sm:text-base md:text-lg">Our Lead Orthopaedic Surgeon</h4>
-                                <p class="info-card-text text-xs sm:text-sm md:text-base text-gray-800 font-medium">Thanks to the trust of our patients and the referring physicians from Abroad, <span class="font-bold text-amber-700">Our orthopaedic surgeon Dr Mir Jawad Zar Khan</span> is Gold Medallist In MS Orthopaedics (Osmani University) also Trained from Germany and performed more Than 5000 Joint replacements in Germany and India and numerous Trauma surgeries.</p>
+                                <h4
+                                    class="info-card-title font-bold text-amber-800 mb-1 sm:mb-2 text-sm sm:text-base md:text-lg">
+                                    Our Lead Orthopaedic Surgeon</h4>
+                                <p class="info-card-text text-xs sm:text-sm md:text-base text-gray-800 font-medium">
+                                    Thanks to the trust of our patients and the referring physicians from Abroad, <span
+                                        class="font-bold text-amber-700">Our orthopaedic surgeon Dr Mir Jawad Zar
+                                        Khan</span> is Gold Medallist In MS Orthopaedics (Osmani University) also
+                                    Trained from Germany and performed more Than 5000 Joint replacements in Germany and
+                                    India and numerous Trauma surgeries.</p>
                                 <div class="mt-2 sm:mt-3 flex flex-wrap gap-1 sm:gap-2">
-                                    <span class="bg-yellow-100 text-yellow-800 text-[10px] sm:text-xs px-2 md:px-3 py-0.5 sm:py-1 rounded-full font-semibold">Gold Medallist</span>
-                                    <span class="bg-blue-100 text-blue-800 text-[10px] sm:text-xs px-2 md:px-3 py-0.5 sm:py-1 rounded-full font-semibold">Trained in Germany</span>
-                                    <span class="bg-green-100 text-green-800 text-[10px] sm:text-xs px-2 md:px-3 py-0.5 sm:py-1 rounded-full font-semibold">5000+ Joint Replacements</span>
+                                    <span
+                                        class="bg-yellow-100 text-yellow-800 text-[10px] sm:text-xs px-2 md:px-3 py-0.5 sm:py-1 rounded-full font-semibold">Gold
+                                        Medallist</span>
+                                    <span
+                                        class="bg-blue-100 text-blue-800 text-[10px] sm:text-xs px-2 md:px-3 py-0.5 sm:py-1 rounded-full font-semibold">Trained
+                                        in Germany</span>
+                                    <span
+                                        class="bg-green-100 text-green-800 text-[10px] sm:text-xs px-2 md:px-3 py-0.5 sm:py-1 rounded-full font-semibold">5000+
+                                        Joint Replacements</span>
                                 </div>
                             </div>
                         </div>
@@ -713,10 +833,10 @@ gtag('config', 'G-B7BXJEHXWK');
         function toggleFAQ(faqNumber) {
             const answer = document.getElementById(`faq-answer-${faqNumber}`);
             const icon = document.getElementById(`faq-icon-${faqNumber}`);
-            
+
             // Check if this FAQ is currently open
             const isOpen = !answer.classList.contains('max-h-0');
-            
+
             // Close all FAQs first
             for (let i = 1; i <= 6; i++) {
                 const ans = document.getElementById(`faq-answer-${i}`);
@@ -729,7 +849,7 @@ gtag('config', 'G-B7BXJEHXWK');
                     ic.classList.remove('rotate');
                 }
             }
-            
+
             // If it wasn't open, open it now
             if (!isOpen) {
                 answer.classList.remove('max-h-0');
@@ -902,11 +1022,11 @@ gtag('config', 'G-B7BXJEHXWK');
         }
 
         // ========== MOBILE DROPDOWN TOGGLE ==========
-        window.toggleMobileDropdown = function(dropdownId) {
+        window.toggleMobileDropdown = function (dropdownId) {
             const dropdown = document.getElementById(dropdownId + '-dropdown');
             const button = event.currentTarget;
             const chevron = button.querySelector('i');
-            
+
             if (dropdown) {
                 // Close all other dropdowns
                 document.querySelectorAll('[id$="-dropdown"]').forEach(d => {
@@ -919,7 +1039,7 @@ gtag('config', 'G-B7BXJEHXWK');
                         }
                     }
                 });
-                
+
                 // Toggle current dropdown
                 if (dropdown.classList.contains('hidden')) {
                     dropdown.classList.remove('hidden');
@@ -970,7 +1090,7 @@ gtag('config', 'G-B7BXJEHXWK');
 
                 // Close on outside click
                 document.addEventListener('click', (e) => {
-                    if (mobileMenu && !mobileMenu.classList.contains('hidden') && 
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden') &&
                         !mobileMenu.contains(e.target) && !newButton.contains(e.target)) {
                         mobileMenu.classList.add('hidden');
                         document.body.classList.remove('mobile-menu-open');
@@ -982,19 +1102,19 @@ gtag('config', 'G-B7BXJEHXWK');
         }
 
         // Scroll Progress Bar Functionality
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const scrollProgress = document.getElementById('scrollProgress');
             const scrollProgressBar = document.getElementById('scrollProgressBar');
-            
+
             // Update scroll progress
             function updateScrollProgress() {
                 const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
                 const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
                 const scrollPercentage = (scrollTop / scrollHeight) * 100;
-                
+
                 // Update progress bar width
                 scrollProgressBar.style.width = scrollPercentage + '%';
-                
+
                 // Show/hide progress bar based on scroll position
                 if (scrollTop > 100) {
                     scrollProgress.classList.remove('hidden');
@@ -1002,11 +1122,11 @@ gtag('config', 'G-B7BXJEHXWK');
                     scrollProgress.classList.add('hidden');
                 }
             }
-            
+
             // Throttle function for performance
             function throttle(func, limit) {
                 let inThrottle;
-                return function() {
+                return function () {
                     const args = arguments;
                     const context = this;
                     if (!inThrottle) {
@@ -1016,27 +1136,27 @@ gtag('config', 'G-B7BXJEHXWK');
                     }
                 }
             }
-            
+
             // Add scroll event listener with throttling
             window.addEventListener('scroll', throttle(updateScrollProgress, 10));
-            
+
             // Initial update
             updateScrollProgress();
-            
+
             // Smooth scroll to top when progress bar is clicked
-            scrollProgress.addEventListener('click', function() {
+            scrollProgress.addEventListener('click', function () {
                 window.scrollTo({
                     top: 0,
                     behavior: 'smooth'
                 });
             });
-            
+
             // Add hover effect for progress bar
-            scrollProgress.addEventListener('mouseenter', function() {
+            scrollProgress.addEventListener('mouseenter', function () {
                 scrollProgressBar.style.boxShadow = '0 0 20px rgba(202, 138, 4, 0.8)';
             });
-            
-            scrollProgress.addEventListener('mouseleave', function() {
+
+            scrollProgress.addEventListener('mouseleave', function () {
                 scrollProgressBar.style.boxShadow = '0 0 10px rgba(202, 138, 4, 0.5)';
             });
         });

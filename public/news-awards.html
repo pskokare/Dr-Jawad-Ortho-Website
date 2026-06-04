@@ -108,6 +108,58 @@
             }
         }
 
+        /* Gallery Layout - 5 images single row on desktop, 2 per row on mobile */
+        @media (min-width: 769px) {
+            .flex.justify-center.items-center.gap-3.sm\\:gap-4.md\\:gap-6.lg\\:gap-8.max-w-6xl.mx-auto.flex-wrap {
+                display: flex !important;
+                flex-wrap: nowrap !important;
+                justify-content: center !important;
+                align-items: center !important;
+                gap: 1.5rem !important;
+                max-width: 100% !important;
+                width: 100% !important;
+                overflow-x: auto !important;
+            }
+            
+            .gallery-item {
+                flex: 0 0 auto !important;
+                max-width: none !important;
+                min-width: 0 !important;
+                width: auto !important;
+                display: block !important;
+                margin: 0 !important;
+            }
+            
+            .gallery-img {
+                width: auto !important;
+                max-width: none !important;
+                height: auto !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .flex.justify-center.items-center.gap-3.sm\\:gap-4.md\\:gap-6.lg\\:gap-8.max-w-6xl.mx-auto.flex-wrap {
+                display: flex !important;
+                flex-wrap: wrap !important;
+                justify-content: center !important;
+                align-items: center !important;
+                gap: 1rem !important;
+            }
+            
+            .gallery-item {
+                flex: 0 0 calc(50% - 0.5rem) !important;
+                max-width: calc(50% - 0.5rem) !important;
+                margin: 0 !important;
+                min-width: 0 !important;
+            }
+            
+            .gallery-img {
+                width: 100% !important;
+                max-width: 100% !important;
+                height: auto !important;
+            }
+        }
+
         .hero-image {
             width: 100%;
             height: auto;

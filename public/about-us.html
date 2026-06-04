@@ -39,25 +39,28 @@
             pointer-events: none;
         }
 
-        /* Responsive typography and spacing */
+        /* Enhanced Responsive typography and spacing */
         @media (max-width: 640px) {
             .section-padding { padding: 2rem 0.75rem !important; }
             .card-padding { padding: 1rem !important; }
-            .hero-height { height: 200px !important; min-height: 180px; }
-            .hero-title { font-size: 1.5rem !important; }
-            .hero-subtitle { font-size: 0.875rem !important; }
-            .banner-height { height: 35vh !important; min-height: 250px; }
-            .quote-text { font-size: 0.9rem !important; }
-            .gallery-grid { grid-template-columns: repeat(2, 1fr) !important; }
-            .parallax-height { height: auto !important; min-height: 600px; }
-            .vision-card { padding: 1.5rem !important; }
-            .vision-title { font-size: 1.25rem !important; }
-            .vision-text { font-size: 0.9rem !important; }
-            .faq-title { font-size: 1.75rem !important; }
-            .faq-question { font-size: 0.9rem !important; }
-            .doctor-image { width: 160px !important; height: 160px !important; }
-            .doctor-credentials { font-size: 0.8rem !important; }
-            .content-text { font-size: 0.9rem !important; }
+            .hero-height { height: 180px !important; min-height: 160px; }
+            .hero-title { font-size: 1.25rem !important; line-height: 1.5 !important; }
+            .hero-subtitle { font-size: 0.875rem !important; line-height: 1.4 !important; }
+            .banner-height { height: 30vh !important; min-height: 200px; }
+            .quote-text { font-size: 0.875rem !important; line-height: 1.5 !important; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 0.75rem !important; }
+            .parallax-height { height: auto !important; min-height: 500px; }
+            .vision-card { padding: 1rem !important; margin-bottom: 1rem !important; }
+            .vision-title { font-size: 1.125rem !important; line-height: 1.4 !important; }
+            .vision-text { font-size: 0.875rem !important; line-height: 1.5 !important; }
+            .faq-title { font-size: 1.5rem !important; line-height: 1.3 !important; }
+            .faq-question { font-size: 0.875rem !important; line-height: 1.4 !important; }
+            .doctor-image { width: 140px !important; height: 140px !important; }
+            .doctor-credentials { font-size: 0.75rem !important; line-height: 1.4 !important; }
+            .content-text { font-size: 0.875rem !important; line-height: 1.6 !important; }
+            .main-container { padding: 1rem 0.5rem !important; }
+            .breadcrumb-container { padding: 0.75rem 0.5rem !important; }
+            .modal-container { padding: 0.5rem !important; }
         }
         
         /* Desktop banner positioning to account for navbar and top bar */
@@ -99,17 +102,55 @@
             overflow-x: hidden;
         }
         
-        /* Touch-friendly on mobile */
+        /* Enhanced Touch-friendly mobile optimizations */
         @media (max-width: 768px) {
             .faq-button {
-                padding: 0.75rem 1rem !important;
+                padding: 1rem 0.75rem !important;
+                min-height: 44px !important;
+                touch-action: manipulation !important;
             }
             .vision-card {
-                margin-bottom: 1rem;
+                margin-bottom: 1rem !important;
+                min-height: auto !important;
             }
             .gallery-item img {
-                height: 120px !important;
+                height: 100px !important;
+                min-height: 100px !important;
             }
+            .gallery-item {
+                touch-action: manipulation !important;
+                cursor: pointer !important;
+            }
+            .modal-close-btn {
+                min-width: 44px !important;
+                min-height: 44px !important;
+                touch-action: manipulation !important;
+            }
+            .scroll-progress {
+                height: 4px !important;
+            }
+            .breadcrumb-link {
+                min-height: 44px !important;
+                display: inline-flex !important;
+                align-items: center !important;
+            }
+        }
+        
+        /* Ultra-mobile optimizations (very small screens) */
+        @media (max-width: 480px) {
+            .banner-height { height: 25vh !important; min-height: 180px; }
+            .hero-height { height: 150px !important; min-height: 140px; }
+            .doctor-image { width: 120px !important; height: 120px !important; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 0.5rem !important; }
+            .gallery-item img { height: 80px !important; min-height: 80px !important; }
+            .vision-card { padding: 0.75rem !important; }
+            .vision-title { font-size: 1rem !important; }
+            .vision-text { font-size: 0.8rem !important; }
+            .faq-title { font-size: 1.25rem !important; }
+            .faq-question { font-size: 0.8rem !important; }
+            .content-text { font-size: 0.8rem !important; }
+            .doctor-credentials { font-size: 0.7rem !important; }
+            .quote-text { font-size: 0.8rem !important; }
         }
     </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-B7BXJEHXWK"></script>
@@ -150,30 +191,31 @@ gtag('config', 'G-B7BXJEHXWK');
     </div>
 
     <!-- Breadcrumb Section Below Hero -->
-    <!-- Breadcrumb Section Below Hero -->
-    <div class="bg-white border-b border-gray-200 shadow-sm">
-        <div class="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-3 md:py-4">
+    <div class="bg-white border-b border-gray-200 shadow-sm breadcrumb-container">
+        <div class="max-w-7xl mx-auto px-2 sm:px-3 md:px-4 lg:px-6 xl:px-8 py-2 sm:py-3 md:py-4">
             <nav class="flex items-center flex-wrap gap-1 sm:gap-2 text-xs sm:text-sm" aria-label="Breadcrumb">
                 <!-- Home Link -->
-                <a href="/" class="inline-flex items-center text-gray-600 hover:text-blue-700 transition-colors duration-200 font-medium">
+                <a href="/" class="breadcrumb-link inline-flex items-center text-gray-600 hover:text-blue-700 transition-colors duration-200 font-medium">
                     <i class="fa-solid fa-home mr-1 text-[10px] sm:text-xs"></i>
-                    <span>AboutUs</span>
+                    <span class="hidden xs:inline">AboutUs</span>
+                    <span class="xs:hidden">AboutUs</span>
                 </a>
                 
                 <!-- Separator -->
-                <i class="fa-solid fa-chevron-right text-gray-400 text-[8px] sm:text-[10px] mx-1"></i>
+                <i class="fa-solid fa-chevron-right text-gray-400 text-[8px] sm:text-[10px] mx-0.5 sm:mx-1"></i>
                 
                 <!-- Current Page -->
-                <span class="text-blue-700 font-semibold truncate max-w-[150px] sm:max-w-[200px] md:max-w-none" aria-current="page">
-                    About DR. MIR JAWAD
+                <span class="text-blue-700 font-semibold truncate max-w-[120px] sm:max-w-[150px] md:max-w-[200px] lg:max-w-none" aria-current="page">
+                    <span class="hidden sm:inline">About DR. MIR JAWAD</span>
+                    <span class="sm:hidden">DR. MIR JAWAD</span>
                 </span>
             </nav>
         </div>
     </div>
 
     <!-- Main Content -->
-    <main class="w-full mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-8 sm:py-10 md:py-12">
-        <div class="bg-white rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 lg:p-12">
+    <main class="w-full mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-12 main-container">
+        <div class="bg-white rounded-xl sm:rounded-2xl shadow-lg p-3 sm:p-4 md:p-6 lg:p-8 xl:p-12 card-padding">
 
             <!-- Quote with Yellow Border -->
             <div class="max-w-4xl mx-auto mb-8 sm:mb-10 md:mb-12">
@@ -188,23 +230,23 @@ gtag('config', 'G-B7BXJEHXWK');
             </div>
 
             <!-- Doctor Profile Section -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 items-center mb-10 sm:mb-12">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 items-center mb-8 sm:mb-10 md:mb-12">
                 <!-- Doctor Image -->
-                <div class="flex justify-center">
-                    <div class="relative doctor-image w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden border-4 border-yellow-400 shadow-xl">
+                <div class="flex justify-center order-1 lg:order-1">
+                    <div class="relative doctor-image w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 xl:w-64 xl:h-64 rounded-full overflow-hidden border-2 sm:border-4 border-yellow-400 shadow-lg sm:shadow-xl">
                         <img src="Images/AboutUs-page-Images/Dr.javedImage.jpg" alt="Dr. Mir Jawad Zar Khan" width="256" height="256"
                             class="w-full h-full object-cover">
                     </div>
                 </div>
 
                 <!-- Doctor Credentials -->
-                <div class="md:col-span-2 text-center md:text-left">
-                    <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-red-600 mb-3 sm:mb-4 doctor-credentials">DR. MIR JAWAD ZAR KHAN</h2>
+                <div class="lg:col-span-2 text-center lg:text-left order-2 lg:order-2">
+                    <h2 class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-red-600 mb-2 sm:mb-3 md:mb-4 doctor-credentials">DR. MIR JAWAD ZAR KHAN</h2>
                     <div class="space-y-1 sm:space-y-2 text-gray-700 doctor-credentials">
-                        <p class="font-medium text-sm sm:text-base">MBBS, MS-(ORTHO), M.CH-(ORTHO)</p>
-                        <p class="font-medium text-sm sm:text-base">FELLOWSHIP IN ARTHOPLASTY (GERMANY)</p>
-                        <p class="font-medium text-sm sm:text-base">ORTHOPEDIST, JOINT REPLACEMENT SURGEON, SPINE SURGEON</p>
-                        <p class="font-medium text-base sm:text-lg text-blue-600">26 YEARS EXPERIENCE</p>
+                        <p class="font-medium text-xs sm:text-sm md:text-base">MBBS, MS-(ORTHO), M.CH-(ORTHO)</p>
+                        <p class="font-medium text-xs sm:text-sm md:text-base">FELLOWSHIP IN ARTHOPLASTY (GERMANY)</p>
+                        <p class="font-medium text-xs sm:text-sm md:text-base">ORTHOPEDIST, JOINT REPLACEMENT SURGEON, SPINE SURGEON</p>
+                        <p class="font-medium text-sm sm:text-base md:text-lg text-blue-600">26 YEARS EXPERIENCE</p>
                     </div>
                 </div>
             </div>
@@ -212,27 +254,27 @@ gtag('config', 'G-B7BXJEHXWK');
             <div class="prose max-w-none">
 
                 <!-- Image Gallery Section -->
-                <div class="mt-8 sm:mt-10 md:mt-12">
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 gallery-grid">
-                        <div class="gallery-item cursor-pointer transform transition-transform duration-300 hover:scale-105"
+                <div class="mt-6 sm:mt-8 md:mt-10 lg:mt-12">
+                    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 gallery-grid">
+                        <div class="gallery-item cursor-pointer transform transition-transform duration-300 hover:scale-105 active:scale-95"
                             onclick="openModal('Images/AboutUs-page-Images/Img1.webp')">
                             <img src="Images/AboutUs-page-Images/Img1.webp" alt="Gallery Image 1" width="128" height="128"
-                                class="w-full h-28 sm:h-32 object-cover rounded-lg shadow-md">
+                                class="w-full h-20 sm:h-24 md:h-28 lg:h-32 object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
                         </div>
-                        <div class="gallery-item cursor-pointer transform transition-transform duration-300 hover:scale-105"
+                        <div class="gallery-item cursor-pointer transform transition-transform duration-300 hover:scale-105 active:scale-95"
                             onclick="openModal('Images/AboutUs-page-Images/img2.webp')">
                             <img src="Images/AboutUs-page-Images/img2.webp" alt="Gallery Image 2" width="128" height="128"
-                                class="w-full h-28 sm:h-32 object-cover rounded-lg shadow-md">
+                                class="w-full h-20 sm:h-24 md:h-28 lg:h-32 object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
                         </div>
-                        <div class="gallery-item cursor-pointer transform transition-transform duration-300 hover:scale-105"
+                        <div class="gallery-item cursor-pointer transform transition-transform duration-300 hover:scale-105 active:scale-95"
                             onclick="openModal('Images/AboutUs-page-Images/img3.webp')">
                             <img src="Images/AboutUs-page-Images/img3.webp" alt="Gallery Image 3" width="128" height="128"
-                                class="w-full h-28 sm:h-32 object-cover rounded-lg shadow-md">
+                                class="w-full h-20 sm:h-24 md:h-28 lg:h-32 object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
                         </div>
-                        <div class="gallery-item cursor-pointer transform transition-transform duration-300 hover:scale-105"
+                        <div class="gallery-item cursor-pointer transform transition-transform duration-300 hover:scale-105 active:scale-95"
                             onclick="openModal('Images/AboutUs-page-Images/img4.webp')">
                             <img src="Images/AboutUs-page-Images/img4.webp" alt="Gallery Image 4" width="128" height="128"
-                                class="w-full h-28 sm:h-32 object-cover rounded-lg shadow-md">
+                                class="w-full h-20 sm:h-24 md:h-28 lg:h-32 object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
                         </div>
                     </div>
                 </div>
@@ -379,7 +421,7 @@ gtag('config', 'G-B7BXJEHXWK');
                 </div>
 
                 <!-- Vision Mission Values Parallax Section -->
-                <section class="relative mt-12 sm:mt-14 md:mt-16 parallax-height overflow-hidden rounded-xl sm:rounded-2xl">
+                <section class="relative mt-10 sm:mt-12 md:mt-14 lg:mt-16 parallax-height overflow-hidden rounded-xl sm:rounded-2xl">
 
                     <!-- Parallax Background -->
                     <div class="absolute inset-0 bg-fixed bg-center bg-cover"
@@ -387,39 +429,39 @@ gtag('config', 'G-B7BXJEHXWK');
                     </div>
 
                     <!-- Dark Overlay -->
-                    <div class="absolute inset-0 bg-black/60"></div>
+                    <div class="absolute inset-0 bg-black/60 sm:bg-black/50"></div>
 
                     <!-- Content -->
-                    <div class="relative z-10 h-full flex items-center justify-center px-4 sm:px-6 py-8 sm:py-12">
+                    <div class="relative z-10 h-full flex items-center justify-center px-3 sm:px-4 md:px-6 py-6 sm:py-8 md:py-10 lg:py-12">
                         <div class="max-w-6xl mx-auto text-center text-white">
 
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6 lg:gap-8">
 
                                 <!-- Vision -->
-                                <div class="vision-card border-2 border-yellow-400 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8">
-                                    <i class="fas fa-eye text-2xl sm:text-3xl md:text-4xl text-yellow-400 mb-3 sm:mb-4"></i>
-                                    <h3 class="vision-title text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 text-white">Vision</h3>
-                                    <p class="vision-text text-white text-sm sm:text-base text-justify">
+                                <div class="vision-card border-2 border-yellow-400 rounded-lg sm:rounded-xl md:rounded-2xl p-3 sm:p-4 md:p-6 lg:p-8">
+                                    <i class="fas fa-eye text-xl sm:text-2xl md:text-3xl lg:text-4xl text-yellow-400 mb-2 sm:mb-3 md:mb-4"></i>
+                                    <h3 class="vision-title text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 text-white">Vision</h3>
+                                    <p class="vision-text text-white text-xs sm:text-sm md:text-base text-justify">
                                         Our vision is to be a renowned provider of medical care by leveraging
                                         exceptional services in Orthopedics.
                                     </p>
                                 </div>
 
                                 <!-- Mission -->
-                                <div class="vision-card border-2 border-yellow-400 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8">
-                                    <i class="fas fa-bullseye text-2xl sm:text-3xl md:text-4xl text-yellow-400 mb-3 sm:mb-4"></i>
-                                    <h3 class="vision-title text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 text-white">Our Mission</h3>
-                                    <p class="vision-text text-white text-sm sm:text-base text-justify">
+                                <div class="vision-card border-2 border-yellow-400 rounded-lg sm:rounded-xl md:rounded-2xl p-3 sm:p-4 md:p-6 lg:p-8">
+                                    <i class="fas fa-bullseye text-xl sm:text-2xl md:text-3xl lg:text-4xl text-yellow-400 mb-2 sm:mb-3 md:mb-4"></i>
+                                    <h3 class="vision-title text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 text-white">Our Mission</h3>
+                                    <p class="vision-text text-white text-xs sm:text-sm md:text-base text-justify">
                                         To be a global provider in joint replacement & orthopedic services by delivering
                                         quality healthcare at an affordable price.
                                     </p>
                                 </div>
 
                                 <!-- Values -->
-                                <div class="vision-card border-2 border-yellow-400 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8">
-                                    <i class="fas fa-heart text-2xl sm:text-3xl md:text-4xl text-yellow-400 mb-3 sm:mb-4"></i>
-                                    <h3 class="vision-title text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 text-white">Our Values</h3>
-                                    <p class="vision-text text-white text-sm sm:text-base text-justify">
+                                <div class="vision-card border-2 border-yellow-400 rounded-lg sm:rounded-xl md:rounded-2xl p-3 sm:p-4 md:p-6 lg:p-8">
+                                    <i class="fas fa-heart text-xl sm:text-2xl md:text-3xl lg:text-4xl text-yellow-400 mb-2 sm:mb-3 md:mb-4"></i>
+                                    <h3 class="vision-title text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 text-white">Our Values</h3>
+                                    <p class="vision-text text-white text-xs sm:text-sm md:text-base text-justify">
                                         We strive to meet patient expectations by maintaining the highest standards of
                                         service and medical ethics.
                                     </p>
@@ -432,11 +474,11 @@ gtag('config', 'G-B7BXJEHXWK');
                 </section>
                 
                 <!-- FAQ Section -->
-                <div class="mt-12 sm:mt-14 md:mt-16">
-                    <div class="text-center mb-8 sm:mb-10 md:mb-12">
-                        <h2 class="faq-title text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Frequently Asked Questions</h2>
-                        <div class="w-16 sm:w-20 md:w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
-                        <p class="text-gray-600 mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-justify">Everything you need to know about Germanten Hospital</p>
+                <div class="mt-10 sm:mt-12 md:mt-14 lg:mt-16">
+                    <div class="text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12">
+                        <h2 class="faq-title text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-2 sm:mb-3 md:mb-4">Frequently Asked Questions</h2>
+                        <div class="w-12 sm:w-16 md:w-20 lg:w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
+                        <p class="text-gray-600 mt-2 sm:mt-3 md:mt-4 text-sm sm:text-base md:text-lg text-justify px-2">Everything you need to know about Germanten Hospital</p>
                     </div>
                     
                     <div class="w-full space-y-3 sm:space-y-4">
@@ -613,15 +655,15 @@ gtag('config', 'G-B7BXJEHXWK');
     <!-- Modal/Lightbox for Images -->
     <div id="imageModal" class="fixed inset-0 z-50 hidden">
         <!-- Blurred Background -->
-        <div class="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm" onclick="closeModal()"></div>
+        <div class="absolute inset-0 bg-black bg-opacity-75 backdrop-blur-sm" onclick="closeModal()"></div>
 
         <!-- Modal Content -->
-        <div class="relative flex items-center justify-center min-h-screen p-4">
-            <div class="relative max-w-4xl max-h-full">
+        <div class="relative flex items-center justify-center min-h-screen p-2 sm:p-4 modal-container">
+            <div class="relative max-w-4xl max-h-full w-full">
                 <!-- Close Button -->
                 <button onclick="closeModal()"
-                    class="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors duration-200">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    class="modal-close-btn absolute -top-10 sm:-top-12 right-0 text-white hover:text-gray-300 transition-colors duration-200 bg-black/50 rounded-full p-2 sm:p-0">
+                    <svg class="w-6 h-6 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
                         </path>
                     </svg>
@@ -629,7 +671,7 @@ gtag('config', 'G-B7BXJEHXWK');
 
                 <!-- Image -->
                 <img id="modalImage" src="" alt="Gallery Image"
-                    class="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl">
+                    class="max-w-full max-h-[70vh] sm:max-h-[80vh] object-contain rounded-lg shadow-2xl">
             </div>
         </div>
     </div>
@@ -808,6 +850,7 @@ gtag('config', 'G-B7BXJEHXWK');
                 scrollProgressBar.style.boxShadow = '0 0 10px rgba(202, 138, 4, 0.5)';
             });
         });
+    
     </script>
 
     <!-- Footer Component -->
