@@ -318,9 +318,11 @@ class HeroSlider {
     }
 }
 
-// Initialize everything when DOM is loaded
+// Load navbar immediately to prevent delay
+loadNavbar();
+
+// Initialize everything else when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    loadNavbar();
     loadFooter();
     
     // Initialize hero slider on any page that has the slider

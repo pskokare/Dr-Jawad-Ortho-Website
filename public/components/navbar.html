@@ -33,10 +33,10 @@
                     <i class="fab fa-youtube"></i>
                 </a>
                 <a href="https://www.linkedin.com/authwall?trk=gf&trk=&original_referer=https://drjawadortho.com/&sessionRedirect=https://www.linkedin.com/in/dr-mir-jawad-zar-khan-24517419a"
-                            target="_blank" rel="noopener noreferrer"
-                            class="text-blue-500 hover:text-blue-400 transition-colors transform hover:scale-110">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
+                    target="_blank" rel="noopener noreferrer"
+                    class="text-blue-500 hover:text-blue-400 transition-colors transform hover:scale-110">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
                 <a href="https://www.facebook.com/drjawadortho/" target="_blank" rel="noopener noreferrer"
                     class="text-blue-600 hover:text-blue-500 transition-colors transform hover:scale-110">
                     <i class="fab fa-facebook-f"></i>
@@ -97,6 +97,87 @@
         #mobile-menu .py-2 {
             padding-top: 0.5rem;
             padding-bottom: 0.5rem;
+        }
+
+        /* Mobile menu icon animation */
+        #mobile-menu-button {
+            position: relative;
+            overflow: hidden;
+        }
+
+        #mobile-menu-button i {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            z-index: 2;
+        }
+
+        #mobile-menu-button:hover i {
+            color: #f59e0b;
+            transform: scale(1.05);
+        }
+
+        #mobile-menu-button:active {
+            transform: scale(0.95);
+        }
+
+        #mobile-menu-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(251, 191, 36, 0.3) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+            z-index: 1;
+        }
+
+        #mobile-menu-button.clicked::before {
+            width: 100px;
+            height: 100px;
+        }
+
+        #mobile-menu-button i.fa-times {
+            animation: fadeInScale 0.4s ease-out;
+        }
+
+        #mobile-menu-button i.fa-bars {
+            animation: fadeInScale 0.4s ease-out;
+        }
+
+        @keyframes fadeInScale {
+            0% {
+                opacity: 0;
+                transform: scale(0.3) rotate(-180deg);
+            }
+
+            50% {
+                opacity: 0.7;
+                transform: scale(1.1) rotate(-90deg);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        /* Ripple effect on click */
+        #mobile-menu-button .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(251, 191, 36, 0.4);
+            transform: scale(0);
+            animation: ripple 0.6s ease-out;
+            z-index: 1;
+        }
+
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
         }
     }
 
@@ -533,16 +614,16 @@
                                 class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Partial Knee
                                 Replacement</a>
                             <a href="/trauma-and-fractures"
-                                class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• TRAUMA AND FRACTURES</a>
+                                class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Trauma And Fractures</a>
                             <a href="/arthroscopy" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">•
-                                ARTHROSCOPY & SPORTS INJURIES</a>
+                                Arthroscopy & Sports Injuries</a>
                         </div>
                     </div>
                     <div class="border-t border-gray-100 mt-2 pt-2">
                         <div class="text-xs font-semibold text-amber-300 mb-1">HIP</div>
                         <div class="space-y-1">
                             <a href="/hip-replacement" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">•
-                                HIP REPLACEMENT</a>
+                                Hip Replacement</a>
                             <a href="/joint-replacement" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">•
                                 Joint Replacement</a>
                         </div>
@@ -553,11 +634,11 @@
                             <a href="/best-spine-surgeon-in-hyderabad"
                                 class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Spine Center</a>
                             <a href="/spine-surgical-treatment"
-                                class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• SPINE SURGICAL
-                                TREATMENT</a>
+                                class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Spine Surgical
+                                Treatment</a>
                             <a href="/spine-non-surgical-treatment"
-                                class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• SPINE NON SURGICAL
-                                TREATMENT</a>
+                                class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Spine Non Surgical
+                                Treatment</a>
                         </div>
                     </div>
                     <div class="border-t border-gray-100 mt-2 pt-2">
@@ -567,8 +648,8 @@
                                 class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Treatments for Knee &
                                 Back Problems</a>
                             <a href="/cartilage-transplantation"
-                                class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• CARTILAGE
-                                TRANSPLANTATION</a>
+                                class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Cartilage
+                                Transplantation</a>
                             <a href="/oats-procedure" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">•
                                 OATS Procedure</a>
                             <a href="/eswt" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• ESWT</a>
@@ -578,12 +659,12 @@
                         <div class="text-xs font-semibold text-amber-300 mb-1">SPECIALIZED SURGERIES</div>
                         <div class="space-y-1">
                             <a href="/shoulder-surgery" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">•
-                                SHOULDER SURGERY</a>
+                                Shoulder Surgery</a>
                             <!-- <a href="/neurology" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• NEUROLOGY</a> -->
                             <a href="/general-orthopedics"
-                                class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• GENERAL ORTHOPEDICS</a>
+                                class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• General Orthopedics</a>
                             <a href="/rheumatoid-arthritis"
-                                class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• RHEUMATOID ARTHRITIS</a>
+                                class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Rheumatoid Arthritis</a>
                             <!-- <a href="/plastic-reconstructive-surgery" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• PLASTIC & RECONSTRUCTIVE SURGERY</a> -->
                             <a href="/hand-microvascular-surgery"
                                 class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Hand & Microvascular
@@ -595,9 +676,9 @@
 
                         </div>
                     </div>
-                    <div class="border-t border-gray-100 mt-2 pt-2">
+                    <!-- <div class="border-t border-gray-100 mt-2 pt-2">
                         <div class="text-xs font-semibold text-amber-300 mb-1">OTHER SPECIALTIES</div>
-                        <div class="space-y-1">
+                        <div class="space-y-1"> -->
                             <!-- <a href="/gynecology" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Gynecology</a> -->
                             <!-- <a href="/pulmonology-sleep-medicine" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Pulmonology & Sleep Medicine</a> -->
                             <!-- <a href="/laparoscopic-surgery" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Laparoscopic Surgery</a> -->
@@ -606,24 +687,21 @@
                             <!-- <a href="/plastic-surgery" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Plastics Surgery</a> -->
                             <!-- <a href="/department-of-dermatology" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Department of Dermatology</a> -->
                             <!-- <a href="/dental-maxillofacial" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Dental & Maxillofacial</a> -->
-                        </div>
-                    </div>
+                        <!-- </div>
+                    </div> -->
                 </div>
             </div>
 
 
-            <div class="border-t border-gray-200 pt-2 space-y-2">
-                <a href="/news-awards" class="block py-2 text-gray-700 hover:text-amber-600 font-medium">News &
-                    Awards</a>
-                <a href="/testimonials"
-                    class="block py-2 text-gray-700 hover:text-amber-600 font-medium">Testimonials</a>
-                <a href="/blog" class="block py-2 text-gray-700 hover:text-amber-600 font-medium">Blog</a>
-                <a href="/contact" class="block py-2 text-gray-700 hover:text-amber-600 font-medium">Contact</a>
 
-            </div>
-
+            <a href="/testimonials" class="block py-2 text-gray-700 hover:text-amber-600 font-medium">Testimonials</a>
+            <a href="/blog" class="block py-2 text-gray-700 hover:text-amber-600 font-medium">Blog</a>
+            <a href="/contact" class="block py-2 text-gray-700 hover:text-amber-600 font-medium">Contact</a>
 
         </div>
+
+
+    </div>
     </div>
 </nav>
 <script>
@@ -695,7 +773,32 @@
     const mobileMenu = document.getElementById('mobile-menu');
 
     if (mobileMenuButton && mobileMenu) {
-        mobileMenuButton.addEventListener('click', function () {
+        mobileMenuButton.addEventListener('click', function (e) {
+            // Add ripple effect
+            const ripple = document.createElement('span');
+            ripple.classList.add('ripple');
+
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+
+            this.appendChild(ripple);
+
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+
+            // Add clicked class for background effect
+            this.classList.add('clicked');
+            setTimeout(() => {
+                this.classList.remove('clicked');
+            }, 600);
+
             mobileMenu.classList.toggle('hidden');
 
             // Toggle hamburger icon
