@@ -529,7 +529,7 @@ const debouncedScrollHandler = debounce(() => {
 
 window.addEventListener('scroll', debouncedScrollHandler);
 
-// Doctors Carousel Functionality
+// Doctors Carousel Functionality - One Card at a Time with Infinite Loop
 class DoctorsCarousel {
     constructor() {
         this.carousel = document.getElementById('doctors-carousel');
@@ -537,16 +537,30 @@ class DoctorsCarousel {
         this.nextBtn = document.getElementById('next-doctor');
         this.doctorCards = document.querySelectorAll('.doctor-card');
         
+        this.originalCards = Array.from(this.doctorCards);
+        this.originalCardCount = this.originalCards.length;
         this.currentIndex = 0;
-        this.totalCards = this.doctorCards.length;
+        this.totalCards = 0;
         this.autoPlayInterval = null;
+        this.cardWidth = 0;
         this.cardsPerView = this.getCardsPerView();
+        this.isTransitioning = false;
         
         this.init();
     }
     
     init() {
         if (!this.carousel) return;
+        
+        // Clone cards for infinite loop
+        this.cloneCardsForInfiniteLoop();
+        
+        // Calculate initial card width
+        this.calculateCardWidth();
+        
+        // Set initial position to show first original card
+        this.currentIndex = this.cardsPerView;
+        this.updateCarousel(false);
         
         // Add event listeners
         this.prevBtn?.addEventListener('click', () => this.navigate('prev'));
@@ -556,11 +570,12 @@ class DoctorsCarousel {
         window.addEventListener('resize', () => {
             const oldCardsPerView = this.cardsPerView;
             this.cardsPerView = this.getCardsPerView();
+            this.calculateCardWidth();
             
             // Adjust current index if needed
             if (this.cardsPerView !== oldCardsPerView) {
                 this.adjustIndexForNewView();
-                this.updateCarousel();
+                this.updateCarousel(false);
             }
             
             // Restart autoplay with new settings
@@ -577,13 +592,46 @@ class DoctorsCarousel {
         this.setupHoverEvents();
     }
     
-    getCardsPerView() {
-        const width = window.innerWidth;
-        if (width < 768) return 1;      // Mobile: 1 card
-        if (width < 1024) return 3;     // Tablet: 3 cards
-        return 3;                         // Desktop: 3 cards (changed from 4)
+    cloneCardsForInfiniteLoop() {
+        // Clone first few cards and append to end
+        const cardsToClone = Math.min(this.cardsPerView, this.originalCardCount);
+        for (let i = 0; i < cardsToClone; i++) {
+            const clone = this.originalCards[i].cloneNode(true);
+            this.carousel.appendChild(clone);
+        }
+        
+        // Clone last few cards and prepend to beginning
+        for (let i = this.originalCardCount - cardsToClone; i < this.originalCardCount; i++) {
+            const clone = this.originalCards[i].cloneNode(true);
+            this.carousel.insertBefore(clone, this.carousel.firstChild);
+        }
+        
+        // Update total cards count
+        this.totalCards = this.carousel.querySelectorAll('.doctor-card').length;
+        
+        console.log('Cloned cards for infinite loop - Original:', this.originalCardCount, 'Total:', this.totalCards, 'Cards per view:', this.cardsPerView);
     }
     
+    getCardsPerView() {
+        const width = window.innerWidth;
+        if (width < 640) return 1;      // Mobile: 1 card
+        if (width < 1024) return 2;     // Tablet: 2 cards
+        return 4;                         // Desktop: 4 cards
+    }
+    
+    calculateCardWidth() {
+        // Get all cards including cloned ones
+        const allCards = this.carousel.querySelectorAll('.doctor-card');
+        if (!allCards[0]) return;
+        
+        const cardStyle = window.getComputedStyle(allCards[0]);
+        const cardWidth = allCards[0].offsetWidth;
+        const cardMarginLeft = parseInt(cardStyle.marginLeft) || 0;
+        const cardMarginRight = parseInt(cardStyle.marginRight) || 0;
+        
+        this.cardWidth = cardWidth + cardMarginLeft + cardMarginRight;
+        console.log('Card width calculated:', this.cardWidth, 'cards per view:', this.cardsPerView);
+    }
     
     setupTouchEvents() {
         let touchStartX = 0;
@@ -618,66 +666,77 @@ class DoctorsCarousel {
     }
     
     navigate(direction) {
-        const maxIndex = Math.max(0, this.totalCards - this.cardsPerView);
+        if (this.isTransitioning) return;
         
+        // Always move exactly one card at a time
         if (direction === 'next') {
-            this.currentIndex = Math.min(this.currentIndex + this.cardsPerView, maxIndex);
+            this.currentIndex++;
         } else {
-            this.currentIndex = Math.max(this.currentIndex - this.cardsPerView, 0);
+            this.currentIndex--;
         }
         
-        this.updateCarousel();
+        this.updateCarousel(true);
     }
-    
     
     adjustIndexForNewView() {
-        const maxIndex = Math.max(0, this.totalCards - this.cardsPerView);
-        this.currentIndex = Math.min(this.currentIndex, maxIndex);
+        // Keep the current index valid for the new view
+        this.currentIndex = Math.max(this.cardsPerView, Math.min(this.currentIndex, this.originalCardCount + this.cardsPerView - 1));
     }
     
-    updateCarousel() {
-        const translateX = -(this.currentIndex * (100 / this.cardsPerView));
-        console.log('Updating carousel - index:', this.currentIndex, 'cards per view:', this.cardsPerView, 'translateX:', translateX + '%');
-        this.carousel.style.transform = `translateX(${translateX}%)`;
+    updateCarousel(withTransition = true) {
+        // Set transition
+        if (withTransition) {
+            this.carousel.style.transition = 'transform 0.5s ease-in-out';
+        } else {
+            this.carousel.style.transition = 'none';
+        }
+        
+        // Move by exactly one card width at a time
+        const translateX = -(this.currentIndex * this.cardWidth);
+        console.log('Updating carousel - index:', this.currentIndex, 'card width:', this.cardWidth, 'translateX:', translateX + 'px');
+        this.carousel.style.transform = `translateX(${translateX}px)`;
+        
+        // Check if we need to reset position for infinite loop
+        if (withTransition) {
+            setTimeout(() => {
+                this.checkAndResetPosition();
+            }, 500);
+        }
+    }
+    
+    checkAndResetPosition() {
+        // If we've gone too far forward (into cloned cards at the end)
+        if (this.currentIndex >= this.originalCardCount + this.cardsPerView) {
+            this.isTransitioning = true;
+            // Reset to the original position without transition
+            this.currentIndex = this.cardsPerView;
+            this.updateCarousel(false);
+            setTimeout(() => {
+                this.isTransitioning = false;
+            }, 50);
+        }
+        // If we've gone too far backward (into cloned cards at the beginning)
+        else if (this.currentIndex < this.cardsPerView) {
+            this.isTransitioning = true;
+            // Reset to the end position without transition
+            this.currentIndex = this.originalCardCount + this.cardsPerView - 1;
+            this.updateCarousel(false);
+            setTimeout(() => {
+                this.isTransitioning = false;
+            }, 50);
+        }
     }
     
     startAutoPlay() {
         this.stopAutoPlay();
         
-        // Auto-play for both mobile and desktop
-        if (this.cardsPerView === 1) {
-            // Mobile: Move one card at a time
-            console.log('Starting auto-scroll for mobile - total cards:', this.totalCards);
-            this.autoPlayInterval = setInterval(() => {
-                const maxIndex = this.totalCards - 1;
-                console.log('Auto-scroll: current index:', this.currentIndex, 'max index:', maxIndex);
-                
-                if (this.currentIndex >= maxIndex) {
-                    this.currentIndex = 0; // Loop back to start
-                    console.log('Looping back to start');
-                } else {
-                    this.currentIndex += 1; // Move one card at a time
-                    console.log('Moving to next card:', this.currentIndex);
-                }
-                this.updateCarousel();
-            }, 5000); // Slower: 5 seconds for mobile
-        } else {
-            // Desktop/Tablet: Move by cards per view
-            console.log('Starting auto-scroll for desktop/tablet - cards per view:', this.cardsPerView);
-            this.autoPlayInterval = setInterval(() => {
-                const maxIndex = Math.max(0, this.totalCards - this.cardsPerView);
-                console.log('Auto-scroll: current index:', this.currentIndex, 'max index:', maxIndex);
-                
-                if (this.currentIndex >= maxIndex) {
-                    this.currentIndex = 0; // Loop back to start
-                    console.log('Looping back to start');
-                } else {
-                    this.currentIndex += this.cardsPerView; // Move by cards per view
-                    console.log('Moving to next group:', this.currentIndex);
-                }
-                this.updateCarousel();
-            }, 4000); // 4 seconds for desktop/tablet
-        }
+        console.log('Starting auto-scroll - total cards:', this.totalCards, 'cards per view:', this.cardsPerView);
+        this.autoPlayInterval = setInterval(() => {
+            console.log('Auto-scroll: current index:', this.currentIndex);
+            
+            // Always move exactly one card at a time
+            this.navigate('next');
+        }, 3000); // 3 seconds for all screen sizes
     }
     
     stopAutoPlay() {
