@@ -6450,7 +6450,7 @@
                                     </h3>
 
                                     <div class="mt-5">
-                                        <a href="/blogs/When-to-consult-foot-and-ankle-surgeon-hyderabad"
+                                        <a href="/blogs/when-to-consult-foot-and-ankle-surgeon-hyderabad"
                                             class="article-read-btn inline-flex items-center justify-center w-full px-4 py-2.5 text-sm sm:text-base text-red-700 font-semibold rounded-lg border border-red-200 bg-white transition-all duration-300">
 
                                             <span class="article-btn-content inline-flex items-center">
@@ -6657,7 +6657,6 @@
                 }
             }
         </style>
-
         <section class="py-12 sm:py-16 bg-gray-50">
             <!-- Heading -->
             <div class="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-14">
@@ -7592,3 +7591,73 @@
     });
 
 </script>
+
+<!-- Floating Navigation Menu -->
+<div id="floating-nav" class="fixed right-4 z-50 hidden lg:flex flex-col gap-2" style="bottom: 12%;">
+    <a href="about-us.html" class="floating-nav-btn w-11 h-11 bg-gradient-to-br from-[#dc2626] to-[#b91c1c] rounded-xl flex items-center justify-center text-white shadow-lg hover:scale-110 hover:from-[#ef4444] hover:to-[#dc2626] hover:shadow-xl transition-all duration-300" title="About Us">
+        <i class="fas fa-user-md text-xl"></i>
+    </a>
+    <a href="news-awards.html" class="floating-nav-btn w-11 h-11 bg-gradient-to-br from-[#dc2626] to-[#b91c1c] rounded-xl flex items-center justify-center text-white shadow-lg hover:scale-110 hover:from-[#ef4444] hover:to-[#dc2626] hover:shadow-xl transition-all duration-300" title="Awards & Achievements">
+        <i class="fas fa-trophy text-xl"></i>
+    </a>
+    <a href="book-an-appointment.html" class="floating-nav-btn w-11 h-11 bg-gradient-to-br from-[#dc2626] to-[#b91c1c] rounded-xl flex items-center justify-center text-white shadow-lg hover:scale-110 hover:from-[#ef4444] hover:to-[#dc2626] hover:shadow-xl transition-all duration-300" title="Book Appointment">
+        <i class="fas fa-calendar-check text-xl"></i>
+    </a>
+    <a href="contact.html" class="floating-nav-btn w-11 h-11 bg-gradient-to-br from-[#dc2626] to-[#b91c1c] rounded-xl flex items-center justify-center text-white shadow-lg hover:scale-110 hover:from-[#ef4444] hover:to-[#dc2626] hover:shadow-xl transition-all duration-300" title="Contact Us">
+        <i class="fas fa-phone-alt text-xl"></i>
+    </a>
+    <a href="https://wa.me/919989635555" target="_blank" rel="noopener noreferrer" class="floating-nav-btn w-11 h-11 bg-gradient-to-br from-[#25d366] to-[#128c7e] rounded-xl flex items-center justify-center text-white shadow-lg hover:scale-110 hover:from-[#20bd5a] hover:to-[#0da572] hover:shadow-xl transition-all duration-300" title="WhatsApp">
+        <i class="fab fa-whatsapp text-xl"></i>
+    </a>
+</div>
+
+<!-- Mobile Floating Navigation -->
+<!-- <div id="floating-nav-mobile" class="fixed right-2 z-50 flex lg:hidden flex-col gap-1.5" style="bottom: 8%;">
+    <a href="about-us.html" class="floating-nav-btn-mobile w-7 h-7 bg-gradient-to-br from-[#1e3a8a] to-[#3b82f6] rounded-lg flex items-center justify-center text-white shadow-md hover:scale-110 hover:from-[#1e40af] hover:to-[#2563eb] transition-all duration-300" title="About Us">
+        <i class="fas fa-user-md text-xs"></i>
+    </a>
+    <a href="news-awards.html" class="floating-nav-btn-mobile w-7 h-7 bg-gradient-to-br from-[#1e3a8a] to-[#3b82f6] rounded-lg flex items-center justify-center text-white shadow-md hover:scale-110 hover:from-[#1e40af] hover:to-[#2563eb] transition-all duration-300" title="Awards">
+        <i class="fas fa-trophy text-xs"></i>
+    </a>
+    <a href="contact.html" class="floating-nav-btn-mobile w-7 h-7 bg-gradient-to-br from-[#1e3a8a] to-[#3b82f6] rounded-lg flex items-center justify-center text-white shadow-md hover:scale-110 hover:from-[#1e40af] hover:to-[#2563eb] transition-all duration-300" title="Contact">
+        <i class="fas fa-phone-alt text-xs"></i>
+    </a>
+    <a href="https://wa.me/919989635555" target="_blank" rel="noopener noreferrer" class="floating-nav-btn-mobile w-7 h-7 bg-gradient-to-br from-[#25d366] to-[#128c7e] rounded-lg flex items-center justify-center text-white shadow-md hover:scale-110 hover:from-[#20bd5a] hover:to-[#0da572] transition-all duration-300" title="WhatsApp">
+        <i class="fab fa-whatsapp text-xs"></i>
+    </a>
+</div> -->
+
+<style>
+    /* Floating Navigation Styles */
+    #floating-nav,
+    #floating-nav-mobile {
+        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    }
+
+    .floating-nav-btn,
+    .floating-nav-btn-mobile {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Ensure floating menu doesn't overlap important content */
+    @media (max-width: 1024px) {
+        #floating-nav {
+            right: 1rem;
+        }
+    }
+
+    @media (max-width: 640px) {
+        #floating-nav-mobile {
+            right: 0.5rem;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+    }
+
+    /* Ensure mobile navigation is fully visible */
+    @media (max-width: 480px) {
+        #floating-nav-mobile {
+            bottom: 5% !important;
+        }
+    }
+</style>

@@ -12,104 +12,471 @@
        <link rel="icon" type="image/webp" href="Images/GERMANTANLOGO.webp">
        <link rel="canonical" href="https://drjawadortho.com/book-an-appointment">
        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    
     <style>
-        /* Scroll Progress Bar Styles */
+        :root {
+            --brand-red: #b91c1c;
+            --brand-red-dark: #991b1b;
+            --brand-yellow: #eab308;
+            --brand-yellow-soft: #fff8dc;
+            --text-primary: #111827;
+            --text-secondary: #4b5563;
+            --border-light: #e5e7eb;
+            --surface-soft: #f8fafc;
+            --navbar-offset: 152px;
+        }
+
+
+        @media (max-width: 1024px) {
+            :root {
+                --navbar-offset: 132px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            :root {
+                --navbar-offset: 104px;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #ffffff;
+            color: var(--text-primary);
+        }
+
+        /* Minimal scroll indicator */
         .scroll-progress {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 3px;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.55);
             z-index: 9999;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.2s ease;
+            cursor: pointer;
         }
 
         .scroll-progress-bar {
+            width: 0;
             height: 100%;
-            background: linear-gradient(90deg, #ff4d01 0%, #eab308 50%, #facc15 100%);
-            border-radius: 0 1px 1px 0;
-            transition: width 0.1s ease-out;
-            box-shadow: 0 0 10px rgba(202, 138, 4, 0.5);
+            background: linear-gradient(
+                90deg,
+                var(--brand-red) 0%,
+                var(--brand-red) 88%,
+                var(--brand-yellow) 88%,
+                var(--brand-yellow) 100%
+            );
+            transition: width 0.1s linear;
+            box-shadow: none;
         }
-
 
         .scroll-progress.hidden {
             opacity: 0;
             pointer-events: none;
         }
 
-        /* Responsive hero section */
-        .hero-international {
-            height: 60vh !important;
-            min-height: 400px;
+        .page-content-wrapper {
+            padding-top: 0;
+        }
+
+        /* Professional hero */
+        .hero-section {
             position: relative;
-            width: 100%;
             overflow: hidden;
+            padding: calc(var(--navbar-offset) + 120px) 1rem 80px !important;
+            background: var(--surface-soft);
+            border-bottom: 1px solid var(--border-light);
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
         }
-        
-        @media (max-width: 768px) {
-            .hero-international {
-                height: 50vh !important;
-                min-height: 350px;
+
+        @media (max-width: 1024px) {
+            .hero-section {
+                padding: calc(var(--navbar-offset) + 80px) 1rem 60px !important;
             }
         }
-        
-        @media (max-width: 640px) {
-            .hero-international {
-                height: 40vh !important;
-                min-height: 300px;
+
+        @media (max-width: 767px) {
+            .hero-section {
+                padding: calc(var(--navbar-offset) + 50px) 1rem 40px !important;
             }
         }
-        
-        .hero-overlay-text {
-            background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+
+        .hero-section::before {
+            display: none;
         }
-        
-        /* breadcrumb modern style */
-        .breadcrumb-glass {
-            background: rgba(255,255,255,0.75);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border-radius: 60px;
-            padding: 8px 20px;
-            display: inline-block;
-            border: 1px solid rgba(255,255,255,0.6);
-            box-shadow: 0 10px 25px -8px rgba(0,0,0,0.2);
+
+        .hero-section h1 {
+            margin-bottom: 0 !important;
+            color: var(--text-primary);
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
         }
-        
-        /* Responsive card styles */
-        .service-card {
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
+
+        .hero-section h1::after {
+            content: "";
+            display: block;
+            width: 68px;
+            height: 3px;
+            margin: 18px auto 0;
+            border-radius: 999px;
+            background: linear-gradient(
+                90deg,
+                var(--brand-red) 0%,
+                var(--brand-red) 72%,
+                var(--brand-yellow) 72%,
+                var(--brand-yellow) 100%
+            );
         }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            border-color: #dc2626;
+
+        .hero-section p {
+            max-width: 680px;
+            margin: 18px auto 0 !important;
+            color: var(--text-secondary);
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            line-height: 1.7;
+            opacity: 1 !important;
         }
-        
-        /* Responsive typography */
-        @media (max-width: 640px) {
-            h1 { font-size: 2rem; }
-            h2 { font-size: 1.5rem; }
-            h3 { font-size: 1.25rem; }
+
+        /* Appointment section */
+        .appointment-section {
+            padding-top: 42px !important;
+            padding-bottom: 54px !important;
+            background: #ffffff;
         }
-        
-        /* Desktop hero section positioning */
-        @media (min-width: 769px) {
-            .hero-desktop-fix {
-                padding-top: 100px; /* Account for navbar and top bar on desktop */
+
+        .callback-card {
+            width: 100%;
+            max-width: 1060px;
+            margin: 0 auto;
+            padding: 20px !important;
+            background: #fff5f5;
+            border: 1px solid var(--border-light);
+            border-radius: 14px !important;
+            box-shadow: none !important;
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+            transition: border-color 0.2s ease;
+            scroll-margin-top: calc(var(--navbar-offset) + 24px);
+        }
+
+        .callback-card:hover {
+            border-color: #d1d5db;
+            box-shadow: none !important;
+            transform: none !important;
+        }
+
+        .callback-card form {
+            max-width: 430px !important;
+            padding: 14px 16px !important;
+        }
+
+        .callback-card form h2 {
+            margin-bottom: 16px !important;
+            color: var(--brand-red) !important;
+        }
+
+        .callback-card label {
+            margin-bottom: 6px !important;
+            color: #374151;
+            font-weight: 600;
+        }
+
+        .callback-card input,
+        .callback-card textarea {
+            border-color: #d1d5db !important;
+            border-radius: 8px !important;
+            background: #ffffff;
+            box-shadow: none !important;
+            transition:
+                border-color 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .callback-card input {
+            padding-top: 9px !important;
+            padding-bottom: 9px !important;
+        }
+
+        .callback-card textarea {
+            min-height: 86px;
+            padding-top: 9px !important;
+            padding-bottom: 9px !important;
+        }
+
+        .callback-card input:focus,
+        .callback-card textarea:focus {
+            border-color: var(--brand-red) !important;
+            box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.10) !important;
+            outline: none;
+        }
+
+        .callback-card button[type="submit"] {
+            padding-top: 10px !important;
+            padding-bottom: 10px !important;
+            border-radius: 8px !important;
+            background: var(--brand-red) !important;
+            background-image: none !important;
+            box-shadow: none !important;
+            transform: none !important;
+            transition:
+                background-color 0.2s ease,
+                border-color 0.2s ease !important;
+        }
+
+        .callback-card button[type="submit"]:hover {
+            background: var(--brand-red-dark) !important;
+            background-image: none !important;
+            box-shadow: none !important;
+            transform: none !important;
+        }
+
+        .callback-card button[type="submit"]:focus-visible {
+            outline: 3px solid rgba(234, 179, 8, 0.45);
+            outline-offset: 3px;
+        }
+
+        /* Form and image alignment */
+        .equal-height-grid {
+            align-items: stretch;
+        }
+
+        .equal-height-item {
+            min-height: 350px !important;
+        }
+
+        .image-container {
+            min-height: 350px;
+            overflow: hidden;
+            background: #f9fafb;
+            border: 1px solid var(--border-light);
+            border-radius: 10px !important;
+            box-shadow: none !important;
+            transition: border-color 0.2s ease;
+        }
+
+        .image-container:hover {
+            border-color: #d1d5db;
+            box-shadow: none !important;
+        }
+
+        .image-container img {
+            transition: none !important;
+            transform: none !important;
+            object-position: center top;
+        }
+
+        .image-container:hover img {
+            transform: none !important;
+        }
+
+        /* Typography */
+        .section-title {
+            position: relative;
+            margin-bottom: 0 !important;
+            color: var(--text-primary);
+            font-weight: 700;
+            letter-spacing: -0.025em;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 56px;
+            height: 3px;
+            margin: 14px auto 0;
+            border-radius: 999px;
+            background: linear-gradient(
+                90deg,
+                var(--brand-red) 0%,
+                var(--brand-red) 72%,
+                var(--brand-yellow) 72%,
+                var(--brand-yellow) 100%
+            );
+        }
+
+        .section-description {
+            margin-top: 16px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .link-enhanced {
+            color: var(--brand-red);
+            text-decoration: underline;
+            text-decoration-color: rgba(185, 28, 28, 0.3);
+            text-underline-offset: 3px;
+            transition: color 0.2s ease;
+        }
+
+        .link-enhanced::after {
+            display: none;
+        }
+
+        .link-enhanced:hover {
+            color: var(--brand-red-dark);
+        }
+
+        /* Why Choose Us */
+        .why-choose-section {
+            padding-top: 56px !important;
+            padding-bottom: 64px !important;
+            background: var(--surface-soft) !important;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .why-choose-section .text-center {
+            margin-bottom: 34px !important;
+        }
+
+        .info-card {
+            position: relative;
+            min-height: 210px;
+            padding: 22px;
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-top: 3px solid var(--brand-red);
+            border-radius: 12px;
+            box-shadow: none;
+            transition:
+                border-color 0.2s ease,
+                box-shadow 0.2s ease,
+                background-color 0.2s ease;
+        }
+
+        .info-card:hover,
+        .info-card:focus-within {
+            background: #ffffff;
+            border-color: #d1d5db;
+            border-top-color: var(--brand-red-dark);
+            box-shadow: 0 8px 24px rgba(17, 24, 39, 0.06);
+            transform: none;
+        }
+
+        .info-card-icon {
+            width: 46px;
+            height: 46px;
+            margin-bottom: 17px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--brand-red);
+            font-size: 1.2rem;
+            background: var(--brand-yellow-soft);
+            border: 1px solid rgba(234, 179, 8, 0.38);
+            border-radius: 10px;
+            box-shadow: none;
+            transition:
+                background-color 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+        .info-card:hover .info-card-icon {
+            background: #fff4c2;
+            border-color: rgba(234, 179, 8, 0.65);
+        }
+
+        .info-card h3 {
+            color: var(--text-primary);
+            font-size: 1.05rem;
+            line-height: 1.4;
+        }
+
+        .info-card p {
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+
+        @media (min-width: 768px) {
+            .equal-height-grid {
+                display: grid;
+                grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+                gap: 22px;
             }
         }
-        
-        /* Responsive spacing */
+
+        @media (max-width: 767px) {
+            .hero-section {
+                padding-top: calc(var(--navbar-offset) + 34px) !important;
+                padding-bottom: 36px !important;
+            }
+
+            .appointment-section {
+                padding: 32px 16px 40px !important;
+            }
+
+            .callback-card {
+                padding: 14px !important;
+            }
+
+            .callback-card form {
+                max-width: none !important;
+                padding: 12px 8px !important;
+            }
+
+            .equal-height-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            .equal-height-item {
+                min-height: auto !important;
+            }
+
+            .image-container {
+                min-height: 290px;
+            }
+
+            .why-choose-section {
+                padding-top: 44px !important;
+                padding-bottom: 48px !important;
+            }
+
+            .info-card {
+                min-height: auto;
+            }
+        }
+
         @media (max-width: 640px) {
-            .section-padding { padding: 3rem 1rem !important; }
-            .card-padding { padding: 1.5rem !important; }
+            .hero-section h1 {
+                font-size: 1.9rem;
+            }
+
+            .hero-section p {
+                font-size: 1rem;
+            }
+
+            .callback-card form h2 {
+                font-size: 1.1rem !important;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+            }
         }
     </style>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-B7BXJEHXWK"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -129,75 +496,128 @@ gtag('config', 'G-B7BXJEHXWK');
     <!-- Navbar Component placeholder -->
     <div id="navbar-container" class="shadow-sm"></div>
 
-  
+    <!-- Page Content Wrapper with proper navbar spacing -->
+    <div class="page-content-wrapper">
+
+    <!-- Hero Section -->
+    <section class="hero-section py-16 md:py-24 lg:py-32 relative">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-gray-900 text-center">
+            <h1 class="text-1xl md:text-2xl lg:text-3xl font-bold leading-tight mb-8">Book Your Appointment</h1>
+            <p class="text-lg md:text-xl lg:text-2xl mb-8 opacity-80">Expert orthopedic care with Dr. Mir Jawad Zar Khan</p>
+         </div>
+    </section>
 
     <!-- International Patients Relations Section -->
-    <section class="px-8 py-12 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
-            <div class="text-center mb-8">
-                <h2 class="text-2xl font-bold text-gray-900 mb-4">International Patients Relations</h2>
-                <p class="text-gray-600 max-w-3xl mx-auto">For comprehensive international patient services and frequently asked questions, visit our <a href="international-patients-f-s" class="text-orange-600 hover:text-red-600 font-medium transition-colors duration-200">International Patient FAQs</a> page.</p>
-            </div>
-            <!-- Doctor Callback Section - Slightly Increased Section Height, Compact Form & Image -->
-                    <div class="rounded-xl shadow-md border border-gray-200 pt-6 pb-6"
-                        style="background-color: #FFFFFF; max-width: 100%; padding: 1.5rem 1rem;">
-                        <div class="grid md:grid-cols-2 gap-4 items-stretch">
-                            <!-- Left: Get A Quick Callback Form - White Background -->
-                            <div class="rounded-lg p-4 pt-8 flex flex-col h-full"
-                                style="background-color: #FFFFFF; border: 1px solid #E5E7EB; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
-                                <h2 class="text-lg font-bold mb-3 text-red-700 tracking-tight flex items-center gap-1"
-                                    style="font-family: system-ui, -apple-system, sans-serif;">
-                                    <span>📞</span> Get A Quick Callback
-                                </h2>
-                                <form class="flex flex-col h-full" style="gap: 1.5rem;">
-                                    <div>
-                                        <label class="block text-sm font-medium mb-3 text-gray-700">Full
-                                            Name</label>
-                                        <input type="text" placeholder="Enter your full name"
-                                            class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 focus:outline-none focus:border-red-300 transition-all"
-                                            style="background-color: #FFFFFF; color: #1F2937;">
-                                    </div>
-                                    <div>
-                                        <label class="block text-sm font-medium mb-3 text-gray-700">Mobile
-                                            Number</label>
-                                        <input type="tel" placeholder="Enter your mobile number"
-                                            class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 focus:outline-none focus:border-red-300 transition-all"
-                                            style="background-color: #FFFFFF; color: #1F2937;">
-                                    </div>
-                                    <div>
-                                        <label class="block text-sm font-medium mb-3 text-gray-700">Email
-                                            Address</label>
-                                        <input type="email" placeholder="Enter your email address"
-                                            class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 focus:outline-none focus:border-red-300 transition-all"
-                                            style="background-color: #FFFFFF; color: #1F2937;">
-                                    </div>
-                                    <div>
-                                        <label class="block text-sm font-medium mb-3 text-gray-700">Message</label>
-                                        <textarea rows="2" placeholder="Enter your query"
-                                            class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 focus:outline-none focus:border-red-300 transition-all resize-none"
-                                            style="background-color: #FFFFFF; color: #1F2937;"></textarea>
-                                    </div>
-                                    <button type="submit"
-                                        class="w-full font-semibold py-2.5 px-3 rounded-lg transition-all duration-300 text-sm shadow-md hover:shadow-lg transform hover:scale-[1.01] mt-0"
-                                        style="background: #EF4444; color: white; border: none; cursor: pointer;">
-                                        ✨ Submit Appointment
-                                    </button>
-                                    <p class="text-xs text-gray-600 mt-3 text-center">For corporate and organizational patients, check our <a href="empanelled-organizations" class="text-blue-600 hover:text-red-600 font-medium transition-colors duration-200">empanelled organizations</a>.</p>
-                                </form>
+    <section class="appointment-section px-4 sm:px-6 lg:px-8 py-8 md:py-12 lg:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+           
+            <!-- Doctor Callback Section -->
+            <div id="callback-form" class="callback-card rounded-2xl p-8">
+                <div class="equal-height-grid">
+                    <!-- Left: Get A Quick Callback Form -->
+                    <div class="equal-height-item">
+                       <form class="space-y-3 lg:space-y-4 max-w-md mx-auto w-full p-6"
+                                        action="https://old.germantenhospitals.com/send_email.php" method="post">
+                                        <h2
+                                            class="text-lg lg:text-xl font-bold mb-4 lg:mb-5 text-red-700 tracking-tight flex items-center gap-2">
+                                            <span class="text-xl lg:text-2xl">📞</span> Get A Quick Callback
+                                        </h2>
+                                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-4">
+                                            <div>
+                                                <label class="block text-sm font-medium mb-2 text-gray-700">Full
+                                                    Name<span class="text-red-500">*</span></label>
+                                                <input type="text" id="customFirstName" name="name"
+                                                    placeholder="Enter your full name" required
+                                                    class="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 focus:outline-none focus:border-red-300 transition-all">
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm font-medium mb-2 text-gray-700">Mobile
+                                                    Number</label>
+                                                <input type="tel" id="customPhone" name="phone" placeholder="+91"
+                                                    required
+                                                    class="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 focus:outline-none focus:border-red-300 transition-all">
+                                            </div>
+                                        </div>
+                                        <div style="position:absolute; left:-9999px;">
+                                            <label>Website</label>
+                                            <input type="text" name="website" value="">
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm font-medium mb-2 text-gray-700">Email
+                                                Address</label>
+                                            <input type="email" id="customEmail" name="email"
+                                                placeholder="Enter your email address" required
+                                                class="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 focus:outline-none focus:border-red-300 transition-all">
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm font-medium mb-2 text-gray-700">Message</label>
+                                            <textarea id="customMessage" name="notes" rows="3 lg:rows-4"
+                                                placeholder="Enter your query"
+                                                class="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 focus:outline-none focus:border-red-300 transition-all resize-none"></textarea>
+                                        </div>
+                                        <input type="hidden" name="form_name" id="form_name" value="Appointment Form" />
+                                        <input type="hidden" name="page_link" id="page_link" />
+                                        <input type="hidden" name="source" id="source" value="web-ads" />
+                                        <button type="submit"
+                                            class="w-full font-semibold py-3 px-6 rounded-lg transition-all duration-300 text-base shadow-md hover:shadow-lg transform hover:scale-[1.02] bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white">
+                                            ✨ Submit Appointment
+                                        </button>
+                                    </form>
                             </div>
 
-                            <!-- Right: Dr. Mir Jawad Khan Image - Same Height as Form -->
-                            <div class="rounded-lg overflow-hidden shadow-sm flex items-center justify-center"
-                                style="background: #FEF3C7; min-height: 100%;">
+                            <!-- Right: Dr. Mir Jawad Khan Image -->
+                            <div class="equal-height-item image-container rounded-xl overflow-hidden flex items-center justify-center">
                                 <img src="../Images/Doctors/dr-mir-jawad-khan.webp" alt="Dr. Mir Jawad Zar Khan"
-                                    class="w-full h-full object-cover rounded-lg" style="display: block;">
+                                    class="w-full h-full object-cover">
                             </div>
-                        </div>
-                    </div>
+                </div>
+            </div>
 
         </div>
 
     </section>
+
+    <!-- Info Cards Section -->
+    <section class="why-choose-section px-4 sm:px-6 lg:px-8 py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="section-title text-2xl md:text-3xl mb-4">Why Choose Us</h2>
+                <p class="section-description text-gray-600 max-w-2xl mx-auto">Experience world-class orthopedic care with cutting-edge technology and compassionate service.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="info-card">
+                    <div class="info-card-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-gray-900">Expert Doctors</h3>
+                    <p class="text-gray-600 text-sm">26+ years of experience in orthopedic surgery and joint replacement.</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-gray-900">Advanced Facilities</h3>
+                    <p class="text-gray-600 text-sm">State-of-the-art operation theaters and modern medical equipment.</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-gray-900">24/7 Emergency</h3>
+                    <p class="text-gray-600 text-sm">Round-the-clock emergency care and trauma services available.</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-gray-900">Patient Care</h3>
+                    <p class="text-gray-600 text-sm">Compassionate care with personalized treatment plans for every patient.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </div> <!-- End page-content-wrapper -->
 
     <!-- Footer Component -->
     <div id="footer-container"></div>
@@ -264,6 +684,118 @@ gtag('config', 'G-B7BXJEHXWK');
             });
         });
     </script>
+
+    <script>
+        (function () {
+            const navbarContainer = document.getElementById('navbar-container');
+
+            function isVisible(element, rect) {
+                const styles = window.getComputedStyle(element);
+
+                return (
+                    styles.display !== 'none' &&
+                    styles.visibility !== 'hidden' &&
+                    parseFloat(styles.opacity || '1') > 0 &&
+                    rect.width > 0 &&
+                    rect.height > 0
+                );
+            }
+
+            function measureNavbarOverlap() {
+                if (!navbarContainer) return 0;
+
+                const containerRect = navbarContainer.getBoundingClientRect();
+                const elements = [
+                    navbarContainer,
+                    ...navbarContainer.querySelectorAll('*')
+                ];
+
+                let fixedBottom = 0;
+
+                elements.forEach(function (element) {
+                    const rect = element.getBoundingClientRect();
+                    const styles = window.getComputedStyle(element);
+
+                    if (!isVisible(element, rect)) return;
+
+                    const isOverlayHeader =
+                        styles.position === 'fixed' ||
+                        styles.position === 'sticky';
+
+                    /*
+                     * Only measure fixed or sticky elements attached to the
+                     * upper viewport. This excludes dropdowns and unrelated
+                     * descendants that may appear lower on the page.
+                     */
+                    if (
+                        isOverlayHeader &&
+                        rect.top <= 8 &&
+                        rect.bottom > 0 &&
+                        rect.bottom <= window.innerHeight * 0.5
+                    ) {
+                        fixedBottom = Math.max(fixedBottom, rect.bottom);
+                    }
+                });
+
+                if (fixedBottom > 0) {
+                    return Math.ceil(fixedBottom);
+                }
+
+                /*
+                 * A navbar in normal document flow already creates its own
+                 * space, so no additional hero offset is required.
+                 */
+                if (containerRect.height > 20) {
+                    return 0;
+                }
+
+                /*
+                 * Fallback for asynchronously injected headers whose wrapper
+                 * stays at zero height.
+                 */
+                if (window.innerWidth <= 767) return 104;
+                if (window.innerWidth <= 1024) return 132;
+                return 152;
+            }
+
+            function updateNavbarOffset() {
+                const offset = measureNavbarOverlap();
+
+                document.documentElement.style.setProperty(
+                    '--navbar-offset',
+                    offset + 'px'
+                );
+            }
+
+            updateNavbarOffset();
+
+            window.addEventListener('load', updateNavbarOffset);
+            window.addEventListener('resize', updateNavbarOffset);
+            window.addEventListener('orientationchange', updateNavbarOffset);
+
+            if (navbarContainer && 'MutationObserver' in window) {
+                const observer = new MutationObserver(function () {
+                    requestAnimationFrame(updateNavbarOffset);
+                });
+
+                observer.observe(navbarContainer, {
+                    childList: true,
+                    subtree: true,
+                    attributes: true,
+                    attributeFilter: ['class', 'style']
+                });
+            }
+
+            /*
+             * The navbar is loaded through js/script.js, so recheck after
+             * the component has had time to render.
+             */
+            [100, 300, 700, 1200, 2000].forEach(function (delay) {
+                setTimeout(updateNavbarOffset, delay);
+            });
+        })();
+    </script>
+
     <script src="js/script.js"></script>
 </body>
 </html>
