@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Partial Knee Replacement Surgeon in Hyderabad | Dr. Jawad</title>
     <meta name="description"
-        content="Explore minimally invasive partial knee replacement in Hyderabad with Dr. Mir Jawad Zar Khan. Save healthy bone and recover faster. Book your consultation.">
+        content="Partial knee replacement surgery in Hyderabad for early stage arthritis. Smaller incision, faster recovery. Consult Dr. Mir Jawad Zar Khan today.">
     <!-- Tailwind CSS + Font Awesome + Custom Overrides -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/webp" href="../Images/GERMANTANLOGO.webp">
+    <link rel="icon" type="image/webp" href="../Images/dr-jawad-logo.webp">
     <link rel="canonical" href="https://drjawadortho.com/partial-knee-replacement">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <!-- Additional subtle professional styling for enhanced readability & modern look -->
@@ -92,11 +92,154 @@
     </style>
 
     <style>
-        /* Desktop hero section positioning */
+        :root {
+            --pkr-header-offset: 0px;
+        }
+
+        html {
+            scroll-padding-top: var(--pkr-header-offset);
+        }
+
+        #navbar-container {
+            position: relative;
+            z-index: 1000;
+        }
+
+        .pkr-hero-section {
+            position: relative;
+            width: 100%;
+            margin: 0;
+            padding: var(--pkr-header-offset) 0 0;
+            overflow: hidden;
+        }
+
+        .pkr-hero-media {
+            position: relative;
+            width: 100%;
+            height: clamp(250px, 67vw, 320px);
+            min-height: 250px;
+            overflow: hidden;
+            background: #1f2937;
+        }
+
+        .pkr-hero-image {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .pkr-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.58));
+        }
+
+        .pkr-hero-content {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px 18px;
+            text-align: center;
+        }
+
+        .pkr-hero-copy {
+            width: min(100%, 760px);
+            margin: 0 auto;
+        }
+
+        .pkr-hero-title {
+            margin: 0 0 12px;
+            color: #ffffff;
+            font-size: clamp(1.75rem, 7vw, 3.35rem);
+            font-weight: 800;
+            line-height: 1.12;
+        }
+
+        .pkr-hero-description {
+            max-width: 680px;
+            margin: 0 auto;
+            color: #ffffff;
+            font-size: clamp(0.95rem, 3.5vw, 1.25rem);
+            line-height: 1.65;
+            text-align: center;
+        }
+
+        @media (max-width: 374px) {
+            .pkr-hero-media {
+                height: 240px;
+                min-height: 240px;
+            }
+
+            .pkr-hero-content {
+                padding: 20px 14px;
+            }
+
+            .pkr-hero-title {
+                font-size: 1.6rem;
+            }
+
+            .pkr-hero-description {
+                font-size: 0.9rem;
+                line-height: 1.55;
+            }
+        }
+
+        @media (min-width: 640px) {
+            .pkr-hero-media {
+                height: 340px;
+                min-height: 340px;
+            }
+
+            .pkr-hero-content {
+                padding: 32px 24px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .pkr-hero-media {
+                height: 400px;
+                min-height: 400px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .pkr-hero-media {
+                height: 460px;
+                min-height: 460px;
+            }
+
+            .pkr-hero-content {
+                padding: 40px 32px;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .pkr-hero-media {
+                height: 520px;
+                min-height: 520px;
+            }
+        }
+
+        @media (min-width: 1536px) {
+            .pkr-hero-media {
+                height: 550px;
+                min-height: 550px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --pkr-header-offset: 64px;
+            }
+        }
+
         @media (min-width: 769px) {
-            .hero-desktop-fix {
-                margin-top: 30px;
-                /* Account for navbar and top bar on desktop */
+            :root {
+                --pkr-header-offset: 100px;
             }
         }
     </style>
@@ -195,21 +338,23 @@
     <div id="navbar-container"></div>
 
     <!-- Hero Section -->
-    <section class="relative pt-0 sm:pt-14 md:pt-16 hero-desktop-fix">
+    <section class="pkr-hero-section" aria-labelledby="pkr-hero-title">
 
-        <div class="w-full h-72 sm:h-96 lg:h-[520px] overflow-hidden relative">
+        <div class="pkr-hero-media">
 
             <img src="../Images/Treatment/PartialKneeReplace.webp" alt="Partial Knee Replacement" width="1920"
-                height="1080" class="w-full h-full object-cover object-center">
+                height="1080" class="pkr-hero-image" loading="eager" fetchpriority="high" decoding="async">
 
-            <!-- Hero Text Overlay -->
-            <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
-                <div class="text-center text-white px-4 sm:px-6 lg:px-8">
-                    <h1
-                        class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 text-yellow-300 drop-shadow-lg">
-                        Partial Knee Replacement
+            <!-- Readability Overlay -->
+            <div class="pkr-hero-overlay" aria-hidden="true"></div>
+
+            <!-- Text Overlay -->
+            <div class="pkr-hero-content">
+                <div class="pkr-hero-copy">
+                    <h1 id="pkr-hero-title" class="pkr-hero-title">
+                        Partial Knee <span class="text-yellow-400">Replacement</span>
                     </h1>
-                    <p class="text-lg sm:text-xl lg:text-2xl max-w-3xl mx-auto text-white drop-shadow-md">
+                    <p class="pkr-hero-description">
                         Advanced minimally invasive surgery for faster recovery and better outcomes
                     </p>
                 </div>
@@ -222,12 +367,20 @@
     <!-- Main Content -->
     <main class="w-full">
         <!-- Breadcrumb Navigation -->
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <nav class="flex text-sm text-gray-600" aria-label="Breadcrumb">
-                <a href="..//" class="hover:text-blue-600 transition-colors duration-200">Treatments</a>
-                <span class="mx-2 text-gray-400">»</span>
-                <span class="text-gray-900 font-semibold">Partial Knee Replacement</span>
-            </nav>
+        <div class="bg-white border-b border-gray-200 shadow-sm">
+            <div class="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-3 md:py-4">
+                <nav class="flex items-center flex-wrap gap-1 sm:gap-2 text-xs sm:text-sm" aria-label="Breadcrumb">
+                    <a href="/"
+                        class="inline-flex items-center text-gray-600 hover:text-blue-700 transition-colors duration-200 font-medium">
+                        <i class="fa-solid fa-home mr-1 text-[10px] sm:text-xs"></i>
+                        <span>Home</span>
+                    </a>
+                    <i class="fa-solid fa-chevron-right text-gray-400 text-[8px] sm:text-[10px] mx-1"></i>
+                    <span class="text-gray-500 font-medium">Treatments</span>
+                    <i class="fa-solid fa-chevron-right text-gray-400 text-[8px] sm:text-[10px] mx-1"></i>
+                    <span class="text-blue-700 font-semibold truncate" aria-current="page">Partial Knee Replacement</span>
+                </nav>
+            </div>
         </div>
 
         <!-- Three Column Section Below Header -->
@@ -258,7 +411,7 @@
                             Treatments For Knee Arthritis & Back Problems</a>
                         <a href="/oats-procedure" class="block hover:text-gray-900">OATS Procedure</a>
                         <a href="/eswt" class="block hover:text-gray-900">ESWT</a>
-                        <a href="/shoulder-surgery" class="block hover:text-gray-900">Shoulder Surgery</a>
+                        <a href="/shoulder-replacement-surgery-in-hyderabad" class="block hover:text-gray-900">Shoulder Surgery</a>
                         <!-- <a href="neurology" class="block hover:text-gray-900">Neurology</a> -->
                         <a href="/general-orthopedics" class="block hover:text-gray-900">General
                             Orthopedics</a>
@@ -291,108 +444,315 @@
 
                 <div class="lg:col-span-3">
                     <div class="space-y-3" id="pkrTabButtons">
+
                         <button
                             class="pkr-tab-btn active w-full text-left bg-yellow-400 text-white font-bold py-3 px-4 rounded-md"
-                            data-tab="pkr-tab-1">Introduction</button>
+                            data-tab="pkr-tab-1">
+                            Partial Knee Replacement Surgery in Hyderabad
+                        </button>
+
                         <button
                             class="pkr-tab-btn w-full text-left bg-yellow-100 text-gray-900 font-bold py-3 px-4 rounded-md"
-                            data-tab="pkr-tab-2">What is Partial Knee Surgery?</button>
+                            data-tab="pkr-tab-2">
+                            What Is Partial Knee Replacement?
+                        </button>
+
                         <button
                             class="pkr-tab-btn w-full text-left bg-yellow-100 text-gray-900 font-bold py-3 px-4 rounded-md"
-                            data-tab="pkr-tab-3">Features</button>
+                            data-tab="pkr-tab-3">
+                            Partial vs Total Knee Replacement
+                        </button>
+
                         <button
                             class="pkr-tab-btn w-full text-left bg-yellow-100 text-gray-900 font-bold py-3 px-4 rounded-md"
-                            data-tab="pkr-tab-4">Benefits</button>
+                            data-tab="pkr-tab-4">
+                            Am I a Candidate?
+                        </button>
+
+                        <button
+                            class="pkr-tab-btn w-full text-left bg-yellow-100 text-gray-900 font-bold py-3 px-4 rounded-md"
+                            data-tab="pkr-tab-5">
+                            Benefits of Partial Knee Replacement
+                        </button>
+
+                        <button
+                            class="pkr-tab-btn w-full text-left bg-yellow-100 text-gray-900 font-bold py-3 px-4 rounded-md"
+                            data-tab="pkr-tab-6">
+                            Procedure and Recovery
+                        </button>
+
+                        <button
+                            class="pkr-tab-btn w-full text-left bg-yellow-100 text-gray-900 font-bold py-3 px-4 rounded-md"
+                            data-tab="pkr-tab-7">
+                            Why Choose Dr. Jawad?
+                        </button>
+
+                        <button
+                            class="pkr-tab-btn w-full text-left bg-yellow-100 text-gray-900 font-bold py-3 px-4 rounded-md"
+                            data-tab="pkr-tab-8">
+                            Frequently Asked Questions
+                        </button>
+
                     </div>
                 </div>
 
                 <div class="lg:col-span-6 bg-white rounded-xl border border-gray-200 p-5 shadow-sm">
+
+                    <!-- Tab 1 -->
                     <div class="pkr-tab-content active space-y-4" id="pkr-tab-1">
-                        <h3 class="text-2xl font-bold text-gray-900">Partial Knee Replacement Surgery</h3>
-                        <h4 class="text-xl font-semibold text-gray-800">By Dr. Mir Jawad Zar Khan</h4>
-                        <p class="text-gray-700 leading-relaxed text-justify">Dr. Mir Jawad Zar Khan is an expert in the
-                            field of
-                            joint replacement surgery and introduced to India computer navigation and robot-assisted
-                            surgery. This navigation technologies are exact and can work using minimally invasive
-                            techniques. Naturally, patients at Germanten Hospital of Hyderabad are able to recover
-                            quickly and resume their regular activity.</p>
-                        <p class="text-gray-700 leading-relaxed text-justify">Dr. Jawad Khan, a veteran of two decades
-                            in the field
-                            of orthopedic surgery, has been at the forefront of introducing the latest medical
-                            technology in India.</p>
+
+                        <h3 class="text-2xl font-bold text-gray-900">
+                            Partial Knee Replacement Surgery in Hyderabad
+                        </h3>
+
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            Not all knee arthritis affects the whole joint. When damage is limited to just one
+                            section of the knee, partial knee replacement can relieve pain while preserving healthy
+                            bone, cartilage and ligaments.
+                        </p>
+
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            Dr. Mir Jawad Zar Khan evaluates each knee individually to determine whether partial or
+                            total replacement will provide the better long-term result, using robotic-assisted
+                            techniques at Germanten Hospitals in Hyderabad.
+                        </p>
+
                     </div>
+
+                    <!-- Tab 2 -->
                     <div class="pkr-tab-content hidden space-y-4" id="pkr-tab-2">
-                        <h3 class="text-2xl font-bold text-gray-900 border-l-4 border-red-500 pl-5 mb-6">What is partial
-                            knee surgery?</h3>
-                        <div class="space-y-4 text-gray-700 leading-relaxed">
-                            <p>If you were advised to have knee surgery because of arthrosis, it is likely that you can
-                                solve your problem with a partial knee replacement. This type of intervention differs
-                                from traditional operations in that it is less invasive in terms of articulation and
-                                reduced recovery times. Dr. Mir Jawad Zar Khan has specialization in precisely this
-                                surgical approach.</p>
-                            <p>Osteoarthritis is the premature wear of articular surfaces and brings severe damage to
-                                the cartilage of the knee. When conservative treatments and therapies are no longer
-                                sufficient, there is the possibility of surgically intervening with a joint replacement.
-                                In this case, the replacement can be total or partial, depending on the extent of joint
-                                damage. In the primary stages of osteoarthritis is possible that only one side of the
-                                knee is damaged. This is usually the inner side of the knee, but, although it is less
-                                common, arthritis can also affect the outer side of the knee.</p>
-                            <p>Partial replacement of the knee is a surgical treatment that intervenes by covering only
-                                the damaged part of the knee, leaving the ligaments and most of the joint cartilage
-                                intact.</p>
-                            <p>The unicompartmental knee prosthesis has improved over decades' thanks to the use of
-                                quality materials. In the last 15 years, then, its use has recorded a marked increase.
-                                Today's unicompartmental knee prosthesis can be seen as a safe, reliable procedure that
-                                can guarantee long-term success.</p>
-                            <p>Recent research has established that about 50% of patients undergoing knee replacement
-                                are candidates for a partial knee replacement. In fact, undergoing partial knee surgery
-                                before the disease progresses, you may be able to prevent the disease from spreading to
-                                avoid having to endure a total knee replacement.</p>
-                        </div>
+
+                        <h3 class="text-2xl font-bold text-gray-900">
+                            What Is Partial Knee Replacement?
+                        </h3>
+
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            The knee has three compartments: the inner compartment, outer compartment and kneecap
+                            compartment.
+                        </p>
+
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            Partial knee replacement, also called unicompartmental knee replacement, resurfaces
+                            only the damaged compartment while leaving the rest of the natural knee, including its
+                            ligaments, untouched.
+                        </p>
+
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            The result is a smaller implant and a joint that continues to move and feel closer to a
+                            natural knee compared with a full knee replacement.
+                        </p>
+
                     </div>
+
+                    <!-- Tab 3 -->
                     <div class="pkr-tab-content hidden space-y-4" id="pkr-tab-3">
-                        <h3 class="text-2xl font-bold text-gray-900 border-l-4 border-red-500 pl-5 mb-6">Features of
-                            partial knee replacement</h3>
-                        <p class="text-gray-700 mb-4">A partial knee prosthesis, also known as a uni-compartmental knee
-                            replacement, replaces only the damaged part of the knee leaving the healthy cartilage
-                            intact. This may imply –</p>
-                        <ul class="list-disc list-inside text-gray-700 space-y-3 ml-2 marker:text-red-500">
-                            <li class="pl-1">A smaller incision, using a less invasive procedure and less post-operative
-                                pain compared to a total knee replacement</li>
-                            <li class="pl-1">Preservation of the four natural ligaments that help ensure stability and
-                                balance</li>
-                            <li class="pl-1">An artificial joint that works more like a natural knee</li>
-                        </ul>
+
+                        <h3 class="text-2xl font-bold text-gray-900">
+                            Partial vs Total Knee Replacement: What Is the Difference?
+                        </h3>
+
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            Total knee replacement resurfaces the entire joint and is generally recommended once
+                            arthritis has spread across multiple compartments.
+                        </p>
+
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            Partial knee replacement is considered only when damage is confined to one compartment
+                            and the knee's ligaments remain healthy and stable.
+                        </p>
+
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            Partial replacement typically involves a smaller incision, less bone removal, a shorter
+                            hospital stay and a faster return to daily activity.
+                        </p>
+
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            Total replacement treats the whole joint at once and is the more predictable long-term
+                            option when arthritis is widespread.
+                        </p>
+
                     </div>
+
+                    <!-- Tab 4 -->
                     <div class="pkr-tab-content hidden space-y-4" id="pkr-tab-4">
-                        <h3 class="text-2xl font-bold text-gray-900 border-l-4 border-red-500 pl-5 mb-6">Benefits of a
-                            partial knee replacement</h3>
-                        <p class="text-gray-700 mb-3">There are many reasons why patients undergoing partial knee
-                            replacement are happier and more satisfied than patients with total replacement</p>
-                        <p class="text-gray-700 mb-4">A partial knee replacement is characterized by:</p>
-                        <ul class="list-disc list-inside text-gray-700 space-y-3 ml-2 marker:text-red-500">
-                            <li class="pl-1">A more natural adaptation</li>
-                            <li class="pl-1">A better range of motion</li>
-                            <li class="pl-1">A faster recovery and a less hospital stay were found using a minimally
-                                invasive technique combined with a partial knee replacement</li>
-                            <li class="pl-1">A higher percentage of patients have returned to sports with a low risk of
-                                impact and are able to walk for a more extended period.</li>
+
+                        <h3 class="text-2xl font-bold text-gray-900">
+                            Am I a Candidate for Partial Knee Replacement?
+                        </h3>
+
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            Good candidates for partial knee replacement usually have:
+                        </p>
+
+                        <ul class="list-disc pl-5 space-y-2 text-gray-700 leading-relaxed marker:text-red-500">
+                            <li>
+                                Arthritis limited to one compartment of the knee, confirmed through imaging
+                            </li>
+                            <li>
+                                Intact and stable knee ligaments, particularly the anterior cruciate ligament
+                            </li>
+                            <li>
+                                A reasonably active lifestyle with a healthy body weight
+                            </li>
+                            <li>
+                                No significant knee deformity or severe stiffness
+                            </li>
                         </ul>
-                        <div class="mt-6 pt-3 border-t border-gray-100 space-y-4">
-                            <p class="text-gray-700 leading-relaxed text-justify">At Germanten Hospitals there is
-                                available latest
-                                equipment to carry out advanced computer navigation assisted knee replacement surgery.
-                                You can receive the best care under Dr. Mir Jawad Zar Khan who is an expert in joint
-                                replacement surgery and has performed an extensive series of navigated hip and knee
-                                replacement surgeries in Germany.</p>
-                            <p class="text-gray-700 leading-relaxed text-justify">The world's latest treatments are
-                                available at
-                                Germanten Hospital, and these can provide you an active and pain-free life in as little
-                                time as possible. Visit the best orthopedic hospital in India for advice about partial
-                                knee replacement and robotic knee replacement under the care of Dr. Mir Jawad Zar Khan.
+
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            A detailed clinical examination and imaging review during consultation confirm whether
+                            these criteria are met.
+                        </p>
+
+                    </div>
+
+                    <!-- Tab 5 -->
+                    <div class="pkr-tab-content hidden space-y-4" id="pkr-tab-5">
+
+                        <h3 class="text-2xl font-bold text-gray-900">
+                            Benefits of Partial Knee Replacement
+                        </h3>
+
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            Because less of the natural knee is disturbed, partial knee replacement generally
+                            allows for quicker recovery, less post-operative pain and a knee that many patients
+                            describe as feeling more like their own.
+                        </p>
+
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            <a href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(18)32531-5/fulltext" style="color: red;">Long-term registry</a> data show partial knee implants performing well over time, with
+                            pooled studies reporting approximately 70 percent implant survival at 25 years.
+                        </p>
+
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            Total knee replacement tends to show slightly higher long-term survival in comparison.
+                            This is one reason candidacy is assessed carefully before the partial option is
+                            recommended.
+                        </p>
+
+                    </div>
+
+                    <!-- Tab 6 -->
+                    <div class="pkr-tab-content hidden space-y-4" id="pkr-tab-6">
+
+                        <h3 class="text-2xl font-bold text-gray-900">
+                            The Procedure and Recovery
+                        </h3>
+
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            Partial knee replacement is typically completed in under one hour through a smaller
+                            incision than total knee replacement.
+                        </p>
+
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            Many patients are able to stand and begin walking with support on the same day.
+                        </p>
+
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            Hospital stay is often shorter, and physiotherapy focuses on regaining full range of
+                            motion quickly because less surgical trauma has occurred.
+                        </p>
+
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            Many patients return to normal walking and light daily activity within four to six
+                            weeks.
+                        </p>
+
+                    </div>
+
+                    <!-- Tab 7 -->
+                    <div class="pkr-tab-content hidden space-y-4" id="pkr-tab-7">
+
+                        <h3 class="text-2xl font-bold text-gray-900">
+                            Why Choose Dr. Jawad for Partial Knee Replacement?
+                        </h3>
+
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            Deciding between partial and total knee replacement requires careful clinical judgment
+                            supported by experience.
+                        </p>
+
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            With more than 26 years of experience in joint replacement and access to robotic-assisted
+                            planning at Germanten Hospitals, Dr. Mir Jawad Zar Khan assesses each knee on its own
+                            merits rather than automatically recommending one procedure.
+                        </p>
+
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            This approach helps patients receive the treatment option best suited to their joint
+                            condition, activity level and long-term mobility goals.
+                        </p>
+
+                    </div>
+
+                    <!-- Tab 8 -->
+                    <div class="pkr-tab-content hidden space-y-5" id="pkr-tab-8">
+
+                        <h3 class="text-2xl font-bold text-gray-900">
+                            Frequently Asked Questions
+                        </h3>
+
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-900">
+                                Is partial knee replacement less painful than total knee replacement?
+                            </h4>
+
+                            <p class="text-gray-700 leading-relaxed text-justify mt-2">
+                                Because the incision is smaller and less bone and tissue are disturbed, patients
+                                generally experience less post-operative pain and a quicker initial recovery than
+                                after total knee replacement.
                             </p>
                         </div>
+
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-900">
+                                How do I know whether I need partial or total knee replacement?
+                            </h4>
+
+                            <p class="text-gray-700 leading-relaxed text-justify mt-2">
+                                This is determined through a clinical examination and imaging that show exactly how
+                                much of the knee is affected by arthritis. Partial replacement is suitable only
+                                when damage is limited to one compartment and the ligaments are healthy.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-900">
+                                How long does recovery take after partial knee replacement?
+                            </h4>
+
+                            <p class="text-gray-700 leading-relaxed text-justify mt-2">
+                                Many patients return to normal daily activity within four to six weeks, which is
+                                generally faster than the typical recovery timeline for total knee replacement.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-900">
+                                Will a partial knee replacement need to be converted to a total replacement later?
+                            </h4>
+
+                            <p class="text-gray-700 leading-relaxed text-justify mt-2">
+                                In some cases, if arthritis develops in the remaining compartments of the knee over
+                                time, a total knee replacement may become necessary later. This possibility is
+                                discussed during the initial evaluation so patients understand the long-term
+                                outlook.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-900">
+                                Does partial knee replacement feel more natural than total knee replacement?
+                            </h4>
+
+                            <p class="text-gray-700 leading-relaxed text-justify mt-2">
+                                Many patients report that a partial knee replacement feels closer to their natural
+                                knee because healthy bone, cartilage and ligaments are preserved.
+                            </p>
+                        </div>
+
                     </div>
+
                 </div>
             </div>
         </div>

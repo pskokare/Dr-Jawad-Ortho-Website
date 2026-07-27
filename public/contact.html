@@ -11,11 +11,24 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" type="image/webp" href="Images/GERMANTANLOGO.webp">
+    <link rel="icon" type="image/webp" href="Images/dr-jawad-logo.webp">
     <link rel="canonical" href="https://drjawadortho.com/contact">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <style>
-        /* Scroll Progress Bar Styles */
+        :root {
+            --contact-header-offset: 0px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: calc(var(--contact-header-offset) + 16px);
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        /* Scroll Progress Bar */
         .scroll-progress {
             position: fixed;
             top: 0;
@@ -25,9 +38,11 @@
             background: rgba(255, 255, 255, 0.2);
             z-index: 9999;
             transition: opacity 0.3s ease;
+            cursor: pointer;
         }
 
         .scroll-progress-bar {
+            width: 0;
             height: 100%;
             background: linear-gradient(90deg, #ff4d01 0%, #eab308 50%, #facc15 100%);
             border-radius: 0 1px 1px 0;
@@ -35,10 +50,529 @@
             box-shadow: 0 0 10px rgba(202, 138, 4, 0.5);
         }
 
-
         .scroll-progress.hidden {
             opacity: 0;
             pointer-events: none;
+        }
+
+        /* Dynamically loaded navbar */
+        #navbar-container {
+            position: relative;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        /* ---------------------------------------------------------
+           Responsive hero
+        --------------------------------------------------------- */
+        .contact-hero {
+            position: relative;
+            width: 100%;
+            margin: var(--contact-header-offset) 0 0;
+            padding: 0;
+            overflow: hidden;
+            background: #111827;
+        }
+
+        .contact-hero__media {
+            position: relative;
+            width: 100%;
+            height: 235px;
+            overflow: hidden;
+        }
+
+        .contact-hero__image {
+            display: block;
+            width: 100%;
+            height: 100%;
+            max-width: none;
+            object-fit: cover;
+            object-position: center 48%;
+        }
+
+        .contact-hero__overlay {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(90deg, rgba(0, 0, 0, 0.76), rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.76)),
+                linear-gradient(180deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.26));
+            pointer-events: none;
+        }
+
+        .contact-hero__content {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 16px;
+            text-align: center;
+        }
+
+        .contact-hero__copy {
+            width: min(100%, 820px);
+            margin: 0 auto;
+        }
+
+        .contact-hero__title {
+            margin: 0 0 10px;
+            color: #fde047;
+            font-family: Inter, "Segoe UI", Arial, sans-serif;
+            font-size: clamp(34px, 3vw, 56px);
+            font-weight: 750;
+            line-height: 1.12;
+            letter-spacing: -0.045em;
+            text-wrap: balance;
+        }
+
+        .contact-hero__description {
+            width: min(100%, 720px);
+            margin: 0 auto;
+            color: #fef9c3;
+            font-size: clamp(0.9rem, 3.5vw, 1.25rem);
+            line-height: 1.55;
+            text-wrap: balance;
+        }
+
+        /* ---------------------------------------------------------
+           Contact section
+        --------------------------------------------------------- */
+        .contact-section {
+            padding: 44px 0;
+            background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 58%, #fffdf4 100%);
+        }
+
+        .contact-section__heading {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .homepage-section-heading {
+            margin: 0;
+            font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+            font-size: clamp(31px, 2.1vw, 44px) !important;
+            font-weight: 750 !important;
+            color: #0d1b3d !important;
+            line-height: 1.12 !important;
+            letter-spacing: -0.045em !important;
+            text-wrap: balance;
+        }
+
+        .homepage-section-eyebrow {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 0.5rem !important;
+            font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+            font-size: 0.78rem !important;
+            font-weight: 600 !important;
+            letter-spacing: 0.08em !important;
+            text-transform: uppercase !important;
+            color: #b45309 !important;
+            background: #fffbeb !important;
+            border: 1px solid #fde68a !important;
+            padding: 0.35rem 1.1rem !important;
+            border-radius: 9999px !important;
+            margin-bottom: 0.9rem !important;
+            line-height: 1.3 !important;
+        }
+
+        .contact-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr);
+            gap: 24px;
+            align-items: stretch;
+        }
+
+        .contact-panel {
+            position: relative;
+            isolation: isolate;
+            width: 100%;
+            height: 100%;
+            min-width: 0;
+            padding: 20px;
+            overflow: hidden;
+            background: #f4edc9;
+            border: 0;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+        }
+
+        .contact-panel::before {
+            content: "";
+            position: absolute;
+            top: -95px;
+            right: -80px;
+            z-index: -1;
+            width: 250px;
+            height: 220px;
+            background: linear-gradient(135deg, #efefff 0%, #dddafe 100%);
+            border-radius: 58% 42% 0 68%;
+            transform: rotate(-8deg);
+            pointer-events: none;
+        }
+
+        .contact-panel>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-info-list {
+            display: grid;
+            gap: 8px;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 13px;
+            min-width: 0;
+            padding: 13px 10px;
+            border-radius: 12px;
+            transition: background-color 0.2s ease;
+        }
+
+        .contact-info-item:hover {
+            background: transparent;
+        }
+
+        .contact-info-item>i {
+            flex: 0 0 auto;
+            width: 24px;
+            margin-top: 3px;
+            color: #dc2626;
+            font-size: 1.25rem;
+            text-align: center;
+        }
+
+        .contact-info-item>div {
+            min-width: 0;
+        }
+
+        .contact-info-item h3 {
+            margin: 0 0 3px;
+            color: #111827;
+            font-size: 0.9rem;
+            font-weight: 800;
+            line-height: 1.35;
+        }
+
+        .contact-info-item p,
+        .contact-info-item a {
+            overflow-wrap: anywhere;
+            word-break: normal;
+        }
+
+        /* ---------------------------------------------------------
+           Contact form
+        --------------------------------------------------------- */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr);
+            gap: 17px;
+        }
+
+        .contact-field {
+            min-width: 0;
+        }
+
+        .contact-field--full {
+            grid-column: 1 / -1;
+        }
+
+        .contact-field label {
+            display: block;
+            margin-bottom: 7px;
+            color: #374151;
+            font-size: 0.875rem;
+            font-weight: 700;
+        }
+
+        .contact-control {
+            display: block;
+            width: 100%;
+            min-width: 0;
+            min-height: 48px;
+            padding: 11px 14px;
+            color: #111827;
+            background: rgba(255, 255, 255, 0.78);
+            border: 1px solid rgba(148, 163, 184, 0.55);
+            border-radius: 11px;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .contact-control::placeholder {
+            color: #8b929d;
+        }
+
+        .contact-control:focus {
+            border-color: #94a3b8;
+            box-shadow: none;
+            outline: none;
+        }
+
+        textarea.contact-control {
+            min-height: 135px;
+            resize: vertical;
+        }
+
+        .contact-form-actions {
+            display: flex;
+            justify-content: stretch;
+            margin-top: 22px;
+        }
+
+        .hero-cta {
+            position: relative;
+            z-index: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            min-height: 46px;
+            padding: 0.68rem 1.45rem;
+            overflow: hidden;
+            color: #ffffff;
+            background: linear-gradient(135deg, #cf3339 0%, #b91c1c 100%);
+            border: 0;
+            border-radius: 9px;
+            font-size: 0.92rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            text-decoration: none;
+            cursor: pointer;
+            transition:
+                color 0.35s ease,
+                transform 0.25s ease;
+        }
+
+        .hero-cta::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            border-radius: inherit;
+            background: linear-gradient(135deg, #f6ad00 0%, #fbbf24 100%);
+            transform: translateX(-101%);
+            transition: transform 0.45s ease;
+        }
+
+        .hero-cta:hover::before {
+            transform: translateX(0);
+        }
+
+        .hero-cta:hover {
+            color: #401f00;
+            transform: translateY(-2px);
+        }
+
+        .hero-cta:focus-visible {
+            outline: 3px solid rgba(234, 179, 8, 0.4);
+            outline-offset: 3px;
+        }
+
+        /* ---------------------------------------------------------
+           Map
+        --------------------------------------------------------- */
+        .contact-map-section {
+            padding: 28px 0 38px;
+            background: #f9fafb;
+        }
+
+        .contact-map-frame {
+            width: 100%;
+            height: 280px;
+            border: 0;
+        }
+
+        /* ---------------------------------------------------------
+           Breakpoints
+        --------------------------------------------------------- */
+        @media (max-width: 359px) {
+            .contact-panel::before {
+                top: -75px;
+                right: -65px;
+                width: 200px;
+                height: 180px;
+            }
+
+            .contact-hero__media {
+                height: 215px;
+            }
+
+            .contact-hero__content {
+                padding: 16px 12px;
+            }
+
+            .contact-hero__title {
+                font-size: clamp(34px, 3vw, 56px);
+            }
+
+            .contact-hero__description {
+                font-size: 0.82rem;
+                line-height: 1.45;
+            }
+
+            .contact-panel {
+                padding: 16px 13px;
+            }
+
+            .contact-info-item {
+                gap: 10px;
+                padding: 11px 7px;
+            }
+        }
+
+        @media (min-width: 480px) {
+            .contact-hero__media {
+                height: 285px;
+            }
+
+            .contact-panel {
+                padding: 24px;
+            }
+
+            .contact-form-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .contact-form-actions {
+                justify-content: flex-start;
+            }
+
+            .hero-cta {
+                width: auto;
+                min-width: 160px;
+            }
+
+            .contact-map-frame {
+                height: 330px;
+            }
+        }
+
+        @media (min-width: 640px) {
+            .contact-hero__media {
+                height: 340px;
+            }
+
+            .contact-section {
+                padding: 54px 0;
+            }
+
+            .contact-section__heading {
+                margin-bottom: 36px;
+            }
+
+            .contact-panel {
+                padding: 28px;
+            }
+
+            .contact-info-item h3 {
+                font-size: 1rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .contact-hero__media {
+                height: 390px;
+            }
+
+            .contact-map-frame {
+                height: 380px;
+            }
+        }
+
+        /*
+         * Keep the information and form stacked on tablets. This prevents
+         * narrow two-column forms and improves touch usability.
+         */
+        @media (min-width: 1024px) {
+            .contact-panel::before {
+                top: -110px;
+                right: -90px;
+                width: 290px;
+                height: 250px;
+            }
+
+            .contact-hero__media {
+                height: clamp(410px, 34vw, 465px);
+            }
+
+            .contact-hero__image {
+                object-position: center 52%;
+            }
+
+            .contact-layout {
+                grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+                gap: 36px;
+            }
+
+            .contact-section {
+                padding: 64px 0;
+            }
+
+            .contact-panel {
+                padding: 32px;
+            }
+
+            .contact-map-section {
+                padding: 36px 0 48px;
+            }
+
+            .contact-map-frame {
+                height: 420px;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .contact-hero__media {
+                height: 490px;
+            }
+
+            .contact-layout {
+                gap: 46px;
+            }
+        }
+
+        @media (min-width: 1536px) {
+            .contact-hero__media {
+                height: 520px;
+            }
+        }
+
+        @media (min-width: 769px) {
+            :root {
+                --contact-header-offset: 100px;
+            }
+        }
+
+        @media (hover: none) {
+            .hero-cta:hover {
+                transform: none;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            .scroll-progress,
+            .scroll-progress-bar,
+            .contact-info-item,
+            .contact-control,
+            .hero-cta,
+            .hero-cta::before {
+                transition: none !important;
+            }
         }
     </style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-B7BXJEHXWK"></script>
@@ -63,395 +597,231 @@
 
 
     <!-- Hero Section -->
-    <section class="relative">
-        <div class="w-full h-64 sm:h-80 md:h-96 lg:h-[450px] xl:h-[520px] 2xl:h-[600px] overflow-hidden relative">
-            <img src="Images/Home-Page-Images/GermantenHospital.webp" alt="Contact" width="1920" height="1080"
-                class="w-full h-full object-cover object-center scale-100 lg:scale-105 transition-transform duration-300">
-            <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/80"></div>
-            <div class="absolute inset-0 flex items-center justify-center">
-                <div class="text-center px-4">
-                    <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-yellow-300 mb-4">Contact Us
+    <section class="contact-hero" aria-labelledby="contactHeroTitle">
+        <div class="contact-hero__media">
+            <img src="Images/Home-Page-Images/GermantenHospital.webp"
+                alt="Germanten Hospitals contact and appointment support" width="1920" height="1080"
+                class="contact-hero__image" loading="eager" fetchpriority="high" decoding="async">
+
+            <div class="contact-hero__overlay" aria-hidden="true"></div>
+
+            <div class="contact-hero__content">
+                <div class="contact-hero__copy">
+                    <h1 id="contactHeroTitle" class="contact-hero__title">
+                        Contact Us
                     </h1>
-                    <p class="text-lg sm:text-xl text-yellow-100 max-w-2xl mx-auto">Get in touch with Germanten
-                        Hospitals for expert orthopedic care</p>
+
+                    <p class="contact-hero__description">
+                        Get in touch with Germanten Hospitals for expert orthopedic care
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Form Section -->
-    <section class="py-16 bg-white">
+    <section class="contact-section">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12">
+
+            <div class="contact-section__heading">
+                <span class="homepage-section-eyebrow">Reach Out</span>
+
+                <h2 class="homepage-section-heading">
+                    Get in Touch
+                </h2>
+
+                <p class="mt-3 text-sm sm:text-base text-gray-500 max-w-2xl mx-auto">
+                    We'd love to hear from you. Fill out the form or contact us directly.
+                </p>
+            </div>
+
+            <div class="contact-layout">
+
                 <!-- Contact Information -->
-                <div class="space-y-8">
+                <div class="contact-panel contact-info-card">
+                    <div class="contact-info-list">
 
+                        <div class="contact-info-item">
+                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
 
-                    <div class="bg-white p-8 rounded-2xl border-2 border-yellow-400 shadow-lg">
-                        <div class="space-y-6">
-                            <div
-                                class="flex items-start space-x-4 hover:bg-yellow-50 p-3 rounded-lg transition-all duration-200">
-                                <i class="fas fa-map-marker-alt text-yellow-600 text-2xl mt-1"></i>
-                                <div>
-                                    <h3 class="font-bold text-gray-900 text-lg">ADDRESS:</h3>
-                                    <p class="text-gray-700 leading-relaxed"># 4-8-138/1/B, opp.pillar no.150 PVN Rao
-                                        Expressway, Main Road,Attapur,Hyderabad,Telangana State 500048</p>
-                                </div>
-                            </div>
+                            <div>
+                                <h3>ADDRESS:</h3>
 
-                            <div
-                                class="flex items-start space-x-4 hover:bg-yellow-50 p-3 rounded-lg transition-all duration-200">
-                                <i class="fas fa-phone text-yellow-600 text-2xl mt-1"></i>
-                                <div>
-                                    <h3 class="font-bold text-gray-900 text-lg">PHONE:</h3>
-                                    <p class="text-gray-700 leading-relaxed">+91 9989635555</p>
-                                    <p class="text-gray-700 leading-relaxed">+91 9000 900 937</p>
-                                </div>
-                            </div>
-
-                            <div
-                                class="flex items-start space-x-4 hover:bg-yellow-50 p-3 rounded-lg transition-all duration-200">
-                                <i class="fas fa-envelope text-yellow-600 text-2xl mt-1"></i>
-                                <div>
-                                    <h3 class="font-bold text-gray-900 text-lg">EMAIL:</h3>
-                                    <p class="text-gray-700 leading-relaxed">info@germantenhospitals.com</p>
-                                </div>
-                            </div>
-
-                            <div
-                                class="flex items-start space-x-4 hover:bg-yellow-50 p-3 rounded-lg transition-all duration-200">
-                                <i class="fas fa-building text-yellow-600 text-2xl mt-1"></i>
-                                <div>
-                                    <h3 class="font-bold text-gray-900 text-lg">CORPORATE CONTACTS PHONE:</h3>
-                                    <p class="text-gray-700 leading-relaxed">+91 9246599936</p>
-                                    <p class="text-gray-600 text-sm mt-1">For corporate partnerships and empanelled
-                                        organizations, view our <a href="empanelled-organizations"
-                                            class="text-orange-600 hover:text-red-600 font-medium transition-colors duration-200">empanelled
-                                            organizations</a>.</p>
-                                </div>
-                            </div>
-
-                            <div
-                                class="flex items-start space-x-4 hover:bg-yellow-50 p-3 rounded-lg transition-all duration-200">
-                                <i class="fas fa-envelope-open-text text-yellow-600 text-2xl mt-1"></i>
-                                <div>
-                                    <h3 class="font-bold text-gray-900 text-lg">EMAIL:</h3>
-                                    <p class="text-gray-700 leading-relaxed">mjzk5565@gmail.com</p>
-                                </div>
+                                <p class="text-gray-700 leading-relaxed">
+                                    # 4-8-138/1/B, opp.pillar no.150 PVN Rao Expressway,
+                                    Main Road, Attapur, Hyderabad, Telangana State 500048
+                                </p>
                             </div>
                         </div>
+
+                        <div class="contact-info-item">
+                            <i class="fas fa-phone" aria-hidden="true"></i>
+
+                            <div>
+                                <h3>PHONE:</h3>
+
+                                <p class="text-gray-700 leading-relaxed">
+                                    <a href="tel:+919989635555" class="hover:text-red-600">
+                                        +91 9989635555
+                                    </a>
+                                </p>
+
+                                <p class="text-gray-700 leading-relaxed">
+                                    <a href="tel:+919000900937" class="hover:text-red-600">
+                                        +91 9000 900 937
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+
+                            <div>
+                                <h3>EMAIL:</h3>
+
+                                <p class="text-gray-700 leading-relaxed">
+                                    <a href="mailto:info@germantenhospitals.com" class="hover:text-red-600">
+                                        info@germantenhospitals.com
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <i class="fas fa-building" aria-hidden="true"></i>
+
+                            <div>
+                                <h3>CORPORATE CONTACTS PHONE:</h3>
+
+                                <p class="text-gray-700 leading-relaxed">
+                                    <a href="tel:+919246599936" class="hover:text-red-600">
+                                        +91 9246599936
+                                    </a>
+                                </p>
+
+                                <p class="text-gray-600 text-sm mt-1">
+                                    For corporate partnerships and empanelled organizations,
+                                    view our
+                                    <a href="empanelled-organizations"
+                                        class="text-orange-600 hover:text-red-600 font-medium transition-colors duration-200">
+                                        empanelled organizations
+                                    </a>.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <i class="fas fa-envelope-open-text" aria-hidden="true"></i>
+
+                            <div>
+                                <h3>EMAIL:</h3>
+
+                                <p class="text-gray-700 leading-relaxed">
+                                    <a href="mailto:mjzk5565@gmail.com" class="hover:text-red-600">
+                                        mjzk5565@gmail.com
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
                 <!-- Contact Form -->
-                <div class="space-y-8">
-                    <form class="bg-white p-8 rounded-2xl border-2 border-yellow-400 shadow-lg">
-                        <div class="space-y-6">
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div class="space-y-4">
-                                    <div>
-                                        <label class="block text-sm font-semibold text-gray-700 mb-2">Name</label>
-                                        <input type="text" required
-                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-yellow-400"
-                                            placeholder="Enter your name">
-                                    </div>
+                <form id="contactForm" class="contact-panel contact-form" novalidate>
 
-                                    <div>
-                                        <label class="block text-sm font-semibold text-gray-700 mb-2">Email</label>
-                                        <input type="email" required
-                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-yellow-400"
-                                            placeholder="Enter your email">
-                                    </div>
-                                </div>
+                    <div class="contact-form-grid">
 
-                                <div class="space-y-4">
-                                    <div>
-                                        <label class="block text-sm font-semibold text-gray-700 mb-2">Mobile no</label>
-                                        <input type="tel"
-                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-yellow-400"
-                                            placeholder="Enter your mobile number">
-                                    </div>
+                        <div class="contact-field">
+                            <label for="contactName">
+                                Name
+                            </label>
 
-                                    <div>
-                                        <label class="block text-sm font-semibold text-gray-700 mb-2">Date</label>
-                                        <input type="date"
-                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-yellow-400">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">Subject</label>
-                                    <input type="text" required
-                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-yellow-400"
-                                        placeholder="Enter subject">
-                                </div>
-                            </div>
-
-                            <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">Message</label>
-                                <textarea rows="5" required
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-yellow-400"
-                                    placeholder="Enter your message"></textarea>
-                            </div>
+                            <input type="text" id="contactName" name="name" class="contact-control"
+                                placeholder="Enter your name" autocomplete="name" required>
                         </div>
 
-                        <div class="flex justify-center mt-8">
-                            <button type="submit"
-                                class="bg-yellow-400 hover:bg-yellow-500 text-white font-bold py-3 px-12 rounded-lg transition-colors duration-200">
-                                Submit
-                            </button>
+                        <div class="contact-field">
+                            <label for="contactEmail">
+                                Email
+                            </label>
+
+                            <input type="email" id="contactEmail" name="email" class="contact-control"
+                                placeholder="Enter your email" autocomplete="email" required>
                         </div>
-                    </form>
-                </div>
+
+                        <div class="contact-field">
+                            <label for="contactPhone">
+                                Mobile no
+                            </label>
+
+                            <input type="tel" id="contactPhone" name="phone" class="contact-control"
+                                placeholder="Enter your mobile number" autocomplete="tel" inputmode="tel">
+                        </div>
+
+                        <div class="contact-field">
+                            <label for="contactDate">
+                                Date
+                            </label>
+
+                            <input type="date" id="contactDate" name="date" class="contact-control">
+                        </div>
+
+                        <div class="contact-field contact-field--full">
+                            <label for="contactSubject">
+                                Subject
+                            </label>
+
+                            <input type="text" id="contactSubject" name="subject" class="contact-control"
+                                placeholder="Enter subject" required>
+                        </div>
+
+                        <div class="contact-field contact-field--full">
+                            <label for="contactMessage">
+                                Message
+                            </label>
+
+                            <textarea id="contactMessage" name="message" rows="5" class="contact-control"
+                                placeholder="Enter your message" required></textarea>
+                        </div>
+
+                    </div>
+
+                    <div class="contact-form-actions">
+                        <button type="submit" class="hero-cta">
+                            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                            <span>Submit</span>
+                        </button>
+                    </div>
+
+                </form>
+
             </div>
         </div>
     </section>
 
     <!-- Map Section -->
-    <section class="py-8 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div
-                class="rounded-xl overflow-hidden shadow-md border-2 border-l-yellow-400 border-t-yellow-400 border-r-red-400 border-b-red-400">
+    <section class="contact-map-section">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-xl overflow-hidden shadow-md">
                 <iframe
                     src="https://maps.google.com/maps?q=Dr.%20Mir%20Jawad%20Zar%20Khan%20Best%20Orthopedic%20Doctor%20in%20Hyderabad%20Knee%20Joint%20Replacement%20Surgeon%20Attapur%20Hyderabad&t=&z=17&ie=UTF8&iwloc=B&output=embed"
-                    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                    title="Germanten Hospitals location in Attapur, Hyderabad" width="100%" height="420"
+                    class="contact-map-frame" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
         </div>
     </section>
+    <floating-nav></floating-nav>
+
     <!-- Footer Component -->
     <div id="footer-container"></div>
 
     <!-- Scripts -->
     <script src="js/script.js"></script>
-    <script>
-        // ========== MOBILE DROPDOWN TOGGLE ==========
-        window.toggleMobileDropdown = function (dropdownId) {
-            const dropdown = document.getElementById(dropdownId + '-dropdown');
-            const button = event.currentTarget;
-            const chevron = button.querySelector('i');
 
-            if (dropdown) {
-                // Close all other dropdowns
-                document.querySelectorAll('[id$="-dropdown"]').forEach(d => {
-                    if (d.id !== dropdownId + '-dropdown' && !d.classList.contains('hidden')) {
-                        d.classList.add('hidden');
-                        const otherBtn = d.previousElementSibling;
-                        if (otherBtn) {
-                            const otherChevron = otherBtn.querySelector('i');
-                            if (otherChevron) otherChevron.style.transform = 'rotate(0deg)';
-                        }
-                    }
-                });
-
-                // Toggle current dropdown
-                if (dropdown.classList.contains('hidden')) {
-                    dropdown.classList.remove('hidden');
-                    if (chevron) chevron.style.transform = 'rotate(180deg)';
-                } else {
-                    dropdown.classList.add('hidden');
-                    if (chevron) chevron.style.transform = 'rotate(0deg)';
-                }
-            }
-        };
-
-        // ========== MOBILE MENU FUNCTIONALITY ==========
-        function initializeMobileMenu() {
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            if (mobileMenuButton && mobileMenu) {
-                // Remove existing listeners
-                const newButton = mobileMenuButton.cloneNode(true);
-                mobileMenuButton.parentNode.replaceChild(newButton, mobileMenuButton);
-
-                newButton.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    mobileMenu.classList.toggle('hidden');
-
-                    // Toggle icon between bars and times
-                    const icon = newButton.querySelector('i');
-                    if (icon) {
-                        if (mobileMenu.classList.contains('hidden')) {
-                            icon.className = 'fas fa-bars';
-                            document.body.classList.remove('mobile-menu-open');
-                        } else {
-                            icon.className = 'fas fa-times';
-                            document.body.classList.add('mobile-menu-open');
-                        }
-                    }
-                });
-
-                // Close on link click
-                mobileMenu.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        mobileMenu.classList.add('hidden');
-                        document.body.classList.remove('mobile-menu-open');
-                        const icon = newButton.querySelector('i');
-                        if (icon) icon.className = 'fas fa-bars';
-                    });
-                });
-
-                // Close on outside click
-                document.addEventListener('click', (e) => {
-                    if (mobileMenu && !mobileMenu.classList.contains('hidden') &&
-                        !mobileMenu.contains(e.target) && !newButton.contains(e.target)) {
-                        mobileMenu.classList.add('hidden');
-                        document.body.classList.remove('mobile-menu-open');
-                        const icon = newButton.querySelector('i');
-                        if (icon) icon.className = 'fas fa-bars';
-                    }
-                });
-            }
-        }
-
-        // ========== LOAD NAVBAR ==========
-        function loadNavbar() {
-            const navContainer = document.getElementById('navbar-container');
-            if (navContainer) {
-                fetch('components/navbar')
-                    .then(response => {
-                        if (!response.ok) throw new Error('Navbar not found');
-                        return response.text();
-                    })
-                    .then(html => {
-                        navContainer.innerHTML = html;
-                        setTimeout(initializeMobileMenu, 100);
-                    })
-                    .catch(error => {
-                        console.error('Error loading navbar:', error);
-                    });
-            }
-        }
-
-        // ========== LOAD FOOTER ==========
-        function loadFooter() {
-            const footerContainer = document.getElementById('footer-container');
-            if (footerContainer) {
-                fetch('components/footer')
-                    .then(response => {
-                        if (!response.ok) throw new Error('Footer not found');
-                        return response.text();
-                    })
-                    .then(html => {
-                        footerContainer.innerHTML = html;
-                    })
-                    .catch(error => {
-                        console.error('Error loading footer:', error);
-                    });
-            }
-        }
-
-        // ========== SCROLL PROGRESS BAR FUNCTIONALITY ==========
-        document.addEventListener('DOMContentLoaded', function () {
-            const scrollProgress = document.getElementById('scrollProgress');
-            const scrollProgressBar = document.getElementById('scrollProgressBar');
-
-            // Update scroll progress
-            function updateScrollProgress() {
-                const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-                const scrollPercentage = (scrollTop / scrollHeight) * 100;
-
-                // Update progress bar width
-                scrollProgressBar.style.width = scrollPercentage + '%';
-
-                // Show/hide progress bar based on scroll position
-                if (scrollTop > 100) {
-                    scrollProgress.classList.remove('hidden');
-                } else {
-                    scrollProgress.classList.add('hidden');
-                }
-            }
-
-            // Throttle function for performance
-            function throttle(func, limit) {
-                let inThrottle;
-                return function () {
-                    const args = arguments;
-                    const context = this;
-                    if (!inThrottle) {
-                        func.apply(context, args);
-                        inThrottle = true;
-                        setTimeout(() => inThrottle = false, limit);
-                    }
-                }
-            }
-
-            // Add scroll event listener with throttling
-            window.addEventListener('scroll', throttle(updateScrollProgress, 10));
-
-            // Initial update
-            updateScrollProgress();
-
-            // Smooth scroll to top when progress bar is clicked
-            scrollProgress.addEventListener('click', function () {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-
-            // Add hover effect for progress bar
-            scrollProgress.addEventListener('mouseenter', function () {
-                scrollProgressBar.style.boxShadow = '0 0 20px rgba(202, 138, 4, 0.8)';
-            });
-
-            scrollProgress.addEventListener('mouseleave', function () {
-                scrollProgressBar.style.boxShadow = '0 0 10px rgba(202, 138, 4, 0.5)';
-            });
-        });
-
-        // ========== CONTACT FORM HANDLING ==========
-        document.addEventListener('DOMContentLoaded', function () {
-            const contactForm = document.querySelector('form');
-
-            if (contactForm) {
-                contactForm.addEventListener('submit', function (e) {
-                    e.preventDefault();
-
-                    // Basic form validation
-                    const formData = new FormData(contactForm);
-                    const name = formData.get('name');
-                    const email = formData.get('email');
-                    const phone = formData.get('phone');
-                    const subject = formData.get('subject');
-                    const message = formData.get('message');
-                    const consent = formData.get('consent');
-
-                    if (!name || !email || !message) {
-                        alert('Please fill in all required fields (Name, Email, and Message).');
-                        return;
-                    }
-
-                    if (!consent) {
-                        alert('Please agree to be contacted regarding your inquiry.');
-                        return;
-                    }
-
-                    // Here you would typically send the data to your backend
-                    console.log('Form submitted:', {
-                        name, email, phone, subject, message, consent
-                    });
-
-                    // Show success message
-                    alert('Thank you for your message! We will get back to you soon.');
-
-                    // Reset form
-                    contactForm.reset();
-                });
-            }
-        });
-
-        // ========== INITIALIZE EVERYTHING ==========
-        window.addEventListener('DOMContentLoaded', () => {
-            loadNavbar();
-            loadFooter();
-        });
-    </script>
 
 </body>
 

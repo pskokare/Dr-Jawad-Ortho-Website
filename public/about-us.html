@@ -9,9 +9,40 @@
     <meta name="description"
         content="Meet Dr. Mir Jawad Zar Khan, a trusted orthopedic specialist known for advanced joint replacement, trauma, arthroscopy, and sports injury treatments in Hyderabad.">
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome: show fallback while icon fonts load -->
+    <style>
+        @font-face {
+            font-family: "Font Awesome 6 Free";
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-regular-400.woff2") format("woff2");
+            unicode-range: U+0-10FFFF;
+        }
+
+        @font-face {
+            font-family: "Font Awesome 6 Free";
+            font-style: normal;
+            font-weight: 900;
+            font-display: swap;
+            src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2") format("woff2");
+            unicode-range: U+0-10FFFF;
+        }
+
+        @font-face {
+            font-family: "Font Awesome 6 Brands";
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-brands-400.woff2") format("woff2");
+            unicode-range: U+0-10FFFF;
+        }
+    </style>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" type="image/webp" href="Images/GERMANTANLOGO.webp">
+    <link rel="icon" type="image/webp" href="Images/dr-jawad-logo.webp">
     <link rel="canonical" href="https://drjawadortho.com/about-us">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <style>
@@ -35,13 +66,12 @@
             box-shadow: 0 0 10px rgba(202, 138, 4, 0.5);
         }
 
-
         .scroll-progress.hidden {
             opacity: 0;
             pointer-events: none;
         }
 
-        /* Enhanced Responsive typography and spacing */
+        /* Responsive typography and spacing */
         @media (max-width: 640px) {
             .section-padding {
                 padding: 2rem 0.75rem !important;
@@ -139,18 +169,15 @@
             }
         }
 
-        /* Desktop banner positioning to account for navbar and top bar */
         @media (min-width: 769px) and (max-width: 1024px) {
             .banner-section {
                 padding-top: 64px;
-                /* Account for navbar height only (top bar hidden on tablet) */
             }
         }
 
         @media (min-width: 1025px) {
             .banner-section {
-                padding-top: 40px;
-                /* Account for both top bar (36px) and navbar (64px) */
+                padding-top: 0px;
             }
         }
 
@@ -213,14 +240,12 @@
             }
         }
 
-        /* Prevent horizontal scroll */
         html,
         body {
             max-width: 100%;
             overflow-x: hidden;
         }
 
-        /* Enhanced Touch-friendly mobile optimizations */
         @media (max-width: 768px) {
             .faq-button {
                 padding: 1rem 0.75rem !important;
@@ -260,7 +285,6 @@
             }
         }
 
-        /* Ultra-mobile optimizations (very small screens) */
         @media (max-width: 480px) {
             .banner-height {
                 height: 25vh !important;
@@ -352,13 +376,259 @@
                 transform: translateY(0);
             }
         }
+
+        /* ===== TAB BUTTON STYLES ===== */
+        .tab-btn {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tab-btn::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background: #dc2626;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .tab-btn.active::after {
+            width: 70%;
+        }
+
+        .tab-btn.active {
+            background: #dc2626;
+            color: #fff;
+            border-color: #dc2626;
+            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.35);
+        }
+
+        .tab-btn:not(.active) {
+            background: #fff;
+            color: #991b1b;
+            border-color: #991b1b;
+        }
+
+        .tab-btn:not(.active):hover {
+            background: #fef2f2;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(220, 38, 38, 0.15);
+        }
+
+        .tab-btn.active:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(220, 38, 38, 0.45);
+        }
+
+        .tab-btn i {
+            transition: transform 0.3s ease;
+        }
+
+        .tab-btn:hover i {
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Two-column list for awards */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem 1.5rem;
+            margin: 0.75rem 0 1rem 0;
+            list-style: none;
+            padding: 0;
+        }
+
+        @media (max-width: 640px) {
+            .awards-grid {
+                grid-template-columns: 1fr;
+                gap: 0.25rem;
+            }
+        }
+
+        .awards-grid li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+            padding: 0.3rem 0;
+            color: #374151;
+        }
+
+        .awards-grid li::before {
+            content: "◆";
+            color: #eab308;
+            font-size: 0.8rem;
+            line-height: 1.6;
+            flex-shrink: 0;
+        }
+
+        /* FAQ Card Styles - keeping original */
+        .faq-section-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 600;
+            color: #1a1a1a;
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .faq-page__accordion {
+            display: flex;
+            flex-wrap: wrap;
+            margin: -10px;
+        }
+
+        .faq-accordion {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .faq-accordion .col-lg-6 {
+            width: 50%;
+            padding: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .faq-accordion .col-lg-6 {
+                width: 100%;
+            }
+        }
+
+        .faq-card {
+            background: #fff;
+            border: 1.5px solid #e5e7eb;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: border-color .25s ease, box-shadow .25s ease;
+            display: flex;
+            flex-direction: column;
+            min-height: fit-content;
+        }
+
+        .faq-card.is-open {
+            border-color: #fbbf24;
+            box-shadow: 0 4px 20px rgba(251, 191, 36, .15);
+        }
+
+        .faq-card-btn {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            width: 100%;
+            padding: 1.1rem 1.25rem;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .faq-icon-box {
+            flex-shrink: 0;
+            width: 2.4rem;
+            height: 2.4rem;
+            border-radius: 7px;
+            background: #d97706;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background .25s ease;
+        }
+
+        .faq-card.is-open .faq-icon-box {
+            background: #f59e0b;
+        }
+
+        .faq-icon-box svg {
+            width: 1.1rem;
+            height: 1.1rem;
+            color: #fff;
+        }
+
+        .faq-card-question {
+            flex: 1;
+            font-size: .92rem;
+            font-weight: 600;
+            color: #1c1c1c;
+            line-height: 1.45;
+        }
+
+        .faq-card-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .4s cubic-bezier(.22, 1, .36, 1);
+            flex-shrink: 0;
+        }
+
+        .faq-card.is-open .faq-card-answer {
+            max-height: 500px;
+        }
+
+        .faq-card-answer-inner {
+            padding: 0 1.25rem 1.25rem 1.25rem;
+            border-top: 1px solid #fde68a;
+        }
+
+        .faq-card-answer-inner p {
+            font-size: .875rem;
+            color: #4b5563;
+            line-height: 1.8;
+            margin: .9rem 0 0;
+        }
+
+        @media (max-width: 480px) {
+            .faq-card-btn {
+                padding: .9rem 1rem;
+                gap: .75rem;
+            }
+
+            .faq-icon-box {
+                width: 2.1rem;
+                height: 2.1rem;
+            }
+
+            .faq-card-question {
+                font-size: .85rem;
+            }
+
+            .faq-card-answer-inner {
+                padding: 0 1rem 1rem 1rem;
+            }
+        }
     </style>
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-B7BXJEHXWK"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-B7BXJEHXWK');
     </script>
 
@@ -452,94 +722,90 @@
     }
     </script>
 
-
     <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Physician",
-  "@id": "https://drjawadortho.com",
-  "name": "Dr. Mir Jawad Zar Khan - Orthopedic Surgeon",
-  "image": "https://drjawadortho.com/Images/AboutUs-page-Images/Dr.javedImage.jpg",
-  "description": "Recognized as the best orthopedic doctor in Hyderabad, Dr. Mir Jawad Zar Khan brings over 26 years of experience. He specializes in German precision robotic knee replacement, hip replacement, arthroscopy, and spine surgery at Germanten Hospitals.",
-  "url": "https://drjawadortho.com/",
-  "telephone": "+91-9989635555",
-  "email": "info@germantenhospitals.com",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "# 4-8-138/1/B, opp. pillar no.150 PVN Rao Expressway, Main Road, Attapur",
-    "addressLocality": "Hyderabad",
-    "addressRegion": "Telangana",
-    "postalCode": "500048",
-    "addressCountry": "IN"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "17.3665",
-    "longitude": "78.4225"
-  },
-  "areaServed": [
-    { "@type": "City", "name": "Hyderabad" },
-    { "@type": "State", "name": "Telangana" },
-    { "@type": "Place", "name": "Attapur" }
-  ],
-  "medicalSpecialty": [
-    "http://schema.org/Surgical",
-    "http://schema.org/Rheumatologic",
-    "http://schema.org/Podiatric"
-  ],
-  "availableService": [
-    { "@type": "MedicalTherapy", "name": "ESWT (Extracorporeal Shock Wave Therapy)" },
-    { "@type": "MedicalProcedure", "name": "Knee Replacement" },
-    { "@type": "MedicalProcedure", "name": "Hip Replacement" },
-    { "@type": "MedicalProcedure", "name": "OATS Procedure" },
-    { "@type": "MedicalProcedure", "name": "Spine Center Services" },
-    { "@type": "MedicalProcedure", "name": "Joint Replacement" },
-    { "@type": "MedicalProcedure", "name": "Shoulder Surgery" },
-    { "@type": "MedicalProcedure", "name": "Foot & Ankle Surgery" },
-    { "@type": "MedicalTherapy", "name": "Trauma And Fractures Care" },
-    { "@type": "MedicalTherapy", "name": "General Orthopedics" },
-    { "@type": "MedicalProcedure", "name": "Partial Knee Replacement" },
-    { "@type": "MedicalProcedure", "name": "Hand & Microvascular Surgery" },
-    { "@type": "MedicalTherapy", "name": "Rheumatoid Arthritis Treatment" },
-    { "@type": "MedicalProcedure", "name": "Spine Surgical Treatment" },
-    { "@type": "MedicalProcedure", "name": "Arthroscopy & Sports Injuries" },
-    { "@type": "MedicalTherapy", "name": "Pain Medicine" },
-    { "@type": "MedicalTherapy", "name": "Spine Non Surgical Treatment" },
-    { "@type": "MedicalProcedure", "name": "Cartilage Transplantation" },
-    { "@type": "MedicalTherapy", "name": "Treatments for Knee & Back Problems" }
-  ],
-  "award": [
-    "Champions of Change Award by the 14th President of India",
-    "Pride of the Nation Award 2024",
-    "Iconic Joint Replacement Surgeon of Telangana"
-  ],
-  "employee": {
-    "@type": "Person",
-    "name": "Dr. Mir Jawad Zar Khan",
-    "gender": "http://schema.org/Male",
-    "alumniOf": [
-      {
-        "@type": "EducationalOrganization",
-        "name": "Osmania University",
-        "description": "M.S. (Orthopedics) Gold Medalist"
-      },
-      {
-        "@type": "EducationalOrganization",
-        "name": "USAIM, Seychelles",
-        "description": "M.Ch (Orthopedics)"
-      }
-    ],
-    "affiliation": {
-      "@type": "Hospital",
-      "name": "Germanten Hospitals",
-      "url": "https://www.germantenhospitals.com/"
+    {
+        "@context": "https://schema.org",
+        "@type": "Physician",
+        "@id": "https://drjawadortho.com",
+        "name": "Dr. Mir Jawad Zar Khan - Orthopedic Surgeon",
+        "image": "https://drjawadortho.com/Images/AboutUs-page-Images/Dr.javedImage.jpg",
+        "description": "Recognized as the best orthopedic doctor in Hyderabad, Dr. Mir Jawad Zar Khan brings over 26 years of experience. He specializes in German precision robotic knee replacement, hip replacement, arthroscopy, and spine surgery at Germanten Hospitals.",
+        "url": "https://drjawadortho.com/",
+        "telephone": "+91-9989635555",
+        "email": "info@germantenhospitals.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "# 4-8-138/1/B, opp. pillar no.150 PVN Rao Expressway, Main Road, Attapur",
+            "addressLocality": "Hyderabad",
+            "addressRegion": "Telangana",
+            "postalCode": "500048",
+            "addressCountry": "IN"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "17.3665",
+            "longitude": "78.4225"
+        },
+        "areaServed": [
+            { "@type": "City", "name": "Hyderabad" },
+            { "@type": "State", "name": "Telangana" },
+            { "@type": "Place", "name": "Attapur" }
+        ],
+        "medicalSpecialty": [
+            "http://schema.org/Surgical",
+            "http://schema.org/Rheumatologic",
+            "http://schema.org/Podiatric"
+        ],
+        "availableService": [
+            { "@type": "MedicalTherapy", "name": "ESWT (Extracorporeal Shock Wave Therapy)" },
+            { "@type": "MedicalProcedure", "name": "Knee Replacement" },
+            { "@type": "MedicalProcedure", "name": "Hip Replacement" },
+            { "@type": "MedicalProcedure", "name": "OATS Procedure" },
+            { "@type": "MedicalProcedure", "name": "Spine Center Services" },
+            { "@type": "MedicalProcedure", "name": "Joint Replacement" },
+            { "@type": "MedicalProcedure", "name": "Shoulder Surgery" },
+            { "@type": "MedicalProcedure", "name": "Foot & Ankle Surgery" },
+            { "@type": "MedicalTherapy", "name": "Trauma And Fractures Care" },
+            { "@type": "MedicalTherapy", "name": "General Orthopedics" },
+            { "@type": "MedicalProcedure", "name": "Partial Knee Replacement" },
+            { "@type": "MedicalProcedure", "name": "Hand & Microvascular Surgery" },
+            { "@type": "MedicalTherapy", "name": "Rheumatoid Arthritis Treatment" },
+            { "@type": "MedicalProcedure", "name": "Spine Surgical Treatment" },
+            { "@type": "MedicalProcedure", "name": "Arthroscopy & Sports Injuries" },
+            { "@type": "MedicalTherapy", "name": "Pain Medicine" },
+            { "@type": "MedicalTherapy", "name": "Spine Non Surgical Treatment" },
+            { "@type": "MedicalProcedure", "name": "Cartilage Transplantation" },
+            { "@type": "MedicalTherapy", "name": "Treatments for Knee & Back Problems" }
+        ],
+        "award": [
+            "Champions of Change Award by the 14th President of India",
+            "Pride of the Nation Award 2024",
+            "Iconic Joint Replacement Surgeon of Telangana"
+        ],
+        "employee": {
+            "@type": "Person",
+            "name": "Dr. Mir Jawad Zar Khan",
+            "gender": "http://schema.org/Male",
+            "alumniOf": [
+                {
+                    "@type": "EducationalOrganization",
+                    "name": "Osmania University",
+                    "description": "M.S. (Orthopedics) Gold Medalist"
+                },
+                {
+                    "@type": "EducationalOrganization",
+                    "name": "USAIM, Seychelles",
+                    "description": "M.Ch (Orthopedics)"
+                }
+            ],
+            "affiliation": {
+                "@type": "Hospital",
+                "name": "Germanten Hospitals",
+                "url": "https://www.germantenhospitals.com/"
+            }
+        }
     }
-  }
-}
-</script>
-
-
-
+    </script>
 
 </head>
 
@@ -552,283 +818,2226 @@
     <!-- Navbar Component -->
     <div id="navbar-container" style="height: 60px;"></div>
 
-    <!-- Header Banner with Wavy Bottom -->
-    <div class="relative w-full banner-height overflow-hidden banner-section">
-        <img src="Images/AboutUs-page-Images/AboutUsheaderbanner.webp" alt="About Dr. Jawad"
-            class="w-full h-full object-cover object-center" width="1920" height="800">
+    <!-- =========================================================
+     ABOUT PAGE HERO SECTION
+========================================================= -->
+    <section class="about-hero-v4" aria-labelledby="aboutHeroHeading">
 
-        <!-- Wavy Shape at Bottom -->
-        <div class="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none">
-            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg"
-                class="w-full h-[40px] sm:h-[60px] md:h-[80px] lg:h-[100px] xl:h-[120px] block"
-                preserveAspectRatio="none">
-                <path
-                    d="M0,96L48,90.7C96,85,192,75,288,80C384,85,480,107,576,112C672,117,768,107,864,96C960,85,1056,75,1152,74.7C1248,75,1344,85,1392,90.7L1440,96L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"
-                    fill="#F9FAFB" />
+        <div class="about-hero-v4__card">
+
+            <!-- Left Content -->
+            <div class="about-hero-v4__content">
+
+                <p class="about-hero-v4__eyebrow">
+                    <span>Your Health.</span>
+                    <strong>Our Commitment.</strong>
+                </p>
+
+                <h1 id="aboutHeroHeading" class="about-hero-v4__heading">
+                    <span>Better Care</span>
+                    <strong>Better Tomorrow</strong>
+                </h1>
+
+                <p class="about-hero-v4__description">
+                    From diagnosis to recovery, we are with you at every step of
+                    your orthopedic care journey.
+                </p>
+
+                <!-- Hero Buttons -->
+                <div class="about-hero-v4__actions">
+
+                    <a href="tel:+919989635555" class="about-hero-v4__button about-hero-v4__button--primary">
+                        <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+                        <span>Book Appointment</span>
+                        <i class="fa-solid fa-arrow-right about-hero-v4__arrow" aria-hidden="true"></i>
+                    </a>
+
+                    <a href="#about-page-content" class="about-hero-v4__button about-hero-v4__button--secondary">
+                        <span>Learn More</span>
+                        <i class="fa-solid fa-arrow-down about-hero-v4__arrow" aria-hidden="true"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Right Image -->
+            <div class="about-hero-v4__visual">
+
+                <img src="Images/AboutUs-page-Images/GermantenHospitalBuilding.webp" alt="Germanten Hospital building"
+                    width="1200" height="800" fetchpriority="high" />
+
+                <div class="about-hero-v4__image-overlay"></div>
+
+            </div>
+
+            <!-- Feature Cards -->
+            <div class="about-hero-v4__features">
+
+                <article class="about-hero-v4__feature">
+                    <div class="about-hero-v4__feature-icon">
+                        <i class="fa-solid fa-user-doctor" aria-hidden="true"></i>
+                    </div>
+
+                    <span>Expert</span>
+                    <strong>Doctors</strong>
+                </article>
+
+                <article class="about-hero-v4__feature">
+                    <div class="about-hero-v4__feature-icon">
+                        <i class="fa-solid fa-microscope" aria-hidden="true"></i>
+                    </div>
+
+                    <span>Advanced</span>
+                    <strong>Technology</strong>
+                </article>
+
+                <article class="about-hero-v4__feature">
+                    <div class="about-hero-v4__feature-icon">
+                        <i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i>
+                    </div>
+
+                    <span>Personalized</span>
+                    <strong>Care</strong>
+                </article>
+
+                <article class="about-hero-v4__feature">
+                    <div class="about-hero-v4__feature-icon">
+                        <i class="fa-solid fa-indian-rupee-sign" aria-hidden="true"></i>
+                    </div>
+
+                    <span>Affordable</span>
+                    <strong>Treatment</strong>
+                </article>
+
+            </div>
+
+            <!-- Decorative Bottom Curves -->
+            <svg class="about-hero-v4__curves" viewBox="0 0 800 110" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M0 105 C180 30, 470 105, 800 15" fill="none" stroke="#e3222a" stroke-width="22"
+                    stroke-linecap="round" />
+
+                <path d="M0 106 C190 45, 490 115, 800 31" fill="none" stroke="#ffc400" stroke-width="8"
+                    stroke-linecap="round" />
             </svg>
-        </div>
-    </div>
 
-    <!-- Breadcrumb Section Below Hero -->
-    <div class="bg-white border-b border-gray-200 shadow-sm breadcrumb-container">
+        </div>
+
+    </section>
+
+    <!-- =========================================================
+     BREADCRUMB SECTION
+========================================================= -->
+    <div id="about-page-content" class="bg-white border-b border-gray-200  breadcrumb-container">
         <div class="max-w-7xl mx-auto px-2 sm:px-3 md:px-4 lg:px-6 xl:px-8 py-2 sm:py-3 md:py-4">
+
             <nav class="flex items-center flex-wrap gap-1 sm:gap-2 text-xs sm:text-sm" aria-label="Breadcrumb">
-                <!-- Home Link -->
                 <a href="/"
-                    class="breadcrumb-link inline-flex items-center text-gray-600 hover:text-blue-700 transition-colors duration-200 font-medium">
+                    class="breadcrumb-link inline-flex items-center text-gray-600 hover:text-red-600 transition-colors duration-200 font-medium">
                     <i class="fa-solid fa-home mr-1 text-[10px] sm:text-xs"></i>
-                    <span class="hidden xs:inline">AboutUs</span>
-                    <span class="xs:hidden">AboutUs</span>
+
+                    <span>AboutUs</span>
                 </a>
 
-                <!-- Separator -->
-                <i class="fa-solid fa-chevron-right text-gray-400 text-[8px] sm:text-[10px] mx-0.5 sm:mx-1"></i>
+                <i class="fa-solid fa-chevron-right text-gray-400 text-[8px] sm:text-[10px] mx-0.5 sm:mx-1"
+                    aria-hidden="true"></i>
 
-                <!-- Current Page -->
-                <span
-                    class="text-blue-700 font-semibold truncate max-w-[120px] sm:max-w-[150px] md:max-w-[200px] lg:max-w-none"
+                <span class="text-red-600 font-semibold truncate max-w-[160px] sm:max-w-[220px] md:max-w-none"
                     aria-current="page">
                     <span class="hidden sm:inline">About DR. MIR JAWAD</span>
                     <span class="sm:hidden">DR. MIR JAWAD</span>
                 </span>
             </nav>
+
         </div>
     </div>
+
+    <style>
+        /* =========================================================
+       HERO SECTION
+    ========================================================= */
+
+        .about-hero-v4 {
+            --about-hero-red: #e3222a;
+            --about-hero-dark-red: #bd171e;
+            --about-hero-yellow: #ffc400;
+            --about-hero-black: #161616;
+            --about-hero-white: #ffffff;
+
+            width: 100%;
+            margin: 0;
+            padding: 14px 0 0;
+            background: #f8fafc;
+            font-family: inherit;
+
+        }
+
+        .about-hero-v4,
+        .about-hero-v4 * {
+            box-sizing: border-box;
+        }
+
+        .about-hero-v4__card {
+            position: relative;
+            width: 100%;
+            min-height: 370px;
+            margin: 0 auto;
+            overflow: hidden;
+            isolation: isolate;
+            background: var(--about-hero-white);
+            border: 1px solid #e5e7eb;
+            /* border-radius: 24px; */
+            box-shadow: 0 14px 40px rgba(15, 23, 42, 0.11);
+        }
+
+        /* =========================================================
+       LEFT CONTENT
+    ========================================================= */
+
+        .about-hero-v4__content {
+            position: relative;
+            z-index: 5;
+            width: 44%;
+            min-height: 370px;
+            padding: 48px 30px 112px 64px;
+        }
+
+        .about-hero-v4__eyebrow {
+            margin: 0 0 12px;
+            font-size: clamp(13px, 1.05vw, 16px);
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .about-hero-v4__eyebrow span {
+            color: var(--about-hero-red);
+        }
+
+        .about-hero-v4__eyebrow strong {
+            margin-left: 4px;
+            color: #b57c00;
+            font-weight: 600;
+        }
+
+        .about-hero-v4__heading {
+            margin: 0;
+            color: #dc2626;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(1.2rem, 3.2vw, 2.4rem);
+            font-weight: 600;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+        }
+
+        .about-hero-v4__heading span,
+        .about-hero-v4__heading strong {
+            display: block;
+        }
+
+        .about-hero-v4__heading strong {
+            margin-top: 5px;
+            color: #dc2626;
+            font-weight: 600;
+        }
+
+        .about-hero-v4__description {
+            max-width: 500px;
+            margin: 0.6em 0 0;
+            color: #40495a;
+            font-size: clamp(0.78rem, 1.4vw, 1.05rem);
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        /* =========================================================
+       BUTTONS
+    ========================================================= */
+
+        .about-hero-v4__actions {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .about-hero-v4__button {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.65rem 1.45rem;
+            border: 0;
+            border-radius: 9999px;
+            background: linear-gradient(135deg, #cf3339 0%, #b91c1c 100%);
+            color: #ffffff;
+            font-size: clamp(0.72rem, 1.1vw, 0.95rem);
+            font-weight: 600;
+            line-height: 1;
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            transition: color 0.35s ease;
+        }
+
+        .about-hero-v4__button::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            border-radius: inherit;
+            background: linear-gradient(135deg, #f6ad00 0%, #fbbf24 100%);
+            transform: translateX(-101%);
+            transition: transform 0.45s ease;
+        }
+
+        .about-hero-v4__button:hover::before {
+            transform: translateX(0);
+        }
+
+        .about-hero-v4__button:hover {
+            color: #401f00;
+        }
+
+        .about-hero-v4__arrow {
+            position: relative;
+            z-index: 1;
+            font-size: 0.75rem;
+            transition: transform 0.25s ease;
+        }
+
+        .about-hero-v4__button:hover .about-hero-v4__arrow {
+            transform: translateX(3px);
+        }
+
+        /* =========================================================
+       RIGHT IMAGE
+    ========================================================= */
+
+        .about-hero-v4__visual {
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            width: 59%;
+            height: 100%;
+            overflow: hidden;
+            background: #f3f4f6;
+            clip-path: polygon(13% 0,
+                    100% 0,
+                    100% 100%,
+                    0 100%);
+        }
+
+        .about-hero-v4__visual img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transform: scale(1.015);
+            transition: transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .about-hero-v4__card:hover .about-hero-v4__visual img {
+            transform: scale(1.065);
+        }
+
+        .about-hero-v4__image-overlay {
+            position: absolute;
+            z-index: 2;
+            inset: 0;
+            background:
+                linear-gradient(90deg,
+                    #ffffff 0%,
+                    rgba(255, 255, 255, 0.9) 8%,
+                    rgba(255, 255, 255, 0.2) 28%,
+                    rgba(255, 255, 255, 0) 48%),
+                linear-gradient(0deg,
+                    rgba(0, 0, 0, 0.12),
+                    rgba(0, 0, 0, 0));
+            pointer-events: none;
+        }
+
+        /* =========================================================
+       FEATURE CARDS
+    ========================================================= */
+
+        .about-hero-v4__features {
+            position: absolute;
+            z-index: 7;
+            right: 34%;
+            bottom: 0px;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(96px, 1fr));
+            width: min(520px, 48%);
+            background: #f0e9c6;
+            border: 1px solid rgba(229, 231, 235, 0.95);
+            border-radius: 11px;
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.14);
+            backdrop-filter: blur(8px);
+        }
+
+        .about-hero-v4__feature {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 88px;
+            padding: 10px 8px;
+            color: #202020;
+            text-align: center;
+            background: transparent;
+            transition:
+                background-color 0.25s ease,
+                transform 0.25s ease;
+        }
+
+        .about-hero-v4__feature:not(:last-child)::after {
+            position: absolute;
+            top: 19%;
+            right: 0;
+            width: 1px;
+            height: 62%;
+            content: "";
+            background: #e5e7eb;
+        }
+
+        .about-hero-v4__feature:hover {
+            z-index: 2;
+            background: #ffffff;
+            transform: translateY(-6px);
+        }
+
+        .about-hero-v4__feature-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            margin-bottom: 5px;
+            color: var(--about-hero-red);
+            font-size: 20px;
+            transition:
+                color 0.25s ease,
+                transform 0.25s ease;
+        }
+
+        .about-hero-v4__feature:hover .about-hero-v4__feature-icon {
+            color: #c48e00;
+            transform: scale(1.12);
+        }
+
+        .about-hero-v4__feature span,
+        .about-hero-v4__feature strong {
+            display: block;
+            font-size: 11px;
+            line-height: 1.3;
+        }
+
+        .about-hero-v4__feature span {
+            color: #4b5563;
+            font-weight: 500;
+        }
+
+        .about-hero-v4__feature strong {
+            color: #191919;
+            font-weight: 700;
+        }
+
+        /* =========================================================
+       DECORATIVE CURVES
+    ========================================================= */
+
+        .about-hero-v4__curves {
+            position: absolute;
+            z-index: 3;
+            right: -15px;
+            bottom: -23px;
+            width: 58%;
+            height: 100px;
+            overflow: visible;
+            pointer-events: none;
+            opacity: 0.65;
+        }
+
+        /* =========================================================
+       ENTRANCE ANIMATION
+    ========================================================= */
+
+        .about-hero-v4__content {
+            animation: aboutHeroContentIn 0.75s ease both;
+        }
+
+        .about-hero-v4__features {
+            animation: aboutHeroFeaturesIn 0.85s 0.15s ease both;
+        }
+
+        @keyframes aboutHeroContentIn {
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes aboutHeroFeaturesIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* =========================================================
+       TABLET
+    ========================================================= */
+
+        @media (max-width: 1100px) {
+            .about-hero-v4__card {
+                min-height: 390px;
+
+            }
+
+            .about-hero-v4__content {
+                width: 48%;
+                min-height: 390px;
+                padding: 43px 20px 118px 42px;
+            }
+
+            .about-hero-v4__visual {
+                width: 57%;
+            }
+
+            .about-hero-v4__features {
+                right: 7%;
+                width: 57%;
+            }
+
+            .about-hero-v4__curves {
+                width: 65%;
+            }
+        }
+
+        /* =========================================================
+       MOBILE AND SMALL TABLET
+    ========================================================= */
+
+        @media (max-width: 760px) {
+            .about-hero-v4 {
+                padding: 10px 10px 0;
+            }
+
+            .about-hero-v4__card {
+                display: flex;
+                flex-direction: column;
+                min-height: 0;
+                border-radius: 18px;
+            }
+
+            .about-hero-v4__content {
+                order: 1;
+                width: 100%;
+                min-height: 0;
+                padding: 31px 22px 27px;
+            }
+
+            .about-hero-v4__heading {
+                font-size: clamp(10px, 2.1vw, 43px);
+            }
+
+            .about-hero-v4__description {
+                max-width: 100%;
+            }
+
+            .about-hero-v4__actions {
+                align-items: stretch;
+            }
+
+            .about-hero-v4__button {
+                flex: 1 1 180px;
+            }
+
+            .about-hero-v4__visual {
+                position: relative;
+                order: 2;
+                top: auto;
+                right: auto;
+                width: 100%;
+                height: 255px;
+                clip-path: none;
+            }
+
+            .about-hero-v4__image-overlay {
+                background: linear-gradient(180deg,
+                        #ffffff 0%,
+                        rgba(255, 255, 255, 0.18) 23%,
+                        rgba(255, 255, 255, 0) 48%);
+            }
+
+            .about-hero-v4__features {
+                position: relative;
+                order: 3;
+                right: auto;
+                bottom: auto;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                width: calc(100% - 28px);
+                margin: -42px auto 18px;
+            }
+
+            .about-hero-v4__feature {
+                min-height: 84px;
+            }
+
+            .about-hero-v4__feature:nth-child(2)::after {
+                display: none;
+            }
+
+            .about-hero-v4__feature:nth-child(-n + 2) {
+                border-bottom: 1px solid #e5e7eb;
+            }
+
+            .about-hero-v4__curves {
+                display: none;
+            }
+        }
+
+        /* =========================================================
+       SMALL MOBILE
+    ========================================================= */
+
+        @media (max-width: 430px) {
+            .about-hero-v4__content {
+                padding: 27px 18px 24px;
+            }
+
+            .about-hero-v4__actions {
+                flex-direction: column;
+            }
+
+            .about-hero-v4__button {
+                width: 100%;
+                flex-basis: auto;
+            }
+
+            .about-hero-v4__visual {
+                height: 220px;
+            }
+
+            .about-hero-v4__feature span,
+            .about-hero-v4__feature strong {
+                font-size: 10px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .about-hero-v4__content,
+            .about-hero-v4__features {
+                animation: none;
+            }
+
+            .about-hero-v4__visual img,
+            .about-hero-v4__feature,
+            .about-hero-v4__feature-icon,
+            .about-hero-v4__button,
+            .about-hero-v4__arrow {
+                transition: none;
+            }
+        }
+
+        /* Push hero below the fixed navbar on tablet/desktop only */
+        @media (min-width: 761px) {
+            .about-hero-v4 {
+                padding-top: 41px;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 
     <!-- Main Content -->
     <main class="w-full mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-12 main-container">
         <div class="bg-white rounded-xl sm:rounded-2xl shadow-lg p-3 sm:p-4 md:p-6 lg:p-8 xl:p-12 card-padding">
 
-            <!-- Quote with Yellow Border -->
-            <div class="max-w-4xl mx-auto mb-8 sm:mb-10 md:mb-12 quote-section">
-                <div class="border-2 border-yellow-400 p-4 sm:p-6 rounded-xl bg-yellow-50/30">
-                    <p
-                        class="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed text-center italic quote-text text-justify">
-                        "We had taken a great initiative to start a new hospital with German collaboration. To bridge
-                        gap between India and advanced countries like Germany by forming a collaboration with Germany
-                        for technology sharing. Also to make such advanced technologies available at cost effective
-                        rates."
-                    </p>
-                </div>
-            </div>
+            <section class="doctor-showcase-section">
+                <article class="doctor-showcase">
 
-            <!-- Doctor Profile Section -->
-            <div
-                class="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 items-center mb-8 sm:mb-10 md:mb-12 doctor-profile">
-                <!-- Doctor Image -->
-                <div class="flex justify-center order-1 lg:order-1">
-                    <div
-                        class="relative doctor-image w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 xl:w-64 xl:h-64 rounded-full overflow-hidden border-2 sm:border-4 border-yellow-400 shadow-lg sm:shadow-xl">
-                        <img src="Images/AboutUs-page-Images/Dr.javedImage.jpg" alt="Dr. Mir Jawad Zar Khan" width="256"
-                            height="256" class="w-full h-full object-cover">
-                    </div>
-                </div>
+                    <!-- Background Layers -->
+                    <div class="ds-dark"></div>
+                    <div class="ds-red"></div>
+                    <div class="ds-yellow"></div>
 
-                <!-- Doctor Credentials -->
-                <div class="lg:col-span-2 text-center lg:text-left order-2 lg:order-2">
-                    <h1
-                        class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-red-600 mb-2 sm:mb-3 md:mb-4 doctor-credentials">
-                        DR. MIR JAWAD ZAR KHAN</h1>
-                    <div class="space-y-1 sm:space-y-2 text-gray-700 doctor-credentials">
-                        <p class="font-medium text-xs sm:text-sm md:text-base">MBBS, MS-(ORTHO), M.CH-(ORTHO)</p>
-                        <p class="font-medium text-xs sm:text-sm md:text-base">FELLOWSHIP IN ARTHOPLASTY (GERMANY)</p>
-                        <p class="font-medium text-xs sm:text-sm md:text-base">ORTHOPEDIST, JOINT REPLACEMENT SURGEON,
-                            SPINE SURGEON</p>
-                        <p class="font-medium text-sm sm:text-base md:text-lg text-blue-600">26 YEARS EXPERIENCE</p>
+                    <!-- Quote -->
+                    <blockquote class="ds-quote">
+                        <div class="ds-quote-icon">“</div>
+
+                        <p>
+                            We had taken a great initiative to start a new hospital with German
+                            collaboration. To bridge gap between India and advanced countries like
+                            Germany by forming a collaboration with Germany for technology sharing.
+                            Also to make such advanced technologies available at cost effective rates.
+                        </p>
+
+                        <div class="ds-quote-line"></div>
+                    </blockquote>
+
+                    <!-- Doctor Image -->
+                    <figure class="ds-photo">
+                        <div class="ds-photo-ring">
+                            <img src="Images/AboutUs-page-Images/Dr.javedImage.jpg" alt="Dr. Mir Jawad Zar Khan" />
+                        </div>
+                    </figure>
+
+                    <!-- Doctor Details -->
+                    <div class="ds-details">
+                        <h2>
+                            <span>DR. MIR JAWAD</span>
+                            <span>ZAR KHAN</span>
+                        </h2>
+
+                        <p>MBBS, MS-(ORTHO), M.CH-(ORTHO)</p>
+                        <p>FELLOWSHIP IN ARTHOPLASTY (GERMANY)</p>
+                        <p>ORTHOPEDIST, JOINT REPLACEMENT SURGEON, SPINE SURGEON</p>
                     </div>
-                </div>
-            </div>
+
+                    <!-- Experience Badge -->
+                    <div class="ds-experience">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2"
+                            aria-hidden="true">
+                            <rect x="3" y="7" width="18" height="13" rx="2"></rect>
+                            <path d="M8 7V5h8v2"></path>
+                            <path d="M3 12h18"></path>
+                        </svg>
+
+                        <span>26 YEARS EXPERIENCE</span>
+                    </div>
+
+                </article>
+            </section>
+
+            <style>
+                /* Section has no outer padding and follows its parent width */
+                .doctor-showcase-section {
+                    width: 100%;
+                    height: auto;
+                    margin: -20px 0 0;
+                    padding: 0;
+                }
+
+                .doctor-showcase {
+                    --red: #de1e26;
+                    --yellow: #ffc400;
+                    --dark: #151515;
+
+                    position: relative;
+                    width: 100%;
+                    max-width: none;
+                    margin: 0;
+                    border: 1px solid #bfc0c2;
+                    border-radius: 4px;
+                    overflow: hidden;
+                    background: #fff;
+                    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+                    font-family: Arial, sans-serif;
+                    box-sizing: border-box;
+                }
+
+                /* ================= MOBILE FIRST ================= */
+
+                .ds-quote {
+                    position: relative;
+                    z-index: 2;
+                    padding: 32px 24px 110px;
+                    color: white;
+                    background: radial-gradient(circle at 15% 20%,
+                            #232323 0,
+                            #151515 60%);
+                }
+
+                .ds-quote-icon {
+                    font-size: 56px;
+                    line-height: 0.6;
+                    color: var(--yellow);
+                }
+
+                .ds-quote p {
+                    margin-top: 8px;
+                    font-size: 14px;
+                    font-style: italic;
+                    line-height: 1.75;
+                }
+
+                .ds-quote-line {
+                    width: 60px;
+                    height: 3px;
+                    margin-top: 18px;
+                    background: var(--yellow);
+                }
+
+                /* Doctor Image */
+                .ds-photo {
+                    position: relative;
+                    z-index: 4;
+                    width: 210px;
+                    margin: -90px auto 0;
+                }
+
+                /* Fixed circular image container */
+                .ds-photo-ring {
+                    width: 100%;
+                    aspect-ratio: 1 / 1;
+                    padding: 4px;
+                    overflow: hidden;
+                    box-sizing: border-box;
+                    background: white;
+                    /* border: 5px solid var(--yellow); */
+                    border-radius: 50%;
+                    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+                }
+
+                .ds-photo img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                    border-radius: 50%;
+                }
+
+                /* Details */
+                .ds-details {
+                    padding: 24px;
+                    text-align: center;
+                }
+
+                .ds-details h2 {
+                    margin-bottom: 8px;
+                    color: var(--red);
+                    font-size: 20px;
+                    font-weight: 700;
+                    line-height: 1.1;
+                    white-space: nowrap;
+                }
+
+                .ds-details h2 span {
+                    display: inline;
+                }
+
+                .ds-details p {
+                    font-size: 13px;
+                    line-height: 1.6;
+                }
+
+                /* Experience */
+                .ds-experience {
+                    display: flex;
+                    align-items: center;
+                    min-height: 60px;
+                    margin: 0 16px 18px;
+                    padding-left: 18px;
+                    gap: 10px;
+                    background: var(--yellow);
+                    font-weight: 700;
+                    clip-path: polygon(5% 0,
+                            100% 0,
+                            100% 100%,
+                            0 100%);
+                }
+
+                /* ================= DESKTOP ================= */
+
+                @media (min-width: 1024px) {
+                    .doctor-showcase {
+                        /* Reduced desktop section height */
+                        aspect-ratio: 606 / 220;
+                    }
+
+                    .ds-dark,
+                    .ds-red,
+                    .ds-yellow {
+                        position: absolute;
+                        inset: 0;
+                    }
+
+                    .ds-dark {
+                        background: radial-gradient(circle at 15% 20%,
+                                #232323 0,
+                                #151515 60%);
+                        clip-path: polygon(0 0,
+                                54.8% 0,
+                                50% 100%,
+                                0 100%);
+                    }
+
+                    .ds-red {
+                        background: var(--red);
+                        clip-path: polygon(53.9% 0,
+                                55% 0,
+                                50.2% 100%,
+                                49.1% 100%);
+                    }
+
+                    .ds-yellow {
+                        background: var(--yellow);
+                        clip-path: polygon(55% 0,
+                                55.6% 0,
+                                50.7% 100%,
+                                50% 100%);
+                    }
+
+                    .ds-quote {
+                        position: absolute;
+                        top: 12%;
+                        left: 4.5%;
+                        width: 34%;
+                        padding: 0;
+                        background: none;
+                    }
+
+                    .ds-quote p {
+                        font-size: 16px;
+                    }
+
+                    .ds-photo {
+                        position: absolute;
+                        top: 50%;
+                        left: 55.3%;
+                        width: 24%;
+                        margin: 0;
+                        transform: translate(-50%, -50%);
+                    }
+
+                    .ds-details {
+                        position: absolute;
+                        top: 15%;
+                        left: 69%;
+                        width: 27%;
+                        padding: 0;
+                        text-align: left;
+                    }
+
+                    .ds-details h2 {
+                        font-size: 22px;
+                    }
+
+                    .ds-details p {
+                        font-size: 14px;
+                    }
+
+                    .ds-experience {
+                        position: absolute;
+                        right: 0;
+                        bottom: 9%;
+                        width: 35%;
+                        height: 14%;
+                        margin: 0;
+                        padding-left: 12%;
+                    }
+                }
+            </style>
 
             <div class="prose max-w-none">
 
-                <!-- Image Gallery Section -->
-                <div class="mt-6 sm:mt-8 md:mt-10 lg:mt-12 content-section">
-                    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 gallery-grid">
-                        <div class="gallery-item cursor-pointer transform transition-transform duration-300 hover:scale-105 active:scale-95"
-                            onclick="openModal('Images/AboutUs-page-Images/Img1.webp')">
-                            <div
-                                class="border-2 border-yellow-400 rounded-lg p-1 bg-yellow-50/30 hover:bg-yellow-100/50 transition-colors duration-300">
-                                <img src="Images/AboutUs-page-Images/Img1.webp" alt="Gallery Image 1" width="128"
-                                    height="128"
-                                    class="w-full h-20 sm:h-24 md:h-28 lg:h-32 object-cover rounded shadow-md hover:shadow-lg transition-shadow duration-300">
+                <!-- Image Gallery Section (Overlay Style) -->
+                <div class="mt-6 sm:mt-8 md:mt-10 lg:mt-12">
+
+                    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3">
+
+                        <!-- ITEM 1 -->
+                        <div class="gallery-card" onclick="openModal('Images/AboutUs-page-Images/Img1.webp')">
+                            <img src="Images/AboutUs-page-Images/Img1.webp" alt="ICU">
+
+                            <div class="overlay">
+                                <!-- ICON (NO BACKGROUND) -->
+                                <svg class="icon" viewBox="0 0 24 24">
+                                    <path d="M3 12h18M5 12V7h14v5M7 7V5h10v2" stroke="#ffc400" stroke-width="2"
+                                        fill="none" />
+                                </svg>
+
+                                <p>Advanced ICU</p>
                             </div>
                         </div>
-                        <div class="gallery-item cursor-pointer transform transition-transform duration-300 hover:scale-105 active:scale-95"
-                            onclick="openModal('Images/AboutUs-page-Images/img2.webp')">
-                            <div
-                                class="border-2 border-yellow-400 rounded-lg p-1 bg-yellow-50/30 hover:bg-yellow-100/50 transition-colors duration-300">
-                                <img src="Images/AboutUs-page-Images/img2.webp" alt="Gallery Image 2" width="128"
-                                    height="128"
-                                    class="w-full h-20 sm:h-24 md:h-28 lg:h-32 object-cover rounded shadow-md hover:shadow-lg transition-shadow duration-300">
+
+                        <!-- ITEM 2 -->
+                        <div class="gallery-card" onclick="openModal('Images/AboutUs-page-Images/img2.webp')">
+                            <img src="Images/AboutUs-page-Images/img2.webp" alt="OT">
+
+                            <div class="overlay">
+                                <svg class="icon" viewBox="0 0 24 24">
+                                    <circle cx="8" cy="8" r="3" stroke="#ffc400" stroke-width="2" fill="none" />
+                                    <circle cx="16" cy="8" r="3" stroke="#ffc400" stroke-width="2" fill="none" />
+                                    <path d="M4 20c1-4 15-4 16 0" stroke="#ffc400" stroke-width="2" fill="none" />
+                                </svg>
+
+                                <p>Modular OT</p>
                             </div>
                         </div>
-                        <div class="gallery-item cursor-pointer transform transition-transform duration-300 hover:scale-105 active:scale-95"
-                            onclick="openModal('Images/AboutUs-page-Images/img3.webp')">
-                            <div
-                                class="border-2 border-yellow-400 rounded-lg p-1 bg-yellow-50/30 hover:bg-yellow-100/50 transition-colors duration-300">
-                                <img src="Images/AboutUs-page-Images/img3.webp" alt="Gallery Image 3" width="128"
-                                    height="128"
-                                    class="w-full h-20 sm:h-24 md:h-28 lg:h-32 object-cover rounded shadow-md hover:shadow-lg transition-shadow duration-300">
+
+                        <!-- ITEM 3 -->
+                        <div class="gallery-card" onclick="openModal('Images/AboutUs-page-Images/img3.webp')">
+                            <img src="Images/AboutUs-page-Images/img3.webp" alt="Diagnostic">
+
+                            <div class="overlay">
+                                <svg class="icon" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="8" stroke="#ffc400" stroke-width="2" fill="none" />
+                                    <circle cx="12" cy="12" r="3" stroke="#ffc400" stroke-width="2" fill="none" />
+                                </svg>
+
+                                <p>Advanced Diagnostic</p>
                             </div>
                         </div>
-                        <div class="gallery-item cursor-pointer transform transition-transform duration-300 hover:scale-105 active:scale-95"
-                            onclick="openModal('Images/AboutUs-page-Images/img4.webp')">
-                            <div
-                                class="border-2 border-yellow-400 rounded-lg p-1 bg-yellow-50/30 hover:bg-yellow-100/50 transition-colors duration-300">
-                                <img src="Images/AboutUs-page-Images/img4.webp" alt="Gallery Image 4" width="128"
-                                    height="128"
-                                    class="w-full h-20 sm:h-24 md:h-28 lg:h-32 object-cover rounded shadow-md hover:shadow-lg transition-shadow duration-300">
+
+                        <!-- ITEM 4 -->
+                        <div class="gallery-card" onclick="openModal('Images/AboutUs-page-Images/img4.webp')">
+                            <img src="Images/AboutUs-page-Images/img4.webp" alt="Room">
+
+                            <div class="overlay">
+                                <svg class="icon" viewBox="0 0 24 24">
+                                    <path d="M3 12h18M5 12V7h14v5M7 7V5h10v2" stroke="#ffc400" stroke-width="2"
+                                        fill="none" />
+                                </svg>
+
+                                <p>Patient Rooms</p>
                             </div>
                         </div>
+
                     </div>
                 </div>
 
-                <!-- Hospital Information Section -->
-                <div class="mt-12 sm:mt-14 md:mt-16">
-                    <h3
-                        class="text-xl sm:text-2xl md:text-3xl font-bold text-red-400 mb-6 sm:mb-8 text-center content-text">
-                        Best Orthopedic Hospital in Hyderabad
-                    </h3>
+                <style>
+                    /* CARD */
+                    .gallery-card {
+                        position: relative;
+                        overflow: hidden;
+                        border-radius: 10px;
+                        cursor: pointer;
+                        height: 140px;
+                    }
 
-                    <div class="prose max-w-none text-gray-700 leading-relaxed content-text">
-                        <p class="mb-4 sm:mb-6 text-sm sm:text-base text-justify">
-                            Germanten Hospital, established by Dr. Mir Jawad Zar Khan in Hyderabad, India is a Advanced
-                            Orthopedic & multispeciality hospital with fully furnished sophisticated equipment. Dr Mir
-                            Jawad has strived hard to bring the recognition and fame it has gained today. The hospital
-                            was found with the vision and mission to offer world class orthopaedic treatment to patients
-                            suffering from severe knee, joint and spine problems.
-                        </p>
+                    .gallery-card img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        transition: transform 0.4s ease;
+                    }
 
-                        <p class="mb-4 sm:mb-6 text-sm sm:text-base text-justify">
-                            Dr. Mir Jawad Zar Khan who is the Chairman and Managing Director has gained immense
-                            recognition as a joint replacement surgeon in India & Abroad. With almost a two-decade
-                            experience, Dr.Jawad Khan is one of the top surgeons currently working in Orthopedics and
-                            Join Replacement Surgeon in Hyderabad. Having worked with world-renowned surgeons in Munich,
-                            Germany, Dr.Jawad has been an expert in Computer Navigated Hip & Joint Replacement Surgery
-                            right from his heydays in Germany.
-                        </p>
+                    /* OVERLAY */
+                    .overlay {
+                        position: absolute;
+                        inset: 0;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-end;
+                        align-items: center;
+                        padding-bottom: 12px;
 
-                        <p class="mb-4 sm:mb-6 text-sm sm:text-base text-justify">
-                            Dr.Jawad Khan is a classic success story of talent and hard work which met their due
-                            success. A brilliant student throughout his academic career, Dr.Jawad Khan has no dearth of
-                            role models in his family.Hailing from a family of respected Doctors his father Dr.
-                            Amanullah Khan was a Medical Stalwart who went on to become the Commissioner of Vaidhya
-                            Vidhana Parishad for the combined state of Andhra Pradesh and Telangana. Having finished his
-                            post graduation from Osmania University, with a gold medal for highest marks in the Andhra
-                            Pradesh State, Dr, Jawad had successfully completed the much coveted M.Ch Orthopedics from
-                            Usaim, Seychelles.USA. Following an advanced training in Joint Replacements under
-                            International experts in prestigious Lilavati and Max hospitals, he went to secure a
-                            fellowship in Arthroplasty that presented him an opportunity work in world-renowned
-                            Orthopedic Institute in Munich Germany.
-                        </p>
+                        /* DARK GRADIENT */
+                        background: linear-gradient(to top,
+                                rgba(0, 0, 0, 0.8),
+                                rgba(0, 0, 0, 0.2),
+                                transparent);
 
-                        <h4
-                            class="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-4 sm:mb-6 mt-6 sm:mt-8 content-text">
-                            Awards and Recognitions</h4>
+                        color: #fff;
+                        text-align: center;
+                    }
 
-                        <p class="mb-4 sm:mb-6 text-sm sm:text-base text-justify">
-                            Dr.Mir Jawad Zar Khan has been listed among Indias Top Orthopaedic Doctors in leading
-                            healthcare magazines in india and internationally. A devout medical researcher, Dr.Jawad has
-                            presented numerous research papers & articles in highly acclaimed journals around the world.
-                            He is currently an active member of prestigious medical associations that include:
-                        </p>
+                    /* ICON (NO BACKGROUND) */
+                    .icon {
+                        width: 28px;
+                        height: 28px;
+                        margin-bottom: 6px;
+                    }
 
-                        <ul class="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
-                            <li class="flex items-start text-sm sm:text-base">
-                                <span class="text-yellow-500 mr-2 sm:mr-3 mt-1">•</span>
-                                <span>Indo-German Orthopedic Foundation</span>
-                            </li>
-                            <li class="flex items-start text-sm sm:text-base">
-                                <span class="text-yellow-500 mr-2 sm:mr-3 mt-1">•</span>
-                                <span>Internationale De Chirurgie Orthopedic Et De Traumatologie (SICOT)</span>
-                            </li>
-                            <li class="flex items-start text-sm sm:text-base">
-                                <span class="text-yellow-500 mr-2 sm:mr-3 mt-1">•</span>
-                                <span>International Society For Orthopedic Surgery & Traumatology</span>
-                            </li>
-                            <li class="flex items-start text-sm sm:text-base">
-                                <span class="text-yellow-500 mr-2 sm:mr-3 mt-1">•</span>
-                                <span>International Cartilage Research Society International Society For Knowledge For
-                                    Surgeons On Arthroscopy & Arthroplasty</span>
-                            </li>
-                            <li class="flex items-start text-sm sm:text-base">
-                                <span class="text-yellow-500 mr-2 sm:mr-3 mt-1">•</span>
-                                <span>International Society Of Arthroscopy, Knee Surgery And Orthopedic Sports
-                                    Medicine</span>
-                            </li>
-                            <li class="flex items-start text-sm sm:text-base">
-                                <span class="text-yellow-500 mr-2 sm:mr-3 mt-1">•</span>
-                                <span>Indian Orthopedic Association</span>
-                            </li>
-                            <li class="flex items-start text-sm sm:text-base">
-                                <span class="text-yellow-500 mr-2 sm:mr-3 mt-1">•</span>
-                                <span>Orthopedic Surgeons Society Of A.P</span>
-                            </li>
-                            <li class="flex items-start text-sm sm:text-base">
-                                <span class="text-yellow-500 mr-2 sm:mr-3 mt-1">•</span>
-                                <span>Indian Medical Association (IMA)</span>
-                            </li>
-                            <li class="flex items-start text-sm sm:text-base">
-                                <span class="text-yellow-500 mr-2 sm:mr-3 mt-1">•</span>
-                                <span>Indian Arthroplasty Association</span>
-                            </li>
-                        </ul>
+                    /* TEXT */
+                    .overlay p {
+                        font-size: 14px;
+                        font-weight: 600;
+                    }
 
-                        <p class="mb-4 sm:mb-6 text-sm sm:text-base text-justify">
-                            With so many laurels to his name, Dr.Mir Jawad Zar khan has been a vehement supporter of
-                            affordable medical care for the general public. It was this strong vision that culminated in
-                            the set-up of Germanten Hospitals where he finds himself at home employing his extensive
-                            experience in diagnosing orthopedic conditions for the general public at a cost-effective
-                            price. Dr.Jawad and his team work in tandem to provide best possible medical care the
-                            fastest recovery at an affordable price. For information about our insurance partners and
-                            payment options, visit our <a href="insurance-companies-tpa-s"
-                                class="text-orange-600 hover:text-red-600 font-medium transition-colors duration-200">insurance
-                                companies page</a>.
-                        </p>
-                        <p class="mb-4 sm:mb-6 text-sm sm:text-base text-justify">
-                            Dr. jawad is recipient of many national and international awards. Due to his outstanding
-                            services in the field of joint replacement surgeries he has been felicitated by H.E Andrew
-                            Flemings,British Deputy High Commissioner, Shri.K.Rosiayyah Ex chief Minister of Andhra
-                            Pradesh and many other prominent personalities have conferred awards to him. Dr.Jawad has
-                            been listed as one of India's Top Orthopedic Doctors along with other Top Orthopaedic
-                            Doctors from all states in India in coffee table book published by medgate today magazine
-                            which was launched by shri Ashwini Kumar Choubey Minister of State for health and Family
-                            Welfare Govt.of India on 21st feb 2019 in Delhi.
-                        </p>
+                    /* HOVER EFFECT */
+                    .gallery-card:hover img {
+                        transform: scale(1.08);
+                    }
 
-                        <ul class="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
-                            <li class="flex items-start text-sm sm:text-base">
-                                <span class="text-yellow-500 mr-2 sm:mr-3 mt-1">•</span>
-                                <span>Dr. Mir Jawad Zar Khan, Chairman & Managing Director of Germanten Hospitals is
-                                    honored with "Champions Of Change Award" by the Hon'ble 14th President of India Shri
-                                    Ram Nath Kovind on 26th Feb '23 at Vignan Bhavan, New Delhi.</span>
-                            </li>
-                            <li class="flex items-start text-sm sm:text-base">
-                                <span class="text-yellow-500 mr-2 sm:mr-3 mt-1">•</span>
-                                <span>Honored with the Pride of the Nation Award 2024 on December 21, 2024, presented by
-                                    Shri Jishnu Dev Varma, Honourable Governor of Telangana.</span>
-                            </li>
-                            <li class="flex items-start text-sm sm:text-base">
-                                <span class="text-yellow-500 mr-2 sm:mr-3 mt-1">•</span>
-                                <span>Insights Success Magazine Features Germanten Hospital As India's Most Trusted
-                                    Orthopedic Treatment Centers-2022.</span>
-                            </li>
-                            <li class="flex items-start text-sm sm:text-base">
-                                <span class="text-yellow-500 mr-2 sm:mr-3 mt-1">•</span>
-                                <span>Times all India Orthopedic Hospital Ranking Survey -2022, Germanten Hospitals
-                                    secure a position among the Top 20 orthopedic hospitals in India, the Top 10 in
-                                    South India & Top 3 in Hyderabad.</span>
-                            </li>
-                            <li class="flex items-start text-sm sm:text-base">
-                                <span class="text-yellow-500 mr-2 sm:mr-3 mt-1">•</span>
-                                <span>Dr. Mir Jawad Zar Khan, Senior Orthopaedic Surgeon and Chairman of Germanten
-                                    Hospitals Hyderabad received Times of India Award of "Iconic Joint Replacement
-                                    Surgeon Of Telangana" by the State Hon'ble Governor Dr. Tamilisai Soundarajan on 6th
-                                    Dec 2022.</span>
-                            </li>
-                        </ul>
+                    .gallery-card:hover .overlay {
+                        background: linear-gradient(to top,
+                                rgba(0, 0, 0, 0.9),
+                                rgba(0, 0, 0, 0.3),
+                                transparent);
+                    }
+
+                    /* RESPONSIVE */
+                    @media (min-width: 768px) {
+                        .gallery-card {
+                            height: 180px;
+                        }
+                    }
+                </style>
+
+                <!-- ===== GERMANTEN HOSPITAL ABOUT SECTION ===== -->
+                <section class="gh-about-section" aria-label="About Germanten Hospital">
+
+                    <div class="gh-about-shell">
+
+                        <!-- Tab Buttons -->
+                        <div class="gh-tabs-nav" role="tablist" aria-label="Hospital information tabs">
+
+                            <button id="tabBtnHospital" class="gh-tab-btn tab-btn active" type="button" role="tab"
+                                aria-selected="true" aria-controls="tabContentHospital"
+                                data-target="tabContentHospital">
+                                <svg class="gh-tab-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path
+                                        d="M4 21V5.5A1.5 1.5 0 0 1 5.5 4H10v17M14 21V3.5A1.5 1.5 0 0 1 15.5 2h3A1.5 1.5 0 0 1 20 3.5V21M2 21h20M6.5 8h1M6.5 11h1M6.5 14h1M16.5 6h1M16.5 9h1M16.5 12h1M12 10h4M12 14h4"
+                                        fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+
+                                <span>Best Orthopedic Hospital</span>
+                            </button>
+
+                            <button id="tabBtnAwards" class="gh-tab-btn tab-btn" type="button" role="tab"
+                                aria-selected="false" aria-controls="tabContentAwards" data-target="tabContentAwards"
+                                tabindex="-1">
+                                <svg class="gh-tab-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path
+                                        d="M8 4h8v3a4 4 0 0 1-8 0V4ZM12 11v5M8.5 21h7M10 16h4M8 5H4v2a4 4 0 0 0 4 4M16 5h4v2a4 4 0 0 1-4 4"
+                                        fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+
+                                <span>Awards &amp; Recognitions</span>
+                            </button>
+
+                        </div>
+
+                        <!-- ================================================= -->
+                        <!-- TAB 1: BEST ORTHOPEDIC HOSPITAL -->
+                        <!-- ================================================= -->
+
+                        <div id="tabContentHospital" class="gh-tab-panel tab-content active" role="tabpanel"
+                            aria-labelledby="tabBtnHospital">
+                            <div class="gh-hospital-layout">
+
+                                <!-- Left Content -->
+                                <div class="gh-content-column">
+
+                                    <div class="gh-content-body">
+
+                                        <h2 class="gh-section-title">
+                                            About Germanten Hospital
+                                        </h2>
+
+                                        <div class="gh-title-line"></div>
+
+                                        <p>
+                                            Germanten Hospital, established by Dr. Mir Jawad Zar Khan in
+                                            Hyderabad, India is an Advanced Orthopedic &amp; multispeciality
+                                            hospital with fully furnished sophisticated equipment. Dr. Mir
+                                            Jawad has strived hard to bring the recognition and fame it has
+                                            gained today. The hospital was founded with the vision and mission
+                                            to offer world-class orthopaedic treatment to patients suffering
+                                            from severe knee, joint and spine problems.
+                                        </p>
+
+                                        <p>
+                                            Dr. Mir Jawad Zar Khan, who is the Chairman and Managing Director,
+                                            has gained immense recognition as a joint replacement surgeon in
+                                            India and abroad. With almost two decades of experience, Dr. Jawad
+                                            Khan is one of the top surgeons currently working in Orthopedics
+                                            and Joint Replacement Surgery in Hyderabad. Having worked with
+                                            world-renowned surgeons in Munich, Germany, Dr. Jawad has been an
+                                            expert in Computer Navigated Hip &amp; Joint Replacement Surgery
+                                            since his time in Germany.
+                                        </p>
+
+                                        <p>
+                                            Dr. Jawad Khan is a classic success story of talent and hard work.
+                                            A brilliant student throughout his academic career, Dr. Jawad Khan
+                                            has no dearth of role models in his family. Hailing from a family
+                                            of respected doctors, his father Dr. Amanullah Khan was a medical
+                                            stalwart who went on to become the Commissioner of Vaidhya Vidhana
+                                            Parishad for the combined state of Andhra Pradesh and Telangana.
+                                            Having finished his post graduation from Osmania University with
+                                            a gold medal for the highest marks in Andhra Pradesh State,
+                                            Dr. Jawad successfully completed the much-coveted M.Ch Orthopedics
+                                            from USAIM, Seychelles, USA. Following advanced training in Joint
+                                            Replacements under international experts in prestigious Lilavati
+                                            and Max Hospitals, he secured a fellowship in Arthroplasty that
+                                            presented him with an opportunity to work in a world-renowned
+                                            Orthopedic Institute in Munich, Germany.
+                                        </p>
+
+                                    </div>
+
+                                    <!-- Insurance Bar -->
+                                    <div class="gh-insurance-bar">
+
+                                        <div class="gh-insurance-icon" aria-hidden="true">
+                                            <svg viewBox="0 0 24 24">
+                                                <path d="M12 3 19 6v5c0 4.6-2.8 8-7 10-4.2-2-7-5.4-7-10V6l7-3Z"
+                                                    fill="none" stroke="currentColor" stroke-width="1.8"
+                                                    stroke-linejoin="round" />
+
+                                                <path d="m9 12 2 2 4-5" fill="none" stroke="currentColor"
+                                                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+
+                                        <p>
+                                            For information about our insurance partners and payment
+                                            options, visit our
+                                            <a href="insurance-companies-tpa-s">
+                                                insurance companies page.
+                                            </a>
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                                <!-- Right Hospital Image -->
+                                <figure class="gh-image-panel">
+
+                                    <img src="Images/AboutUs-page-Images/GermantenHospitalBuilding.webp"
+                                        alt="Germanten Hospital building" />
+
+                                </figure>
+
+                            </div>
+                        </div>
+
+                        <!-- ================================================= -->
+                        <!-- TAB 2: AWARDS AND RECOGNITIONS -->
+                        <!-- ================================================= -->
+
+                        <div id="tabContentAwards" class="gh-tab-panel tab-content" role="tabpanel"
+                            aria-labelledby="tabBtnAwards" hidden>
+
+                            <!-- Awards Introduction -->
+                            <div class="gh-awards-hero">
+
+                                <div class="gh-awards-intro">
+
+
+                                    <div class="gh-title-line"></div>
+
+                                    <div class="gh-awards-intro-text">
+
+                                        <p>
+                                            Dr. Mir Jawad Zar Khan has been listed among India's Top
+                                            Orthopaedic Doctors in leading healthcare magazines in India
+                                            and internationally. A devout medical researcher, Dr. Jawad
+                                            has presented numerous research papers and articles in highly
+                                            acclaimed journals around the world.
+                                        </p>
+
+                                        <p>
+                                            With many laurels to his name, Dr. Mir Jawad Zar Khan has been
+                                            a strong supporter of affordable medical care for the general
+                                            public. This vision culminated in the establishment of Germanten
+                                            Hospitals, where he employs his extensive experience in
+                                            diagnosing and treating orthopedic conditions at cost-effective
+                                            prices.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- Awards Details -->
+                            <div class="gh-awards-details">
+
+                                <!-- Professional Memberships -->
+                                <section class="gh-awards-section">
+
+                                    <h3 class="gh-subheading">
+                                        Professional Memberships
+                                    </h3>
+
+                                    <ul class="gh-membership-grid">
+
+                                        <li>
+                                            Indo-German Orthopedic Foundation
+                                        </li>
+
+                                        <li>
+                                            Internationale De Chirurgie Orthopedic Et De Traumatologie
+                                            (SICOT)
+                                        </li>
+
+                                        <li>
+                                            International Society For Orthopedic Surgery &amp;
+                                            Traumatology
+                                        </li>
+
+                                        <li>
+                                            International Cartilage Research Society and International
+                                            Society For Knowledge For Surgeons On Arthroscopy &amp;
+                                            Arthroplasty
+                                        </li>
+
+                                        <li>
+                                            International Society Of Arthroscopy, Knee Surgery And
+                                            Orthopedic Sports Medicine
+                                        </li>
+
+                                        <li>
+                                            Indian Orthopedic Association
+                                        </li>
+
+                                        <li>
+                                            Orthopedic Surgeons Society Of A.P
+                                        </li>
+
+                                        <li>
+                                            Indian Medical Association (IMA)
+                                        </li>
+
+                                        <li>
+                                            Indian Arthroplasty Association
+                                        </li>
+
+                                    </ul>
+
+                                </section>
+
+                                <!-- Recognition -->
+                                <section class="gh-awards-section">
+
+                                    <h3 class="gh-subheading">
+                                        National and International Recognition
+                                    </h3>
+
+                                    <div class="gh-recognition-description">
+
+                                        <p>
+                                            Dr. Jawad is the recipient of many national and international
+                                            awards. Due to his outstanding services in the field of joint
+                                            replacement surgeries, he has been felicitated by H.E. Andrew
+                                            Fleming, British Deputy High Commissioner, Shri K. Rosaiah,
+                                            former Chief Minister of Andhra Pradesh, and several other
+                                            prominent personalities.
+                                        </p>
+
+                                        <p>
+                                            Dr. Jawad has been listed as one of India's Top Orthopedic
+                                            Doctors in a coffee table book published by Medgate Today
+                                            magazine. The book was launched by Shri Ashwini Kumar Choubey,
+                                            Minister of State for Health and Family Welfare, Government of
+                                            India, on 21 February 2019 in Delhi.
+                                        </p>
+
+                                    </div>
+
+                                    <!-- Recognition Points: Two Columns -->
+                                    <ul class="gh-awards-list">
+
+                                        <li>
+                                            <span class="gh-award-marker">01</span>
+
+                                            <span>
+                                                Dr. Mir Jawad Zar Khan, Chairman &amp; Managing Director
+                                                of Germanten Hospitals, was honored with the
+                                                “Champions Of Change Award” by the Hon'ble 14th President
+                                                of India, Shri Ram Nath Kovind, on 26 February 2023 at
+                                                Vigyan Bhavan, New Delhi.
+                                            </span>
+                                        </li>
+
+                                        <li>
+                                            <span class="gh-award-marker">02</span>
+
+                                            <span>
+                                                Honored with the Pride of the Nation Award 2024 on
+                                                December 21, 2024, presented by Shri Jishnu Dev Varma,
+                                                Honourable Governor of Telangana.
+                                            </span>
+                                        </li>
+
+                                        <li>
+                                            <span class="gh-award-marker">03</span>
+
+                                            <span>
+                                                Insights Success Magazine featured Germanten Hospital as
+                                                one of India's Most Trusted Orthopedic Treatment Centers
+                                                in 2022.
+                                            </span>
+                                        </li>
+
+                                        <li>
+                                            <span class="gh-award-marker">04</span>
+
+                                            <span>
+                                                In the Times All India Orthopedic Hospital Ranking Survey
+                                                2022, Germanten Hospitals secured a position among the
+                                                Top 20 orthopedic hospitals in India, Top 10 in South
+                                                India, and Top 3 in Hyderabad.
+                                            </span>
+                                        </li>
+
+                                        <li>
+                                            <span class="gh-award-marker">05</span>
+
+                                            <span>
+                                                Dr. Mir Jawad Zar Khan received the Times of India award
+                                                for “Iconic Joint Replacement Surgeon Of Telangana” from
+                                                the Hon'ble Governor, Dr. Tamilisai Soundararajan, on
+                                                6 December 2022.
+                                            </span>
+                                        </li>
+
+                                    </ul>
+
+                                </section>
+
+                                <!-- Awards Insurance Bar -->
+                                <div class="gh-insurance-bar gh-insurance-bar-full">
+
+                                    <div class="gh-insurance-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24">
+                                            <path d="M12 3 19 6v5c0 4.6-2.8 8-7 10-4.2-2-7-5.4-7-10V6l7-3Z" fill="none"
+                                                stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+
+                                            <path d="m9 12 2 2 4-5" fill="none" stroke="currentColor" stroke-width="1.8"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+
+                                    <p>
+                                        For information about our insurance partners and payment
+                                        options, visit our
+                                        <a href="insurance-companies-tpa-s">
+                                            insurance companies page.
+                                        </a>
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
                     </div>
-                </div>
+
+                </section>
+
+                <style>
+                    /* =========================================================
+       SECTION VARIABLES AND RESET
+    ========================================================= */
+
+                    .gh-about-section {
+                        --gh-red: #e3222a;
+                        --gh-dark-red: #aa1d20;
+                        --gh-yellow: #ffc400;
+                        --gh-light-yellow: #fff3b4;
+                        --gh-text: #202938;
+                        --gh-muted: #586273;
+                        --gh-border: #e5e7eb;
+                        --gh-white: #ffffff;
+
+                        width: 100%;
+                        margin: 48px 0 0;
+                        padding: 0;
+                        color: var(--gh-text);
+                        font-family: inherit;
+                    }
+
+                    .gh-about-section,
+                    .gh-about-section * {
+                        box-sizing: border-box;
+                    }
+
+                    .gh-about-section h2,
+                    .gh-about-section h3,
+                    .gh-about-section p,
+                    .gh-about-section ul,
+                    .gh-about-section figure {
+                        margin-top: 0;
+                    }
+
+                    /* =========================================================
+       MAIN CONTAINER
+    ========================================================= */
+
+                    .gh-about-shell {
+                        width: 100%;
+                        overflow: hidden;
+                        background: var(--gh-white);
+                        border: 1px solid var(--gh-border);
+                        border-radius: 12px;
+                        box-shadow: 0 12px 38px rgba(15, 23, 42, 0.09);
+                    }
+
+                    /* =========================================================
+   RECTANGULAR TAB BUTTONS
+========================================================= */
+
+                    .gh-tabs-nav {
+                        position: relative;
+                        z-index: 20;
+                        display: flex;
+                        flex-wrap: wrap;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 18px;
+                        width: 100%;
+                        padding: 18px 20px 14px;
+                        background: #ffffff;
+                    }
+
+                    .gh-tab-btn {
+                        position: relative;
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 10px;
+
+                        min-width: 280px;
+                        min-height: 56px;
+                        margin: 0;
+                        padding: 13px 28px;
+
+                        /* White background and black text */
+                        background: #ffffff;
+                        color: #111111;
+
+                        font-family: inherit;
+                        font-size: 16px;
+                        font-weight: 700;
+                        line-height: 1.2;
+                        text-align: center;
+
+                        outline: none;
+                        cursor: pointer;
+                        appearance: none;
+                        border: none;
+                        box-shadow: none;
+                        transition: none;
+                    }
+
+                    .gh-tab-btn::after,
+                    .gh-tab-btn.active::after,
+                    .gh-tab-btn.is-active::after,
+                    .gh-tab-btn[aria-selected="true"]::after {
+                        display: none;
+                    }
+
+                    /* Keep white background and black text on hover */
+                    .gh-tab-btn:hover {
+                        background: #ffffff;
+                        color: #111111;
+                    }
+
+                    /* Active button */
+                    .gh-tab-btn.active,
+                    .gh-tab-btn.is-active,
+                    .gh-tab-btn[aria-selected="true"] {
+                        background: #ffffff;
+                        color: #111111;
+                        border: none;
+                        box-shadow: none;
+                    }
+
+                    /* Active button hover */
+                    .gh-tab-btn.active:hover,
+                    .gh-tab-btn.is-active:hover,
+                    .gh-tab-btn[aria-selected="true"]:hover {
+                        background: #ffffff;
+                        color: #111111;
+                        border: none;
+                        box-shadow: none;
+                    }
+
+                    /* Keyboard focus */
+                    .gh-tab-btn:focus-visible {
+                        background: #ffffff;
+                        color: #111111;
+                        outline: 3px solid rgba(255, 196, 0, 0.75);
+                        outline-offset: 1px;
+                    }
+
+                    /* Red icons */
+                    .gh-tab-icon {
+                        flex: 0 0 auto;
+                        width: 25px;
+                        height: 25px;
+                        color: #1e0001;
+                    }
+
+                    /* Mobile */
+                    @media (max-width: 720px) {
+                        .gh-tabs-nav {
+                            gap: 12px;
+                            padding: 16px;
+                        }
+
+                        .gh-tab-btn {
+                            width: 100%;
+                            min-width: 0;
+                            min-height: 52px;
+                            padding: 12px 18px;
+                            font-size: 14px;
+                        }
+
+                        .gh-tab-icon {
+                            width: 22px;
+                            height: 22px;
+                        }
+                    }
+
+                    /* =========================================================
+       TAB PANELS
+    ========================================================= */
+
+                    .gh-tab-panel {
+                        display: none !important;
+                        width: 100%;
+                    }
+
+                    .gh-tab-panel.active {
+                        display: block !important;
+                        animation: ghTabFade 0.35s ease;
+                    }
+
+                    .gh-tab-panel[hidden] {
+                        display: none !important;
+                    }
+
+                    @keyframes ghTabFade {
+                        from {
+                            opacity: 0;
+                            transform: translateY(5px);
+                        }
+
+                        to {
+                            opacity: 1;
+                            transform: translateY(0);
+                        }
+                    }
+
+                    /* =========================================================
+       FIRST TAB: HOSPITAL CONTENT
+    ========================================================= */
+
+                    .gh-hospital-layout {
+                        display: grid;
+                        grid-template-columns: minmax(0, 58%) minmax(340px, 42%);
+                        width: 100%;
+                        min-height: 620px;
+                        overflow: hidden;
+                        background: var(--gh-white);
+                        border-top: 1px solid #f1f1f1;
+                    }
+
+                    .gh-content-column {
+                        position: relative;
+                        z-index: 2;
+                        display: flex;
+                        flex-direction: column;
+                        min-width: 0;
+                        padding: 30px 78px 0 30px;
+                        background: var(--gh-white);
+                    }
+
+                    .gh-content-body {
+                        width: 100%;
+                        max-width: 820px;
+                    }
+
+                    .gh-section-title {
+                        margin-bottom: 10px;
+                        color: #161b22;
+                        font-size: clamp(26px, 2.1vw, 34px);
+                        font-weight: 700;
+                        line-height: 1.18;
+                        letter-spacing: -0.02em;
+                    }
+
+                    .gh-title-line {
+                        width: 40px;
+                        height: 3px;
+                        margin: 0 0 24px;
+                        background: var(--gh-yellow);
+                        border-radius: 4px;
+                    }
+
+                    .gh-content-body p,
+                    .gh-awards-intro p,
+                    .gh-awards-section p {
+                        margin-bottom: 18px;
+                        color: var(--gh-text);
+                        font-size: 15px;
+                        font-weight: 400;
+                        line-height: 1.68;
+                        text-align: justify;
+                    }
+
+                    /* =========================================================
+       HOSPITAL IMAGE AREA
+    ========================================================= */
+
+                    .gh-image-panel {
+                        position: relative;
+                        z-index: 4;
+                        min-width: 0;
+                        min-height: 100%;
+                        margin: 0;
+                        overflow: hidden;
+                        isolation: isolate;
+                        background: #ffffff;
+                    }
+
+                    .gh-image-panel img {
+                        position: absolute;
+                        z-index: 1;
+                        inset: 0;
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: center;
+                        clip-path: polygon(20% 0,
+                                100% 0,
+                                100% 100%,
+                                0 100%);
+                    }
+
+                    /* Red diagonal line */
+                    .gh-image-panel::before {
+                        position: absolute;
+                        z-index: 3;
+                        inset: 0 auto 0 0;
+                        width: 22%;
+                        content: "";
+                        background: var(--gh-red);
+                        clip-path: polygon(76% 0,
+                                91% 0,
+                                15% 100%,
+                                0 100%);
+                        pointer-events: none;
+                    }
+
+                    /* Yellow diagonal line */
+                    .gh-image-panel::after {
+                        position: absolute;
+                        z-index: 4;
+                        inset: 0 auto 0 0;
+                        width: 22%;
+                        content: "";
+                        background: var(--gh-yellow);
+                        clip-path: polygon(91% 0,
+                                100% 0,
+                                24% 100%,
+                                15% 100%);
+                        pointer-events: none;
+                    }
+
+                    /* =========================================================
+       INSURANCE BAR
+    ========================================================= */
+
+                    .gh-insurance-bar {
+                        position: relative;
+                        z-index: 2;
+                        display: flex;
+                        align-items: center;
+                        gap: 14px;
+                        width: calc(100% + 108px);
+                        min-height: 72px;
+                        margin-top: auto;
+                        margin-left: -30px;
+                        padding: 14px 95px 14px 30px;
+                        background: #f0e9c6;
+                    }
+
+                    .gh-insurance-icon {
+                        display: flex;
+                        flex: 0 0 auto;
+                        align-items: center;
+                        justify-content: center;
+                        width: 30px;
+                        height: 30px;
+                        color: #252525;
+                    }
+
+                    .gh-insurance-icon svg {
+                        width: 25px;
+                        height: 25px;
+                    }
+
+                    .gh-insurance-bar p {
+                        margin: 0;
+                        color: #30343a;
+                        font-size: 14px;
+                        font-weight: 500;
+                        line-height: 1.45;
+                    }
+
+                    .gh-insurance-bar a {
+                        color: var(--gh-red);
+                        font-weight: 700;
+                        text-decoration: none;
+                        transition: color 0.2s ease;
+                    }
+
+                    .gh-insurance-bar a:hover {
+                        color: var(--gh-dark-red);
+                        text-decoration: underline;
+                    }
+
+                    /* =========================================================
+       SECOND TAB: AWARDS INTRODUCTION
+    ========================================================= */
+
+                    .gh-awards-hero {
+                        display: block;
+                        width: 100%;
+                        min-height: 0;
+                        overflow: hidden;
+                        background:
+                            linear-gradient(135deg,
+                                rgba(255, 196, 0, 0.06),
+                                rgba(227, 34, 42, 0.025)),
+                            var(--gh-white);
+                        border-top: 1px solid #f1f1f1;
+                        border-bottom: 1px solid #f0f1f3;
+                    }
+
+                    .gh-awards-intro {
+                        width: 100%;
+                        padding: 32px 30px 26px;
+                    }
+
+                    .gh-awards-intro-text {
+                        display: grid;
+                        grid-template-columns: repeat(2, minmax(0, 1fr));
+                        gap: 24px;
+                        width: 100%;
+                    }
+
+                    .gh-awards-intro-text p {
+                        margin-bottom: 0;
+                        padding: 18px 20px;
+                        background: rgba(255, 255, 255, 0.88);
+                        border: 1px solid #eceef1;
+                        border-radius: 10px;
+                        box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+                    }
+
+                    /* =========================================================
+       SECOND TAB: AWARDS DETAILS
+    ========================================================= */
+
+                    .gh-awards-details {
+                        padding: 30px;
+                        background: #ffffff;
+                    }
+
+                    .gh-awards-section+.gh-awards-section {
+                        margin-top: 36px;
+                    }
+
+                    .gh-subheading {
+                        position: relative;
+                        margin-bottom: 20px;
+                        padding-left: 15px;
+                        color: #191d25;
+                        font-size: 22px;
+                        font-weight: 700;
+                        line-height: 1.3;
+                    }
+
+                    .gh-subheading::before {
+                        position: absolute;
+                        top: 2px;
+                        bottom: 2px;
+                        left: 0;
+                        width: 4px;
+                        content: "";
+                        background: var(--gh-red);
+                        border-radius: 4px;
+                    }
+
+                    /* =========================================================
+       PROFESSIONAL MEMBERSHIPS: TWO COLUMNS
+    ========================================================= */
+
+                    .gh-membership-grid {
+                        display: grid;
+                        grid-template-columns: repeat(2, minmax(0, 1fr));
+                        align-items: stretch;
+                        gap: 14px 20px;
+                        margin: 0;
+                        padding: 0;
+                        list-style: none;
+                    }
+
+                    .gh-membership-grid li {
+                        position: relative;
+                        min-height: 56px;
+                        height: 100%;
+                        margin: 0;
+                        padding: 15px 16px 15px 48px;
+                        color: #313946;
+                        font-size: 14px;
+                        line-height: 1.5;
+                        background: #ffffff;
+                        border: 1px solid #eceef1;
+                        border-radius: 8px;
+                        box-shadow: 0 3px 10px rgba(15, 23, 42, 0.05);
+                    }
+
+                    .gh-membership-grid li::before {
+                        position: absolute;
+                        top: 16px;
+                        left: 16px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 22px;
+                        height: 22px;
+                        content: "✓";
+                        color: #252525;
+                        font-size: 12px;
+                        font-weight: 800;
+                        background: var(--gh-yellow);
+                        border-radius: 50%;
+                    }
+
+                    /* =========================================================
+       RECOGNITION DESCRIPTION
+    ========================================================= */
+
+                    .gh-recognition-description {
+                        display: grid;
+                        grid-template-columns: repeat(2, minmax(0, 1fr));
+                        gap: 24px;
+                        margin-bottom: 22px;
+                    }
+
+                    .gh-recognition-description p {
+                        margin-bottom: 0;
+                    }
+
+                    /* =========================================================
+       RECOGNITION POINTS: TWO COLUMNS
+    ========================================================= */
+
+                    .gh-awards-list {
+                        display: grid;
+                        grid-template-columns: repeat(2, minmax(0, 1fr));
+                        align-items: stretch;
+                        gap: 16px;
+                        margin: 0;
+                        padding: 0;
+                        list-style: none;
+                    }
+
+                    .gh-awards-list li {
+                        display: grid;
+                        grid-template-columns: 42px minmax(0, 1fr);
+                        align-items: start;
+                        gap: 14px;
+                        height: 100%;
+                        margin: 0;
+                        padding: 17px 18px;
+                        color: #313946;
+                        font-size: 14px;
+                        line-height: 1.55;
+                        background: #ffffff;
+                        border: 1px solid #eceef1;
+                        border-left: 4px solid var(--gh-red);
+                        border-radius: 8px;
+                        box-shadow: 0 3px 10px rgba(15, 23, 42, 0.06);
+                    }
+
+                    .gh-award-marker {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 38px;
+                        height: 38px;
+                        color: #252525;
+                        font-size: 12px;
+                        font-weight: 800;
+                        background: var(--gh-yellow);
+                        border-radius: 50%;
+                    }
+
+                    /* Make the last odd point use the full row */
+                    .gh-awards-list li:last-child:nth-child(odd) {
+                        grid-column: 1 / -1;
+                    }
+
+                    .gh-insurance-bar-full {
+                        width: 100%;
+                        margin: 30px 0 0;
+                        padding: 15px 22px;
+                        border-radius: 8px;
+                    }
+
+                    /* =========================================================
+       TABLET
+    ========================================================= */
+
+                    @media (max-width: 900px) {
+                        .gh-about-section {
+                            margin-top: 36px;
+                        }
+
+                        .gh-hospital-layout {
+                            grid-template-columns: 1fr;
+                            min-height: 0;
+                        }
+
+                        .gh-content-column {
+                            padding: 28px 22px 0;
+                        }
+
+                        .gh-image-panel {
+                            min-height: 340px;
+                        }
+
+                        .gh-image-panel img {
+                            clip-path: none;
+                        }
+
+                        /* Horizontal red line on tablet and mobile */
+                        .gh-image-panel::before {
+                            inset: 0 0 auto;
+                            width: 100%;
+                            height: 7px;
+                            background: var(--gh-red);
+                            clip-path: none;
+                        }
+
+                        /* Horizontal yellow line on tablet and mobile */
+                        .gh-image-panel::after {
+                            inset: 7px 0 auto;
+                            width: 100%;
+                            height: 4px;
+                            background: var(--gh-yellow);
+                            clip-path: none;
+                        }
+
+                        .gh-insurance-bar {
+                            width: calc(100% + 44px);
+                            margin-top: 20px;
+                            margin-left: -22px;
+                            padding: 15px 22px;
+                        }
+
+                        .gh-awards-intro,
+                        .gh-awards-details {
+                            padding-right: 22px;
+                            padding-left: 22px;
+                        }
+
+                        .gh-awards-intro-text,
+                        .gh-recognition-description {
+                            gap: 16px;
+                        }
+
+                        .gh-membership-grid,
+                        .gh-awards-list {
+                            gap: 14px;
+                        }
+                    }
+
+                    /* =========================================================
+       MOBILE
+    ========================================================= */
+
+                    @media (max-width: 680px) {
+                        .gh-about-shell {
+                            border-radius: 8px;
+                        }
+
+                        .gh-tabs-nav {
+                            gap: 12px;
+                            padding: 16px;
+                        }
+
+                        .gh-tab-btn {
+                            width: 100%;
+                            min-width: 0;
+                            min-height: 52px;
+                            padding: 12px 18px;
+                            font-size: 14px;
+                        }
+
+                        .gh-tab-icon {
+                            width: 22px;
+                            height: 22px;
+                        }
+
+                        .gh-section-title {
+                            font-size: 25px;
+                        }
+
+                        .gh-title-line {
+                            margin-bottom: 20px;
+                        }
+
+                        .gh-content-body p,
+                        .gh-awards-intro p,
+                        .gh-awards-section p {
+                            font-size: 14px;
+                            line-height: 1.65;
+                        }
+
+                        .gh-awards-intro {
+                            padding-top: 26px;
+                            padding-bottom: 22px;
+                        }
+
+                        /* Change all two-column content to one column on mobile */
+                        .gh-awards-intro-text,
+                        .gh-membership-grid,
+                        .gh-recognition-description,
+                        .gh-awards-list {
+                            grid-template-columns: 1fr;
+                        }
+
+                        .gh-awards-list li:last-child:nth-child(odd) {
+                            grid-column: auto;
+                        }
+
+                        .gh-awards-list li {
+                            grid-template-columns: 36px minmax(0, 1fr);
+                            gap: 12px;
+                            padding: 14px;
+                        }
+
+                        .gh-award-marker {
+                            width: 34px;
+                            height: 34px;
+                            font-size: 11px;
+                        }
+
+                        .gh-image-panel {
+                            min-height: 280px;
+                        }
+
+                        .gh-insurance-bar {
+                            align-items: flex-start;
+                        }
+
+                        .gh-insurance-bar p {
+                            font-size: 13px;
+                        }
+
+                        .gh-subheading {
+                            font-size: 19px;
+                        }
+                    }
+
+                    @media (prefers-reduced-motion: reduce) {
+
+                        .gh-tab-btn,
+                        .gh-tab-panel {
+                            transition: none;
+                            animation: none;
+                        }
+                    }
+                </style>
+
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        const aboutSection = document.querySelector(".gh-about-section");
+
+                        if (!aboutSection) {
+                            return;
+                        }
+
+                        const tabButtons = Array.from(
+                            aboutSection.querySelectorAll(".gh-tab-btn")
+                        );
+
+                        const tabPanels = Array.from(
+                            aboutSection.querySelectorAll(".gh-tab-panel")
+                        );
+
+                        function activateTab(selectedButton) {
+                            const targetId = selectedButton.getAttribute("data-target");
+                            const targetPanel = document.getElementById(targetId);
+
+                            if (!targetPanel) {
+                                return;
+                            }
+
+                            tabButtons.forEach(function (button) {
+                                const isSelected = button === selectedButton;
+
+                                button.classList.toggle("active", isSelected);
+
+                                button.setAttribute(
+                                    "aria-selected",
+                                    isSelected ? "true" : "false"
+                                );
+
+                                button.setAttribute(
+                                    "tabindex",
+                                    isSelected ? "0" : "-1"
+                                );
+                            });
+
+                            tabPanels.forEach(function (panel) {
+                                const isSelected = panel === targetPanel;
+
+                                panel.classList.toggle("active", isSelected);
+                                panel.hidden = !isSelected;
+                            });
+                        }
+
+                        tabButtons.forEach(function (button, buttonIndex) {
+                            button.addEventListener("click", function () {
+                                activateTab(button);
+                            });
+
+                            button.addEventListener("keydown", function (event) {
+                                let nextIndex = buttonIndex;
+
+                                if (event.key === "ArrowRight") {
+                                    nextIndex = (buttonIndex + 1) % tabButtons.length;
+                                } else if (event.key === "ArrowLeft") {
+                                    nextIndex =
+                                        (buttonIndex - 1 + tabButtons.length) %
+                                        tabButtons.length;
+                                } else if (event.key === "Home") {
+                                    nextIndex = 0;
+                                } else if (event.key === "End") {
+                                    nextIndex = tabButtons.length - 1;
+                                } else {
+                                    return;
+                                }
+
+                                event.preventDefault();
+
+                                tabButtons[nextIndex].focus();
+                                activateTab(tabButtons[nextIndex]);
+                            });
+                        });
+                    });
+                </script>
+                <!-- ===== END GERMANTEN HOSPITAL ABOUT SECTION ===== -->
 
                 <!-- Vision Mission Values Parallax Section -->
                 <section
@@ -836,7 +3045,7 @@
 
                     <!-- Parallax Background -->
                     <div class="absolute inset-0 bg-fixed bg-center bg-cover"
-                        style="background-image: url('Images/AboutUs-page-Images/hospitalimage.jpg');">
+                        style="background-image: url('Images/AboutUs-page-Images/hospitalimage.webp');">
                     </div>
 
                     <!-- Dark Overlay -->
@@ -857,7 +3066,8 @@
                                         class="fas fa-eye text-xl sm:text-2xl md:text-3xl lg:text-4xl text-yellow-400 mb-2 sm:mb-3 md:mb-4"></i>
                                     <h3
                                         class="vision-title text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 text-white">
-                                        Vision</h3>
+                                        Vision
+                                    </h3>
                                     <p class="vision-text text-white text-xs sm:text-sm md:text-base text-justify">
                                         Our vision is to be a renowned provider of medical care by leveraging
                                         exceptional services in Orthopedics.
@@ -871,7 +3081,8 @@
                                         class="fas fa-bullseye text-xl sm:text-2xl md:text-3xl lg:text-4xl text-yellow-400 mb-2 sm:mb-3 md:mb-4"></i>
                                     <h3
                                         class="vision-title text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 text-white">
-                                        Our Mission</h3>
+                                        Our Mission
+                                    </h3>
                                     <p class="vision-text text-white text-xs sm:text-sm md:text-base text-justify">
                                         To be a global provider in joint replacement & orthopedic services by delivering
                                         quality healthcare at an affordable price.
@@ -885,7 +3096,8 @@
                                         class="fas fa-heart text-xl sm:text-2xl md:text-3xl lg:text-4xl text-yellow-400 mb-2 sm:mb-3 md:mb-4"></i>
                                     <h3
                                         class="vision-title text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 text-white">
-                                        Our Values</h3>
+                                        Our Values
+                                    </h3>
                                     <p class="vision-text text-white text-xs sm:text-sm md:text-base text-justify">
                                         We strive to meet patient expectations by maintaining the highest standards of
                                         service and medical ethics.
@@ -900,176 +3112,6 @@
 
                 <!-- FAQ Section -->
                 <div class="mt-10 sm:mt-12 md:mt-14 lg:mt-16">
-
-                    <style>
-                        /* ── FAQ WRAPPER ── */
-                        .faq-section-title {
-                            font-family: 'Playfair Display', Georgia, serif;
-                            font-size: clamp(1.5rem, 3vw, 2rem);
-                            font-weight: 600;
-                            color: #1a1a1a;
-                            text-align: center;
-                            margin-bottom: 2.5rem;
-                        }
-
-                        /* ── FAQ ACCORDION LAYOUT ── */
-                        .faq-page__accordion {
-                            display: flex;
-                            flex-wrap: wrap;
-                            margin: -10px;
-                        }
-
-                        .faq-accordion {
-                            display: flex;
-                            flex-wrap: wrap;
-                            width: 100%;
-                        }
-
-                        .faq-accordion .col-lg-6 {
-                            width: 50%;
-                            padding: 10px;
-                        }
-
-                        @media (max-width: 768px) {
-                            .faq-accordion .col-lg-6 {
-                                width: 100%;
-                            }
-                        }
-
-                        /* ── EACH CARD ── */
-                        .faq-card {
-                            background: #fff;
-                            border: 1.5px solid #e5e7eb;
-                            border-radius: 10px;
-                            overflow: hidden;
-                            transition: border-color .25s ease, box-shadow .25s ease;
-                            display: flex;
-                            flex-direction: column;
-                            min-height: fit-content;
-                        }
-
-                        .faq-card.is-open {
-                            border-color: #fbbf24;
-                            box-shadow: 0 4px 20px rgba(251, 191, 36, .15);
-                        }
-
-                        /* ── QUESTION ROW ── */
-                        .faq-card-btn {
-                            display: flex;
-                            align-items: center;
-                            gap: 1rem;
-                            width: 100%;
-                            padding: 1.1rem 1.25rem;
-                            background: transparent;
-                            border: none;
-                            cursor: pointer;
-                            text-align: left;
-                        }
-
-                        /* ── SQUARE ICON ── */
-                        .faq-icon-box {
-                            flex-shrink: 0;
-                            width: 2.4rem;
-                            height: 2.4rem;
-                            border-radius: 7px;
-                            background: #d97706;
-                            /* amber/yellow closed */
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            transition: background .25s ease, transform .25s ease;
-                        }
-
-                        .faq-card.is-open .faq-icon-box {
-                            background: #f59e0b;
-                            /* lighter yellow when open */
-                            transform: none;
-                        }
-
-                        .faq-icon-box svg {
-                            width: 1.1rem;
-                            height: 1.1rem;
-                            color: #fff;
-                            transition: transform .3s ease;
-                        }
-
-                        /* ── QUESTION TEXT ── */
-                        .faq-card-question {
-                            flex: 1;
-                            font-size: .92rem;
-                            font-weight: 600;
-                            color: #1c1c1c;
-                            line-height: 1.45;
-                        }
-
-                        /* ── ANSWER PANEL ── */
-                        .faq-card-answer {
-                            max-height: 0;
-                            overflow: hidden;
-                            transition: max-height .4s cubic-bezier(.22, 1, .36, 1);
-                            flex-shrink: 0;
-                        }
-
-                        .faq-card.is-open .faq-card-answer {
-                            max-height: 500px;
-                        }
-
-                        .faq-card-answer-inner {
-                            padding: 0 1.25rem 1.25rem 1.25rem;
-                            border-top: 1px solid #fde68a;
-                        }
-
-                        .faq-card-answer-inner p {
-                            font-size: .875rem;
-                            color: #4b5563;
-                            line-height: 1.8;
-                            margin: .9rem 0 0;
-                        }
-
-                        .faq-card-answer-inner ul {
-                            margin: .7rem 0 0;
-                            padding: 0;
-                            list-style: none;
-                        }
-
-                        .faq-card-answer-inner ul li {
-                            display: flex;
-                            align-items: center;
-                            gap: .55rem;
-                            font-size: .875rem;
-                            color: #374151;
-                            padding: .28rem 0;
-                        }
-
-                        .faq-card-answer-inner ul li::before {
-                            content: '';
-                            width: 7px;
-                            height: 7px;
-                            border-radius: 50%;
-                            background: #f59e0b;
-                            flex-shrink: 0;
-                        }
-
-                        @media (max-width: 480px) {
-                            .faq-card-btn {
-                                padding: .9rem 1rem;
-                                gap: .75rem;
-                            }
-
-                            .faq-icon-box {
-                                width: 2.1rem;
-                                height: 2.1rem;
-                            }
-
-                            .faq-card-question {
-                                font-size: .85rem;
-                            }
-
-                            .faq-card-answer-inner {
-                                padding: 0 1rem 1rem 1rem;
-                            }
-                        }
-                    </style>
 
                     <!-- Heading -->
                     <div class="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-14">
@@ -1103,17 +3145,16 @@
                                             </svg>
                                         </div>
                                         <span class="faq-card-question">Why is Germanten Hospital considered the best
-                                            orthopedic
-                                            hospital in Hyderabad?</span>
+                                            orthopedic hospital in Hyderabad?</span>
                                     </button>
                                     <div class="faq-card-answer">
                                         <div class="faq-card-answer-inner">
                                             <p>Germanten Hospital is consistently ranked among the best orthopedic
-                                                hospitals in
-                                                Hyderabad due to its cutting-edge surgical expertise, German-imported
+                                                hospitals in Hyderabad due to its cutting-edge surgical expertise,
+                                                German-imported
                                                 technology, internationally trained orthopedic surgeons, and high
-                                                success rates
-                                                in joint replacements, spine procedures, and trauma care.</p>
+                                                success rates in joint replacements, spine procedures, and trauma care.
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -1134,8 +3175,7 @@
                                             </svg>
                                         </div>
                                         <span class="faq-card-question">What orthopedic services are offered at
-                                            Germanten
-                                            Hospital, Hyderabad?</span>
+                                            Germanten Hospital, Hyderabad?</span>
                                     </button>
                                     <div class="faq-card-answer">
                                         <div class="faq-card-answer-inner">
@@ -1174,12 +3214,11 @@
                                     <div class="faq-card-answer">
                                         <div class="faq-card-answer-inner">
                                             <p>Dr. Mir Jawad Zar Khan is a renowned orthopaedic and joint replacement
-                                                surgeon
-                                                with over 26 years of experience in the field. He is the founder of
-                                                Germanten
-                                                Hospital and serves as Chairman and Managing Director, introducing
-                                                advanced,
-                                                minimally invasive orthopaedic procedures in Hyderabad.</p>
+                                                surgeon with over 26 years of experience in the field. He is the founder
+                                                of
+                                                Germanten Hospital and serves as Chairman and Managing Director,
+                                                introducing
+                                                advanced, minimally invasive orthopaedic procedures in Hyderabad.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -1200,15 +3239,13 @@
                                             </svg>
                                         </div>
                                         <span class="faq-card-question">Does Germanten Hospital use advanced technology
-                                            for
-                                            joint replacement?</span>
+                                            for joint replacement?</span>
                                     </button>
                                     <div class="faq-card-answer">
                                         <div class="faq-card-answer-inner">
                                             <p>Absolutely. We utilize German precision systems, 3D computer navigation,
                                                 minimally invasive methods, and robotic-assisted surgery to ensure
-                                                highly
-                                                accurate, safe, and faster recovery outcomes.</p>
+                                                highly accurate, safe, and faster recovery outcomes.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -1234,8 +3271,8 @@
                                     <div class="faq-card-answer">
                                         <div class="faq-card-answer-inner">
                                             <p>Yes. Germanten Hospital has a dedicated international patient care team
-                                                that
-                                                offers travel assistance, visa coordination, accommodation, language
+                                                that offers travel assistance, visa coordination, accommodation,
+                                                language
                                                 interpreters, and personalized treatment planning, making us a preferred
                                                 orthopedic destination in Hyderabad.</p>
                                         </div>
@@ -1261,16 +3298,14 @@
                                             </svg>
                                         </div>
                                         <span class="faq-card-question">What is the success rate of orthopedic surgeries
-                                            at
-                                            Germanten Hospital?</span>
+                                            at Germanten Hospital?</span>
                                     </button>
                                     <div class="faq-card-answer">
                                         <div class="faq-card-answer-inner">
                                             <p>We take pride in our consistently high success rates for knee, hip, and
-                                                spine
-                                                surgeries, supported by our expert surgical teams, modern facilities,
-                                                and
-                                                comprehensive post-operative care protocols.</p>
+                                                spine surgeries, supported by our expert surgical teams, modern
+                                                facilities,
+                                                and comprehensive post-operative care protocols.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -1296,10 +3331,9 @@
                                     <div class="faq-card-answer">
                                         <div class="faq-card-answer-inner">
                                             <p>Yes. We are affiliated with all major insurance companies and offer
-                                                cashless
-                                                hospitalization facilities. Our finance team ensures smooth insurance
-                                                processing
-                                                and assistance.</p>
+                                                cashless hospitalization facilities. Our finance team ensures smooth
+                                                insurance
+                                                processing and assistance.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -1325,8 +3359,8 @@
                                     <div class="faq-card-answer">
                                         <div class="faq-card-answer-inner">
                                             <p>Germanten Hospital is situated in Attapur, Hyderabad, allowing easy
-                                                access from
-                                                all parts of the city, including Rajiv Gandhi International Airport.</p>
+                                                access from all parts of the city, including Rajiv Gandhi International
+                                                Airport.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -1376,18 +3410,16 @@
                                             </svg>
                                         </div>
                                         <span class="faq-card-question">What makes Germanten Hospital stand out as the
-                                            best
-                                            orthopedic hospital in Hyderabad?</span>
+                                            best orthopedic hospital in Hyderabad?</span>
                                     </button>
                                     <div class="faq-card-answer">
                                         <div class="faq-card-answer-inner">
                                             <p>Germanten Hospital is NABH-accredited and has received honors from Times
-                                                of India
-                                                and other leading institutions for its orthopedic excellence. Under the
+                                                of India and other leading institutions for its orthopedic excellence.
+                                                Under the
                                                 leadership of Dr. Mir Jawad Zar Khan, our hospital combines world-class
                                                 infrastructure, expert care, and innovation to achieve superior outcomes
-                                                in
-                                                orthopedic and joint care.</p>
+                                                in orthopedic and joint care.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -1455,118 +3487,50 @@
     </div>
 
     <!-- Scripts -->
-    <script src="js/script.js"></script>
-
-    <!-- Progress Bar Script for this page -->
     <script>
-        // Initialize progress bar immediately
-        document.addEventListener('DOMContentLoaded', function () {
-            const progressBar = document.getElementById('progress-bar');
-
-            if (progressBar) {
-                // Set initial state
-                progressBar.style.opacity = '0';
-                progressBar.style.transform = 'translateX(-100%)';
-
-                // Handle scroll events
-                window.addEventListener('scroll', function () {
-                    const scrollTop = window.scrollY;
-                    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-                    const scrollPercent = (scrollTop / docHeight) * 100;
-
-                    // Update progress bar
-                    progressBar.style.transform = `translateX(-${100 - scrollPercent}%)`;
-
-                    // Show/hide based on scroll position
-                    if (scrollTop > 10) {
-                        progressBar.style.opacity = '1';
-                    } else {
-                        progressBar.style.opacity = '0';
-                    }
-                });
-
-                // Check initial scroll position
-                const initialScrollTop = window.scrollY;
-                if (initialScrollTop > 10) {
-                    progressBar.style.opacity = '1';
-                    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-                    const scrollPercent = (initialScrollTop / docHeight) * 100;
-                    progressBar.style.transform = `translateX(-${100 - scrollPercent}%)`;
-                }
-            }
-        });
-
         // Modal functions
         function openModal(imageSrc) {
             const modal = document.getElementById('imageModal');
             const modalImage = document.getElementById('modalImage');
-
             modalImage.src = imageSrc;
             modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; // Prevent background scroll
+            document.body.style.overflow = 'hidden';
         }
 
         function closeModal() {
             const modal = document.getElementById('imageModal');
             modal.classList.add('hidden');
-            document.body.style.overflow = 'auto'; // Restore background scroll
+            document.body.style.overflow = 'auto';
         }
 
-        // Close modal with Escape key
         document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape') {
                 closeModal();
             }
         });
 
-        // FAQ Toggle Function
-        function toggleFAQ(faqId) {
-            const faqContent = document.getElementById(faqId);
-            const faqIcon = document.getElementById(faqId + '-icon');
-
-            if (faqContent.classList.contains('hidden')) {
-                // Close all other FAQs
-                document.querySelectorAll('[id^="faq"]').forEach(element => {
-                    if (element.id !== faqId && !element.id.includes('-icon')) {
-                        element.classList.add('hidden');
-                    }
-                });
-
-                // Reset all icons
-                document.querySelectorAll('[id$="-icon"]').forEach(icon => {
-                    icon.style.transform = 'rotate(0deg)';
-                });
-
-                // Open clicked FAQ
-                faqContent.classList.remove('hidden');
-                faqIcon.style.transform = 'rotate(180deg)';
-            } else {
-                // Close clicked FAQ
-                faqContent.classList.add('hidden');
-                faqIcon.style.transform = 'rotate(0deg)';
-            }
-        }
-
-        // Parallax effect for vision section
-        window.addEventListener('scroll', function () {
-            const scrolled = window.pageYOffset;
-            const parallaxElements = document.querySelectorAll('.vision-parallax-bg');
-
-            parallaxElements.forEach(function (element) {
-                const speed = 0.5;
-                const yPos = -(scrolled * speed);
-                element.style.transform = `translateY(${yPos}px)`;
-            });
-        });
-
-        // Smooth scroll behavior for parallax section
+        // ===== TAB FUNCTIONALITY =====
         document.addEventListener('DOMContentLoaded', function () {
-            const parallaxSection = document.querySelector('.vision-parallax-bg');
-            if (parallaxSection) {
-                // Initial position setup
-                parallaxSection.style.transform = 'translateY(0px)';
-                parallaxSection.style.transition = 'transform 0.1s ease-out';
-            }
+            const tabBtnHospital = document.getElementById('tabBtnHospital');
+            const tabBtnAwards = document.getElementById('tabBtnAwards');
+            const tabContentHospital = document.getElementById('tabContentHospital');
+            const tabContentAwards = document.getElementById('tabContentAwards');
+
+            // Hospital tab click
+            tabBtnHospital.addEventListener('click', function () {
+                tabBtnHospital.classList.add('active');
+                tabBtnAwards.classList.remove('active');
+                tabContentHospital.classList.add('active');
+                tabContentAwards.classList.remove('active');
+            });
+
+            // Awards tab click
+            tabBtnAwards.addEventListener('click', function () {
+                tabBtnAwards.classList.add('active');
+                tabBtnHospital.classList.remove('active');
+                tabContentAwards.classList.add('active');
+                tabContentHospital.classList.remove('active');
+            });
         });
 
         // Scroll Progress Bar Functionality
@@ -1574,16 +3538,13 @@
             const scrollProgress = document.getElementById('scrollProgress');
             const scrollProgressBar = document.getElementById('scrollProgressBar');
 
-            // Update scroll progress
             function updateScrollProgress() {
                 const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
                 const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
                 const scrollPercentage = (scrollTop / scrollHeight) * 100;
 
-                // Update progress bar width
                 scrollProgressBar.style.width = scrollPercentage + '%';
 
-                // Show/hide progress bar based on scroll position
                 if (scrollTop > 100) {
                     scrollProgress.classList.remove('hidden');
                 } else {
@@ -1591,54 +3552,19 @@
                 }
             }
 
-            // Throttle function for performance
-            function throttle(func, limit) {
-                let inThrottle;
-                return function () {
-                    const args = arguments;
-                    const context = this;
-                    if (!inThrottle) {
-                        func.apply(context, args);
-                        inThrottle = true;
-                        setTimeout(() => inThrottle = false, limit);
-                    }
-                }
-            }
-
-            // Add scroll event listener with throttling
-            window.addEventListener('scroll', throttle(updateScrollProgress, 10));
-
-            // Initial update
+            window.addEventListener('scroll', updateScrollProgress);
             updateScrollProgress();
 
-            // Smooth scroll to top when progress bar is clicked
-            scrollProgress.addEventListener('click', function () {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-
-            // Add hover effect for progress bar
-            scrollProgress.addEventListener('mouseenter', function () {
-                scrollProgressBar.style.boxShadow = '0 0 20px rgba(202, 138, 4, 0.8)';
-            });
-
-            scrollProgress.addEventListener('mouseleave', function () {
-                scrollProgressBar.style.boxShadow = '0 0 10px rgba(202, 138, 4, 0.5)';
-            });
-
-            // Scroll Animation for All Elements
+            // Scroll Animation for Elements
             function initScrollAnimations() {
                 const animatedElements = document.querySelectorAll('.gallery-item, .quote-section, .doctor-profile, .content-section, .stats-section, .achievement-section');
 
-                // Intersection Observer for scroll animations
                 const observer = new IntersectionObserver((entries) => {
                     entries.forEach((entry, index) => {
                         if (entry.isIntersecting) {
                             setTimeout(() => {
                                 entry.target.classList.add('animate-in');
-                            }, index * 100); // Stagger animation
+                            }, index * 100);
                             observer.unobserve(entry.target);
                         }
                     });
@@ -1647,34 +3573,111 @@
                     rootMargin: '0px 0px -50px 0px'
                 });
 
-                // Observe each animated element
                 animatedElements.forEach(item => {
                     observer.observe(item);
                 });
+            }
 
-                // Add hover effect enhancement for gallery items
-                const galleryItems = document.querySelectorAll('.gallery-item');
-                galleryItems.forEach(item => {
-                    item.addEventListener('mouseenter', function () {
-                        this.style.transform = 'translateY(-5px) scale(1.05)';
-                    });
+            initScrollAnimations();
+        });
+    </script>
 
-                    item.addEventListener('mouseleave', function () {
-                        this.style.transform = 'translateY(0) scale(1)';
+    <!-- Floating Navigation Menu (loaded from components/floating-nav.html via js/script.js) -->
+    <floating-nav></floating-nav>
+
+    <script src="js/script.js"></script>
+
+    <!-- Scroll-Triggered Split-Text Heading Reveal -->
+    <style>
+        .st-word {
+            display: inline-block;
+            will-change: transform, opacity;
+        }
+
+        .st-split.st-pending .st-word {
+            opacity: 0;
+            transform: translateY(25px) skewY(5deg);
+        }
+
+        .st-split.st-reveal .st-word {
+            opacity: 1;
+            transform: translateY(0) skewY(0deg);
+            transition:
+                opacity 0.45s ease-out,
+                transform 0.65s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition-delay: var(--st-delay, 0s);
+        }
+
+        @media (max-width: 640px) {
+            .st-split.st-pending .st-word {
+                transform: translateY(14px) skewY(3deg);
+            }
+        }
+    </style>
+
+    <script>
+        (function () {
+            var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (reducedMotion || !('IntersectionObserver' in window)) return;
+
+            var isMobile = window.matchMedia('(max-width: 640px)').matches;
+            var STAGGER = isMobile ? 0.025 : 0.04;
+            var MAX_TOTAL = 0.35;
+
+            var headings = document.querySelectorAll('.gh-section-title, .faq-section-title, .ds-details h2');
+            if (!headings.length) return;
+
+            function splitWords(el) {
+                var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null);
+                var textNodes = [];
+                while (walker.nextNode()) {
+                    if (walker.currentNode.nodeValue.trim() !== '') textNodes.push(walker.currentNode);
+                }
+                textNodes.forEach(function (node) {
+                    var frag = document.createDocumentFragment();
+                    var parts = node.nodeValue.split(/(\s+)/);
+                    parts.forEach(function (part) {
+                        if (part === '') return;
+                        if (/^\s+$/.test(part)) {
+                            frag.appendChild(document.createTextNode(' '));
+                        } else {
+                            var span = document.createElement('span');
+                            span.className = 'st-word';
+                            span.textContent = part;
+                            frag.appendChild(span);
+                        }
                     });
+                    node.parentNode.replaceChild(frag, node);
                 });
             }
 
-            // Initialize scroll animations
-            initScrollAnimations();
-        });
+            headings.forEach(function (heading) {
+                splitWords(heading);
+                var words = heading.querySelectorAll('.st-word');
+                if (!words.length) return;
 
+                var step = Math.min(STAGGER, words.length > 1 ? MAX_TOTAL / (words.length - 1) : STAGGER);
+                words.forEach(function (word, i) {
+                    word.style.setProperty('--st-delay', (i * step).toFixed(3) + 's');
+                });
+
+                heading.classList.add('st-split', 'st-pending');
+            });
+
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('st-reveal');
+                    entry.target.classList.remove('st-pending');
+                    observer.unobserve(entry.target);
+                });
+            }, { threshold: 0.25, rootMargin: '0px 0px -5% 0px' });
+
+            document.querySelectorAll('.st-split').forEach(function (h) {
+                observer.observe(h);
+            });
+        })();
     </script>
-
-    <!-- Footer Component -->
-    <div id="footer-container"></div>
-
-    <script src="js/script.js"></script>
 </body>
 
 </html>

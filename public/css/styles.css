@@ -181,18 +181,18 @@
     .grid.grid-cols-5 > div:nth-child(5) {
         grid-column: span 2;
     }
-    
+
     /* Expertise Section Cards */
     .flex-wrap.justify-center.gap-12 > div {
         width: 140px !important;
         height: 160px !important;
     }
-    
+
     /* Hero Slider Height */
     #heroSlider {
         height: 200px !important;
     }
-    
+
     /* Why Choose Us Tabs */
     .grid.md\:grid-cols-3.border-b {
         grid-template-columns: 1fr !important;
@@ -204,67 +204,67 @@
     .grid.md\:grid-cols-3.border-b > div:last-child {
         border-bottom: none;
     }
-    
+
     /* German Doctors Grid */
     .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-4 {
         grid-template-columns: repeat(2, 1fr) !important;
     }
-    
+
     /* Doctor carousel images */
     .grid.grid-cols-2.md\:grid-cols-3.lg\:grid-cols-4 {
         grid-template-columns: repeat(2, 1fr) !important;
     }
-    
+
     /* YouTube Videos */
     .grid.grid-cols-1.md\:grid-cols-2.gap-8 {
         grid-template-columns: 1fr !important;
     }
-    
+
     /* About Us Grid */
     .grid.grid-cols-1.lg\:grid-cols-2.gap-8 {
         grid-template-columns: 1fr !important;
     }
-    
+
     /* Facilities Images */
     .grid.grid-cols-2.md\:grid-cols-4.gap-6 {
         grid-template-columns: repeat(2, 1fr) !important;
     }
-    
+
     /* Articles Grid */
     .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3.gap-6 {
         grid-template-columns: 1fr !important;
     }
-    
+
     /* Professional Section Grid */
     .grid.lg\:grid-cols-2.gap-8 {
         grid-template-columns: 1fr !important;
     }
-    
+
     .grid.grid-cols-1.sm\:grid-cols-2.gap-6 {
         grid-template-columns: 1fr !important;
     }
-    
+
     /* Content blocks */
     .grid.grid-cols-1.lg\:grid-cols-2.gap-8 > div {
         padding: 1.5rem !important;
     }
-    
+
     /* Navigation arrows positioning */
     #prev-doctor, #next-doctor {
         padding: 0.5rem !important;
     }
-    
+
     /* Awards marquee */
     .animate-marquee > div {
         width: 120px !important;
         height: 120px !important;
     }
-    
+
     /* Footer social icons */
     .flex.justify-center.lg\:justify-end.space-x-3 {
         justify-content: center;
     }
-    
+
     /* Testimonial buttons */
     button[onclick="previousTestimonial()"] {
         left: -10px !important;
@@ -272,13 +272,13 @@
     button[onclick="nextTestimonial()"] {
         right: -10px !important;
     }
-    
+
     /* Tab content padding */
     #clinical, #technology, #legacy {
         font-size: 0.875rem !important;
         line-height: 1.5 !important;
     }
-    
+
     /* Banner text */
     .text-base.sm\:text-lg.md\:text-xl {
         font-size: 0.875rem !important;
@@ -299,53 +299,53 @@
     .grid.grid-cols-5 > div:nth-child(5) {
         grid-column: span 1;
     }
-    
+
     /* Expertise Section Cards */
     .flex-wrap.justify-center.gap-12 > div {
         width: 150px !important;
         height: 170px !important;
     }
-    
+
     /* Hero Slider */
     #heroSlider {
         height: 300px !important;
     }
-    
+
     /* Why Choose Us Tabs */
     .grid.md\:grid-cols-3.border-b {
         grid-template-columns: repeat(3, 1fr) !important;
     }
-    
+
     /* German Doctors Grid */
     .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-4 {
         grid-template-columns: repeat(2, 1fr) !important;
     }
-    
+
     /* Doctor carousel */
     .grid.grid-cols-2.md\:grid-cols-3.lg\:grid-cols-4 {
         grid-template-columns: repeat(3, 1fr) !important;
     }
-    
+
     /* Content blocks side by side */
     .grid.grid-cols-1.lg\:grid-cols-2.gap-8 {
         grid-template-columns: 1fr !important;
     }
-    
+
     /* Facilities Images */
     .grid.grid-cols-2.md\:grid-cols-4.gap-6 {
         grid-template-columns: repeat(4, 1fr) !important;
     }
-    
+
     /* Articles Grid */
     .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3.gap-6 {
         grid-template-columns: repeat(2, 1fr) !important;
     }
-    
+
     /* Professional Section */
     .grid.lg\:grid-cols-2.gap-8 {
         grid-template-columns: 1fr !important;
     }
-    
+
     .grid.grid-cols-1.sm\:grid-cols-2.gap-6 {
         grid-template-columns: repeat(2, 1fr) !important;
     }
@@ -357,27 +357,27 @@
     .grid.grid-cols-5 {
         gap: 1rem !important;
     }
-    
+
     /* Hero Slider */
     #heroSlider {
         height: 400px !important;
     }
-    
+
     /* German Doctors Grid */
     .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-4 {
         grid-template-columns: repeat(2, 1fr) !important;
     }
-    
+
     /* Content blocks side by side */
     .grid.grid-cols-1.lg\:grid-cols-2.gap-8 {
         grid-template-columns: 1fr !important;
     }
-    
+
     /* Professional Section */
     .grid.lg\:grid-cols-2.gap-8 {
         grid-template-columns: 1fr !important;
     }
-    
+
     /* Articles Grid */
     .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3.gap-6 {
         grid-template-columns: repeat(2, 1fr) !important;
@@ -443,7 +443,7 @@ img {
         min-height: 44px;
         min-width: 44px;
     }
-    
+
     /* Increase tap targets */
     .slide-indicator {
         width: 10px !important;
@@ -492,21 +492,21 @@ html {
         width: 100% !important;
         padding: 0 1rem;
     }
-    
+
     /* Show navigation buttons on mobile */
     #prev-doctor,
     #next-doctor {
         opacity: 0.8;
         pointer-events: auto;
     }
-    
+
     #doctors-indicators {
         justify-content: center;
         flex-wrap: wrap;
         max-width: 300px;
         margin: 0 auto;
     }
-    
+
     #doctors-indicators button {
         width: 6px;
         height: 6px;
@@ -519,11 +519,11 @@ html {
     .doctor-card {
         width: 33.333% !important;
     }
-    
+
     #doctors-indicators {
         max-width: 200px;
     }
-    
+
     #doctors-indicators button {
         width: 8px;
         height: 8px;
@@ -536,11 +536,11 @@ html {
     .doctor-card {
         width: 33.333% !important;
     }
-    
+
     #doctors-indicators {
         max-width: 150px;
     }
-    
+
     #doctors-indicators button {
         width: 10px;
         height: 10px;

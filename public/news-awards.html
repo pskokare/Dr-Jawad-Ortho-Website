@@ -10,7 +10,7 @@
     content="Explore the latest news, media features, and medical awards earned by Dr. Mir Jawad, a globally recognized orthopedic surgeon at Germanten Hospitals.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/webp" href="Images/GERMANTANLOGO.webp">
+    <link rel="icon" type="image/webp" href="Images/dr-jawad-logo.webp">
     <link rel="canonical" href="https://drjawadortho.com/news-awards">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <style>
@@ -38,6 +38,35 @@
         .scroll-progress.hidden {
             opacity: 0;
             pointer-events: none;
+        }
+
+        /* Home page heading and eyebrow styles */
+        .homepage-section-heading {
+            font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+            font-size: clamp(31px, 2.1vw, 44px) !important;
+            font-weight: 750 !important;
+            color: #0d1b3d !important;
+            line-height: 1.12 !important;
+            letter-spacing: -0.045em !important;
+        }
+
+        .homepage-section-eyebrow {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 0.5rem !important;
+            font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+            font-size: 0.78rem !important;
+            font-weight: 600 !important;
+            letter-spacing: 0.08em !important;
+            text-transform: uppercase !important;
+            color: #b45309 !important;
+            background: #fffbeb !important;
+            border: 1px solid #fde68a !important;
+            padding: 0.35rem 1.1rem !important;
+            border-radius: 9999px !important;
+            margin-bottom: 0.9rem !important;
+            line-height: 1.3 !important;
         }
 
         /* Mobile menu styles */
@@ -361,8 +390,8 @@
         <section class="py-6 sm:py-8 bg-gradient-to-br from-gray-50 to-white">
             <div class="max-w-full mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
                 <div class="text-center mb-8 sm:mb-10 md:mb-12">
-                    <h1
-                        class="section-title text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
+                    <span class="homepage-section-eyebrow">Media & Recognition</span>
+                    <h1 class="homepage-section-heading mb-4 sm:mb-6">
                         News & Awards
                     </h1>
                     <div class="w-16 sm:w-20 md:w-24 h-1 bg-gray-300 rounded-full mx-auto mb-6 sm:mb-8"></div>
@@ -572,7 +601,7 @@
                 <div class="group relative cursor-pointer" onclick="openAwardsModal(8)">
                     <div
                         class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
-                        <img src="Images/Home-Page-Images/Award8.jpg" alt="Award 8" width="208" height="208"
+                        <img src="Images/Home-Page-Images/Award8.webp" alt="Award 8" width="208" height="208"
                             class="w-full h-full object-cover rounded-lg">
                     </div>
                 </div>
@@ -752,7 +781,7 @@
                 <div class="group relative cursor-pointer" onclick="openAwardsModal(28)">
                     <div
                         class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
-                        <img src="Images/Home-Page-Images/Award28.jpg" alt="Award 28" width="208" height="208"
+                        <img src="Images/Home-Page-Images/Award28.webp" alt="Award 28" width="208" height="208"
                             class="w-full h-full object-cover rounded-lg">
                     </div>
                 </div>
@@ -1290,7 +1319,7 @@
         function loadNavbar() {
             const navContainer = document.getElementById('navbar-container');
             if (navContainer) {
-                fetch('components/navbar')
+                fetch('components/navbar.html')
                     .then(response => {
                         if (!response.ok) throw new Error('Navbar not found');
                         return response.text();
@@ -1341,7 +1370,7 @@
         function loadFooter() {
             const footerDiv = document.getElementById('footer-container');
             if (footerDiv) {
-                fetch('components/footer')
+                fetch('components/footer.html')
                     .then(response => {
                         if (!response.ok) throw new Error('Footer not found');
                         return response.text();
@@ -1379,6 +1408,35 @@
                             </footer>
                         `;
                     });
+            }
+        }
+
+        // ========== LOAD FLOATING NAV ==========
+        async function loadFloatingNav() {
+            try {
+                const targets = document.querySelectorAll('floating-nav');
+                if (!targets.length) return;
+
+                const floatingNavPath = window.location.pathname.includes('/treatments/') || window.location.pathname.includes('/blogs/') || window.location.pathname.includes('/latestnews/') || window.location.pathname.includes('/recentpost/') ? '../components/floating-nav.html' : 'components/floating-nav.html';
+                const response = await fetch(floatingNavPath);
+                const floatingNavHTML = await response.text();
+
+                targets.forEach(target => {
+                    target.innerHTML = floatingNavHTML;
+
+                    // Fix links if we're in treatments, blogs, latestnews, or recentpost folder
+                    if (window.location.pathname.includes('/treatments/') || window.location.pathname.includes('/blogs/') || window.location.pathname.includes('/latestnews/') || window.location.pathname.includes('/recentpost/')) {
+                        const links = target.querySelectorAll('a[href]');
+                        links.forEach(link => {
+                            const href = link.getAttribute('href');
+                            if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('../')) {
+                                link.href = '../' + href;
+                            }
+                        });
+                    }
+                });
+            } catch (error) {
+                console.error('Error loading floating nav:', error);
             }
         }
 
@@ -1478,6 +1536,7 @@
         window.addEventListener('DOMContentLoaded', () => {
             loadNavbar();
             loadFooter();
+            loadFloatingNav();
             handleResponsiveImages();
         });
 
@@ -1507,7 +1566,7 @@
             'Images/Home-Page-Images/Award5.webp',
             'Images/Home-Page-Images/Award6.webp',
             'Images/Home-Page-Images/Award7.webp',
-            'Images/Home-Page-Images/Award8.jpg',
+            'Images/Home-Page-Images/Award8.webp',
             'Images/Home-Page-Images/Award9.webp',
             'Images/Home-Page-Images/Award10.webp',
             'Images/Home-Page-Images/Award11.webp',
@@ -1527,7 +1586,7 @@
             'Images/Home-Page-Images/Award25.webp',
             'Images/Home-Page-Images/Award26.webp',
             'Images/Home-Page-Images/Award27.webp',
-            'Images/Home-Page-Images/Award28.jpg',
+            'Images/Home-Page-Images/Award28.webp',
             'Images/Home-Page-Images/Award29.webp',
             // News Awards Images (30-63)
             'Images/AboutUs-page-Images/News-Awards/Image1.webp',
@@ -1728,6 +1787,7 @@
             });
         });
     </script>
+    <floating-nav></floating-nav>
 </body>
 
 </html>

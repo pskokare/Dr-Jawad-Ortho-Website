@@ -10,14 +10,13 @@
         content="Get answers to frequently asked questions about international patient care at Germanten Hospitals. Your guide to medical tourism in India.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/webp" href="Images/GERMANTANLOGO.webp">
+    <link rel="icon" type="image/webp" href="Images/dr-jawad-logo.webp">
     <!-- Performance Optimization -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="canonical" href="https://drjawadortho.com/international-patients-faq-s">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <style>
-        /* Scroll Progress Bar Styles */
         .scroll-progress {
             position: fixed;
             top: 0;
@@ -114,59 +113,52 @@
 
         /* Hero section responsive styles - FIXED */
         .hero-section {
-            margin-top: 5rem;
+            margin-top: 100px;
             width: 100%;
             overflow: hidden;
             position: relative;
             background-color: #f3f4f6;
+            height: 12rem;
+        }
+
+        @media (min-width: 640px) {
+            .hero-section {
+                height: 16rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .hero-section {
+                height: 20rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .hero-section {
+                height: 24rem;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .hero-section {
+                height: 28rem;
+            }
         }
 
         /* Mobile hero section positioning */
         @media (max-width: 768px) {
             .hero-section {
-                margin-top: 4rem;
+                margin-top: 64px;
                 /* Reduce margin for mobile to account for navbar */
             }
         }
 
         .hero-image {
             width: 100%;
-            height: auto;
-            max-height: 85vh;
-            min-height: 350px;
+            height: 100%;
             object-fit: cover;
             object-position: center;
-            background-color: #f3f4f6;
             display: block;
-            margin: 0 auto;
-        }
-
-        @media (max-width: 1024px) {
-            .hero-image {
-                max-height: 75vh;
-                min-height: 320px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero-image {
-                max-height: 65vh;
-                min-height: 280px;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .hero-image {
-                max-height: 55vh;
-                min-height: 250px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-image {
-                max-height: 40vh;
-                min-height: 200px;
-            }
         }
 
         /* Breadcrumb responsive */
@@ -248,6 +240,25 @@
             }
         }
 
+        /* Reorder FAQ section to appear after all hospital information */
+        .faq-reorder {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .faq-reorder .hospital-info {
+            order: 1;
+        }
+
+        .faq-reorder .faq-section-header {
+            order: 2;
+            margin-top: 6rem !important;
+        }
+
+        .faq-reorder .faq-accordion {
+            order: 3;
+        }
+
         /* Ensure images are responsive */
         img {
             max-width: 100%;
@@ -313,6 +324,483 @@
                 font-size: 1rem !important;
             }
         }
+
+        /* FAQ Card Styles - modern two-column */
+        .faq-section-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 600;
+            color: #1a1a1a;
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .faq-page__accordion {
+            display: flex;
+            flex-wrap: wrap;
+            margin: -10px;
+        }
+
+        .faq-accordion {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .faq-accordion .col-lg-6 {
+            width: 50%;
+            padding: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .faq-accordion .col-lg-6 {
+                width: 100%;
+            }
+        }
+
+        .faq-card {
+            background: #fff;
+            border: 1.5px solid #e5e7eb;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: border-color .25s ease, box-shadow .25s ease;
+            display: flex;
+            flex-direction: column;
+            min-height: fit-content;
+        }
+
+        .faq-card.is-open {
+            border-color: #fbbf24;
+            box-shadow: 0 4px 20px rgba(251, 191, 36, .15);
+        }
+
+        .faq-card-btn {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            width: 100%;
+            padding: 1.1rem 1.25rem;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .faq-icon-box {
+            flex-shrink: 0;
+            width: 2.4rem;
+            height: 2.4rem;
+            border-radius: 7px;
+            background: #d97706;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background .25s ease;
+        }
+
+        .faq-card.is-open .faq-icon-box {
+            background: #f59e0b;
+        }
+
+        .faq-icon-box svg {
+            width: 1.1rem;
+            height: 1.1rem;
+            color: #fff;
+        }
+
+        .faq-card-question {
+            flex: 1;
+            font-size: .92rem;
+            font-weight: 600;
+            color: #1c1c1c;
+            line-height: 1.45;
+        }
+
+        .faq-card-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .4s cubic-bezier(.22, 1, .36, 1);
+            flex-shrink: 0;
+        }
+
+        .faq-card.is-open .faq-card-answer {
+            max-height: 1200px;
+        }
+
+        .faq-card-answer-inner {
+            padding: 0 1.25rem 1.25rem 1.25rem;
+            border-top: 1px solid #fde68a;
+        }
+
+        .faq-card-answer-inner p {
+            font-size: .875rem;
+            color: #4b5563;
+            line-height: 1.8;
+            margin: .9rem 0 0;
+        }
+
+        @media (max-width: 480px) {
+            .faq-card-btn {
+                padding: .9rem 1rem;
+                gap: .75rem;
+            }
+
+            .faq-icon-box {
+                width: 2.1rem;
+                height: 2.1rem;
+            }
+
+            .faq-card-question {
+                font-size: .85rem;
+            }
+
+            .faq-card-answer-inner {
+                padding: 0 1rem 1rem 1rem;
+            }
+        }
+
+        /* FAQ markup restyled to match about-us two-column cards */
+        .faq-accordion {
+            display: block !important;
+            column-count: 2;
+            column-gap: 20px;
+            width: 100% !important;
+            max-width: none !important;
+            margin-top: 1.5rem !important;
+        }
+
+        .faq-accordion .faq-item {
+            width: 100% !important;
+            margin: 0 0 20px 0;
+            background: #fff !important;
+            border: 1.5px solid #e5e7eb !important;
+            border-radius: 10px !important;
+            overflow: hidden !important;
+            box-shadow: none !important;
+            transition: border-color .25s ease, box-shadow .25s ease;
+            break-inside: avoid;
+            display: flex;
+            flex-direction: column;
+            min-height: fit-content;
+        }
+
+        @media (max-width: 768px) {
+            .faq-accordion {
+                column-count: 1;
+            }
+
+            .faq-accordion .faq-item {
+                margin: 0 0 15px 0;
+            }
+        }
+
+        .faq-accordion .faq-item.is-open {
+            border-color: #fbbf24 !important;
+            box-shadow: 0 4px 20px rgba(251, 191, 36, .15) !important;
+        }
+
+        .faq-accordion .faq-question {
+            display: flex !important;
+            align-items: center !important;
+            gap: 1rem !important;
+            padding: 1.1rem 1.25rem !important;
+            justify-content: flex-start !important;
+        }
+
+        .faq-accordion .faq-question::before {
+            content: '+';
+            flex-shrink: 0;
+            width: 2.4rem;
+            height: 2.4rem;
+            border-radius: 7px;
+            background: #d97706;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.4rem;
+            font-weight: 500;
+            transition: background .25s ease;
+        }
+
+        .faq-accordion .faq-item.is-open .faq-question::before {
+            content: '-';
+            background: #f59e0b;
+        }
+
+        .faq-accordion .faq-question h3 {
+            flex: 1 !important;
+            font-size: .92rem !important;
+            font-weight: 600 !important;
+            color: #1c1c1c !important;
+            line-height: 1.45 !important;
+            padding-right: 0 !important;
+        }
+
+        .faq-accordion .faq-icon {
+            display: none !important;
+        }
+
+        .faq-accordion .faq-answer {
+            padding: 0 !important;
+            transition: max-height .4s cubic-bezier(.22, 1, .36, 1) !important;
+        }
+
+        .faq-accordion .faq-item.is-open .faq-answer {
+            max-height: 1200px !important;
+        }
+
+        .faq-accordion .faq-answer>div {
+            padding: 0 1.25rem 1.25rem 1.25rem !important;
+            border-top: 1px solid #fde68a;
+        }
+
+        .faq-accordion .faq-answer p {
+            font-size: .875rem !important;
+            color: #4b5563 !important;
+            line-height: 1.8 !important;
+            margin: .9rem 0 0 !important;
+            text-align: left !important;
+        }
+
+        @media (max-width: 480px) {
+            .faq-accordion .faq-question {
+                padding: .9rem 1rem !important;
+                gap: .75rem !important;
+            }
+
+            .faq-accordion .faq-question::before {
+                width: 2.1rem;
+                height: 2.1rem;
+            }
+
+            .faq-accordion .faq-question h3 {
+                font-size: .85rem !important;
+            }
+
+            .faq-accordion .faq-answer>div {
+                padding: 0 1rem 1rem 1rem !important;
+            }
+        }
+
+        /* Hero text overlay */
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 4%;
+            transform: translateY(-50%);
+            max-width: 50%;
+            z-index: 10;
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-family: Inter, 'Segoe UI', Arial, sans-serif;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #b45309;
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 0.35rem 1.1rem;
+            border-radius: 9999px;
+            margin-bottom: 0.9rem;
+            line-height: 1.3;
+        }
+
+        .hero-title {
+            font-family: Inter, 'Segoe UI', Arial, sans-serif;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-weight: 750;
+            color: #000;
+            line-height: 1.12;
+            letter-spacing: -0.045em;
+            margin: 0 0 0.5rem;
+            text-shadow: 0 1px 4px rgba(255, 255, 255, .45);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(0.85rem, 1.5vw, 1.05rem);
+            color: #000;
+            line-height: 1.5;
+            max-width: 500px;
+            margin: 0;
+            text-shadow: 0 1px 4px rgba(255, 255, 255, .45);
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.2rem;
+        }
+
+        .hero-btn {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.65rem 1.45rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-decoration: none;
+            background: linear-gradient(135deg, #cf3339 0%, #b91c1c 100%);
+            color: #fff;
+            overflow: hidden;
+            z-index: 1;
+            transition: color 0.35s ease;
+        }
+
+        .hero-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            border-radius: inherit;
+            background: linear-gradient(135deg, #f6ad00 0%, #fbbf24 100%);
+            transform: translateX(-101%);
+            transition: transform 0.45s ease;
+        }
+
+        .hero-btn:hover::before {
+            transform: translateX(0);
+        }
+
+        .hero-btn:hover {
+            color: #401f00;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                left: 1rem;
+                max-width: 90%;
+            }
+
+            .hero-title {
+                font-size: clamp(1.3rem, 5vw, 1.8rem);
+            }
+
+            .hero-subtitle {
+                font-size: clamp(0.75rem, 3vw, 0.95rem);
+            }
+        }
+        .hospital-info > div {
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            border-radius: 0 !important;
+            padding: 0 !important;
+        }
+
+        .hospital-info .service-icon {
+            background: #dc2626 !important;
+            color: #fff !important;
+            border-radius: 50% !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            box-shadow: none !important;
+            background-image: none !important;
+        }
+
+        .hospital-info .service-icon i {
+            display: none !important;
+        }
+
+        .hospital-info .service-icon::before {
+            content: '\2713';
+            color: #fff;
+            font-size: 0.9rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .hospital-info .info-card-text,
+        .hospital-info p {
+            text-align: justify !important;
+        }
+
+        .hospital-info .service-icon {
+            width: 1.5rem !important;
+            height: 1.5rem !important;
+        }
+
+        .hospital-info .service-icon::before {
+            font-size: 0.65rem;
+        }
+
+        .hospital-info .info-card-title {
+            color: #000 !important;
+        }
+
+        .hospital-info .bg-gradient-to-r.from-yellow-50.to-amber-50 {
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+        .hospital-info .bg-gradient-to-r.from-yellow-50.to-amber-50 .info-card-title {
+            color: #000 !important;
+        }
+
+        .hospital-info .bg-gradient-to-r.from-yellow-50.to-amber-50 .info-card-text,
+        .hospital-info .bg-gradient-to-r.from-yellow-50.to-amber-50 .info-card-text span {
+            color: #374151 !important;
+        }
+
+        .hospital-info .bg-gradient-to-r.from-yellow-50.to-amber-50 span {
+            background: transparent !important;
+        }
+
+        .st-word {
+            display: inline-block;
+            will-change: transform, opacity;
+        }
+
+        .st-split.st-pending .st-word {
+            opacity: 0;
+            transform: translateY(25px) skewY(5deg);
+        }
+
+        .st-split.st-reveal .st-word {
+            opacity: 1;
+            transform: translateY(0) skewY(0deg);
+            transition:
+                opacity 0.45s ease-out,
+                transform 0.65s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition-delay: var(--st-delay, 0s);
+        }
+
+        @media (max-width: 640px) {
+            .st-split.st-pending .st-word {
+                transform: translateY(14px) skewY(3deg);
+            }
+        }
+
+        .section-eyebrow {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 0.5rem !important;
+            font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+            font-size: 0.78rem !important;
+            font-weight: 600 !important;
+            letter-spacing: 0.08em !important;
+            text-transform: uppercase !important;
+            color: #b45309 !important;
+            background: #fffbeb !important;
+            border: 1px solid #fde68a !important;
+            padding: 0.35rem 1.1rem !important;
+            border-radius: 9999px !important;
+            margin-bottom: 0.9rem !important;
+            line-height: 1.3 !important;
+        }
+
     </style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-B7BXJEHXWK"></script>
     <script>
@@ -335,15 +823,21 @@
     <div id="navbar-container"></div>
 
     <!-- Hero Section - FIXED for all devices -->
-    <section class="hero-section relative w-full h-48 sm:h-64 md:h-80">
-        <div class="border-b-4 border-yellow-400 w-full h-full relative">
+    <section class="hero-section relative w-full">
+        <div class='w-full h-full relative'>
             <img src="Images/Patient-Info/InternationalPatientFaq.webp" width="1920" height="1080"
-                alt="International Patient Information - Germanten Hospitals"
-                class="hero-image w-full h-full object-cover"
+                alt="International Patient Information - Germanten Hospitals" class="hero-image"
                 onerror="this.onerror=null; this.src='https://via.placeholder.com/1920x800?text=International+Patient+FAQs';">
 
-            <!-- Black Overlay Effect -->
-            <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60 pointer-events-none">
+            <div class='hero-content'>
+                <span class='section-eyebrow'>International Patient Services</span>
+                <h1 class='hero-title'>International Patient FAQs</h1>
+                <p class='hero-subtitle'>Guidance, support, and answers for our global patients at Germanten Hospital.
+                </p>
+                <div class='hero-buttons'>
+                    <a href='book-an-appointment.html' class='hero-btn hero-btn-primary'>Book Appointment</a>
+                    <a href='#main-content' class='hero-btn hero-btn-secondary'>Know More</a>
+                </div>
             </div>
         </div>
     </section>
@@ -381,10 +875,11 @@
     </div>
 
     <!-- Main Content -->
-    <main class="content-section">
-        <div class="container-custom">
+    <main class="content-section" id='main-content'>
+        <div class="container-custom faq-reorder">
             <!-- Section Header -->
-            <div class="text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12">
+            <div class="text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12 faq-section-header">
+                <span class="section-eyebrow">Common Questions</span>
                 <h1
                     class="section-title text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
                     International Patient <span class="text-red-600">FAQs</span>
@@ -398,7 +893,7 @@
             </div>
 
             <!-- FAQ Accordion -->
-            <div class="space-y-4 max-w-4xl mx-auto">
+            <div class="space-y-4 max-w-4xl mx-auto faq-accordion">
                 <!-- FAQ 1 -->
                 <div
                     class="faq-item bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border-l-4 border-red-500">
@@ -562,9 +1057,10 @@
             </div>
 
             <!-- Additional Hospital Information -->
-            <div class="mt-6 sm:mt-8 md:mt-10 lg:mt-12">
+            <div class="mt-6 sm:mt-8 md:mt-10 lg:mt-12 hospital-info">
                 <div
                     class="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 lg:p-8 shadow-xl border border-blue-100">
+                    <span class="section-eyebrow">Our Services</span>
                     <h3
                         class="info-card-title text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 flex items-center">
                         <i class="fas fa-award text-yellow-500 mr-2 md:mr-3 text-lg md:text-2xl"></i>
@@ -648,7 +1144,10 @@
                                     point of contact (SPOC) for each patient for better coordination. SPOC assists
                                     patient and accompanying attendant throughout their stay in hospital for all
                                     non-medical assistance like registration, admission and discharge formalities, sim
-                                    card, mobile, interpreter etc. For comprehensive international patient services, visit our <a href="international-patients-relation" class="text-orange-600 hover:text-red-600 font-medium transition-colors duration-200 border border-yellow-600">international relations department</a>.</p>
+                                    card, mobile, interpreter etc. For comprehensive international patient services,
+                                    visit our <a href="international-patients-relation"
+                                        class="text-orange-600 hover:text-red-600 font-medium transition-colors duration-200 ">international
+                                        relations department</a>.</p>
                             </div>
                         </div>
 
@@ -833,6 +1332,7 @@
         function toggleFAQ(faqNumber) {
             const answer = document.getElementById(`faq-answer-${faqNumber}`);
             const icon = document.getElementById(`faq-icon-${faqNumber}`);
+            const card = answer ? answer.parentElement : null;
 
             // Check if this FAQ is currently open
             const isOpen = !answer.classList.contains('max-h-0');
@@ -841,9 +1341,13 @@
             for (let i = 1; i <= 6; i++) {
                 const ans = document.getElementById(`faq-answer-${i}`);
                 const ic = document.getElementById(`faq-icon-${i}`);
+                const itemCard = ans ? ans.parentElement : null;
                 if (ans) {
                     ans.classList.add('max-h-0');
                     ans.classList.remove('max-h-96');
+                }
+                if (itemCard) {
+                    itemCard.classList.remove('is-open');
                 }
                 if (ic) {
                     ic.classList.remove('rotate');
@@ -855,11 +1359,14 @@
                 answer.classList.remove('max-h-0');
                 answer.classList.add('max-h-96');
                 icon.classList.add('rotate');
+                if (card) {
+                    card.classList.add('is-open');
+                }
             }
         }
 
-        
-        
+
+
         // ========== MOBILE DROPDOWN TOGGLE ==========
         window.toggleMobileDropdown = function (dropdownId) {
             const dropdown = document.getElementById(dropdownId + '-dropdown');
@@ -1006,7 +1513,7 @@
                 const response = await fetch('components/navbar.html');
                 const navbarHTML = await response.text();
                 document.getElementById('navbar-container').innerHTML = navbarHTML;
-                
+
                 // Initialize navbar functionality after loading (same as script.js)
                 initializeNavbar();
             } catch (error) {
@@ -1033,28 +1540,28 @@
             }
 
             // Mobile dropdown toggle functionality
-            window.toggleMobileDropdown = function(dropdownId) {
+            window.toggleMobileDropdown = function (dropdownId) {
                 const dropdown = document.getElementById(dropdownId + '-dropdown');
                 const button = dropdown.previousElementSibling;
                 const chevron = button.querySelector('.fa-chevron-down');
-                
+
                 // Close other dropdowns
                 const allDropdowns = document.querySelectorAll('[id$="-dropdown"]');
                 const allChevrons = document.querySelectorAll('.fa-chevron-down');
-                
+
                 allDropdowns.forEach(d => {
                     if (d.id !== dropdownId + '-dropdown') {
                         d.classList.add('hidden');
                         d.classList.remove('open');
                     }
                 });
-                
+
                 allChevrons.forEach(c => {
                     if (c !== chevron) {
                         c.classList.remove('rotated');
                     }
                 });
-                
+
                 // Toggle current dropdown
                 dropdown.classList.toggle('hidden');
                 dropdown.classList.toggle('open');
@@ -1093,6 +1600,65 @@
             loadNavbar();
             loadFooter();
         });
+
+        // Scroll-Triggered Split-Text Heading Reveal
+        (function () {
+            var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (reducedMotion || !('IntersectionObserver' in window)) return;
+            var isMobile = window.matchMedia('(max-width: 640px)').matches;
+            var STAGGER = isMobile ? 0.025 : 0.04;
+            var MAX_TOTAL = 0.35;
+            var allHeadings = document.querySelectorAll('h1, h2, h3');
+            var headings = [];
+            allHeadings.forEach(function (h) {
+                if (!h.closest('.faq-question')) headings.push(h);
+            });
+            if (!headings.length) return;
+            function splitWords(el) {
+                var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null);
+                var textNodes = [];
+                while (walker.nextNode()) {
+                    if (walker.currentNode.nodeValue.trim() !== '') textNodes.push(walker.currentNode);
+                }
+                textNodes.forEach(function (node) {
+                    var frag = document.createDocumentFragment();
+                    var parts = node.nodeValue.split(/(\s+)/);
+                    parts.forEach(function (part) {
+                        if (part === '') return;
+                        if (/^\s+$/.test(part)) {
+                            frag.appendChild(document.createTextNode(' '));
+                        } else {
+                            var span = document.createElement('span');
+                            span.className = 'st-word';
+                            span.textContent = part;
+                            frag.appendChild(span);
+                        }
+                    });
+                    node.parentNode.replaceChild(frag, node);
+                });
+            }
+            headings.forEach(function (heading) {
+                splitWords(heading);
+                var words = heading.querySelectorAll('.st-word');
+                if (!words.length) return;
+                var step = Math.min(STAGGER, words.length > 1 ? MAX_TOTAL / (words.length - 1) : STAGGER);
+                words.forEach(function (word, i) {
+                    word.style.setProperty('--st-delay', (i * step).toFixed(3) + 's');
+                });
+                heading.classList.add('st-split', 'st-pending');
+            });
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('st-reveal');
+                    entry.target.classList.remove('st-pending');
+                    observer.unobserve(entry.target);
+                });
+            }, { threshold: 0.25, rootMargin: '0px 0px -5% 0px' });
+            document.querySelectorAll('.st-split').forEach(function (h) {
+                observer.observe(h);
+            });
+        })();
     </script>
 </body>
 

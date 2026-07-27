@@ -1,6 +1,13 @@
 // Load navbar component
 async function loadNavbar() {
     try {
+        const navbarContainer = document.getElementById('navbar-container');
+        // If the navbar markup is already inlined on the page, just initialize it.
+        if (navbarContainer && navbarContainer.children.length > 0) {
+            initializeNavbar();
+            return;
+        }
+
         // Check if we're in the treatments, blogs, latestnews, or recentpost folder and adjust path accordingly
         const navbarPath = window.location.pathname.includes('/treatments/') || window.location.pathname.includes('/blogs/') || window.location.pathname.includes('/latestnews/') || window.location.pathname.includes('/recentpost/') ? '../components/navbar.html' : 'components/navbar.html';
         const response = await fetch(navbarPath);
@@ -10,9 +17,9 @@ async function loadNavbar() {
         // Fix paths if we're in treatments, blogs, latestnews, or recentpost folder
         if (window.location.pathname.includes('/treatments/') || window.location.pathname.includes('/blogs/') || window.location.pathname.includes('/latestnews/') || window.location.pathname.includes('/recentpost/')) {
             // Fix image paths
-            const logoImg = document.querySelector('#navbar-container img[src="Images/GERMANTANLOGO.webp"]');
+            const logoImg = document.querySelector('#navbar-container img[src="Images/dr-jawad-logo.webp"]');
             if (logoImg) {
-                logoImg.src = '../Images/GERMANTANLOGO.webp';
+                logoImg.src = '../Images/dr-jawad-logo.webp';
             }
 
             // Fix all navigation links that don't start with treatments/, blogs/, latestnews/, or recentpost/
@@ -48,6 +55,35 @@ async function loadNavbar() {
         initializeNavbar();
     } catch (error) {
         console.error('Error loading navbar:', error);
+    }
+}
+
+// Load floating navigation sidebar component into all <floating-nav> tags
+async function loadFloatingNav() {
+    try {
+        const targets = document.querySelectorAll('floating-nav');
+        if (!targets.length) return;
+
+        const floatingNavPath = window.location.pathname.includes('/treatments/') || window.location.pathname.includes('/blogs/') || window.location.pathname.includes('/latestnews/') || window.location.pathname.includes('/recentpost/') ? '../components/floating-nav.html' : 'components/floating-nav.html';
+        const response = await fetch(floatingNavPath);
+        const floatingNavHTML = await response.text();
+
+        targets.forEach(target => {
+            target.innerHTML = floatingNavHTML;
+
+            // Fix links if we're in treatments, blogs, latestnews, or recentpost folder
+            if (window.location.pathname.includes('/treatments/') || window.location.pathname.includes('/blogs/') || window.location.pathname.includes('/latestnews/') || window.location.pathname.includes('/recentpost/')) {
+                const links = target.querySelectorAll('a[href]');
+                links.forEach(link => {
+                    const href = link.getAttribute('href');
+                    if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('../')) {
+                        link.href = '../' + href;
+                    }
+                });
+            }
+        });
+    } catch (error) {
+        console.error('Error loading floating nav:', error);
     }
 }
 
@@ -168,6 +204,10 @@ function initializeNavbar() {
     // Mobile menu toggle functionality
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
+
+    // Prevent double-binding if already initialized by an inlined navbar script
+    if (mobileMenuButton && mobileMenuButton.dataset.initialized === 'true') return;
+    if (mobileMenuButton) mobileMenuButton.dataset.initialized = 'true';
 
     if (mobileMenuButton && mobileMenu) {
         mobileMenuButton.addEventListener('click', () => {
@@ -324,6 +364,7 @@ loadNavbar();
 // Initialize everything else when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     loadFooter();
+    loadFloatingNav();
     
     // Initialize hero slider on any page that has the slider
     if (document.getElementById('heroSlider')) {
@@ -437,19 +478,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Handle touch devices for mobile dropdowns
-if ('ontouchstart' in window) {
-    document.addEventListener('DOMContentLoaded', () => {
-        const mobileDropdownButtons = document.querySelectorAll('[onclick^="toggleMobileDropdown"]');
-        mobileDropdownButtons.forEach(button => {
-            button.addEventListener('touchstart', (e) => {
-                e.preventDefault();
-                const dropdownId = button.getAttribute('onclick').match(/toggleMobileDropdown\('(.+?)'\)/)[1];
-                window.toggleMobileDropdown(dropdownId);
-            });
-        });
-    });
-}
 
 // Prevent dropdown from closing when clicking inside
 document.addEventListener('click', (e) => {

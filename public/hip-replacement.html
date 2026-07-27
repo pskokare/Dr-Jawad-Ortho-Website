@@ -7,19 +7,170 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Top Hip Replacement Surgeon in Hyderabad | Dr. Mir Jawad</title>
     <meta name="description"
-        content="Looking for a trusted hip replacement surgeon in Hyderabad? Dr. Mir Jawad Zar Khan offers world-class robotic and minimally invasive surgeries. Consult now.">
+        content="Advanced hip replacement surgery in Hyderabad from Dr. Mir Jawad Zar Khan. Robotic precision, 26+ years experience, fast recovery. Book a consultation.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="icon" type="image/webp" href="../Images/GERMANTANLOGO.webp">
+    <link rel="icon" type="image/webp" href="../Images/dr-jawad-logo.webp">
     <link rel="canonical" href="https://drjawadortho.com/hip-replacement">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <style>
-        /* Desktop hero section positioning */
-        @media (min-width: 769px) {
-            .hero-desktop-fix {
-                margin-top: 30px;
-                /* Account for navbar and top bar on desktop */
+        /*
+         * Responsive hero offset:
+         * The JavaScript near the end of this page sets this value only when
+         * the injected navbar is actually fixed and does not reserve its own space.
+         * A normal-flow or sticky navbar therefore creates no duplicate white gap.
+         */
+        :root {
+            --gh-fixed-header-offset: 0px;
+        }
+
+        html {
+            scroll-padding-top: var(--gh-fixed-header-offset);
+        }
+
+        #navbar-container {
+            position: relative;
+            z-index: 1000;
+        }
+
+        .hip-hero-section {
+            position: relative;
+            width: 100%;
+            margin: 0;
+            padding: var(--gh-fixed-header-offset) 0 0;
+            overflow: hidden;
+        }
+
+        .hip-hero-media {
+            position: relative;
+            width: 100%;
+            height: clamp(250px, 67vw, 320px);
+            min-height: 250px;
+            overflow: hidden;
+            background: #1f2937;
+        }
+
+        .hip-hero-image {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 46%;
+        }
+
+        .hip-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(90deg, rgba(32, 5, 8, 0.72), rgba(72, 9, 14, 0.58)),
+                linear-gradient(180deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.32));
+        }
+
+        .hip-hero-content {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px 18px;
+            text-align: center;
+        }
+
+        .hip-hero-copy {
+            width: min(100%, 760px);
+            margin: 0 auto;
+        }
+
+        .hip-hero-title {
+            margin: 0 0 12px;
+            color: #ffffff;
+            font-size: clamp(1.75rem, 7vw, 3.35rem);
+            font-weight: 800;
+            line-height: 1.12;
+            text-wrap: balance;
+        }
+
+        .hip-hero-description {
+            max-width: 680px;
+            margin: 0 auto;
+            color: #ffffff;
+            font-size: clamp(0.95rem, 3.5vw, 1.25rem);
+            line-height: 1.65;
+            text-align: center;
+            text-wrap: balance;
+        }
+
+        @media (min-width: 640px) {
+            .hip-hero-media {
+                height: 340px;
+                min-height: 340px;
+            }
+
+            .hip-hero-content {
+                padding: 32px 24px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .hip-hero-media {
+                height: 400px;
+                min-height: 400px;
+            }
+
+            .hip-hero-image {
+                object-position: center 48%;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .hip-hero-media {
+                height: 460px;
+                min-height: 460px;
+            }
+
+            .hip-hero-content {
+                padding: 40px 32px;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .hip-hero-media {
+                height: 520px;
+                min-height: 520px;
+            }
+        }
+
+        @media (min-width: 1536px) {
+            .hip-hero-media {
+                height: 550px;
+                min-height: 550px;
+            }
+        }
+
+        @media (max-width: 374px) {
+            .hip-hero-media {
+                height: 240px;
+                min-height: 240px;
+            }
+
+            .hip-hero-content {
+                padding: 20px 14px;
+            }
+
+            .hip-hero-title {
+                font-size: 1.6rem;
+            }
+
+            .hip-hero-description {
+                font-size: 0.9rem;
+                line-height: 1.55;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
             }
         }
     </style>
@@ -117,24 +268,31 @@
     <div id="navbar-container"></div>
 
     <!-- Hero Section -->
-    <main class="w-full">
-        <section class="relative pt-0 sm:pt-14 md:pt-16 hero-desktop-fix">
+    <main class="w-full overflow-x-clip">
+        <section class="hip-hero-section" aria-labelledby="hip-hero-title">
 
-            <div class="w-full h-48 sm:h-64 md:h-80 lg:h-96 xl:h-[520px] 2xl:h-[550px] overflow-hidden relative">
+            <div class="hip-hero-media">
 
-                <img src="../Images/Treatment/Total-Hip-Replacement-(THR).webp" alt="Hip Replacement" width="1920"
-                    height="1080" class="w-full h-full object-cover object-center">
+                <img src="../Images/Treatment/Total-Hip-Replacement-(THR).webp"
+                    alt="Hip replacement surgery treatment"
+                    width="1920"
+                    height="1080"
+                    class="hip-hero-image"
+                    loading="eager"
+                    fetchpriority="high"
+                    decoding="async">
 
-                <!-- Black Overlay -->
-                <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+                <!-- Readability Overlay -->
+                <div class="hip-hero-overlay" aria-hidden="true"></div>
 
                 <!-- Text Overlay -->
-                <div class="absolute inset-0 flex items-center justify-center">
-                    <div class="text-center px-4">
-                        <h1 class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4">
+                <div class="hip-hero-content">
+                    <div class="hip-hero-copy">
+                        <h1 id="hip-hero-title" class="hip-hero-title">
                             Hip <span class="text-yellow-400">Replacement</span>
                         </h1>
-                        <p class="text-lg sm:text-xl text-white max-w-3xl mx-auto text-justify">
+
+                        <p class="hip-hero-description">
                             Advanced Hip Replacement Surgery by Dr. Mir Jawad Zar Khan
                         </p>
                     </div>
@@ -145,12 +303,20 @@
         </section>
 
         <!-- Breadcrumb Navigation -->
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <nav class="flex text-sm text-gray-600" aria-label="Breadcrumb">
-                <a href="..//" class="hover:text-blue-600 transition-colors duration-200">Treatments</a>
-                <span class="mx-2 text-gray-400">»</span>
-                <span class="text-gray-900 font-semibold">Hip Replacement</span>
-            </nav>
+        <div class="bg-white border-b border-gray-200 shadow-sm">
+            <div class="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-3 md:py-4">
+                <nav class="flex items-center flex-wrap gap-1 sm:gap-2 text-xs sm:text-sm" aria-label="Breadcrumb">
+                    <a href="/"
+                        class="inline-flex items-center text-gray-600 hover:text-blue-700 transition-colors duration-200 font-medium">
+                        <i class="fa-solid fa-home mr-1 text-[10px] sm:text-xs"></i>
+                        <span>Home</span>
+                    </a>
+                    <i class="fa-solid fa-chevron-right text-gray-400 text-[8px] sm:text-[10px] mx-1"></i>
+                    <span class="text-gray-500 font-medium">Treatments</span>
+                    <i class="fa-solid fa-chevron-right text-gray-400 text-[8px] sm:text-[10px] mx-1"></i>
+                    <span class="text-blue-700 font-semibold truncate" aria-current="page">Hip Replacement</span>
+                </nav>
+            </div>
         </div>
 
         <!-- Three Column Section Below Header -->
@@ -180,7 +346,7 @@
                             Treatments For Knee Arthritis & Back Problems</a>
                         <a href="/oats-procedure" class="block hover:text-gray-900">OATS Procedure</a>
                         <a href="/eswt" class="block hover:text-gray-900">ESWT</a>
-                        <a href="/shoulder-surgery" class="block hover:text-gray-900">Shoulder Surgery</a>
+                        <a href="/shoulder-replacement-surgery-in-hyderabad" class="block hover:text-gray-900">Shoulder Surgery</a>
                         <!-- <a href="neurology" class="block hover:text-gray-900">Neurology</a> -->
                         <a href="/general-orthopedics" class="block hover:text-gray-900">General
                             Orthopedics</a>
@@ -213,255 +379,416 @@
 
                 <div class="lg:col-span-3 md:col-span-1">
                     <div class="space-y-3" id="hipTabButtons">
+
                         <button
                             class="hip-tab-btn active w-full text-left bg-yellow-400 text-white font-bold py-3 px-4 rounded-md"
-                            data-tab="hip-tab-1">Introduction</button>
+                            data-tab="hip-tab-1">
+                            Hip Replacement Surgery in Hyderabad
+                        </button>
+
                         <button
                             class="hip-tab-btn w-full text-left bg-yellow-100 text-gray-900 font-bold py-3 px-4 rounded-md"
-                            data-tab="hip-tab-2">Total Hip Replacement</button>
+                            data-tab="hip-tab-2">
+                            What Is Total Hip Replacement?
+                        </button>
+
                         <button
                             class="hip-tab-btn w-full text-left bg-yellow-100 text-gray-900 font-bold py-3 px-4 rounded-md"
-                            data-tab="hip-tab-3">Why THR</button>
+                            data-tab="hip-tab-3">
+                            Conditions That May Require Hip Replacement
+                        </button>
+
                         <button
                             class="hip-tab-btn w-full text-left bg-yellow-100 text-gray-900 font-bold py-3 px-4 rounded-md"
-                            data-tab="hip-tab-4">Signs & Preparing</button>
+                            data-tab="hip-tab-4">
+                            Signs You Should See a Hip Specialist
+                        </button>
+
                         <button
                             class="hip-tab-btn w-full text-left bg-yellow-100 text-gray-900 font-bold py-3 px-4 rounded-md"
-                            data-tab="hip-tab-5">Services & Technology</button>
+                            data-tab="hip-tab-5">
+                            Robotic and Computer-Navigated Hip Replacement
+                        </button>
+
                         <button
                             class="hip-tab-btn w-full text-left bg-yellow-100 text-gray-900 font-bold py-3 px-4 rounded-md"
-                            data-tab="hip-tab-6">Specialists</button>
+                            data-tab="hip-tab-6">
+                            Procedure and Hospital Stay
+                        </button>
+
+                        <button
+                            class="hip-tab-btn w-full text-left bg-yellow-100 text-gray-900 font-bold py-3 px-4 rounded-md"
+                            data-tab="hip-tab-7">
+                            Recovery After Hip Replacement
+                        </button>
+
+                        <button
+                            class="hip-tab-btn w-full text-left bg-yellow-100 text-gray-900 font-bold py-3 px-4 rounded-md"
+                            data-tab="hip-tab-8">
+                            Long-Term Outcomes
+                        </button>
+
+                        <button
+                            class="hip-tab-btn w-full text-left bg-yellow-100 text-gray-900 font-bold py-3 px-4 rounded-md"
+                            data-tab="hip-tab-9">
+                            Why Choose Dr. Jawad?
+                        </button>
+
+                        <button
+                            class="hip-tab-btn w-full text-left bg-yellow-100 text-gray-900 font-bold py-3 px-4 rounded-md"
+                            data-tab="hip-tab-10">
+                            Frequently Asked Questions
+                        </button>
+
                     </div>
                 </div>
 
                 <div class="lg:col-span-6 md:col-span-2 bg-white rounded-xl border border-gray-200 p-5 shadow-sm">
+
+                    <!-- Tab 1 -->
                     <div class="hip-tab-content active space-y-4" id="hip-tab-1">
-                        <h3 class="text-2xl font-bold text-gray-900">Hip Replacement Surgery</h3>
-                        <p class="text-gray-700 leading-relaxed text-justify">Get treated with our best in class
-                            surgeons perform
-                            your hip replacement surgery treatment at our Hospitals.</p>
 
-                        <!-- Video Testimonials -->
-                        <div class="mt-6">
-                            <h4 class="text-xl font-semibold text-gray-900 mb-4">Video Testimonials</h4>
-                            <div class="grid md:grid-cols-2 gap-3">
-                                <div class="bg-gray-50 rounded-lg p-2 border border-gray-200">
-                                    <h5 class="font-semibold text-gray-900 mb-1 text-xs">Mr. Abdul Islam - Hip Pain
-                                        Recovery</h5>
-                                    <p class="text-xs text-gray-600 mb-1">Age 21 yrs old from Assam. He was suffering
-                                        from hip pain for the last 11 years.</p>
-                                    <div class="aspect-w-16 aspect-h-9">
-                                        <iframe src="https://www.youtube.com/embed/DCLzhr54moM"
-                                            class="w-full h-28 rounded-lg" frameborder="0"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                            allowfullscreen>
-                                        </iframe>
-                                    </div>
-                                </div>
+                        <h3 class="text-2xl font-bold text-gray-900">
+                            Hip Replacement Surgery in Hyderabad
+                        </h3>
 
-                                <div class="bg-gray-50 rounded-lg p-2 border border-gray-200">
-                                    <h5 class="font-semibold text-gray-900 mb-1 text-xs">Mr. Abdul Islam - Success Story
-                                    </h5>
-                                    <p class="text-xs text-gray-600 mb-1">Age 21 yrs old from Assam. He was suffering
-                                        from hip pain for the last 11 years.</p>
-                                    <div class="aspect-w-16 aspect-h-9">
-                                        <iframe src="https://www.youtube.com/embed/OEPHOu5JfEo"
-                                            class="w-full h-28 rounded-lg" frameborder="0"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                            allowfullscreen>
-                                        </iframe>
-                                    </div>
-                                </div>
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            Hip pain changes the way you sit, walk and sleep long before most people are ready to
+                            consider surgery.
+                        </p>
 
-                                <div class="bg-gray-50 rounded-lg p-2 border border-gray-200">
-                                    <h5 class="font-semibold text-gray-900 mb-1 text-xs">Mr. Mohd Hafeed - Hip
-                                        Replacement</h5>
-                                    <p class="text-xs text-gray-600 mb-1 text-justify">38 yrs old operated for Hip
-                                        Replacement by Dr.
-                                        Mir Jawad Zar Khan</p>
-                                    <div class="aspect-w-16 aspect-h-9">
-                                        <iframe src="https://www.youtube.com/embed/MGEqWNPvKyM"
-                                            class="w-full h-28 rounded-lg" frameborder="0"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                            allowfullscreen>
-                                        </iframe>
-                                    </div>
-                                </div>
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            When arthritis, avascular necrosis or a fracture has damaged the hip joint beyond what
+                            medication and physiotherapy can manage, hip replacement surgery restores movement that
+                            pain has slowly taken away.
+                        </p>
 
-                                <div class="bg-gray-50 rounded-lg p-2 border border-gray-200">
-                                    <h5 class="font-semibold text-gray-900 mb-1 text-xs">Mr. Shaik Akbar - Hip Fracture
-                                        Recovery</h5>
-                                    <p class="text-xs text-gray-600 mb-1 text-justify">Age 39 yrs old From Maharashtra
-                                        Nanded, His
-                                        hip was fractured in an accident.</p>
-                                    <div class="aspect-w-16 aspect-h-9">
-                                        <iframe src="https://www.youtube.com/embed/pEiYCg7jyT8"
-                                            class="w-full h-28 rounded-lg" frameborder="0"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                            allowfullscreen>
-                                        </iframe>
-                                    </div>
-                                </div>
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            Dr. Mir Jawad Zar Khan brings more than 26 years of experience and robotic-assisted
+                            technique to hip replacement surgery at Germanten Hospitals in Attapur, Hyderabad.
+                        </p>
 
-                                <div class="bg-gray-50 rounded-lg p-2 border border-gray-200">
-                                    <h5 class="font-semibold text-gray-900 mb-1 text-xs">Total Hip Replacement Success
-                                    </h5>
-                                    <p class="text-xs text-gray-600 mb-1 text-justify">Dr. Mir Jawad sir performed Total
-                                        Hip
-                                        Replacement surgery successfully</p>
-                                    <div class="aspect-w-16 aspect-h-9">
-                                        <iframe src="https://www.youtube.com/embed/uLpr9HZ0_B4"
-                                            class="w-full h-28 rounded-lg" frameborder="0"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                            allowfullscreen>
-                                        </iframe>
-                                    </div>
-                                </div>
-
-                                <div class="bg-gray-50 rounded-lg p-2 border border-gray-200">
-                                    <h5 class="font-semibold text-gray-900 mb-1 text-xs">Total Hip Replacement Procedure
-                                    </h5>
-                                    <p class="text-xs text-gray-600 mb-1 text-justify">Total Hip Replacement by Dr. Mir
-                                        Jawad Zar
-                                        Khan</p>
-                                    <div class="aspect-w-16 aspect-h-9">
-                                        <iframe src="https://www.youtube.com/embed/8m6xSv2XQ8E"
-                                            class="w-full h-28 rounded-lg" frameborder="0"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                            allowfullscreen>
-                                        </iframe>
-                                    </div>
-                                </div>
-
-                                <div class="bg-gray-50 rounded-lg p-2 border border-gray-200 md:col-span-2">
-                                    <h5 class="font-semibold text-gray-900 mb-1 text-xs">Mr. Mohd Yakub - Patient
-                                        Testimonial</h5>
-                                    <p class="text-xs text-gray-600 mb-1 text-justify">Mr. Mohd Yakub express his
-                                        happiness who had
-                                        undergone Total Hip Replacement surgery</p>
-                                    <div class="aspect-w-16 aspect-h-9">
-                                        <iframe src="https://www.youtube.com/embed/mmuktS5L_ko"
-                                            class="w-full h-36 rounded-lg" frameborder="0"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                            allowfullscreen>
-                                        </iframe>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
+
+                    <!-- Tab 2 -->
                     <div class="hip-tab-content hidden space-y-4" id="hip-tab-2">
-                        <h3 class="text-2xl font-bold text-gray-900 border-l-4 border-red-500 pl-5 mb-6">TOTAL HIP
-                            REPLACEMENT (THR OR TOTAL HIP ARTHROPLASTY)</h3>
-                        <p class="text-gray-700 leading-relaxed mb-4 text-justify">Hip joint replacement is a medical
-                            surgery or
-                            procedure which discards the injured joint and replaced with a healthy one. A joint is the
-                            location where more than two bones join or merge such as the knee, hip, and shoulder. Our
-                            hospital is located in the happening city of Hyderabad city, providing a wide range of
-                            services for Joint Replacement surgery. Our hospital is a renowned Hospital for hip
-                            replacement surgery in India.</p>
-                        <p class="text-gray-700 leading-relaxed text-justify">Hip Replacement is a procedure when other
-                            pain
-                            management therapies fail to pacify pain associated with the arthritis of the Hip. Hip
-                            replacement is a surgical procedure where the defective hip joint is recouped with
-                            prosthetic implant. Such hip joint replacement surgeries are performed to reduce the pain
-                            arising due to arthritis or severe physical joint damage which constitutes as a part of hip
-                            fracture. Once the surgery is performed individual can perform all the daily activities with
-                            much ease. Total Hip replacement surgery is also referred to as Total Hip arthroplasty.</p>
-                        <div class="text-center my-4">
-                            <img src="../Images/Treatment/hipreplacement1.webp" alt="Hip Replacement Surgery"
-                                width="800" height="400" class="w-full max-w-3xl mx-auto rounded-lg shadow-md">
-                        </div>
+
+                        <h3 class="text-2xl font-bold text-gray-900">
+                            What Is Total Hip Replacement?
+                        </h3>
+
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            Total hip replacement, also known as total hip arthroplasty, replaces the damaged ball
+                            of the thighbone and the worn socket of the pelvis with an artificial joint.
+                        </p>
+
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            The new joint is designed to move smoothly through a range of motion similar to a
+                            healthy hip, allowing patients to walk, sit and climb stairs without the grinding pain
+                            caused by bone rubbing against bone.
+                        </p>
+
                     </div>
+
+                    <!-- Tab 3 -->
                     <div class="hip-tab-content hidden space-y-4" id="hip-tab-3">
-                        <h3 class="text-2xl font-bold text-gray-900 border-l-4 border-red-500 pl-5 mb-6">WHY THR (TOTAL
-                            HIP REPLACEMENT)</h3>
-                        <p class="text-gray-700 leading-relaxed mb-4 text-justify">Osteoarthritis which occurs in the
-                            hip joint is a
-                            reason for people to opt for Hip Replacement surgery. Hip Replacement is the best option, if
-                            persistent pain occurs, loss of motion or deformity of hip joint. Hip replacement is also
-                            performed in people suffering from hip damage, rheumatoid arthritis or any serious medical
-                            condition, such as a bone tumor or bone loss as a result of inadequate blood supply
-                            (avascular necrosis).</p>
-                        <div class="text-center my-4">
-                            <img src="../Images/Treatment/hipreplacementnews.webp" alt="Hip Replacement News"
-                                width="800" height="400" class="w-full max-w-2xl mx-auto rounded-lg shadow-md">
-                        </div>
-                    </div>
-                    <div class="hip-tab-content hidden space-y-4" id="hip-tab-4">
-                        <h3 class="text-2xl font-bold text-gray-900 border-l-4 border-red-500 pl-5 mb-6">SIGNS OF AN
-                            INDIVIDUAL OPTING FOR HIP REPLACEMENT:</h3>
-                        <p class="text-gray-700 leading-relaxed mb-4 font-semibold text-justify">Best Orthopedic Doctor
-                            TV 5
-                            Interview</p>
-                        <ol class="list-decimal list-inside text-gray-700 space-y-2 ml-4">
-                            <li>Due to severe pain a person cannot sleep.</li>
-                            <li>Gets no relief even after taking pain medications.</li>
-                            <li>Finds it troublesome to climb the stairs.</li>
-                            <li>Having trouble to stand after prolonged sitting.</li>
-                            <li>Facing difficulty in walking, due to severe pain.</li>
-                        </ol>
-                        <p class="text-gray-700 leading-relaxed mt-4 text-justify">Previously Hip replacement was
-                            required when
-                            individuals crossed 60 years and above. But technical advancements in medical technology,
-                            has increased bone strength which makes it durable and long lasting, however artificial
-                            joints are easily available which are suitable for active people. However, individuals need
-                            another surgery replacement after 15 to 20 years when the replace begins to be worn out.</p>
-                        <h3 class="text-2xl font-bold text-gray-900 border-l-4 border-red-500 pl-5 mb-6 mt-6">PREPARING
-                            FOR THR</h3>
-                        <p class="text-gray-700 leading-relaxed text-justify">Prior to total hip replacement surgery,
-                            the surgeon
-                            will examine and evaluate patient's physical condition. The hip replacement surgeon
-                            thoroughly checks the patient's medical history to make sure that the patient is fit for
-                            surgery. The surgeon physically screens the hip, with more focus on the movement in the
-                            joints and checks the strength of muscles in the hip area. Blood tests and X-ray reports are
-                            general medical procedures that are performed.</p>
-                    </div>
-                    <div class="hip-tab-content hidden space-y-4" id="hip-tab-5">
-                        <h3 class="text-2xl font-bold text-gray-900 border-l-4 border-red-500 pl-5 mb-6">SERVICES
-                            OFFERED BY GERMANTEN</h3>
-                        <p class="text-gray-700 leading-relaxed mb-4 text-justify">Total knee replacement & hip
-                            replacement surgeries
-                            are performed to keep a check on osteoarthritis, rheumatoid arthritis valgus or varus
-                            abnormalities like Hip fractures and defects.</p>
-                        <h3 class="text-2xl font-bold text-gray-900 border-l-4 border-red-500 pl-5 mb-6 mt-6">TECHNOLOGY
+
+                        <h3 class="text-2xl font-bold text-gray-900">
+                            Conditions That May Require Hip Replacement
                         </h3>
-                        <ul class="text-gray-700 space-y-2">
-                            <li class="flex items-start"><i class="fas fa-check text-red-600 mt-1 mr-3"></i><span>State
-                                    of the Art class100 OTs with Hepa Filters.</span></li>
-                            <li class="flex items-start"><i
-                                    class="fas fa-check text-red-600 mt-1 mr-3"></i><span>Surgery of TKR using
-                                    sophisticated "Zero Technique"</span></li>
-                            <li class="flex items-start"><i class="fas fa-check text-red-600 mt-1 mr-3"></i><span>We use
-                                    all knee and Hip implants</span></li>
-                            <li class="flex items-start"><i class="fas fa-check text-red-600 mt-1 mr-3"></i><span>We
-                                    provide various Radiology and Imaging services (CT, MRI, X-Ray)</span></li>
-                            <li class="flex items-start"><i class="fas fa-check text-red-600 mt-1 mr-3"></i><span>Wide
-                                    range of Pathology and Microbiology.</span></li>
-                        </ul>
-                    </div>
-                    <div class="hip-tab-content hidden space-y-4" id="hip-tab-6">
-                        <h3 class="text-2xl font-bold text-gray-900 border-l-4 border-red-500 pl-5 mb-6">SPECIALISTS
-                        </h3>
-                        <p class="text-gray-700 leading-relaxed mb-4 text-justify">The hospital is well equipped and
-                            supported by</p>
-                        <ul class="text-gray-700 space-y-2">
-                            <li class="flex items-start"><i class="fas fa-user-md text-red-600 mt-1 mr-3"></i><span>Best
-                                    in class Arthroscopic Surgeons</span></li>
-                            <li class="flex items-start"><i
-                                    class="fas fa-user-md text-red-600 mt-1 mr-3"></i><span>Skilled Aestheticians</span>
+
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            Several conditions can damage the hip joint enough to require replacement surgery:
+                        </p>
+
+                        <ul class="list-disc pl-5 space-y-2 text-gray-700 leading-relaxed">
+
+                            <li>
+                                <strong>Osteoarthritis:</strong> The gradual wearing down of cartilage caused by
+                                age and long-term joint stress.
                             </li>
-                            <li class="flex items-start"><i
-                                    class="fas fa-procedures text-red-600 mt-1 mr-3"></i><span>Modern Intensive
-                                    care</span></li>
-                            <li class="flex items-start"><i class="fas fa-users text-red-600 mt-1 mr-3"></i><span>Well
-                                    trained and qualified Physiotherapists.</span></li>
+
+                            <li>
+                                <strong>Avascular necrosis:</strong> A condition in which blood supply to the head
+                                of the thighbone is disrupted and the bone tissue begins to collapse. It may be
+                                linked to prolonged steroid use, heavy alcohol use or unknown causes.
+                            </li>
+
+                            <li>
+                                <strong>Rheumatoid arthritis:</strong> An inflammatory condition that can damage
+                                the joint lining and cartilage.
+                            </li>
+
+                            <li>
+                                <strong>Hip or thighbone fractures:</strong> These are particularly common in older
+                                adults after a fall.
+                            </li>
+
+                            <li>
+                                <strong>Childhood hip conditions:</strong> Certain developmental conditions can
+                                cause early joint degeneration during adulthood.
+                            </li>
+
                         </ul>
-                        <p class="text-gray-700 leading-relaxed mt-4 font-semibold text-justify">Contact our Hospital
-                            for Joint
-                            Replacement, Joint Replacement Hospital, Joint Replacement Surgery, Hip Replacement Surgery,
-                            Hip Replacement Hospital in Hyderabad, India.</p>
+
                     </div>
+
+                    <!-- Tab 4 -->
+                    <div class="hip-tab-content hidden space-y-4" id="hip-tab-4">
+
+                        <h3 class="text-2xl font-bold text-gray-900">
+                            Signs You Should See a Hip Specialist
+                        </h3>
+
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            Persistent groin or thigh pain, pain that spreads to the knee, a noticeable limp,
+                            difficulty putting on shoes or socks, and hip stiffness after sitting for long periods
+                            are all reasons to have the joint evaluated.
+                        </p>
+
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            Waiting too long can make the surrounding muscles weaker and may slow the eventual
+                            recovery process.
+                        </p>
+
+                    </div>
+
+                    <!-- Tab 5 -->
+                    <div class="hip-tab-content hidden space-y-4" id="hip-tab-5">
+
+                        <h3 class="text-2xl font-bold text-gray-900">
+                            Robotic and Computer-Navigated Hip Replacement
+                        </h3>
+
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            Positioning the hip implant at the correct angle and depth has a direct effect on leg
+                            length, joint stability and how naturally the hip moves after surgery.
+                        </p>
+
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            Computer navigation and robotic-assisted planning allow the surgical team to map these
+                            measurements before surgery and verify implant position in real time during the
+                            procedure, reducing the guesswork involved in manual techniques.
+                        </p>
+
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            Minimally invasive approaches are used where appropriate to limit muscle disruption and
+                            support faster early mobilisation after surgery.
+                        </p>
+
+                    </div>
+
+                    <!-- Tab 6 -->
+                    <div class="hip-tab-content hidden space-y-4" id="hip-tab-6">
+
+                        <h3 class="text-2xl font-bold text-gray-900">
+                            The Hip Replacement Procedure and Hospital Stay
+                        </h3>
+
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            Hip replacement surgery generally takes one to two hours under spinal or general
+                            anesthesia.
+                        </p>
+
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            Patients are encouraged to stand and begin walking with support soon after surgery,
+                            often on the same day, under the guidance of the physiotherapy team.
+                        </p>
+
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            A typical hospital stay ranges from three to five days, depending on age, general health
+                            and how quickly early mobility targets are achieved.
+                        </p>
+
+                    </div>
+
+                    <!-- Tab 7 -->
+                    <div class="hip-tab-content hidden space-y-4" id="hip-tab-7">
+
+                        <h3 class="text-2xl font-bold text-gray-900">
+                            Recovery After Hip Replacement
+                        </h3>
+
+                        <div class="space-y-4">
+
+                            <div>
+                                <h4 class="text-xl font-semibold text-gray-900">
+                                    First Two Weeks
+                                </h4>
+
+                                <p class="text-gray-700 leading-relaxed text-justify mt-2">
+                                    The first two weeks focus on wound healing, pain control and learning safe
+                                    movement patterns to protect the new joint. This includes precautions around
+                                    bending and crossing the legs.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h4 class="text-xl font-semibold text-gray-900">
+                                    Following Weeks
+                                </h4>
+
+                                <p class="text-gray-700 leading-relaxed text-justify mt-2">
+                                    Walking distance increases steadily with the help of a walker or stick.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h4 class="text-xl font-semibold text-gray-900">
+                                    Six to Eight Weeks
+                                </h4>
+
+                                <p class="text-gray-700 leading-relaxed text-justify mt-2">
+                                    By six to eight weeks, most patients have progressed to a cane or are walking
+                                    unaided for short distances.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h4 class="text-xl font-semibold text-gray-900">
+                                    Three to Six Months
+                                </h4>
+
+                                <p class="text-gray-700 leading-relaxed text-justify mt-2">
+                                    Full recovery, including a return to normal daily activities and most forms of
+                                    low-impact exercise, typically takes three to six months.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Tab 8 -->
+                    <div class="hip-tab-content hidden space-y-4" id="hip-tab-8">
+
+                        <h3 class="text-2xl font-bold text-gray-900">
+                            Long-Term Outcomes of Hip Replacement
+                        </h3>
+
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            Hip replacement has one of the strongest long-term safety records in orthopedic
+                            surgery.
+                        </p>
+
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            A population-based cohort study following patients for up to twenty years, published
+                            through The Lancet, recorded implant survival of more than 95 percent at ten years and
+                            approximately 85 percent at twenty years.
+                        </p>
+
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            For patients over 70, the lifetime risk of requiring another hip surgery was found to
+                            be approximately 5 percent, demonstrating how durable modern hip implants have become.
+                        </p>
+
+                    </div>
+
+                    <!-- Tab 9 -->
+                    <div class="hip-tab-content hidden space-y-4" id="hip-tab-9">
+
+                        <h3 class="text-2xl font-bold text-gray-900">
+                            Why Choose Dr. Jawad for Hip Replacement in Hyderabad?
+                        </h3>
+
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            Dr. Mir Jawad Zar Khan's training includes advanced fellowship work in joint
+                            replacement in Munich, Germany.
+                        </p>
+
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            He has also collaborated internationally with Dr. Roland Wetzel, honorary department
+                            head for hip and knee joint replacement surgery at University Hospital Munich.
+                        </p>
+
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            This partnership shapes the surgical protocols used for hip replacement at Germanten
+                            Hospitals, combining German surgical standards with the convenience of care in
+                            Hyderabad.
+                        </p>
+
+                    </div>
+
+                    <!-- Tab 10 -->
+                    <div class="hip-tab-content hidden space-y-5" id="hip-tab-10">
+
+                        <h3 class="text-2xl font-bold text-gray-900">
+                            Frequently Asked Questions
+                        </h3>
+
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-900">
+                                How long does hip replacement surgery take?
+                            </h4>
+
+                            <p class="text-gray-700 leading-relaxed text-justify mt-2">
+                                The procedure itself usually takes between one and two hours, although the total
+                                time in the operating room, including anesthesia preparation, is longer.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-900">
+                                How soon can I walk after hip replacement?
+                            </h4>
+
+                            <p class="text-gray-700 leading-relaxed text-justify mt-2">
+                                Most patients are supported to stand and take their initial steps within one day of
+                                surgery. Walking distance then increases daily under physiotherapy supervision.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-900">
+                                What precautions should I follow after hip replacement?
+                            </h4>
+
+                            <p class="text-gray-700 leading-relaxed text-justify mt-2">
+                                Early recovery involves avoiding certain hip positions, such as deep bending or
+                                crossing the legs, to protect the new joint while the surrounding tissue heals.
+                                The physiotherapy team provides guidance based on the surgical approach used.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-900">
+                                Can hip replacement be done on both sides at once?
+                            </h4>
+
+                            <p class="text-gray-700 leading-relaxed text-justify mt-2">
+                                Bilateral hip replacement may be possible for medically fit patients after a
+                                detailed cardiac and overall health evaluation. The decision is made on a
+                                case-by-case basis.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-900">
+                                What causes avascular necrosis of the hip?
+                            </h4>
+
+                            <p class="text-gray-700 leading-relaxed text-justify mt-2">
+                                Avascular necrosis develops when blood supply to part of the thighbone is disrupted,
+                                causing the bone to weaken and the joint surface to collapse over time. Prolonged
+                                steroid use, excessive alcohol consumption and trauma are recognised risk factors,
+                                although the exact cause is not always identified.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-900">
+                                How long does a hip replacement implant last?
+                            </h4>
+
+                            <p class="text-gray-700 leading-relaxed text-justify mt-2">
+                                Long-term studies show survival rates above 95 percent at ten years and around
+                                85 percent at twenty years. Most patients therefore do not require revision surgery
+                                for decades, if ever.
+                            </p>
+                        </div>
+
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -732,6 +1059,94 @@
 
     <!-- Scripts -->
     <script src="../js/script.js"></script>
+
+    <!-- Apply a header offset only when the injected navbar is truly fixed -->
+    <script>
+        (function () {
+            "use strict";
+
+            const root = document.documentElement;
+            const navbarContainer = document.getElementById("navbar-container");
+
+            if (!navbarContainer) {
+                return;
+            }
+
+            let resizeObserver = null;
+            let scheduledFrame = null;
+
+            function getFixedHeaderBottom() {
+                /*
+                 * When the navbar container already occupies normal document space,
+                 * no additional hero offset is needed.
+                 */
+                const containerRect = navbarContainer.getBoundingClientRect();
+
+                if (containerRect.height > 1) {
+                    return 0;
+                }
+
+                const candidates = [
+                    navbarContainer,
+                    ...navbarContainer.querySelectorAll(
+                        "header, nav, [class*='navbar'], [class*='header']"
+                    )
+                ];
+
+                return candidates.reduce(function (largestBottom, element) {
+                    const styles = window.getComputedStyle(element);
+
+                    if (styles.position !== "fixed") {
+                        return largestBottom;
+                    }
+
+                    const rect = element.getBoundingClientRect();
+
+                    if (rect.height <= 0 || rect.bottom <= 0) {
+                        return largestBottom;
+                    }
+
+                    return Math.max(largestBottom, rect.bottom);
+                }, 0);
+            }
+
+            function updateHeroOffset() {
+                scheduledFrame = null;
+
+                const offset = Math.max(0, Math.round(getFixedHeaderBottom()));
+                root.style.setProperty("--gh-fixed-header-offset", offset + "px");
+            }
+
+            function scheduleUpdate() {
+                if (scheduledFrame !== null) {
+                    cancelAnimationFrame(scheduledFrame);
+                }
+
+                scheduledFrame = requestAnimationFrame(updateHeroOffset);
+            }
+
+            const navbarObserver = new MutationObserver(scheduleUpdate);
+
+            navbarObserver.observe(navbarContainer, {
+                childList: true,
+                subtree: true,
+                attributes: true,
+                attributeFilter: ["class", "style"]
+            });
+
+            if ("ResizeObserver" in window) {
+                resizeObserver = new ResizeObserver(scheduleUpdate);
+                resizeObserver.observe(navbarContainer);
+            }
+
+            window.addEventListener("resize", scheduleUpdate, { passive: true });
+            window.addEventListener("orientationchange", scheduleUpdate, { passive: true });
+            window.addEventListener("load", scheduleUpdate);
+
+            document.addEventListener("DOMContentLoaded", scheduleUpdate);
+            scheduleUpdate();
+        })();
+    </script>
 
     <!-- Hip Tab Switching Script -->
     <script>
@@ -1966,9 +2381,6 @@
 
     </script>
 
-</body>
-
-</html>
 </body>
 
 </html>

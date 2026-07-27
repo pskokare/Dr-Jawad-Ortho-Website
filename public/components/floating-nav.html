@@ -1,0 +1,100 @@
+<div id="floating-nav" class="fixed right-4 z-50 hidden lg:flex flex-col gap-2" style="bottom: 12%;">
+    <a href="book-an-appointment.html" title="Book Appointment"
+        class="floating-nav-btn floating-nav-vertical-btn rounded-lg flex items-center justify-center text-white">
+        <span class="floating-nav-vertical-text">Book Appointment</span>
+    </a>
+    <a href="about-us.html" class="floating-nav-btn rounded-lg flex items-center justify-center text-white"
+        title="About Us">
+        <i class="fas fa-user-md"></i>
+    </a>
+    <a href="https://www.google.com/maps/search/?api=1&query=Dr.%20Mir%20Jawad%20Zar%20Khan%20Best%20Orthopedic%20Doctor%20in%20Hyderabad%20Knee%20Joint%20Replacement%20Surgeon%20Attapur%20Hyderabad"
+        class="floating-nav-btn rounded-lg flex items-center justify-center text-white" title="Get Directions"
+        aria-label="Get Directions" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-directions"></i>
+    </a>
+    <a href="book-an-appointment.html" class="floating-nav-btn rounded-lg flex items-center justify-center text-white"
+        title="Book Appointment">
+        <i class="fas fa-calendar-check"></i>
+    </a>
+    <a href="contact.html" class="floating-nav-btn rounded-lg flex items-center justify-center text-white"
+        title="Contact Us">
+        <i class="fas fa-phone-alt"></i>
+    </a>
+    <a href="https://wa.me/919989635555" target="_blank" rel="noopener noreferrer"
+        class="floating-nav-btn floating-nav-whatsapp rounded-lg flex items-center justify-center text-white"
+        title="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</div>
+
+<style>
+    /* Floating Navigation Styles */
+    .floating-nav-btn,
+    .floating-nav-btn-mobile {
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        width: 2.35rem;
+        height: 2.35rem;
+        background: #dc2626;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        transition: color 0.35s ease;
+    }
+
+    .floating-nav-btn::before,
+    .floating-nav-btn-mobile::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        border-radius: inherit;
+        background: linear-gradient(135deg, #f6ad00 0%, #fbbf24 100%);
+        transform: translateX(-101%);
+        transition: transform 0.45s ease;
+    }
+
+    .floating-nav-btn:hover::before,
+    .floating-nav-btn-mobile:hover::before {
+        transform: translateX(0);
+    }
+
+    .floating-nav-btn:hover,
+    .floating-nav-btn-mobile:hover {
+        color: #401f00;
+    }
+
+    .floating-nav-btn i {
+        position: relative;
+        z-index: 1;
+        font-size: 0.95rem;
+    }
+
+    .floating-nav-whatsapp {
+        background: #25d366;
+    }
+
+    .floating-nav-vertical-btn {
+        width: 2.35rem;
+        height: auto;
+        padding: 0.55rem 0.28rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .floating-nav-vertical-text {
+        position: relative;
+        z-index: 1;
+        writing-mode: vertical-rl;
+        font-size: 0.62rem;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        white-space: nowrap;
+    }
+
+    /* Ensure floating menu doesn't overlap important content */
+    @media (max-width: 1024px) {
+        #floating-nav {
+            right: 1rem;
+        }
+    }
+</style>

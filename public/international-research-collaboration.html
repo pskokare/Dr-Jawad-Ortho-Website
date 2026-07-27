@@ -2,18 +2,19 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-    <meta name="google-site-verification" content="gyGSLLzdQLlIEsLrhnGzWjOoQDhyTo8sxocDXKNkG7w" />    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="google-site-verification" content="gyGSLLzdQLlIEsLrhnGzWjOoQDhyTo8sxocDXKNkG7w" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research and Collaboration - Germanten Hospitals</title>
-    <meta name="description" content="Driving medical progress through research, clinical partnerships, and collaborative healthcare initiatives at Germanten Hospitals for better patient care.">
+    <meta name="description"
+        content="Driving medical progress through research, clinical partnerships, and collaborative healthcare initiatives at Germanten Hospitals for better patient care.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" type="image/webp" href="Images/GERMANTANLOGO.webp">
+    <link rel="icon" type="image/webp" href="Images/dr-jawad-logo.webp">
     <link rel="canonical" href="https://drjawadortho.com/international-research-collaboration">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <style>
-        /* Scroll Progress Bar Styles */
+        /* Scroll Progress Bar */
         .scroll-progress {
             position: fixed;
             top: 0;
@@ -23,6 +24,7 @@
             background: rgba(255, 255, 255, 0.2);
             z-index: 9999;
             transition: opacity 0.3s ease;
+            cursor: pointer;
         }
 
         .scroll-progress-bar {
@@ -33,53 +35,35 @@
             box-shadow: 0 0 10px rgba(202, 138, 4, 0.5);
         }
 
-
         .scroll-progress.hidden {
             opacity: 0;
             pointer-events: none;
         }
 
-        /* Mobile menu overlay styles */
         .mobile-menu-open {
             overflow: hidden;
         }
-        
+
         .mobile-menu-open::before {
             content: '';
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            inset: 0;
             background: rgba(0, 0, 0, 0.5);
             z-index: 40;
         }
-        
-        /* Ensure mobile menu has proper z-index */
+
         #mobile-menu {
             z-index: 50 !important;
+            transition: all 0.3s ease-in-out;
         }
-        
-        /* Touch-friendly menu items */
+
         #mobile-menu a {
             min-height: 44px;
             display: flex;
             align-items: center;
             padding: 12px 16px !important;
         }
-        
-        /* Mobile dropdown styles */
-        #mobile-menu .mobile-dropdown {
-            max-height: none;
-            overflow: visible;
-        }
-        
-        /* Smooth transitions */
-        #mobile-menu {
-            transition: all 0.3s ease-in-out;
-        }
-        
-        /* Hamburger button styling */
+
         #mobile-menu-button {
             min-width: 44px;
             min-height: 44px;
@@ -88,425 +72,1492 @@
             justify-content: center;
         }
 
-        /* Responsive typography and spacing */
-        @media (max-width: 640px) {
-            .section-padding { padding: 2rem 0.75rem !important; }
-            .card-padding { padding: 1rem !important; }
-            .hero-height { height: 30vh !important; min-height: 200px; }
-            .hero-title { font-size: 1.5rem !important; }
-            .hero-subtitle { font-size: 0.875rem !important; }
-            .content-text { font-size: 0.9rem !important; }
-            .section-title { font-size: 1.5rem !important; }
-            .doctor-image { width: 100px !important; height: 100px !important; }
-            .doctor-name { font-size: 0.9rem !important; }
-            .doctor-title { font-size: 0.75rem !important; }
-            .doctor-desc { font-size: 0.75rem !important; }
-            .collab-title { font-size: 0.9rem !important; }
-            .collab-text { font-size: 0.8rem !important; }
-        }
-        
-        @media (min-width: 641px) and (max-width: 768px) {
-            .hero-height { height: 35vh !important; min-height: 250px; }
-            .section-title { font-size: 1.75rem !important; }
-            .doctor-image { width: 120px !important; height: 120px !important; }
-        }
-        
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .hero-height { height: 40vh !important; min-height: 300px; }
-            .doctor-image { width: 128px !important; height: 128px !important; }
-        }
-        
-        @media (min-width: 1025px) {
-            .hero-height { height: 50vh !important; min-height: 400px; }
-        }
-        
-        /* Prevent horizontal scroll */
-        html, body {
+        html,
+        body {
             max-width: 100%;
             overflow-x: hidden;
         }
-        
-        /* Desktop banner positioning to account for navbar and top bar */
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .banner-section {
-                padding-top: 64px; /* Account for navbar height only (top bar hidden on tablet) */
+
+        /* ── Interactive animations ── */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(28px);
             }
-        }
-        
-        @media (min-width: 1025px) {
-            .banner-section {
-                padding-top: 40px; /* Account for both top bar (36px) and navbar (64px) */
-            }
-        }
-        
-        /* Touch-friendly on mobile */
-        @media (max-width: 768px) {
-            .collab-card {
-                padding: 0.75rem !important;
-            }
-            .doctor-card {
-                margin-bottom: 1rem;
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
-        /* Mobile-Only Responsive Design - Desktop View Preserved */
-        @media (max-width: 640px) {
-            /* Hero section mobile optimizations */
-            .w-full.h-\[30vh\] {
-                height: 25vh !important;
-                min-height: 180px !important;
+        @keyframes pulseGlow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(227, 30, 36, 0.35);
             }
-            
-            /* Doctor cards mobile optimizations */
-            .w-32.h-32 {
-                width: 80px !important;
-                height: 80px !important;
-            }
-            
-            .border-4 {
-                border-width: 2px !important;
-            }
-            
-            .p-1 {
-                padding: 0.25rem !important;
-            }
-            
-            /* Typography mobile optimizations */
-            .text-xl {
-                font-size: 1.25rem !important;
-            }
-            
-            .text-3xl {
-                font-size: 1.75rem !important;
-            }
-            
-            .text-lg {
-                font-size: 1rem !important;
-            }
-            
-            .text-sm {
-                font-size: 0.875rem !important;
-            }
-            
-            .text-xs {
-                font-size: 0.75rem !important;
-            }
-            
-            /* Spacing mobile optimizations */
-            .py-12 {
-                padding-top: 2rem !important;
-                padding-bottom: 2rem !important;
-            }
-            
-            .py-8 {
-                padding-top: 1.5rem !important;
-                padding-bottom: 1.5rem !important;
-            }
-            
-            .py-6 {
-                padding-top: 1rem !important;
-                padding-bottom: 1rem !important;
-            }
-            
-            .px-4 {
-                padding-left: 0.75rem !important;
-                padding-right: 0.75rem !important;
-            }
-            
-            .px-8 {
-                padding-left: 1rem !important;
-                padding-right: 1rem !important;
-            }
-            
-            .mb-12 {
-                margin-bottom: 1.5rem !important;
-            }
-            
-            .mb-8 {
-                margin-bottom: 1rem !important;
-            }
-            
-            .mb-6 {
-                margin-bottom: 0.75rem !important;
-            }
-            
-            .mb-4 {
-                margin-bottom: 0.5rem !important;
-            }
-            
-            .gap-8 {
-                gap: 1rem !important;
-            }
-            
-            .p-6 {
-                padding: 0.75rem !important;
-            }
-            
-            .p-4 {
-                padding: 0.5rem !important;
-            }
-            
-            .p-3 {
-                padding: 0.5rem !important;
-            }
-            
-            /* Grid mobile optimizations */
-            .grid-cols-1 {
-                grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
-            }
-            
-            .grid-cols-4 {
-                grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
-            }
-            
-            .grid-cols-2 {
-                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-            }
-            
-            /* Border container mobile optimizations */
-            .mx-8 {
-                margin-left: 0.5rem !important;
-                margin-right: 0.5rem !important;
-            }
-            
-            .mx-4 {
-                margin-left: 0.25rem !important;
-                margin-right: 0.25rem !important;
-            }
-            
-            /* Touch-friendly enhancements */
-            .bg-white.rounded-2xl {
-                cursor: pointer;
-                touch-action: manipulation;
-            }
-            
-            .bg-white.rounded-2xl:active {
-                transform: scale(0.98);
+
+            50% {
+                box-shadow: 0 0 0 10px rgba(227, 30, 36, 0);
             }
         }
 
-        @media (max-width: 480px) {
-            /* Ultra-mobile optimizations */
-            .w-full.h-\[30vh\] {
-                height: 20vh !important;
-                min-height: 150px !important;
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
             }
-            
-            .w-32.h-32 {
-                width: 70px !important;
-                height: 70px !important;
-            }
-            
-            .text-xl {
-                font-size: 1.125rem !important;
-            }
-            
-            .text-3xl {
-                font-size: 1.5rem !important;
-            }
-            
-            .text-lg {
-                font-size: 0.875rem !important;
-            }
-            
-            .text-sm {
-                font-size: 0.75rem !important;
-            }
-            
-            .text-xs {
-                font-size: 0.625rem !important;
-            }
-            
-            .py-12 {
-                padding-top: 1.5rem !important;
-                padding-bottom: 1.5rem !important;
-            }
-            
-            .py-8 {
-                padding-top: 1rem !important;
-                padding-bottom: 1rem !important;
-            }
-            
-            .py-6 {
-                padding-top: 0.75rem !important;
-                padding-bottom: 0.75rem !important;
-            }
-            
-            .px-4 {
-                padding-left: 0.5rem !important;
-                padding-right: 0.5rem !important;
-            }
-            
-            .px-8 {
-                padding-left: 0.75rem !important;
-                padding-right: 0.75rem !important;
-            }
-            
-            .mb-12 {
-                margin-bottom: 1rem !important;
-            }
-            
-            .mb-8 {
-                margin-bottom: 0.75rem !important;
-            }
-            
-            .mb-6 {
-                margin-bottom: 0.5rem !important;
-            }
-            
-            .mb-4 {
-                margin-bottom: 0.375rem !important;
-            }
-            
-            .gap-8 {
-                gap: 0.75rem !important;
-            }
-            
-            .p-6 {
-                padding: 0.5rem !important;
-            }
-            
-            .p-4 {
-                padding: 0.375rem !important;
-            }
-            
-            .p-3 {
-                padding: 0.375rem !important;
-            }
-            
-            .mx-8 {
-                margin-left: 0.25rem !important;
-                margin-right: 0.25rem !important;
-            }
-            
-            .mx-4 {
-                margin-left: 0.125rem !important;
-                margin-right: 0.125rem !important;
+
+            50% {
+                transform: translateY(-8px);
             }
         }
 
-        @media (min-width: 641px) and (max-width: 768px) {
-            /* Tablet optimizations */
-            .grid-cols-4 {
-                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        .hero-enter {
+            animation: fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+
+        .hero-enter-delay-1 {
+            animation-delay: 0.12s;
+        }
+
+        .hero-enter-delay-2 {
+            animation-delay: 0.24s;
+        }
+
+        .hero-enter-delay-3 {
+            animation-delay: 0.36s;
+        }
+
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .scroll-animate.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-heading-reveal {
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .section-heading-reveal.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .doctor-card {
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+        }
+
+        .doctor-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.14);
+        }
+
+        .doctor-card .doctor-card-image img {
+            transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .doctor-card:hover .doctor-card-image img {
+            transform: scale(1.06);
+        }
+
+        .doctor-card-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: flex-end;
+            padding: 1.25rem;
+            background: linear-gradient(to top, rgba(10, 29, 58, 0.88) 0%, transparent 55%);
+            opacity: 0;
+            transition: opacity 0.35s ease;
+            border-radius: 0 0 1rem 1rem;
+            pointer-events: none;
+        }
+
+        .doctor-card:hover .doctor-card-overlay {
+            opacity: 1;
+        }
+
+        .doctor-card-overlay span {
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transform: translateY(8px);
+            transition: transform 0.35s ease;
+        }
+
+        .doctor-card:hover .doctor-card-overlay span {
+            transform: translateY(0);
+        }
+
+        .germ-timeline-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .germ-timeline-item.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .germ-timeline-item.is-active .germ-timeline-node {
+            animation: pulseGlow 2s ease infinite;
+            transform: scale(1.08);
+        }
+
+        .germ-timeline-item.is-active .germ-timeline-card {
+            border-color: rgba(227, 30, 36, 0.25);
+            box-shadow: 0 16px 36px rgba(227, 30, 36, 0.1);
+        }
+
+        .germ-timeline-node {
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .germ-timeline-node:hover {
+            transform: scale(1.12);
+        }
+
+        .research-profile-card {
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .research-profile-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 28px 60px rgba(23, 35, 59, 0.14), 0 8px 22px rgba(23, 35, 59, 0.06);
+        }
+
+        .research-profile-highlight {
+            transition: background-color 0.25s ease, transform 0.25s ease, color 0.25s ease;
+        }
+
+        .research-profile-highlight:hover {
+            background: #fff0f0;
+            color: #98151a;
+            transform: translateY(-2px);
+        }
+
+        .floating-cta {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 9990;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 20px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #e31e24 0%, #b91319 100%);
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 12px 28px rgba(227, 30, 36, 0.35);
+            opacity: 0;
+            transform: translateY(20px) scale(0.95);
+            pointer-events: none;
+            transition: opacity 0.35s ease, transform 0.35s ease, box-shadow 0.25s ease;
+        }
+
+        .floating-cta.is-visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+        }
+
+        .floating-cta:hover {
+            box-shadow: 0 16px 36px rgba(227, 30, 36, 0.45);
+            transform: translateY(-3px) scale(1.02);
+        }
+
+        .doctor-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(10, 29, 58, 0.65);
+            backdrop-filter: blur(6px);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .doctor-modal.is-open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .doctor-modal__panel {
+            width: 100%;
+            max-width: 480px;
+            background: #fff;
+            border-radius: 24px;
+            overflow: hidden;
+            transform: scale(0.92) translateY(16px);
+            transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+            box-shadow: 0 24px 60px rgba(15, 23, 42, 0.2);
+        }
+
+        .doctor-modal.is-open .doctor-modal__panel {
+            transform: scale(1) translateY(0);
+        }
+
+        .doctor-modal__close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.95);
+            color: #0a1d3a;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .doctor-modal__close:hover {
+            transform: rotate(90deg);
+        }
+
+        .rc-stat-strip-hint {
+            display: none;
+            text-align: center;
+            font-size: 11px;
+            color: #667085;
+            margin: 8px 0 0;
+            gap: 6px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 780px) {
+            .rc-stat-strip-hint {
+                display: flex;
             }
-            
-            .grid-cols-2 {
-                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-            }
-            
-            .w-32.h-32 {
-                width: 100px !important;
-                height: 100px !important;
-            }
-            
-            .py-12 {
-                padding-top: 2.5rem !important;
-                padding-bottom: 2.5rem !important;
-            }
-            
-            .py-8 {
-                padding-top: 2rem !important;
-                padding-bottom: 2rem !important;
-            }
-            
-            .mb-12 {
-                margin-bottom: 2rem !important;
-            }
-            
-            .mb-8 {
-                margin-bottom: 1.5rem !important;
-            }
-            
-            .gap-8 {
-                gap: 1.5rem !important;
+
+            .rc-stat-strip-hint i {
+                animation: float 2s ease infinite;
             }
         }
 
-        /* Performance optimizations for mobile */
-        @media (max-width: 640px) {
-            .bg-white.rounded-2xl {
-                transition: transform 0.2s ease, box-shadow 0.2s ease;
-            }
-        }
-
-        /* Accessibility improvements */
         @media (prefers-reduced-motion: reduce) {
-            .bg-white.rounded-2xl {
+
+            .scroll-animate,
+            .germ-timeline-item,
+            .hero-enter,
+            .doctor-card,
+            .research-profile-card,
+            .floating-cta {
+                animation: none !important;
                 transition: none !important;
+                opacity: 1 !important;
+                transform: none !important;
             }
         }
+
+        :root {
+            --rc-red: #e31e24;
+            --rc-dark-red: #b91319;
+            --rc-yellow: #ffc400;
+            --rc-navy: #0a1d3a;
+            --rc-text: #596678;
+            --rc-white: #ffffff;
+            --rc-green-dark: #087a49;
+            --rc-green: #128453;
+            --rc-green-light: #238f68;
+            --rc-border: #e2e8ef;
+            --profile-red: #98151a;
+            --profile-yellow: #e6a500;
+            --profile-text: #596678;
+        }
+
+        #navbar-container {
+            width: 100%;
+            background: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            #navbar-container {
+                min-height: 64px;
+            }
+        }
+
+        .rc-hero,
+        .rc-hero * {
+            box-sizing: border-box;
+        }
+
+        .rc-hero {
+            position: relative;
+            width: 100%;
+            margin: 0 0 72px;
+            overflow: visible;
+            background: radial-gradient(circle at 18% 25%, rgba(220, 232, 242, 0.62), transparent 38%),
+                linear-gradient(115deg, #ffffff 0%, #f7fafc 52%, #edf4f8 100%);
+        }
+
+        .rc-hero__inner {
+            position: relative;
+            width: 100%;
+            max-width: 1500px;
+            min-height: 470px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .rc-hero__content {
+            position: relative;
+            z-index: 6;
+            width: 48%;
+            max-width: 600px;
+            padding: 60px 25px 135px clamp(28px, 7vw, 115px);
+        }
+
+        .rc-hero__eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            margin: 0 0 15px;
+            padding: 7px 13px;
+            border: 1px solid rgba(227, 30, 36, 0.18);
+            border-radius: 999px;
+            background: #fff3f3;
+            color: var(--rc-red);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .rc-hero__title {
+            max-width: 500px;
+            margin: 0;
+            color: var(--rc-navy);
+            font-size: clamp(10px, 2.1vw, 48px);
+            font-weight: 700;
+            line-height: 1.08;
+            letter-spacing: -0.025em;
+        }
+
+        .rc-hero__title-line {
+            display: none;
+        }
+
+        .rc-hero__description {
+            max-width: 465px;
+            margin: 0;
+            color: var(--rc-text);
+            font-size: 15px;
+            line-height: 1.65;
+        }
+
+        .rc-hero__button {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-height: 42px;
+            margin-top: 21px;
+            padding: 11px 19px;
+            border: 0;
+            border-radius: 9999px;
+            background: linear-gradient(135deg, #cf3339 0%, #b91c1c 100%);
+            color: var(--rc-white);
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 8px 18px rgba(227, 30, 36, 0.2);
+            transition: color 0.35s ease, box-shadow 0.2s, transform 0.2s;
+        }
+
+        .rc-hero__button::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            border-radius: inherit;
+            background: linear-gradient(135deg, #f6ad00 0%, #fbbf24 100%);
+            transform: translateX(-101%);
+            transition: transform 0.45s ease;
+        }
+
+        .rc-hero__button:hover::before {
+            transform: translateX(0);
+        }
+
+        .rc-hero__button:hover {
+            color: #401f00;
+            box-shadow: 0 10px 23px rgba(227, 30, 36, 0.28);
+            transform: translateY(-2px);
+        }
+
+        .rc-hero__button i {
+            position: relative;
+            z-index: 1;
+            transition: transform 0.25s ease;
+        }
+
+        .rc-hero__button:hover i {
+            transform: translateX(4px);
+        }
+
+        .rc-hero__image-shell {
+            position: absolute;
+            z-index: 5;
+            top: 42px;
+            right: clamp(28px, 4vw, 70px);
+            width: 43%;
+            height: 340px;
+            padding: 8px;
+            border: 1px solid var(--rc-border);
+            border-radius: 27px;
+            background: var(--rc-white);
+            box-shadow: 0 18px 38px rgba(10, 29, 58, 0.12), 0 4px 12px rgba(10, 29, 58, 0.05);
+            transition: transform 0.1s linear;
+        }
+
+        .rc-hero__image-shell::before {
+            content: "";
+            position: absolute;
+            top: 30px;
+            bottom: 30px;
+            left: -7px;
+            width: 7px;
+            border-radius: 999px;
+            background: linear-gradient(180deg, var(--rc-yellow) 0%, #ffd84d 100%);
+            box-shadow: 0 5px 12px rgba(255, 196, 0, 0.25);
+        }
+
+        .rc-hero__image-shell::after {
+            content: "";
+            position: absolute;
+            top: -1px;
+            right: 35px;
+            width: 70px;
+            height: 5px;
+            border-radius: 0 0 10px 10px;
+            background: var(--rc-red);
+        }
+
+        .rc-hero__image-wrap {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 19px;
+            background: linear-gradient(135deg, #f8fafc 0%, #eaf1f5 100%);
+        }
+
+        .rc-hero__image {
+            display: block;
+            width: 100%;
+            height: 100%;
+            padding: 7px 7px 0;
+            object-fit: contain;
+            object-position: center bottom;
+        }
+
+        .rc-hero__stripe-yellow {
+            position: absolute;
+            z-index: 3;
+            inset: auto 0 0 0;
+            height: 102px;
+            pointer-events: none;
+            background: var(--rc-yellow);
+            clip-path: polygon(0 50%, 20% 73%, 42% 88%, 65% 82%, 82% 60%, 100% 34%, 100% 100%, 0 100%);
+        }
+
+        .rc-hero__stripe-red {
+            position: absolute;
+            z-index: 4;
+            inset: auto 0 0 0;
+            height: 92px;
+            pointer-events: none;
+            background: var(--rc-red);
+            clip-path: polygon(0 58%, 20% 81%, 42% 96%, 65% 90%, 82% 68%, 100% 42%, 100% 100%, 0 100%);
+        }
+
+        .rc-stat-strip {
+            position: absolute;
+            z-index: 10;
+            left: 50%;
+            bottom: -54px;
+            width: calc(100% - 56px);
+            max-width: 1120px;
+            transform: translateX(-50%);
+        }
+
+        .rc-stat-strip__inner {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            min-height: 140px;
+            overflow: hidden;
+            border: 1px solid #e6dba0;
+            border-radius: 20px;
+            background: #f0e9c6;
+            box-shadow: 0 16px 34px rgba(21, 35, 57, 0.12);
+        }
+
+        .rc-stat {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 13px;
+            color: var(--rc-navy);
+            text-align: center;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .rc-stat:hover {
+            background: rgba(255, 255, 255, 0.35);
+            transform: translateY(-2px);
+        }
+
+        .rc-stat:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 1px;
+            height: 100%;
+            background: rgba(10, 29, 58, 0.14);
+        }
+
+        .rc-stat__icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 39px;
+            height: 39px;
+            margin: 0 0 9px;
+            border: 1px solid rgba(10, 29, 58, 0.12);
+            border-radius: 50%;
+            background: var(--rc-white);
+            color: var(--rc-red);
+            font-size: 15px;
+            box-shadow: 0 5px 13px rgba(0, 0, 0, 0.12);
+        }
+
+        .rc-stat__value {
+            margin: 0 0 5px;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1.15;
+        }
+
+        .rc-stat__label {
+            color: #4b5568;
+            font-size: 11px;
+            line-height: 1.35;
+        }
+
+        .rc-breadcrumb {
+            border-bottom: 1px solid #e5e7eb;
+            background: var(--rc-white);
+            box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+        }
+
+        .rc-breadcrumb__inner {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            max-width: 1200px;
+            min-height: 52px;
+            margin: 0 auto;
+            padding: 10px 20px;
+            font-size: 13px;
+        }
+
+        .rc-breadcrumb__link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #616d7d;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .rc-breadcrumb__link:hover {
+            color: var(--rc-red);
+        }
+
+        .rc-breadcrumb__separator {
+            color: #a3aab4;
+            font-size: 9px;
+        }
+
+        .rc-breadcrumb__current {
+            color: var(--rc-red);
+            font-weight: 700;
+        }
+
+        .research-profile-section {
+            position: relative;
+            width: 100%;
+            padding: 64px 20px;
+            overflow: hidden;
+            background: whitesmoke
+        }
+
+        .research-profile-container {
+            max-width: 1180px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .research-profile-card {
+            position: relative;
+            display: grid;
+            grid-template-columns: 250px minmax(0, 1fr) 190px;
+            align-items: center;
+            min-height: 315px;
+            overflow: hidden;
+            background: linear-gradient(105deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.94) 65%, rgba(255, 249, 243, 0.96) 100%);
+            box-shadow: 0 22px 55px rgba(23, 35, 59, 0.10), 0 6px 18px rgba(23, 35, 59, 0.04);
+        }
+
+        .research-profile-card::before {
+            display: none;
+        }
+
+        .research-profile-photo-area {
+            position: relative;
+            z-index: 3;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            min-height: 315px;
+            padding: 35px 12px 0 28px;
+        }
+
+        .research-profile-photo-frame {
+            width: 205px;
+            height: 265px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .research-profile-photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center bottom;
+            filter: drop-shadow(0 12px 15px rgba(23, 35, 59, 0.12));
+        }
+
+        .research-profile-content {
+            padding: 46px 25px 46px 15px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .research-profile-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            margin: 0 0 10px;
+            color: var(--profile-yellow);
+            font-size: 11px;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+        }
+
+        .research-profile-label::before {
+            content: "";
+            width: 24px;
+            height: 1px;
+            background: var(--profile-yellow);
+        }
+
+        .research-profile-name {
+            margin: 0;
+            color: var(--profile-red);
+            font-size: clamp(24px, 2.6vw, 32px);
+            font-weight: 700;
+            line-height: 1.22;
+        }
+
+        .research-profile-line {
+            display: none;
+        }
+
+        .research-profile-description {
+            max-width: 770px;
+            margin: 0;
+            color: var(--profile-text);
+            font-size: 15px;
+            line-height: 1.85;
+        }
+
+        .research-profile-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .research-profile-highlight {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: #f7f2eb;
+            color: #5e6876;
+            font-size: 11px;
+        }
+
+        .research-profile-highlight i {
+            color: var(--profile-red);
+        }
+
+        .research-profile-bone-area {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 25px 18px 5px 0;
+            overflow: hidden;
+        }
+
+        .research-profile-bone-image {
+            width: 180px;
+            height: 260px;
+            opacity: 0.30;
+            object-fit: contain;
+            filter: grayscale(1) contrast(1.1);
+        }
+
+        .germ-collab-section {
+            background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .germ-collab-wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 70px 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .germ-collab-head {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .germ-collab-eyebrow {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #e31e24;
+            background: #fff3f3;
+            border: 1px solid rgba(227, 30, 36, 0.14);
+            padding: 8px 14px;
+            border-radius: 999px;
+            margin-bottom: 14px;
+        }
+
+        .germ-collab-title {
+            font-size: clamp(28px, 4vw, 42px);
+            line-height: 1.15;
+            font-weight: 800;
+            color: #0a1d3a;
+            margin: 0 0 12px;
+        }
+
+        .germ-collab-subtitle {
+            max-width: 760px;
+            margin: 0 auto;
+            color: #667085;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .germ-collab-divider {
+            display: none;
+        }
+
+        .germ-timeline {
+            position: relative;
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 10px 0;
+        }
+
+        .germ-timeline::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 3px;
+            background: linear-gradient(180deg, #e31e24 0%, #ffc400 100%);
+            transform: translateX(-50%);
+            border-radius: 999px;
+        }
+
+        .germ-timeline-item {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 90px 1fr;
+            align-items: center;
+            margin-bottom: 34px;
+        }
+
+        .germ-timeline-card {
+            position: relative;
+            background: #ffffff;
+            border: 1px solid #e8edf3;
+            border-radius: 22px;
+            padding: 24px;
+            box-shadow: 0 12px 28px rgba(15, 23, 42, 0.07);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
+        .germ-timeline-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 36px rgba(15, 23, 42, 0.11);
+        }
+
+        .germ-timeline-card--left {
+            margin-right: 22px;
+        }
+
+        .germ-timeline-card--right {
+            margin-left: 22px;
+        }
+
+        .germ-timeline-card::before {
+            content: "";
+            position: absolute;
+            top: 22px;
+            width: 18px;
+            height: 18px;
+            background: #ffffff;
+            border-top: 1px solid #e8edf3;
+            border-right: 1px solid #e8edf3;
+            transform: rotate(45deg);
+        }
+
+        .germ-timeline-card--left::before {
+            right: -9px;
+        }
+
+        .germ-timeline-card--right::before {
+            left: -9px;
+            transform: rotate(225deg);
+        }
+
+        .germ-timeline-step {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #e31e24;
+            margin-bottom: 10px;
+        }
+
+        .germ-timeline-card h3 {
+            font-size: 21px;
+            font-weight: 800;
+            color: #0a1d3a;
+            margin: 0 0 10px;
+        }
+
+        .germ-timeline-card p {
+            margin: 0;
+            color: #5f6c7b;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .germ-timeline-middle {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .germ-timeline-node {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: #f0e9c6;
+            color: #e31e24;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+            border: 4px solid #ffffff;
+            z-index: 2;
+        }
+
+        .germ-timeline-line-left,
+        .germ-timeline-line-right {
+            position: absolute;
+            top: 50%;
+            height: 2px;
+            width: 38px;
+            background: rgba(11, 59, 184, 0.35);
+            transform: translateY(-50%);
+        }
+
+        .germ-timeline-line-left {
+            left: 0;
+        }
+
+        .germ-timeline-line-right {
+            right: 0;
+        }
+
+        @media (max-width: 1050px) {
+            .rc-hero {
+                margin-bottom: 30px;
+            }
+
+            .rc-hero__inner {
+                display: flex;
+                flex-direction: column;
+                min-height: auto;
+            }
+
+            .rc-hero__content {
+                width: 100%;
+                max-width: none;
+                padding: 40px 32px 28px;
+            }
+
+            .rc-hero__image-shell {
+                position: relative;
+                top: auto;
+                right: auto;
+                width: calc(100% - 64px);
+                height: 330px;
+                margin: 0 32px 10px;
+            }
+
+            .rc-stat-strip {
+                position: relative;
+                left: auto;
+                bottom: auto;
+                width: calc(100% - 40px);
+                margin: -42px auto 28px;
+                transform: none;
+            }
+
+            .research-profile-card {
+                grid-template-columns: 220px minmax(0, 1fr) 130px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .germ-timeline::before {
+                left: 28px;
+                transform: none;
+            }
+
+            .germ-timeline-item {
+                grid-template-columns: 56px 1fr;
+                gap: 16px;
+                align-items: start;
+            }
+
+            .germ-timeline-middle {
+                grid-column: 1;
+            }
+
+            .germ-timeline-card,
+            .germ-timeline-card--left,
+            .germ-timeline-card--right {
+                grid-column: 2;
+                margin: 0;
+            }
+
+            .germ-timeline-card::before {
+                left: -9px !important;
+                right: auto !important;
+                transform: rotate(225deg) !important;
+            }
+
+            .germ-timeline-line-left,
+            .germ-timeline-line-right {
+                display: none;
+            }
+        }
+
+        @media (max-width: 780px) {
+            .rc-hero__content {
+                padding: 32px 20px 25px;
+            }
+
+            .rc-hero__image-shell {
+                width: calc(100% - 34px);
+                height: 270px;
+                margin: 0 17px 8px;
+            }
+
+            .rc-stat-strip {
+                width: calc(100% - 24px);
+                margin: -36px auto 25px;
+                overflow-x: auto;
+                scroll-snap-type: x proximity;
+                scrollbar-width: none;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .rc-stat-strip::-webkit-scrollbar {
+                display: none;
+            }
+
+            .rc-stat-strip__inner {
+                display: flex;
+                width: max-content;
+                min-width: 100%;
+                min-height: 112px;
+            }
+
+            .rc-stat {
+                flex: 0 0 150px;
+                min-width: 150px;
+                min-height: 112px;
+            }
+        }
+
+        @media (max-width: 720px) {
+            .research-profile-card {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+
+            .research-profile-content {
+                padding: 25px 24px 34px;
+                text-align: center;
+            }
+
+            .research-profile-highlights {
+                justify-content: center;
+            }
+
+            .research-profile-bone-area {
+                display: none;
+            }
+        }
+
+        /* Match heading font and sizes to the home page */
+        .rc-hero__title {
+            font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+            font-size: clamp(32px, 3.4vw, 48px) !important;
+            font-weight: 750 !important;
+            color: #200000 !important;
+        }
+
+        .research-profile-name,
+        .germ-collab-title,
+        #german-doctors h2 {
+            font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+            font-size: clamp(31px, 2.1vw, 44px) !important;
+            font-weight: 750 !important;
+        }
+
+        .germ-timeline-card h3,
+        #german-doctors h3 {
+            font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+            font-size: 16px !important;
+            font-weight: 700 !important;
+        }
+
+        /* Home-page eyebrow label style */
+        .homepage-section-eyebrow {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 0.5rem !important;
+            font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+            font-size: 0.78rem !important;
+            font-weight: 600 !important;
+            letter-spacing: 0.08em !important;
+            text-transform: uppercase !important;
+            color: #b45309 !important;
+            background: #fffbeb !important;
+            border: 1px solid #fde68a !important;
+            padding: 0.35rem 1.1rem !important;
+            border-radius: 9999px !important;
+            margin-bottom: 0.9rem !important;
+            line-height: 1.3 !important;
+        }
+        @media (max-width: 480px) {
+            #navbar-container {
+                min-height: 64px !important;
+            }
+
+            .rc-hero__content {
+                padding: 24px 16px 20px;
+            }
+
+            .rc-hero__title {
+                font-size: clamp(26px, 7.5vw, 34px) !important;
+                line-height: 1.12 !important;
+            }
+
+            .rc-hero__description {
+                font-size: 14px;
+                line-height: 1.55;
+            }
+
+            .rc-hero__button {
+                min-height: 38px;
+                padding: 9px 16px;
+                font-size: 12px;
+            }
+
+            .rc-hero__image-shell {
+                width: calc(100% - 24px);
+                height: 220px;
+                margin: 0 12px 6px;
+            }
+        }
+
     </style>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-B7BXJEHXWK"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-
-gtag('config', 'G-B7BXJEHXWK');
-</script>
-
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B7BXJEHXWK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-B7BXJEHXWK');
+    </script>
 </head>
 
 <body class="bg-gray-50">
-    <!-- Scroll Progress Bar -->
+
     <div class="scroll-progress" id="scrollProgress">
         <div class="scroll-progress-bar" id="scrollProgressBar"></div>
     </div>
 
-    <!-- Navbar Component -->
-    <div id="navbar-container" style="height: 60px;"></div>
+    <div id="navbar-container" style="min-height: 100px;"></div>
 
-    <!-- Hero Section with Image -->
-    <section class="relative w-full overflow-hidden banner-section">
-        <!-- Hero Image with Bottom Border Only -->
-        <div class="border-b-4 border-yellow-400">
-            <img src="Images/AboutUs-page-Images/Reasearch-Collaboration/HeroSectionImage.webp" 
-                 alt="Research and Collaboration" width="1920" height="1080"
-                 class="w-full h-[30vh] sm:h-[35vh] md:h-[40vh] lg:h-[50vh] object-cover block">
+    <section class="rc-hero" aria-labelledby="researchCollaborationTitle">
+        <div class="rc-hero__inner">
+            <div class="rc-hero__content">
+                <h1 id="researchCollaborationTitle" class="rc-hero__title hero-enter hero-enter-delay-1">International
+                    Research Collaboration</h1>
+                <div class="rc-hero__title-line hero-enter hero-enter-delay-2" aria-hidden="true"></div>
+                <p class="rc-hero__description hero-enter hero-enter-delay-2">Uniting global orthopedic expertise with
+                    advanced care and research innovation for better patient outcomes.</p>
+                <a href="#research-collaboration-content"
+                    class="rc-hero__button hero-enter hero-enter-delay-3"><span>Know More</span> <i
+                        class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="rc-hero__image-shell hero-enter hero-enter-delay-2">
+                <div class="rc-hero__image-wrap">
+                    <img src="Images/Home-Page-Images/PanelOfGermanDoctors.webp"
+                        alt="International orthopedic specialists collaborating with Germanten Hospitals" width="1920"
+                        height="1080" class="rc-hero__image" fetchpriority="high">
+                </div>
+            </div>
+            <div class="rc-hero__stripe-yellow" aria-hidden="true"></div>
+            <div class="rc-hero__stripe-red" aria-hidden="true"></div>
         </div>
+        <div class="rc-stat-strip" role="region" aria-label="Research collaboration statistics">
+            <div class="rc-stat-strip__inner">
+                <div class="rc-stat scroll-animate" data-delay="0">
+                    <div class="rc-stat__icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <div class="rc-stat__content">
+                        <div class="rc-stat__value"><span data-counter="26" data-suffix="+">0+</span></div>
+                        <div class="rc-stat__label">Years Experience</div>
+                    </div>
+                </div>
+                <div class="rc-stat scroll-animate" data-delay="80">
+                    <div class="rc-stat__icon"><i class="fa-solid fa-user-doctor"></i></div>
+                    <div class="rc-stat__content">
+                        <div class="rc-stat__value"><span data-counter="20000" data-suffix="+">0+</span></div>
+                        <div class="rc-stat__label">Surgeries Performed</div>
+                    </div>
+                </div>
+                <div class="rc-stat scroll-animate" data-delay="160">
+                    <div class="rc-stat__icon"><i class="fa-solid fa-bone"></i></div>
+                    <div class="rc-stat__content">
+                        <div class="rc-stat__value">Advanced</div>
+                        <div class="rc-stat__label">Orthopedic Procedures</div>
+                    </div>
+                </div>
+                <div class="rc-stat scroll-animate" data-delay="240">
+                    <div class="rc-stat__icon"><i class="fa-solid fa-earth-europe"></i></div>
+                    <div class="rc-stat__content">
+                        <div class="rc-stat__value">Germany Trained</div>
+                        <div class="rc-stat__label">World-Class Training</div>
+                    </div>
+                </div>
+                <div class="rc-stat scroll-animate" data-delay="320">
+                    <div class="rc-stat__icon"><i class="fa-solid fa-user-group"></i></div>
+                    <div class="rc-stat__content">
+                        <div class="rc-stat__value">Global Collaboration</div>
+                        <div class="rc-stat__label">Research &amp; Training</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="rc-stat-strip-hint" aria-hidden="true"><i class="fa-solid fa-hand-pointer"></i> Swipe to explore all
+            statistics</p>
     </section>
-    
-    <!-- Breadcrumb Section -->
-    <div class="bg-white border-b border-gray-200 shadow-sm">
-        <div class="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-3 md:py-4">
-            <nav class="flex items-center flex-wrap gap-1 sm:gap-2 text-xs sm:text-sm" aria-label="Breadcrumb">
-                <!-- Home Link -->
-                <a href="#" class="inline-flex items-center text-gray-600 hover:text-blue-700 transition-colors duration-200 font-medium">
-                    <i class="fa-solid fa-home mr-1 text-[10px] sm:text-xs"></i>
-                    <span>AboutUs</span>
-                </a>
-                
-                <!-- Separator -->
-                <i class="fa-solid fa-chevron-right text-gray-400 text-[8px] sm:text-[10px] mx-1"></i>
-                
-                <!-- Current Page -->
-                <span class="text-blue-700 font-semibold truncate max-w-[150px] sm:max-w-[200px] md:max-w-none" aria-current="page">
-                    Reasearch-Collaboration
-                </span>
-            </nav>
-        </div>
+
+    <div class="rc-breadcrumb">
+        <nav class="rc-breadcrumb__inner" aria-label="Breadcrumb">
+            <a href="/" class="rc-breadcrumb__link"><i class="fa-solid fa-house"></i><span>About Us</span></a>
+            <i class="fa-solid fa-chevron-right rc-breadcrumb__separator" aria-hidden="true"></i>
+            <span class="rc-breadcrumb__current" aria-current="page">Research Collaboration</span>
+        </nav>
     </div>
 
-    <!-- Main Content -->
-    <main>
-        <!-- International Research Collaboration Section -->
-        <section class="py-6 sm:py-8 md:py-10 bg-gradient-to-br from-gray-50 to-white">
-            <div class="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-                <div class="text-center mb-8 sm:mb-10 md:mb-12">
-                    <h1 class="section-title text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
-                        International Research Collaboration
-                    </h1>
-                    <div class="w-16 sm:w-20 md:w-24 h-1 bg-gray-300 rounded-full mx-auto mb-6 sm:mb-8"></div>
+    <main id="research-collaboration-content">
+
+        <section class="research-profile-section">
+            <div class="research-profile-container">
+                <article class="research-profile-card scroll-animate">
+                    <div class="research-profile-photo-area">
+                        <div class="research-profile-photo-frame">
+                            <img src="Images/AboutUs-page-Images/Reasearch-Collaboration/dr-mir-jawad-khan.png"
+                                alt="Dr. Mir Jawad Zar Khan" width="400" height="500" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="research-profile-content">
+                        <p class="homepage-section-eyebrow">International orthopedic collaboration</p>
+                        <h2 class="research-profile-name">Dr. Mir Jawad Zar Khan</h2>
+                        <div class="research-profile-line" aria-hidden="true"></div>
+                        <p class="research-profile-description">Dr. Mir Jawad Zar Khan has done his Masters, M.S
+                            (Orthopaedics) from Osmania University, Hyderabad and M.Ch Orthopedics from Usaim,
+                            Seychelles. He has done fellowship in arthroplasty in world prestigious orthopedic institute
+                            in Munich Germany where he has worked with international experts in joint replacements
+                            surgeries. He was awarded best outgoing postgraduate with highest marks in Andhra Pradesh
+                            state.</p>
+                        <div class="research-profile-highlights">
+                            <span class="research-profile-highlight"><i class="fa-solid fa-graduation-cap"></i> Germany
+                                trained</span>
+                            <span class="research-profile-highlight"><i class="fa-solid fa-bone"></i> Arthroplasty
+                                fellowship</span>
+                            <span class="research-profile-highlight"><i class="fa-solid fa-award"></i> Academic
+                                distinction</span>
+                        </div>
+                    </div>
+                    <div class="research-profile-bone-area" aria-hidden="true">
+                        <img src="Images/Treatment/Arthroscopy2.webp" alt="" width="500" height="600"
+                            class="research-profile-bone-image" loading="lazy">
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="py-12 bg-[#f0e9c6]" id="german-doctors">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 section-heading-reveal">
+                    <span class="homepage-section-eyebrow">International Expertise</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Team of German Doctors</h2>
+                    <p class="text-gray-500 text-sm mt-4 max-w-lg mx-auto">Click any profile to view full credentials
+                    </p>
                 </div>
-                
-                <div class="bg-white rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-6 md:p-8">
-                    <div class="max-w-5xl mx-auto">
-                        <div class="text-center">
-                            <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-red-900 mb-4 sm:mb-6">Dr. Mir Jawad Zar Khan</h3>
-                            <p class="content-text text-gray-700 leading-relaxed text-sm sm:text-base md:text-lg text-justify">
-                                Dr. Mir Jawad Zar Khan has done his Masters, M.S (Orthopaedics) from Osmania University, Hyderabad and M.Ch Orthopedics from Usaim, Seychelles. He has done fellowship in arthroplasty in world prestigious orthopedic institute in Munich Germany where he has worked with international experts in joint replacements surgeries. He was awarded best outgoing postgraduate with highest marks in Andhra Pradesh state.
-                            </p>
+                <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+                    <div class="doctor-card bg-white rounded-2xl shadow-md overflow-hidden scroll-animate"
+                        data-doctor-id="vladimir" tabindex="0" role="button"
+                        aria-label="View Dr. Vladimir Martinek profile">
+                        <div class="bg-yellow-500 text-white text-xs font-bold py-3 px-4 uppercase text-center">
+                            Orthopedic Specialist</div>
+                        <div class="h-48 overflow-hidden p-4 doctor-card-image"><img
+                                src="Images/Home-Page-Images/OUR TEAM OF DOCTORS/German1-Dr-Valadmir.jpeg"
+                                alt="Dr. Vladimir Martinek" width="400" height="300" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 text-center relative">
+                            <h3 class="text-lg font-bold text-gray-900 mb-1">Dr. Vladimir Martinek</h3>
+                            <p class="text-red-600 font-semibold text-sm mb-2">Honory Prof</p>
+                            <p class="text-gray-600 text-sm leading-relaxed">Head Knee Replacement University Hospital,
+                                Munich, Germany.</p>
+                            <div class="doctor-card-overlay"><span><i class="fa-solid fa-circle-info mr-1"></i> View
+                                    full profile</span></div>
+                        </div>
+                    </div>
+                    <div class="doctor-card bg-white rounded-2xl shadow-md overflow-hidden scroll-animate"
+                        data-doctor-id="schill" tabindex="0" role="button" aria-label="View Dr. Stephan Schill profile">
+                        <div class="bg-yellow-500 text-white text-xs font-bold py-3 px-4 uppercase text-center">
+                            Orthopedic Specialist</div>
+                        <div class="h-48 overflow-hidden p-4 doctor-card-image"><img
+                                src="Images/Home-Page-Images/OUR TEAM OF DOCTORS/German2-Dr-Stephan-Schill.jpeg"
+                                alt="Dr. Stephan Schill" width="400" height="300" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 text-center relative">
+                            <h3 class="text-lg font-bold text-gray-900 mb-1">Dr. Stephan Schill</h3>
+                            <p class="text-red-600 font-semibold text-sm mb-2">Honory Professor</p>
+                            <p class="text-gray-600 text-sm leading-relaxed">Dept of Foot Hand Replacement Surgery,
+                                University Hospital, Munich, Germany.</p>
+                            <div class="doctor-card-overlay"><span><i class="fa-solid fa-circle-info mr-1"></i> View
+                                    full profile</span></div>
+                        </div>
+                    </div>
+                    <div class="doctor-card bg-white rounded-2xl shadow-md overflow-hidden scroll-animate"
+                        data-doctor-id="wetzel" tabindex="0" role="button" aria-label="View Dr. Roland Wetzel profile">
+                        <div class="bg-yellow-500 text-white text-xs font-bold py-3 px-4 uppercase text-center">
+                            Orthopedic Specialist</div>
+                        <div class="h-48 overflow-hidden p-4 doctor-card-image"><img
+                                src="Images/Home-Page-Images/OUR TEAM OF DOCTORS/German3-Prof-Dr-Roland-Wetzel.jpeg"
+                                alt="Dr. Roland Wetzel" width="400" height="300" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 text-center relative">
+                            <h3 class="text-lg font-bold text-gray-900 mb-1">Dr. Roland Wetzel</h3>
+                            <p class="text-red-600 font-semibold text-sm mb-2">Honory Department</p>
+                            <p class="text-gray-600 text-sm leading-relaxed">Head Hip & Knee Joint Replacement Surgery,
+                                University Hospital, Munich, Germany.</p>
+                            <div class="doctor-card-overlay"><span><i class="fa-solid fa-circle-info mr-1"></i> View
+                                    full profile</span></div>
+                        </div>
+                    </div>
+                    <div class="doctor-card bg-white rounded-2xl shadow-md overflow-hidden scroll-animate"
+                        data-doctor-id="langmeier" tabindex="0" role="button" aria-label="View Dr. Langmeier profile">
+                        <div class="bg-yellow-500 text-white text-xs font-bold py-3 px-4 uppercase text-center">
+                            Rehabilitation Specialist</div>
+                        <div class="h-48 overflow-hidden p-4 doctor-card-image"><img
+                                src="Images/Home-Page-Images/OUR TEAM OF DOCTORS/German4-langmeier-photo.jpeg"
+                                alt="Dr. Langmeier" width="400" height="300" class="w-full h-full object-cover"></div>
+                        <div class="p-6 text-center relative">
+                            <h3 class="text-lg font-bold text-gray-900 mb-1">Dr. Langmeier</h3>
+                            <p class="text-red-600 font-semibold text-sm mb-2">Physiotherapy Expert</p>
+                            <p class="text-gray-600 text-sm leading-relaxed">Head of Physiotherapy & Rehabilitation
+                                Unit, University Hospital, Munich, Germany.</p>
+                            <div class="doctor-card-overlay"><span><i class="fa-solid fa-circle-info mr-1"></i> View
+                                    full profile</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="germ-collab-section">
+            <div class="germ-collab-wrap">
+                <div class="germ-collab-head section-heading-reveal">
+                    <span class="germ-collab-eyebrow homepage-section-eyebrow">International Collaboration</span>
+                    <h2 class="germ-collab-title">International Collaboration &amp; Expertise</h2>
+                    <p class="germ-collab-subtitle">Explore the foundation of our global orthopedic collaboration,
+                        academic training, medical innovation, and patient-focused support network.</p>
+                    <div class="germ-collab-divider"></div>
+                </div>
+                <div class="germ-timeline">
+                    <div class="germ-timeline-item">
+                        <div class="germ-timeline-card germ-timeline-card--left"><span class="germ-timeline-step">Step
+                                1</span>
+                            <h3>Academic &amp; Training Background</h3>
+                            <p>During his academic training in advanced orthopedics in Munich, Germany, Dr. Mir Jawad
+                                Zar Khan worked with internationally renowned orthopedic specialists and gained strong
+                                experience in joint replacements, arthroscopy, spine procedures, trauma care, and
+                                non-operative orthopedic treatment.</p>
+                        </div>
+                        <div class="germ-timeline-middle"><span class="germ-timeline-line-left"></span>
+                            <div class="germ-timeline-node"><i class="fa-solid fa-user-graduate"></i></div><span
+                                class="germ-timeline-line-right"></span>
+                        </div>
+                        <div></div>
+                    </div>
+                    <div class="germ-timeline-item">
+                        <div></div>
+                        <div class="germ-timeline-middle"><span class="germ-timeline-line-left"></span>
+                            <div class="germ-timeline-node"><i class="fa-solid fa-award"></i></div><span
+                                class="germ-timeline-line-right"></span>
+                        </div>
+                        <div class="germ-timeline-card germ-timeline-card--right"><span class="germ-timeline-step">Step
+                                2</span>
+                            <h3>International Recognition</h3>
+                            <p>Impressed by Dr. Mir Jawad Zar Khan's work and dedication toward patient care,
+                                international experts extended their collaboration to support the development of an
+                                advanced orthopedic, neuro, and multi-specialty hospital in Hyderabad.</p>
+                        </div>
+                    </div>
+                    <div class="germ-timeline-item">
+                        <div class="germ-timeline-card germ-timeline-card--left"><span class="germ-timeline-step">Step
+                                3</span>
+                            <h3>Research Foundation Collaboration</h3>
+                            <p>Dr. Mir Jawad Zar Khan and the international medical panel are collaborating to build a
+                                dedicated orthopedic and musculoskeletal research foundation, focused on arthroscopy,
+                                traumatology, joint surgeries, spine research, and sustainable long-term academic
+                                partnerships.</p>
+                        </div>
+                        <div class="germ-timeline-middle"><span class="germ-timeline-line-left"></span>
+                            <div class="germ-timeline-node"><i class="fa-solid fa-flask-vial"></i></div><span
+                                class="germ-timeline-line-right"></span>
+                        </div>
+                        <div></div>
+                    </div>
+                    <div class="germ-timeline-item">
+                        <div></div>
+                        <div class="germ-timeline-middle"><span class="germ-timeline-line-left"></span>
+                            <div class="germ-timeline-node"><i class="fa-solid fa-stethoscope"></i></div><span
+                                class="germ-timeline-line-right"></span>
+                        </div>
+                        <div class="germ-timeline-card germ-timeline-card--right"><span class="germ-timeline-step">Step
+                                4</span>
+                            <h3>Advanced Medical Services</h3>
+                            <p>This collaboration also supports advanced treatment planning, including specialized
+                                anesthetic techniques such as combined spinal epidural anesthesia and nerve blocks,
+                                helping deliver safer joint replacement care for elderly patients with coexisting
+                                medical conditions.</p>
+                        </div>
+                    </div>
+                    <div class="germ-timeline-item">
+                        <div class="germ-timeline-card germ-timeline-card--left"><span class="germ-timeline-step">Step
+                                5</span>
+                            <h3>Hospital Support &amp; Visit Schedule</h3>
+                            <p>International specialists visit the hospital on a regular basis and support the medical
+                                team. The hospital is backed by experienced neurosurgeons, anesthesiologists,
+                                physicians, ICU support, and world-class operation theatres for advanced
+                                multidisciplinary care.</p>
+                        </div>
+                        <div class="germ-timeline-middle"><span class="germ-timeline-line-left"></span>
+                            <div class="germ-timeline-node"><i class="fa-solid fa-calendar-check"></i></div><span
+                                class="germ-timeline-line-right"></span>
+                        </div>
+                        <div></div>
+                    </div>
+                    <div class="germ-timeline-item">
+                        <div></div>
+                        <div class="germ-timeline-middle"><span class="germ-timeline-line-left"></span>
+                            <div class="germ-timeline-node"><i class="fa-solid fa-user-clock"></i></div><span
+                                class="germ-timeline-line-right"></span>
+                        </div>
+                        <div class="germ-timeline-card germ-timeline-card--right"><span class="germ-timeline-step">Step
+                                6</span>
+                            <h3>Patient Information &amp; Appointments</h3>
+                            <p>International doctor visit schedules will be published in advance so that local and
+                                international patients can book appointments easily with support from the hospital team.
+                                Patients can also connect with the <a href="international-patients-relation"
+                                    class="text-red-600 font-semibold hover:text-yellow-600 transition-colors duration-200">international
+                                    patient relations</a> department for additional assistance.</p>
                         </div>
                     </div>
                 </div>
@@ -514,435 +1565,125 @@ gtag('config', 'G-B7BXJEHXWK');
         </section>
     </main>
 
-<section class="py-12 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-    <!-- Heading -->
-    <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-        Our Team of German Doctors
-      </h2>
-      <div class="w-24 h-1 bg-yellow-500 mx-auto rounded-full"></div>
-    </div>
-
-    <!-- Grid -->
-    <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
-
-      <!-- Doctor Card -->
-      <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden scroll-animate">
-        
-        <!-- Top Strip -->
-        <div class="bg-yellow-500 text-white text-xs font-bold py-3 px-4 uppercase text-center">
-          Orthopedic Specialist
-        </div>
-
-        <!-- Image -->
-        <div class="h-48 overflow-hidden p-4">
-          <img src="Images/Home-Page-Images/OUR TEAM OF DOCTORS/German1-Dr-Valadmir.jpeg"
-            alt="Dr. Vladimir Martinek" width="400" height="300"
-            class="w-full h-full object-cover">
-        </div>
-
-        <!-- Content -->
-        <div class="p-6 text-center">
-          <h3 class="text-lg font-bold text-gray-900 mb-1">
-            Dr. Vladimir Martinek
-          </h3>
-          <p class="text-red-600 font-semibold text-sm mb-2">
-            Honory Prof
-          </p>
-          <p class="text-gray-600 text-sm leading-relaxed">
-            Head Knee Replacement University Hospital, Munich, Germany.
-          </p>
-        </div>
-      </div>
-
-      <!-- Doctor 2 -->
-      <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden scroll-animate">
-        <div class="bg-yellow-500 text-white text-xs font-bold py-3 px-4 uppercase text-center">
-          Orthopedic Specialist
-        </div>
-
-        <div class="h-48 overflow-hidden p-4">
-          <img src="Images/Home-Page-Images/OUR TEAM OF DOCTORS/German2-Dr-Stephan-Schill.jpeg"
-            alt="Dr. Stephan Schill" width="400" height="300"
-            class="w-full h-full object-cover">
-        </div>
-
-        <div class="p-6 text-center">
-          <h3 class="text-lg font-bold text-gray-900 mb-1">
-            Dr. Stephan Schill
-          </h3>
-          <p class="text-red-600 font-semibold text-sm mb-2">
-            Honory Professor
-          </p>
-          <p class="text-gray-600 text-sm leading-relaxed">
-            Dept of Foot Hand Replacement Surgery, University Hospital, Munich, Germany.
-          </p>
-        </div>
-      </div>
-
-      <!-- Doctor 3 -->
-      <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden scroll-animate">
-        <div class="bg-yellow-500 text-white text-xs font-bold py-3 px-4 uppercase text-center">
-          Orthopedic Specialist
-        </div>
-
-        <div class="h-48 overflow-hidden p-4">
-          <img src="Images/Home-Page-Images/OUR TEAM OF DOCTORS/German3-Prof-Dr-Roland-Wetzel.jpeg"
-            alt="Dr. Roland Wetzel" width="400" height="300"
-            class="w-full h-full object-cover">
-        </div>
-
-        <div class="p-6 text-center">
-          <h3 class="text-lg font-bold text-gray-900 mb-1">
-            Dr. Roland Wetzel
-          </h3>
-          <p class="text-red-600 font-semibold text-sm mb-2">
-            Honory Department
-          </p>
-          <p class="text-gray-600 text-sm leading-relaxed">
-            Head Hip & Knee Joint Replacement Surgery, University Hospital, Munich, Germany.
-          </p>
-        </div>
-      </div>
-
-      <!-- Doctor 4 -->
-      <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden scroll-animate">
-        <div class="bg-yellow-500 text-white text-xs font-bold py-3 px-4 uppercase text-center">
-          Rehabilitation Specialist
-        </div>
-
-        <div class="h-48 overflow-hidden p-4">
-          <img src="Images/Home-Page-Images/OUR TEAM OF DOCTORS/German4-langmeier-photo.jpeg"
-            alt="Dr. Langmeier" width="400" height="300"
-            class="w-full h-full object-cover">
-        </div>
-
-        <div class="p-6 text-center">
-          <h3 class="text-lg font-bold text-gray-900 mb-1">
-            Dr. Langmeier
-          </h3>
-          <p class="text-red-600 font-semibold text-sm mb-2">
-            Physiotherapy Expert
-          </p>
-          <p class="text-gray-600 text-sm leading-relaxed">
-            Head of Physiotherapy & Rehabilitation Unit, University Hospital, Munich, Germany.
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-    <!-- Collaboration Details Section -->
-    <section class="py-8 sm:py-10 md:py-12 bg-gray-50">
-        <div class="max-w-full mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-             <div class="text-center mb-6 sm:mb-8">
-                    <h2 class="section-title text-xl sm:text-2xl md:text-3xl font-bold text-gray-500 mb-3 sm:mb-4">
-                        International Collaboration & Expertise
-                    </h2>
-                </div>
-            <div class="border-2 border-dashed border-black rounded-lg p-3 sm:p-4 md:p-6 mx-0 sm:mx-4 md:mx-8">
-               
-                
-                <div class="space-y-4 sm:space-y-6">
-                    <div class="collab-card bg-white rounded-lg p-4 sm:p-6 shadow-sm">
-                        <h3 class="collab-title text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3 text-red-600">Academic & Training Background</h3>
-                        <p class="collab-text text-gray-700 leading-relaxed text-xs sm:text-sm md:text-base text-justify">
-                            During his academic career and training at Institute in Advanced orthopedics in Munich Germany, Dr Mir Jawad Zar Khan had the opportunity to work with world renowned International orthopedic surgeons and gained vast experience in Joint replacements and Arthroscopy surgeries and Spine Surgeries. Dr Mir Jawad Zar Khan has performed more than 10,000 Joint replacements Arthroscopic and Spine Surgeries & vast number of complex Trauma cases over a period of 22 years at Germany and in India, and also experienced in non operative modes of treatments.
-                        </p>
-                    </div>
-                    
-                    <div class="collab-card bg-white rounded-lg p-4 sm:p-6 shadow-sm">
-                        <h3 class="collab-title text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3 text-red-600">International Recognition</h3>
-                        <p class="collab-text text-gray-700 leading-relaxed text-xs sm:text-sm md:text-base text-justify">
-                            Impressed by Dr Mir Jawad Zar Khan's work and dedication towards patients, this International doctors have extended their association with him in setting up an advanced orthopedic, Neuro with Multi specialty services Hospital in Hyderabad with their collaboration.
-                        </p>
-                    </div>
-                    
-                    <div class="collab-card bg-white rounded-lg p-4 sm:p-6 shadow-sm">
-                        <h3 class="collab-title text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3 text-red-600">Research Foundation Collaboration</h3>
-                        <p class="collab-text text-gray-700 leading-relaxed text-xs sm:text-sm md:text-base text-justify">
-                            Dr Mir Jawad Zar Khan and his International doctors Team are collaborating an Orthopedic Research Foundation with all the International doctors in the Panel dedicated to stimulation of Orthopedic and musculoskeletal Research in fields of Arthroscopy, Traumatology and Joint Surgeries and Spine surgeries. The principal aim of this Research is to create long-term, sustainable solutions to the growing burden of musculoskeletal injuries and disorders through academic partnership. Mainly focusing on both operative & Non operative techniques in Orthopedics and neurology. This collaboration seeks to facilitate communication with member organisations to enhance international research collaborations and to promote the development of new international orthopedic and musculoskeletal research organisations. All the associate Doctors have more than two decades of teaching and research expertise in German University Hospital apart from performing thousands of orthopedic and Spine Surgeries.
-                        </p>
-                    </div>
-                    
-                    <div class="collab-card bg-white rounded-lg p-4 sm:p-6 shadow-sm">
-                        <h3 class="collab-title text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3 text-red-600">Advanced Medical Services</h3>
-                        <p class="collab-text text-gray-700 leading-relaxed text-xs sm:text-sm md:text-base text-justify">
-                            Our collaboration mainly focuses on Special anesthetic techniques, with combined spinal epidural anesthesia and nerve blocks enable the department to offer knee replacement to elderly with multiple, coexisting medical disease conditions.
-                        </p>
-                    </div>
-                    
-                    <div class="collab-card bg-white rounded-lg p-4 sm:p-6 shadow-sm">
-                        <h3 class="collab-title text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3 text-red-600">Hospital Support & Visit Schedule</h3>
-                        <p class="collab-text text-gray-700 leading-relaxed text-xs sm:text-sm md:text-base text-justify">
-                            During this course all the International expertise doctors will be visiting our Hospital on regular basis and support doctors. We have well experienced team of neurosurgeons, maxillofacial surgeons, anesthesiologists, Hand and Vascular Surgeons, Physicians, Pulmonologists, pediatricians with good ICU support and world class Operation Theatres.
-                        </p>
-                    </div>
-                    
-                    <div class="collab-card bg-white rounded-lg p-4 sm:p-6 shadow-sm">
-                        <h3 class="collab-title text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3 text-red-600">Patient Information & Appointments</h3>
-                        <p class="collab-text text-gray-700 leading-relaxed text-xs sm:text-sm md:text-base text-justify">
-                            International Doctors visit dates will be published in our website well in advance so that any of our local or International patients can also book their appointments with the help of our Team. For comprehensive international patient services and support, visit our <a href="international-patients-relation" class="text-orange-600 hover:text-red-600 font-medium transition-colors duration-200">international patient relations</a> department.
-                        </p>
-                    </div>
-                </div>
+    <div class="doctor-modal" id="doctorModal" role="dialog" aria-modal="true" aria-labelledby="modalDoctorName">
+        <div class="doctor-modal__panel relative">
+            <button class="doctor-modal__close" aria-label="Close profile"><i class="fa-solid fa-xmark"></i></button>
+            <div class="bg-yellow-500 text-white text-xs font-bold py-3 px-4 uppercase text-center"
+                data-modal-specialty></div>
+            <div class="p-6 text-center">
+                <img data-modal-image src="" alt=""
+                    class="w-32 h-32 rounded-full object-cover mx-auto mb-4 border-4 border-yellow-400 shadow-lg">
+                <h3 id="modalDoctorName" class="text-xl font-bold text-gray-900" data-modal-name></h3>
+                <p class="text-red-600 font-semibold text-sm mt-1" data-modal-title></p>
+                <p class="text-gray-600 text-sm leading-relaxed mt-4" data-modal-bio></p>
+                <a href="international-patients-relation"
+                    class="inline-flex items-center gap-2 mt-6 px-5 py-2.5 bg-red-600 text-white rounded-lg text-sm font-semibold hover:bg-red-700 transition-colors"><i
+                        class="fa-solid fa-calendar-check"></i> Book Consultation</a>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Footer -->
+
+    <!-- Floating Navigation Menu (loaded from components/floating-nav.html) -->
+    <floating-nav></floating-nav>
+
     <div id="footer-container"></div>
 
-    <!-- Scripts -->
+    <script src="js/script.js"></script>
     <script>
-        // Load navbar component
-        fetch('components/navbar')
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('navbar-container').innerHTML = html;
-                
-                // Initialize mobile menu functionality after navbar loads
-                initializeMobileMenu();
-            })
-            .catch(error => console.error('Error loading navbar:', error));
+        /* Interactive features */
+        (function () {
+            const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            function throttle(fn, limit) { let t; return function () { if (!t) { fn.apply(this, arguments); t = true; setTimeout(() => t = false, limit); } }; }
 
-        // Load footer component
-        fetch('components/footer')
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('footer-container').innerHTML = html;
-                
-                // Initialize footer functionality after footer loads
-                initializeFooter();
-            })
-            .catch(error => console.error('Error loading footer:', error));
-
-        // Mobile menu functionality
-        function initializeMobileMenu() {
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            if (mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
-                    if (!mobileMenu.classList.contains('hidden')) {
-                        mobileMenu.classList.add('mobile-menu-enter');
-                        // Add overlay to prevent interaction with background
-                        document.body.classList.add('mobile-menu-open');
-                    } else {
-                        mobileMenu.classList.remove('mobile-menu-enter');
-                        document.body.classList.remove('mobile-menu-open');
-                    }
-                });
+            function animateCounter(el, target, suffix) {
+                if (reduced) { el.textContent = target.toLocaleString() + suffix; return; }
+                const start = performance.now();
+                function tick(now) {
+                    const p = Math.min((now - start) / 1800, 1);
+                    el.textContent = Math.floor(target * (1 - Math.pow(1 - p, 3))).toLocaleString() + suffix;
+                    if (p < 1) requestAnimationFrame(tick);
+                }
+                requestAnimationFrame(tick);
             }
 
-            // Close mobile menu when clicking on a link
-            const mobileLinks = mobileMenu ? mobileMenu.querySelectorAll('a') : [];
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.add('hidden');
-                    mobileMenu.classList.remove('mobile-menu-enter');
-                    document.body.classList.remove('mobile-menu-open');
-                });
+            document.querySelectorAll('[data-counter]').forEach(el => {
+                new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { animateCounter(el, +el.dataset.counter, el.dataset.suffix || ''); } }); }, { threshold: 0.5 }).observe(el);
             });
 
-            // Close mobile menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (mobileMenu && !mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
-                    mobileMenu.classList.add('hidden');
-                    mobileMenu.classList.remove('mobile-menu-enter');
-                    document.body.classList.remove('mobile-menu-open');
-                }
+            /* Apply scroll reveal to all text content */
+            document.querySelectorAll('section:not(.rc-hero) h2, section:not(.rc-hero) h3').forEach(el => {
+                if (!el.classList.contains('scroll-animate') && !el.classList.contains('section-heading-reveal')) el.classList.add('scroll-animate');
             });
 
-            // Close mobile menu with Escape key
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
-                    mobileMenu.classList.remove('mobile-menu-enter');
-                    document.body.classList.remove('mobile-menu-open');
-                }
+            document.querySelectorAll('.scroll-animate, .section-heading-reveal').forEach((el, i) => {
+                new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) setTimeout(() => e.target.classList.add('animate-in'), reduced ? 0 : (e.target.dataset.delay || i * 80)); }); }, { threshold: 0.12 }).observe(el);
             });
-        }
 
-        // Mobile dropdown toggle functionality
-        function toggleMobileDropdown(dropdownId) {
-            const dropdown = document.getElementById(dropdownId + '-dropdown');
-            const button = event.target;
-            const chevron = button.querySelector('i');
-            
-            if (dropdown) {
-                const isHidden = dropdown.classList.contains('hidden');
-                
-                // Close all other dropdowns first
-                const allDropdowns = document.querySelectorAll('[id$="-dropdown"]');
-                allDropdowns.forEach(d => {
-                    d.classList.add('hidden');
-                    const otherButton = d.previousElementSibling;
-                    const otherChevron = otherButton.querySelector('i');
-                    if (otherChevron) {
-                        otherChevron.style.transform = 'rotate(0deg)';
-                    }
-                });
-                
-                // Toggle current dropdown
-                if (isHidden) {
-                    dropdown.classList.remove('hidden');
-                    if (chevron) {
-                        chevron.style.transform = 'rotate(180deg)';
-                    }
-                } else {
-                    dropdown.classList.add('hidden');
-                    if (chevron) {
-                        chevron.style.transform = 'rotate(0deg)';
-                    }
-                }
+            const timelineItems = document.querySelectorAll('.germ-timeline-item');
+            timelineItems.forEach((item, i) => {
+                item.style.transitionDelay = (i * 0.08) + 's';
+                new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-visible'); }); }, { threshold: 0.35 }).observe(item);
+                const node = item.querySelector('.germ-timeline-node');
+                if (node) node.addEventListener('click', () => { timelineItems.forEach(it => it.classList.remove('is-active')); item.classList.add('is-active'); });
+            });
+            function updateActiveStep() {
+                const center = window.innerHeight * 0.45; let closest = null, dist = Infinity;
+                timelineItems.forEach(item => { const r = item.getBoundingClientRect(); const mid = r.top + r.height / 2; const d = Math.abs(mid - center); if (d < dist && r.top < center && r.bottom > center) { dist = d; closest = item; } });
+                if (closest) { timelineItems.forEach(it => it.classList.remove('is-active')); closest.classList.add('is-active'); }
             }
-        }
+            window.addEventListener('scroll', throttle(updateActiveStep, 100));
 
-        // Footer functionality
-        function initializeFooter() {
-            // Back to Top Button
-            const backToTopButton = document.getElementById('backToTop');
-            
-            if (backToTopButton) {
-                // Show/hide back to top button
-                window.addEventListener('scroll', function() {
-                    if (window.pageYOffset > 300) {
-                        backToTopButton.classList.remove('opacity-0', 'pointer-events-none');
-                        backToTopButton.classList.add('opacity-100');
-                    } else {
-                        backToTopButton.classList.add('opacity-0', 'pointer-events-none');
-                        backToTopButton.classList.remove('opacity-100');
-                    }
-                });
-                
-                // Scroll to top when button is clicked
-                backToTopButton.addEventListener('click', function() {
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
-                });
+            const doctorData = {
+                vladimir: { name: 'Dr. Vladimir Martinek', title: 'Honorary Professor', specialty: 'Orthopedic Specialist', bio: 'Head of Knee Replacement at University Hospital, Munich, Germany.', image: 'Images/Home-Page-Images/OUR TEAM OF DOCTORS/German1-Dr-Valadmir.jpeg' },
+                schill: { name: 'Dr. Stephan Schill', title: 'Honorary Professor', specialty: 'Orthopedic Specialist', bio: 'Dept of Foot & Hand Replacement Surgery, University Hospital, Munich, Germany.', image: 'Images/Home-Page-Images/OUR TEAM OF DOCTORS/German2-Dr-Stephan-Schill.jpeg' },
+                wetzel: { name: 'Dr. Roland Wetzel', title: 'Honorary Department Head', specialty: 'Orthopedic Specialist', bio: 'Head of Hip & Knee Joint Replacement Surgery, University Hospital, Munich, Germany.', image: 'Images/Home-Page-Images/OUR TEAM OF DOCTORS/German3-Prof-Dr-Roland-Wetzel.jpeg' },
+                langmeier: { name: 'Dr. Langmeier', title: 'Physiotherapy Expert', specialty: 'Rehabilitation Specialist', bio: 'Head of Physiotherapy & Rehabilitation Unit, University Hospital, Munich, Germany.', image: 'Images/Home-Page-Images/OUR TEAM OF DOCTORS/German4-langmeier-photo.jpeg' }
+            };
+            const modal = document.getElementById('doctorModal');
+            function openModal(id) {
+                const d = doctorData[id]; if (!d) return;
+                modal.querySelector('[data-modal-name]').textContent = d.name;
+                modal.querySelector('[data-modal-title]').textContent = d.title;
+                modal.querySelector('[data-modal-specialty]').textContent = d.specialty;
+                modal.querySelector('[data-modal-bio]').textContent = d.bio;
+                modal.querySelector('[data-modal-image]').src = d.image;
+                modal.classList.add('is-open'); document.body.style.overflow = 'hidden';
             }
-        }
+            function closeModal() { modal.classList.remove('is-open'); document.body.style.overflow = ''; }
+            document.querySelectorAll('[data-doctor-id]').forEach(card => {
+                card.addEventListener('click', () => openModal(card.dataset.doctorId));
+                card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(card.dataset.doctorId); } });
+            });
+            modal.querySelector('.doctor-modal__close').addEventListener('click', closeModal);
+            modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+            document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-        // Smooth scrolling for navigation links
+            const cta = document.getElementById('floatingCta');
+            window.addEventListener('scroll', throttle(() => { cta.classList.toggle('is-visible', window.scrollY > 500); }, 80));
+
+            const shell = document.querySelector('.rc-hero__image-shell');
+            if (shell && !reduced) window.addEventListener('scroll', throttle(() => { if (window.scrollY < 600) shell.style.transform = 'translateY(' + (window.scrollY * 0.06) + 'px)'; }, 16));
+
+            const strip = document.querySelector('.rc-stat-strip');
+            const hint = document.querySelector('.rc-stat-strip-hint');
+            if (strip && hint) strip.addEventListener('scroll', () => { if (strip.scrollLeft > 20) hint.style.opacity = '0'; }, { passive: true });
+        })();
+
         document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
+            document.querySelectorAll('a[href^="#"]').forEach(a => {
+                a.addEventListener('click', function (e) { const t = document.querySelector(this.getAttribute('href')); if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); } });
             });
-        });
-
-        // Navbar background on scroll
-        window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('nav');
-            if (navbar && window.scrollY > 50) {
-                navbar.classList.add('shadow-xl');
-            } else if (navbar) {
-                navbar.classList.remove('shadow-xl');
+            const bar = document.getElementById('scrollProgressBar');
+            const prog = document.getElementById('scrollProgress');
+            function update() {
+                const top = document.documentElement.scrollTop;
+                const h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                bar.style.width = ((top / h) * 100) + '%';
+                prog.classList.toggle('hidden', top <= 100);
             }
-        });
-
-        // Scroll Progress Bar Functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const scrollProgress = document.getElementById('scrollProgress');
-            const scrollProgressBar = document.getElementById('scrollProgressBar');
-            
-            // Update scroll progress
-            function updateScrollProgress() {
-                const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-                const scrollPercentage = (scrollTop / scrollHeight) * 100;
-                
-                // Update progress bar width
-                scrollProgressBar.style.width = scrollPercentage + '%';
-                
-                // Show/hide progress bar based on scroll position
-                if (scrollTop > 100) {
-                    scrollProgress.classList.remove('hidden');
-                } else {
-                    scrollProgress.classList.add('hidden');
-                }
-            }
-            
-            // Throttle function for performance
-            function throttle(func, limit) {
-                let inThrottle;
-                return function() {
-                    const args = arguments;
-                    const context = this;
-                    if (!inThrottle) {
-                        func.apply(context, args);
-                        inThrottle = true;
-                        setTimeout(() => inThrottle = false, limit);
-                    }
-                }
-            }
-            
-            // Add scroll event listener with throttling
-            window.addEventListener('scroll', throttle(updateScrollProgress, 10));
-            
-            // Initial update
-            updateScrollProgress();
-            
-            // Smooth scroll to top when progress bar is clicked
-            scrollProgress.addEventListener('click', function() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-            
-            // Add hover effect for progress bar
-            scrollProgress.addEventListener('mouseenter', function() {
-                scrollProgressBar.style.boxShadow = '0 0 20px rgba(202, 138, 4, 0.8)';
-            });
-            
-            scrollProgress.addEventListener('mouseleave', function() {
-                scrollProgressBar.style.boxShadow = '0 0 10px rgba(202, 138, 4, 0.5)';
-            });
-
-            // Scroll Animation for All Elements
-            function initScrollAnimations() {
-                const animatedElements = document.querySelectorAll('.scroll-animate');
-                
-                // Intersection Observer for scroll animations
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach((entry, index) => {
-                        if (entry.isIntersecting) {
-                            setTimeout(() => {
-                                entry.target.classList.add('animate-in');
-                            }, index * 100); // Stagger animation
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, {
-                    threshold: 0.1,
-                    rootMargin: '0px 0px -50px 0px'
-                });
-
-                // Observe each animated element
-                animatedElements.forEach(item => {
-                    observer.observe(item);
-                });
-            }
-
-            // Initialize scroll animations
-            initScrollAnimations();
+            window.addEventListener('scroll', update); update();
+            prog.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
         });
     </script>
 </body>

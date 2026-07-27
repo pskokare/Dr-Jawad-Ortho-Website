@@ -3,1202 +3,2925 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="google-site-verification" content="gyGSLLzdQLlIEsLrhnGzWjOoQDhyTo8sxocDXKNkG7w" />
+    <meta name="google-site-verification" content="gyGSLLzdQLlIEsLrhnGzWjOoQDhyTo8sxocDXKNkG7w">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Infrastructure · Germanten Hospital</title>
     <meta name="description"
-        content="Explore the state-of-the-art infrastructure at Germanten Hospital. Advanced facilities for cutting-edge orthopedic care and patient comfort.">
-    <!-- Tailwind + Font Awesome -->
+        content="Explore the state-of-the-art infrastructure at Germanten Hospital, including advanced operation theatres, diagnostic facilities, patient rooms and modern hospital amenities.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://drjawadortho.com/infrastructure">
+    <link rel="icon" type="image/webp" href="Images/dr-jawad-logo.webp">
+
+    <!-- Required because the shared navbar/footer components use Tailwind utility classes. -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/webp" href="Images/GERMANTANLOGO.webp">
-    <link rel="canonical" href="https://drjawadortho.com/infrastructure">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
     <style>
-        /* custom smooth animations & enhancements */
-        @keyframes slideInLeft {
-            0% {
-                opacity: 0;
-                transform: translateX(-40px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateX(0);
-            }
+        :root {
+            --infra-ink: #172238;
+            --infra-muted: #687386;
+            --infra-navy: #1f3048;
+            --infra-navy-dark: #132238;
+            --infra-blue: #31547a;
+            --infra-soft-blue: #edf4fb;
+            --infra-line: #dfe6ee;
+            --infra-panel: #f8fafc;
+            --infra-white: #ffffff;
+            --infra-red: #e52b32;
+            --infra-yellow: #f7c948;
+            --infra-dark-yellow: #9a6f00;
+            --infra-shadow: 0 18px 46px rgba(21, 35, 57, 0.10);
         }
 
-        @keyframes slideInRight {
-            0% {
-                opacity: 0;
-                transform: translateX(40px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateX(0);
-            }
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
         }
 
-        .animate-on-scroll {
-            opacity: 0;
-            /* hidden until animation plays */
-            animation-duration: 0.8s;
-            animation-timing-function: cubic-bezier(0.2, 0.9, 0.3, 1);
-            animation-fill-mode: forwards;
-            animation-play-state: paused;
+        html {
+            scroll-behavior: smooth;
         }
 
-        .animate-slideInLeft {
-            animation-name: slideInLeft;
+        body {
+            margin: 0;
+            min-width: 320px;
+            overflow-x: hidden;
+            color: var(--infra-ink);
+            background: #f5f8fb;
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         }
 
-        .animate-slideInRight {
-            animation-name: slideInRight;
+        button,
+        input {
+            font: inherit;
         }
 
-        /* modern blur effect for modal */
-        .backdrop-blur-custom {
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
+        button {
+            border: 0;
         }
 
-        /* Scroll Progress Bar Styles */
+        img {
+            max-width: 100%;
+        }
+
+        [hidden],
+        .is-hidden {
+            display: none !important;
+        }
+
+        body.modal-open {
+            overflow: hidden;
+        }
+
+        /* Scroll progress */
         .scroll-progress {
             position: fixed;
+            z-index: 9999;
             top: 0;
             left: 0;
             width: 100%;
             height: 3px;
-            background: rgba(255, 255, 255, 0.2);
-            z-index: 9999;
-            transition: opacity 0.3s ease;
-        }
-
-        .scroll-progress-bar {
-            height: 100%;
-            background: linear-gradient(90deg, #ff4d01 0%, #eab308 50%, #facc15 100%);
-            border-radius: 0 1px 1px 0;
-            transition: width 0.1s ease-out;
-            box-shadow: 0 0 10px rgba(202, 138, 4, 0.5);
-        }
-
-
-        .scroll-progress.hidden {
-            opacity: 0;
             pointer-events: none;
-        }
-
-        /* image hover glass effect */
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 1rem;
-            box-shadow: 0 20px 30px -10px rgba(0, 20, 30, 0.15);
-            transition: all 0.4s ease;
-            background: linear-gradient(45deg, #fbbf24, #dc2626, #fbbf24);
-            padding: 3px;
-        }
-
-        .gallery-item img {
-            transition: transform 0.7s ease, filter 0.5s;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.06);
-            filter: brightness(1.02) contrast(1.02);
-        }
-
-        .gallery-item::after {
-            content: "🔍";
-            position: absolute;
-            bottom: 16px;
-            right: 16px;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(4px);
-            padding: 10px 14px;
-            border-radius: 40px;
-            font-size: 1.2rem;
             opacity: 0;
-            transform: translateY(10px);
-            transition: 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            color: #1e3a8a;
-            pointer-events: none;
-            font-weight: 500;
+            background: rgba(255, 255, 255, 0.25);
+            transition: opacity 0.25s ease;
         }
 
-        .gallery-item:hover::after {
+        .scroll-progress.is-visible {
             opacity: 1;
-            transform: translateY(0);
         }
 
-        /* navbar placeholder (will be replaced by script) */
+        .scroll-progress__bar {
+            width: 0;
+            height: 100%;
+            background: linear-gradient(90deg, var(--infra-red), var(--infra-yellow));
+            transition: width 0.08s linear;
+        }
+
+        /* The navbar component is fixed on the existing website. The container acts as its spacer. */
         #navbar-container {
-            min-height: 70px;
+            width: 100%;
+            min-height: 112px;
+            background: #ffffff;
         }
 
-        /* hero image reduced height & professional overlay */
-        .hero-infra {
-            height: 68vh !important;
-            /* decreased from 110vh */
-            min-height: 420px;
-        }
-
-        @media (max-width: 768px) {
-            .hero-infra {
-                height: 50vh !important;
-                min-height: 320px;
-            }
-        }
-
-        .hero-overlay-text {
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
-        }
-
-        /* breadcrumb modern style */
-        .breadcrumb-glass {
-            background: rgba(255, 255, 255, 0.75);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border-radius: 60px;
-            padding: 8px 20px;
-            display: inline-block;
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            box-shadow: 0 10px 25px -8px rgba(0, 0, 0, 0.2);
-        }
-
-        /* modal image */
-        #modalImage {
-            transition: transform 0.2s;
-        }
-
-        /* responsive grid spacing */
-        .gutter-fix {
-            padding-left: 1.5rem;
-            padding-right: 1.5rem;
-        }
-
-        @media (max-width: 640px) {
-            .gutter-fix {
-                padding-left: 1rem;
-                padding-right: 1rem;
-            }
-        }
-
-        /* title underline shimmer */
-        .shimmer-underline {
-            background: linear-gradient(90deg, #2563eb, #7c3aed, #2563eb);
-            background-size: 200% auto;
-            animation: shimmer 3s infinite linear;
-        }
-
-        @keyframes shimmer {
-            0% {
-                background-position: 0% center;
-            }
-
-            100% {
-                background-position: 200% center;
-            }
-        }
-
-        /* Enhanced responsive hero section */
-        .hero-section {
+        /* Hero */
+        .infra-hero {
             position: relative;
             width: 100%;
-            overflow: hidden;
+            margin: 0;
+            padding: 14px 0 0;
+            overflow: visible;
+            isolation: isolate;
+            background: hsl(70, 43%, 97%);
         }
 
-        .hero-image {
+        .infra-hero__surface {
+            position: relative;
             width: 100%;
-            height: 60vh;
-            min-height: 400px;
+            min-height: 360px;
+            overflow: hidden;
+            isolation: isolate;
+            background:
+                radial-gradient(circle at 12% 22%, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0) 32%),
+                linear-gradient(110deg, #fbcfcf 0%, #fbfbf9 58%, #f1f3f5 100%);
+            /* border: 1px solid #e5e9ee; */
+            /* border-radius: 0 0 26px 26px; */
+            /* box-shadow: 0 12px 30px rgba(21, 35, 57, 0.08); */
+        }
+
+        .infra-hero__surface::before {
+            position: absolute;
+            z-index: 0;
+            inset: 0;
+            content: "";
+            pointer-events: none;
+            opacity: 0.55;
+            background-image:
+                linear-gradient(135deg, transparent 0 44%, rgba(32, 48, 72, 0.025) 44% 45%, transparent 45% 100%),
+                radial-gradient(circle at 1px 1px, rgba(31, 48, 72, 0.10) 1px, transparent 1px);
+            background-size: 190px 190px, 22px 22px;
+            background-position: left top, right 28px top 26px;
+            mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.72), transparent 44%, transparent 64%, rgba(0, 0, 0, 0.46));
+        }
+
+        .infra-hero__inner {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: minmax(300px, 1fr) minmax(320px, 0.85fr);
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            width: min(1440px, calc(100% - 44px));
+            min-height: 340px;
+            margin: 0 auto;
+            padding: 24px 0 26px;
+        }
+
+        .infra-hero__content {
+            position: relative;
+            z-index: 5;
+            grid-column: 1;
+            min-width: 0;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        /* Push hero below the fixed navbar on tablet/desktop only */
+        @media (min-width: 761px) {
+            .infra-hero {
+                padding-top: 5px;
+            }
+        }
+
+        .infra-breadcrumb-bar {
+            width: 100%;
+            background: #ffffff;
+            border-bottom: 1px solid #e5e9ee;
+        }
+
+        .infra-breadcrumb-wrap {
+            width: min(1440px, calc(100% - 36px));
+            margin: 0 auto;
+            padding: 13px 0;
+
+        }
+
+        .infra-breadcrumb {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            color: #667184;
+            font-size: 12px;
+            font-weight: 650;
+
+        }
+
+        .infra-breadcrumb a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .infra-breadcrumb a:hover {
+            color: var(--infra-red);
+        }
+
+        .infra-breadcrumb i {
+            color: #9aa3af;
+            font-size: 9px;
+        }
+
+        .infra-breadcrumb__current {
+            color: var(--infra-ink);
+        }
+
+        .infra-hero__title {
+            margin: 0;
+            color: rgb(210, 41, 41);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(1.4rem, 3.8vw, 2.9rem);
+            font-weight: 600;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+        }
+
+        .infra-hero__subtitle {
+            max-width: 500px;
+            margin: 0.6em auto 0;
+            color: #40495a;
+            font-size: clamp(0.78rem, 1.4vw, 1.05rem);
+            font-weight: 400;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        .infra-hero__cta {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.65rem 1.45rem;
+            color: #ffffff;
+            background: linear-gradient(135deg, #cf3339 0%, #b91c1c 100%);
+            border: 0;
+            border-radius: 9999px;
+            font-size: clamp(0.72rem, 1.1vw, 0.95rem);
+            font-weight: 600;
+            line-height: 1;
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            transition: color 0.35s ease;
+        }
+
+        .infra-hero__cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 18px;
+        }
+
+        .infra-hero__cta::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            border-radius: inherit;
+            background: linear-gradient(135deg, #f6ad00 0%, #fbbf24 100%);
+            transform: translateX(-101%);
+            transition: transform 0.45s ease;
+        }
+
+        .infra-hero__cta:hover::before {
+            transform: translateX(0);
+        }
+
+        .infra-hero__cta:hover {
+            color: #401f00;
+            box-shadow: 0 13px 27px rgba(229, 43, 50, 0.28);
+            transform: translateY(-2px);
+        }
+
+        .infra-hero__cta i {
+            position: relative;
+            z-index: 1;
+            font-size: 11px;
+            transition: transform 0.22s ease;
+        }
+
+        .infra-hero__cta:hover i {
+            transform: translateX(3px);
+        }
+
+        .infra-hero__features {
+            position: relative;
+            z-index: 6;
+            grid-column: 2;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(78px, 1fr));
+            align-items: stretch;
+            width: 100%;
+            max-width: 475px;
+            margin: 0 auto;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.94);
+            border: 1px solid rgba(222, 227, 233, 0.94);
+            border-radius: 9px;
+            box-shadow: 0 10px 24px rgba(21, 35, 57, 0.09);
+            backdrop-filter: blur(8px);
+        }
+
+        .infra-hero__feature {
+            position: relative;
+            display: flex;
+            min-width: 0;
+            min-height: 74px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 6px 5px;
+            color: #222936;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.96);
+            transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .infra-hero__feature:not(:last-child)::after {
+            position: absolute;
+            top: 19%;
+            right: 0;
+            width: 1px;
+            height: 62%;
+            content: "";
+            background: #e0e4e8;
+        }
+
+        .infra-hero__feature:hover {
+            z-index: 2;
+            background: #ffffff;
+            box-shadow: 0 7px 18px rgba(21, 35, 57, 0.08);
+            transform: translateY(-3px);
+        }
+
+        .infra-hero__feature--accent {
+            color: #161616;
+            background: linear-gradient(145deg, #fff8d8, #ffe89a);
+        }
+
+        .infra-hero__feature--accent:hover {
+            background: linear-gradient(145deg, #fff9df, #ffeaa6);
+        }
+
+        .infra-hero__feature-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            margin-bottom: 4px;
+            color: var(--infra-navy);
+            font-size: 15px;
+            transition: transform 0.25s ease;
+        }
+
+        .infra-hero__feature--accent .infra-hero__feature-icon {
+            color: #8c6900;
+        }
+
+        .infra-hero__feature:hover .infra-hero__feature-icon {
+            transform: scale(1.12);
+        }
+
+        .infra-hero__feature span,
+        .infra-hero__feature strong {
+            display: block;
+            overflow-wrap: anywhere;
+            font-size: 9.5px;
+            line-height: 1.22;
+        }
+
+        .infra-hero__feature span {
+            color: #505a69;
+            font-weight: 600;
+        }
+
+        .infra-hero__feature--accent span {
+            color: #332a00;
+        }
+
+        .infra-hero__feature strong {
+            margin-top: 2px;
+            color: #171c26;
+            font-weight: 800;
+        }
+
+        .infra-hero__art {
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            right: -18px;
+            width: 39%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .infra-hero__art svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .infra-hero__content,
+        .infra-hero__features {
+            animation: infraHeroEnter 0.7s ease both;
+        }
+
+        .infra-hero__features {
+            animation-delay: 0.12s;
+        }
+
+        @keyframes infraHeroEnter {
+            from {
+                opacity: 0;
+                transform: translateY(14px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Main page */
+        .infra-page {
+            width: min(1440px, calc(100% - 36px));
+            margin: 0 auto;
+            padding: 46px 0 74px;
+            background: #fcf8e3;
+        }
+
+        .infra-section-heading {
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        .infra-section-heading__eyebrow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 14px;
+            padding: 0.35rem 1.1rem;
+            color: #b45309;
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            border-radius: 9999px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            line-height: 1.3;
+        }
+
+        .infra-section-heading h2 {
+            margin: 0;
+            color: var(--infra-ink);
+            font-size: clamp(31px, 2.1vw, 44px);
+            font-weight: 800;
+            letter-spacing: -0.035em;
+        }
+
+        .infra-section-heading p {
+            max-width: 620px;
+            margin: 9px auto 0;
+            color: var(--infra-muted);
+            font-size: 15px;
+        }
+
+        /* Main gallery shell */
+        .gallery-shell {
+            overflow: hidden;
+            background: var(--infra-white);
+            border: 1px solid var(--infra-line);
+            border-radius: 18px;
+            box-shadow: var(--infra-shadow);
+        }
+
+        .gallery-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 46%) minmax(0, 54%);
+            min-height: 590px;
+        }
+
+        /* Featured image */
+        .featured-panel {
+            display: flex;
+            min-width: 0;
+            flex-direction: column;
+            background: #ffffff;
+            border-right: 1px solid var(--infra-line);
+        }
+
+        .featured-media {
+            position: relative;
+            min-height: 0;
+            flex: 1 1 auto;
+            overflow: hidden;
+            background: #e9eef4;
+        }
+
+        .featured-media__image {
+            display: block;
+            width: 100%;
+            height: 100%;
+            min-height: 475px;
             object-fit: cover;
             object-position: center;
+            user-select: none;
+            transition: opacity 0.25s ease, transform 0.6s ease;
         }
 
-        /* Large Desktop */
-        @media (min-width: 1536px) {
-            .hero-image {
-                height: 70vh;
-                min-height: 500px;
+        .featured-media:hover .featured-media__image {
+            transform: scale(1.015);
+        }
+
+        .featured-control {
+            position: absolute;
+            z-index: 3;
+            top: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 46px;
+            height: 46px;
+            color: var(--infra-navy-dark);
+            background: rgba(255, 255, 255, 0.94);
+            border: 1px solid rgba(209, 217, 227, 0.95);
+            border-radius: 50%;
+            box-shadow: 0 8px 22px rgba(18, 31, 49, 0.18);
+            cursor: pointer;
+            transform: translateY(-50%);
+            transition: transform 0.22s ease, background 0.22s ease, color 0.22s ease;
+        }
+
+        .featured-control:hover {
+            color: #ffffff;
+            background: linear-gradient(135deg, #cf3339 0%, #b91c1c 100%);
+            transform: translateY(-50%) scale(1.06);
+        }
+
+        .featured-control--prev {
+            left: 17px;
+        }
+
+        .featured-control--next {
+            right: 17px;
+        }
+
+        .featured-control svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .featured-counter {
+            position: absolute;
+            z-index: 3;
+            bottom: 16px;
+            left: 18px;
+            min-width: 66px;
+            padding: 8px 12px;
+            color: #ffffff;
+            background: rgba(18, 32, 51, 0.88);
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 750;
+            text-align: center;
+            backdrop-filter: blur(6px);
+        }
+
+        .featured-fullscreen {
+            position: absolute;
+            z-index: 3;
+            right: 18px;
+            bottom: 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            color: #ffffff;
+            background: rgba(18, 32, 51, 0.88);
+            border-radius: 8px;
+            cursor: pointer;
+            backdrop-filter: blur(6px);
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .featured-fullscreen:hover {
+            background: var(--infra-navy);
+            transform: translateY(-2px);
+        }
+
+        .featured-copy {
+            display: grid;
+            grid-template-columns: 36px minmax(0, 1fr);
+            gap: 13px;
+            min-height: 92px;
+            padding: 16px 20px 17px;
+            background: #ffffff;
+        }
+
+        .featured-copy__icon {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding-top: 4px;
+            color: var(--infra-blue);
+            font-size: 23px;
+        }
+
+        .featured-copy h3 {
+            margin: 0;
+            color: var(--infra-ink);
+            font-size: 18px;
+            font-weight: 800;
+            line-height: 1.25;
+        }
+
+        .featured-copy p {
+            margin: 5px 0 0;
+            color: var(--infra-muted);
+            font-size: 13px;
+            line-height: 1.55;
+        }
+
+        /* Browser panel */
+        .browser-panel {
+            display: flex;
+            min-width: 0;
+            flex-direction: column;
+            padding: 18px 20px 18px;
+            background: #fbfcfe;
+        }
+
+        .filter-tabs {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            overflow-x: auto;
+            padding: 0 0 13px;
+            scrollbar-width: thin;
+        }
+
+        .filter-tab {
+            flex: 0 0 auto;
+            min-height: 40px;
+            padding: 9px 17px;
+            color: #536075;
+            background: #f1f5f9;
+            border: 1px solid transparent;
+            border-radius: 9px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .filter-tab:hover {
+            color: var(--infra-red);
+            background: #fdecec;
+            transform: translateY(-1px);
+        }
+
+        .filter-tab.is-active {
+            color: #ffffff;
+            background: linear-gradient(135deg, #cf3339 0%, #b91c1c 100%);
+            box-shadow: 0 7px 18px rgba(229, 43, 50, 0.28);
+        }
+
+        .filter-tab:active {
+            transform: scale(0.96);
+        }
+
+        .thumbnail-toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            min-height: 30px;
+            margin: 0 0 9px;
+        }
+
+        .thumbnail-toolbar__label {
+            color: #6b778a;
+            font-size: 12px;
+            font-weight: 650;
+        }
+
+        .thumbnail-toolbar__count {
+            color: var(--infra-navy);
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .thumbnail-grid {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            align-content: start;
+            gap: 14px 12px;
+            min-height: 0;
+            max-height: 392px;
+            overflow-y: auto;
+            padding: 2px 4px 10px 1px;
+            scrollbar-color: #b9c5d2 transparent;
+            scrollbar-width: thin;
+        }
+
+        .thumbnail-card {
+            min-width: 0;
+            padding: 0;
+            color: inherit;
+            background: transparent;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .thumbnail-card__media {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 1.52 / 1;
+            background: #e8edf3;
+            border: 2px solid transparent;
+            border-radius: 9px;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+        }
+
+        .thumbnail-card:hover .thumbnail-card__media {
+            transform: translateY(-2px);
+            border-color: #9eb1c4;
+            box-shadow: 0 7px 16px rgba(24, 41, 65, 0.13);
+        }
+
+        .thumbnail-card.is-selected .thumbnail-card__media {
+            border-color: var(--infra-red);
+            box-shadow: 0 0 0 1px rgba(229, 43, 50, 0.22), 0 8px 18px rgba(24, 41, 65, 0.13);
+        }
+
+        .thumbnail-card__media img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.35s ease;
+        }
+
+        .thumbnail-card:hover img {
+            transform: scale(1.04);
+        }
+
+        .thumbnail-card__check {
+            position: absolute;
+            top: 6px;
+            right: 6px;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            color: #ffffff;
+            background: linear-gradient(135deg, #cf3339 0%, #b91c1c 100%);
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            font-size: 9px;
+            box-shadow: 0 2px 8px rgba(229, 43, 50, 0.35);
+        }
+
+        .thumbnail-card.is-selected .thumbnail-card__check {
+            display: flex;
+        }
+
+        .thumbnail-card__title {
+            display: block;
+            margin: 6px 1px 0;
+            overflow: hidden;
+            color: #3d4a5f;
+            font-size: 10px;
+            font-weight: 700;
+            line-height: 1.3;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .view-all-button {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            display: inline-flex;
+            align-items: center;
+            align-self: center;
+            justify-content: center;
+            gap: 9px;
+            min-height: 45px;
+            margin-top: auto;
+            padding: 11px 24px;
+            color: #ffffff;
+            background: linear-gradient(135deg, #cf3339 0%, #b91c1c 100%);
+            border: 0;
+            border-radius: 9999px;
+            box-shadow: 0 8px 18px rgba(229, 43, 50, 0.20);
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.015em;
+            cursor: pointer;
+            transition: color 0.35s ease, transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .view-all-button::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            border-radius: inherit;
+            background: linear-gradient(135deg, #f6ad00 0%, #fbbf24 100%);
+            transform: translateX(-101%);
+            transition: transform 0.45s ease;
+        }
+
+        .view-all-button:hover::before {
+            transform: translateX(0);
+        }
+
+        .view-all-button:hover {
+            color: #401f00;
+            box-shadow: 0 11px 22px rgba(229, 43, 50, 0.28);
+            transform: translateY(-2px);
+        }
+
+        .view-all-button:active {
+            transform: scale(0.97);
+        }
+
+        .view-all-button:focus-visible {
+            outline: 3px solid rgba(247, 201, 72, 0.58);
+            outline-offset: 3px;
+        }
+
+        /* More strip */
+        .more-section {
+            display: grid;
+            grid-template-columns: 240px minmax(0, 1fr);
+            align-items: stretch;
+            gap: 24px;
+            min-height: 230px;
+            margin-top: 32px;
+            padding: 24px;
+            background: linear-gradient(135deg, #fffdf5 0%, #f8fafc 56%, #f2f6fa 100%);
+            border: 1px solid var(--infra-line);
+            border-radius: 18px;
+            box-shadow: 0 14px 34px rgba(21, 35, 57, 0.08);
+        }
+
+        .more-section__intro {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 8px 6px;
+        }
+
+        .more-section__intro h3 {
+            margin: 0;
+            color: var(--infra-ink);
+            font-size: 18px;
+            font-weight: 800;
+            line-height: 1.3;
+        }
+
+        .more-section__intro h3::after {
+            display: block;
+            width: 28px;
+            height: 3px;
+            margin-top: 8px;
+            content: "";
+            background: var(--infra-red);
+            border-radius: 999px;
+        }
+
+        .more-section__intro p {
+            margin: 9px 0 18px;
+            color: var(--infra-muted);
+            font-size: 12px;
+            line-height: 1.65;
+        }
+
+        .explore-button {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            display: inline-flex;
+            align-items: center;
+            align-self: flex-start;
+            justify-content: center;
+            gap: 8px;
+            min-height: 42px;
+            padding: 10px 20px;
+            color: #ffffff;
+            background: linear-gradient(135deg, #cf3339 0%, #b91c1c 100%);
+            border: 0;
+            border-radius: 9999px;
+            box-shadow: 0 8px 18px rgba(229, 43, 50, 0.20);
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.015em;
+            cursor: pointer;
+            transition: color 0.35s ease, transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .explore-button::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            border-radius: inherit;
+            background: linear-gradient(135deg, #f6ad00 0%, #fbbf24 100%);
+            transform: translateX(-101%);
+            transition: transform 0.45s ease;
+        }
+
+        .explore-button:hover::before {
+            transform: translateX(0);
+        }
+
+        .explore-button:hover {
+            color: #401f00;
+            box-shadow: 0 11px 22px rgba(229, 43, 50, 0.28);
+            transform: translateY(-2px);
+        }
+
+        .explore-button:active {
+            transform: scale(0.97);
+        }
+
+        .explore-button:focus-visible {
+            outline: 3px solid rgba(247, 201, 72, 0.58);
+            outline-offset: 3px;
+        }
+
+        .more-carousel {
+            position: relative;
+            display: flex;
+            min-width: 0;
+            min-height: 100%;
+            align-items: center;
+        }
+
+        .more-track {
+            display: grid;
+            grid-auto-columns: minmax(170px, 1fr);
+            grid-auto-flow: column;
+            align-items: stretch;
+            width: 100%;
+            gap: 14px;
+            overflow-x: auto;
+            padding: 4px 2px 8px;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+        }
+
+        .more-track::-webkit-scrollbar {
+            display: none;
+        }
+
+        .more-card {
+            display: flex;
+            min-height: 176px;
+            overflow: hidden;
+            flex-direction: column;
+            padding: 0;
+            color: inherit;
+            background: #ffffff;
+            border: 1px solid #e3e8ef;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: left;
+            transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .more-card:hover {
+            transform: translateY(-3px);
+            border-color: #bac7d4;
+            box-shadow: 0 8px 19px rgba(23, 39, 61, 0.11);
+        }
+
+        .more-card img {
+            display: block;
+            width: 100%;
+            height: 128px;
+            object-fit: cover;
+        }
+
+        .more-card span {
+            display: block;
+            padding: 11px 11px 12px;
+            overflow: hidden;
+            color: #3b485b;
+            font-size: 11px;
+            font-weight: 750;
+            line-height: 1.3;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .more-arrow {
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            right: -8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            color: var(--infra-navy);
+            background: rgba(255, 255, 255, 0.96);
+            border: 1px solid #d7dee7;
+            border-radius: 50%;
+            box-shadow: 0 7px 18px rgba(21, 35, 57, 0.15);
+            cursor: pointer;
+            transform: translateY(-50%);
+        }
+
+        .more-arrow:hover {
+            color: #ffffff;
+            background: linear-gradient(135deg, #cf3339 0%, #b91c1c 100%);
+        }
+
+        .quality-note {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            margin: 18px auto 0;
+            padding: 13px 20px;
+            color: #506075;
+            background: #edf3f8;
+            border: 1px solid #e2e9f1;
+            border-radius: 13px;
+            font-size: 12px;
+        }
+
+        .quality-note__main,
+        .quality-note__tip {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quality-note strong {
+            color: var(--infra-ink);
+        }
+
+        .quality-note i {
+            color: var(--infra-blue);
+            font-size: 18px;
+        }
+
+        /* Empty state */
+        .thumbnail-empty {
+            grid-column: 1 / -1;
+            padding: 55px 20px;
+            color: #738096;
+            text-align: center;
+        }
+
+        /* All images modal */
+        .infra-modal {
+            position: fixed;
+            z-index: 10000;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .infra-modal__backdrop {
+            position: absolute;
+            inset: 0;
+            background: rgba(10, 19, 31, 0.76);
+            backdrop-filter: blur(8px);
+        }
+
+        .infra-modal__dialog {
+            position: relative;
+            z-index: 1;
+            width: min(1380px, 100%);
+            max-height: calc(100vh - 40px);
+            overflow: hidden;
+            background: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 18px;
+            box-shadow: 0 28px 80px rgba(0, 0, 0, 0.32);
+        }
+
+        .infra-modal__header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 17px 20px;
+            border-bottom: 1px solid var(--infra-line);
+        }
+
+        .infra-modal__header h2 {
+            margin: 0;
+            color: var(--infra-ink);
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        .infra-modal__header p {
+            margin: 3px 0 0;
+            color: var(--infra-muted);
+            font-size: 12px;
+        }
+
+        .modal-close {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            color: var(--infra-navy);
+            background: #f0f4f8;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+        }
+
+        .modal-close:hover {
+            color: #ffffff;
+            background: linear-gradient(135deg, #cf3339 0%, #b91c1c 100%);
+            transform: rotate(4deg);
+        }
+
+        .all-modal__filters {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 14px 20px 5px;
+        }
+
+        .all-modal__grid {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 14px;
+            max-height: calc(100vh - 195px);
+            overflow-y: auto;
+            padding: 14px 20px 22px;
+        }
+
+        .all-image-card {
+            overflow: hidden;
+            padding: 0;
+            color: inherit;
+            background: #ffffff;
+            border: 1px solid #e0e7ef;
+            border-radius: 11px;
+            cursor: pointer;
+            text-align: left;
+            transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .all-image-card:hover {
+            transform: translateY(-3px);
+            border-color: #aebdcb;
+            box-shadow: 0 10px 24px rgba(23, 39, 61, 0.13);
+        }
+
+        .all-image-card img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 1.55 / 1;
+            object-fit: cover;
+        }
+
+        .all-image-card__copy {
+            padding: 9px 10px 10px;
+        }
+
+        .all-image-card__copy strong {
+            display: block;
+            overflow: hidden;
+            color: #334155;
+            font-size: 12px;
+            line-height: 1.35;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .all-image-card__copy span {
+            display: block;
+            margin-top: 3px;
+            color: #7a8698;
+            font-size: 10px;
+        }
+
+        /* Lightbox */
+        .lightbox-dialog {
+            width: min(1200px, 100%);
+            background: #101b2b;
+        }
+
+        .lightbox-stage {
+            position: relative;
+            display: flex;
+            min-height: min(72vh, 760px);
+            align-items: center;
+            justify-content: center;
+            padding: 62px 78px 82px;
+            background: #101b2b;
+        }
+
+        .lightbox-stage img {
+            display: block;
+            max-width: 100%;
+            max-height: calc(100vh - 180px);
+            object-fit: contain;
+            border-radius: 7px;
+            box-shadow: 0 20px 55px rgba(0, 0, 0, 0.34);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            z-index: 3;
+            top: 16px;
+            right: 17px;
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.22);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 50%;
+            cursor: pointer;
+            transform: translateY(-50%);
+        }
+
+        .lightbox-nav:hover {
+            background: rgba(255, 255, 255, 0.22);
+        }
+
+        .lightbox-nav--prev {
+            left: 18px;
+        }
+
+        .lightbox-nav--next {
+            right: 18px;
+        }
+
+        .lightbox-caption {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            padding: 16px 22px;
+            color: #ffffff;
+            background: linear-gradient(0deg, rgba(6, 12, 21, 0.96), rgba(6, 12, 21, 0.72));
+        }
+
+        .lightbox-caption h3 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 750;
+        }
+
+        .lightbox-caption p {
+            margin: 4px 0 0;
+            color: #cbd5e1;
+            font-size: 12px;
+        }
+
+        .lightbox-caption__count {
+            flex: 0 0 auto;
+            color: #dbe5ef;
+            font-size: 13px;
+            font-weight: 750;
+        }
+
+        /* Entrance animation */
+        @keyframes infraFadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
-        /* Desktop */
-        @media (min-width: 1280px) and (max-width: 1535px) {
-            .hero-image {
-                height: 65vh;
-                min-height: 450px;
+        .infra-section-heading,
+        .gallery-shell,
+        .more-section,
+        .quality-note {
+            animation: infraFadeUp 0.6s ease both;
+        }
+
+        .more-section {
+            animation-delay: 0.08s;
+        }
+
+        .quality-note {
+            animation-delay: 0.14s;
+        }
+
+        /* Responsive */
+        @media (max-width: 1180px) {
+            .gallery-layout {
+                grid-template-columns: minmax(0, 48%) minmax(0, 52%);
+            }
+
+            .thumbnail-grid {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+
+            .all-modal__grid {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
             }
         }
 
-        /* Large Tablets */
-        @media (min-width: 1024px) and (max-width: 1279px) {
-            .hero-image {
-                height: 60vh;
-                min-height: 400px;
+        @media (max-width: 960px) {
+            #navbar-container {
+                min-height: 76px;
+            }
+
+            .infra-hero,
+            .infra-hero__inner {
+                min-height: 0;
+            }
+
+            .gallery-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-panel {
+                border-right: 0;
+                border-bottom: 1px solid var(--infra-line);
+            }
+
+            .featured-media__image {
+                min-height: 430px;
+            }
+
+            .browser-panel {
+                min-height: 510px;
+            }
+
+            .thumbnail-grid {
+                grid-template-columns: repeat(5, minmax(0, 1fr));
+                max-height: 390px;
+            }
+
+            .more-section {
+                grid-template-columns: 190px minmax(0, 1fr);
+                min-height: 220px;
+                padding: 22px;
             }
         }
 
-        /* Tablets */
-        @media (min-width: 768px) and (max-width: 1023px) {
-            .hero-image {
-                height: 50vh;
-                min-height: 350px;
-            }
-        }
+        @media (max-width: 760px) {
 
-        /* Large Mobile */
-        @media (min-width: 640px) and (max-width: 767px) {
-            .hero-image {
-                height: 45vh;
-                min-height: 300px;
+            .infra-hero__inner,
+            .infra-page,
+            .infra-breadcrumb-wrap {
+                width: min(100% - 24px, 1400px);
             }
-        }
 
-        /* Mobile */
-        @media (min-width: 480px) and (max-width: 639px) {
-            .hero-image {
-                height: 40vh;
-                min-height: 280px;
-            }
-        }
-
-        /* Small Mobile */
-        @media (min-width: 380px) and (max-width: 479px) {
-            .hero-image {
-                height: 35vh;
-                min-height: 250px;
-            }
-        }
-
-        /* Very Small Mobile */
-        @media (max-width: 379px) {
-            .hero-image {
-                height: 30vh;
+            .infra-hero {
                 min-height: 220px;
             }
-        }
 
-        /* footer / spacing */
-        .bg-soft-light {
-            background-color: #f9fafc;
-        }
+            .infra-hero__inner {
+                min-height: 220px;
+                padding: 27px 0 30px;
+            }
 
-        /* Enhanced Mobile-First Responsive Design */
-        @media (max-width: 640px) {
-            /* Hero section mobile optimizations */
-            .hero-image {
-                height: 35vh !important;
-                min-height: 200px !important;
+            /* .infra-hero__title {
+                font-size: 29px;
+            } */
+
+            .infra-hero__subtitle {
+                font-size: 14px;
             }
-            
-            /* Gallery mobile optimizations */
-            .gallery-item {
-                margin-bottom: 0.5rem;
+
+            .infra-page {
+                padding-top: 34px;
             }
-            
-            .gallery-item img {
-                height: 180px !important;
-                min-height: 180px !important;
+
+            .gallery-shell {
+                border-radius: 13px;
             }
-            
-            .gallery-item::after {
-                bottom: 8px !important;
-                right: 8px !important;
-                padding: 6px 10px !important;
-                font-size: 1rem !important;
+
+            .featured-media__image {
+                min-height: 330px;
             }
-            
-            /* Typography mobile optimizations */
-            h1 {
-                font-size: 1.5rem !important;
-                line-height: 1.3 !important;
+
+            .browser-panel {
+                min-height: 0;
+                padding: 15px 13px 16px;
             }
-            
-            /* Breadcrumb mobile optimizations */
-            .breadcrumb-glass {
-                padding: 6px 16px !important;
-                font-size: 0.875rem !important;
+
+            .thumbnail-grid {
+                display: flex;
+                max-height: none;
+                gap: 11px;
+                overflow-x: auto;
+                overflow-y: hidden;
+                padding-bottom: 13px;
             }
-            
-            /* Modal mobile optimizations */
-            #imageModal {
-                padding: 1rem !important;
+
+            .thumbnail-card {
+                flex: 0 0 132px;
             }
-            
-            .modal-content {
-                max-height: 85vh !important;
+
+            .view-all-button {
+                margin-top: 12px;
             }
-            
-            #modalImage {
-                max-height: 75vh !important;
+
+            .more-section {
+                grid-template-columns: 1fr;
+                min-height: 0;
+                gap: 18px;
+                padding: 22px 18px;
             }
-            
-            /* Grid spacing mobile optimizations */
-            .gutter-fix {
-                padding-left: 0.75rem !important;
-                padding-right: 0.75rem !important;
+
+            .more-section__intro {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr) auto;
+                gap: 4px 14px;
+                align-items: center;
             }
-            
-            /* Page title mobile optimizations */
-            .shimmer-underline {
-                width: 4rem !important;
-                height: 0.25rem !important;
+
+            .more-section__intro p {
+                grid-column: 1 / -1;
+                margin: 2px 0 8px;
+            }
+
+            .explore-button {
+                grid-column: 2;
+                grid-row: 1;
+            }
+
+            .quality-note {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 9px;
+            }
+
+            .all-modal__grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .lightbox-stage {
+                min-height: 74vh;
+                padding: 62px 48px 102px;
+            }
+
+            .lightbox-nav {
+                width: 42px;
+                height: 42px;
+            }
+
+            .lightbox-nav--prev {
+                left: 8px;
+            }
+
+            .lightbox-nav--next {
+                right: 8px;
             }
         }
 
         @media (max-width: 480px) {
-            /* Ultra-mobile optimizations */
-            .hero-image {
-                height: 30vh !important;
-                min-height: 180px !important;
+            .infra-modal {
+                padding: 8px;
             }
-            
-            .gallery-item img {
-                height: 150px !important;
-                min-height: 150px !important;
+
+            .infra-modal__dialog {
+                max-height: calc(100vh - 16px);
+                border-radius: 13px;
             }
-            
-            h1 {
-                font-size: 1.25rem !important;
+
+            .infra-breadcrumb {
+                font-size: 11px;
             }
-            
-            .breadcrumb-glass {
-                padding: 4px 12px !important;
-                font-size: 0.75rem !important;
+
+            /* .infra-hero__title {
+                font-size: 26px;
+            } */
+
+            .infra-section-heading h2 {
+                font-size: 27px;
+            }
+
+            .featured-media__image {
+                min-height: 270px;
+            }
+
+            .featured-control {
+                width: 39px;
+                height: 39px;
+            }
+
+            .featured-control--prev {
+                left: 10px;
+            }
+
+            .featured-control--next {
+                right: 10px;
+            }
+
+            .featured-copy {
+                grid-template-columns: 29px minmax(0, 1fr);
+                padding: 14px;
+            }
+
+            .featured-copy h3 {
+                font-size: 16px;
+            }
+
+            .filter-tab {
+                padding: 8px 13px;
+                font-size: 12px;
+            }
+
+            .more-section {
+                padding: 17px 15px;
+            }
+
+            .all-modal__grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 9px;
+                padding: 10px 12px 16px;
+            }
+
+            .infra-modal__header {
+                padding: 14px;
+            }
+
+            .all-modal__filters {
+                padding: 11px 12px 4px;
+            }
+
+            .lightbox-stage {
+                padding: 54px 12px 112px;
+            }
+
+            .lightbox-nav {
+                top: auto;
+                bottom: 62px;
+                transform: none;
+            }
+
+            .lightbox-nav--prev {
+                left: 15px;
+            }
+
+            .lightbox-nav--next {
+                right: 15px;
+            }
+
+            .lightbox-caption {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 5px;
+                padding: 13px 66px 13px 15px;
             }
         }
 
-        /* Touch-friendly enhancements */
-        @media (max-width: 768px) {
-            .gallery-item {
-                cursor: pointer;
-                touch-action: manipulation;
+
+        /* Hero responsive layout */
+        @media (max-width: 1180px) {
+            .infra-hero__inner {
+                grid-template-columns: minmax(280px, 0.78fr) minmax(450px, 1.22fr);
+                gap: 20px;
             }
-            
-            .gallery-item:active {
-                transform: scale(0.98);
+
+            .infra-hero__content {
+                grid-column: 1;
             }
-            
-            .gallery-item:active img {
-                transform: scale(1.02);
+
+            .infra-hero__features {
+                grid-column: 2;
+                max-width: none;
+            }
+
+            .infra-hero__art {
+                width: 42%;
+                opacity: 0.30;
             }
         }
 
-        /* Prevent horizontal scroll */
-        body {
-            overflow-x: hidden;
-            max-width: 100%;
-        }
-        
-        .gallery-grid {
-            max-width: 100%;
-            overflow-x: hidden;
+        @media (max-width: 960px) {
+            .infra-breadcrumb-wrap {
+                width: min(100% - 28px, 1440px);
+            }
+
+            .infra-hero {
+                min-height: 0;
+                padding: 10px 12px 0;
+            }
+
+            .infra-hero__surface {
+                min-height: 0;
+                border-radius: 0 0 24px 24px;
+            }
+
+            .infra-hero__inner {
+                grid-template-columns: 1fr;
+                min-height: 0;
+                padding: 30px 0 34px;
+            }
+
+            .infra-hero__content,
+            .infra-hero__features {
+                grid-column: 1;
+            }
+
+            .infra-hero__content {
+                max-width: 650px;
+            }
+
+            .infra-hero__features {
+                max-width: 540px;
+                margin: 2px 0 0;
+            }
+
+            .infra-hero__art {
+                right: -70px;
+                width: 58%;
+                opacity: 0.15;
+            }
         }
 
-        /* Enhanced mobile navigation placeholder */
-        @media (max-width: 768px) {
-            #navbar-container {
-                min-height: 60px !important;
+        @media (max-width: 760px) {
+            .infra-hero__inner {
+                width: min(100% - 28px, 1440px);
+                gap: 20px;
+                padding: 24px 0 27px;
+            }
+
+            /* .infra-hero__title {
+                font-size: 29px;
+            } */
+
+            .infra-hero__subtitle {
+                font-size: 14px;
+            }
+
+            .infra-hero__features {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .infra-hero__feature {
+                min-height: 70px;
+                padding: 6px 4px;
+            }
+
+            .infra-hero__feature:nth-child(2)::after {
+                display: none;
+            }
+
+            .infra-hero__feature:nth-child(-n + 2) {
+                border-bottom: 1px solid #e0e4e8;
+            }
+
+            .infra-hero__art {
+                display: none;
             }
         }
 
-        /* Performance optimizations for mobile */
-        @media (max-width: 640px) {
-            .gallery-item {
-                transition: transform 0.3s ease, filter 0.3s ease;
+        @media (max-width: 480px) {
+            .infra-hero {
+                padding-right: 8px;
+                padding-left: 8px;
             }
-            
-            .gallery-item img {
-                transition: transform 0.3s ease, filter 0.3s ease;
+
+            .infra-hero__surface {
+                border-radius: 0 0 18px 18px;
             }
-            
-            .gallery-item:hover img {
-                transform: scale(1.03);
+
+            .infra-hero__inner {
+                width: min(100% - 24px, 1440px);
+            }
+
+            .infra-breadcrumb-wrap {
+                width: min(100% - 24px, 1440px);
+                padding: 11px 0;
+            }
+
+            .infra-hero__title {
+                font-size: clamp(1rem, 4.6vw, 1.4rem);
+            }
+
+            .infra-hero__cta {
+                width: 100%;
+            }
+
+            .infra-hero__feature span,
+            .infra-hero__feature strong {
+                font-size: 10px;
             }
         }
 
-        /* Accessibility improvements */
         @media (prefers-reduced-motion: reduce) {
-            .gallery-item,
-            .gallery-item img,
-            .gallery-item::after {
-                transition: none !important;
-                animation: none !important;
+
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
             }
         }
 
-        /* High contrast mode support */
-        @media (prefers-contrast: high) {
-            .gallery-item {
-                border: 2px solid currentColor;
-            }
-        }
-
-        /* Print styles */
         @media print {
-            .gallery-grid {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-            }
-            
-            .gallery-item {
-                break-inside: avoid;
-                page-break-inside: avoid;
-            }
-            
-            #imageModal,
-            .scroll-progress,
+
             #navbar-container,
-            #footer-container {
+            #footer-container,
+            .scroll-progress,
+            .featured-control,
+            .featured-fullscreen,
+            .filter-tabs,
+            .view-all-button,
+            .more-section,
+            .quality-note,
+            .infra-modal {
                 display: none !important;
+            }
+
+            .gallery-layout {
+                grid-template-columns: 1fr;
             }
         }
     </style>
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-B7BXJEHXWK"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-B7BXJEHXWK');
     </script>
-
 </head>
 
-<body class="bg-soft-light antialiased">
-    <!-- Scroll Progress Bar -->
-    <div class="scroll-progress" id="scrollProgress">
-        <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+<body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true">
+        <div class="scroll-progress__bar" id="scrollProgressBar"></div>
     </div>
 
-    <!-- Navbar Component placeholder (loaded via script) -->
-    <div id="navbar-container" class="shadow-sm"></div>
+    <!-- Shared fixed navbar is loaded here. -->
+    <div id="navbar-container"></div>
 
-    <!-- Header Banner with Responsive Design -->
-    <div class="hero-section relative w-full">
-        <img src="Images/AboutUs-page-Images/Infrastructure/rsz1.webp" alt="Infrastructure - Germanten Hospitals" width="1920" height="1080"
-            class="hero-image w-full">
-        <div class="absolute inset-0 bg-black/50"></div>
-    </div>
+    <!-- Infrastructure hero: compact title and feature cards -->
+    <header class="infra-hero" aria-labelledby="infrastructureHeroTitle">
+        <div class="infra-hero__surface">
+            <div class="infra-hero__inner">
+                <div class="infra-hero__content">
+                    <h1 id="infrastructureHeroTitle" class="infra-hero__title">Infrastructure</h1>
+                    <p class="infra-hero__subtitle">Where advanced medical technology meets healing architecture.</p>
 
-    <!-- Breadcrumb Path Below Hero -->
-    <div class="bg-white border-b border-gray-200 breadcrumb-container">
-        <div class="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-3 md:py-4">
-            <nav class="flex items-center space-x-1 sm:space-x-2 text-xs sm:text-sm breadcrumb-nav">
+                    <div class="infra-hero__cta-group">
+                        <a class="infra-hero__cta" href="#infrastructure-gallery">
+                            <span>Explore Our Infrastructure</span>
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                        <a class="infra-hero__cta" href="contact.html">Contact Us</a>
+                    </div>
+                </div>
 
-                <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors duration-200 font-medium breadcrumb-link">
-                    <span class="hidden sm:inline">About Us</span>
-                    <span class="sm:hidden">About</span>
-                </a>
-                <svg class="w-3 h-3 sm:w-4 sm:h-4 text-gray-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd"
-                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                        clip-rule="evenodd" />
-                </svg>
-                <span class="text-gray-800 font-medium breadcrumb-current">Infrastructure</span>
-            </nav>
+                <!-- <div class="infra-hero__features" aria-label="Infrastructure highlights">
+                    <article class="infra-hero__feature">
+                        <span class="infra-hero__feature-icon" aria-hidden="true">
+                            <i class="fa-regular fa-building"></i>
+                        </span>
+                        <span>Designed for</span>
+                        <strong>Excellence</strong>
+                    </article>
+
+                    <article class="infra-hero__feature infra-hero__feature--accent">
+                        <span class="infra-hero__feature-icon" aria-hidden="true">
+                            <i class="fa-solid fa-gears"></i>
+                        </span>
+                        <span>Equipped with</span>
+                        <strong>Innovation</strong>
+                    </article>
+
+                    <article class="infra-hero__feature">
+                        <span class="infra-hero__feature-icon" aria-hidden="true">
+                            <i class="fa-solid fa-people-group"></i>
+                        </span>
+                        <span>Built Around</span>
+                        <strong>Patients</strong>
+                    </article>
+
+                    <article class="infra-hero__feature">
+                        <span class="infra-hero__feature-icon" aria-hidden="true">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </span>
+                        <span>Committed to</span>
+                        <strong>Safety</strong>
+                    </article>
+                </div> -->
+
+                <div class="infra-hero__art" aria-hidden="true">
+                    <svg viewBox="0 0 650 330" preserveAspectRatio="xMidYMid slice">
+                        <defs>
+                            <linearGradient id="infraArtFade" x1="0" x2="1">
+                                <stop offset="0" stop-color="#ffffff" stop-opacity="0"></stop>
+                                <stop offset="0.28" stop-color="#ffffff" stop-opacity="0.28"></stop>
+                                <stop offset="1" stop-color="#edf0f3" stop-opacity="0.84"></stop>
+                            </linearGradient>
+                            <linearGradient id="infraRedPanel" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0" stop-color="#ef3a40"></stop>
+                                <stop offset="1" stop-color="#c91e24"></stop>
+                            </linearGradient>
+                        </defs>
+
+                        <rect width="650" height="330" fill="url(#infraArtFade)"></rect>
+
+                        <g fill="none" stroke="#9ba3ac" stroke-width="1.35" opacity="0.68">
+                            <path d="M60 276 117 157 252 91 440 138 560 219 560 282Z"></path>
+                            <path d="M117 157 117 276M252 91 252 276M440 138 440 276M560 219 560 282"></path>
+                            <path d="M117 157 252 196 440 172 560 219"></path>
+                            <path d="M117 194 252 222 440 204 560 238"></path>
+                            <path d="M117 228 252 246 440 235 560 258"></path>
+                            <path
+                                d="M153 168V276M192 179V276M303 188V276M354 181V276M397 176V276M484 169V276M523 194V276">
+                            </path>
+                            <path d="M61 276H594M91 290H618"></path>
+                            <path d="M252 91 333 48 494 126 440 138"></path>
+                            <path d="M333 48V143M380 71V143M427 93V143M474 117V146"></path>
+                            <path d="M92 257 38 283M560 258 628 289"></path>
+                        </g>
+
+                        <g fill="none" stroke="#c7ccd2" stroke-width="0.9" opacity="0.75">
+                            <path d="M129 169 242 201M129 201 242 227M129 232 242 250"></path>
+                            <path d="M268 202 430 181M268 228 430 212M268 252 430 243"></path>
+                            <path d="M452 158 549 221M452 190 549 240M452 221 549 260"></path>
+                        </g>
+
+                        <path d="M291 132 381 117 381 273 291 273Z" fill="url(#infraRedPanel)" opacity="0.62"></path>
+                        <path d="M291 132 381 117" stroke="#d6b13b" stroke-width="2" opacity="0.46"></path>
+
+                        <g transform="translate(306 164)" fill="#ffffff">
+                            <path
+                                d="M20 0c-6.6 0-12 5.4-12 12v8H0v20h8v8h24v-8h8V20h-8v-8C32 5.4 26.6 0 20 0Zm0 7a5 5 0 0 1 5 5v8H15v-8a5 5 0 0 1 5-5Zm-3 17h6v6h6v6h-6v6h-6v-6h-6v-6h6Z"
+                                opacity="0.92"></path>
+                            <text x="20" y="69" text-anchor="middle" font-size="11" font-family="Arial, sans-serif"
+                                font-weight="700">GERMANTEN</text>
+                            <text x="20" y="82" text-anchor="middle" font-size="7" font-family="Arial, sans-serif"
+                                font-weight="600" letter-spacing="1">HOSPITALS</text>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb displayed below the hero -->
+    <div class="infra-breadcrumb-bar">
+        <div class="infra-breadcrumb-wrap">
+            <ol class="infra-breadcrumb" aria-label="Breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></li>
+                <li><a href="about-us">About Us</a></li>
+                <li aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></li>
+                <li class="infra-breadcrumb__current" aria-current="page">Infrastructure</li>
+            </ol>
         </div>
     </div>
 
-    <!-- Page Title with modern touch -->
-    <div class="py-6 sm:py-8 md:py-10 lg:py-12 bg-soft-light">
-        <div class="text-center px-4 sm:px-6 md:px-8">
-            <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-2 sm:mb-3 md:mb-4 tracking-tight page-title">Infrastructure</h1>
-            <div class="w-16 sm:w-20 md:w-24 lg:w-28 h-1 sm:h-1.5 shimmer-underline mx-auto rounded-full"></div>
-            <p class="text-gray-600 mt-2 sm:mt-3 md:mt-4 max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl mx-auto text-sm sm:text-base md:text-lg page-subtitle">Where advanced medical technology meets healing
-                architecture</p>
+    <main id="infrastructure-gallery" class="infra-page">
+        <div class="infra-section-heading">
+            <span class="infra-section-heading__eyebrow">World-Class Facilities</span>
+            <h2>Our Infrastructure Gallery</h2>
+            <p>Explore modern clinical spaces designed for precision, comfort and safer patient care.</p>
         </div>
-    </div>
 
-    <!-- ===== GALLERY GRID (fully responsive, 1/2/3 cols) ===== -->
-    <div class="pb-12 sm:pb-16 md:pb-20 px-2 sm:px-4 md:px-6 lg:px-8 xl:px-12 max-w-full mx-auto gallery-grid">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-5 lg:gap-6 xl:gap-7 auto-rows-fr">
-            <!-- generate items with loop? but we keep original 54 images using pattern -->
-            <!-- use data attributes for simplicity, but here we list all (with correct paths) -->
-            <!-- ROW 1 .. 18 as per original, but with proper class & animation delay -->
-            <!-- I'll replicate first few with correct structure, then compact representation (keeping all images) 
-                 to avoid huge code block i'll keep pattern but trust it's complete 54 items. 
-                 all have same class: gallery-item animate-on-scroll (either left/right) -->
+        <!-- Main interactive gallery -->
+        <section class="gallery-shell" aria-label="Hospital infrastructure gallery">
+            <div class="gallery-layout">
+                <article class="featured-panel">
+                    <div class="featured-media">
+                        <img id="featuredImage" class="featured-media__image" src="" alt="" width="1100" height="760">
 
-            <!-- image 1 -->
-            <div class="gallery-item animate-on-scroll animate-slideInLeft" style="animation-delay:0.1s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image1.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image1.webp" alt="infra 1" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- image 2 -->
-            <div class="gallery-item animate-on-scroll animate-slideInRight" style="animation-delay:0.15s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image2.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image2.webp" alt="infra 2" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- image 3 -->
-            <div class="gallery-item animate-on-scroll animate-slideInLeft" style="animation-delay:0.2s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image3.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image3.webp" alt="infra 3" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 4 -->
-            <div class="gallery-item animate-on-scroll animate-slideInRight" style="animation-delay:0.25s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image4.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image4.webp" alt="infra 4" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 5 -->
-            <div class="gallery-item animate-on-scroll animate-slideInLeft" style="animation-delay:0.3s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image5.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image5.webp" alt="infra 5" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 6 -->
-            <div class="gallery-item animate-on-scroll animate-slideInRight" style="animation-delay:0.35s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image6.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image6.webp" alt="infra 6" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 7 -->
-            <div class="gallery-item animate-on-scroll animate-slideInLeft" style="animation-delay:0.4s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image7.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image7.webp" alt="infra 7" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 8 -->
-            <div class="gallery-item animate-on-scroll animate-slideInRight" style="animation-delay:0.45s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image8.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image8.webp" alt="infra 8" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 9 -->
-            <div class="gallery-item animate-on-scroll animate-slideInLeft" style="animation-delay:0.5s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image9.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image9.webp" alt="infra 9" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 10 -->
-            <div class="gallery-item animate-on-scroll animate-slideInRight" style="animation-delay:0.55s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image10.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image10.webp" alt="infra 10" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 11 -->
-            <div class="gallery-item animate-on-scroll animate-slideInLeft" style="animation-delay:0.6s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image11.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image11.webp" alt="infra 11" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 12 -->
-            <div class="gallery-item animate-on-scroll animate-slideInRight" style="animation-delay:0.65s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image12.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image12.webp" alt="infra 12" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 13 -->
-            <div class="gallery-item animate-on-scroll animate-slideInLeft" style="animation-delay:0.7s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image13.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image13.webp" alt="infra 13" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 14 -->
-            <div class="gallery-item animate-on-scroll animate-slideInRight" style="animation-delay:0.75s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image14.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image14.webp" alt="infra 14" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 15 -->
-            <div class="gallery-item animate-on-scroll animate-slideInLeft" style="animation-delay:0.8s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image15.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image15.webp" alt="infra 15" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 16 -->
-            <div class="gallery-item animate-on-scroll animate-slideInRight" style="animation-delay:0.85s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image16.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image16.webp" alt="infra 16" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 17 -->
-            <div class="gallery-item animate-on-scroll animate-slideInLeft" style="animation-delay:0.9s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image17.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image17.webp" alt="infra 17" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 18 -->
-            <div class="gallery-item animate-on-scroll animate-slideInRight" style="animation-delay:0.95s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image18.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image18.webp" alt="infra 18" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 19 -->
-            <div class="gallery-item animate-on-scroll animate-slideInLeft" style="animation-delay:1.0s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image19.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image19.webp" alt="infra 19" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 20 -->
-            <div class="gallery-item animate-on-scroll animate-slideInRight" style="animation-delay:1.05s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image20.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image20.webp" alt="infra 20" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 21 -->
-            <div class="gallery-item animate-on-scroll animate-slideInLeft" style="animation-delay:1.1s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image21.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image21.webp" alt="infra 21" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 22 -->
-            <div class="gallery-item animate-on-scroll animate-slideInRight" style="animation-delay:1.15s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image22.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image22.webp" alt="infra 22" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 23 -->
-            <div class="gallery-item animate-on-scroll animate-slideInLeft" style="animation-delay:1.2s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image23.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image23.webp" alt="infra 23" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 24 -->
-            <div class="gallery-item animate-on-scroll animate-slideInRight" style="animation-delay:1.25s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image24.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image24.webp" alt="infra 24" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 25 -->
-            <div class="gallery-item animate-on-scroll animate-slideInLeft" style="animation-delay:1.3s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image25.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image25.webp" alt="infra 25" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 26 -->
-            <div class="gallery-item animate-on-scroll animate-slideInRight" style="animation-delay:1.35s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image26.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image26.webp" alt="infra 26" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 27 -->
-            <div class="gallery-item animate-on-scroll animate-slideInLeft" style="animation-delay:1.4s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image27.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image27.webp" alt="infra 27" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 28 -->
-            <div class="gallery-item animate-on-scroll animate-slideInRight" style="animation-delay:1.45s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image28.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image28.webp" alt="infra 28" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 29 -->
-            <div class="gallery-item animate-on-scroll animate-slideInLeft" style="animation-delay:1.5s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image29.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image29.webp" alt="infra 29" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 30 -->
-            <div class="gallery-item animate-on-scroll animate-slideInRight" style="animation-delay:1.55s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image30.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image30.webp" alt="infra 30" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 31 -->
-            <div class="gallery-item animate-on-scroll animate-slideInLeft" style="animation-delay:1.6s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image31.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image31.webp" alt="infra 31" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 32 -->
-            <div class="gallery-item animate-on-scroll animate-slideInRight" style="animation-delay:1.65s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image32.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image32.webp" alt="infra 32" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 33 -->
-            <div class="gallery-item animate-on-scroll animate-slideInLeft" style="animation-delay:1.7s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image33.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image33.webp" alt="infra 33" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 34 -->
-            <div class="gallery-item animate-on-scroll animate-slideInRight" style="animation-delay:1.75s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image34.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image34.webp" alt="infra 34" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 35 -->
-            <div class="gallery-item animate-on-scroll animate-slideInLeft" style="animation-delay:1.8s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image35.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image35.webp" alt="infra 35" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 36 -->
-            <div class="gallery-item animate-on-scroll animate-slideInRight" style="animation-delay:1.85s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image36.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image36.webp" alt="infra 36" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 37 -->
-            <div class="gallery-item animate-on-scroll animate-slideInLeft" style="animation-delay:1.9s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image37.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image37.webp" alt="infra 37" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 38 -->
-            <div class="gallery-item animate-on-scroll animate-slideInRight" style="animation-delay:1.95s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image38.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image38.webp" alt="infra 38" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 39 (jpg variant) -->
-            <div class="gallery-item animate-on-scroll animate-slideInLeft" style="animation-delay:2.0s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image39.jpg')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image39.jpg" alt="infra 39" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 40 -->
-            <div class="gallery-item animate-on-scroll animate-slideInRight" style="animation-delay:2.05s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image40.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image40.webp" alt="infra 40" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 41 -->
-            <div class="gallery-item animate-on-scroll animate-slideInLeft" style="animation-delay:2.1s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image41.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image41.webp" alt="infra 41" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 42 -->
-            <div class="gallery-item animate-on-scroll animate-slideInRight" style="animation-delay:2.15s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image42.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image42.webp" alt="infra 42" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 43 -->
-            <div class="gallery-item animate-on-scroll animate-slideInLeft" style="animation-delay:2.2s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image43.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image43.webp" alt="infra 43" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 44 -->
-            <div class="gallery-item animate-on-scroll animate-slideInRight" style="animation-delay:2.25s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image44.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image44.webp" alt="infra 44" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 45 -->
-            <div class="gallery-item animate-on-scroll animate-slideInLeft" style="animation-delay:2.3s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image45.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image45.webp" alt="infra 45" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 46 -->
-            <div class="gallery-item animate-on-scroll animate-slideInRight" style="animation-delay:2.35s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image46.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image46.webp" alt="infra 46" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 47 -->
-            <div class="gallery-item animate-on-scroll animate-slideInLeft" style="animation-delay:2.4s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image47.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image47.webp" alt="infra 47" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 48 -->
-            <div class="gallery-item animate-on-scroll animate-slideInRight" style="animation-delay:2.45s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image48.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image48.webp" alt="infra 48" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 49 -->
-            <div class="gallery-item animate-on-scroll animate-slideInLeft" style="animation-delay:2.5s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image49.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image49.webp" alt="infra 49" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 50 -->
-            <div class="gallery-item animate-on-scroll animate-slideInRight" style="animation-delay:2.55s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image50.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image50.webp" alt="infra 50" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 51 -->
-            <div class="gallery-item animate-on-scroll animate-slideInLeft" style="animation-delay:2.6s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image51.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image51.webp" alt="infra 51" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 52 -->
-            <div class="gallery-item animate-on-scroll animate-slideInRight" style="animation-delay:2.65s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image52.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image52.webp" alt="infra 52" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 53 -->
-            <div class="gallery-item animate-on-scroll animate-slideInLeft" style="animation-delay:2.7s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image53.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image53.webp" alt="infra 53" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-            <!-- 54 -->
-            <div class="gallery-item animate-on-scroll animate-slideInRight" style="animation-delay:2.75s"
-                onclick="openModal('Images/AboutUs-page-Images/Infrastructure/image54.webp')">
-                <img src="Images/AboutUs-page-Images/Infrastructure/image54.webp" alt="infra 54" width="400" height="256"
-                    class="w-full h-64 object-cover">
-            </div>
-        </div>
-    </div>
+                        <button id="featuredPrev" class="featured-control featured-control--prev" type="button"
+                            aria-label="Previous infrastructure image">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="m15 18-6-6 6-6"></path>
+                            </svg>
+                        </button>
 
-    <!-- Modal (improved) -->
-    <div id="imageModal" class="fixed inset-0 z-50 hidden" aria-modal="true" role="dialog">
-        <div class="absolute inset-0 bg-black/70 sm:bg-black/60 backdrop-blur-custom" onclick="closeModal()"></div>
-        <div class="absolute inset-0 flex items-center justify-center p-2 sm:p-4 modal-container">
-            <div
-                class="relative max-w-5xl max-h-[85vh] sm:max-h-[90vh] w-full bg-white/90 sm:bg-white/95 backdrop-blur-sm rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden border border-white/30 modal-content">
-                <button onclick="closeModal()"
-                    class="absolute top-3 sm:top-5 right-3 sm:right-5 z-20 bg-white/90 hover:bg-white text-gray-800 hover:text-red-600 rounded-full p-2 sm:p-3 shadow-xl transition-all duration-200 w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center text-sm sm:text-xl modal-close-btn">
-                    <i class="fa-solid fa-xmark"></i>
+                        <button id="featuredNext" class="featured-control featured-control--next" type="button"
+                            aria-label="Next infrastructure image">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="m9 18 6-6-6-6"></path>
+                            </svg>
+                        </button>
+
+                        <span id="featuredCounter" class="featured-counter">1 / 54</span>
+
+                        <button id="featuredFullscreen" class="featured-fullscreen" type="button"
+                            aria-label="Open selected image in full screen">
+                            <i class="fa-solid fa-expand" aria-hidden="true"></i>
+                        </button>
+                    </div>
+
+                    <div class="featured-copy">
+                        <div class="featured-copy__icon" aria-hidden="true">
+                            <i id="featuredIcon" class="fa-solid fa-hospital"></i>
+                        </div>
+                        <div>
+                            <h3 id="featuredTitle">Infrastructure</h3>
+                            <p id="featuredDescription">Modern hospital facilities designed for quality patient care.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <aside class="browser-panel">
+                    <div id="filterTabs" class="filter-tabs" role="tablist" aria-label="Infrastructure categories">
+                    </div>
+
+                    <div class="thumbnail-toolbar">
+                        <span id="thumbnailLabel" class="thumbnail-toolbar__label">All infrastructure</span>
+                        <span id="thumbnailCount" class="thumbnail-toolbar__count">54 images</span>
+                    </div>
+
+                    <div id="thumbnailGrid" class="thumbnail-grid" aria-live="polite"></div>
+
+                    <button id="viewAllButton" class="view-all-button" type="button">
+                        <span id="viewAllText">View all 54 images</span>
+                        <i class="fa-solid fa-grip" aria-hidden="true"></i>
+                    </button>
+                </aside>
+            </div>
+        </section>
+
+        <!-- More images strip -->
+        <section class="more-section" aria-label="More infrastructure images">
+            <div class="more-section__intro">
+                <h3>More from Our Infrastructure</h3>
+                <p>Explore spaces designed for compassion, comfort and clinical excellence.</p>
+                <button id="exploreAllButton" class="explore-button" type="button">
+                    Explore All
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                 </button>
-                <div class="p-1 sm:p-2 flex items-center justify-center">
-                    <img id="modalImage" src="" alt="enlarged infrastructure"
-                        class="max-h-[70vh] sm:max-h-[75vh] md:max-h-[80vh] max-w-full object-contain rounded-lg sm:rounded-xl">
+            </div>
+
+            <div class="more-carousel">
+                <div id="moreTrack" class="more-track"></div>
+                <button id="moreNext" class="more-arrow" type="button" aria-label="Scroll more images">
+                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- All images modal -->
+    <div id="allImagesModal" class="infra-modal is-hidden" role="dialog" aria-modal="true"
+        aria-labelledby="allImagesTitle">
+        <div class="infra-modal__backdrop" data-close-modal="all"></div>
+        <div class="infra-modal__dialog">
+            <div class="infra-modal__header">
+                <div>
+                    <h2 id="allImagesTitle">All Infrastructure Images</h2>
+                    <p id="allImagesSubtitle">Browse all 54 images</p>
+                </div>
+                <button class="modal-close" type="button" data-close-modal="all" aria-label="Close image gallery">
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div id="allModalFilters" class="all-modal__filters" role="tablist"
+                aria-label="Filter all infrastructure images"></div>
+            <div id="allImagesGrid" class="all-modal__grid"></div>
+        </div>
+    </div>
+
+    <!-- Full-screen lightbox -->
+    <div id="lightboxModal" class="infra-modal is-hidden" role="dialog" aria-modal="true"
+        aria-labelledby="lightboxTitle">
+        <div class="infra-modal__backdrop" data-close-modal="lightbox"></div>
+        <div class="infra-modal__dialog lightbox-dialog">
+            <div class="lightbox-stage">
+                <button class="modal-close lightbox-close" type="button" data-close-modal="lightbox"
+                    aria-label="Close full-screen image">
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+
+                <button id="lightboxPrev" class="lightbox-nav lightbox-nav--prev" type="button"
+                    aria-label="Previous full-screen image">
+                    <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                </button>
+
+                <img id="lightboxImage" src="" alt="" width="1400" height="900">
+
+                <button id="lightboxNext" class="lightbox-nav lightbox-nav--next" type="button"
+                    aria-label="Next full-screen image">
+                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </button>
+
+                <div class="lightbox-caption">
+                    <div>
+                        <h3 id="lightboxTitle">Infrastructure image</h3>
+                        <p id="lightboxDescription"></p>
+                    </div>
+                    <span id="lightboxCount" class="lightbox-caption__count">1 / 54</span>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Footer placeholder -->
     <div id="footer-container"></div>
 
     <script>
-        // ========== MODAL FUNCTIONS ==========
-        function openModal(imageSrc) {
-            const modal = document.getElementById('imageModal');
-            const modalImg = document.getElementById('modalImage');
-            if (modal && modalImg) {
-                modalImg.src = imageSrc;
-                modal.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-            }
-        }
+        (function () {
+            "use strict";
 
-        function closeModal() {
-            const modal = document.getElementById('imageModal');
-            if (modal) {
-                modal.classList.add('hidden');
-                document.body.style.overflow = '';
-            }
-        }
-
-        // Escape key to close modal
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeModal();
-            }
-        });
-
-        // ========== SCROLL ANIMATIONS ==========
-        function initScrollAnimation() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.animationPlayState = 'running';
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1, rootMargin: '50px' });
-
-            document.querySelectorAll('.animate-on-scroll').forEach(el => {
-                observer.observe(el);
-            });
-        }
-
-        // ========== LAZY LOADING ==========
-        function initLazyLoading() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1, rootMargin: '100px' });
-
-            document.querySelectorAll('.gallery-item img').forEach(img => {
-                img.style.opacity = '0';
-                img.style.transition = 'opacity 0.5s ease-in-out';
-                observer.observe(img);
-            });
-        }
-
-        // ========== MOBILE DROPDOWN TOGGLE ==========
-        window.toggleMobileDropdown = function (dropdownId) {
-            const dropdown = document.getElementById(dropdownId + '-dropdown');
-            const button = event.currentTarget;
-            const chevron = button.querySelector('i');
-
-            if (dropdown) {
-                // Close all other dropdowns
-                document.querySelectorAll('[id$="-dropdown"]').forEach(d => {
-                    if (d.id !== dropdownId + '-dropdown' && !d.classList.contains('hidden')) {
-                        d.classList.add('hidden');
-                        const otherBtn = d.previousElementSibling;
-                        if (otherBtn) {
-                            const otherChevron = otherBtn.querySelector('i');
-                            if (otherChevron) otherChevron.style.transform = 'rotate(0deg)';
-                        }
-                    }
-                });
-
-                // Toggle current dropdown
-                if (dropdown.classList.contains('hidden')) {
-                    dropdown.classList.remove('hidden');
-                    if (chevron) chevron.style.transform = 'rotate(180deg)';
-                } else {
-                    dropdown.classList.add('hidden');
-                    if (chevron) chevron.style.transform = 'rotate(0deg)';
+            const categoryDefinitions = [
+                {
+                    id: "all",
+                    label: "All",
+                    icon: "fa-grip",
+                    description: "All infrastructure"
+                },
+                {
+                    id: "operation",
+                    label: "Operation Theatres",
+                    icon: "fa-bed-pulse",
+                    description: "Operation theatres"
+                },
+                {
+                    id: "patient",
+                    label: "Patient Rooms",
+                    icon: "fa-bed",
+                    description: "Patient rooms"
+                },
+                {
+                    id: "imaging",
+                    label: "Imaging",
+                    icon: "fa-magnet",
+                    description: "Imaging and diagnostics"
+                },
+                {
+                    id: "facilities",
+                    label: "Facilities",
+                    icon: "fa-building",
+                    description: "Hospital facilities"
+                },
+                {
+                    id: "others",
+                    label: "More",
+                    icon: "fa-ellipsis",
+                    description: "Other infrastructure"
                 }
+            ];
+
+            const itemGroups = [
+                {
+                    category: "operation",
+                    description: "State-of-the-art surgical spaces with modern lighting, airflow and precision equipment.",
+                    titles: [
+                        "Modular Operation Theatre",
+                        "Advanced Surgical Suite",
+                        "Laminar Flow Operation Theatre",
+                        "Joint Replacement Theatre",
+                        "Orthopedic Surgical Suite",
+                        "Modern Operation Theatre",
+                        "Minimally Invasive Surgery Room",
+                        "Trauma Operation Theatre",
+                        "Sterile Surgical Complex",
+                        "Advanced Procedure Room",
+                        "Surgical Preparation Area",
+                        "Post-operative Care Bay"
+                    ]
+                },
+                {
+                    category: "patient",
+                    description: "Comfortable patient spaces created to support privacy, rest and faster recovery.",
+                    titles: [
+                        "Deluxe Patient Room",
+                        "Private Recovery Room",
+                        "Spacious Patient Ward",
+                        "Premium Patient Suite",
+                        "Twin-sharing Patient Room",
+                        "Post-surgery Recovery Room",
+                        "Nursing Care Station",
+                        "Patient Comfort Lounge",
+                        "Family Waiting Area",
+                        "Day Care Patient Room"
+                    ]
+                },
+                {
+                    category: "imaging",
+                    description: "Advanced diagnostic technology designed to support accurate assessment and treatment planning.",
+                    titles: [
+                        "Advanced MRI Suite",
+                        "Digital Imaging Center",
+                        "CT Scan Facility",
+                        "Diagnostic Procedure Room",
+                        "Radiology Department",
+                        "High-resolution Imaging Suite",
+                        "Computer-assisted Diagnostics",
+                        "Clinical Imaging Room",
+                        "Diagnostic Monitoring Area",
+                        "Advanced Scanning Facility"
+                    ]
+                },
+                {
+                    category: "facilities",
+                    description: "Modern hospital amenities that improve access, workflow, safety and patient experience.",
+                    titles: [
+                        "Germanten Hospital Exterior",
+                        "Main Reception Lounge",
+                        "Emergency Care Department",
+                        "Intensive Care Unit",
+                        "Critical Care Bay",
+                        "Clinical Corridor",
+                        "Advanced Laboratory",
+                        "Hospital Pharmacy",
+                        "Physiotherapy Center",
+                        "Patient Registration Area",
+                        "Modern Hospital Lobby",
+                        "Clinical Support Facility"
+                    ]
+                },
+                {
+                    category: "others",
+                    description: "Additional spaces and support services forming part of Germanten Hospital's care environment.",
+                    titles: [
+                        "Rehabilitation Area",
+                        "Specialist Consultation Room",
+                        "Medical Equipment Zone",
+                        "Outpatient Department",
+                        "Staff Coordination Area",
+                        "Patient Assistance Desk",
+                        "Clinical Training Space",
+                        "Hospital Support Services",
+                        "Accessible Care Facility",
+                        "Integrated Healthcare Area"
+                    ]
+                }
+            ];
+
+            const galleryItems = [];
+            let imageNumber = 1;
+
+            itemGroups.forEach(function (group) {
+                group.titles.forEach(function (title) {
+                    const extension = imageNumber === 39 ? "jpg" : "webp";
+                    galleryItems.push({
+                        id: imageNumber,
+                        src: "Images/AboutUs-page-Images/Infrastructure/image" + imageNumber + "." + extension,
+                        title: title,
+                        description: group.description,
+                        category: group.category
+                    });
+                    imageNumber += 1;
+                });
+            });
+
+            const state = {
+                activeFilter: "all",
+                allModalFilter: "all",
+                selectedIndex: 2,
+                lightboxIndex: 2
+            };
+
+            const elements = {
+                featuredImage: document.getElementById("featuredImage"),
+                featuredTitle: document.getElementById("featuredTitle"),
+                featuredDescription: document.getElementById("featuredDescription"),
+                featuredCounter: document.getElementById("featuredCounter"),
+                featuredIcon: document.getElementById("featuredIcon"),
+                featuredPrev: document.getElementById("featuredPrev"),
+                featuredNext: document.getElementById("featuredNext"),
+                featuredFullscreen: document.getElementById("featuredFullscreen"),
+                filterTabs: document.getElementById("filterTabs"),
+                thumbnailGrid: document.getElementById("thumbnailGrid"),
+                thumbnailLabel: document.getElementById("thumbnailLabel"),
+                thumbnailCount: document.getElementById("thumbnailCount"),
+                viewAllButton: document.getElementById("viewAllButton"),
+                viewAllText: document.getElementById("viewAllText"),
+                moreTrack: document.getElementById("moreTrack"),
+                moreNext: document.getElementById("moreNext"),
+                exploreAllButton: document.getElementById("exploreAllButton"),
+                allImagesModal: document.getElementById("allImagesModal"),
+                allModalFilters: document.getElementById("allModalFilters"),
+                allImagesGrid: document.getElementById("allImagesGrid"),
+                allImagesSubtitle: document.getElementById("allImagesSubtitle"),
+                lightboxModal: document.getElementById("lightboxModal"),
+                lightboxImage: document.getElementById("lightboxImage"),
+                lightboxTitle: document.getElementById("lightboxTitle"),
+                lightboxDescription: document.getElementById("lightboxDescription"),
+                lightboxCount: document.getElementById("lightboxCount"),
+                lightboxPrev: document.getElementById("lightboxPrev"),
+                lightboxNext: document.getElementById("lightboxNext")
+            };
+
+            function getCategory(categoryId) {
+                return categoryDefinitions.find(function (category) {
+                    return category.id === categoryId;
+                }) || categoryDefinitions[0];
             }
-        };
 
-        // ========== MOBILE MENU FUNCTIONALITY ==========
-        function initializeMobileMenu() {
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
+            function getCategoryCount(categoryId) {
+                if (categoryId === "all") {
+                    return galleryItems.length;
+                }
 
-            if (mobileMenuButton && mobileMenu) {
-                // Remove existing listeners
-                const newButton = mobileMenuButton.cloneNode(true);
-                mobileMenuButton.parentNode.replaceChild(newButton, mobileMenuButton);
+                return galleryItems.filter(function (item) {
+                    return item.category === categoryId;
+                }).length;
+            }
 
-                newButton.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    mobileMenu.classList.toggle('hidden');
+            function getFilteredItems(filterId) {
+                if (filterId === "all") {
+                    return galleryItems.slice();
+                }
 
-                    // Toggle icon between bars and times
-                    const icon = newButton.querySelector('i');
-                    if (icon) {
-                        if (mobileMenu.classList.contains('hidden')) {
-                            icon.className = 'fas fa-bars';
-                            document.body.classList.remove('mobile-menu-open');
+                return galleryItems.filter(function (item) {
+                    return item.category === filterId;
+                });
+            }
+
+            function getGlobalIndex(item) {
+                return galleryItems.findIndex(function (candidate) {
+                    return candidate.id === item.id;
+                });
+            }
+
+            function setSelectedIndex(index, options) {
+                const settings = options || {};
+                const safeIndex = (index + galleryItems.length) % galleryItems.length;
+                state.selectedIndex = safeIndex;
+
+                const item = galleryItems[state.selectedIndex];
+                const category = getCategory(item.category);
+
+                elements.featuredImage.style.opacity = "0.3";
+                elements.featuredImage.src = item.src;
+                elements.featuredImage.alt = item.title + " at Germanten Hospital";
+                elements.featuredTitle.textContent = item.title;
+                elements.featuredDescription.textContent = item.description;
+                elements.featuredCounter.textContent = String(state.selectedIndex + 1).padStart(2, "0") + " / " + galleryItems.length;
+                elements.featuredIcon.className = "fa-solid " + category.icon;
+
+                requestAnimationFrame(function () {
+                    elements.featuredImage.style.opacity = "1";
+                });
+
+                if (settings.syncFilter !== false && state.activeFilter !== "all" && item.category !== state.activeFilter) {
+                    state.activeFilter = item.category;
+                    renderFilterTabs();
+                }
+
+                renderThumbnails();
+                renderMoreItems();
+            }
+
+            function renderFilterTabs() {
+                elements.filterTabs.innerHTML = "";
+
+                categoryDefinitions.forEach(function (category) {
+                    const count = getCategoryCount(category.id);
+                    const button = document.createElement("button");
+                    button.type = "button";
+                    button.className = "filter-tab" + (state.activeFilter === category.id ? " is-active" : "");
+                    button.setAttribute("role", "tab");
+                    button.setAttribute("aria-selected", state.activeFilter === category.id ? "true" : "false");
+                    button.dataset.filter = category.id;
+                    button.innerHTML = category.label + " (" + count + ")";
+                    button.addEventListener("click", function () {
+                        state.activeFilter = category.id;
+                        const filtered = getFilteredItems(category.id);
+                        if (filtered.length) {
+                            setSelectedIndex(getGlobalIndex(filtered[0]), { syncFilter: false });
                         } else {
-                            icon.className = 'fas fa-times';
-                            document.body.classList.add('mobile-menu-open');
+                            renderThumbnails();
+                        }
+                        renderFilterTabs();
+                    });
+                    elements.filterTabs.appendChild(button);
+                });
+            }
+
+            function renderThumbnails() {
+                const filteredItems = getFilteredItems(state.activeFilter);
+                const category = getCategory(state.activeFilter);
+
+                elements.thumbnailLabel.textContent = category.description;
+                elements.thumbnailCount.textContent = filteredItems.length + (filteredItems.length === 1 ? " image" : " images");
+                elements.viewAllText.textContent = "View all " + filteredItems.length + " images";
+                elements.thumbnailGrid.innerHTML = "";
+
+                if (!filteredItems.length) {
+                    elements.thumbnailGrid.innerHTML = '<div class="thumbnail-empty">No images are available in this category.</div>';
+                    return;
+                }
+
+                filteredItems.forEach(function (item) {
+                    const globalIndex = getGlobalIndex(item);
+                    const button = document.createElement("button");
+                    button.type = "button";
+                    button.className = "thumbnail-card" + (globalIndex === state.selectedIndex ? " is-selected" : "");
+                    button.setAttribute("aria-label", "View " + item.title);
+                    button.innerHTML =
+                        '<span class="thumbnail-card__media">' +
+                        '<img src="' + item.src + '" alt="' + item.title + '" width="260" height="170" loading="lazy">' +
+                        '<span class="thumbnail-card__check"><i class="fa-solid fa-check" aria-hidden="true"></i></span>' +
+                        '</span>' +
+                        '<span class="thumbnail-card__title">' + String(item.id).padStart(2, "0") + " " + item.title + '</span>';
+
+                    button.addEventListener("click", function () {
+                        setSelectedIndex(globalIndex, { syncFilter: false });
+                    });
+
+                    elements.thumbnailGrid.appendChild(button);
+                });
+
+                requestAnimationFrame(function () {
+                    const selectedCard = elements.thumbnailGrid.querySelector(".thumbnail-card.is-selected");
+                    if (selectedCard) {
+                        selectedCard.scrollIntoView({ block: "nearest", inline: "nearest" });
+                    }
+                });
+            }
+
+            function renderMoreItems() {
+                elements.moreTrack.innerHTML = "";
+                const total = galleryItems.length;
+
+                for (let offset = 1; offset <= 10; offset += 1) {
+                    const index = (state.selectedIndex + offset) % total;
+                    const item = galleryItems[index];
+                    const button = document.createElement("button");
+                    button.type = "button";
+                    button.className = "more-card";
+                    button.innerHTML =
+                        '<img src="' + item.src + '" alt="' + item.title + '" width="260" height="160" loading="lazy">' +
+                        '<span>' + item.title + '</span>';
+                    button.addEventListener("click", function () {
+                        state.activeFilter = "all";
+                        renderFilterTabs();
+                        setSelectedIndex(index, { syncFilter: false });
+                        document.querySelector(".gallery-shell").scrollIntoView({ behavior: "smooth", block: "start" });
+                    });
+                    elements.moreTrack.appendChild(button);
+                }
+            }
+
+            function renderAllModalFilters() {
+                elements.allModalFilters.innerHTML = "";
+
+                categoryDefinitions.forEach(function (category) {
+                    const button = document.createElement("button");
+                    button.type = "button";
+                    button.className = "filter-tab" + (state.allModalFilter === category.id ? " is-active" : "");
+                    button.textContent = category.label + " (" + getCategoryCount(category.id) + ")";
+                    button.addEventListener("click", function () {
+                        state.allModalFilter = category.id;
+                        renderAllModalFilters();
+                        renderAllImagesGrid();
+                    });
+                    elements.allModalFilters.appendChild(button);
+                });
+            }
+
+            function renderAllImagesGrid() {
+                const items = getFilteredItems(state.allModalFilter);
+                const category = getCategory(state.allModalFilter);
+                elements.allImagesSubtitle.textContent = category.description + " · " + items.length + " images";
+                elements.allImagesGrid.innerHTML = "";
+
+                items.forEach(function (item) {
+                    const globalIndex = getGlobalIndex(item);
+                    const button = document.createElement("button");
+                    button.type = "button";
+                    button.className = "all-image-card";
+                    button.innerHTML =
+                        '<img src="' + item.src + '" alt="' + item.title + '" width="360" height="230" loading="lazy">' +
+                        '<span class="all-image-card__copy">' +
+                        '<strong>' + item.title + '</strong>' +
+                        '<span>Image ' + String(item.id).padStart(2, "0") + '</span>' +
+                        '</span>';
+                    button.addEventListener("click", function () {
+                        closeAllModal();
+                        openLightbox(globalIndex);
+                    });
+                    elements.allImagesGrid.appendChild(button);
+                });
+            }
+
+            function openAllModal() {
+                state.allModalFilter = state.activeFilter;
+                renderAllModalFilters();
+                renderAllImagesGrid();
+                elements.allImagesModal.classList.remove("is-hidden");
+                document.body.classList.add("modal-open");
+            }
+
+            function closeAllModal() {
+                elements.allImagesModal.classList.add("is-hidden");
+                if (elements.lightboxModal.classList.contains("is-hidden")) {
+                    document.body.classList.remove("modal-open");
+                }
+            }
+
+            function openLightbox(index) {
+                state.lightboxIndex = (index + galleryItems.length) % galleryItems.length;
+                updateLightbox();
+                elements.lightboxModal.classList.remove("is-hidden");
+                document.body.classList.add("modal-open");
+            }
+
+            function updateLightbox() {
+                const item = galleryItems[state.lightboxIndex];
+                elements.lightboxImage.src = item.src;
+                elements.lightboxImage.alt = item.title + " at Germanten Hospital";
+                elements.lightboxTitle.textContent = item.title;
+                elements.lightboxDescription.textContent = item.description;
+                elements.lightboxCount.textContent = String(state.lightboxIndex + 1).padStart(2, "0") + " / " + galleryItems.length;
+            }
+
+            function closeLightbox() {
+                elements.lightboxModal.classList.add("is-hidden");
+                if (elements.allImagesModal.classList.contains("is-hidden")) {
+                    document.body.classList.remove("modal-open");
+                }
+            }
+
+            function stepFeatured(direction) {
+                const filtered = getFilteredItems(state.activeFilter);
+                if (!filtered.length) {
+                    return;
+                }
+
+                const selectedItem = galleryItems[state.selectedIndex];
+                let currentFilteredIndex = filtered.findIndex(function (item) {
+                    return item.id === selectedItem.id;
+                });
+
+                if (currentFilteredIndex < 0) {
+                    currentFilteredIndex = 0;
+                }
+
+                const nextFilteredIndex = (currentFilteredIndex + direction + filtered.length) % filtered.length;
+                setSelectedIndex(getGlobalIndex(filtered[nextFilteredIndex]), { syncFilter: false });
+            }
+
+            function stepLightbox(direction) {
+                state.lightboxIndex = (state.lightboxIndex + direction + galleryItems.length) % galleryItems.length;
+                updateLightbox();
+            }
+
+            function updateScrollProgress() {
+                const scrollTop = window.scrollY || document.documentElement.scrollTop;
+                const available = document.documentElement.scrollHeight - window.innerHeight;
+                const percentage = available > 0 ? Math.min(100, Math.max(0, (scrollTop / available) * 100)) : 0;
+                const progress = document.getElementById("scrollProgress");
+                const bar = document.getElementById("scrollProgressBar");
+                bar.style.width = percentage + "%";
+                progress.classList.toggle("is-visible", scrollTop > 90);
+            }
+
+            function syncNavbarSpacer() {
+                const container = document.getElementById("navbar-container");
+                if (!container) {
+                    return;
+                }
+
+                const navbar = container.querySelector("nav") || container.firstElementChild;
+                if (!navbar) {
+                    return;
+                }
+
+                requestAnimationFrame(function () {
+                    const navbarRect = navbar.getBoundingClientRect();
+                    const height = Math.ceil(Math.max(navbarRect.bottom, navbarRect.height));
+
+                    if (height > 40) {
+                        container.style.minHeight = height + "px";
+                        container.style.height = height + "px";
+                    }
+                });
+            }
+
+            function initializeMobileMenu() {
+                const mobileMenuButton = document.getElementById("mobile-menu-button");
+                const mobileMenu = document.getElementById("mobile-menu");
+
+                if (!mobileMenuButton || !mobileMenu || mobileMenuButton.dataset.initialized === "true") {
+                    return;
+                }
+
+                mobileMenuButton.dataset.initialized = "true";
+                mobileMenuButton.addEventListener("click", function (event) {
+                    event.stopPropagation();
+                    mobileMenu.classList.toggle("hidden");
+                    const icon = mobileMenuButton.querySelector("i");
+                    if (icon) {
+                        icon.className = mobileMenu.classList.contains("hidden") ? "fas fa-bars" : "fas fa-times";
+                    }
+                });
+
+                document.addEventListener("click", function (event) {
+                    if (!mobileMenu.classList.contains("hidden") && !mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                        mobileMenu.classList.add("hidden");
+                        const icon = mobileMenuButton.querySelector("i");
+                        if (icon) {
+                            icon.className = "fas fa-bars";
                         }
                     }
                 });
-
-                // Close on link click
-                mobileMenu.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        mobileMenu.classList.add('hidden');
-                        document.body.classList.remove('mobile-menu-open');
-                        const icon = newButton.querySelector('i');
-                        if (icon) icon.className = 'fas fa-bars';
-                    });
-                });
-
-                // Close on outside click
-                document.addEventListener('click', (e) => {
-                    if (mobileMenu && !mobileMenu.classList.contains('hidden') &&
-                        !mobileMenu.contains(e.target) && !newButton.contains(e.target)) {
-                        mobileMenu.classList.add('hidden');
-                        document.body.classList.remove('mobile-menu-open');
-                        const icon = newButton.querySelector('i');
-                        if (icon) icon.className = 'fas fa-bars';
-                    }
-                });
             }
-        }
 
-        // ========== LOAD NAVBAR ==========
-        function loadNavbar() {
-            const navContainer = document.getElementById('navbar-container');
-            if (navContainer) {
-                fetch('components/navbar')
-                    .then(response => {
-                        if (!response.ok) throw new Error('Navbar not found');
+            window.toggleMobileDropdown = function (dropdownId) {
+                const dropdown = document.getElementById(dropdownId + "-dropdown");
+                if (dropdown) {
+                    dropdown.classList.toggle("hidden");
+                }
+            };
+
+            function loadNavbar() {
+                const navContainer = document.getElementById("navbar-container");
+
+                fetch("components/navbar.html")
+                    .then(function (response) {
+                        if (!response.ok) {
+                            throw new Error("Navbar component was not found");
+                        }
                         return response.text();
                     })
-                    .then(html => {
+                    .then(function (html) {
                         navContainer.innerHTML = html;
-                        setTimeout(initializeMobileMenu, 100);
-                    })
-                    .catch(error => {
-                        console.error('Error loading navbar:', error);
-                        // Fallback navbar with complete mobile menu
-                        navContainer.innerHTML = `
-                            <header class="bg-white shadow-md sticky top-0 z-50 w-full">
-                                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                                    <div class="flex justify-between items-center py-4">
-                                        <a href="index" class="text-2xl font-bold text-blue-900">
-                                            GERMANTEN <span class="text-blue-600">HOSPITALS</span>
-                                        </a>
-                                        <button id="mobile-menu-button" class="md:hidden w-12 h-12 flex items-center justify-center text-2xl text-gray-700 hover:bg-gray-100 rounded-lg transition">
-                                            <i class="fas fa-bars"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200 px-4 py-4 shadow-lg">
-                                    <div class="space-y-2">
-                                        <a href="index" class="block py-3 px-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg font-medium">Home</a>
-                                        
-                                        <!-- About Us Dropdown -->
-                                        <div class="mobile-dropdown">
-                                            <button onclick="toggleMobileDropdown('about')" class="w-full flex items-center justify-between py-3 px-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg font-medium">
-                                                <span>About Us</span>
-                                                <i class="fas fa-chevron-down text-xs transition-transform duration-300" id="about-chevron"></i>
-                                            </button>
-                                            <div id="about-dropdown" class="hidden pl-6 mt-1 space-y-1">
-                                                <a href="/infrastructure" class="block py-3 px-4 text-gray-600 hover:bg-blue-50 hover:text-blue-600 rounded-lg">• Infrastructure</a>
-                                                <a href="research" class="block py-3 px-4 text-gray-600 hover:bg-blue-50 hover:text-blue-600 rounded-lg">• Research & Collaboration</a>
-                                                <a href="leadership" class="block py-3 px-4 text-gray-600 hover:bg-blue-50 hover:text-blue-600 rounded-lg">• Leadership</a>
-                                                <a href="mission" class="block py-3 px-4 text-gray-600 hover:bg-blue-50 hover:text-blue-600 rounded-lg">• Mission & Values</a>
-                                            </div>
-                                        </div>
-
-                                        <!-- Patient Info Dropdown -->
-                                        <div class="mobile-dropdown">
-                                            <button onclick="toggleMobileDropdown('patient')" class="w-full flex items-center justify-between py-3 px-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg font-medium">
-                                                <span>Patient Info</span>
-                                                <i class="fas fa-chevron-down text-xs transition-transform duration-300" id="patient-chevron"></i>
-                                            </button>
-                                            <div id="patient-dropdown" class="hidden pl-6 mt-1 space-y-1">
-                                                <a href="admissions" class="block py-3 px-4 text-gray-600 hover:bg-blue-50 hover:text-blue-600 rounded-lg">• Admissions</a>
-                                                <a href="insurance" class="block py-3 px-4 text-gray-600 hover:bg-blue-50 hover:text-blue-600 rounded-lg">• Insurance</a>
-                                                <a href="visitor-guide" class="block py-3 px-4 text-gray-600 hover:bg-blue-50 hover:text-blue-600 rounded-lg">• Visitor Guide</a>
-                                                <a href="patient-rights" class="block py-3 px-4 text-gray-600 hover:bg-blue-50 hover:text-blue-600 rounded-lg">• Patient Rights</a>
-                                            </div>
-                                        </div>
-
-                                        <!-- Treatments Dropdown -->
-                                        <div class="mobile-dropdown">
-                                            <button onclick="toggleMobileDropdown('treatments')" class="w-full flex items-center justify-between py-3 px-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg font-medium">
-                                                <span>Treatments</span>
-                                                <i class="fas fa-chevron-down text-xs transition-transform duration-300" id="treatments-chevron"></i>
-                                            </button>
-                                            <div id="treatments-dropdown" class="hidden pl-6 mt-1 space-y-1">
-                                                <a href="cardiology" class="block py-3 px-4 text-gray-600 hover:bg-blue-50 hover:text-blue-600 rounded-lg">• Cardiology</a>
-                                                <a href="orthopedics" class="block py-3 px-4 text-gray-600 hover:bg-blue-50 hover:text-blue-600 rounded-lg">• Orthopedics</a>
-                                                <a href="neurology" class="block py-3 px-4 text-gray-600 hover:bg-blue-50 hover:text-blue-600 rounded-lg">• Neurology</a>
-                                                <a href="oncology" class="block py-3 px-4 text-gray-600 hover:bg-blue-50 hover:text-blue-600 rounded-lg">• Oncology</a>
-                                            </div>
-                                        </div>
-
-                                        <!-- Single items -->
-                                        <a href="/contact" class="block py-3 px-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg font-medium">Contact</a>
-                                    </div>
-                                </div>
-                            </header>
-                        `;
                         initializeMobileMenu();
+                        syncNavbarSpacer();
+                        setTimeout(syncNavbarSpacer, 200);
+                        setTimeout(syncNavbarSpacer, 700);
+
+                        if ("ResizeObserver" in window && navContainer.firstElementChild) {
+                            const navbarResizeObserver = new ResizeObserver(syncNavbarSpacer);
+                            navbarResizeObserver.observe(navContainer.firstElementChild);
+                        }
+                    })
+                    .catch(function (error) {
+                        console.error("Error loading navbar:", error);
+                        navContainer.innerHTML = "";
+                        syncNavbarSpacer();
                     });
             }
-        }
 
-        // ========== LOAD FOOTER ==========
-        function loadFooter() {
-            const footerDiv = document.getElementById('footer-container');
-            if (footerDiv) {
-                fetch('components/footer')
-                    .then(response => {
-                        if (!response.ok) throw new Error('Footer not found');
+            function loadFooter() {
+                const footerContainer = document.getElementById("footer-container");
+
+                fetch("components/footer.html")
+                    .then(function (response) {
+                        if (!response.ok) {
+                            throw new Error("Footer component was not found");
+                        }
                         return response.text();
                     })
-                    .then(html => {
-                        footerDiv.innerHTML = html;
+                    .then(function (html) {
+                        footerContainer.innerHTML = html;
                     })
-                    .catch(error => {
-                        console.error('Error loading footer:', error);
-                        footerDiv.innerHTML = `
-                            <footer class="bg-gray-900 text-gray-300 pt-16 pb-8 mt-12">
-                                <div class="max-w-7xl mx-auto px-6 text-center md:flex md:justify-between md:text-left">
-                                    <div class="mb-6 md:mb-0">
-                                        <span class="text-white font-bold text-xl">Germanten Hospital</span><br>
-                                        © 2025 All rights reserved.
-                                    </div>
-                                    <div class="flex gap-8 justify-center">
-                                        <a href="#" class="hover:text-white transition">Privacy</a>
-                                        <a href="#" class="hover:text-white transition">Terms</a>
-                                        <a href="#" class="hover:text-white transition">Careers</a>
-                                    </div>
-                                </div>
-                            </footer>
-                        `;
+                    .catch(function (error) {
+                        console.error("Error loading footer:", error);
+                        footerContainer.innerHTML = "";
                     });
             }
-        }
 
-        // Scroll Progress Bar Functionality
-        document.addEventListener('DOMContentLoaded', function () {
-            const scrollProgress = document.getElementById('scrollProgress');
-            const scrollProgressBar = document.getElementById('scrollProgressBar');
+            elements.featuredPrev.addEventListener("click", function () {
+                stepFeatured(-1);
+            });
 
-            // Update scroll progress
-            function updateScrollProgress() {
-                const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-                const scrollPercentage = (scrollTop / scrollHeight) * 100;
+            elements.featuredNext.addEventListener("click", function () {
+                stepFeatured(1);
+            });
 
-                // Update progress bar width
-                scrollProgressBar.style.width = scrollPercentage + '%';
+            elements.featuredFullscreen.addEventListener("click", function () {
+                openLightbox(state.selectedIndex);
+            });
 
-                // Show/hide progress bar based on scroll position
-                if (scrollTop > 100) {
-                    scrollProgress.classList.remove('hidden');
-                } else {
-                    scrollProgress.classList.add('hidden');
-                }
-            }
+            elements.featuredImage.addEventListener("dblclick", function () {
+                openLightbox(state.selectedIndex);
+            });
 
-            // Throttle function for performance
-            function throttle(func, limit) {
-                let inThrottle;
-                return function () {
-                    const args = arguments;
-                    const context = this;
-                    if (!inThrottle) {
-                        func.apply(context, args);
-                        inThrottle = true;
-                        setTimeout(() => inThrottle = false, limit);
+            elements.viewAllButton.addEventListener("click", openAllModal);
+            elements.exploreAllButton.addEventListener("click", openAllModal);
+
+            elements.moreNext.addEventListener("click", function () {
+                elements.moreTrack.scrollBy({ left: Math.max(320, elements.moreTrack.clientWidth * 0.72), behavior: "smooth" });
+            });
+
+            elements.lightboxPrev.addEventListener("click", function () {
+                stepLightbox(-1);
+            });
+
+            elements.lightboxNext.addEventListener("click", function () {
+                stepLightbox(1);
+            });
+
+            document.querySelectorAll("[data-close-modal]").forEach(function (button) {
+                button.addEventListener("click", function () {
+                    const modal = button.dataset.closeModal;
+                    if (modal === "all") {
+                        closeAllModal();
+                    } else {
+                        closeLightbox();
                     }
-                }
-            }
-
-            // Add scroll event listener with throttling
-            window.addEventListener('scroll', throttle(updateScrollProgress, 10));
-
-            // Initial update
-            updateScrollProgress();
-
-            // Smooth scroll to top when progress bar is clicked
-            scrollProgress.addEventListener('click', function () {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
                 });
             });
 
-            // Add hover effect for progress bar
-            scrollProgress.addEventListener('mouseenter', function () {
-                scrollProgressBar.style.boxShadow = '0 0 20px rgba(202, 138, 4, 0.8)';
+            document.addEventListener("keydown", function (event) {
+                const lightboxOpen = !elements.lightboxModal.classList.contains("is-hidden");
+                const allModalOpen = !elements.allImagesModal.classList.contains("is-hidden");
+
+                if (event.key === "Escape") {
+                    if (lightboxOpen) {
+                        closeLightbox();
+                    } else if (allModalOpen) {
+                        closeAllModal();
+                    }
+                    return;
+                }
+
+                if (lightboxOpen && event.key === "ArrowLeft") {
+                    stepLightbox(-1);
+                } else if (lightboxOpen && event.key === "ArrowRight") {
+                    stepLightbox(1);
+                } else if (!allModalOpen && event.key === "ArrowLeft") {
+                    stepFeatured(-1);
+                } else if (!allModalOpen && event.key === "ArrowRight") {
+                    stepFeatured(1);
+                }
             });
 
-            scrollProgress.addEventListener('mouseleave', function () {
-                scrollProgressBar.style.boxShadow = '0 0 10px rgba(202, 138, 4, 0.5)';
-            });
-        });
+            window.openModal = function (imageSrc) {
+                const index = galleryItems.findIndex(function (item) {
+                    return item.src === imageSrc;
+                });
+                openLightbox(index >= 0 ? index : state.selectedIndex);
+            };
 
-        // ========== INITIALIZE EVERYTHING ==========
-        window.addEventListener('DOMContentLoaded', () => {
+            window.closeModal = closeLightbox;
+
+            window.addEventListener("scroll", updateScrollProgress, { passive: true });
+            window.addEventListener("resize", syncNavbarSpacer);
+
+            renderFilterTabs();
+            setSelectedIndex(state.selectedIndex, { syncFilter: false });
+            updateScrollProgress();
             loadNavbar();
             loadFooter();
-            initScrollAnimation();
-            initLazyLoading();
-        });
+            
+        })();
+    </script>
+
+   
+
+<div id="floating-nav" class="fixed right-4 z-50 hidden lg:flex flex-col gap-2" style="bottom: 12%;">
+    <a href="book-an-appointment.html" title="Book Appointment"
+        class="floating-nav-btn floating-nav-vertical-btn rounded-lg flex items-center justify-center text-white">
+        <span class="floating-nav-vertical-text">Book Appointment</span>
+    </a>
+    <a href="about-us.html" class="floating-nav-btn rounded-lg flex items-center justify-center text-white"
+        title="About Us">
+        <i class="fas fa-user-md"></i>
+    </a>
+    <a href="https://www.google.com/maps/search/?api=1&query=Dr.%20Mir%20Jawad%20Zar%20Khan%20Best%20Orthopedic%20Doctor%20in%20Hyderabad%20Knee%20Joint%20Replacement%20Surgeon%20Attapur%20Hyderabad"
+        class="floating-nav-btn rounded-lg flex items-center justify-center text-white" title="Get Directions"
+        aria-label="Get Directions" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-directions"></i>
+    </a>
+    <a href="book-an-appointment.html" class="floating-nav-btn rounded-lg flex items-center justify-center text-white"
+        title="Book Appointment">
+        <i class="fas fa-calendar-check"></i>
+    </a>
+    <a href="contact.html" class="floating-nav-btn rounded-lg flex items-center justify-center text-white"
+        title="Contact Us">
+        <i class="fas fa-phone-alt"></i>
+    </a>
+    <a href="https://wa.me/919989635555" target="_blank" rel="noopener noreferrer"
+        class="floating-nav-btn floating-nav-whatsapp rounded-lg flex items-center justify-center text-white"
+        title="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</div>
+
+<style>
+    /* Floating Navigation Styles */
+    .floating-nav-btn,
+    .floating-nav-btn-mobile {
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        width: 2.35rem;
+        height: 2.35rem;
+        background: #dc2626;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        transition: color 0.35s ease;
+    }
+
+    .floating-nav-btn::before,
+    .floating-nav-btn-mobile::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        border-radius: inherit;
+        background: linear-gradient(135deg, #f6ad00 0%, #fbbf24 100%);
+        transform: translateX(-101%);
+        transition: transform 0.45s ease;
+    }
+
+    .floating-nav-btn:hover::before,
+    .floating-nav-btn-mobile:hover::before {
+        transform: translateX(0);
+    }
+
+    .floating-nav-btn:hover,
+    .floating-nav-btn-mobile:hover {
+        color: #401f00;
+    }
+
+    .floating-nav-btn i {
+        position: relative;
+        z-index: 1;
+        font-size: 0.95rem;
+    }
+
+    .floating-nav-whatsapp {
+        background: #25d366;
+    }
+
+    .floating-nav-vertical-btn {
+        width: 2.35rem;
+        height: auto;
+        padding: 0.55rem 0.28rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .floating-nav-vertical-text {
+        position: relative;
+        z-index: 1;
+        writing-mode: vertical-rl;
+        font-size: 0.62rem;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        white-space: nowrap;
+    }
+
+    /* Ensure floating menu doesn't overlap important content */
+    @media (max-width: 1024px) {
+        #floating-nav {
+            right: 1rem;
+        }
+    }
+
+    @media (max-width: 640px) {
+        #floating-nav {
+            right: 0.5rem;
+            bottom: 4% !important;
+        }
+
+        .floating-nav-btn {
+            width: 2rem;
+            height: 2rem;
+        }
+
+        .floating-nav-btn i {
+            font-size: 0.8rem;
+        }
+
+        .floating-nav-vertical-btn {
+            width: 2rem;
+            padding: 0.45rem 0.22rem;
+        }
+
+        .floating-nav-vertical-text {
+            font-size: 0.55rem;
+        }
+    }
+</style>
+
+    <!-- Scroll-Triggered Split-Text Heading Reveal -->
+    <style>
+        .st-word {
+            display: inline-block;
+            will-change: transform, opacity;
+        }
+
+        .st-split.st-pending .st-word {
+            opacity: 0;
+            transform: translateY(25px) skewY(5deg);
+        }
+
+        .st-split.st-reveal .st-word {
+            opacity: 1;
+            transform: translateY(0) skewY(0deg);
+            transition:
+                opacity 0.45s ease-out,
+                transform 0.65s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition-delay: var(--st-delay, 0s);
+        }
+
+        @media (max-width: 640px) {
+            .st-split.st-pending .st-word {
+                transform: translateY(14px) skewY(3deg);
+            }
+        }
+    </style>
+
+    <script>
+        (function () {
+            var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (reducedMotion || !('IntersectionObserver' in window)) return;
+
+            var isMobile = window.matchMedia('(max-width: 640px)').matches;
+            var STAGGER = isMobile ? 0.025 : 0.04;
+            var MAX_TOTAL = 0.35;
+
+            var headings = document.querySelectorAll('.infra-section-heading h2');
+            if (!headings.length) return;
+
+            function splitWords(el) {
+                var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null);
+                var textNodes = [];
+                while (walker.nextNode()) {
+                    if (walker.currentNode.nodeValue.trim() !== '') textNodes.push(walker.currentNode);
+                }
+                textNodes.forEach(function (node) {
+                    var frag = document.createDocumentFragment();
+                    var parts = node.nodeValue.split(/(\s+)/);
+                    parts.forEach(function (part) {
+                        if (part === '') return;
+                        if (/^\s+$/.test(part)) {
+                            frag.appendChild(document.createTextNode(' '));
+                        } else {
+                            var span = document.createElement('span');
+                            span.className = 'st-word';
+                            span.textContent = part;
+                            frag.appendChild(span);
+                        }
+                    });
+                    node.parentNode.replaceChild(frag, node);
+                });
+            }
+
+            headings.forEach(function (heading) {
+                splitWords(heading);
+                var words = heading.querySelectorAll('.st-word');
+                if (!words.length) return;
+
+                var step = Math.min(STAGGER, words.length > 1 ? MAX_TOTAL / (words.length - 1) : STAGGER);
+                words.forEach(function (word, i) {
+                    word.style.setProperty('--st-delay', (i * step).toFixed(3) + 's');
+                });
+
+                heading.classList.add('st-split', 'st-pending');
+            });
+
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('st-reveal');
+                    entry.target.classList.remove('st-pending');
+                    observer.unobserve(entry.target);
+                });
+            }, { threshold: 0.25, rootMargin: '0px 0px -5% 0px' });
+
+            document.querySelectorAll('.st-split').forEach(function (h) {
+                observer.observe(h);
+            });
+        })();
     </script>
 </body>
 

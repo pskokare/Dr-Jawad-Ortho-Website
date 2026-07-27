@@ -10,7 +10,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" type="image/webp" href="Images/GERMANTANLOGO.webp">
+    <link rel="icon" type="image/webp" href="Images/dr-jawad-logo.webp">
     <link rel="canonical" href="https://drjawadortho.com/testimonials">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <style>
@@ -101,6 +101,102 @@
                 max-width: 100%;
             }
         }
+
+        /* Home page heading and eyebrow styles */
+        .homepage-section-heading {
+            font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+            font-size: clamp(31px, 2.1vw, 44px) !important;
+            font-weight: 750 !important;
+            color: #0d1b3d !important;
+            line-height: 1.12 !important;
+            letter-spacing: -0.045em !important;
+        }
+
+        .homepage-section-eyebrow {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 0.5rem !important;
+            font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+            font-size: 0.78rem !important;
+            font-weight: 600 !important;
+            letter-spacing: 0.08em !important;
+            text-transform: uppercase !important;
+            color: #b45309 !important;
+            background: #fffbeb !important;
+            border: 1px solid #fde68a !important;
+            padding: 0.35rem 1.1rem !important;
+            border-radius: 9999px !important;
+            margin-bottom: 0.9rem !important;
+            line-height: 1.3 !important;
+        }
+
+        /* Scroll effect */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .reveal.reveal-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Match home page text size for video descriptions */
+        .video-grid p.line-clamp-3 {
+            font-size: 0.875rem !important;
+            line-height: 1.6 !important;
+        }
+
+        @media (min-width: 640px) {
+            .video-grid p.line-clamp-3 {
+                font-size: 1rem !important;
+            }
+        }
+
+        /* Split-text heading (home page effect) */
+        .st-word {
+            display: inline-block;
+            will-change: transform, opacity;
+        }
+
+        .st-split.st-pending .st-word {
+            opacity: 0;
+            transform: translateY(25px) skewY(5deg);
+        }
+
+        .st-split.st-reveal .st-word {
+            opacity: 1;
+            transform: translateY(0) skewY(0deg);
+            transition:
+                opacity 0.45s ease-out,
+                transform 0.65s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition-delay: var(--st-delay, 0s);
+        }
+
+        @media (max-width: 640px) {
+            .st-split.st-pending .st-word {
+                transform: translateY(14px) skewY(3deg);
+            }
+        }
+
+        /* Hero heading white override (home page heading style on dark hero) */
+        .hero-heading-white {
+            color: #ffffff !important;
+        }
+
+        .hero-subtitle {
+            font-family: Inter, "Segoe UI", Arial, sans-serif;
+            font-size: clamp(0.875rem, 1.5vw, 1.25rem);
+            color: #ffffff !important;
+        }
+
+        @media (min-width: 769px) {
+            #testimonials-hero {
+                margin-top: 100px;
+            }
+        }
     </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-B7BXJEHXWK"></script>
 <script>
@@ -122,7 +218,7 @@ gtag('config', 'G-B7BXJEHXWK');
     <div id="navbar-container"></div>
 
     <!-- ===== HERO SECTION ===== -->
-    <div class="relative w-full overflow-hidden mt-0 sm:mt-2 md:mt-4">
+    <div id="testimonials-hero" class="relative w-full overflow-hidden mt-0 sm:mt-2 md:mt-4">
         <!-- Hero Image with Blur and Overlay -->
         <div class="relative hero-height border-b-4 border-yellow-400">
             <img src="Images/Testimonials/Testimonialshero.jpg" 
@@ -135,10 +231,10 @@ gtag('config', 'G-B7BXJEHXWK');
         <!-- Hero Overlay Text -->
         <div class="absolute inset-0 flex items-center justify-center">
             <div class="text-center text-white px-4 max-w-4xl mx-auto">
-                <h1 class="hero-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-2 sm:mb-4">
-                    Patient <span class="text-yellow-400">Testimonials</span>
+                <h1 class="homepage-section-heading hero-heading-white mb-2 sm:mb-4 break-words">
+                    Patient <span style="color: #facc15 !important;">Testimonials</span>
                 </h1>
-                <p class="hero-subtitle text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl mx-auto px-2">
+                <p class="hero-subtitle max-w-2xl mx-auto px-2 break-words">
                     Hear from our patients about their experiences at Germanten Hospitals
                 </p>
             </div>
@@ -159,7 +255,7 @@ gtag('config', 'G-B7BXJEHXWK');
                 <i class="fa-solid fa-chevron-right text-gray-400 text-[8px] sm:text-[10px] mx-1"></i>
                 
                 <!-- Current Page -->
-                <span class="text-blue-700 font-semibold truncate max-w-[150px] sm:max-w-[200px] md:max-w-none" aria-current="page">
+                <span class="text-blue-700 font-semibold" aria-current="page">
                     Patient Testimonials
                 </span>
             </nav>
@@ -169,111 +265,18 @@ gtag('config', 'G-B7BXJEHXWK');
     <!-- ===== MAIN CONTENT ===== -->
     <main class="content-section section-padding">
         <div class="w-full px-3 sm:px-4 md:px-6 lg:px-8 max-w-7xl mx-auto">
-            
-            <!-- Section Header -->
-            <div class="text-center mb-8 sm:mb-10 md:mb-12">
-                <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
-                    What Our <span class="text-yellow-600">Patients Say</span>
-                </h2>
-            </div>
-
-            <!-- Testimonials Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 testimonial-grid mb-10 sm:mb-12 md:mb-16">
-
-                <!-- Testimonial 4 - Abdul Islam -->
-                <div class="testimonial-card bg-white rounded-xl shadow-lg p-4 card-padding">
-                    <div class="flex items-center mb-3">
-                        <img src="Images/Testimonials/Abdul_Islam-1.webp" alt="Abdul Islam" width="40" height="40" class="w-10 h-10 rounded-full mr-3">
-                        <div>
-                            <h4 class="font-semibold text-gray-900 text-sm">Abdul Islam</h4>
-                            <p class="text-xs text-gray-600">Hip Replacement</p>
-                        </div>
-                    </div>
-                    <div class="star-rating mb-2">
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                    </div>
-                    <p class="text-gray-700 italic text-xs leading-relaxed">
-                        "I have gone with the hip replacement and I am very lucky to have done this operation by Dr. Mir Jawad Zar Khan sir and team thank you so much for giving such a good life ahead"
-                    </p>
-                </div>
-
-                <!-- Testimonial 5 - Anil Ahuja -->
-                <div class="testimonial-card bg-white rounded-xl shadow-lg p-4 card-padding">
-                    <div class="flex items-center mb-3">
-                        <img src="Images/Testimonials/Anil-Ahuja-1.webp" alt="Anil Ahuja" width="40" height="40" class="w-10 h-10 rounded-full mr-3">
-                        <div>
-                            <h4 class="font-semibold text-gray-900 text-sm">Anil Ahuja</h4>
-                            <p class="text-xs text-gray-600">Knee Replacement</p>
-                        </div>
-                    </div>
-                    <div class="star-rating mb-2">
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                    </div>
-                    <p class="text-gray-700 italic text-xs leading-relaxed">
-                        "I am Anil Ahuja age 65 years old from Delhi, suffering constant knee pain since 5 years. One of my friends suggested Dr. Mir Jawad Zar Khan sir, I underwent total knee replacement surgery and able to walk within 5 days of surgery. Thanks to Germanten Hospitals and team."
-                    </p>
-                </div>
-
-                <!-- Testimonial 6 - Mr. AI Bhulashi -->
-                <div class="testimonial-card bg-white rounded-xl shadow-lg p-4 card-padding">
-                    <div class="flex items-center mb-3">
-                        <img src="Images/Testimonials/Mr-Al-Bhulashi-1.webp" alt="Mr. AI Bhulashi" width="40" height="40" class="w-10 h-10 rounded-full mr-3">
-                        <div>
-                            <h4 class="font-semibold text-gray-900 text-sm">Mr. AI Bhulashi</h4>
-                            <p class="text-xs text-gray-600">Leg Treatment</p>
-                        </div>
-                    </div>
-                    <div class="star-rating mb-2">
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                    </div>
-                    <p class="text-gray-700 italic text-xs leading-relaxed">
-                        "I have come from Saudi to Hyderabad for treatment of my leg. After meeting Dr. Mir Jawad Zar Khan, I felt very happy with the way he treated me. I have never met a doctor in my life who takes so much care of his patients. Thank you so much, Doctor. Have A Long Life."
-                    </p>
-                </div>
-
-                <!-- Testimonial 7 - Deepika Raut -->
-                <div class="testimonial-card bg-white rounded-xl shadow-lg p-4 card-padding">
-                    <div class="flex items-center mb-3">
-                        <img src="Images/Testimonials/deepika-raut-1.webp" alt="Deepika Raut" width="40" height="40" class="w-10 h-10 rounded-full mr-3">
-                        <div>
-                            <h4 class="font-semibold text-gray-900 text-sm">Deepika Raut</h4>
-                            <p class="text-xs text-gray-600">Surgery Patient</p>
-                        </div>
-                    </div>
-                    <div class="star-rating mb-2">
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                    </div>
-                    <p class="text-gray-700 italic text-xs leading-relaxed">
-                        "The hospital is too good and the infrastructure and staff are very decent. The surgery was done very well. The doctor is good. We are very pleased."
-                    </p>
-                </div>
-
+            <!-- JotForm Testimonials Widget -->
+            <div class="w-full max-w-6xl mx-auto mb-10 sm:mb-12 md:mb-16 px-2 sm:px-4">
+                <div id="JFWebsiteWidget-019f6a6984c070008dac67d94c0bd23737d0" class="w-full" style="max-height: 500px; overflow: hidden;"></div>
+                <script src="https://www.jotform.com/website-widgets/embed/019f6a6984c070008dac67d94c0bd23737d0"></script>
             </div>
 
             <!-- Video Testimonials Section -->
             <div class="mb-10 sm:mb-12 md:mb-16">
                 <div class="text-center mb-8 sm:mb-10 md:mb-12">
-                    <h3 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
-                        Patient <span class="text-yellow-600">Video Stories</span>
-                    </h3>
-                    <div class="w-16 sm:w-20 md:w-24 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full mx-auto mb-4 sm:mb-6"></div>
-                    <p class="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto px-2">
+                    <span class="homepage-section-eyebrow">Video Stories</span>
+                    <h2 class="homepage-section-heading">Patient Video Stories</h2>
+                    <p class="text-gray-500 text-sm sm:text-base max-w-2xl mx-auto px-2">
                         Watch real patients share their experiences and recovery journeys at Germanten Hospitals
                     </p>
                 </div>
@@ -629,6 +632,89 @@ gtag('config', 'G-B7BXJEHXWK');
             });
         });
     </script>
+    <script>
+        // Scroll effect for elements
+        document.addEventListener('DOMContentLoaded', function() {
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('reveal-visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+                document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+            } else {
+                document.querySelectorAll('.reveal').forEach(el => el.classList.add('reveal-visible'));
+            }
+        });
+    </script>
     <script src="js/script.js"></script>
+    <script>
+        // Scroll-Triggered Split-Text Heading Reveal (home page effect)
+        (function () {
+            var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (reducedMotion || !('IntersectionObserver' in window)) return;
+
+            var isMobile = window.matchMedia('(max-width: 640px)').matches;
+            var STAGGER = isMobile ? 0.025 : 0.04;
+            var MAX_TOTAL = 0.35;
+
+            var headings = document.querySelectorAll('.homepage-section-heading:not(#germantenCombinedHeading)');
+            if (!headings.length) return;
+
+            function splitWords(el) {
+                var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null);
+                var textNodes = [];
+                while (walker.nextNode()) {
+                    if (walker.currentNode.nodeValue.trim() !== '') textNodes.push(walker.currentNode);
+                }
+                textNodes.forEach(function (node) {
+                    var frag = document.createDocumentFragment();
+                    var parts = node.nodeValue.split(/(\s+)/);
+                    parts.forEach(function (part) {
+                        if (part === '') return;
+                        if (/^\s+$/.test(part)) {
+                            frag.appendChild(document.createTextNode(' '));
+                        } else {
+                            var span = document.createElement('span');
+                            span.className = 'st-word';
+                            span.textContent = part;
+                            frag.appendChild(span);
+                        }
+                    });
+                    node.parentNode.replaceChild(frag, node);
+                });
+            }
+
+            headings.forEach(function (heading) {
+                splitWords(heading);
+                var words = heading.querySelectorAll('.st-word');
+                if (!words.length) return;
+
+                var step = Math.min(STAGGER, words.length > 1 ? MAX_TOTAL / (words.length - 1) : STAGGER);
+                words.forEach(function (word, i) {
+                    word.style.setProperty('--st-delay', (i * step).toFixed(3) + 's');
+                });
+
+                heading.classList.add('st-split', 'st-pending');
+            });
+
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('st-reveal');
+                    entry.target.classList.remove('st-pending');
+                    observer.unobserve(entry.target);
+                });
+            }, { threshold: 0.25, rootMargin: '0px 0px -5% 0px' });
+
+            document.querySelectorAll('.st-split').forEach(function (h) {
+                observer.observe(h);
+            });
+        })();
+    </script>
+    <floating-nav></floating-nav>
 </body>
 </html>
