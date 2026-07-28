@@ -73,6 +73,380 @@
         .comparison-card {
             background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
         }
+        body {
+            font-family: Inter, 'Segoe UI', Arial, sans-serif;
+        }
+
+        .tpa-heading {
+            font-family: 'Playfair Display', Georgia, serif !important;
+            font-weight: 700;
+            color: #111827 !important;
+            text-align: left;
+            margin: 0 0 1.5rem;
+            font-size: 1.25rem !important;
+            line-height: 1.2;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        @media (min-width: 640px) {
+            .tpa-heading {
+                font-size: 1.5rem !important;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .tpa-heading {
+                font-size: 1.875rem !important;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .tpa-heading {
+                font-size: 2.25rem !important;
+            }
+        }
+
+        .homepage-section-heading {
+            font-family: 'Playfair Display', Georgia, serif !important;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #111827;
+            line-height: 1.2;
+        }
+
+        @media (min-width: 640px) {
+            .homepage-section-heading {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .homepage-section-heading {
+                font-size: 1.875rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .homepage-section-heading {
+                font-size: 2.25rem;
+            }
+        }
+
+        .homepage-section-heading.sub-heading {
+            font-size: clamp(0.9rem, 1.6vw, 1.05rem) !important;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: left !important;
+            transition: color 0.25s ease;
+        }
+
+        .homepage-section-heading.sub-heading:hover {
+            color: #dc2626 !important;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+        /* Hero content and text styles */
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            right: 5%;
+            left: auto;
+            transform: translateY(-50%);
+            width: min(90%, 720px);
+            text-align: right;
+            z-index: 10;
+        }
+
+        @media (min-width: 769px) {
+            .hero-content {
+                width: min(54%, 720px);
+            }
+        }
+        
+        .hero-eyebrow,
+        .section-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-family: Inter, 'Segoe UI', Arial, sans-serif;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #b45309;
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 0.35rem 1.1rem;
+            border-radius: 9999px;
+            margin-bottom: 0.9rem;
+            line-height: 1.3;
+        }
+
+        .hero-title {
+            font-family: Inter, 'Segoe UI', Arial, sans-serif;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-weight: 750;
+            color: #fff;
+            line-height: 1.12;
+            letter-spacing: -0.045em;
+            margin: 0 0 0.6rem;
+        }
+
+        .hero-pill {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: nowrap;
+            gap: 0.25rem;
+            background: linear-gradient(90deg, #0d9488, #059669);
+            color: #fff;
+            padding: 0.5rem 1.25rem;
+            border-radius: 9999px;
+            font-family: Inter, 'Segoe UI', Arial, sans-serif;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-top: 0.5rem;
+            max-width: 100%;
+        }
+
+        .hero-pill span {
+            white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                width: 94%;
+            }
+
+            .hero-title {
+                font-size: clamp(1.3rem, 5vw, 1.8rem);
+            }
+
+            .hero-pill {
+                font-size: clamp(0.55rem, 2.6vw, 0.72rem);
+                padding: 0.35rem 0.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content {
+                width: 96%;
+            }
+
+            .hero-eyebrow {
+                font-size: 0.7rem;
+                padding: 0.3rem 0.9rem;
+            }
+        }
+
+        /* Split text scroll reveal */
+        .st-word {
+            display: inline-block;
+            will-change: transform, opacity;
+        }
+
+        .st-split.st-pending .st-word {
+            opacity: 0;
+            transform: translateY(25px) skewY(5deg);
+        }
+
+        .st-split.st-reveal .st-word {
+            opacity: 1;
+            transform: translateY(0) skewY(0deg);
+            transition:
+                opacity 0.45s ease-out,
+                transform 0.65s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition-delay: var(--st-delay, 0s);
+        }
+
+        @media (max-width: 640px) {
+            .st-split.st-pending .st-word {
+                transform: translateY(14px) skewY(3deg);
+            }
+        }
+        /* FAQ Card Styles - keeping original */
+        .faq-section-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 600;
+            color: #1a1a1a;
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .faq-page__accordion {
+            display: flex;
+            flex-wrap: wrap;
+            margin: -10px;
+        }
+
+        .faq-accordion {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .faq-accordion .col-lg-6 {
+            width: 50%;
+            padding: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .faq-accordion .col-lg-6 {
+                width: 100%;
+            }
+        }
+
+        .faq-card {
+            background: #fff;
+            border: 1.5px solid #e5e7eb;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: border-color .25s ease, box-shadow .25s ease;
+            display: flex;
+            flex-direction: column;
+            min-height: fit-content;
+        }
+
+        .faq-card.is-open {
+            border-color: #fbbf24;
+            box-shadow: 0 4px 20px rgba(251, 191, 36, .15);
+        }
+
+        .faq-card-btn {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            width: 100%;
+            padding: 1.1rem 1.25rem;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .faq-icon-box {
+            flex-shrink: 0;
+            width: 2.4rem;
+            height: 2.4rem;
+            border-radius: 7px;
+            background: #d97706;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background .25s ease;
+        }
+
+        .faq-card.is-open .faq-icon-box {
+            background: #f59e0b;
+        }
+
+        .faq-icon-box svg {
+            width: 1.1rem;
+            height: 1.1rem;
+            color: #fff;
+        }
+
+        .faq-card-question {
+            flex: 1;
+            font-size: .92rem;
+            font-weight: 600;
+            color: #1c1c1c;
+            line-height: 1.45;
+        }
+
+        .faq-card-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .4s cubic-bezier(.22, 1, .36, 1);
+            flex-shrink: 0;
+        }
+
+        .faq-card.is-open .faq-card-answer {
+            max-height: 500px;
+        }
+
+        .faq-card-answer-inner {
+            padding: 0 1.25rem 1.25rem 1.25rem;
+            border-top: 1px solid #fde68a;
+        }
+
+        .faq-card-answer-inner p {
+            font-size: .875rem;
+            color: #4b5563;
+            line-height: 1.8;
+            margin: .9rem 0 0;
+        }
+
+        @media (max-width: 480px) {
+            .faq-card-btn {
+                padding: .9rem 1rem;
+                gap: .75rem;
+            }
+
+            .faq-icon-box {
+                width: 2.1rem;
+                height: 2.1rem;
+            }
+
+            .faq-card-question {
+                font-size: .85rem;
+            }
+
+            .faq-card-answer-inner {
+                padding: 0 1rem 1rem 1rem;
+            }
+        }
+
+        .homepage-section-eyebrow {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 0.5rem !important;
+            font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+            font-size: 0.78rem !important;
+            font-weight: 600 !important;
+            letter-spacing: 0.08em !important;
+            text-transform: uppercase !important;
+            color: #b45309 !important;
+            background: #fffbeb !important;
+            border: 1px solid #fde68a !important;
+            padding: 0.35rem 1.1rem !important;
+            border-radius: 9999px !important;
+            margin-bottom: 0.9rem !important;
+            line-height: 1.3 !important;
+        }
+
+        /* Remove all shadows and borders from main sections and their divs */
+        main section:not(.no-border),
+        main section:not(.no-border) div:not(.no-border) {
+            box-shadow: none !important;
+            border: none !important;
+        }
+
     </style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-B7BXJEHXWK"></script>
     <script>
@@ -99,21 +473,43 @@
     <div id="navbar-container"></div>
 
     <!-- Page Header -->
-    <div class="relative w-full h-48 sm:h-64 md:h-80 lg:h-96 xl:h-[500px] overflow-hidden mt-16 group">
+    <div class="relative w-full h-48 sm:h-64 md:h-80 lg:h-96 xl:h-[500px] overflow-hidden mt-16 md:mt-[100px] group">
         <img src="Images/Patient-Info/KneeReplacement1.webp" alt="Knee Replacement Surgery Cost in Hyderabad" width="1920" height="1080"
-            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 lg:translate-y-4">
+            class="w-full h-full object-cover">
 
-        <!-- Enhanced Black Overlay Shadow Effect -->
-        <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/45 to-black/65 pointer-events-none"></div>
+        <!-- Gradient Overlay for text readability -->
+        <div class="absolute inset-0 bg-gradient-to-r from-black/10 via-black/40 to-black/70 pointer-events-none"></div>
+
+       
     </div>
 
     <!-- Breadcrumb Section -->
-    <div class="bg-white border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <nav class="flex text-sm text-gray-700 items-start" aria-label="Breadcrumb">
-                <a href="/" class="hover:text-blue-600 transition-colors duration-200">PatientInfo</a>
-                <span class="mx-2 text-gray-400">»</span>
-                <span class="text-gray-900 font-semibold">Knee Replacement Surgery Cost in Hyderabad</span>
+    <div class="bg-white border-b border-gray-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-3 md:py-4">
+            <nav class="flex items-center flex-wrap text-xs sm:text-sm" aria-label="Breadcrumb">
+                <ol class="flex items-center flex-wrap list-none m-0 p-0">
+                    <li class="flex items-center">
+                        <a href="/"
+                            class="inline-flex items-center text-gray-600 hover:text-blue-700 transition font-medium">
+                            <i class="fa-solid fa-home mr-1 text-[10px] sm:text-xs"></i>
+                            <span class="inline sm:inline">Home</span>
+                        </a>
+                    </li>
+                    <li class="flex items-center px-1 sm:px-2">
+                        <i class="fa-solid fa-chevron-right text-[8px] sm:text-[10px] text-gray-400"></i>
+                    </li>
+                    <li class="flex items-center">
+                        <a href="#"
+                            class="text-gray-600 hover:text-blue-700 transition font-medium truncate max-w-[80px] sm:max-w-none">Patient Info</a>
+                    </li>
+                    <li class="flex items-center px-1 sm:px-2">
+                        <i class="fa-solid fa-chevron-right text-[8px] sm:text-[10px] text-gray-400"></i>
+                    </li>
+                    <li class="flex items-center">
+                        <span class="text-blue-700 font-semibold truncate max-w-[150px] sm:max-w-[200px] md:max-w-none"
+                            aria-current="page">Knee Replacement Surgery Cost in Hyderabad</span>
+                    </li>
+                </ol>
             </nav>
         </div>
     </div>
@@ -126,8 +522,8 @@
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <!-- Left Content -->
                     <div>
-                        <h1 class="text-2xl md:text-3xl font-bold text-yellow-900 mb-6 border-b-2 border-red-300 pb-2">
-                            Knee Replacement Surgery Cost In Hyderabad, India</h1>
+                        <span class="homepage-section-eyebrow">Knee Surgery</span>
+                        <h1 class="tpa-heading">Knee Replacement Surgery</h1>
 
                         <p class="text-gray-700 mb-6 leading-relaxed text-justify">
                             A "Knee replacement surgery" is a surgical procedure that replaces damaged parts of the knee
@@ -135,7 +531,7 @@
                             arthritis pain.
                         </p>
 
-                        <h2 class="text-2xl font-bold text-gray-900 mb-4 border-b border-gray-300 pb-2">Age</h2>
+                        <h2 class="homepage-section-heading sub-heading mb-4 border-b border-gray-300 pb-2">Age</h2>
                         <p class="text-gray-700 mb-8 leading-relaxed text-justify">
                             There are several factors that can impact the total cost of knee replacements. These include
                             the patients age, gender, medical history, and insurance coverage.
@@ -148,7 +544,7 @@
 
                         <!-- YouTube Video Section -->
                         <div class="mb-8">
-                            <h3 class="text-xl font-bold text-gray-900 mb-4 text-center border-b border-gray-300 pb-2">
+                            <h3 class="homepage-section-heading sub-heading mb-4 border-b border-gray-300 pb-2">
                                 Knee Replacement Surgery Video</h3>
                             <div class="relative w-full max-w-2xl mx-auto rounded-lg overflow-hidden shadow-lg">
                                 <iframe width="100%" height="315" src="https://www.youtube.com/embed/Zy3jBjyDgcU"
@@ -223,7 +619,7 @@
                         </div>
 
                         <div class="mt-8">
-                            <h3 class="text-xl font-bold text-gray-900 mb-4 border-b border-gray-300 pb-2">Medical
+                            <h3 class="homepage-section-heading sub-heading mb-4 border-b border-gray-300 pb-2">Medical
                                 History</h3>
                             <p class="text-gray-700 leading-relaxed text-justify">
                                 Age is one factor that impacts the total cost of knee surgeries. Younger patients tend
@@ -247,39 +643,82 @@
         <!-- Other Factors Section -->
         <section class="mb-8 -mx-4 sm:-mx-6 lg:-mx-8">
             <div
-                class="relative bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 shadow-xl px-4 py-6 md:px-6 md:py-8">
+                class="relative shadow-xl px-4 py-6 md:px-6 md:py-8" style="background-color: #f0e9c6;">
                 <div class="relative z-10">
+                    <div class="text-center">
+                        <span class="homepage-section-eyebrow">Cost Factors</span>
+                    </div>
                     <h2
-                        class="text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-center border-b-2 border-blue-400 pb-4">
+                        class="homepage-section-heading mb-2 text-center">
                         Other Factors
                     </h2>
 
+                    <p class="text-center text-gray-600 mb-8">Several factors can influence the total cost of knee replacement surgery.</p>
+
                     <div class="w-full">
-                        <p class="text-gray-700 mb-4 leading-relaxed text-lg text-justify">
-                            There are several other factors that impact the total cost of knee replacements. These
-                            include the type of procedure performed, whether the patient has any pre-existing
-                            conditions, and the location where the surgery takes place.
-                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                            <div class="no-border bg-white rounded-2xl p-6 text-center shadow-sm">
+                                <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-[#f0e9c6] flex items-center justify-center text-red-600">
+                                    <i class="fas fa-bone text-2xl"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-[#0d1b3d] mb-2">Procedure Type</h3>
+                                <p class="text-sm text-gray-600 mb-4">The type of procedure you choose can impact both the cost and recovery time.</p>
+                            </div>
 
-                        <p class="text-gray-700 mb-4 leading-relaxed text-lg text-justify">
-                            The average cost of a knee replacement ranges from 1.7 Lacs to 3.5 Lacs. However, there are
-                            many ways to reduce the overall costs associated with the procedure. For example, patients
-                            who undergo minimally invasive procedures tend to recover faster than those who receive open
-                            surgeries. In addition, some insurance companies offer discounts for patients who undergo
-                            outpatient procedures. Finally, if you live in a rural area, you might be able to find a
-                            lower price for the same procedure at a hospital located closer to home.
-                        </p>
+                            <div class="no-border bg-white rounded-2xl p-6 text-center shadow-sm">
+                                <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-[#f0e9c6] flex items-center justify-center text-red-600">
+                                    <i class="fas fa-clipboard-list text-2xl"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-[#0d1b3d] mb-2">Pre-existing Conditions</h3>
+                                <p class="text-sm text-gray-600 mb-4">Existing health conditions may affect the overall cost of your surgery.</p>
+                            </div>
 
-                        <p class="text-gray-700 mb-4 leading-relaxed text-lg text-justify">
-                            If you want to save money on your knee replacement surgery, consider taking advantage of
-                            these options.
-                        </p>
+                            <div class="no-border bg-white rounded-2xl p-6 text-center shadow-sm">
+                                <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-[#f0e9c6] flex items-center justify-center text-red-600">
+                                    <i class="fas fa-shield-alt text-2xl"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-[#0d1b3d] mb-2">Insurance / Payment</h3>
+                                <p class="text-sm text-gray-600 mb-4">Insurance coverage and payment choices can significantly affect expenses.</p>
+                            </div>
 
-                        <p class="text-gray-700 leading-relaxed text-lg text-justify">
-                            The total cost of knee replacement surgery varies depending on where you live, what kind of
-                            procedure you choose, and whether you use insurance or pay cash. However, there are some
-                            things you can do to lower the costs.
-                        </p>
+                            <div class="no-border bg-white rounded-2xl p-6 text-center shadow-sm">
+                                <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-[#f0e9c6] flex items-center justify-center text-red-600">
+                                    <i class="fas fa-map-marker-alt text-2xl"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-[#0d1b3d] mb-2">Location</h3>
+                                <p class="text-sm text-gray-600 mb-4">Where you have surgery can influence the total cost of care.</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                            <div class="no-border bg-white rounded-2xl p-5 flex items-start gap-4 shadow-sm">
+                                <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center text-red-600 flex-shrink-0">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                                <p class="text-sm text-gray-700 text-justify">The average cost of a knee replacement ranges from 1.7 Lacs to 3.5 Lacs.</p>
+                            </div>
+
+                            <div class="no-border bg-white rounded-2xl p-5 flex items-start gap-4 shadow-sm">
+                                <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center text-red-600 flex-shrink-0">
+                                    <i class="fas fa-calendar-check"></i>
+                                </div>
+                                <p class="text-sm text-gray-700 text-justify">Minimally invasive procedures often mean faster recovery and may help reduce overall costs.</p>
+                            </div>
+
+                            <div class="no-border bg-white rounded-2xl p-5 flex items-start gap-4 shadow-sm">
+                                <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center text-red-600 flex-shrink-0">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <p class="text-sm text-gray-700 text-justify">Outpatient procedures and choosing in-network providers can help lower your expenses.</p>
+                            </div>
+                        </div>
+
+                        <div class="no-border bg-white rounded-2xl p-5 flex items-start gap-4 border border-gray-200 shadow-sm">
+                            <div class="no-border w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 flex-shrink-0">
+                                <i class="fas fa-info"></i>
+                            </div>
+                            <p class="text-sm text-gray-700 text-justify">Costs vary based on individual needs. Consult your healthcare provider to understand your options and find the best approach for you.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -288,220 +727,372 @@
         <!-- FAQ Section -->
         <section class="mb-8">
             <div class="px-4 py-8">
-                <h2
-                    class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center border-b-2 border-red-400 pb-4">
-                    Frequently Asked Questions
-                </h2>
+                <div class="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-14">
+                    <span class="homepage-section-eyebrow">Common Questions</span>
+                    <h2 class="faq-section-title">Frequently Asked Questions</h2>
+                    <div style="width:3rem;height:3px;background:linear-gradient(90deg,#f59e0b,#f97316);border-radius:3px;margin:-.5rem auto .9rem;">
+                    </div>
+                    <p class="text-gray-500 text-sm sm:text-base">Common questions about knee replacement surgery cost and procedure</p>
+                </div>
 
-                <div class="grid md:grid-cols-2 gap-8">
+                <div class="faq-page__accordion">
+                    <div class="faq-accordion">
                     <!-- Left Column -->
-                    <div class="space-y-6">
-                        <div class="border-l-4 border-red-400 pl-4">
-                            <div class="flex items-start mb-2">
-                                <span class="text-red-600 text-xl mr-2">▶</span>
-                                <h3 class="text-lg font-semibold text-gray-800">What is knee replacement surgery?</h3>
+                    <div class="col-lg-6">
+                        <div class="faq-card" id="faq-1">
+                            <button class="faq-card-btn" onclick="toggleFaqCard('faq-1')" aria-expanded="false">
+                                <div class="faq-icon-box">
+                                    <svg class="plus-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 5v14M5 12h14" />
+                                    </svg>
+                                    <svg class="minus-icon" style="display:none;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14" />
+                                    </svg>
+                                </div>
+                                <span class="faq-card-question">What is knee replacement surgery?</span>
+                            </button>
+                            <div class="faq-card-answer">
+                                <div class="faq-card-answer-inner">
+                                    <p>Knee replacement surgery, also known as knee arthroplasty, involves replacing a damaged knee joint with an artificial implant to relieve pain and restore function.</p>
+                                </div>
                             </div>
-                            <p class="text-gray-700 leading-relaxed text-justify">
-                                Knee replacement surgery, also known as knee arthroplasty, involves replacing a damaged
-                                knee joint with an artificial implant to relieve pain and restore function.
-                            </p>
                         </div>
 
-                        <div class="border-l-4 border-red-400 pl-4">
-                            <div class="flex items-start mb-2">
-                                <span class="text-red-600 text-xl mr-2">▶</span>
-                                <h3 class="text-lg font-semibold text-gray-800">Why is knee replacement surgery needed?
-                                </h3>
+                        <div class="faq-card" id="faq-2">
+                            <button class="faq-card-btn" onclick="toggleFaqCard('faq-2')" aria-expanded="false">
+                                <div class="faq-icon-box">
+                                    <svg class="plus-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 5v14M5 12h14" />
+                                    </svg>
+                                    <svg class="minus-icon" style="display:none;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14" />
+                                    </svg>
+                                </div>
+                                <span class="faq-card-question">Why is knee replacement surgery needed?</span>
+                            </button>
+                            <div class="faq-card-answer">
+                                <div class="faq-card-answer-inner">
+                                    <p>It is typically recommended for patients with severe knee pain and disability due to osteoarthritis, rheumatoid arthritis, or other degenerative joint diseases.</p>
+                                </div>
                             </div>
-                            <p class="text-gray-700 leading-relaxed text-justify">
-                                It is typically recommended for patients with severe knee pain and disability due to
-                                osteoarthritis, rheumatoid arthritis, or other degenerative joint diseases.
-                            </p>
                         </div>
 
-                        <div class="border-l-4 border-red-400 pl-4">
-                            <div class="flex items-start mb-2">
-                                <span class="text-red-600 text-xl mr-2">▶</span>
-                                <h3 class="text-lg font-semibold text-gray-800">What is price of knee replacement
-                                    surgery in Hyderabad?</h3>
+                        <div class="faq-card" id="faq-3">
+                            <button class="faq-card-btn" onclick="toggleFaqCard('faq-3')" aria-expanded="false">
+                                <div class="faq-icon-box">
+                                    <svg class="plus-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 5v14M5 12h14" />
+                                    </svg>
+                                    <svg class="minus-icon" style="display:none;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14" />
+                                    </svg>
+                                </div>
+                                <span class="faq-card-question">What is price of knee replacement surgery in Hyderabad?</span>
+                            </button>
+                            <div class="faq-card-answer">
+                                <div class="faq-card-answer-inner">
+                                    <p>The cost can vary widely based on hospital, surgeon, type of implant, and additional services. On average, it ranges from INR 1.7 lakh to INR 3.5 lakh per knee.</p>
+                                </div>
                             </div>
-                            <p class="text-gray-700 leading-relaxed text-justify">
-                                The cost can vary widely based on hospital, surgeon, type of implant, and additional
-                                services. On average, it ranges from INR 1.7 lakh to INR 3.5 lakh per knee.
-                            </p>
                         </div>
 
-                        <div class="border-l-4 border-red-400 pl-4">
-                            <div class="flex items-start mb-2">
-                                <span class="text-red-600 text-xl mr-2">▶</span>
-                                <h3 class="text-lg font-semibold text-gray-800">Is Germanten Hospital a good choice for
-                                    knee replacement surgery?</h3>
+                        <div class="faq-card" id="faq-4">
+                            <button class="faq-card-btn" onclick="toggleFaqCard('faq-4')" aria-expanded="false">
+                                <div class="faq-icon-box">
+                                    <svg class="plus-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 5v14M5 12h14" />
+                                    </svg>
+                                    <svg class="minus-icon" style="display:none;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14" />
+                                    </svg>
+                                </div>
+                                <span class="faq-card-question">Is Germanten Hospital a good choice for knee replacement surgery?</span>
+                            </button>
+                            <div class="faq-card-answer">
+                                <div class="faq-card-answer-inner">
+                                    <p>Yes, Germanten Hospital is known for its advanced orthopedic care and experienced surgeons.</p>
+                                </div>
                             </div>
-                            <p class="text-gray-700 leading-relaxed text-justify">
-                                Yes, Germanten Hospital is known for its advanced orthopedic care and experienced
-                                surgeons.
-                            </p>
                         </div>
 
-                        <div class="border-l-4 border-red-400 pl-4">
-                            <div class="flex items-start mb-2">
-                                <span class="text-red-600 text-xl mr-2">▶</span>
-                                <h3 class="text-lg font-semibold text-gray-800">What is robotic knee replacement
-                                    surgery?</h3>
+                        <div class="faq-card" id="faq-5">
+                            <button class="faq-card-btn" onclick="toggleFaqCard('faq-5')" aria-expanded="false">
+                                <div class="faq-icon-box">
+                                    <svg class="plus-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 5v14M5 12h14" />
+                                    </svg>
+                                    <svg class="minus-icon" style="display:none;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14" />
+                                    </svg>
+                                </div>
+                                <span class="faq-card-question">What is robotic knee replacement surgery?</span>
+                            </button>
+                            <div class="faq-card-answer">
+                                <div class="faq-card-answer-inner">
+                                    <p>Robotic knee replacement surgery uses advanced robotic technology to assist surgeons in performing precise and minimally invasive knee replacement procedures.</p>
+                                </div>
                             </div>
-                            <p class="text-gray-700 leading-relaxed text-justify">
-                                Robotic knee replacement surgery uses advanced robotic technology to assist surgeons in
-                                performing precise and minimally invasive knee replacement procedures.
-                            </p>
                         </div>
 
-                        <div class="border-l-4 border-red-400 pl-4">
-                            <div class="flex items-start mb-2">
-                                <span class="text-red-600 text-xl mr-2">▶</span>
-                                <h3 class="text-lg font-semibold text-gray-800">How long does knee replacement surgery
-                                    take?</h3>
+                        <div class="faq-card" id="faq-6">
+                            <button class="faq-card-btn" onclick="toggleFaqCard('faq-6')" aria-expanded="false">
+                                <div class="faq-icon-box">
+                                    <svg class="plus-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 5v14M5 12h14" />
+                                    </svg>
+                                    <svg class="minus-icon" style="display:none;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14" />
+                                    </svg>
+                                </div>
+                                <span class="faq-card-question">How long does knee replacement surgery take?</span>
+                            </button>
+                            <div class="faq-card-answer">
+                                <div class="faq-card-answer-inner">
+                                    <p>The surgery usually takes about 1 to 2 hours, depending on complexity and type of procedure.</p>
+                                </div>
                             </div>
-                            <p class="text-gray-700 leading-relaxed text-justify">
-                                The surgery usually takes about 1 to 2 hours, depending on complexity and type of
-                                procedure.
-                            </p>
                         </div>
 
-                        <div class="border-l-4 border-red-400 pl-4">
-                            <div class="flex items-start mb-2">
-                                <span class="text-red-600 text-xl mr-2">▶</span>
-                                <h3 class="text-lg font-semibold text-gray-800">How long does it take to recover after
-                                    knee replacement surgery?</h3>
+                        <div class="faq-card" id="faq-7">
+                            <button class="faq-card-btn" onclick="toggleFaqCard('faq-7')" aria-expanded="false">
+                                <div class="faq-icon-box">
+                                    <svg class="plus-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 5v14M5 12h14" />
+                                    </svg>
+                                    <svg class="minus-icon" style="display:none;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14" />
+                                    </svg>
+                                </div>
+                                <span class="faq-card-question">How long does it take to recover after knee replacement surgery?</span>
+                            </button>
+                            <div class="faq-card-answer">
+                                <div class="faq-card-answer-inner">
+                                    <p>Initial recovery typically takes about 6 weeks, with full recovery and rehabilitation lasting 3 to 6 months.</p>
+                                </div>
                             </div>
-                            <p class="text-gray-700 leading-relaxed text-justify">
-                                Initial recovery typically takes about 6 weeks, with full recovery and rehabilitation
-                                lasting 3 to 6 months.
-                            </p>
                         </div>
 
-                        <div class="border-l-4 border-red-400 pl-4">
-                            <div class="flex items-start mb-2">
-                                <span class="text-red-600 text-xl mr-2">▶</span>
-                                <h3 class="text-lg font-semibold text-gray-800">How can I prepare for knee replacement
-                                    surgery?</h3>
+                        <div class="faq-card" id="faq-8">
+                            <button class="faq-card-btn" onclick="toggleFaqCard('faq-8')" aria-expanded="false">
+                                <div class="faq-icon-box">
+                                    <svg class="plus-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 5v14M5 12h14" />
+                                    </svg>
+                                    <svg class="minus-icon" style="display:none;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14" />
+                                    </svg>
+                                </div>
+                                <span class="faq-card-question">How can I prepare for knee replacement surgery?</span>
+                            </button>
+                            <div class="faq-card-answer">
+                                <div class="faq-card-answer-inner">
+                                    <p>Preoperative preparation includes medical evaluations, stopping certain medications, and arranging for postoperative care and assistance at home.</p>
+                                </div>
                             </div>
-                            <p class="text-gray-700 leading-relaxed text-justify">
-                                Preoperative preparation includes medical evaluations, stopping certain medications, and
-                                arranging for postoperative care and assistance at home.
-                            </p>
                         </div>
                     </div>
 
                     <!-- Right Column -->
-                    <div class="space-y-6">
-                        <div class="border-l-4 border-red-400 pl-4">
-                            <div class="flex items-start mb-2">
-                                <span class="text-red-600 text-xl mr-2">▶</span>
-                                <h3 class="text-lg font-semibold text-gray-800">How long do knee implants last?</h3>
+                    <div class="col-lg-6">
+                        <div class="faq-card" id="faq-9">
+                            <button class="faq-card-btn" onclick="toggleFaqCard('faq-9')" aria-expanded="false">
+                                <div class="faq-icon-box">
+                                    <svg class="plus-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 5v14M5 12h14" />
+                                    </svg>
+                                    <svg class="minus-icon" style="display:none;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14" />
+                                    </svg>
+                                </div>
+                                <span class="faq-card-question">How long do knee implants last?</span>
+                            </button>
+                            <div class="faq-card-answer">
+                                <div class="faq-card-answer-inner">
+                                    <p>Knee implants typically last 15 to 20 years, with advancements in technology potentially increasing their longevity.</p>
+                                </div>
                             </div>
-                            <p class="text-gray-700 leading-relaxed text-justify">
-                                Knee implants typically last 15 to 20 years, with advancements in technology potentially
-                                increasing their longevity.
-                            </p>
                         </div>
 
-                        <div class="border-l-4 border-red-400 pl-4">
-                            <div class="flex items-start mb-2">
-                                <span class="text-red-600 text-xl mr-2">▶</span>
-                                <h3 class="text-lg font-semibold text-gray-800">What types of knee implants are
-                                    available?</h3>
+                        <div class="faq-card" id="faq-10">
+                            <button class="faq-card-btn" onclick="toggleFaqCard('faq-10')" aria-expanded="false">
+                                <div class="faq-icon-box">
+                                    <svg class="plus-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 5v14M5 12h14" />
+                                    </svg>
+                                    <svg class="minus-icon" style="display:none;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14" />
+                                    </svg>
+                                </div>
+                                <span class="faq-card-question">What types of knee implants are available?</span>
+                            </button>
+                            <div class="faq-card-answer">
+                                <div class="faq-card-answer-inner">
+                                    <p>There are several types, including fixed-bearing, mobile-bearing, and gender-specific implants, each with unique benefits.</p>
+                                </div>
                             </div>
-                            <p class="text-gray-700 leading-relaxed text-justify">
-                                There are several types, including fixed-bearing, mobile-bearing, and gender-specific
-                                implants, each with unique benefits.
-                            </p>
                         </div>
 
-                        <div class="border-l-4 border-red-400 pl-4">
-                            <div class="flex items-start mb-2">
-                                <span class="text-red-600 text-xl mr-2">▶</span>
-                                <h3 class="text-lg font-semibold text-gray-800">Is it possible to undergo knee
-                                    replacement surgery for both knees simultaneously?</h3>
+                        <div class="faq-card" id="faq-11">
+                            <button class="faq-card-btn" onclick="toggleFaqCard('faq-11')" aria-expanded="false">
+                                <div class="faq-icon-box">
+                                    <svg class="plus-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 5v14M5 12h14" />
+                                    </svg>
+                                    <svg class="minus-icon" style="display:none;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14" />
+                                    </svg>
+                                </div>
+                                <span class="faq-card-question">Is it possible to undergo knee replacement surgery for both knees simultaneously?</span>
+                            </button>
+                            <div class="faq-card-answer">
+                                <div class="faq-card-answer-inner">
+                                    <p>Yes, this is called bilateral knee replacement, but it's usually recommended only for patients in good overall health.</p>
+                                </div>
                             </div>
-                            <p class="text-gray-700 leading-relaxed text-justify">
-                                Yes, this is called bilateral knee replacement, but it's usually recommended only for
-                                patients in good overall health.
-                            </p>
                         </div>
 
-                        <div class="border-l-4 border-red-400 pl-4">
-                            <div class="flex items-start mb-2">
-                                <span class="text-red-600 text-xl mr-2">▶</span>
-                                <h3 class="text-lg font-semibold text-gray-800">What is success rate of knee replacement
-                                    surgery?</h3>
+                        <div class="faq-card" id="faq-12">
+                            <button class="faq-card-btn" onclick="toggleFaqCard('faq-12')" aria-expanded="false">
+                                <div class="faq-icon-box">
+                                    <svg class="plus-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 5v14M5 12h14" />
+                                    </svg>
+                                    <svg class="minus-icon" style="display:none;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14" />
+                                    </svg>
+                                </div>
+                                <span class="faq-card-question">What is success rate of knee replacement surgery?</span>
+                            </button>
+                            <div class="faq-card-answer">
+                                <div class="faq-card-answer-inner">
+                                    <p>The success rate is high, with over 90% of patients experiencing significant pain relief and improved mobility.</p>
+                                </div>
                             </div>
-                            <p class="text-gray-700 leading-relaxed text-justify">
-                                The success rate is high, with over 90% of patients experiencing significant pain relief
-                                and improved mobility.
-                            </p>
                         </div>
 
-                        <div class="border-l-4 border-red-400 pl-4">
-                            <div class="flex items-start mb-2">
-                                <span class="text-red-600 text-xl mr-2">▶</span>
-                                <h3 class="text-lg font-semibold text-gray-800">Is knee replacement surgery covered by
-                                    insurance?</h3>
+                        <div class="faq-card" id="faq-13">
+                            <button class="faq-card-btn" onclick="toggleFaqCard('faq-13')" aria-expanded="false">
+                                <div class="faq-icon-box">
+                                    <svg class="plus-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 5v14M5 12h14" />
+                                    </svg>
+                                    <svg class="minus-icon" style="display:none;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14" />
+                                    </svg>
+                                </div>
+                                <span class="faq-card-question">Is knee replacement surgery covered by insurance?</span>
+                            </button>
+                            <div class="faq-card-answer">
+                                <div class="faq-card-answer-inner">
+                                    <p>Most health insurance plans cover knee replacement surgery, but it's important to check specifics of your policy. For detailed information about our insurance partners and TPA networks, visit our <a href="insurance-companies-tpa-s" class="text-orange-600 hover:text-red-600 font-medium transition-colors">insurance companies page</a>.</p>
+                                </div>
                             </div>
-                            <p class="text-gray-700 leading-relaxed text-justify">
-                                Most health insurance plans cover knee replacement surgery, but it's important to check
-                                specifics of your policy. For detailed information about our insurance partners and TPA networks, visit our <a href="insurance-companies-tpa-s" class="text-orange-600 hover:text-red-600 font-medium transition-colors">insurance companies page</a>.
-                            </p>
                         </div>
 
-                        <div class="border-l-4 border-red-400 pl-4">
-                            <div class="flex items-start mb-2">
-                                <span class="text-red-600 text-xl mr-2">▶</span>
-                                <h3 class="text-lg font-semibold text-gray-800">What kind of postoperative care is
-                                    needed?</h3>
+                        <div class="faq-card" id="faq-14">
+                            <button class="faq-card-btn" onclick="toggleFaqCard('faq-14')" aria-expanded="false">
+                                <div class="faq-icon-box">
+                                    <svg class="plus-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 5v14M5 12h14" />
+                                    </svg>
+                                    <svg class="minus-icon" style="display:none;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14" />
+                                    </svg>
+                                </div>
+                                <span class="faq-card-question">What kind of postoperative care is needed?</span>
+                            </button>
+                            <div class="faq-card-answer">
+                                <div class="faq-card-answer-inner">
+                                    <p>Postoperative care includes pain management, physical therapy, and regular follow-up visits with surgeon.</p>
+                                </div>
                             </div>
-                            <p class="text-gray-700 leading-relaxed text-justify">
-                                Postoperative care includes pain management, physical therapy, and regular follow-up
-                                visits with surgeon.
-                            </p>
                         </div>
 
-                        <div class="border-l-4 border-red-400 pl-4">
-                            <div class="flex items-start mb-2">
-                                <span class="text-red-600 text-xl mr-2">▶</span>
-                                <h3 class="text-lg font-semibold text-gray-800">What activities can I resume after knee
-                                    replacement surgery?</h3>
+                        <div class="faq-card" id="faq-15">
+                            <button class="faq-card-btn" onclick="toggleFaqCard('faq-15')" aria-expanded="false">
+                                <div class="faq-icon-box">
+                                    <svg class="plus-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 5v14M5 12h14" />
+                                    </svg>
+                                    <svg class="minus-icon" style="display:none;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14" />
+                                    </svg>
+                                </div>
+                                <span class="faq-card-question">What activities can I resume after knee replacement surgery?</span>
+                            </button>
+                            <div class="faq-card-answer">
+                                <div class="faq-card-answer-inner">
+                                    <p>Most patients can return to low-impact activities like walking, swimming, and cycling, but high-impact sports should be avoided.</p>
+                                </div>
                             </div>
-                            <p class="text-gray-700 leading-relaxed text-justify">
-                                Most patients can return to low-impact activities like walking, swimming, and cycling,
-                                but high-impact sports should be avoided.
-                            </p>
                         </div>
 
-                        <div class="border-l-4 border-red-400 pl-4">
-                            <div class="flex items-start mb-2">
-                                <span class="text-red-600 text-xl mr-2">▶</span>
-                                <h3 class="text-lg font-semibold text-gray-800">How can I find best surgeon for knee
-                                    replacement in Hyderabad?</h3>
+                        <div class="faq-card" id="faq-16">
+                            <button class="faq-card-btn" onclick="toggleFaqCard('faq-16')" aria-expanded="false">
+                                <div class="faq-icon-box">
+                                    <svg class="plus-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 5v14M5 12h14" />
+                                    </svg>
+                                    <svg class="minus-icon" style="display:none;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14" />
+                                    </svg>
+                                </div>
+                                <span class="faq-card-question">How can I find best surgeon for knee replacement in Hyderabad?</span>
+                            </button>
+                            <div class="faq-card-answer">
+                                <div class="faq-card-answer-inner">
+                                    <p>Look for experienced surgeons with positive patient reviews, like Dr. Mir Jawad Zar Khan, and consult with them about their approach and success rates.</p>
+                                </div>
                             </div>
-                            <p class="text-gray-700 leading-relaxed text-justify">
-                                Look for experienced surgeons with positive patient reviews, like Dr. Mir Jawad Zar
-                                Khan, and consult with them about their approach and success rates.
-                            </p>
                         </div>
 
-                        <div class="border-l-4 border-red-400 pl-4">
-                            <div class="flex items-start mb-2">
-                                <span class="text-red-600 text-xl mr-2">▶</span>
-                                <h3 class="text-lg font-semibold text-gray-800">What should I expect during my hospital
-                                    stay for knee replacement surgery?</h3>
+                        <div class="faq-card" id="faq-17">
+                            <button class="faq-card-btn" onclick="toggleFaqCard('faq-17')" aria-expanded="false">
+                                <div class="faq-icon-box">
+                                    <svg class="plus-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 5v14M5 12h14" />
+                                    </svg>
+                                    <svg class="minus-icon" style="display:none;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14" />
+                                    </svg>
+                                </div>
+                                <span class="faq-card-question">What should I expect during my hospital stay for knee replacement surgery?</span>
+                            </button>
+                            <div class="faq-card-answer">
+                                <div class="faq-card-answer-inner">
+                                    <p>Hospital stays typically last 3 to 5 days, during which time you will receive postoperative care, pain management, and begin physical therapy.</p>
+                                </div>
                             </div>
-                            <p class="text-gray-700 leading-relaxed text-justify">
-                                Hospital stays typically last 3 to 5 days, during which time you will receive
-                                postoperative care, pain management, and begin physical therapy.
-                            </p>
                         </div>
                     </div>
                 </div>
+                </div>
+
+                <script>
+                    function toggleFaqCard(id) {
+                        var card = document.getElementById(id);
+                        var isOpen = card.classList.contains('is-open');
+                        var btn = card.querySelector('.faq-card-btn');
+                        var plus = card.querySelector('.plus-icon');
+                        var minus = card.querySelector('.minus-icon');
+
+                        // Close all other open cards
+                        document.querySelectorAll('.faq-card.is-open').forEach(function (c) {
+                            c.classList.remove('is-open');
+                            c.querySelector('.faq-card-btn').setAttribute('aria-expanded', 'false');
+                            c.querySelector('.plus-icon').style.display = '';
+                            c.querySelector('.minus-icon').style.display = 'none';
+                        });
+
+                        // Toggle this card
+                        if (!isOpen) {
+                            card.classList.add('is-open');
+                            btn.setAttribute('aria-expanded', 'true');
+                            plus.style.display = 'none';
+                            minus.style.display = '';
+                        }
+                    }
+                </script>
             </div>
         </section>
     </main>
@@ -572,6 +1163,83 @@
     </script>
     <!-- External JavaScript -->
     <script src="js/script.js"></script>
+    <script>
+        // Scroll reveal for headings
+        document.addEventListener('DOMContentLoaded', function () {
+            const revealElements = document.querySelectorAll('.reveal');
+            if (!('IntersectionObserver' in window)) {
+                revealElements.forEach(function (el) { el.classList.add('visible'); });
+                return;
+            }
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            revealElements.forEach(function (el) { observer.observe(el); });
+        });
+    </script>
+    <script>
+        // Split text scroll reveal for headings (home page effect)
+        (function () {
+            var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (reducedMotion || !('IntersectionObserver' in window)) return;
+            var isMobile = window.matchMedia('(max-width: 640px)').matches;
+            var STAGGER = isMobile ? 0.025 : 0.04;
+            var MAX_TOTAL = 0.35;
+            var headings = document.querySelectorAll('.homepage-section-heading, .hero-title, .tpa-heading, .faq-section-title');
+            if (!headings.length) return;
+            function splitWords(el) {
+                var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null);
+                var textNodes = [];
+                while (walker.nextNode()) {
+                    if (walker.currentNode.nodeValue.trim() !== '') textNodes.push(walker.currentNode);
+                }
+                textNodes.forEach(function (node) {
+                    var frag = document.createDocumentFragment();
+                    var parts = node.nodeValue.split(/(\s+)/);
+                    parts.forEach(function (part) {
+                        if (part === '') return;
+                        if (/^\s+$/.test(part)) {
+                            frag.appendChild(document.createTextNode(' '));
+                        } else {
+                            var span = document.createElement('span');
+                            span.className = 'st-word';
+                            span.textContent = part;
+                            frag.appendChild(span);
+                        }
+                    });
+                    node.parentNode.replaceChild(frag, node);
+                });
+            }
+            headings.forEach(function (heading) {
+                splitWords(heading);
+                var words = heading.querySelectorAll('.st-word');
+                if (!words.length) return;
+                var step = Math.min(STAGGER, words.length > 1 ? MAX_TOTAL / (words.length - 1) : STAGGER);
+                words.forEach(function (word, i) {
+                    word.style.setProperty('--st-delay', (i * step).toFixed(3) + 's');
+                });
+                heading.classList.add('st-split', 'st-pending');
+            });
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('st-reveal');
+                    entry.target.classList.remove('st-pending');
+                    observer.unobserve(entry.target);
+                });
+            }, { threshold: 0.25, rootMargin: '0px 0px -5% 0px' });
+            document.querySelectorAll('.st-split').forEach(function (h) {
+                observer.observe(h);
+            });
+        })();
+    </script>
+    <!-- Floating Navigation Menu -->
+    <floating-nav></floating-nav>
 </body>
 
 </html>

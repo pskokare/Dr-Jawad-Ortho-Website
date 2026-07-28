@@ -1595,10 +1595,29 @@
             }
         }
 
+        // ========== LOAD FLOATING NAV ==========
+        async function loadFloatingNav() {
+            try {
+                const targets = document.querySelectorAll('floating-nav');
+                if (!targets.length) return;
+
+                const response = await fetch('components/floating-nav.html');
+                if (!response.ok) throw new Error('Floating nav not found');
+                const floatingNavHTML = await response.text();
+
+                targets.forEach(target => {
+                    target.innerHTML = floatingNavHTML;
+                });
+            } catch (error) {
+                console.error('Error loading floating nav:', error);
+            }
+        }
+
         // ========== INITIALIZE EVERYTHING ==========
         window.addEventListener('DOMContentLoaded', () => {
             loadNavbar();
             loadFooter();
+            loadFloatingNav();
         });
 
         // Scroll-Triggered Split-Text Heading Reveal
@@ -1660,6 +1679,8 @@
             });
         })();
     </script>
+
+    <floating-nav></floating-nav>
 </body>
 
 </html>

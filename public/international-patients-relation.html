@@ -12,6 +12,15 @@
        <link rel="canonical" href="https://drjawadortho.com/international-patients-relation">
        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <style>
+        /* Match homepage typography */
+        html, body {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+            letter-spacing: -0.02em;
+        }
+
         /* Scroll Progress Bar Styles */
         .scroll-progress {
             position: fixed;
@@ -153,7 +162,7 @@
         /* Desktop hero section positioning */
         @media (min-width: 769px) {
             .hero-desktop-fix {
-                padding-top: 100px;
+                margin-top: 100px;
             }
         }
         
@@ -302,6 +311,497 @@
                 transition-duration: 0.01ms !important;
             }
         }
+
+        /* Hero text overlay - Eyebrow, Title, Subtitle, Buttons */
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            transform: translateY(-50%);
+            max-width: 54%;
+            z-index: 10;
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-family: Inter, 'Segoe UI', Arial, sans-serif;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #b45309;
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 0.35rem 1.1rem;
+            border-radius: 9999px;
+            margin-bottom: 0.9rem;
+            line-height: 1.3;
+        }
+
+        .hero-title {
+            font-family: Inter, 'Segoe UI', Arial, sans-serif;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-weight: 750;
+            color: #fff;
+            line-height: 1.12;
+            letter-spacing: -0.045em;
+            margin: 0 0 0.6rem;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(0.85rem, 1.5vw, 1.05rem);
+            color: #f3f4f6;
+            line-height: 1.5;
+            max-width: 500px;
+            margin: 0;
+            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.2rem;
+        }
+
+        .hero-btn {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.65rem 1.45rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-decoration: none;
+            background: linear-gradient(135deg, #cf3339 0%, #b91c1c 100%);
+            color: #fff;
+            overflow: hidden;
+            z-index: 1;
+            transition: color 0.35s ease;
+        }
+
+        .hero-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            border-radius: inherit;
+            background: linear-gradient(135deg, #f6ad00 0%, #fbbf24 100%);
+            transform: translateX(-101%);
+            transition: transform 0.45s ease;
+        }
+
+        .hero-btn:hover::before {
+            transform: translateX(0);
+        }
+
+        .hero-btn:hover {
+            color: #401f00;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                left: 1rem;
+                max-width: 90%;
+            }
+
+            .hero-title {
+                font-size: clamp(1.3rem, 5vw, 1.8rem);
+            }
+
+            .hero-subtitle {
+                font-size: clamp(0.75rem, 3vw, 0.95rem);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content {
+                max-width: 94%;
+            }
+
+            .hero-buttons {
+                gap: 0.5rem;
+            }
+
+            .hero-btn {
+                padding: 0.55rem 1.1rem;
+                font-size: 0.78rem;
+            }
+        }
+
+        /* Scroll-triggered split-text heading reveal */
+        .st-word {
+            display: inline-block;
+            will-change: transform, opacity;
+        }
+
+        .st-split.st-pending .st-word {
+            opacity: 0;
+            transform: translateY(25px) skewY(5deg);
+        }
+
+        .st-split.st-reveal .st-word {
+            opacity: 1;
+            transform: translateY(0) skewY(0deg);
+            transition:
+                opacity 0.45s ease-out,
+                transform 0.65s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition-delay: var(--st-delay, 0s);
+        }
+
+        @media (max-width: 640px) {
+            .st-split.st-pending .st-word {
+                transform: translateY(14px) skewY(3deg);
+            }
+        }
+
+        /* Section eyebrow badge - reused across all page sections */
+        .section-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-family: Inter, "Segoe UI", Arial, sans-serif;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #b45309;
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 0.35rem 1.1rem;
+            border-radius: 9999px;
+            margin-bottom: 0.9rem;
+            line-height: 1.3;
+        }
+
+        /* Scroll-triggered fade-up reveal for sections and cards */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal-up.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Left-to-right cream fill for overseas info block */
+        .ipr-overseas-bg {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+        }
+
+        .ipr-overseas-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background: #f0e9c6;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 1.2s ease;
+        }
+
+        .ipr-overseas-bg.animate-in::before {
+            transform: scaleX(1);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal-up {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+
+        /* Interactive hover-lift for cards, provide-items, and steps */
+        .ipr-card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .ipr-card-hover:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .ipr-provide-item {
+            border-radius: 0.75rem;
+            padding: 0.5rem;
+            margin: -0.5rem;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .ipr-provide-item:hover {
+            background: #f0e9c6;
+            transform: translateX(4px);
+        }
+
+        .ipr-step {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .ipr-step:hover {
+            transform: translateX(6px);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .ipr-specialities-img {
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .ipr-specialities-img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.18);
+        }
+
+        /* Procedure cards - red theme, bottom-to-top hover fill */
+        .ipr-procedure-card {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 0.75rem;
+            padding: 1.5rem;
+            background: #fff;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.07);
+            transition: box-shadow 0.35s ease;
+        }
+
+        .ipr-procedure-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            transform: scaleY(0);
+            transform-origin: bottom;
+            transition: transform 0.45s ease;
+        }
+
+        .ipr-procedure-card:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .ipr-procedure-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .ipr-procedure-card .ipr-procedure-icon,
+        .ipr-procedure-card .ipr-procedure-title,
+        .ipr-procedure-card .ipr-procedure-text {
+            position: relative;
+            z-index: 1;
+            transition: color 0.35s ease, background 0.35s ease, transform 0.35s ease;
+        }
+
+        .ipr-procedure-card .ipr-procedure-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: #fff;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .ipr-procedure-card:hover .ipr-procedure-icon {
+            background: #fff;
+            color: #b91c1c;
+            transform: scale(1.12);
+        }
+
+        .ipr-procedure-card .ipr-procedure-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: #1f2937;
+            line-height: 1.3;
+        }
+
+        .ipr-procedure-card .ipr-procedure-text {
+            font-size: 0.95rem;
+            color: #6b7280;
+            line-height: 1.55;
+            text-align: center;
+        }
+
+        .ipr-procedure-card:hover .ipr-procedure-title,
+        .ipr-procedure-card:hover .ipr-procedure-text {
+            color: #fff;
+        }
+
+        /* Interactive Contact Section */
+        .contact-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            border: 1px solid #d4a76a;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #b45309;
+            margin-bottom: 1rem;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .contact-eyebrow:hover {
+            background: #f0e9c6;
+            color: #92400e;
+        }
+
+        .contact-heading {
+            font-family: Inter, "Segoe UI", Arial, sans-serif;
+            font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+            font-weight: 700;
+            color: #111827;
+            line-height: 1.2;
+            margin: 0 0 0.75rem;
+        }
+
+        .contact-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #d4a76a;
+            margin-bottom: 1rem;
+        }
+
+        .contact-link {
+            color: #dc2626;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .contact-link:hover {
+            color: #b91c1c;
+        }
+
+        .contact-card {
+            background: #fff;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            text-align: center;
+            /* box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08); */
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-6px);
+            /* box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12); */
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 0.75rem;
+            border-radius: 50%;
+            background: #f0e9c6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #b45309;
+            font-size: 1.35rem;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .contact-card:hover .contact-icon {
+            transform: scale(1.1);
+            background: #fde68a;
+        }
+
+        .contact-label {
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-email-link {
+            color: #dc2626;
+            font-weight: 600;
+            font-size: 1.125rem;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .contact-email-link:hover {
+            color: #b91c1c;
+        }
+
+        .contact-divider {
+            height: 1px;
+            background: #f0e9c6;
+            margin: 1.5rem 0;
+        }
+
+        .contact-support-text {
+            color: #6b7280;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .contact-btn {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+            padding: 0.85rem 1.75rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            text-decoration: none;
+            background: linear-gradient(135deg, #cf3339 0%, #b91c1c 100%);
+            color: #fff;
+            overflow: hidden;
+            z-index: 1;
+            transition: color 0.35s ease;
+        }
+
+        .contact-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            border-radius: inherit;
+            background: linear-gradient(135deg, #f6ad00 0%, #fbbf24 100%);
+            transform: translateX(-101%);
+            transition: transform 0.45s ease;
+        }
+
+        .contact-btn:hover::before {
+            transform: translateX(0);
+        }
+
+        .contact-btn:hover {
+            color: #401f00;
+        }
+
+        /* Justify all informational text content */
+        .hero-subtitle,
+        #patient-stories .ipr-procedure-text,
+        .contact-support-text,
+        #patient-stories .space-y-4.text-gray-700 p,
+        #patient-stories ul li span {
+            text-align: justify;
+        }
     </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-B7BXJEHXWK"></script>
 <script>
@@ -323,103 +823,135 @@ gtag('config', 'G-B7BXJEHXWK');
     <div id="navbar-container" class="shadow-sm"></div>
 
     <!-- ===== HERO SECTION ===== -->
-      <section class="relative w-full overflow-hidden hero-desktop-fix">
-        <!-- Hero Image with Bottom Border Only -->
-        <div class="border-b-4 border-red-700 relative">
-            <img src="Images/Patient-Info/PatientRealation.webp" width="1920" height="1080"
-                 alt="Patient Relation" 
-                 class="w-full h-56 sm:h-64 md:h-72 lg:h-96 xl:h-[28rem] 2xl:h-[70vh] object-cover block lg:translate-y-4 lg:pt-10 pt-5">
-            
-            <!-- Light Black Overlay Effect -->
-            <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/25 to-black/30 pointer-events-none"></div>
+    <section class="hero-international relative w-full overflow-hidden hero-desktop-fix" aria-labelledby="iprHeroHeading">
+        <img src="Images/Patient-Info/PatientRealation.webp" width="1920" height="1080"
+             alt="International Patients Relations - Germanten Hospital"
+             class="absolute inset-0 w-full h-full object-cover"
+             onerror="this.onerror=null; this.src='https://via.placeholder.com/1920x800?text=International+Patients+Relations';">
+
+        <!-- Gradient Overlay for text readability -->
+        <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/10 pointer-events-none"></div>
+
+        <div class="hero-content">
+            <span class="hero-eyebrow">Global Patient Care</span>
+            <h1 id="iprHeroHeading" class="hero-title">International Patients Relations</h1>
+            <p class="hero-subtitle">Dedicated relationship managers, seamless coordination and real success stories from our patients across the globe.</p>
+            <div class="hero-buttons">
+                <a href="book-an-appointment.html" class="hero-btn hero-btn-primary">Book Appointment</a>
+                <a href="#patient-stories" class="hero-btn hero-btn-secondary">Know More</a>
+            </div>
         </div>
     </section>
 
-    <!-- Breadcrumb below hero image in left corner -->
-    <div class="bg-soft-light py-4 px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center space-x-2 text-sm text-gray-600">
-            <a href="#" class="hover:text-blue-700 transition-colors duration-300">Patient Info</a>
-            <i class="fa-solid fa-chevron-right text-xs text-blue-600"></i>
-            <span class="text-blue-800 font-semibold">International Patients Relation</span>
+    <!-- Breadcrumb Section -->
+    <div class="bg-white border-b border-gray-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-3 md:py-4">
+            <nav class="flex items-center flex-wrap text-xs sm:text-sm" aria-label="Breadcrumb">
+                <ol class="flex items-center flex-wrap list-none m-0 p-0">
+                    <li class="flex items-center">
+                        <a href="/"
+                            class="inline-flex items-center text-gray-600 hover:text-blue-700 transition font-medium">
+                            <i class="fa-solid fa-home mr-1 text-[10px] sm:text-xs"></i>
+                            <span class="hidden sm:inline">Home</span>
+                        </a>
+                    </li>
+                    <li class="flex items-center px-1 sm:px-2">
+                        <i class="fa-solid fa-chevron-right text-[8px] sm:text-[10px] text-gray-400"></i>
+                    </li>
+                    <li class="flex items-center">
+                        <a href="#"
+                            class="text-gray-600 hover:text-blue-700 transition font-medium truncate max-w-[80px] sm:max-w-none">Patient
+                            Info</a>
+                    </li>
+                    <li class="flex items-center px-1 sm:px-2">
+                        <i class="fa-solid fa-chevron-right text-[8px] sm:text-[10px] text-gray-400"></i>
+                    </li>
+                    <li class="flex items-center">
+                        <span class="text-blue-700 font-semibold truncate max-w-[150px] sm:max-w-[200px] md:max-w-none"
+                            aria-current="page">International Patients Relation</span>
+                    </li>
+                </ol>
+            </nav>
         </div>
     </div>
 
     <!-- International Patients Relations Section -->
-    <section class="py-12 bg-white">
+    <section id="patient-stories" class="py-12 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Section Header -->
-            <div class="text-center mb-12">
-                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 px-4 py-2 border-2 border-transparent bg-gradient-to-r from-yellow-400 to-red-600 bg-clip-text text-transparent">International Patients Relations</h1>
+            <div class="text-center mb-12 reveal-up">
+                <span class="section-eyebrow">Real Patient Experiences</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Patient Success Stories</h2>
                 <p class="text-gray-600 max-w-3xl mx-auto text-lg text-justify">Real stories from our international patients who experienced world-class healthcare at Germanten Hospital. For more patient experiences, visit our <a href="testimonials" class="text-orange-600 hover:text-red-600 font-medium transition-colors duration-200">complete testimonials section</a>.</p>
             </div>
 
             <!-- Patient Stories Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                 <!-- Patient 1: Mr Abdul Ali -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-gradient-to-r hover:from-yellow-400 hover:to-red-600">
+                <div class="ipr-card-hover reveal-up group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 border-2 border-transparent flex flex-col">
                     <div class="relative">
                         <img src="https://img.youtube.com/vi/n87nDU8z6BY/hqdefault.jpg" width="480" height="360"
                              alt="Mr Abdul Ali ACL Reconstruction" 
-                             class="w-full h-48 object-cover">
-                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                             class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <a href="https://youtu.be/n87nDU8z6BY" target="_blank" 
                                class="bg-red-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-colors duration-300">
                                 <i class="fas fa-play mr-2"></i>Watch Video
                             </a>
                         </div>
                     </div>
-                    <div class="p-6">
+                    <div class="p-6 flex flex-col flex-1">
                         <h3 class="text-xl font-bold text-gray-800 mb-3">Mr. Abdul Ali, From Kenya</h3>
                         <p class="text-gray-600 mb-4 text-justify">ACL Reconstruction Surgery by Dr Mir Jawad Zar Khan. Watch video here for patient experience at Germanten Hospital.</p>
                         <a href="https://youtu.be/n87nDU8z6BY" target="_blank" 
-                           class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold transition-colors duration-300">
-                            Watch Full Story <i class="fas fa-arrow-right ml-2"></i>
+                           class="mt-auto self-center inline-flex items-center justify-center bg-red-600 text-white px-4 py-2 text-sm rounded-full font-semibold hover:bg-red-700 transition-colors duration-300">
+                            Watch Full Story <i class="fas fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- Patient 2: Mr. Ibrahim -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-gradient-to-r hover:from-yellow-400 hover:to-red-600">
+                <div class="ipr-card-hover reveal-up group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 border-2 border-transparent flex flex-col">
                     <div class="relative">
                         <img src="https://img.youtube.com/vi/OiS_OJy9jpU/hqdefault.jpg" width="480" height="360"
                              alt="Mr Ibrahim ACL Surgery" 
-                             class="w-full h-48 object-cover">
-                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                             class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <a href="https://youtu.be/OiS_OJy9jpU" target="_blank" 
                                class="bg-red-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-colors duration-300">
                                 <i class="fas fa-play mr-2"></i>Watch Video
                             </a>
                         </div>
                     </div>
-                    <div class="p-6">
+                    <div class="p-6 flex flex-col flex-1">
                         <h3 class="text-xl font-bold text-gray-800 mb-3">Mr. Ibrahim, 26 years old from Dubai</h3>
                         <p class="text-gray-600 mb-4 text-justify">Foot ball player. ACL surgery done at Germanten Hospital. Watch here patient testimonial video.</p>
                         <a href="https://youtu.be/OiS_OJy9jpU" target="_blank" 
-                           class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold transition-colors duration-300">
-                            Watch Full Story <i class="fas fa-arrow-right ml-2"></i>
+                           class="mt-auto self-center inline-flex items-center justify-center bg-red-600 text-white px-4 py-2 text-sm rounded-full font-semibold hover:bg-red-700 transition-colors duration-300">
+                            Watch Full Story <i class="fas fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- Patient 3: Patient from Africa -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-gradient-to-r hover:from-yellow-400 hover:to-red-600">
+                <div class="ipr-card-hover reveal-up group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 border-2 border-transparent flex flex-col">
                     <div class="relative">
                         <img src="https://img.youtube.com/vi/OEPHOu5JfEo/hqdefault.jpg" width="480" height="360"
                              alt="Patient from Africa Hip Replacement" 
-                             class="w-full h-48 object-cover">
-                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                             class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <a href="https://youtu.be/OEPHOu5JfEo" target="_blank" 
                                class="bg-red-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-colors duration-300">
                                 <i class="fas fa-play mr-2"></i>Watch Video
                             </a>
                         </div>
                     </div>
-                    <div class="p-6">
+                    <div class="p-6 flex flex-col flex-1">
                         <h3 class="text-xl font-bold text-gray-800 mb-3">Patient from Africa</h3>
                         <p class="text-gray-600 mb-4 text-justify">Sharing his Experience after Total Hip Replacement Surgery at Germanten Hospital Hyderabad, India.</p>
                         <a href="https://youtu.be/OEPHOu5JfEo" target="_blank" 
-                           class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold transition-colors duration-300">
-                            Watch Full Story <i class="fas fa-arrow-right ml-2"></i>
+                           class="mt-auto self-center inline-flex items-center justify-center bg-red-600 text-white px-4 py-2 text-sm rounded-full font-semibold hover:bg-red-700 transition-colors duration-300">
+                            Watch Full Story <i class="fas fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
                         </a>
                     </div>
                 </div>
@@ -428,24 +960,24 @@ gtag('config', 'G-B7BXJEHXWK');
 
     <!-- Our Specialities Section -->        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Section Header -->
-            <div class="text-center mb-12">
-                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 px-4 py-2 border-2 border-transparent bg-gradient-to-r from-yellow-400 to-red-600 bg-clip-text text-transparent">Our Specialities</h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-yellow-400 to-red-600 mx-auto rounded-full mb-6"></div>
+            <div class="text-center mb-12 reveal-up">
+                <span class="section-eyebrow">World-Class Treatment</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Our Specialities</h2>
             </div>
 
             <!-- Main Content with Image -->
             <div class="grid lg:grid-cols-2 gap-12 items-start mb-16">
                 <!-- Left: Image -->
-                <div class="order-2 lg:order-1">
+                <div class="order-2 lg:order-1 reveal-up">
                     <img src="Images/Patient-Info/ourspecialities.webp" width="800" height="400"
                          alt="Our Specialities" 
-                         class="w-full rounded-2xl shadow-xl">
+                         class="ipr-specialities-img w-full rounded-2xl shadow-xl">
                 </div>
 
                 <!-- Right: Content -->
                 <div class="order-1 lg:order-2">
-                    <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-red-600">
-                        <div class="space-y-4">
+                    <div class="ipr-overseas-bg reveal-up rounded-xl shadow-lg p-6 border-l-4 border-red-600">
+                        <div class="relative z-10 space-y-4">
                             <p class="text-gray-700 leading-relaxed text-lg text-justify">
                                 Our Orthopaedic Specialty Centre offers its overseas patients world-class treatment, personalized attention, and a comfortable stay.
                             </p>
@@ -463,54 +995,47 @@ gtag('config', 'G-B7BXJEHXWK');
             <!-- WE PROVIDE Section -->
             <div class="mb-16">
                 <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
-                    <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-6 text-center">We Provide</h3>
+                    <div class="text-center reveal-up">
+                        <span class="section-eyebrow">Comprehensive Support</span>
+                        <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-6">We Provide</h3>
+                    </div>
                     
                     <div class="grid md:grid-cols-2 gap-8">
                         <div class="space-y-6">
-                            <div class="flex items-start space-x-4">
-                                <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                                    <i class="fas fa-plane text-red-600 text-sm"></i>
-                                </div>
+                            <div class="ipr-provide-item flex items-start space-x-4">
+                                <i class="fas fa-plane text-red-600 text-lg flex-shrink-0 mt-1"></i>
                                 <div>
                                     <h4 class="font-semibold text-gray-800 mb-2">Airport Assistance</h4>
                                     <p class="text-gray-600 text-justify">A special team is available to meet the patient (if required). From the moment he/she lands at our Shamshabad Airport, we ensure patients reach our hospital safely</p>
                                 </div>
                             </div>
 
-                            <div class="flex items-start space-x-4">
-                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                                    <i class="fas fa-phone text-blue-600 text-sm"></i>
-                                </div>
+                            <div class="ipr-provide-item flex items-start space-x-4">
+                                <i class="fas fa-phone text-red-600 text-lg flex-shrink-0 mt-1"></i>
                                 <div>
                                     <h4 class="font-semibold text-gray-800 mb-2">Communication Facilities</h4>
                                     <p class="text-gray-600 text-justify">All communication facilities, like telephone, fax, and Internet are available for easy access to patients across the Globe</p>
                                 </div>
                             </div>
 
-                            <div class="flex items-start space-x-4">
-                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                                    <i class="fas fa-bed text-green-600 text-sm"></i>
-                                </div>
+                            <div class="ipr-provide-item flex items-start space-x-4">
+                                <i class="fas fa-bed text-red-600 text-lg flex-shrink-0 mt-1"></i>
                                 <div>
                                     <h4 class="font-semibold text-gray-800 mb-2">Accommodation</h4>
                                     <p class="text-gray-600 text-justify">Air-conditioned Deluxe Rooms and other rooms are available with telephone, television, and other essential amenities</p>
                                 </div>
                             </div>
 
-                            <div class="flex items-start space-x-4">
-                                <div class="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                                    <i class="fas fa-users text-yellow-600 text-sm"></i>
-                                </div>
+                            <div class="ipr-provide-item flex items-start space-x-4">
+                                <i class="fas fa-users text-red-600 text-lg flex-shrink-0 mt-1"></i>
                                 <div>
                                     <h4 class="font-semibold text-gray-800 mb-2">Staff & Environment</h4>
                                     <p class="text-gray-600 text-justify">A wonderful ambience and friendly hospitable staff to assist for speedy recovery</p>
                                 </div>
                             </div>
 
-                            <div class="flex items-start space-x-4">
-                                <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                                    <i class="fas fa-credit-card text-purple-600 text-sm"></i>
-                                </div>
+                            <div class="ipr-provide-item flex items-start space-x-4">
+                                <i class="fas fa-credit-card text-red-600 text-lg flex-shrink-0 mt-1"></i>
                                 <div>
                                     <h4 class="font-semibold text-gray-800 mb-2">Payment Options</h4>
                                     <p class="text-gray-600 text-justify">All major credit cards are accepted. We also have a currency exchange desk to convert foreign currency to Indian Rupees. We help with visa formalities, ticket booking etc.</p>
@@ -568,82 +1093,73 @@ gtag('config', 'G-B7BXJEHXWK');
 
             <!-- PROCEDURE Section -->
             <div class="mb-16">
-                <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
-                    <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-8 text-center">Procedure</h3>
+                <div class="bg-[#f0e9c6] rounded-2xl shadow-xl p-8 md:p-12">
+                    <div class="text-center reveal-up">
+                        <span class="section-eyebrow">How It Works</span>
+                        <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-8">Procedure</h3>
+                    </div>
                     
-                    <div class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         <!-- Step 1 -->
-                        <div class="flex items-start space-x-6 p-6 bg-gray-50 rounded-lg border-l-4 border-blue-600">
-                            <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">
-                                1
+                        <div class="ipr-procedure-card reveal-up">
+                            <div class="ipr-procedure-icon">
+                                <i class="fas fa-file-medical"></i>
                             </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800 text-lg mb-2">Patients History and Reports</h4>
-                                <p class="text-gray-700 text-justify">Patients History and previous reports to be sent to us on e-mail</p>
-                            </div>
+                            <h4 class="ipr-procedure-title">Patients History and Reports</h4>
+                            <p class="ipr-procedure-text">Patients History and previous reports to be sent to us on e-mail.</p>
                         </div>
 
                         <!-- Step 2 -->
-                        <div class="flex items-start space-x-6 p-6 bg-gray-50 rounded-lg border-l-4 border-green-600">
-                            <div class="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">
-                                2
+                        <div class="ipr-procedure-card reveal-up">
+                            <div class="ipr-procedure-icon">
+                                <i class="fas fa-user-doctor"></i>
                             </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800 text-lg mb-2">Doctor Review</h4>
-                                <p class="text-gray-700 text-justify">Our doctors will go through the reports and get in touch with you</p>
-                            </div>
+                            <h4 class="ipr-procedure-title">Doctor Review</h4>
+                            <p class="ipr-procedure-text">Our doctors will go through the reports and get in touch with you.</p>
                         </div>
 
                         <!-- Step 3 -->
-                        <div class="flex items-start space-x-6 p-6 bg-gray-50 rounded-lg border-l-4 border-yellow-600">
-                            <div class="w-12 h-12 bg-yellow-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">
-                                3
+                        <div class="ipr-procedure-card reveal-up">
+                            <div class="ipr-procedure-icon">
+                                <i class="fas fa-video"></i>
                             </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800 text-lg mb-2">Consultation</h4>
-                                <p class="text-gray-700 text-justify">If needed, a skype consultation or live chat, with our doctor, can be arranged to understand your medical status</p>
-                            </div>
+                            <h4 class="ipr-procedure-title">Consultation</h4>
+                            <p class="ipr-procedure-text">If needed, a Skype consultation or live chat with our doctor can be arranged to understand your medical status.</p>
                         </div>
 
                         <!-- Step 4 -->
-                        <div class="flex items-start space-x-6 p-6 bg-gray-50 rounded-lg border-l-4 border-red-600">
-                            <div class="w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">
-                                4
+                        <div class="ipr-procedure-card reveal-up">
+                            <div class="ipr-procedure-icon">
+                                <i class="fas fa-clipboard-list"></i>
                             </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800 text-lg mb-2">Customized Packages</h4>
-                                <p class="text-gray-700 text-justify">Customised packages will be worked out, while taking price and short stay in consideration</p>
-                            </div>
+                            <h4 class="ipr-procedure-title">Customized Packages</h4>
+                            <p class="ipr-procedure-text">Customised packages will be worked out, while taking price and short stay in consideration.</p>
                         </div>
 
                         <!-- Step 5 -->
-                        <div class="flex items-start space-x-6 p-6 bg-gray-50 rounded-lg border-l-4 border-purple-600">
-                            <div class="w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">
-                                5
+                        <div class="ipr-procedure-card reveal-up">
+                            <div class="ipr-procedure-icon">
+                                <i class="fas fa-passport"></i>
                             </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800 text-lg mb-2">Visa Documentation</h4>
-                                <p class="text-gray-700 text-justify">Passport copies of the patient and attendant to be sent for medical visa invitation letter (in case of International patients)</p>
-                            </div>
+                            <h4 class="ipr-procedure-title">Visa Documentation</h4>
+                            <p class="ipr-procedure-text">Passport copies of the patient and attendant to be sent for medical visa invitation letter.</p>
                         </div>
 
                         <!-- Step 6 -->
-                        <div class="flex items-start space-x-6 p-6 bg-gray-50 rounded-lg border-l-4 border-indigo-600">
-                            <div class="w-12 h-12 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">
-                                6
+                        <div class="ipr-procedure-card reveal-up">
+                            <div class="ipr-procedure-icon">
+                                <i class="fas fa-plane-departure"></i>
                             </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800 text-lg mb-2">Visa Assistance</h4>
-                                <p class="text-gray-700 text-justify">Visa assistance will be provided by our team (in case of International Patients)</p>
-                            </div>
+                            <h4 class="ipr-procedure-title">Visa Assistance</h4>
+                            <p class="ipr-procedure-text">Visa assistance will be provided by our team for International Patients.</p>
                         </div>
                     </div>
 
                     <!-- Additional Services -->
                     <div class="mt-12 grid md:grid-cols-2 gap-8">
-                        <div class="bg-gray-50 rounded-lg p-6 border-l-4 border-gray-400">
-                            <h4 class="font-semibold text-gray-800 mb-4 flex items-center">
-                                <i class="fas fa-car text-gray-600 mr-2"></i>
+                        <div class="ipr-card-hover reveal-up bg-gray-50 rounded-lg p-6">
+                            <h4 class="font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                                <span class="w-12 h-12 rounded-full bg-[#f0e9c6] text-red-600 flex items-center justify-center flex-shrink-0 text-lg"><i class="fas fa-car"></i></span>
                                 Transportation & Travel
                             </h4>
                             <ul class="space-y-2 text-gray-700">
@@ -662,9 +1178,9 @@ gtag('config', 'G-B7BXJEHXWK');
                             </ul>
                         </div>
 
-                        <div class="bg-gray-50 rounded-lg p-6 border-l-4 border-gray-400">
-                            <h4 class="font-semibold text-gray-800 mb-4 flex items-center">
-                                <i class="fas fa-hospital text-gray-600 mr-2"></i>
+                        <div class="ipr-card-hover reveal-up bg-gray-50 rounded-lg p-6">
+                            <h4 class="font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                                <span class="w-12 h-12 rounded-full bg-[#f0e9c6] text-red-600 flex items-center justify-center flex-shrink-0 text-lg"><i class="fas fa-hospital"></i></span>
                                 Hospital Services
                             </h4>
                             <ul class="space-y-2 text-gray-700">
@@ -683,9 +1199,9 @@ gtag('config', 'G-B7BXJEHXWK');
                             </ul>
                         </div>
 
-                        <div class="bg-gray-50 rounded-lg p-6 border-l-4 border-gray-400">
-                            <h4 class="font-semibold text-gray-800 mb-4 flex items-center">
-                                <i class="fas fa-globe text-gray-600 mr-2"></i>
+                        <div class="ipr-card-hover reveal-up bg-gray-50 rounded-lg p-6">
+                            <h4 class="font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                                <span class="w-12 h-12 rounded-full bg-[#f0e9c6] text-red-600 flex items-center justify-center flex-shrink-0 text-lg"><i class="fas fa-globe"></i></span>
                                 International Support
                             </h4>
                             <ul class="space-y-2 text-gray-700">
@@ -704,9 +1220,9 @@ gtag('config', 'G-B7BXJEHXWK');
                             </ul>
                         </div>
 
-                        <div class="bg-gray-50 rounded-lg p-6 border-l-4 border-gray-400">
-                            <h4 class="font-semibold text-gray-800 mb-4 flex items-center">
-                                <i class="fas fa-user-tie text-gray-600 mr-2"></i>
+                        <div class="ipr-card-hover reveal-up bg-gray-50 rounded-lg p-6">
+                            <h4 class="font-semibold text-gray-800 mb-4 flex items-center gap-3">
+                                <span class="w-12 h-12 rounded-full bg-[#f0e9c6] text-red-600 flex items-center justify-center flex-shrink-0 text-lg"><i class="fas fa-user-tie"></i></span>
                                 International Doctors
                             </h4>
                             <ul class="space-y-2 text-gray-700">
@@ -729,14 +1245,42 @@ gtag('config', 'G-B7BXJEHXWK');
             </div>
 
             <!-- Contact Section -->
-            <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 border-l-4 border-gray-400">
-                <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center">Contact Our International Team</h3>
-                <div class="max-w-3xl mx-auto text-center">
-                    <p class="text-gray-700 text-lg mb-8 text-justify">
-International Doctors will be visiting on Regular basis to our Hospital, their expertise can be found on our website. We will in advance publish the Visiting Dates of International doctors for patients who are willing to get treated by our International Doctors Team.
+            <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 reveal-up">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <!-- Left content -->
+                    <div>
+                        <div class="contact-eyebrow">
+                            <i class="fas fa-globe"></i>
+                            <span>Get In Touch</span>
+                        </div>
+                        <h3 class="contact-heading">Contact Our International Team</h3>
+                        <!-- <div class="contact-dot"></div> -->
+                        <div class="space-y-4 text-gray-700 leading-relaxed">
+                            <p>International Doctors will be visiting on Regular basis to our Hospital, their expertise can be found on our website. We will in advance publish the Visiting Dates of International doctors for patients who are willing to get treated by our International Doctors Team.</p>
+                            <p>This facility is available to International patients as well as Local patients. We will assign a relationship manager to every patient to ease your process. Patients can mail us at <a href="mailto:mjzk5565@gmail.com" class="contact-link">mjzk5565@gmail.com</a> for International doctor’s Appointments.</p>
+                        </div>
+                    </div>
 
-This facility is available to International patient as well as Local patients. We will assign a relationship manager to every patient to ease your process. Patients can mail us at <span style="color: #dc2626;">mjzk5565@gmail.com</span> for International doctor’s Appointments.                    </p>
-                    
+                    <!-- Right card -->
+                    <div class="contact-card">
+                        <div class="mb-6">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="contact-label">Email Us</div>
+                            <a href="mailto:mjzk5565@gmail.com" class="contact-email-link">mjzk5565@gmail.com</a>
+                        </div>
+
+                        <div class="contact-divider"></div>
+
+                        <div class="mb-6">
+                            <div class="contact-icon"><i class="fas fa-headset"></i></div>
+                            <div class="contact-label">International Appointment Support</div>
+                            <p class="contact-support-text">Our relationship manager will assist you at every step.</p>
+                        </div>
+
+                        <a href="mailto:mjzk5565@gmail.com" class="contact-btn">
+                            Send an Email <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -808,5 +1352,90 @@ This facility is available to International patient as well as Local patients. W
         });
     </script>
     <script src="js/script.js"></script>
+
+    <script>
+        // Scroll-Triggered Split-Text Heading Reveal
+        (function () {
+            var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (reducedMotion || !('IntersectionObserver' in window)) return;
+            var isMobile = window.matchMedia('(max-width: 640px)').matches;
+            var STAGGER = isMobile ? 0.025 : 0.04;
+            var MAX_TOTAL = 0.35;
+            var headings = Array.prototype.slice.call(document.querySelectorAll('h1, h2, h3'));
+            if (!headings.length) return;
+            function splitWords(el) {
+                var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null);
+                var textNodes = [];
+                while (walker.nextNode()) {
+                    if (walker.currentNode.nodeValue.trim() !== '') textNodes.push(walker.currentNode);
+                }
+                textNodes.forEach(function (node) {
+                    var frag = document.createDocumentFragment();
+                    var parts = node.nodeValue.split(/(\s+)/);
+                    parts.forEach(function (part) {
+                        if (part === '') return;
+                        if (/^\s+$/.test(part)) {
+                            frag.appendChild(document.createTextNode(' '));
+                        } else {
+                            var span = document.createElement('span');
+                            span.className = 'st-word';
+                            span.textContent = part;
+                            frag.appendChild(span);
+                        }
+                    });
+                    node.parentNode.replaceChild(frag, node);
+                });
+            }
+            headings.forEach(function (heading) {
+                splitWords(heading);
+                var words = heading.querySelectorAll('.st-word');
+                if (!words.length) return;
+                var step = Math.min(STAGGER, words.length > 1 ? MAX_TOTAL / (words.length - 1) : STAGGER);
+                words.forEach(function (word, i) {
+                    word.style.setProperty('--st-delay', (i * step).toFixed(3) + 's');
+                });
+                heading.classList.add('st-split', 'st-pending');
+            });
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('st-reveal');
+                    entry.target.classList.remove('st-pending');
+                    observer.unobserve(entry.target);
+                });
+            }, { threshold: 0.25, rootMargin: '0px 0px -5% 0px' });
+            document.querySelectorAll('.st-split').forEach(function (h) {
+                observer.observe(h);
+            });
+        })();
+
+        // Scroll-Triggered Fade-Up Reveal for sections and cards
+        (function () {
+            var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            var items = document.querySelectorAll('.reveal-up');
+            if (!items.length) return;
+            if (reducedMotion || !('IntersectionObserver' in window)) {
+                items.forEach(function (el) { el.classList.add('animate-in'); });
+                return;
+            }
+            var groupCounters = new WeakMap();
+            var revealObserver = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (!entry.isIntersecting) return;
+                    var el = entry.target;
+                    var parent = el.parentElement;
+                    var index = groupCounters.has(parent) ? groupCounters.get(parent) : 0;
+                    groupCounters.set(parent, index + 1);
+                    setTimeout(function () {
+                        el.classList.add('animate-in');
+                    }, Math.min(index * 90, 360));
+                    revealObserver.unobserve(el);
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -5% 0px' });
+            items.forEach(function (el) { revealObserver.observe(el); });
+        })();
+    </script>
+
+    <floating-nav></floating-nav>
 </body>
 </html>

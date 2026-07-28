@@ -38,71 +38,57 @@
             pointer-events: none;
         }
 
-        /* Enhanced responsive hero section */
+        /* Enhanced responsive hero section - matching international page */
         .hero-empanelled {
-            height: 100vh !important;
-            min-height: 500px;
+            height: 60vh !important;
+            min-height: 400px;
             position: relative;
             width: 100%;
             overflow: hidden;
         }
-        
-        @media (max-width: 1280px) {
-            .hero-empanelled {
-                height: 90vh !important;
-                min-height: 480px;
-            }
-        }
-        
+
         @media (max-width: 1024px) {
             .hero-empanelled {
-                height: 80vh !important;
-                min-height: 450px;
+                height: 55vh !important;
+                min-height: 380px;
             }
         }
-        
+
+        /* Mobile-only: centered background image, constrained height */
         @media (max-width: 768px) {
             .hero-empanelled {
-                height: 70vh !important;
-                min-height: 400px;
+                height: 36vh !important;
+                min-height: 260px;
+                max-height: 360px;
+                background-image: url('Images/Patient-Info/HeroImage1.webp');
+                background-size: cover;
+                background-position: center top;
+                background-repeat: no-repeat;
+            }
+
+            .hero-empanelled img {
+                display: none;
+            }
+
+            .hero-desktop-fix {
+                margin-top: 64px !important;
             }
         }
-        
+
         @media (max-width: 640px) {
             .hero-empanelled {
-                height: 60vh !important;
-                min-height: 350px;
+                height: 32vh !important;
+                min-height: 240px;
+                max-height: 320px;
             }
         }
-        
+
         @media (max-width: 480px) {
             .hero-empanelled {
-                height: 50vh !important;
-                min-height: 300px;
+                height: 30vh !important;
+                min-height: 220px;
+                max-height: 300px;
             }
-        }
-        
-        @media (max-width: 380px) {
-            .hero-empanelled {
-                height: 45vh !important;
-                min-height: 280px;
-            }
-        }
-        
-        .hero-overlay-text {
-            background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
-        }
-        
-        /* breadcrumb modern style */
-        .breadcrumb-glass {
-            background: rgba(255,255,255,0.75);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border-radius: 60px;
-            padding: 8px 20px;
-            display: inline-block;
-            border: 1px solid rgba(255,255,255,0.6);
-            box-shadow: 0 10px 25px -8px rgba(0,0,0,0.2);
         }
         
         /* Enhanced responsive typography */
@@ -142,22 +128,76 @@
             h3 { font-size: 1.125rem; }
         }
         
-        /* Desktop hero section positioning */
+        /* Hero section positioning below fixed navbar */
+        .hero-desktop-fix {
+            margin-top: 80px;
+        }
+
         @media (min-width: 769px) {
             .hero-desktop-fix {
-                padding-top: 100px; /* Account for navbar and top bar on desktop */
+                margin-top: 100px;
             }
         }
         
         /* Hero text specific responsive */
-        .hero-title {
-            font-size: clamp(2rem, 5vw, 4rem);
-            line-height: 1.2;
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            transform: translateY(-50%);
+            max-width: 54%;
+            z-index: 10;
         }
-        
+
+        .hero-title {
+            font-family: Inter, 'Segoe UI', Arial, sans-serif;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-weight: 750;
+            color: #fff;
+            line-height: 1.12;
+            letter-spacing: -0.045em;
+            margin: 0 0 0.6rem;
+        }
+
         .hero-subtitle {
-            font-size: clamp(0.875rem, 2vw, 1.25rem);
+            font-size: clamp(0.85rem, 1.5vw, 1.05rem);
+            color: #f3f4f6;
             line-height: 1.5;
+            max-width: 500px;
+            margin: 0;
+            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                left: 1rem;
+                max-width: 90%;
+            }
+
+            .hero-title {
+                font-size: clamp(1.3rem, 5vw, 1.8rem);
+            }
+
+            .hero-subtitle {
+                font-size: clamp(0.75rem, 3vw, 0.95rem);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content {
+                max-width: 94%;
+            }
+        }
+
+        /* Responsive hero image focal point */
+        .hero-empanelled img {
+            object-position: right center;
+        }
+
+        @media (max-width: 640px) {
+            .hero-empanelled img {
+                object-position: right top;
+            }
         }
         
         /* Enhanced responsive spacing */
@@ -488,6 +528,234 @@
                 perspective: 1000px;
             }
         }
+        /* Mobile breadcrumb wrapping without horizontal overflow */
+        @media (max-width: 640px) {
+            nav[aria-label="Breadcrumb"] a,
+            nav[aria-label="Breadcrumb"] span[aria-current="page"] {
+                white-space: normal !important;
+                overflow: visible !important;
+                text-overflow: clip !important;
+                max-width: none !important;
+            }
+        }
+    
+        /* =========================================================
+           MOBILE-ONLY HERO + BREADCRUMB RESPONSIVENESS
+           Desktop layout remains unchanged.
+        ========================================================= */
+        @media (max-width: 768px) {
+            .hero-desktop-fix {
+                margin-top: 64px !important;
+            }
+
+            .hero-empanelled {
+                height: clamp(250px, 62vw, 340px) !important;
+                min-height: 250px !important;
+                max-height: 340px !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                background-image: url('Images/Patient-Info/HeroImage1.webp');
+                background-size: cover;
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+
+            .hero-empanelled img {
+                display: none !important;
+            }
+
+            .hero-empanelled > .absolute.inset-0 {
+                background: linear-gradient(
+                    90deg,
+                    rgba(0, 0, 0, 0.72) 0%,
+                    rgba(0, 0, 0, 0.48) 58%,
+                    rgba(0, 0, 0, 0.18) 100%
+                ) !important;
+            }
+
+            .hero-content {
+                top: 50% !important;
+                left: 16px !important;
+                right: 16px !important;
+                width: auto !important;
+                max-width: none !important;
+                transform: translateY(-50%) !important;
+                padding: 0 !important;
+            }
+
+            .hero-title {
+                max-width: 100%;
+                margin-bottom: 8px !important;
+                font-size: clamp(1.55rem, 7vw, 2.1rem) !important;
+                line-height: 1.12 !important;
+                letter-spacing: -0.03em !important;
+                overflow-wrap: anywhere;
+            }
+
+            .hero-subtitle {
+                max-width: 92%;
+                font-size: clamp(0.82rem, 3.4vw, 1rem) !important;
+                line-height: 1.45 !important;
+                overflow-wrap: anywhere;
+            }
+
+            .hero-empanelled + .bg-white {
+                margin-top: 0 !important;
+            }
+
+            .hero-empanelled + .bg-white > div {
+                padding: 10px 14px !important;
+            }
+
+            nav[aria-label="Breadcrumb"] {
+                width: 100%;
+                overflow: visible !important;
+            }
+
+            nav[aria-label="Breadcrumb"] ol {
+                display: flex;
+                flex-wrap: wrap !important;
+                align-items: center;
+                gap: 4px 0;
+                width: 100%;
+                min-width: 0;
+            }
+
+            nav[aria-label="Breadcrumb"] li {
+                min-width: 0;
+            }
+
+            nav[aria-label="Breadcrumb"] a,
+            nav[aria-label="Breadcrumb"] span[aria-current="page"] {
+                white-space: normal !important;
+                max-width: 100% !important;
+                overflow: visible !important;
+                text-overflow: clip !important;
+                line-height: 1.35;
+                word-break: break-word;
+            }
+
+            nav[aria-label="Breadcrumb"] .hidden.sm\\:inline {
+                display: inline !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-empanelled {
+                height: clamp(235px, 68vw, 300px) !important;
+                min-height: 235px !important;
+                max-height: 300px !important;
+                background-position: center center;
+            }
+
+            .hero-content {
+                left: 14px !important;
+                right: 14px !important;
+            }
+
+            .hero-title {
+                font-size: clamp(1.42rem, 7.6vw, 1.85rem) !important;
+            }
+
+            .hero-subtitle {
+                max-width: 100%;
+                font-size: clamp(0.78rem, 3.8vw, 0.92rem) !important;
+            }
+
+            .hero-empanelled + .bg-white > div {
+                padding: 9px 12px !important;
+            }
+
+            nav[aria-label="Breadcrumb"] ol {
+                row-gap: 5px;
+            }
+
+            nav[aria-label="Breadcrumb"] a,
+            nav[aria-label="Breadcrumb"] span[aria-current="page"] {
+                font-size: 0.75rem !important;
+            }
+
+            nav[aria-label="Breadcrumb"] li.px-1.sm\\:px-2 {
+                padding-left: 4px !important;
+                padding-right: 4px !important;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .hero-empanelled {
+                height: 230px !important;
+                min-height: 230px !important;
+                max-height: 230px !important;
+            }
+
+            .hero-title {
+                font-size: 1.35rem !important;
+            }
+
+            .hero-subtitle {
+                font-size: 0.76rem !important;
+            }
+
+            nav[aria-label="Breadcrumb"] a,
+            nav[aria-label="Breadcrumb"] span[aria-current="page"] {
+                font-size: 0.7rem !important;
+            }
+        }
+
+        /* Homepage-style section heading typography and split-text reveal */
+        .homepage-section-heading {
+            font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+            font-size: clamp(31px, 2.1vw, 44px) !important;
+            font-weight: 750 !important;
+            color: #0d1b3d !important;
+            line-height: 1.12 !important;
+            letter-spacing: -0.045em !important;
+        }
+
+        .homepage-section-eyebrow {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 0.5rem !important;
+            font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+            font-size: 0.78rem !important;
+            font-weight: 600 !important;
+            letter-spacing: 0.08em !important;
+            text-transform: uppercase !important;
+            color: #b45309 !important;
+            background: #fffbeb !important;
+            border: 1px solid #fde68a !important;
+            padding: 0.35rem 1.1rem !important;
+            border-radius: 9999px !important;
+            margin-bottom: 0.9rem !important;
+            line-height: 1.3 !important;
+        }
+
+        .st-word {
+            display: inline-block;
+            will-change: transform, opacity;
+        }
+
+        .st-split.st-pending .st-word {
+            opacity: 0;
+            transform: translateY(25px) skewY(5deg);
+        }
+
+        .st-split.st-reveal .st-word {
+            opacity: 1;
+            transform: translateY(0) skewY(0deg);
+            transition:
+                opacity 0.45s ease-out,
+                transform 0.65s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition-delay: var(--st-delay, 0s);
+        }
+
+        @media (max-width: 640px) {
+            .st-split.st-pending .st-word {
+                transform: translateY(14px) skewY(3deg);
+            }
+        }
+
     </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-B7BXJEHXWK"></script>
 <script>
@@ -505,37 +773,51 @@ gtag('config', 'G-B7BXJEHXWK');
         <div class="scroll-progress-bar" id="scrollProgressBar"></div>
     </div>
 
-    <!-- Navbar Component placeholder -->
-    <div id="navbar-container" class="shadow-sm"></div>
+    <!-- Navbar Component -->
+    <div id="navbar-container"></div>
 
-   <!-- Page Header -->
-     <div class="relative w-full h-48 sm:h-64 md:h-80 lg:h-96 xl:h-[500px] overflow-hidden  group hero-desktop-fix">
-        <img src="Images/Patient-Info/HeroImage1.webp" alt="Empanelled Organizations" width="1920" height="1080"
-            class="w-full h-full object-cover transition-transform duration-700 lg:translate-y-4">
-        
-        <!-- Small Black Overlay Effect -->
-        <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/30 to-black/40 pointer-events-none"></div>
-        
-        <!-- Centered Text Content -->
-        <div class="absolute inset-0 z-10 flex items-center justify-center">
-            <div class="text-center px-4 sm:px-6 lg:px-8">
-                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-yellow-300 mb-2 sm:mb-3 drop-shadow-lg">
-                    Empanelled Organizations
-                </h1>
-                <p class="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 max-w-3xl mx-auto drop-shadow-md">
-                    Trusted partnerships with leading insurance providers and corporate organizations
-                </p>
-            </div>
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero-empanelled relative w-full overflow-hidden hero-desktop-fix" aria-labelledby="empHeroHeading">
+        <img src="Images/Patient-Info/HeroImage1.webp" width="1920" height="1080"
+             alt="Empanelled Organizations - Germanten Hospital"
+             class="absolute inset-0 w-full h-full object-cover">
+
+        <!-- Gradient Overlay for text readability -->
+        <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/10 pointer-events-none"></div>
+
+        <div class="hero-content">
+            <h1 id="empHeroHeading" class="hero-title">Empanelled Organizations</h1>
+            <p class="hero-subtitle">Trusted partnerships with leading insurance providers and corporate organizations</p>
         </div>
-    </div>
+    </section>
     
     <!-- Breadcrumb Section -->
-    <div class="bg-white border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-3 sm:py-4">
-            <nav class="flex flex-wrap text-xs sm:text-sm text-gray-700 items-center" aria-label="Breadcrumb">
-                <a href="/" class="hover:text-blue-600 transition-colors duration-200 whitespace-nowrap">PatientInfo</a>
-                <span class="mx-1 sm:mx-2 text-gray-400">»</span>
-                <span class="text-gray-900 font-semibold whitespace-nowrap">Empanelled Organizations</span>
+    <div class="bg-white border-b border-gray-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-3 md:py-4">
+            <nav class="flex items-center flex-wrap text-xs sm:text-sm" aria-label="Breadcrumb">
+                <ol class="flex items-center flex-wrap list-none m-0 p-0">
+                    <li class="flex items-center">
+                        <a href="/"
+                            class="inline-flex items-center text-gray-600 hover:text-blue-700 transition font-medium">
+                            <i class="fa-solid fa-home mr-1 text-[10px] sm:text-xs"></i>
+                            <span class="inline sm:inline">Home</span>
+                        </a>
+                    </li>
+                    <li class="flex items-center px-1 sm:px-2">
+                        <i class="fa-solid fa-chevron-right text-[8px] sm:text-[10px] text-gray-400"></i>
+                    </li>
+                    <li class="flex items-center">
+                        <a href="#"
+                            class="inline-flex items-center whitespace-nowrap text-gray-600 hover:text-blue-700 transition font-medium">Patient Info</a>
+                    </li>
+                    <li class="flex items-center px-1 sm:px-2">
+                        <i class="fa-solid fa-chevron-right text-[8px] sm:text-[10px] text-gray-400"></i>
+                    </li>
+                    <li class="flex items-center">
+                        <span class="inline-flex items-center whitespace-nowrap text-blue-700 font-semibold"
+                            aria-current="page">Empanelled Organizations</span>
+                    </li>
+                </ol>
             </nav>
         </div>
     </div>
@@ -544,14 +826,29 @@ gtag('config', 'G-B7BXJEHXWK');
 
     <!-- ===== MAIN CONTENT ===== -->
     <main class="w-full mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-8 md:py-12">
-        <!-- Logo Marquee Section -->
-        <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 lg:p-10 mb-12">
-            <div class="logo-grid">
-                <img src="Images/Patient-Info/logo1.jpeg" alt="Insurance Partner 1" class="logo-image" width="200" height="80" onerror="this.src='https://via.placeholder.com/200x80?text=Logo+1';">
-                <img src="Images/Patient-Info/logo2.webp" alt="Insurance Partner 2" class="logo-image" width="200" height="80" onerror="this.src='https://via.placeholder.com/200x80?text=Logo+2';">
-                <img src="Images/Patient-Info/logo3.jpeg" alt="Insurance Partner 3" class="logo-image" width="200" height="80" onerror="this.src='https://via.placeholder.com/200x80?text=Logo+3';">
-                <img src="Images/Patient-Info/logo4.webp" alt="Insurance Partner 4" class="logo-image" width="200" height="80" onerror="this.src='https://via.placeholder.com/200x80?text=Logo+4';">
-                <img src="Images/Patient-Info/logo5.webp" alt="Insurance Partner 5" class="logo-image" width="200" height="80" onerror="this.src='https://via.placeholder.com/200x80?text=Logo+5';">
+        <!-- Logo Cards Section -->
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-10">
+                <span class="homepage-section-eyebrow">Trusted Partners</span>
+                <h2 class="homepage-section-heading">Our Empanelled Organizations</h2>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+                <div class="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-red-200 flex items-center justify-center h-40 p-6">
+                    <img src="Images/Patient-Info/logo1.jpeg" alt="Insurance Partner 1" class="max-h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-110" width="200" height="80" onerror="this.src='https://via.placeholder.com/200x80?text=Logo+1';">
+                </div>
+                <div class="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-red-200 flex items-center justify-center h-40 p-6">
+                    <img src="Images/Patient-Info/logo2.webp" alt="Insurance Partner 2" class="max-h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-110" width="200" height="80" onerror="this.src='https://via.placeholder.com/200x80?text=Logo+2';">
+                </div>
+                <div class="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-red-200 flex items-center justify-center h-40 p-6">
+                    <img src="Images/Patient-Info/logo3.jpeg" alt="Insurance Partner 3" class="max-h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-110" width="200" height="80" onerror="this.src='https://via.placeholder.com/200x80?text=Logo+3';">
+                </div>
+                <div class="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-red-200 flex items-center justify-center h-40 p-6">
+                    <img src="Images/Patient-Info/logo4.webp" alt="Insurance Partner 4" class="max-h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-110" width="200" height="80" onerror="this.src='https://via.placeholder.com/200x80?text=Logo+4';">
+                </div>
+                <div class="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-red-200 flex items-center justify-center h-40 p-6 md:col-start-2 lg:col-start-auto">
+                    <img src="Images/Patient-Info/logo5.webp" alt="Insurance Partner 5" class="max-h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-110" width="200" height="80" onerror="this.src='https://via.placeholder.com/200x80?text=Logo+5';">
+                </div>
             </div>
         </div>
 
@@ -624,5 +921,64 @@ gtag('config', 'G-B7BXJEHXWK');
         });
     </script>
     <script src="js/script.js"></script>
+
+    <!-- Scroll-Triggered Split-Text Heading Reveal -->
+    <script>
+        (function () {
+            var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (reducedMotion || !('IntersectionObserver' in window)) return;
+            var isMobile = window.matchMedia('(max-width: 640px)').matches;
+            var STAGGER = isMobile ? 0.025 : 0.04;
+            var MAX_TOTAL = 0.35;
+            var headings = document.querySelectorAll('h1, h2, h3');
+            if (!headings.length) return;
+            function splitWords(el) {
+                var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null);
+                var textNodes = [];
+                while (walker.nextNode()) {
+                    if (walker.currentNode.nodeValue.trim() !== '') textNodes.push(walker.currentNode);
+                }
+                textNodes.forEach(function (node) {
+                    var frag = document.createDocumentFragment();
+                    var parts = node.nodeValue.split(/(\s+)/);
+                    parts.forEach(function (part) {
+                        if (part === '') return;
+                        if (/^\s+$/.test(part)) {
+                            frag.appendChild(document.createTextNode(' '));
+                        } else {
+                            var span = document.createElement('span');
+                            span.className = 'st-word';
+                            span.textContent = part;
+                            frag.appendChild(span);
+                        }
+                    });
+                    node.parentNode.replaceChild(frag, node);
+                });
+            }
+            headings.forEach(function (heading) {
+                splitWords(heading);
+                var words = heading.querySelectorAll('.st-word');
+                if (!words.length) return;
+                var step = Math.min(STAGGER, words.length > 1 ? MAX_TOTAL / (words.length - 1) : STAGGER);
+                words.forEach(function (word, i) {
+                    word.style.setProperty('--st-delay', (i * step).toFixed(3) + 's');
+                });
+                heading.classList.add('st-split', 'st-pending');
+            });
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('st-reveal');
+                    entry.target.classList.remove('st-pending');
+                    observer.unobserve(entry.target);
+                });
+            }, { threshold: 0.25, rootMargin: '0px 0px -5% 0px' });
+            document.querySelectorAll('.st-split').forEach(function (h) {
+                observer.observe(h);
+            });
+        })();
+    </script>
+
+    <floating-nav></floating-nav>
 </body>
 </html>
