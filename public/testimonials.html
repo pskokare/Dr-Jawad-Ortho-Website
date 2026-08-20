@@ -197,6 +197,171 @@
                 margin-top: 100px;
             }
         }
+
+        /* ===== In Motion (social reels) section ===== */
+        .in-motion-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            font-family: Inter, "Segoe UI", Arial, sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #6b7280;
+        }
+
+        .in-motion-eyebrow::before {
+            content: "";
+            width: 22px;
+            height: 2px;
+            background: #9ca3af;
+            display: inline-block;
+        }
+
+        .reel-card {
+            position: relative;
+            width: 100%;
+            max-width: 290px;
+            margin: 0 auto;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            background: #0f172a;
+            border: 1px solid rgba(15, 23, 42, 0.12);
+            box-shadow: 0 18px 40px -18px rgba(15, 23, 42, 0.35);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .reel-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 26px 55px -20px rgba(15, 23, 42, 0.45);
+        }
+
+        .reel-media {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 9.3 / 16;
+            background: #0f172a;
+            cursor: pointer;
+        }
+
+        .reel-media video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .reel-toggle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            border-radius: 9999px;
+            border: none;
+            background: rgba(255, 255, 255, 0.82);
+            color: #0f172a;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.25s ease, transform 0.25s ease, background 0.25s ease;
+            box-shadow: 0 8px 22px rgba(15, 23, 42, 0.35);
+        }
+
+        .reel-card:hover .reel-toggle,
+        .reel-card.is-paused .reel-toggle,
+        .reel-toggle:focus-visible {
+            opacity: 1;
+        }
+
+        .reel-toggle:hover {
+            background: #ffffff;
+            transform: translate(-50%, -50%) scale(1.06);
+        }
+
+        /* Caption + CTA overlay: always visible, not hover-only */
+        .reel-overlay {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 4.5rem 1.1rem 1.1rem;
+            background: linear-gradient(to top, rgba(8, 12, 24, 0.94) 0%, rgba(8, 12, 24, 0.6) 50%, rgba(8, 12, 24, 0) 100%);
+        }
+
+        .reel-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            font-family: Inter, "Segoe UI", Arial, sans-serif;
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 0.45rem;
+        }
+
+        .reel-label::before {
+            content: "";
+            width: 16px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.7);
+            display: inline-block;
+        }
+
+        .reel-overlay h3 {
+            font-family: Inter, "Segoe UI", Arial, sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.25;
+            margin-bottom: 0.2rem;
+        }
+
+        .reel-note {
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 0.9rem;
+        }
+
+        .reel-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            padding: 0.55rem 1.05rem;
+            border-radius: 9999px;
+            font-family: Inter, "Segoe UI", Arial, sans-serif;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #ffffff;
+            background: rgba(15, 23, 42, 0.78);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(4px);
+            transition: background 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+        }
+
+        .reel-cta:hover {
+            transform: translateY(-2px);
+            border-color: transparent;
+        }
+
+        .reel-cta.reel-cta-instagram:hover {
+            background: linear-gradient(90deg, #f09433 0%, #dc2743 50%, #bc1888 100%);
+        }
+
+        .reel-cta.reel-cta-youtube:hover {
+            background: #c4302b;
+        }
+
+        .reel-cta.reel-cta-facebook:hover {
+            background: #1877f2;
+        }
     </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-B7BXJEHXWK"></script>
 <script>
@@ -207,6 +372,39 @@ gtag('js', new Date());
 gtag('config', 'G-B7BXJEHXWK');
 </script>
 
+    <!-- Video Stories Marquee Styles -->
+    <style>
+        .marquee-wrapper {
+            overflow: hidden;
+            width: 100%;
+        }
+        .marquee-track {
+            display: flex;
+            gap: 1rem;
+            width: max-content;
+        }
+        .marquee-track > div {
+            flex: 0 0 auto;
+            width: 320px;
+        }
+        .marquee-ltr {
+            animation: scroll-ltr 40s linear infinite;
+        }
+        .marquee-rtl {
+            animation: scroll-rtl 40s linear infinite;
+        }
+        @keyframes scroll-ltr {
+            from { transform: translateX(-50%); }
+            to { transform: translateX(0); }
+        }
+        @keyframes scroll-rtl {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+        @media (max-width: 640px) {
+            .marquee-track > div { width: 260px; }
+        }
+    </style>
 </head>
 <body class="bg-gray-50">
     <!-- Scroll Progress Bar -->
@@ -266,13 +464,91 @@ gtag('config', 'G-B7BXJEHXWK');
     <main class="content-section section-padding">
         <div class="w-full px-3 sm:px-4 md:px-6 lg:px-8 max-w-7xl mx-auto">
             <!-- JotForm Testimonials Widget -->
-            <div class="w-full max-w-6xl mx-auto mb-10 sm:mb-12 md:mb-16 px-2 sm:px-4">
-                <div id="JFWebsiteWidget-019f6a6984c070008dac67d94c0bd23737d0" class="w-full" style="max-height: 500px; overflow: hidden;"></div>
+            <div class="w-full mb-10 sm:mb-12 md:mb-16" style="zoom: 0.8;">
+                <div id="JFWebsiteWidget-019f6a6984c070008dac67d94c0bd23737d0" class="w-full" style="max-height: 650px; overflow: hidden;"></div>
                 <script src="https://www.jotform.com/website-widgets/embed/019f6a6984c070008dac67d94c0bd23737d0"></script>
             </div>
 
+            <!-- In Motion - Social Reels Section -->
+            <section class="mb-10 sm:mb-12 md:mb-16" aria-labelledby="in-motion-heading">
+                <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-6 sm:mb-8">
+                    <div>
+                        <span class="in-motion-eyebrow">In Motion</span>
+                        <h2 id="in-motion-heading" class="homepage-section-heading mt-3">Real recoveries, real patients
+                        </h2>
+                    </div>
+                    <p class="text-gray-500 text-sm sm:text-base max-w-md lg:text-right">
+                        Short-form stories from the clinic — patient journeys, procedure insights and recovery diaries.
+                    </p>
+                </div>
+
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 max-w-4xl mx-auto px-4 sm:px-8">
+
+                    <!-- Reel 1 - Instagram -->
+                    <article class="reel-card">
+                        <div class="reel-media" data-reel>
+                            <video src="Images/Testimonials/instagram-record.mp4" muted loop playsinline preload="metadata"
+                                aria-label="Instagram patient recovery reel"></video>
+                            <button type="button" class="reel-toggle" aria-label="Pause video">
+                                <i class="fa-solid fa-pause" aria-hidden="true"></i>
+                            </button>
+                            <div class="reel-overlay">
+                                <span class="reel-label">Patient Story</span>
+                                <h3>From wheelchair to walkway</h3>
+                                <p class="reel-note">Video coming soon</p>
+                                <a href="https://www.instagram.com/drmirjawadzkhan" target="_blank" rel="noopener noreferrer"
+                                    class="reel-cta reel-cta-instagram">
+                                    <i class="fa-brands fa-instagram" aria-hidden="true"></i> Watch on Instagram
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Reel 2 - YouTube -->
+                    <article class="reel-card">
+                        <div class="reel-media" data-reel>
+                            <video src="Images/Testimonials/youtube-vedio.mp4" muted loop playsinline preload="metadata"
+                                aria-label="YouTube treatment explainer reel"></video>
+                            <button type="button" class="reel-toggle" aria-label="Pause video">
+                                <i class="fa-solid fa-pause" aria-hidden="true"></i>
+                            </button>
+                            <div class="reel-overlay">
+                                <span class="reel-label">Treatment</span>
+                                <h3>Understanding your treatment</h3>
+                                <p class="reel-note">Video coming soon</p>
+                                <a href="https://www.youtube.com/c/DrMirJawadZarKhan" target="_blank"
+                                    rel="noopener noreferrer" class="reel-cta reel-cta-youtube">
+                                    <i class="fa-brands fa-youtube" aria-hidden="true"></i> Watch on YouTube
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Reel 3 - Facebook -->
+                    <article class="reel-card">
+                        <div class="reel-media" data-reel>
+                            <video src="Images/Testimonials/facebook-vedio.mp4" muted loop playsinline preload="metadata"
+                                aria-label="Facebook patient story reel"></video>
+                            <button type="button" class="reel-toggle" aria-label="Pause video">
+                                <i class="fa-solid fa-pause" aria-hidden="true"></i>
+                            </button>
+                            <div class="reel-overlay">
+                                <span class="reel-label">Recovery</span>
+                                <h3>Week one after knee replacement</h3>
+                                <p class="reel-note">Video coming soon</p>
+                                <a href="https://www.facebook.com/drjawadortho/" target="_blank"
+                                    rel="noopener noreferrer" class="reel-cta reel-cta-facebook">
+                                    <i class="fa-brands fa-facebook" aria-hidden="true"></i> Watch on Facebook
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
             <!-- Video Testimonials Section -->
-            <div class="mb-10 sm:mb-12 md:mb-16">
+            <div id="video-stories" class="mb-10 sm:mb-12 md:mb-16">
                 <div class="text-center mb-8 sm:mb-10 md:mb-12">
                     <span class="homepage-section-eyebrow">Video Stories</span>
                     <h2 class="homepage-section-heading">Patient Video Stories</h2>
@@ -570,6 +846,65 @@ gtag('config', 'G-B7BXJEHXWK');
     <!-- Footer Component -->
     <div id="footer-container"></div>
 
+    <!-- In Motion reels: autoplay looping, click to pause/resume -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('[data-reel]').forEach(function (reel) {
+                const video = reel.querySelector('video');
+                const toggle = reel.querySelector('.reel-toggle');
+                const icon = toggle.querySelector('i');
+                const card = reel.closest('.reel-card');
+
+                function setState(paused) {
+                    card.classList.toggle('is-paused', paused);
+                    icon.classList.toggle('fa-play', paused);
+                    icon.classList.toggle('fa-pause', !paused);
+                    toggle.setAttribute('aria-label', paused ? 'Play video' : 'Pause video');
+                }
+
+                // Clicking the reel stops the loop; clicking again resumes it
+                function togglePlayback(event) {
+                    event.stopPropagation();
+                    if (video.paused) {
+                        delete card.dataset.userPaused;
+                        video.play().catch(function () { });
+                    } else {
+                        card.dataset.userPaused = 'true';
+                        video.pause();
+                    }
+                }
+
+                video.addEventListener('play', function () { setState(false); });
+                video.addEventListener('pause', function () { setState(true); });
+
+                reel.addEventListener('click', togglePlayback);
+                toggle.addEventListener('click', togglePlayback);
+
+                // Social link inside the overlay must not toggle playback
+                const cta = reel.querySelector('.reel-cta');
+                if (cta) {
+                    cta.addEventListener('click', function (event) { event.stopPropagation(); });
+                }
+
+                // Loop infinitely while the reel is on screen, unless the user paused it
+                if ('IntersectionObserver' in window) {
+                    const observer = new IntersectionObserver(function (entries) {
+                        entries.forEach(function (entry) {
+                            if (entry.isIntersecting && !card.dataset.userPaused) {
+                                video.play().catch(function () { });
+                            } else if (!entry.isIntersecting && !video.paused) {
+                                video.pause();
+                            }
+                        });
+                    }, { threshold: 0.35 });
+                    observer.observe(reel);
+                } else {
+                    video.play().catch(function () { });
+                }
+            });
+        });
+    </script>
+
     <!-- Scroll Progress Bar JavaScript -->
     <script>
         // Scroll Progress Bar Functionality
@@ -716,5 +1051,43 @@ gtag('config', 'G-B7BXJEHXWK');
         })();
     </script>
     <floating-nav></floating-nav>
+    <!-- Patient Video Stories Marquee -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const section = document.getElementById('video-stories');
+            if (!section) return;
+
+            const grids = section.querySelectorAll('.video-grid');
+            const cards = [];
+            grids.forEach(function (grid) {
+                grid.querySelectorAll(':scope > div').forEach(function (card) {
+                    cards.push(card);
+                });
+            });
+            if (cards.length < 9) return;
+
+            const firstHalf = cards.slice(0, 9);
+            const secondHalf = cards.slice(9, 18);
+
+            function buildMarquee(items, reverse) {
+                const track = document.createElement('div');
+                track.className = 'marquee-track' + (reverse ? ' marquee-rtl' : ' marquee-ltr');
+                items.forEach(function (card) {
+                    track.appendChild(card);
+                });
+                items.forEach(function (card) {
+                    track.appendChild(card.cloneNode(true));
+                });
+                const wrapper = document.createElement('div');
+                wrapper.className = 'marquee-wrapper mb-6 sm:mb-8';
+                wrapper.appendChild(track);
+                return wrapper;
+            }
+
+            grids.forEach(function (grid) { grid.remove(); });
+            section.appendChild(buildMarquee(firstHalf, false)); // left-to-right
+            section.appendChild(buildMarquee(secondHalf, true));  // right-to-left
+        });
+    </script>
 </body>
 </html>

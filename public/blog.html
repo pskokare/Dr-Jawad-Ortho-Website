@@ -40,23 +40,6 @@
       pointer-events: none;
     }
 
-    /* Parallax Background Styles */
-    .parallax-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('Images/Blog/HeaderCommon.jpg');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-      z-index: -1;
-      opacity: 0.15;
-      filter: blur(1px);
-    }
-
     /* Enhanced Body Styles */
     body {
       position: relative;
@@ -242,10 +225,6 @@
 
     /* Responsive Enhancements */
     @media (max-width: 768px) {
-      .parallax-bg {
-        background-attachment: scroll;
-      }
-
       .blog-card:hover {
         transform: translateY(-4px) scale(1.01);
       }
@@ -255,6 +234,58 @@
       .hero-section {
         margin-top: 100px;
       }
+    }
+
+    /* Hero-style buttons for blog cards */
+    .hero-btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.65rem 1.45rem;
+      border-radius: 0;
+      border: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-decoration: none;
+      background: linear-gradient(135deg, #cf3339 0%, #b91c1c 100%);
+      color: #fff;
+      overflow: hidden;
+      z-index: 1;
+      transition: color 0.35s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 15px rgba(185, 28, 28, 0.3);
+    }
+
+    .hero-btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      border-radius: inherit;
+      background: linear-gradient(135deg, #f6ad00 0%, #fbbf24 100%);
+      transform: translateX(-101%);
+      transition: transform 0.45s ease;
+    }
+
+    .hero-btn:hover::before {
+      transform: translateX(0);
+    }
+
+    .hero-btn:hover {
+      color: #401f00;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(202, 138, 4, 0.35);
+    }
+
+    @media (max-width: 480px) {
+      .hero-btn {
+        padding: 0.55rem 1.1rem;
+        font-size: 0.78rem;
+      }
+    }
+
+    h1, h2, h3, h4 {
+      font-family: Georgia, "Times New Roman", serif !important;
     }
   </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-B7BXJEHXWK"></script>
@@ -269,8 +300,6 @@
 </head>
 
 <body class="bg-gray-50">
-  <!-- Parallax Background -->
-  <div class="parallax-bg"></div>
   <!-- Scroll Progress Bar -->
   <div class="scroll-progress" id="scrollProgress">
     <div class="scroll-progress-bar" id="scrollProgressBar"></div>
@@ -278,11 +307,11 @@
 
   <!-- Navbar Component -->
   <div id="navbar-container"></div>
-
+  
   <!-- Hero Section -->
   <section class="hero-section relative">
     <div
-      class="hero-content w-full h-64 sm:h-80 md:h-96 lg:h-[450px] xl:h-[520px] 2xl:h-[600px] overflow-hidden relative">
+      class="hero-content w-full h-64 sm:h-80 md:h-96 lg:h-[380px] xl:h-[440px] 2xl:h-[500px] overflow-hidden relative">
       <img src="Images/Blog/blog-banner1.webp" alt="Blog"
         class="w-full h-full object-cover object-center scale-100 lg:scale-105 transition-transform duration-300">
       <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60"></div>
@@ -290,7 +319,7 @@
         <div class="text-center px-4">
           <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">Blog</h1>
           <p class="text-lg sm:text-xl text-gray-200 max-w-3xl mx-auto">Stay updated with latest medical insights and
-            health tips from Germanten Hospitals</p>
+            health tips from Dr. Jawad Hospitals</p>
         </div>
       </div>
 
@@ -317,6 +346,198 @@
       </div>
       <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
+        <div
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          <a href="blogs/avascular-necrosis-hip-young-adults-india" class="block relative">
+            <div class="absolute top-0 left-0 z-10">
+              <div
+                class="bg-red-500 text-white px-2 py-1 rounded-tr-lg rounded-bl-lg text-center shadow-md flex items-center gap-1">
+                <span class="text-sm font-bold">20</span>
+                <span class="text-[10px] font-semibold">Aug</span>
+              </div>
+            </div>
+            <img src="Images/Blog/avascular-necrosis-hip-young-adults-india.webp"
+              alt="Avascular Necrosis of the Hip: Causes and Signs in Young Adults"
+              class="w-full h-48 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
+            <h4
+              class="text-gray-900 mb-2 line-clamp-2 text-sm font-semibold hover:text-red-600 transition-colors duration-200">
+              Avascular Necrosis of the Hip: Causes and Signs in Young Adults
+            </h4>
+          </a>
+          <a href="blogs/avascular-necrosis-hip-young-adults-india"
+            class="hero-btn mt-3">
+            Read More »
+          </a>
+        </div>
+
+        <div
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          <a href="blogs/osteoporosis-women-after-40-hyderabad" class="block relative">
+            <div class="absolute top-0 left-0 z-10">
+              <div
+                class="bg-red-500 text-white px-2 py-1 rounded-tr-lg rounded-bl-lg text-center shadow-md flex items-center gap-1">
+                <span class="text-sm font-bold">18</span>
+                <span class="text-[10px] font-semibold">Aug</span>
+              </div>
+            </div>
+            <img src="Images/Blog/osteoporosis-women-after-40-hyderabad.webp"
+              alt="Osteoporosis in Women After 40: Signs and Prevention"
+              class="w-full h-48 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
+            <h4
+              class="text-gray-900 mb-2 line-clamp-2 text-sm font-semibold hover:text-red-600 transition-colors duration-200">
+              Osteoporosis in Women After 40: Signs and Prevention
+            </h4>
+          </a>
+          <a href="blogs/osteoporosis-women-after-40-hyderabad"
+            class="hero-btn mt-3">
+            Read More »
+          </a>
+        </div>
+
+        <div
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          <a href="blogs/hip-replacement-cost-hyderabad" class="block relative">
+            <div class="absolute top-0 left-0 z-10">
+              <div
+                class="bg-red-500 text-white px-2 py-1 rounded-tr-lg rounded-bl-lg text-center shadow-md flex items-center gap-1">
+                <span class="text-sm font-bold">14</span>
+                <span class="text-[10px] font-semibold">Aug</span>
+              </div>
+            </div>
+            <img src="Images/Blog/hip-replacement-cost-hyderabad.webp"
+              alt="Hip Replacement Cost in Hyderabad: What Affects the Price"
+              class="w-full h-48 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
+            <h4
+              class="text-gray-900 mb-2 line-clamp-2 text-sm font-semibold hover:text-red-600 transition-colors duration-200">
+              Hip Replacement Cost in Hyderabad: What Affects the Price
+            </h4>
+          </a>
+          <a href="blogs/hip-replacement-cost-hyderabad"
+            class="hero-btn mt-3">
+            Read More »
+          </a>
+        </div>
+
+        <div
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          <a href="blogs/sciatica-vs-slip-disc-back-leg-pain" class="block relative">
+            <div class="absolute top-0 left-0 z-10">
+              <div
+                class="bg-red-500 text-white px-2 py-1 rounded-tr-lg rounded-bl-lg text-center shadow-md flex items-center gap-1">
+                <span class="text-sm font-bold">11</span>
+                <span class="text-[10px] font-semibold">Aug</span>
+              </div>
+            </div>
+            <img src="Images/Blog/sciatica-vs-slip-disc-back-leg-pain.webp"
+              alt="Sciatica or Slip Disc? How to Tell What Is Really Causing Your Back and Leg Pain"
+              class="w-full h-48 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
+            <h4
+              class="text-gray-900 mb-2 line-clamp-2 text-sm font-semibold hover:text-red-600 transition-colors duration-200">
+              Sciatica or Slip Disc? How to Tell What Is Really Causing Your Back and Leg Pain
+            </h4>
+          </a>
+          <a href="blogs/sciatica-vs-slip-disc-back-leg-pain"
+            class="hero-btn mt-3">
+            Read More »
+          </a>
+        </div>
+
+        <div
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          <a href="blogs/desk-job-back-pain-it-professionals-hyderabad" class="block relative">
+            <div class="absolute top-0 left-0 z-10">
+              <div
+                class="bg-red-500 text-white px-2 py-1 rounded-tr-lg rounded-bl-lg text-center shadow-md flex items-center gap-1">
+                <span class="text-sm font-bold">06</span>
+                <span class="text-[10px] font-semibold">Aug</span>
+              </div>
+            </div>
+            <img src="Images/Blog/desk-job-back-pain-it-professionals-hyderabad.webp"
+              alt="Desk Job Back Pain: Why Hyderabad's IT Professionals Are Seeing an Orthopedic Surgeon Younger Than Ever"
+              class="w-full h-48 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
+            <h4
+              class="text-gray-900 mb-2 line-clamp-2 text-sm font-semibold hover:text-red-600 transition-colors duration-200">
+              Desk Job Back Pain: Why Hyderabad's IT Professionals Are Seeing an Orthopedic Surgeon Younger Than Ever
+            </h4>
+          </a>
+          <a href="blogs/desk-job-back-pain-it-professionals-hyderabad"
+            class="hero-btn mt-3">
+            Read More »
+          </a>
+        </div>
+
+        <div
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          <a href="blogs/joint-pain-during-monsoon-hyderabad" class="block relative">
+            <div class="absolute top-0 left-0 z-10">
+              <div
+                class="bg-red-500 text-white px-2 py-1 rounded-tr-lg rounded-bl-lg text-center shadow-md flex items-center gap-1">
+                <span class="text-sm font-bold">04</span>
+                <span class="text-[10px] font-semibold">Aug</span>
+              </div>
+            </div>
+            <img src="Images/Blog/joint-pain-during-monsoon-hyderabad.webp"
+              alt="Joint Pain in Monsoon: Causes and Relief Tips in Hyderabad"
+              class="w-full h-48 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
+            <h4
+              class="text-gray-900 mb-2 line-clamp-2 text-sm font-semibold hover:text-red-600 transition-colors duration-200">
+              Joint Pain in Monsoon: Causes and Relief Tips in Hyderabad
+            </h4>
+          </a>
+          <a href="blogs/joint-pain-during-monsoon-hyderabad"
+            class="hero-btn mt-3">
+            Read More »
+          </a>
+        </div>
+
+<div
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          <a href="blogs/choose-joint-replacement-hospital-surgeon-hyderabad" class="block relative">
+            <div class="absolute top-0 left-0 z-10">
+              <div
+                class="bg-red-500 text-white px-2 py-1 rounded-tr-lg rounded-bl-lg text-center shadow-md flex items-center gap-1">
+                <span class="text-sm font-bold">01</span>
+                <span class="text-[10px] font-semibold">Aug</span>
+              </div>
+            </div>
+            <img src="Images/Blog/choose-joint-replacement-hospital-surgeon-hyderabad.webp"
+              alt="How to Choose the Right Joint Replacement Hospital and Surgeon in Hyderabad"
+              class="w-full h-48 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
+            <h4
+              class="text-gray-900 mb-2 line-clamp-2 text-sm font-semibold hover:text-red-600 transition-colors duration-200">
+              How to Choose the Right Joint Replacement Hospital and Surgeon in Hyderabad
+            </h4>
+          </a>
+          <a href="blogs/choose-joint-replacement-hospital-surgeon-hyderabad"
+            class="hero-btn mt-3">
+            Read More »
+          </a>
+        </div>
+
+<div
+          class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+          <a href="blogs/younger-patients-knee-replacement" class="block relative">
+            <div class="absolute top-0 left-0 z-10">
+              <div
+                class="bg-red-500 text-white px-2 py-1 rounded-tr-lg rounded-bl-lg text-center shadow-md flex items-center gap-1">
+                <span class="text-sm font-bold">01</span>
+                <span class="text-[10px] font-semibold">Aug</span>
+              </div>
+            </div>
+            <img src="Images/Blog/younger-patients-knee-replacement.webp"
+              alt="Why Are Younger Patients Getting Knee Replacements? What Has Changed"
+              class="w-full h-48 object-cover rounded-lg mb-3 hover:opacity-90 transition-opacity duration-200">
+            <h4
+              class="text-gray-900 mb-2 line-clamp-2 text-sm font-semibold hover:text-red-600 transition-colors duration-200">
+              Why Are Younger Patients Getting Knee Replacements? What Has Changed
+            </h4>
+          </a>
+          <a href="blogs/younger-patients-knee-replacement"
+            class="hero-btn mt-3">
+            Read More »
+          </a>
+        </div>
+
 <div
           class="blog-card bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <a href="blogs/robotic-vs-traditional-knee-replacement" class="block relative">
@@ -336,7 +557,7 @@
             </h4>
           </a>
           <a href="blogs/robotic-vs-traditional-knee-replacement"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -360,7 +581,7 @@
               Knee Pain After 50: Causes, Warning Signs and When to See a Knee Pain Specialist in Hyderabad</h4>
           </a>
           <a href="blogs/knee-pain-after-50"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -384,7 +605,7 @@
             </h4>
           </a>
           <a href="blogs/partial-vs-total-knee-replacement"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -410,7 +631,7 @@
               Knee Pain Arthritis or Injury: How to Tell the Difference</h4>
           </a>
           <a href="blogs/knee-pain-arthritis-or-injury"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -434,7 +655,7 @@
               Knee Pain While Walking: Causes, Warning Signs and Treatment Options</h4>
           </a>
           <a href="blogs/knee-pain-while-walking-causes-treatment"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -457,7 +678,7 @@
               What Is Frozen Shoulder Syndrome? Symptoms, Causes, Stages and Treatment Options</h4>
           </a>
           <a href="/what-is-frozen-shoulder-syndrome"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -480,7 +701,7 @@
               Best Shoulder Arthroscopic Doctor in Hyderabad</h4>
           </a>
           <a href="/blogs/top-shoulder-arthroscopic-doctor-in-hyderabad"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -504,7 +725,7 @@
               Knee Replacement in Hyderabad: Cost, Recovery, and What to Expect</h4>
           </a>
           <a href="/blogs/knee-replacement-in-hyderabad-cost-recovery-and-what-to-expect"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -527,7 +748,7 @@
               When to Consult a Foot and Ankle Surgeon in Hyderabad</h4>
           </a>
           <a href="/blogs/when-to-consult-foot-and-ankle-surgeon-hyderabad"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -550,7 +771,7 @@
               Hip Replacement Doctor in Hyderabad: When Should You Consult a Specialist?</h4>
           </a>
           <a href="/blogs/hip-replacement-doctor-in-hyderabad"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -573,7 +794,7 @@
               Understanding ESWT Therapy for Chronic Joint Pain in Hyderabad</h4>
           </a>
           <a href="/blogs/understanding-eswt-therapy-chronic-joint-pain-hyderabad"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -596,7 +817,7 @@
               Arthroscopy for Sports Injuries: Fastest Recovery in Hyderabad</h4>
           </a>
           <a href="/blogs/arthroscopy-sports-injuries-fastest-recovery-hyderabad"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -621,7 +842,7 @@
               Life After Hip Replacement: Complete Recovery Timeline and Essential Exercises</h4>
           </a>
           <a href="/blogs/hip-replacement-recovery-timeline-exercises-hyderabad"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -644,7 +865,7 @@
               Choose the Right Joint Replacement Surgeon in Hyderabad</h4>
           </a>
           <a href="/blogs/choose-right-joint-replacement-surgeon-hyderabad"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -667,7 +888,7 @@
               Orthopedic Specialist in Hyderabad: Warning Signs You Should Not Ignore</h4>
           </a>
           <a href="/blogs/orthopedic-specialist-hyderabad-warning-signs"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -684,7 +905,7 @@
               Arthroscopy Help You Return to Sports Faster?</h4>
           </a>
           <a href="/acl-tear-treatment"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -700,7 +921,7 @@
               Cost, Recovery, and What to Expect</h4>
           </a>
           <a href="/knee-replacement-hyderabad"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -716,7 +937,7 @@
               Hyderabad for Knee, Back & Shoulder Pain</h4>
           </a>
           <a href="/best-orthopedic-doctor-hyderabad"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -732,7 +953,7 @@
               Future of Non-Surgical Cartilage Repair</h4>
           </a>
           <a href="/chondrofiller-injection-the-future-of-non-surgical-cartilage-repair"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -748,7 +969,7 @@
               Pain: What You Need to Know</h4>
           </a>
           <a href="/stem-cell-therapy-for-joint-pain-what-you-need-to-know"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -764,7 +985,7 @@
               Health</h4>
           </a>
           <a href="/nutrition-for-bone-and-joint-health"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -780,7 +1001,7 @@
               Breakthrough for Knee Osteoarthritis</h4>
           </a>
           <a href="/genicular-artery-embolisation-a-breakthrough-for-knee-osteoarthritis"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -796,7 +1017,7 @@
               Work?</h4>
           </a>
           <a href="/prp-therapy-for-joint-pain-does-it-really-work"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -812,7 +1033,7 @@
               Hyderabad</h4>
           </a>
           <a href="/minimally-invasive-orthopedic-procedures-in-hyderabad"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -828,7 +1049,7 @@
               tears, rotator cuff</h4>
           </a>
           <a href="/sports-injury-treatment-in-hyderabad-acl-tears-rotator-cuff"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -844,7 +1065,7 @@
               Complete Guide</h4>
           </a>
           <a href="/robotic-knee-replacement-in-hyderabad-a-complete-guide"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -860,7 +1081,7 @@
               Hyderabad</h4>
           </a>
           <a href="/non-surgical-knee-pain-treatment-in-hyderabad"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -876,7 +1097,7 @@
             </h4>
           </a>
           <a href="/how-much-does-acl-surgery-cost-in-india"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -892,7 +1113,7 @@
               Tear?</h4>
           </a>
           <a href="/arthroscopic-acl-surgery"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -908,7 +1129,7 @@
               Knee Replacement: What's the Difference?</h4>
           </a>
           <a href="/robotic-knee-replacement-vs-traditional-knee-replacement-whats-the-difference"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -924,7 +1145,7 @@
               Finding the Best Care</h4>
           </a>
           <a href="/top-orthopedic-specialist-hyderabad"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -940,7 +1161,7 @@
               at Every Stage of Recovery</h4>
           </a>
           <a href="/hip-replacement-healing-time"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -956,7 +1177,7 @@
               Nutrients for Stronger Bones</h4>
           </a>
           <a href="/bone-health-and-nutrition-essential-nutrients-for-stronger-bones"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -972,7 +1193,7 @@
               Replacement Surgery</h4>
           </a>
           <a href="/top-5-mistakes-to-avoid-after-knee-replacement-surgery"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -988,7 +1209,7 @@
             </h4>
           </a>
           <a href="/knee-replacement-major-operation"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -1004,7 +1225,7 @@
               rate in India?</h4>
           </a>
           <a href="/what-is-the-knee-replacement-surgery-success-rate-in-india"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -1020,7 +1241,7 @@
               Recovery</h4>
           </a>
           <a href="/knee-arthroscopy-procedure-preparation-and-recovery"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -1036,7 +1257,7 @@
               by German Precision</h4>
           </a>
           <a href="/effective-robotic-joint-replacement-backed-by-german-precision"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -1052,7 +1273,7 @@
               Germanten Hospital Hyderabad</h4>
           </a>
           <a href="/mr-abdul-ali-patient-story"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -1068,7 +1289,7 @@
               Surgery</h4>
           </a>
           <a href="/knee-replacement-surgery-patient-story"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -1084,7 +1305,7 @@
               Hyderabad</h4>
           </a>
           <a href="/happy-patients-story-germanten-hospital"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -1100,7 +1321,7 @@
               Replacement Testimonial</h4>
           </a>
           <a href="/happy-patient-mr-anil-ahuja-total-knee-replacement-testimonial"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -1116,7 +1337,7 @@
               System Right Now</h4>
           </a>
           <a href="/immune-system-supplements"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -1132,7 +1353,7 @@
               HYDERABAD</h4>
           </a>
           <a href="/eswt-treatment-at-germanten-hospital-hyderabad"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -1148,7 +1369,7 @@
               Germanten Hospital By Mrs. Shravani G</h4>
           </a>
           <a href="/leg-bone-fracture-treatment-experience-at-germanten-hospital-by-mrs-shravani-g"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -1164,7 +1385,7 @@
               Surgery By Dr Mir Jawad Zar Khan</h4>
           </a>
           <a href="/patients-testimonials-after-successful-acl-surgery-by-dr-mir-jawad-zar-khan"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -1179,7 +1400,7 @@
               total-knee-replacement-success-story</h4>
           </a>
           <a href="/total-knee-replacement-success-story"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -1196,7 +1417,7 @@
               Hyderabad offers Best treatment for Dance Injuries</h4>
           </a>
           <a href="/dancer-injuries-germanten-hospital-hyderabad-offers-best-treatment-for-dance-injuries"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -1211,7 +1432,7 @@
               Tennis Elbow, causes, and Treatments</h4>
           </a>
           <a href="/tennis-elbow-causes-treatments"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -1226,7 +1447,7 @@
               Heel Pain -Causes and Treatments</h4>
           </a>
           <a href="/heel-pain-causes-treatments"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -1239,7 +1460,7 @@
             <h4 class="text-gray-900 mb-2 line-clamp-2 text-sm font-semibold hover:text-red-600 transition-colors duration-200">Best Orthopedic Hospital in Hyderabad</h4>
           </a>
           <a href="/best-orthopedic-hospital-in-hyderabad"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -1251,7 +1472,7 @@
             <h4 class="text-gray-900 mb-2 line-clamp-2 text-sm font-semibold hover:text-red-600 transition-colors duration-200">Best Orthopedic Surgeon in Hyderabad</h4>
           </a>
           <a href="/best-orthopedic-surgeon-in-hyderabad"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -1263,7 +1484,7 @@
             <h4 class="text-gray-900 mb-2 line-clamp-2 text-sm font-semibold hover:text-red-600 transition-colors duration-200">Hip Replacement Healing Time: What to Expect at Every Stage of Recovery</h4>
           </a>
           <a href="/hip-replacement-healing-time-what-to-expect-at-every-stage-of-recovery"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div> 
@@ -1276,7 +1497,7 @@
             <h4 class="text-gray-900 mb-2 line-clamp-2 text-sm font-semibold hover:text-red-600 transition-colors duration-200">Is Arthroscopic Surgery Right for Your ACL Tear?</h4>
           </a>
           <a href="/is-arthroscopic-surgery-right-for-your-acl-tear"
-            class="text-red-600 hover:text-red-800 text-xs font-semibold inline-flex items-center transition-colors duration-200 border border-red-300 px-2 py-1 rounded">
+            class="hero-btn mt-3">
             Read More »
           </a>
         </div>
@@ -1691,6 +1912,9 @@
       }
     };
   </script>
+
+  <!-- Floating Navigation Menu -->
+  <floating-nav></floating-nav>
 </body>
 
 </html>

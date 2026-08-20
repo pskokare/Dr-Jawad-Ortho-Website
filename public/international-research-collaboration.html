@@ -424,6 +424,8 @@
             min-height: 470px;
             margin: 0 auto;
             overflow: hidden;
+            display: flex;
+            align-items: center;
         }
 
         .rc-hero__content {
@@ -431,7 +433,7 @@
             z-index: 6;
             width: 48%;
             max-width: 600px;
-            padding: 60px 25px 135px clamp(28px, 7vw, 115px);
+            padding: 0 25px 0 clamp(20px, 4vw, 60px);
         }
 
         .rc-hero__eyebrow {
@@ -451,13 +453,15 @@
         }
 
         .rc-hero__title {
-            max-width: 500px;
+            max-width: none;
             margin: 0;
-            color: var(--rc-navy);
+            color: var(--rc-red);
+            font-family: Georgia, "Times New Roman", serif;
             font-size: clamp(10px, 2.1vw, 48px);
-            font-weight: 700;
-            line-height: 1.08;
-            letter-spacing: -0.025em;
+            font-weight: 600;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            white-space: nowrap;
         }
 
         .rc-hero__title-line {
@@ -1060,6 +1064,11 @@
                 padding: 40px 32px 28px;
             }
 
+            .rc-hero__title {
+                white-space: normal !important;
+                font-size: clamp(24px, 4.4vw, 34px) !important;
+            }
+
             .rc-hero__image-shell {
                 position: relative;
                 top: auto;
@@ -1178,25 +1187,40 @@
 
         /* Match heading font and sizes to the home page */
         .rc-hero__title {
-            font-family: Inter, "Segoe UI", Arial, sans-serif !important;
-            font-size: clamp(32px, 3.4vw, 48px) !important;
-            font-weight: 750 !important;
-            color: #200000 !important;
+            font-family: Georgia, "Times New Roman", serif !important;
+            font-size: clamp(20px, 2.3vw, 37px) !important;
+            font-weight: 600 !important;
+            color: var(--rc-red) !important;
+        }
+
+        @media (min-width: 1051px) {
+            .rc-hero__title {
+                white-space: nowrap !important;
+            }
+
+            .rc-title-break {
+                display: none;
+            }
         }
 
         .research-profile-name,
         .germ-collab-title,
         #german-doctors h2 {
-            font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+            font-family: Georgia, "Times New Roman", serif !important;
             font-size: clamp(31px, 2.1vw, 44px) !important;
-            font-weight: 750 !important;
+            font-weight: 600 !important;
         }
 
         .germ-timeline-card h3,
         #german-doctors h3 {
-            font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+            font-family: Georgia, "Times New Roman", serif !important;
             font-size: 16px !important;
-            font-weight: 700 !important;
+            font-weight: 600 !important;
+        }
+
+        #modalDoctorName {
+            font-family: Georgia, "Times New Roman", serif !important;
+            font-weight: 600 !important;
         }
 
         /* Home-page eyebrow label style */
@@ -1272,7 +1296,7 @@
         <div class="rc-hero__inner">
             <div class="rc-hero__content">
                 <h1 id="researchCollaborationTitle" class="rc-hero__title hero-enter hero-enter-delay-1">International
-                    Research Collaboration</h1>
+                    Research<br class="rc-title-break"> Collaboration</h1>
                 <div class="rc-hero__title-line hero-enter hero-enter-delay-2" aria-hidden="true"></div>
                 <p class="rc-hero__description hero-enter hero-enter-delay-2">Uniting global orthopedic expertise with
                     advanced care and research innovation for better patient outcomes.</p>
@@ -1333,12 +1357,35 @@
             statistics</p>
     </section>
 
-    <div class="rc-breadcrumb">
-        <nav class="rc-breadcrumb__inner" aria-label="Breadcrumb">
-            <a href="/" class="rc-breadcrumb__link"><i class="fa-solid fa-house"></i><span>About Us</span></a>
-            <i class="fa-solid fa-chevron-right rc-breadcrumb__separator" aria-hidden="true"></i>
-            <span class="rc-breadcrumb__current" aria-current="page">Research Collaboration</span>
-        </nav>
+    <div class="bg-white border-b border-gray-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-3 md:py-4">
+            <nav class="flex items-center flex-wrap text-xs sm:text-sm" aria-label="Breadcrumb">
+                <ol class="flex items-center flex-wrap list-none m-0 p-0">
+                    <li class="flex items-center">
+                        <a href="/"
+                            class="inline-flex items-center text-gray-600 hover:text-blue-700 transition font-medium">
+                            <i class="fa-solid fa-home mr-1 text-[10px] sm:text-xs"></i>
+                            <span class="hidden sm:inline">Home</span>
+                        </a>
+                    </li>
+                    <li class="flex items-center px-1 sm:px-2">
+                        <i class="fa-solid fa-chevron-right text-[8px] sm:text-[10px] text-gray-400"></i>
+                    </li>
+                    <li class="flex items-center">
+                        <a href="about-us"
+                            class="text-gray-600 hover:text-blue-700 transition font-medium truncate max-w-[80px] sm:max-w-none">About
+                            Us</a>
+                    </li>
+                    <li class="flex items-center px-1 sm:px-2">
+                        <i class="fa-solid fa-chevron-right text-[8px] sm:text-[10px] text-gray-400"></i>
+                    </li>
+                    <li class="flex items-center">
+                        <span class="text-blue-700 font-semibold truncate max-w-[150px] sm:max-w-[200px] md:max-w-none"
+                            aria-current="page">Research Collaboration</span>
+                    </li>
+                </ol>
+            </nav>
+        </div>
     </div>
 
     <main id="research-collaboration-content">

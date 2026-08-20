@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Best Knee Pain Treatment in Hyderabad | Dr. Jawad Khan
     </title>
-    <meta name="description" content=" Knee pain while walking? Learn the causes, warning signs and the best knee pain treatment in Hyderabad from Dr. Mir Jawad Zar Khan">
+    <meta name="description"
+        content=" Knee pain while walking? Learn the causes, warning signs and the best knee pain treatment in Hyderabad from Dr. Mir Jawad Zar Khan">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/styles.css">
@@ -38,6 +39,140 @@
         .scroll-progress.hidden {
             opacity: 0;
             pointer-events: none;
+        }
+
+        :root {
+            --gh-fixed-header-offset: 0px;
+        }
+
+        html {
+            scroll-padding-top: var(--gh-fixed-header-offset);
+        }
+
+        #navbar-container {
+            position: relative;
+            z-index: 1000;
+        }
+
+        .hip-hero-section {
+            position: relative;
+            width: 100%;
+            margin: 0;
+            padding: var(--gh-fixed-header-offset) 0 0;
+            overflow: hidden;
+        }
+
+        .hip-hero-media {
+            position: relative;
+            width: 100%;
+            height: clamp(250px, 67vw, 320px);
+            min-height: 250px;
+            overflow: hidden;
+            background: #1f2937;
+        }
+
+        .hip-hero-image {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 46%;
+        }
+
+        .hip-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(90deg, rgba(32, 5, 8, 0.72), rgba(72, 9, 14, 0.58)),
+                linear-gradient(180deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.32));
+        }
+
+        .hip-hero-content {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px 18px;
+            text-align: center;
+        }
+
+        .hip-hero-copy {
+            width: min(100%, 760px);
+            margin: 0 auto;
+        }
+
+        .hip-hero-title {
+            margin: 0 0 12px;
+            color: #ffffff;
+            font-size: clamp(1.75rem, 7vw, 3.35rem);
+            font-weight: 800;
+            line-height: 1.12;
+            text-wrap: balance;
+        }
+
+        .hip-hero-description {
+            max-width: 680px;
+            margin: 0 auto;
+            color: #ffffff;
+            font-size: clamp(0.95rem, 3.5vw, 1.25rem);
+            line-height: 1.65;
+            text-align: center;
+            text-wrap: balance;
+        }
+
+        @media (min-width: 640px) {
+            .hip-hero-media {
+                height: 340px;
+                min-height: 340px;
+            }
+
+            .hip-hero-content {
+                padding: 32px 24px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .hip-hero-media {
+                height: 400px;
+                min-height: 400px;
+            }
+
+            .hip-hero-image {
+                object-position: center 48%;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .hip-hero-media {
+                height: 380px;
+                min-height: 380px;
+            }
+
+            .hip-hero-content {
+                padding: 40px 32px;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .hip-hero-media {
+                height: 440px;
+                min-height: 440px;
+            }
+        }
+
+        @media (min-width: 1536px) {
+            .hip-hero-media {
+                height: 500px;
+                min-height: 500px;
+            }
+        }
+
+        @media (max-width: 374px) {
+            .hip-hero-media {
+                height: 240px;
+                min-height: 240px;
+            }
         }
     </style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-B7BXJEHXWK"></script>
@@ -102,11 +237,13 @@
     <!-- Navbar Component -->
     <div id="navbar-container"></div>
 
-    <!-- Hero Section -->
-    <section class="relative sm:pt-20">
-        <div class="w-full h-48 sm:h-64 md:h-80 lg:h-96 xl:h-[450px] 2xl:h-[520px] overflow-hidden relative">
-            <img src="../Images/Blog/HeaderCommon.jpg" alt="Orthopedic Specialist in Hyderabad"
-                class="w-full h-full object-cover object-center scale-100 lg:scale-105 transition-transform duration-300">
+    <section class="hip-hero-section" aria-labelledby="knee-walking-hero-title">
+
+        <div class="hip-hero-media">
+
+            <img src="../Images/Blog/HeaderCommon.jpg" alt="Knee Pain While Walking: Causes and Treatment" width="1920"
+                height="600" class="hip-hero-image" loading="eager" fetchpriority="high" decoding="async">
+
             <!-- Doctor Section -->
             <div class="flex items-center gap-3 mt-4">
                 <a href="/about-us" class="flex-shrink-0">
@@ -120,12 +257,15 @@
                     <p class="text-xs text-gray-600">MBBS, MS - Orthopedic<br>M.CH-(Ortho) Joint Replacement surgeon</p>
                 </div>
             </div>
-            <!-- Left-to-right blur overlay -->
-            <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70 backdrop-blur-sm">
-            </div>
-            <div class="absolute inset-0 flex items-center justify-center">
-                <div class="text-center px-4 sm:px-6 lg:px-8">
-                    <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-4">
+
+            <!-- Readability Overlay -->
+            <div class="hip-hero-overlay" aria-hidden="true"></div>
+
+            <!-- Text Overlay -->
+            <div class="hip-hero-content">
+                <div class="hip-hero-copy">
+                    <h1 id="knee-walking-hero-title"
+                        class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-4">
                         Knee Pain While Walking: Causes, Warning Signs and Treatment Options
                     </h1>
                     <nav class="flex1 text-sm text-gray-900 items-center justify-center py-2 px-4 rounded-lg bg-yellow-300"
@@ -134,11 +274,14 @@
                         <span class="mx-2 text-gray-700">/</span>
                         <a href="../blog" class="hover:text-red-600 transition-colors duration-200 font-medium">Blog</a>
                         <span class="mx-2 text-gray-700">/</span>
-                        <span class="text-gray-900 font-semibold">Knee Pain While Walking: Causes, Warning Signs and Treatment Options</span>
+                        <span class="text-gray-900 font-semibold">Knee Pain While Walking: Causes, Warning Signs and
+                            Treatment Options</span>
                     </nav>
                 </div>
             </div>
+
         </div>
+
     </section>
 
     <!-- Main Content -->
@@ -205,7 +348,14 @@
                 </h2>
 
                 <p class="text-sm sm:text-base text-gray-700 leading-relaxed text-justify">
-                    A short walk to the kitchen, a stroll in the park, or a quick trip up the stairs should not hurt. So when you feel knee pain while walking, it is your body telling you that something inside the joint needs attention. For some people the ache builds up slowly over months. For others it shows up suddenly and sharply. Either way, the pain is real, and ignoring it rarely makes it go away. This guide explains why your knee hurts when you walk, the warning signs that need a specialist, and the <a href="https://drjawadortho.com/best-knee-replacement-surgeon-in-hyderabad" style="color: red;">best knee pain treatment in Hyderabad</a> available under senior orthopedic surgeon Dr. Mir Jawad Zar Khan.
+                    A short walk to the kitchen, a stroll in the park, or a quick trip up the stairs should not hurt. So
+                    when you feel knee pain while walking, it is your body telling you that something inside the joint
+                    needs attention. For some people the ache builds up slowly over months. For others it shows up
+                    suddenly and sharply. Either way, the pain is real, and ignoring it rarely makes it go away. This
+                    guide explains why your knee hurts when you walk, the warning signs that need a specialist, and the
+                    <a href="https://drjawadortho.com/best-knee-replacement-surgeon-in-hyderabad"
+                        style="color: red;">best knee pain treatment in Hyderabad</a> available under senior orthopedic
+                    surgeon Dr. Mir Jawad Zar Khan.
                 </p>
 
                 <h3 class="text-lg sm:text-xl font-semibold text-gray-900">
@@ -213,11 +363,19 @@
                 </h3>
 
                 <p class="text-sm sm:text-base text-gray-700 leading-relaxed text-justify">
-                    Your knee is the largest joint in the body, and it carries a lot of your weight with every step. It works as a hinge between the thigh bone (femur), the shin bone (tibia), and the kneecap (patella). Between these bones sits the meniscus, a C-shaped cushion of cartilage that acts as a shock absorber. Four ligaments hold the joint steady, and a smooth layer of cartilage lets the bones glide without friction.
+                    Your knee is the largest joint in the body, and it carries a lot of your weight with every step. It
+                    works as a hinge between the thigh bone (femur), the shin bone (tibia), and the kneecap (patella).
+                    Between these bones sits the meniscus, a C-shaped cushion of cartilage that acts as a shock
+                    absorber. Four ligaments hold the joint steady, and a smooth layer of cartilage lets the bones glide
+                    without friction.
                 </p>
 
                 <p class="text-sm sm:text-base text-gray-700 leading-relaxed text-justify">
-                    Walking looks gentle, but it is not effortless for the knee. Each step sends a force of roughly one and a half times your body weight through the joint, and the average adult takes several thousand steps a day. When the cartilage, meniscus, or ligaments are healthy, they absorb this load quietly. When any of these structures wear down or get injured, that same load starts to produce pain in the knee joint while walking.
+                    Walking looks gentle, but it is not effortless for the knee. Each step sends a force of roughly one
+                    and a half times your body weight through the joint, and the average adult takes several thousand
+                    steps a day. When the cartilage, meniscus, or ligaments are healthy, they absorb this load quietly.
+                    When any of these structures wear down or get injured, that same load starts to produce pain in the
+                    knee joint while walking.
                 </p>
 
                 <h3 class="text-lg sm:text-xl font-semibold text-gray-900">
@@ -225,7 +383,8 @@
                 </h3>
 
                 <p class="text-sm sm:text-base text-gray-700 leading-relaxed text-justify">
-                    Most walking-related knee pain traces back to a handful of conditions. Where you feel the pain, on the inner side, outer side, front, or back of the knee, often points to the cause.
+                    Most walking-related knee pain traces back to a handful of conditions. Where you feel the pain, on
+                    the inner side, outer side, front, or back of the knee, often points to the cause.
                 </p>
 
                 <h4 class="text-base sm:text-lg font-semibold text-gray-900">
@@ -233,7 +392,10 @@
                 </h4>
 
                 <p class="text-sm sm:text-base text-gray-700 leading-relaxed text-justify">
-                    This is the most common cause of knee pain in adults, especially after the age of 50. As reported by Cleveland Clinic, osteoarthritis develops when the cartilage in the joint gradually wears down and the bones begin to rub together. The result is a deep ache, stiffness, and swelling that often feels worse after resting, like first thing in the morning or after sitting for a while.
+                    This is the most common cause of knee pain in adults, especially after the age of 50. As reported by
+                    Cleveland Clinic, osteoarthritis develops when the cartilage in the joint gradually wears down and
+                    the bones begin to rub together. The result is a deep ache, stiffness, and swelling that often feels
+                    worse after resting, like first thing in the morning or after sitting for a while.
                 </p>
 
                 <h4 class="text-base sm:text-lg font-semibold text-gray-900">
@@ -241,7 +403,9 @@
                 </h4>
 
                 <p class="text-sm sm:text-base text-gray-700 leading-relaxed text-justify">
-                    The meniscus can tear from a sudden twist or, in older adults, from simple wear and tear. A tear usually causes sharp or catching pain on the inside of the knee, and you may notice it most when you turn or pivot. Left untreated, a meniscus injury can speed up joint damage over time.
+                    The meniscus can tear from a sudden twist or, in older adults, from simple wear and tear. A tear
+                    usually causes sharp or catching pain on the inside of the knee, and you may notice it most when you
+                    turn or pivot. Left untreated, a meniscus injury can speed up joint damage over time.
                 </p>
 
                 <h4 class="text-base sm:text-lg font-semibold text-gray-900">
@@ -249,7 +413,9 @@
                 </h4>
 
                 <p class="text-sm sm:text-base text-gray-700 leading-relaxed text-justify">
-                    This causes pain around or behind the kneecap, often from overuse or slight misalignment. People typically feel it when walking up or down stairs, or after sitting with the knee bent for a long time.
+                    This causes pain around or behind the kneecap, often from overuse or slight misalignment. People
+                    typically feel it when walking up or down stairs, or after sitting with the knee bent for a long
+                    time.
                 </p>
 
                 <h4 class="text-base sm:text-lg font-semibold text-gray-900">
@@ -257,7 +423,9 @@
                 </h4>
 
                 <p class="text-sm sm:text-base text-gray-700 leading-relaxed text-justify">
-                    Small fluid-filled sacs called bursae cushion the knee, and they can become inflamed and tender, most often just below the inner side of the joint. Inflamed tendons from repetitive activity can produce a similar nagging pain.
+                    Small fluid-filled sacs called bursae cushion the knee, and they can become inflamed and tender,
+                    most often just below the inner side of the joint. Inflamed tendons from repetitive activity can
+                    produce a similar nagging pain.
                 </p>
 
                 <h4 class="text-base sm:text-lg font-semibold text-gray-900">
@@ -265,7 +433,9 @@
                 </h4>
 
                 <p class="text-sm sm:text-base text-gray-700 leading-relaxed text-justify">
-                    Sprains or tears of the ACL and MCL usually follow a twist, a fall, or a sports injury, and they often make the knee feel unstable. A tight iliotibial band running down the outer thigh can also rub against the outer knee and flare up during walking.
+                    Sprains or tears of the ACL and MCL usually follow a twist, a fall, or a sports injury, and they
+                    often make the knee feel unstable. A tight iliotibial band running down the outer thigh can also rub
+                    against the outer knee and flare up during walking.
                 </p>
 
                 <h3 class="text-lg sm:text-xl font-semibold text-gray-900">
@@ -273,11 +443,16 @@
                 </h3>
 
                 <p class="text-sm sm:text-base text-gray-700 leading-relaxed text-justify">
-                    Not all knee pain builds up slowly. Sudden knee pain while walking often points to a specific event inside the joint. A quick twist can tear the meniscus. A misstep can strain a ligament. A gout flare can inflame the joint within hours. In older adults with weak bones, even a minor stumble can cause a small fracture.
+                    Not all knee pain builds up slowly. Sudden knee pain while walking often points to a specific event
+                    inside the joint. A quick twist can tear the meniscus. A misstep can strain a ligament. A gout flare
+                    can inflame the joint within hours. In older adults with weak bones, even a minor stumble can cause
+                    a small fracture.
                 </p>
 
                 <p class="text-sm sm:text-base text-gray-700 leading-relaxed text-justify">
-                    The key difference is timing. When sudden pain in the knee while walking comes with swelling, a locking sensation, or a feeling that the knee is giving way, it should be checked by an orthopedic specialist rather than waiting out.
+                    The key difference is timing. When sudden pain in the knee while walking comes with swelling, a
+                    locking sensation, or a feeling that the knee is giving way, it should be checked by an orthopedic
+                    specialist rather than waiting out.
                 </p>
 
                 <h3 class="text-lg sm:text-xl font-semibold text-gray-900">
@@ -285,10 +460,13 @@
                 </h3>
 
                 <p class="text-sm sm:text-base text-gray-700 leading-relaxed text-justify">
-                    Mild knee pain often settles with a few days of rest and care. But some signs mean it is time to see a doctor. According to Johns Hopkins Medicine and Mayo Clinic, you should seek medical attention if you notice any of the following:
+                    Mild knee pain often settles with a few days of rest and care. But some signs mean it is time to see
+                    a doctor. According to Johns Hopkins Medicine and Mayo Clinic, you should seek medical attention if
+                    you notice any of the following:
                 </p>
 
-                <ul class="list-disc list-inside text-sm sm:text-base text-gray-700 space-y-1 sm:space-y-2 ml-3 sm:ml-4">
+                <ul
+                    class="list-disc list-inside text-sm sm:text-base text-gray-700 space-y-1 sm:space-y-2 ml-3 sm:ml-4">
                     <li>Knee pain that lasts longer than two weeks or keeps coming back</li>
                     <li>Swelling, warmth, or redness around the joint</li>
                     <li>A knee that locks, catches, or gives way when you walk</li>
@@ -298,7 +476,9 @@
                 </ul>
 
                 <p class="text-sm sm:text-base text-gray-700 leading-relaxed text-justify">
-                    A limp is easy to dismiss, but it matters. When you change the way you walk to avoid pain, you push extra stress onto your hip, back, and other knee, which can create a whole new set of problems. Getting the original issue treated early helps protect the rest of your body.
+                    A limp is easy to dismiss, but it matters. When you change the way you walk to avoid pain, you push
+                    extra stress onto your hip, back, and other knee, which can create a whole new set of problems.
+                    Getting the original issue treated early helps protect the rest of your body.
                 </p>
 
                 <h3 class="text-lg sm:text-xl font-semibold text-gray-900">
@@ -306,11 +486,17 @@
                 </h3>
 
                 <p class="text-sm sm:text-base text-gray-700 leading-relaxed text-justify">
-                    This is a popular belief across many Indian households, so it deserves a clear answer. There is no scientific evidence that drinking water while standing causes knee pain or joint damage. Knee pain comes from causes like aging, injury, arthritis, excess body weight, and repeated stress on the joint, not from your posture while sipping water. Orthopedic specialists agree that the water-and-standing link is a myth.
+                    This is a popular belief across many Indian households, so it deserves a clear answer. There is no
+                    scientific evidence that drinking water while standing causes knee pain or joint damage. Knee pain
+                    comes from causes like aging, injury, arthritis, excess body weight, and repeated stress on the
+                    joint, not from your posture while sipping water. Orthopedic specialists agree that the
+                    water-and-standing link is a myth.
                 </p>
 
                 <p class="text-sm sm:text-base text-gray-700 leading-relaxed text-justify">
-                    Staying well hydrated is actually good for your joints, whether you sit or stand to drink. So if your knees hurt when you walk, the answer is not to change how you drink water. The answer is to find the real cause with a proper medical evaluation.
+                    Staying well hydrated is actually good for your joints, whether you sit or stand to drink. So if
+                    your knees hurt when you walk, the answer is not to change how you drink water. The answer is to
+                    find the real cause with a proper medical evaluation.
                 </p>
 
                 <h3 class="text-lg sm:text-xl font-semibold text-gray-900">
@@ -318,20 +504,29 @@
                 </h3>
 
                 <p class="text-sm sm:text-base text-gray-700 leading-relaxed text-justify">
-                    If your pain is mild and there are no warning signs, these steps can bring relief and protect the joint. Think of them as first aid, not a cure for an underlying condition.
+                    If your pain is mild and there are no warning signs, these steps can bring relief and protect the
+                    joint. Think of them as first aid, not a cure for an underlying condition.
                 </p>
 
-                <ul class="list-disc list-inside text-sm sm:text-base text-gray-700 space-y-1 sm:space-y-2 ml-3 sm:ml-4">
-                    <li>Ease the load, do not stop moving. Shorten your walks, choose softer surfaces, and swap some walking for low-impact activity like swimming or cycling.</li>
-                    <li>Manage your weight. Every extra kilo adds several times its weight in force through the knee with each step.</li>
-                    <li>Strengthen the supporting muscles. Stronger quadriceps, hamstrings, and glutes take pressure off the joint. A physiotherapist can guide safe exercises.</li>
-                    <li>Use the RICE method for flare-ups. Rest, ice for 15 to 20 minutes, light compression with a sleeve, and elevation help settle swelling.</li>
-                    <li>Wear supportive footwear. Cushioned soles with proper arch support reduce the shock reaching the knee.</li>
-                    <li>Use over-the-counter pain relief carefully. Anti-inflammatory medicines can help for a few days, but they are not a long-term answer and should be used as advised.</li>
+                <ul
+                    class="list-disc list-inside text-sm sm:text-base text-gray-700 space-y-1 sm:space-y-2 ml-3 sm:ml-4">
+                    <li>Ease the load, do not stop moving. Shorten your walks, choose softer surfaces, and swap some
+                        walking for low-impact activity like swimming or cycling.</li>
+                    <li>Manage your weight. Every extra kilo adds several times its weight in force through the knee
+                        with each step.</li>
+                    <li>Strengthen the supporting muscles. Stronger quadriceps, hamstrings, and glutes take pressure off
+                        the joint. A physiotherapist can guide safe exercises.</li>
+                    <li>Use the RICE method for flare-ups. Rest, ice for 15 to 20 minutes, light compression with a
+                        sleeve, and elevation help settle swelling.</li>
+                    <li>Wear supportive footwear. Cushioned soles with proper arch support reduce the shock reaching the
+                        knee.</li>
+                    <li>Use over-the-counter pain relief carefully. Anti-inflammatory medicines can help for a few days,
+                        but they are not a long-term answer and should be used as advised.</li>
                 </ul>
 
                 <p class="text-sm sm:text-base text-gray-700 leading-relaxed text-justify">
-                    If two weeks of home care does not help, or the pain returns each time you walk, it is time for a specialist to look deeper.
+                    If two weeks of home care does not help, or the pain returns each time you walk, it is time for a
+                    specialist to look deeper.
                 </p>
 
                 <h3 class="text-lg sm:text-xl font-semibold text-gray-900">
@@ -339,7 +534,10 @@
                 </h3>
 
                 <p class="text-sm sm:text-base text-gray-700 leading-relaxed text-justify">
-                    The right treatment depends on the cause and how far the condition has progressed. At Germanten Hospitals, the <a href="https://drjawadortho.com/general-orthopedics" style="color: red;">knee joint pain treatment options</a> range from simple non-surgical care to advanced robotic surgery, so most patients start with the least invasive path that fits their diagnosis.
+                    The right treatment depends on the cause and how far the condition has progressed. At Germanten
+                    Hospitals, the <a href="https://drjawadortho.com/general-orthopedics" style="color: red;">knee joint
+                        pain treatment options</a> range from simple non-surgical care to advanced robotic surgery, so
+                    most patients start with the least invasive path that fits their diagnosis.
                 </p>
 
                 <h4 class="text-base sm:text-lg font-semibold text-gray-900">
@@ -347,7 +545,11 @@
                 </h4>
 
                 <p class="text-sm sm:text-base text-gray-700 leading-relaxed text-justify">
-                    Many knees can be managed without an operation. These options include structured physiotherapy, viscosupplementation and other alternative treatments such as hyaluronic acid injections, PRP and stem cell therapy for early cartilage wear, extracorporeal shockwave therapy (ESWT) for stubborn tendon pain, and cartilage repair procedures like OATS for focal cartilage damage. Targeted pain management injections can also relieve pain while other treatments take effect.
+                    Many knees can be managed without an operation. These options include structured physiotherapy,
+                    viscosupplementation and other alternative treatments such as hyaluronic acid injections, PRP and
+                    stem cell therapy for early cartilage wear, extracorporeal shockwave therapy (ESWT) for stubborn
+                    tendon pain, and cartilage repair procedures like OATS for focal cartilage damage. Targeted pain
+                    management injections can also relieve pain while other treatments take effect.
                 </p>
 
                 <h4 class="text-base sm:text-lg font-semibold text-gray-900">
@@ -355,7 +557,12 @@
                 </h4>
 
                 <p class="text-sm sm:text-base text-gray-700 leading-relaxed text-justify">
-                    When the joint is badly damaged or non-surgical care no longer helps, surgery restores comfortable movement. Knee arthroscopy is a minimally invasive keyhole procedure used to repair a torn meniscus or ligament. When only one side of the knee is worn, a partial knee replacement replaces just the damaged part and preserves the healthy tissue. For advanced arthritis affecting the whole joint, robotic total knee replacement in Hyderabad offers precise implant placement and a smoother recovery.
+                    When the joint is badly damaged or non-surgical care no longer helps, surgery restores comfortable
+                    movement. Knee arthroscopy is a minimally invasive keyhole procedure used to repair a torn meniscus
+                    or ligament. When only one side of the knee is worn, a partial knee replacement replaces just the
+                    damaged part and preserves the healthy tissue. For advanced arthritis affecting the whole joint,
+                    robotic total knee replacement in Hyderabad offers precise implant placement and a smoother
+                    recovery.
                 </p>
 
                 <h3 class="text-lg sm:text-xl font-semibold text-gray-900">
@@ -363,19 +570,30 @@
                 </h3>
 
                 <p class="text-sm sm:text-base text-gray-700 leading-relaxed text-justify">
-                    Choosing the right surgeon matters as much as choosing the right treatment. Dr. Mir Jawad Zar Khan is a senior orthopedic surgeon with two decades of experience and a gold medal from Osmania University. He completed advanced training in the United States and Germany and is credited with introducing computer navigation and robot-assisted joint replacement to India.
+                    Choosing the right surgeon matters as much as choosing the right treatment. Dr. Mir Jawad Zar Khan
+                    is a senior orthopedic surgeon with two decades of experience and a gold medal from Osmania
+                    University. He completed advanced training in the United States and Germany and is credited with
+                    introducing computer navigation and robot-assisted joint replacement to India.
                 </p>
 
                 <p class="text-sm sm:text-base text-gray-700 leading-relaxed text-justify">
-                    His work has been widely recognized, including the Times of India award as Iconic Joint Replacement Surgeon of Telangana and a place in the Times Health Survey 2023. He leads the orthopedic team at Germanten Hospitals in Attapur, Hyderabad, where patients have access to robotic surgery, advanced imaging, and a full physiotherapy program under one roof.
+                    His work has been widely recognized, including the Times of India award as Iconic Joint Replacement
+                    Surgeon of Telangana and a place in the Times Health Survey 2023. He leads the orthopedic team at
+                    Germanten Hospitals in Attapur, Hyderabad, where patients have access to robotic surgery, advanced
+                    imaging, and a full physiotherapy program under one roof.
                 </p>
 
                 <p class="text-sm sm:text-base text-gray-700 leading-relaxed text-justify">
-                    Knee pain while walking is common, but it is not something you simply have to live with. Whether it started slowly or came on suddenly, finding the cause is the first step toward walking comfortably again. Simple care helps in the early stages, and advanced treatment is available when you need it.
+                    Knee pain while walking is common, but it is not something you simply have to live with. Whether it
+                    started slowly or came on suddenly, finding the cause is the first step toward walking comfortably
+                    again. Simple care helps in the early stages, and advanced treatment is available when you need it.
                 </p>
 
                 <p class="text-sm sm:text-base text-gray-700 leading-relaxed text-justify">
-                    Take the next step. If knee pain is slowing you down, do not wait for it to get worse. <a href="https://drjawadortho.com/contact" style="color: red;">Book an appointment with Dr. Mir Jawad Zar Khan</a> for the best knee pain treatment in Hyderabad and get a clear diagnosis and a plan built around your knee.
+                    Take the next step. If knee pain is slowing you down, do not wait for it to get worse. <a
+                        href="https://drjawadortho.com/contact" style="color: red;">Book an appointment with Dr. Mir
+                        Jawad Zar Khan</a> for the best knee pain treatment in Hyderabad and get a clear diagnosis and a
+                    plan built around your knee.
                 </p>
 
                 <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 sm:p-6 space-y-3">
@@ -389,7 +607,9 @@
                                 Why do my knees hurt when I walk but not when I rest?
                             </h4>
                             <p class="text-sm sm:text-base text-gray-700 leading-relaxed text-justify">
-                                Walking loads the knee with more than your body weight, so a worn or injured joint hurts under that pressure and eases when the load comes off at rest. This pattern is very common in early osteoarthritis and meniscus problems.
+                                Walking loads the knee with more than your body weight, so a worn or injured joint hurts
+                                under that pressure and eases when the load comes off at rest. This pattern is very
+                                common in early osteoarthritis and meniscus problems.
                             </p>
                         </div>
 
@@ -398,7 +618,9 @@
                                 Is it okay to keep walking with knee pain?
                             </h4>
                             <p class="text-sm sm:text-base text-gray-700 leading-relaxed text-justify">
-                                Gentle walking is usually fine and even helpful, as long as the pain is mild and there are no warning signs. Reduce the distance, avoid stairs and steep surfaces, and stop if the pain sharpens or the knee swells.
+                                Gentle walking is usually fine and even helpful, as long as the pain is mild and there
+                                are no warning signs. Reduce the distance, avoid stairs and steep surfaces, and stop if
+                                the pain sharpens or the knee swells.
                             </p>
                         </div>
 
@@ -407,7 +629,10 @@
                                 What is the best treatment for knee pain while walking?
                             </h4>
                             <p class="text-sm sm:text-base text-gray-700 leading-relaxed text-justify">
-                                There is no single answer, because it depends on the cause. Most people start with physiotherapy, weight management, and supportive care. If that is not enough, injections, cartilage procedures, arthroscopy, or knee replacement may be recommended after a proper diagnosis.
+                                There is no single answer, because it depends on the cause. Most people start with
+                                physiotherapy, weight management, and supportive care. If that is not enough,
+                                injections, cartilage procedures, arthroscopy, or knee replacement may be recommended
+                                after a proper diagnosis.
                             </p>
                         </div>
 
@@ -416,7 +641,9 @@
                                 When should I see a knee specialist in Hyderabad?
                             </h4>
                             <p class="text-sm sm:text-base text-gray-700 leading-relaxed text-justify">
-                                See a specialist if your pain lasts more than two weeks, keeps returning, comes with swelling or locking, or makes you limp. Early evaluation usually means more treatment options and a better outcome.
+                                See a specialist if your pain lasts more than two weeks, keeps returning, comes with
+                                swelling or locking, or makes you limp. Early evaluation usually means more treatment
+                                options and a better outcome.
                             </p>
                         </div>
                     </div>
@@ -427,10 +654,20 @@
                         References
                     </h3>
 
-                    <ul class="list-disc list-inside text-sm sm:text-base text-gray-700 space-y-1 sm:space-y-2 ml-3 sm:ml-4">
-                        <li><a href="https://my.clevelandclinic.org/health/diseases/21750-osteoarthritis-knee" target="_blank" rel="noopener noreferrer" class="text-red-600 hover:text-red-700">https://my.clevelandclinic.org/health/diseases/21750-osteoarthritis-knee</a></li>
-                        <li><a href="https://www.hopkinsmedicine.org/health/conditions-and-diseases/knee-pain-and-problems" target="_blank" rel="noopener noreferrer" class="text-red-600 hover:text-red-700">https://www.hopkinsmedicine.org/health/conditions-and-diseases/knee-pain-and-problems</a></li>
-                        <li><a href="https://www.mayoclinic.org/symptoms/knee-pain/basics/when-to-see-doctor/sym-20050688" target="_blank" rel="noopener noreferrer" class="text-red-600 hover:text-red-700">https://www.mayoclinic.org/symptoms/knee-pain/basics/when-to-see-doctor/sym-20050688</a></li>
+                    <ul
+                        class="list-disc list-inside text-sm sm:text-base text-gray-700 space-y-1 sm:space-y-2 ml-3 sm:ml-4">
+                        <li><a href="https://my.clevelandclinic.org/health/diseases/21750-osteoarthritis-knee"
+                                target="_blank" rel="noopener noreferrer"
+                                class="text-red-600 hover:text-red-700">https://my.clevelandclinic.org/health/diseases/21750-osteoarthritis-knee</a>
+                        </li>
+                        <li><a href="https://www.hopkinsmedicine.org/health/conditions-and-diseases/knee-pain-and-problems"
+                                target="_blank" rel="noopener noreferrer"
+                                class="text-red-600 hover:text-red-700">https://www.hopkinsmedicine.org/health/conditions-and-diseases/knee-pain-and-problems</a>
+                        </li>
+                        <li><a href="https://www.mayoclinic.org/symptoms/knee-pain/basics/when-to-see-doctor/sym-20050688"
+                                target="_blank" rel="noopener noreferrer"
+                                class="text-red-600 hover:text-red-700">https://www.mayoclinic.org/symptoms/knee-pain/basics/when-to-see-doctor/sym-20050688</a>
+                        </li>
                     </ul>
                 </div>
 
@@ -478,68 +715,210 @@
                         class="flex flex-wrap justify-center sm:justify-start gap-2 sm:gap-3 mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-white/30 sm:ml-20 sm:ml-24 relative z-10">
                         <a href="https://www.youtube.com/c/drmirjawadzarkhan" target="_blank" rel="noopener noreferrer"
                             class="w-8 h-9 sm:w-10 sm:h-9 hover:scale-110 hover:rotate-12 hover:shadow-lg hover:shadow-white/20 flex items-center justify-center transition-all duration-300 ease-in-out">
-                            <i class="fab fa-youtube text-white hover:text-red-500 text-sm sm:text-base font-bold transition-colors duration-300"></i>
+                            <i
+                                class="fab fa-youtube text-white hover:text-red-500 text-sm sm:text-base font-bold transition-colors duration-300"></i>
                         </a>
                         <a href="https://www.facebook.com/drjawadortho/" target="_blank" rel="noopener noreferrer"
                             class="w-8 h-9 sm:w-10 sm:h-9 hover:scale-110 hover:rotate-12 hover:shadow-lg hover:shadow-white/20 flex items-center justify-center transition-all duration-300 ease-in-out">
-                            <i class="fab fa-facebook-f text-white hover:text-blue-500 text-sm sm:text-base font-bold transition-colors duration-300"></i>
+                            <i
+                                class="fab fa-facebook-f text-white hover:text-blue-500 text-sm sm:text-base font-bold transition-colors duration-300"></i>
                         </a>
 
                         <a href="https://www.linkedin.com/authwall?trk=gf&trk=&original_referer=https://drjawadortho.com/&sessionRedirect=https://www.linkedin.com/in/dr-mir-jawad-zar-khan-24517419a"
                             target="_blank" rel="noopener noreferrer"
                             class="w-8 h-9 sm:w-10 sm:h-9 hover:scale-110 hover:rotate-12 hover:shadow-lg hover:shadow-white/20 flex items-center justify-center transition-all duration-300 ease-in-out">
-                            <i class="fab fa-linkedin-in text-white hover:text-blue-600 text-sm sm:text-base font-bold transition-colors duration-300"></i>
+                            <i
+                                class="fab fa-linkedin-in text-white hover:text-blue-600 text-sm sm:text-base font-bold transition-colors duration-300"></i>
                         </a>
                     </div>
                 </div>
             </div>
 
             <!-- Right Column: Recent Posts Sidebar -->
-            <div class="lg:col-span-4 order-1 lg:order-2">
-                <div
-                    class="bg-gray-100 rounded-lg sm:rounded-xl border border-gray-200 p-3 sm:p-4 sticky top-20 lg:top-24">
-                    <h3 class="text-xl font-bold text-gray-900 mb-4 border-b border-red-400 pb-2">Recent Posts</h3>
-                    <div class="space-y-3">
-                        <a href="/acl-tear-treatment"
-                            class="flex gap-2 sm:gap-3 p-2 sm:p-3 rounded-lg bg-yellow-50 border-l-4 border-red-600 hover:bg-yellow-100 transition-colors">
-                            <img src="../Images/Blog/Recent1.webp" alt="ACL Tear Treatment"
+            <div class="lg:col-span-4">
+                <div class="bg-gray-100 rounded-xl border border-gray-200 p-3 sm:p-4 lg:sticky lg:top-24 mt-6 lg:mt-0">
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4 border-b border-red-400 pb-2">
+                        Recent Posts</h3>
+                    <div class="space-y-2 sm:space-y-3">
+                        <a href="/blogs/younger-patients-knee-replacement"
+                            class="flex gap-2 sm:gap-3 p-2 rounded-lg hover:bg-gray-100 border-l-4 border-transparent hover:border-red-400 transition-colors">
+                            <img src="../Images/Blog/younger-patients-knee-replacement.webp"
+                                alt="Why Are Younger Patients Getting Knee Replacements? What Has Changed"
                                 class="w-12 h-12 sm:w-16 sm:h-16 object-cover rounded-lg flex-shrink-0">
-                            <p class="text-xs sm:text-sm font-semibold text-gray-800 line-clamp-2 self-center">ACL Tear
-                                Treatment
-                            </p>
+                            <p class="text-xs sm:text-sm font-medium text-gray-700 line-clamp-2 self-center">Why Are
+                                Younger Patients Getting Knee Replacements? What Has Changed</p>
                         </a>
-                        <a href="/best-orthopedic-doctor-hyderabad"
-                            class="flex gap-2 sm:gap-3 p-2 sm:p-3 rounded-lg hover:bg-gray-100 border-l-4 border-transparent hover:border-red-400 transition-colors">
-                            <img src="../Images/Blog/Recent2.webp" alt="Best Orthopedic Doctor"
+                        <a href="/blogs/partial-vs-total-knee-replacement"
+                            class="flex gap-2 sm:gap-3 p-2 rounded-lg hover:bg-gray-100 border-l-4 border-transparent hover:border-red-400 transition-colors">
+                            <img src="../Images/Blog/partial-vs-total-knee-replacement-key-differences.webp"
+                                alt="Partial vs Total Knee Replacement: What Is the Difference?"
                                 class="w-12 h-12 sm:w-16 sm:h-16 object-cover rounded-lg flex-shrink-0">
-                            <p class="text-xs sm:text-sm font-medium text-gray-700 line-clamp-2 self-center">Best
-                                Orthopedic Doctor
-                                Hyderabad</p>
+                            <p class="text-xs sm:text-sm font-medium text-gray-700 line-clamp-2 self-center">Partial vs
+                                Total Knee Replacement: What Is the Difference?</p>
                         </a>
-                        <a href="/chondrofiller-injection-the-future-of-non-surgical-cartilage-repair"
-                            class="flex gap-2 sm:gap-3 p-2 sm:p-3 rounded-lg hover:bg-gray-100 border-l-4 border-transparent hover:border-red-400 transition-colors">
-                            <img src="../Images/Blog/Recent3.webp" alt="ChondroFiller Injection"
+                        <a href="/blogs/desk-job-back-pain-it-professionals-hyderabad"
+                            class="flex gap-2 sm:gap-3 p-2 rounded-lg hover:bg-gray-100 border-l-4 border-transparent hover:border-red-400 transition-colors">
+                            <img src="../Images/Blog/desk-job-back-pain-it-professionals-hyderabad.webp"
+                                alt="Desk Job Back Pain in Hyderabad IT Professionals"
                                 class="w-12 h-12 sm:w-16 sm:h-16 object-cover rounded-lg flex-shrink-0">
-                            <p class="text-xs sm:text-sm font-medium text-gray-700 line-clamp-2 self-center">
-                                ChondroFiller
-                                Injection</p>
+                            <p class="text-xs sm:text-sm font-medium text-gray-700 line-clamp-2 self-center">Desk Job
+                                Back Pain in Hyderabad IT Professionals</p>
                         </a>
-                        <a href="/knee-replacement-hyderabad"
-                            class="flex gap-2 sm:gap-3 p-2 sm:p-3 rounded-lg hover:bg-gray-100 border-l-4 border-transparent hover:border-red-400 transition-colors">
-                            <img src="../Images/Blog/Recent4.webp" alt="Knee Replacement Hyderabad"
+                        <a href="/blogs/choose-right-joint-replacement-surgeon-hyderabad"
+                            class="flex gap-2 sm:gap-3 p-2 rounded-lg hover:bg-gray-100 border-l-4 border-transparent hover:border-red-400 transition-colors">
+                            <img src="../Images/Blog/choose-right-joint-replacement-surgeon-hyderabad.webp"
+                                alt="Choose the Right Joint Replacement Surgeon Hyderabad"
                                 class="w-12 h-12 sm:w-16 sm:h-16 object-cover rounded-lg flex-shrink-0">
-                            <p class="text-xs sm:text-sm font-medium text-gray-700 line-clamp-2 self-center">Knee
-                                Replacement
-                                Hyderabad</p>
+                            <p class="text-xs sm:text-sm font-medium text-gray-700 line-clamp-2 self-center">Choose the
+                                Right Joint Replacement Surgeon Hyderabad</p>
                         </a>
                     </div>
                 </div>
+
+                <div class="bg-gray-100 rounded-xl border border-gray-200 p-3 sm:p-4 mt-6">
+                    <!-- Left: Get A Quick Callback Form -->
+                    <div
+                        class="p-6 lg:p-8 bg-gradient-to-br from-yellow-100 via-yellow-50 to-white flex flex-col justify-center">
+
+                        <form class="space-y-3 lg:space-y-4 max-w-md mx-auto w-full"
+                            action="https://old.germantenhospitals.com/send_email.php" method="post">
+                            <h2
+                                class="text-lg lg:text-xl font-bold mb-4 lg:mb-5 text-red-700 tracking-tight flex items-center gap-2">
+                                <span class="text-xl lg:text-2xl">📞</span> Get A Quick Callback
+                            </h2>
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium mb-2 text-gray-700">Full
+                                        Name<span class="text-red-500">*</span></label>
+                                    <input type="text" id="customFirstName" name="name"
+                                        placeholder="Enter your full name" required
+                                        class="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 focus:outline-none focus:border-red-300 transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-2 text-gray-700">Mobile
+                                        Number</label>
+                                    <input type="tel" id="customPhone" name="phone" placeholder="+91" required
+                                        class="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 focus:outline-none focus:border-red-300 transition-all">
+                                </div>
+                            </div>
+                            <div style="position:absolute; left:-9999px;">
+                                <label>Website</label>
+                                <input type="text" name="website" value="">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2 text-gray-700">Email
+                                    Address</label>
+                                <input type="email" id="customEmail" name="email" placeholder="Enter your email address"
+                                    required
+                                    class="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 focus:outline-none focus:border-red-300 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2 text-gray-700">Message</label>
+                                <textarea id="customMessage" name="notes" rows="3 lg:rows-4"
+                                    placeholder="Enter your query"
+                                    class="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 focus:outline-none focus:border-red-300 transition-all resize-none"></textarea>
+                            </div>
+                            <input type="hidden" name="form_name" id="form_name" value="Appointment Form" />
+                            <input type="hidden" name="page_link" id="page_link" />
+                            <input type="hidden" name="source" id="source" value="web-ads" />
+                            <button type="submit"
+                                class="w-full font-semibold py-3 px-6 rounded-lg transition-all duration-300 text-base shadow-md hover:shadow-lg transform hover:scale-[1.02] bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white">
+                                ✨ Submit Appointment
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
             </div>
         </div>
     </main>
 
     <!-- Footer Component -->
     <div id="footer-container"></div>
+
+    <!-- Apply a header offset only when the injected navbar is truly fixed -->
+    <script>
+        (function () {
+            "use strict";
+
+            const root = document.documentElement;
+            const navbarContainer = document.getElementById("navbar-container");
+
+            if (!navbarContainer) {
+                return;
+            }
+
+            let resizeObserver = null;
+            let scheduledFrame = null;
+
+            function getFixedHeaderBottom() {
+                const containerRect = navbarContainer.getBoundingClientRect();
+
+                if (containerRect.height > 1) {
+                    return 0;
+                }
+
+                const candidates = [
+                    navbarContainer,
+                    ...navbarContainer.querySelectorAll(
+                        "header, nav, [class*='navbar'], [class*='header']"
+                    )
+                ];
+
+                return candidates.reduce(function (largestBottom, element) {
+                    const styles = window.getComputedStyle(element);
+
+                    if (styles.position !== "fixed") {
+                        return largestBottom;
+                    }
+
+                    const rect = element.getBoundingClientRect();
+
+                    if (rect.height <= 0 || rect.bottom <= 0) {
+                        return largestBottom;
+                    }
+
+                    return Math.max(largestBottom, rect.bottom);
+                }, 0);
+            }
+
+            function updateHeroOffset() {
+                scheduledFrame = null;
+
+                const offset = Math.max(0, Math.round(getFixedHeaderBottom()));
+                root.style.setProperty("--gh-fixed-header-offset", offset + "px");
+            }
+
+            function scheduleUpdate() {
+                if (scheduledFrame !== null) {
+                    cancelAnimationFrame(scheduledFrame);
+                }
+
+                scheduledFrame = requestAnimationFrame(updateHeroOffset);
+            }
+
+            const navbarObserver = new MutationObserver(scheduleUpdate);
+
+            navbarObserver.observe(navbarContainer, {
+                childList: true,
+                subtree: true,
+                attributes: true,
+                attributeFilter: ["class", "style"]
+            });
+
+            if ("ResizeObserver" in window) {
+                resizeObserver = new ResizeObserver(scheduleUpdate);
+                resizeObserver.observe(navbarContainer);
+            }
+
+            window.addEventListener("resize", scheduleUpdate, { passive: true });
+            window.addEventListener("orientationchange", scheduleUpdate, { passive: true });
+            window.addEventListener("load", scheduleUpdate);
+
+            document.addEventListener("DOMContentLoaded", scheduleUpdate);
+            scheduleUpdate();
+        })();
+    </script>
 
     <!-- Scripts -->
     <script src="../js/script.js"></script>

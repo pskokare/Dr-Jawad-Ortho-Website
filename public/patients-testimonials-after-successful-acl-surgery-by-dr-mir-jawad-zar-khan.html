@@ -37,6 +37,139 @@
       opacity: 0;
       pointer-events: none;
     }
+    :root {
+      --gh-fixed-header-offset: 0px;
+    }
+
+    html {
+      scroll-padding-top: var(--gh-fixed-header-offset);
+    }
+
+    #navbar-container {
+      position: relative;
+      z-index: 1000;
+    }
+
+    .hip-hero-section {
+      position: relative;
+      width: 100%;
+      margin: 0;
+      padding: var(--gh-fixed-header-offset) 0 0;
+      overflow: hidden;
+    }
+
+    .hip-hero-media {
+      position: relative;
+      width: 100%;
+      height: clamp(250px, 67vw, 320px);
+      min-height: 250px;
+      overflow: hidden;
+      background: #1f2937;
+    }
+
+    .hip-hero-image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 46%;
+    }
+
+    .hip-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(32, 5, 8, 0.72), rgba(72, 9, 14, 0.58)),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.32));
+    }
+
+    .hip-hero-content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 18px;
+      text-align: center;
+    }
+
+    .hip-hero-copy {
+      width: min(100%, 760px);
+      margin: 0 auto;
+    }
+
+    .hip-hero-title {
+      margin: 0 0 12px;
+      color: #ffffff;
+      font-size: clamp(1.75rem, 7vw, 3.35rem);
+      font-weight: 800;
+      line-height: 1.12;
+      text-wrap: balance;
+    }
+
+    .hip-hero-description {
+      max-width: 680px;
+      margin: 0 auto;
+      color: #ffffff;
+      font-size: clamp(0.95rem, 3.5vw, 1.25rem);
+      line-height: 1.65;
+      text-align: center;
+      text-wrap: balance;
+    }
+
+    @media (min-width: 640px) {
+      .hip-hero-media {
+        height: 340px;
+        min-height: 340px;
+      }
+
+      .hip-hero-content {
+        padding: 32px 24px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .hip-hero-media {
+        height: 400px;
+        min-height: 400px;
+      }
+
+      .hip-hero-image {
+        object-position: center 48%;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hip-hero-media {
+        height: 380px;
+        min-height: 380px;
+      }
+
+      .hip-hero-content {
+        padding: 40px 32px;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      .hip-hero-media {
+        height: 440px;
+        min-height: 440px;
+      }
+    }
+
+    @media (min-width: 1536px) {
+      .hip-hero-media {
+        height: 500px;
+        min-height: 500px;
+      }
+    }
+
+    @media (max-width: 374px) {
+      .hip-hero-media {
+        height: 240px;
+        min-height: 240px;
+      }
+    }
   </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-B7BXJEHXWK"></script>
 <script>
@@ -57,27 +190,33 @@ gtag('config', 'G-B7BXJEHXWK');
   <!-- Navbar Component -->
   <div id="navbar-container"></div>
 
-  <!-- Hero Section -->
-  <section class="relative">
-    <div class="w-full h-48 sm:h-64 md:h-80 lg:h-96 xl:h-[450px] 2xl:h-[520px] overflow-hidden relative">
-      <img src="../Images/Blog/HeaderCommon.jpg" alt="total-knee-replacement-success-story"
-        width="1920" height="1080" class="w-full h-full object-cover object-center scale-100 lg:scale-105 transition-transform duration-300">
-      <!-- Left-to-right blur overlay -->
-      <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70 backdrop-blur-sm"></div>
-      <div class="absolute inset-0 flex items-center justify-center">
-        <div class="text-center px-4 sm:px-6 lg:px-8">
-          <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-4">Total Knee Replacement Success Story
+  <section class="hip-hero-section" aria-labelledby="acl-testimonials-hero-title">
+
+    <div class="hip-hero-media">
+
+      <img src="../Images/Blog/HeaderCommon.jpg" alt="Patient Testimonials After Successful ACL Surgery" width="1920" height="600"
+        class="hip-hero-image" loading="eager" fetchpriority="high" decoding="async">
+
+      <!-- Readability Overlay -->
+      <div class="hip-hero-overlay" aria-hidden="true"></div>
+
+      <!-- Text Overlay -->
+      <div class="hip-hero-content">
+        <div class="hip-hero-copy">
+          <h1 id="acl-testimonials-hero-title" class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-4">Patient Testimonials After Successful ACL Surgery
           </h1>
           <nav class="flex1 text-sm text-gray-900 items-center justify-center py-2 px-4 rounded-lg bg-yellow-300" aria-label="Breadcrumb">
             <a href="..//" class="hover:text-red-600 transition-colors duration-200 font-medium">Home</a>
             <span class="mx-2 text-gray-700">/</span>
             <a href="../blog" class="hover:text-red-600 transition-colors duration-200 font-medium">Blog</a>
             <span class="mx-2 text-gray-700">/</span>
-            <span class="text-gray-900 font-semibold">Total Knee Replacement Success Story</span>
+            <span class="text-gray-900 font-semibold">Patient Testimonials After Successful ACL Surgery</span>
           </nav>
         </div>
       </div>
+
     </div>
+
   </section>
 
   <!-- Main Content -->
@@ -137,6 +276,90 @@ gtag('config', 'G-B7BXJEHXWK');
 
   <!-- Footer Component -->
   <div id="footer-container"></div>
+
+  <!-- Apply a header offset only when the injected navbar is truly fixed -->
+  <script>
+    (function () {
+      "use strict";
+
+      const root = document.documentElement;
+      const navbarContainer = document.getElementById("navbar-container");
+
+      if (!navbarContainer) {
+        return;
+      }
+
+      let resizeObserver = null;
+      let scheduledFrame = null;
+
+      function getFixedHeaderBottom() {
+        const containerRect = navbarContainer.getBoundingClientRect();
+
+        if (containerRect.height > 1) {
+          return 0;
+        }
+
+        const candidates = [
+          navbarContainer,
+          ...navbarContainer.querySelectorAll(
+            "header, nav, [class*='navbar'], [class*='header']"
+          )
+        ];
+
+        return candidates.reduce(function (largestBottom, element) {
+          const styles = window.getComputedStyle(element);
+
+          if (styles.position !== "fixed") {
+            return largestBottom;
+          }
+
+          const rect = element.getBoundingClientRect();
+
+          if (rect.height <= 0 || rect.bottom <= 0) {
+            return largestBottom;
+          }
+
+          return Math.max(largestBottom, rect.bottom);
+        }, 0);
+      }
+
+      function updateHeroOffset() {
+        scheduledFrame = null;
+
+        const offset = Math.max(0, Math.round(getFixedHeaderBottom()));
+        root.style.setProperty("--gh-fixed-header-offset", offset + "px");
+      }
+
+      function scheduleUpdate() {
+        if (scheduledFrame !== null) {
+          cancelAnimationFrame(scheduledFrame);
+        }
+
+        scheduledFrame = requestAnimationFrame(updateHeroOffset);
+      }
+
+      const navbarObserver = new MutationObserver(scheduleUpdate);
+
+      navbarObserver.observe(navbarContainer, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+        attributeFilter: ["class", "style"]
+      });
+
+      if ("ResizeObserver" in window) {
+        resizeObserver = new ResizeObserver(scheduleUpdate);
+        resizeObserver.observe(navbarContainer);
+      }
+
+      window.addEventListener("resize", scheduleUpdate, { passive: true });
+      window.addEventListener("orientationchange", scheduleUpdate, { passive: true });
+      window.addEventListener("load", scheduleUpdate);
+
+      document.addEventListener("DOMContentLoaded", scheduleUpdate);
+      scheduleUpdate();
+    })();
+  </script>
 
   <!-- Scripts -->
   <script src="../js/script.js"></script>

@@ -2,11 +2,7 @@
 async function loadNavbar() {
     try {
         const navbarContainer = document.getElementById('navbar-container');
-        // If the navbar markup is already inlined on the page, just initialize it.
-        if (navbarContainer && navbarContainer.children.length > 0) {
-            initializeNavbar();
-            return;
-        }
+        if (!navbarContainer) return;
 
         // Check if we're in the treatments, blogs, latestnews, or recentpost folder and adjust path accordingly
         const navbarPath = window.location.pathname.includes('/treatments/') || window.location.pathname.includes('/blogs/') || window.location.pathname.includes('/latestnews/') || window.location.pathname.includes('/recentpost/') ? '../components/navbar.html' : 'components/navbar.html';

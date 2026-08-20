@@ -55,9 +55,8 @@
 </div>
 
 <style>
-    nav a:hover,
-    nav button:hover {
-        color: #f59e0b !important;
+    nav .nav-item:hover {
+        color: #b91c1c !important;
     }
 
     /* Adjust main navbar position to account for top bar */
@@ -120,7 +119,7 @@
         }
 
         #mobile-menu-button:hover i {
-            color: #f59e0b;
+            color: #b91c1c;
             transform: scale(1.05);
         }
 
@@ -233,39 +232,35 @@
             <!-- Desktop Navigation -->
             <div class="hidden lg:flex items-center justify-center space-x-8 xl:space-x-12">
                 <a href="/"
-                    class="relative text-gray-700 hover:text-amber-500 font-semibold transition-all duration-300 group">
+                    class="nav-item relative text-gray-700 hover:text-amber-500 font-semibold transition-all duration-300 group">
                     <span class="relative z-10">Home</span>
-                    <span
-                        class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-400 to-yellow-500 transition-all duration-300 group-hover:w-full"></span>
                 </a>
 
                 <!-- About Us Dropdown -->
                 <div class="relative group">
                     <button
-                        class="relative text-gray-700 hover:text-amber-500 font-semibold transition-all duration-300 flex items-center">
+                        class="nav-item relative text-gray-700 hover:text-amber-500 font-semibold transition-all duration-300 flex items-center">
                         <span class="relative z-10">About Us</span>
                         <i
                             class="fas fa-chevron-down ml-1 text-xs transition-transform duration-300 group-hover:rotate-180"></i>
-                        <span
-                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-400 to-yellow-500 transition-all duration-300 group-hover:w-full"></span>
                     </button>
                     <div
-                        class="absolute left-1/2 transform -translate-x-1/2 mt-2 w-80 bg-white rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 border border-gray-100">
-                        <div class="p-3">
+                        class="absolute left-1/2 transform -translate-x-1/2 mt-5 w-60 bg-gradient-to-br from-[#cf3339] to-[#b91c1c] rounded-none shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 border border-red-800/40">
+                        <div class="p-6">
                             <a href="/about-us"
-                                class="block px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-500 rounded-xl transition-all duration-300 font-medium">
+                                class="block px-2 py-2 text-sm text-white hover:text-amber-200 transition-colors duration-200 font-medium border-b border-white/15 pb-1.5">
                                 About Dr. Jawad
                             </a>
                             <a href="/infrastructure"
-                                class="block px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-500 rounded-xl transition-all duration-300 font-medium">
+                                class="block px-2 py-2 text-sm text-white hover:text-amber-200 transition-colors duration-200 font-medium border-b border-white/15 pb-1.5">
                                 Infrastructure
                             </a>
                             <a href="/international-research-collaboration"
-                                class="block px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-500 rounded-xl transition-all duration-300 font-medium">
+                                class="block px-2 py-2 text-sm text-white hover:text-amber-200 transition-colors duration-200 font-medium border-b border-white/15 pb-1.5">
                                 Research Collaboration
                             </a>
                             <a href="/news-awards"
-                                class="block px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-500 rounded-xl transition-all duration-300 font-medium">
+                                class="block px-2 py-2 text-sm text-white hover:text-amber-200 transition-colors duration-200 font-medium border-b border-white/15 pb-1.5">
                                 News & Awards
                             </a>
                         </div>
@@ -275,63 +270,55 @@
                 <!-- Patient Info Dropdown -->
                 <div class="relative group">
                     <button
-                        class="relative text-gray-700 hover:text-amber-600 font-semibold transition-all duration-300 flex items-center">
+                        class="nav-item relative text-gray-700 hover:text-amber-600 font-semibold transition-all duration-300 flex items-center">
                         <span class="relative z-10">Patient Info</span>
                         <i
                             class="fas fa-chevron-down ml-1 text-xs transition-transform duration-300 group-hover:rotate-180"></i>
-                        <span
-                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-600 to-yellow-600 transition-all duration-300 group-hover:w-full"></span>
                     </button>
                     <div
-                        class="absolute left-1/2 transform -translate-x-1/2 mt-2 w-80 bg-white rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 border border-gray-100">
-                        <div class="p-3 max-h-96 overflow-y-auto">
-                            <div class="space-y-3">
-                                <!-- International Patients Section -->
+                        class="absolute left-1/2 transform -translate-x-1/2 mt-5 w-80 bg-gradient-to-br from-[#cf3339] to-[#b91c1c] rounded-none shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 border border-red-800/40">
+                        <div class="p-6">
+                            <div class="space-y-5">
                                 <div>
                                     <div
-                                        class="px-4 py-2 text-sm font-semibold text-amber-300 border-b border-gray-200">
-                                        INTERNATIONAL PATIENTS
-                                    </div>
+                                        class="px-2 py-2 text-xs font-bold text-amber-300 uppercase tracking-wider border-b border-amber-300/70 mb-3">
+                                        International Patients</div>
                                     <div class="space-y-1">
                                         <a href="/international-patients-faq-s"
-                                            class="block px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium">
-                                            • International Patients Faq's
+                                            class="block px-2 py-1.5 text-sm text-white hover:text-amber-200 transition-colors duration-200 font-medium border-b border-white/15 pb-1.5">
+                                            International Patients Faq's
                                         </a>
                                         <a href="/international-patients-relation"
-                                            class="block px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium">
-                                            • International Patients Relation
+                                            class="block px-2 py-1.5 text-sm text-white hover:text-amber-200 transition-colors duration-200 font-medium border-b border-white/15 pb-1.5">
+                                            International Patients Relation
                                         </a>
                                     </div>
                                 </div>
 
-                                <!-- Organizations Section -->
                                 <div>
                                     <div
-                                        class="px-4 py-2 text-sm font-semibold text-amber-300 border-b border-gray-200">
-                                        ORGANIZATIONS
-                                    </div>
+                                        class="px-2 py-2 text-xs font-bold text-amber-300 uppercase tracking-wider border-b border-amber-300/70 mb-3">
+                                        Organizations</div>
                                     <div class="space-y-1">
                                         <a href="/empanelled-organizations"
-                                            class="block px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium">
-                                            • Empanelled Organizations
+                                            class="block px-2 py-1.5 text-sm text-white hover:text-amber-200 transition-colors duration-200 font-medium border-b border-white/15 pb-1.5">
+                                            Empanelled Organizations
                                         </a>
                                         <a href="/insurance-companies-tpa-s"
-                                            class="block px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium">
-                                            • Insurance Companies & TPA's
+                                            class="block px-2 py-1.5 text-sm text-white hover:text-amber-200 transition-colors duration-200 font-medium border-b border-white/15 pb-1.5">
+                                            Insurance Companies & TPA's
                                         </a>
                                     </div>
                                 </div>
 
-                                <!-- Cost Section -->
                                 <div>
                                     <div
-                                        class="px-4 py-2 text-sm font-semibold text-amber-300 border-b border-gray-200">
-                                        COST INFORMATION
-                                    </div>
+                                        class="px-2 py-2 text-xs font-bold text-amber-300 uppercase tracking-wider border-b border-amber-300/70 mb-3">
+                                        Cost Information</div>
                                     <div class="space-y-1">
                                         <a href="/knee-replacement-surgery-cost-in-hyderabad"
-                                            class="block px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium">
-                                            • Knee Replacement Surgery Cost
+                                            class="block px-2 py-1.5 text-sm text-white hover:text-amber-200 transition-colors duration-200 font-medium border-b border-white/15 pb-1.5">
+                                            Knee Replacement Surgery Cost
                                         </a>
                                     </div>
                                 </div>
@@ -343,143 +330,133 @@
                 <!-- Treatments Dropdown -->
                 <div class="relative group">
                     <button
-                        class="relative text-gray-700 hover:text-amber-600 font-semibold transition-all duration-300 flex items-center group">
+                        class="nav-item relative text-gray-700 hover:text-amber-600 font-semibold transition-all duration-300 flex items-center group">
                         <span class="relative z-10">Treatments</span>
                         <i
                             class="fas fa-chevron-down ml-1 text-xs transition-transform duration-300 group-hover:rotate-180"></i>
-                        <span
-                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-600 to-yellow-600 transition-all duration-300 group-hover:w-full"></span>
                     </button>
                     <div
-                        class="absolute left-1/2 transform -translate-x-1/2 mt-3 w-[1000px] bg-white rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 border border-gray-100">
-                        <div class="p-4">
-                            <div class="grid grid-cols-4 gap-2">
-                                <!-- Column 1 -->
-                                <div class="space-y-1">
-                                    <a href="/eswt"
-                                        class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
-                                        • ESWT
+                        class="absolute left-1/2 transform -translate-x-1/2 mt-5 w-[1200px] max-w-[95vw] bg-gradient-to-br from-[#cf3339] to-[#b91c1c] rounded-none shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 border border-red-800/40">
+                        <div class="p-8">
+                            <div class="grid grid-cols-6 gap-8">
+
+                                <div class="space-y-1 min-w-0">
+                                    <div
+                                        class="px-2 py-2 text-xs font-bold text-amber-300 uppercase tracking-wider border-b border-amber-300/70 mb-3 min-h-[2.5rem] flex items-end">
+                                        General Orthopaedics</div>
+                                    <a href="/general-orthopedics"
+                                        class="block px-2 py-1.5 text-sm text-white hover:text-amber-200 transition-colors duration-200 font-medium border-b border-white/15 pb-1.5">
+                                        General Orthopedics
+                                    </a>
+                                </div>
+
+                                <div class="space-y-1 min-w-0">
+                                    <div
+                                        class="px-2 py-2 text-xs font-bold text-amber-300 uppercase tracking-wider border-b border-amber-300/70 mb-3 min-h-[2.5rem] flex items-end">
+                                        Joint Replacement</div>
+                                    <a href="/hip-replacement-surgery-in-hyderabad"
+                                        class="block px-2 py-1.5 text-sm text-white hover:text-amber-200 transition-colors duration-200 font-medium border-b border-white/15 pb-1.5">
+                                        Hip Replacement
                                     </a>
                                     <a href="/best-knee-replacement-surgeon-in-hyderabad"
-                                        class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
-                                        • Knee Replacement
+                                        class="block px-2 py-1.5 text-sm text-white hover:text-amber-200 transition-colors duration-200 font-medium border-b border-white/15 pb-1.5">
+                                        Knee Replacement
                                     </a>
-                                    <a href="/hip-replacement"
-                                        class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
-                                        • Hip Replacement
-                                    </a>
-                                    <a href="/oats-procedure"
-                                        class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
-                                        • OATS Procedure
-                                    </a>
-                                    <a href="/best-spine-surgeon-in-hyderabad"
-                                        class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
-                                        • Spine Center
-                                    </a>
-                                    <!-- <a href="/gynecology" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
-                                        • Gynecology
-                                    </a>
-                                    <a href="/neurology" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
-                                        • Neurology
-                                    </a> -->
-
-                                </div>
-
-                                <!-- Column 2 -->
-                                <div class="space-y-1">
-                                    <!-- <a href="/crical-care" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
-                                        • Critical Care
-                                    </a> -->
-                                    <a href="/joint-replacement"
-                                        class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
-                                        • Joint Replacement
-                                    </a>
-                                    <!-- <a href="/dental-maxillofacial" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
-                                        • Dental & Maxillofacial
-                                    </a> -->
-                                    <a href="/foot-and-ankle-surgery"
-                                        class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
-                                        • Foot & Ankle Surgery
-                                    </a>
-                                    <!-- <a href="/plastic-surgery" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
-                                        • Plastics Surgery
-                                    </a> -->
-                                    <a href="/trauma-and-fractures"
-                                        class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
-                                        • Trauma And Fractures
-                                    </a>
-                                    <a href="/general-orthopedics"
-                                        class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
-                                        • General Orthopedics
+                                    <a href="/joint-replacement-surgery-in-hyderabad"
+                                        class="block px-2 py-1.5 text-sm text-white hover:text-amber-200 transition-colors duration-200 font-medium border-b border-white/15 pb-1.5">
+                                        Joint Replacement
                                     </a>
                                     <a href="/shoulder-replacement-surgery-in-hyderabad"
-                                        class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
-                                        • Shoulder Replacement Surgery
+                                        class="block px-2 py-1.5 text-sm text-white hover:text-amber-200 transition-colors duration-200 font-medium border-b border-white/15 pb-1.5">
+                                        Shoulder Replacement
                                     </a>
-                                </div>
-
-                                <!-- Column 3 -->
-                                <div class="space-y-1">
-                                    <!-- <a href="/laparoscopic-surgery" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
-                                        • Laparoscopic Surgery
-                                    </a> -->
-                                    <!-- <a href="/internal-medicine" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
-                                        • Internal Medicine
-                                    </a> -->
-                                    <a href="/partial-knee-replacement"
-                                        class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
-                                        • Partial Knee Replacement
-                                    </a>
-                                    <a href="/hand-microvascular-surgery"
-                                        class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
-                                        • Hand & Microvascular Surgery
-                                    </a>
-                                    <a href="/rheumatoid-arthritis"
-                                        class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
-                                        • Rheumatoid Arthritis
-                                    </a>
-                                    <!-- <a href="#" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
-                                        • VISCO Supplementation
-                                    </a> -->
-                                    <a href="/spine-surgical-treatment"
-                                        class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
-                                        • Spine Surgical Treatment
-                                    </a>
-                                    <a href="/arthroscopy"
-                                        class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
-                                        • Arthroscopy & Sports Injuries
-                                    </a>
-                                </div>
-
-                                <!-- Column 4 -->
-                                <div class="space-y-1">
-                                    <a href="/pain-management"
-                                        class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
-                                        • Pain Medicine
-                                    </a>
-                                    <a href="/spine-non-surgical-treatment"
-                                        class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
-                                        • Spine Non Surgical Treatment
-                                    </a>
-                                    <a href="/cartilage-transplantation"
-                                        class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
-                                        • Cartilage Transplantation
-                                    </a>
-                                    <!-- <a href="/plastic-reconstructive-surgery" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
-                                        • Plastic & Reconstructive Surgery
-                                    </a> -->
-                                    <!-- <a href="/pulmonology-sleep-medicine" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
-                                        • Pulmonology & Sleep Medicine
-                                    </a> -->
-                                    <a href="/alternative-treatments-for-knee-arthritis-back-problems"
-                                        class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
-                                        • Treatments for Knee & Back Problems
+                                    <a href="/partial-knee-replacement-in-hyderabad"
+                                        class="block px-2 py-1.5 text-sm text-white hover:text-amber-200 transition-colors duration-200 font-medium border-b border-white/15 pb-1.5">
+                                        Partial Knee Replacement
                                     </a>
                                     <a href="/revision-joint-replacement-in-hyderabad"
-                                        class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
-                                        • Revision of Joint Replacement in Hyderabad
+                                        class="block px-2 py-1.5 text-sm text-white hover:text-amber-200 transition-colors duration-200 font-medium border-b border-white/15 pb-1.5">
+                                        Revision Knee / Hip Replacement
                                     </a>
+                                </div>
 
+                                <div class="space-y-1 min-w-0">
+                                    <div
+                                        class="px-2 py-2 text-xs font-bold text-amber-300 uppercase tracking-wider border-b border-amber-300/70 mb-3 min-h-[2.5rem] flex items-end">
+                                        Spine</div>
+                                    <a href="/spine-specialist-in-hyderabad"
+                                        class="block px-2 py-1.5 text-sm text-white hover:text-amber-200 transition-colors duration-200 font-medium border-b border-white/15 pb-1.5">
+                                        Spine Surgery
+                                    </a>
+                                    <a href="/best-spine-surgeon-in-hyderabad"
+                                        class="block px-2 py-1.5 text-sm text-white hover:text-amber-200 transition-colors duration-200 font-medium border-b border-white/15 pb-1.5">
+                                        Spine & Neurology
+                                    </a>
+                                    <a href="/spine-non-surgical-treatment"
+                                        class="block px-2 py-1.5 text-sm text-white hover:text-amber-200 transition-colors duration-200 font-medium border-b border-white/15 pb-1.5">
+                                        Non-Surgical Spine Treatment
+                                    </a>
+                                    <a href="/sciatica-treatment-in-hyderabad"
+                                        class="block px-2 py-1.5 text-sm text-white hover:text-amber-200 transition-colors duration-200 font-medium border-b border-white/15 pb-1.5">
+                                        Sciatica Treatment</a>
+                                </div>
+
+                                <div class="space-y-1 min-w-0">
+                                    <div
+                                        class="px-2 py-2 text-xs font-bold text-amber-300 uppercase tracking-wider border-b border-amber-300/70 mb-3 min-h-[2.5rem] flex items-end">
+                                        Special Procedures & Regenerative</div>
+                                    <a href="/oats-procedure"
+                                        class="block px-2 py-1.5 text-sm text-white hover:text-amber-200 transition-colors duration-200 font-medium border-b border-white/15 pb-1.5">
+                                        OATS Procedure
+                                    </a>
+                                    <a href="/pain-management"
+                                        class="block px-2 py-1.5 text-sm text-white hover:text-amber-200 transition-colors duration-200 font-medium border-b border-white/15 pb-1.5">
+                                        Pain Management
+                                    </a>
+                                    <!-- <a href="/shoulder-replacement-surgery-in-hyderabad"
+                                        class="block px-2 py-1.5 text-sm text-white hover:text-amber-200 transition-colors duration-200 font-medium border-b border-white/15 pb-1.5">
+                                        Shoulder Surgery
+                                    </a> -->
+                                    <a href="/alternative-treatments-for-knee-arthritis-back-problems"
+                                        class="block px-2 py-1.5 text-sm text-white hover:text-amber-200 transition-colors duration-200 font-medium border-b border-white/15 pb-1.5">
+                                        Alternative Treatments
+                                    </a>
+                                    <a href="/eswt"
+                                        class="block px-2 py-1.5 text-sm text-white hover:text-amber-200 transition-colors duration-200 font-medium border-b border-white/15 pb-1.5">
+                                        ESWT / Shockwave Therapy
+                                    </a>
+                                    <a href="/cartilage-transplantation"
+                                        class="block px-2 py-1.5 text-sm text-white hover:text-amber-200 transition-colors duration-200 font-medium border-b border-white/15 pb-1.5">
+                                        Cartilage Transplantation
+                                    </a>
+                                    <a href="/hand-microvascular-surgery"
+                                        class="block px-2 py-1.5 text-sm text-white hover:text-amber-200 transition-colors duration-200 font-medium border-b border-white/15 pb-1.5">
+                                        Hand & Microvascular Surgery
+                                    </a>
+                                </div>
+
+                                <div class="space-y-1 min-w-0">
+                                    <div
+                                        class="px-2 py-2 text-xs font-bold text-amber-300 uppercase tracking-wider border-b border-amber-300/70 mb-3 min-h-[2.5rem] flex items-end">
+                                        Sports Medicine & Arthroscopy</div>
+                                    <a href="/arthroscopy"
+                                        class="block px-2 py-1.5 text-sm text-white hover:text-amber-200 transition-colors duration-200 font-medium border-b border-white/15 pb-1.5">
+                                        Arthroscopy
+                                    </a>
+                                </div>
+
+                                <div class="space-y-1 min-w-0">
+                                    <div
+                                        class="px-2 py-2 text-xs font-bold text-amber-300 uppercase tracking-wider border-b border-amber-300/70 mb-3 min-h-[2.5rem] flex items-end">
+                                        Conditions & Other Services</div>
+                                    <a href="/trauma-and-fractures"
+                                        class="block px-2 py-1.5 text-sm text-white hover:text-amber-200 transition-colors duration-200 font-medium border-b border-white/15 pb-1.5">
+                                        Trauma & Fractures
+                                    </a>
+                                    <a href="/rheumatoid-arthritis"
+                                        class="block px-2 py-1.5 text-sm text-white hover:text-amber-200 transition-colors duration-200 font-medium border-b border-white/15 pb-1.5">
+                                        Rheumatoid Arthritis
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -487,20 +464,15 @@
                 </div>
 
 
-
                 <a href="/testimonials"
-                    class="relative text-gray-700 hover:text-amber-600 font-semibold transition-all duration-300 group">
+                    class="nav-item relative text-gray-700 hover:text-amber-600 font-semibold transition-all duration-300 group">
                     <span class="relative z-10">Testimonials</span>
-                    <span
-                        class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-600 to-yellow-600 transition-all duration-300 group-hover:w-full"></span>
                 </a>
 
 
                 <a href="/blog"
-                    class="relative text-gray-700 hover:text-amber-600 font-semibold transition-all duration-300 group">
+                    class="nav-item relative text-gray-700 hover:text-amber-600 font-semibold transition-all duration-300 group">
                     <span class="relative z-10">Blog</span>
-                    <span
-                        class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-600 to-yellow-600 transition-all duration-300 group-hover:w-full"></span>
                 </a>
 
                 <!-- <a href="/contact"
@@ -546,14 +518,20 @@
                     About Us
                     <i class="fas fa-chevron-down text-xs"></i>
                 </button>
-                <div id="about-us-dropdown" class="hidden pl-4 space-y-1 max-h-40 overflow-y-auto">
-                    <a href="/about-us" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• About Dr.
+                <div id="about-us-dropdown"
+                    class="hidden mt-2 p-3 space-y-1 max-h-40 overflow-y-auto bg-gradient-to-br from-[#cf3339] to-[#b91c1c] rounded-lg">
+                    <a href="/about-us"
+                        class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">• About
+                        Dr.
                         Jawad</a>
-                    <a href="/infrastructure" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">•
+                    <a href="/infrastructure"
+                        class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">•
                         Infrastructure</a>
                     <a href="/international-research-collaboration"
-                        class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Research Collaboration</a>
-                    <a href="/news-awards" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• News &
+                        class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">• Research
+                        Collaboration</a>
+                    <a href="/news-awards"
+                        class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">• News &
                         Awards</a>
                 </div>
             </div>
@@ -566,34 +544,46 @@
                     Patient Info
                     <i class="fas fa-chevron-down text-xs"></i>
                 </button>
-                <div id="patient-dropdown" class="hidden pl-4 space-y-1 max-h-48 overflow-y-auto">
-                    <div class="border-t border-gray-100 mt-2 pt-2">
-                        <div class="text-xs font-semibold text-amber-300 mb-1">INTERNATIONAL PATIENTS</div>
+                <div id="patient-dropdown"
+                    class="hidden mt-2 p-3 space-y-1 max-h-48 overflow-y-auto bg-gradient-to-br from-[#cf3339] to-[#b91c1c] rounded-lg">
+                    <div class="border-t border-white/20 mt-2 pt-2">
+                        <div
+                            class="text-xs font-semibold text-amber-300 uppercase tracking-wider border-b border-amber-300/70 pb-1 mb-2">
+                            INTERNATIONAL PATIENTS</div>
                         <div class="space-y-1">
                             <a href="/international-patients-faq-s"
-                                class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• International Patients
+                                class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">•
+                                International Patients
                                 Faq's</a>
                             <a href="/international-patients-relation"
-                                class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• International Patients
+                                class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">•
+                                International Patients
                                 Relation</a>
                         </div>
                     </div>
-                    <div class="border-t border-gray-100 mt-2 pt-2">
-                        <div class="text-xs font-semibold text-amber-300 mb-1">ORGANIZATIONS</div>
+                    <div class="border-t border-white/20 mt-2 pt-2">
+                        <div
+                            class="text-xs font-semibold text-amber-300 uppercase tracking-wider border-b border-amber-300/70 pb-1 mb-2">
+                            ORGANIZATIONS</div>
                         <div class="space-y-1">
                             <a href="/empanelled-organizations"
-                                class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Empanelled
+                                class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">•
+                                Empanelled
                                 Organizations</a>
                             <a href="/insurance-companies-tpa-s"
-                                class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Insurance Companies &
+                                class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">•
+                                Insurance Companies &
                                 TPA's</a>
                         </div>
                     </div>
-                    <div class="border-t border-gray-100 mt-2 pt-2">
-                        <div class="text-xs font-semibold text-amber-300 mb-1">COST INFORMATION</div>
+                    <div class="border-t border-white/20 mt-2 pt-2">
+                        <div
+                            class="text-xs font-semibold text-amber-300 uppercase tracking-wider border-b border-amber-300/70 pb-1 mb-2">
+                            COST INFORMATION</div>
                         <div class="space-y-1">
                             <a href="/knee-replacement-surgery-cost-in-hyderabad"
-                                class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Knee Replacement Surgery
+                                class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">•
+                                Knee Replacement Surgery
                                 Cost</a>
                         </div>
                     </div>
@@ -608,100 +598,120 @@
                     Treatments
                     <i class="fas fa-chevron-down text-xs"></i>
                 </button>
-                <div id="treatments-dropdown" class="hidden pl-4 space-y-1 max-h-64 overflow-y-auto">
-                    <div class="border-t border-gray-100 mt-2 pt-2">
-                        <div class="text-xs font-semibold text-amber-300 mb-1">KNEE</div>
+                <div id="treatments-dropdown"
+                    class="hidden mt-2 p-3 space-y-1 max-h-64 overflow-y-auto bg-gradient-to-br from-[#cf3339] to-[#b91c1c] rounded-lg">
+                    <div class="mt-2 pt-2">
+                        <div
+                            class="text-xs font-semibold text-amber-300 uppercase tracking-wider border-b border-amber-300/70 pb-1 mb-2">
+                            General Orthopaedics</div>
                         <div class="space-y-1">
-                            <a href="/best-knee-replacement-surgeon-in-hyderabad"
-                                class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Knee Replacement</a>
-                            <a href="/partial-knee-replacement"
-                                class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Partial Knee
-                                Replacement</a>
-                            <a href="/trauma-and-fractures"
-                                class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Trauma And Fractures</a>
-                            <a href="/arthroscopy" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">•
-                                Arthroscopy & Sports Injuries</a>
-                        </div>
-                    </div>
-                    <div class="border-t border-gray-100 mt-2 pt-2">
-                        <div class="text-xs font-semibold text-amber-300 mb-1">HIP</div>
-                        <div class="space-y-1">
-                            <a href="/hip-replacement" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">•
-                                Hip Replacement</a>
-                            <a href="/joint-replacement" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">•
-                                Joint Replacement</a>
-                        </div>
-                    </div>
-                    <div class="border-t border-gray-100 mt-2 pt-2">
-                        <div class="text-xs font-semibold text-amber-300 mb-1">SPINE</div>
-                        <div class="space-y-1">
-                            <a href="/best-spine-surgeon-in-hyderabad"
-                                class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Spine Center</a>
-                            <a href="/spine-surgical-treatment"
-                                class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Spine Surgical
-                                Treatment</a>
-                            <a href="/spine-non-surgical-treatment"
-                                class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Spine Non Surgical
-                                Treatment</a>
-                        </div>
-                    </div>
-                    <div class="border-t border-gray-100 mt-2 pt-2">
-                        <div class="text-xs font-semibold text-amber-300 mb-1">ALTERNATIVE TREATMENTS</div>
-                        <div class="space-y-1">
-                            <a href="/alternative-treatments-for-knee-arthritis-back-problems"
-                                class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Treatments for Knee &
-                                Back Problems</a>
-                            <a href="/cartilage-transplantation"
-                                class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Cartilage
-                                Transplantation</a>
-                            <a href="/oats-procedure" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">•
-                                OATS Procedure</a>
-                            <a href="/eswt" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• ESWT</a>
-                        </div>
-                    </div>
-                    <div class="border-t border-gray-100 mt-2 pt-2">
-                        <div class="text-xs font-semibold text-amber-300 mb-1">SPECIALIZED SURGERIES</div>
-                        <div class="space-y-1">
-                            <a href="/shoulder-replacement-surgery-in-hyderabad"
-                                class="block py-1 text-gray-600 hover:text-amber-600 text-sm">•
-                                Shoulder Replacement Surgery</a>
-                            <!-- <a href="/neurology" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• NEUROLOGY</a> -->
                             <a href="/general-orthopedics"
-                                class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• General Orthopedics</a>
-                            <a href="/rheumatoid-arthritis"
-                                class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Rheumatoid Arthritis</a>
-                            <!-- <a href="/plastic-reconstructive-surgery" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• PLASTIC & RECONSTRUCTIVE SURGERY</a> -->
-                            <a href="/hand-microvascular-surgery"
-                                class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Hand & Microvascular
-                                Surgery</a>
-                            <a href="/pain-management" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">•
-                                Pain Medicine</a>
-                            <a href="/foot-and-ankle-surgery"
-                                class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Foot & Ankle Surgery</a>
-
-                            <a href="/revision-joint-replacement-in-hyderabad"
-                                class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Revision of Joint
-                                Replacement in Hyderabad</a>
-
+                                class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">•
+                                General Orthopedics</a>
                         </div>
                     </div>
-                    <!-- <div class="border-t border-gray-100 mt-2 pt-2">
-                        <div class="text-xs font-semibold text-amber-300 mb-1">OTHER SPECIALTIES</div>
-                        <div class="space-y-1"> -->
-                    <!-- <a href="/gynecology" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Gynecology</a> -->
-                    <!-- <a href="/pulmonology-sleep-medicine" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Pulmonology & Sleep Medicine</a> -->
-                    <!-- <a href="/laparoscopic-surgery" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Laparoscopic Surgery</a> -->
-                    <!-- <a href="/internal-medicine" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Internal Medicine</a> -->
-                    <!-- <a href="/crical-care" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Critical Care</a> -->
-                    <!-- <a href="/plastic-surgery" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Plastics Surgery</a> -->
-                    <!-- <a href="/department-of-dermatology" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Department of Dermatology</a> -->
-                    <!-- <a href="/dental-maxillofacial" class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Dental & Maxillofacial</a> -->
-                    <!-- </div>
-                    </div> -->
+                    <div class="border-t border-white/20 mt-2 pt-2">
+                        <div
+                            class="text-xs font-semibold text-amber-300 uppercase tracking-wider border-b border-amber-300/70 pb-1 mb-2">
+                            Joint Replacement</div>
+                        <div class="space-y-1">
+                            <a href="/hip-replacement-surgery-in-hyderabad"
+                                class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">•
+                                Hip Replacement</a>
+                            <a href="/best-knee-replacement-surgeon-in-hyderabad"
+                                class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">•
+                                Knee Replacement</a>
+                            <a href="/joint-replacement-surgery-in-hyderabad"
+                                class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">•
+                                Joint Replacement</a>
+                            <a href="/shoulder-replacement-surgery-in-hyderabad"
+                                class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">•
+                                Shoulder Replacement</a>
+                            <a href="/partial-knee-replacement-in-hyderabad"
+                                class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">•
+                                Partial Knee
+                                Replacement</a>
+                            <a href="/revision-joint-replacement-in-hyderabad"
+                                class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">•
+                                Revision Knee / Hip
+                                Replacement</a>
+                        </div>
+                    </div>
+                    <div class="border-t border-white/20 mt-2 pt-2">
+                        <div
+                            class="text-xs font-semibold text-amber-300 uppercase tracking-wider border-b border-amber-300/70 pb-1 mb-2">
+                            Spine</div>
+                        <div class="space-y-1">
+                            <a href="/spine-specialist-in-hyderabad"
+                                class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">•
+                                Spine Surgery</a>
+                            <a href="/best-spine-surgeon-in-hyderabad"
+                                class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">•
+                                Spine & Neurology</a>
+                            <a href="/spine-non-surgical-treatment"
+                                class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">•
+                                Non-Surgical Spine
+                                Treatment</a>
+                            <a href="/sciatica-treatment-in-hyderabad"
+                                class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">•
+                                Sciatica Treatment</a>
+                        </div>
+                    </div>
+                    <div class="border-t border-white/20 mt-2 pt-2">
+                        <div
+                            class="text-xs font-semibold text-amber-300 uppercase tracking-wider border-b border-amber-300/70 pb-1 mb-2">
+                            Sports Medicine & Arthroscopy</div>
+                        <div class="space-y-1">
+                            <a href="/arthroscopy"
+                                class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">•
+                                Arthroscopy</a>
+                        </div>
+                    </div>
+                    <div class="border-t border-white/20 mt-2 pt-2">
+                        <div
+                            class="text-xs font-semibold text-amber-300 uppercase tracking-wider border-b border-amber-300/70 pb-1 mb-2">
+                            Special Procedures & Regenerative</div>
+                        <div class="space-y-1">
+                            <a href="/oats-procedure"
+                                class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">•
+                                OATS Procedure</a>
+                            <a href="/pain-management"
+                                class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">•
+                                Pain Management</a>
+                            <!-- <a href="/shoulder-replacement-surgery-in-hyderabad"
+                                class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">• Shoulder Surgery</a> -->
+                            <a href="/alternative-treatments-for-knee-arthritis-back-problems"
+                                class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">•
+                                Alternative Treatments</a>
+                            <a href="/eswt"
+                                class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">•
+                                ESWT /
+                                Shockwave Therapy</a>
+                            <a href="/cartilage-transplantation"
+                                class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">•
+                                Cartilage
+                                Transplantation</a>
+                            <a href="/hand-microvascular-surgery"
+                                class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">•
+                                Hand & Microvascular
+                                Surgery</a>
+                        </div>
+                    </div>
+                    <div class="border-t border-white/20 mt-2 pt-2">
+                        <div
+                            class="text-xs font-semibold text-amber-300 uppercase tracking-wider border-b border-amber-300/70 pb-1 mb-2">
+                            Conditions & Other Services</div>
+                        <div class="space-y-1">
+                            <a href="/trauma-and-fractures"
+                                class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">•
+                                Trauma & Fractures</a>
+                            <a href="/rheumatoid-arthritis"
+                                class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">•
+                                Rheumatoid Arthritis</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-
 
             <a href="/testimonials" class="block py-2 text-gray-700 hover:text-amber-600 font-medium">Testimonials</a>
             <a href="/blog" class="block py-2 text-gray-700 hover:text-amber-600 font-medium">Blog</a>

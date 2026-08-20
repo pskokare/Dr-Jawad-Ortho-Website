@@ -807,7 +807,7 @@
     }
     </script>
 
-</head>
+</head> 
 
 <body class="bg-gray-50">
     <!-- Scroll Progress Bar -->
@@ -818,9 +818,8 @@
     <!-- Navbar Component -->
     <div id="navbar-container" style="height: 60px;"></div>
 
-    <!-- =========================================================
-     ABOUT PAGE HERO SECTION
-========================================================= -->
+    <!-- ========================================================= ABOUT PAGE HERO SECTION ========================================================= -->
+    
     <section class="about-hero-v4" aria-labelledby="aboutHeroHeading">
 
         <div class="about-hero-v4__card">
@@ -928,27 +927,26 @@
     <!-- =========================================================
      BREADCRUMB SECTION
 ========================================================= -->
-    <div id="about-page-content" class="bg-white border-b border-gray-200  breadcrumb-container">
-        <div class="max-w-7xl mx-auto px-2 sm:px-3 md:px-4 lg:px-6 xl:px-8 py-2 sm:py-3 md:py-4">
-
-            <nav class="flex items-center flex-wrap gap-1 sm:gap-2 text-xs sm:text-sm" aria-label="Breadcrumb">
-                <a href="/"
-                    class="breadcrumb-link inline-flex items-center text-gray-600 hover:text-red-600 transition-colors duration-200 font-medium">
-                    <i class="fa-solid fa-home mr-1 text-[10px] sm:text-xs"></i>
-
-                    <span>AboutUs</span>
-                </a>
-
-                <i class="fa-solid fa-chevron-right text-gray-400 text-[8px] sm:text-[10px] mx-0.5 sm:mx-1"
-                    aria-hidden="true"></i>
-
-                <span class="text-red-600 font-semibold truncate max-w-[160px] sm:max-w-[220px] md:max-w-none"
-                    aria-current="page">
-                    <span class="hidden sm:inline">About DR. MIR JAWAD</span>
-                    <span class="sm:hidden">DR. MIR JAWAD</span>
-                </span>
+    <div id="about-page-content" class="bg-white border-b border-gray-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-3 md:py-4">
+            <nav class="flex items-center flex-wrap text-xs sm:text-sm" aria-label="Breadcrumb">
+                <ol class="flex items-center flex-wrap list-none m-0 p-0">
+                    <li class="flex items-center">
+                        <a href="/"
+                            class="inline-flex items-center text-gray-600 hover:text-blue-700 transition font-medium">
+                            <i class="fa-solid fa-home mr-1 text-[10px] sm:text-xs"></i>
+                            <span class="hidden sm:inline">Home</span>
+                        </a>
+                    </li>
+                    <li class="flex items-center px-1 sm:px-2">
+                        <i class="fa-solid fa-chevron-right text-[8px] sm:text-[10px] text-gray-400"></i>
+                    </li>
+                    <li class="flex items-center">
+                        <span class="text-blue-700 font-semibold truncate max-w-[150px] sm:max-w-[200px] md:max-w-none"
+                            aria-current="page">About DR. MIR JAWAD</span>
+                    </li>
+                </ol>
             </nav>
-
         </div>
     </div>
 
@@ -1627,8 +1625,9 @@
                 .ds-details h2 {
                     margin-bottom: 8px;
                     color: var(--red);
+                    font-family: Georgia, "Times New Roman", serif;
                     font-size: 20px;
-                    font-weight: 700;
+                    font-weight: 600;
                     line-height: 1.1;
                     white-space: nowrap;
                 }
@@ -2464,8 +2463,9 @@
                     .gh-section-title {
                         margin-bottom: 10px;
                         color: #161b22;
+                        font-family: Georgia, "Times New Roman", serif;
                         font-size: clamp(26px, 2.1vw, 34px);
-                        font-weight: 700;
+                        font-weight: 600;
                         line-height: 1.18;
                         letter-spacing: -0.02em;
                     }
@@ -2659,8 +2659,9 @@
                         margin-bottom: 20px;
                         padding-left: 15px;
                         color: #191d25;
+                        font-family: Georgia, "Times New Roman", serif;
                         font-size: 22px;
-                        font-weight: 700;
+                        font-weight: 600;
                         line-height: 1.3;
                     }
 

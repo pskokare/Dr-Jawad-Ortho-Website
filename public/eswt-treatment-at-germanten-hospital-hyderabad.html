@@ -39,6 +39,139 @@
       opacity: 0;
       pointer-events: none;
     }
+    :root {
+      --gh-fixed-header-offset: 0px;
+    }
+
+    html {
+      scroll-padding-top: var(--gh-fixed-header-offset);
+    }
+
+    #navbar-container {
+      position: relative;
+      z-index: 1000;
+    }
+
+    .hip-hero-section {
+      position: relative;
+      width: 100%;
+      margin: 0;
+      padding: var(--gh-fixed-header-offset) 0 0;
+      overflow: hidden;
+    }
+
+    .hip-hero-media {
+      position: relative;
+      width: 100%;
+      height: clamp(250px, 67vw, 320px);
+      min-height: 250px;
+      overflow: hidden;
+      background: #1f2937;
+    }
+
+    .hip-hero-image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 46%;
+    }
+
+    .hip-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(32, 5, 8, 0.72), rgba(72, 9, 14, 0.58)),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.32));
+    }
+
+    .hip-hero-content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 18px;
+      text-align: center;
+    }
+
+    .hip-hero-copy {
+      width: min(100%, 760px);
+      margin: 0 auto;
+    }
+
+    .hip-hero-title {
+      margin: 0 0 12px;
+      color: #ffffff;
+      font-size: clamp(1.75rem, 7vw, 3.35rem);
+      font-weight: 800;
+      line-height: 1.12;
+      text-wrap: balance;
+    }
+
+    .hip-hero-description {
+      max-width: 680px;
+      margin: 0 auto;
+      color: #ffffff;
+      font-size: clamp(0.95rem, 3.5vw, 1.25rem);
+      line-height: 1.65;
+      text-align: center;
+      text-wrap: balance;
+    }
+
+    @media (min-width: 640px) {
+      .hip-hero-media {
+        height: 340px;
+        min-height: 340px;
+      }
+
+      .hip-hero-content {
+        padding: 32px 24px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .hip-hero-media {
+        height: 400px;
+        min-height: 400px;
+      }
+
+      .hip-hero-image {
+        object-position: center 48%;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hip-hero-media {
+        height: 380px;
+        min-height: 380px;
+      }
+
+      .hip-hero-content {
+        padding: 40px 32px;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      .hip-hero-media {
+        height: 440px;
+        min-height: 440px;
+      }
+    }
+
+    @media (min-width: 1536px) {
+      .hip-hero-media {
+        height: 500px;
+        min-height: 500px;
+      }
+    }
+
+    @media (max-width: 374px) {
+      .hip-hero-media {
+        height: 240px;
+        min-height: 240px;
+      }
+    }
   </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-B7BXJEHXWK"></script>
   <script>
@@ -59,16 +192,20 @@
   <!-- Navbar Component -->
   <div id="navbar-container"></div>
 
-  <!-- Hero Section -->
-  <section class="relative">
-    <div class="w-full h-48 sm:h-64 md:h-80 lg:h-96 xl:h-[450px] 2xl:h-[520px] overflow-hidden relative">
-      <img src="../Images/Blog/HeaderCommon.jpg" alt="ESWT Treatment at Germanten Hospital" width="1920" height="1080"
-        class="w-full h-full object-cover object-center scale-100 lg:scale-105 transition-transform duration-300">
-      <!-- Left-to-right blur overlay -->
-      <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70 backdrop-blur-sm"></div>
-      <div class="absolute inset-0 flex items-center justify-center">
-        <div class="text-center px-4 sm:px-6 lg:px-8">
-          <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-4">ESWT Treatment at
+  <section class="hip-hero-section" aria-labelledby="eswt-hero-title">
+
+    <div class="hip-hero-media">
+
+      <img src="../Images/Blog/HeaderCommon.jpg" alt="ESWT Treatment at Germanten Hospital" width="1920" height="600"
+        class="hip-hero-image" loading="eager" fetchpriority="high" decoding="async">
+
+      <!-- Readability Overlay -->
+      <div class="hip-hero-overlay" aria-hidden="true"></div>
+
+      <!-- Text Overlay -->
+      <div class="hip-hero-content">
+        <div class="hip-hero-copy">
+          <h1 id="eswt-hero-title" class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-4">ESWT Treatment at
             Germanten Hospital
           </h1>
           <nav class="flex1 text-sm text-gray-900 items-center justify-center py-2 px-4 rounded-lg bg-yellow-300"
@@ -81,7 +218,9 @@
           </nav>
         </div>
       </div>
+
     </div>
+
   </section>
 
   <!-- Main Content -->
@@ -192,42 +331,190 @@
       </div>
 
       <!-- Right Column: Recent Posts Sidebar -->
-      <div class="lg:col-span-4">
-        <div class="bg-gray-100 rounded-xl border border-gray-200 p-4 sticky top-24">
-          <h3 class="text-xl font-bold text-gray-900 mb-4 border-b border-red-400 pb-2">Recent Posts</h3>
-          <div class="space-y-3">
-            <a href="acl-tear-treatment"
-              class="flex gap-3 p-2 rounded-lg hover:bg-gray-100 border-l-4 border-transparent hover:border-red-400 transition-colors">
-              <img src="../Images/Blog/Recent1.webp" alt="ACL Tear Treatment" width="64" height="64"
-                class="w-16 h-16 object-cover rounded-lg flex-shrink-0">
-              <p class="text-sm font-medium text-gray-700 line-clamp-2 self-center">ACL Tear Treatment</p>
-            </a>
-            <a href="best-orthopedic-doctor-hyderabad"
-              class="flex gap-3 p-2 rounded-lg hover:bg-gray-100 border-l-4 border-transparent hover:border-red-400 transition-colors">
-              <img src="../Images/Blog/Recent2.webp" alt="Best Orthopedic Doctor" width="64" height="64"
-                class="w-16 h-16 object-cover rounded-lg flex-shrink-0">
-              <p class="text-sm font-medium text-gray-700 line-clamp-2 self-center">Best Orthopedic Doctor Hyderabad</p>
-            </a>
-            <a href="chondrofiller-injection-the-future-of-non-surgical-cartilage-repair"
-              class="flex gap-3 p-2 rounded-lg hover:bg-gray-100 border-l-4 border-transparent hover:border-red-400 transition-colors">
-              <img src="../Images/Blog/Recent3.webp" alt="ChondroFiller Injection" width="64" height="64"
-                class="w-16 h-16 object-cover rounded-lg flex-shrink-0">
-              <p class="text-sm font-medium text-gray-700 line-clamp-2 self-center">ChondroFiller Injection</p>
-            </a>
-            <a href="knee-replacement-hyderabad"
-              class="flex gap-3 p-2 rounded-lg hover:bg-gray-100 border-l-4 border-transparent hover:border-red-400 transition-colors">
-              <img src="../Images/Blog/Recent4.webp" alt="Knee Replacement Hyderabad" width="64" height="64"
-                class="w-16 h-16 object-cover rounded-lg flex-shrink-0">
-              <p class="text-sm font-medium text-gray-700 line-clamp-2 self-center">Knee Replacement Hyderabad</p>
-            </a>
-          </div>
-        </div>
-      </div>
+            <div class="lg:col-span-4">
+                <div class="bg-gray-100 rounded-xl border border-gray-200 p-3 sm:p-4 lg:sticky lg:top-24 mt-6 lg:mt-0">
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4 border-b border-red-400 pb-2">
+                        Recent Posts</h3>
+                    <div class="space-y-2 sm:space-y-3">
+                        <a href="/blogs/younger-patients-knee-replacement"
+                            class="flex gap-2 sm:gap-3 p-2 rounded-lg hover:bg-gray-100 border-l-4 border-transparent hover:border-red-400 transition-colors">
+                            <img src="../Images/Blog/younger-patients-knee-replacement.webp"
+                                alt="Why Are Younger Patients Getting Knee Replacements? What Has Changed"
+                                class="w-12 h-12 sm:w-16 sm:h-16 object-cover rounded-lg flex-shrink-0">
+                            <p class="text-xs sm:text-sm font-medium text-gray-700 line-clamp-2 self-center">Why Are
+                                Younger Patients Getting Knee Replacements? What Has Changed</p>
+                        </a>
+                        <a href="/blogs/partial-vs-total-knee-replacement"
+                            class="flex gap-2 sm:gap-3 p-2 rounded-lg hover:bg-gray-100 border-l-4 border-transparent hover:border-red-400 transition-colors">
+                            <img src="../Images/Blog/partial-vs-total-knee-replacement-key-differences.webp"
+                                alt="Partial vs Total Knee Replacement: What Is the Difference?"
+                                class="w-12 h-12 sm:w-16 sm:h-16 object-cover rounded-lg flex-shrink-0">
+                            <p class="text-xs sm:text-sm font-medium text-gray-700 line-clamp-2 self-center">Partial vs
+                                Total Knee Replacement: What Is the Difference?</p>
+                        </a>
+                        <a href="/blogs/desk-job-back-pain-it-professionals-hyderabad"
+                            class="flex gap-2 sm:gap-3 p-2 rounded-lg hover:bg-gray-100 border-l-4 border-transparent hover:border-red-400 transition-colors">
+                            <img src="../Images/Blog/desk-job-back-pain-it-professionals-hyderabad.webp"
+                                alt="Desk Job Back Pain in Hyderabad IT Professionals"
+                                class="w-12 h-12 sm:w-16 sm:h-16 object-cover rounded-lg flex-shrink-0">
+                            <p class="text-xs sm:text-sm font-medium text-gray-700 line-clamp-2 self-center">Desk Job
+                                Back Pain in Hyderabad IT Professionals</p>
+                        </a>
+                        <a href="/blogs/choose-right-joint-replacement-surgeon-hyderabad"
+                            class="flex gap-2 sm:gap-3 p-2 rounded-lg hover:bg-gray-100 border-l-4 border-transparent hover:border-red-400 transition-colors">
+                            <img src="../Images/Blog/choose-right-joint-replacement-surgeon-hyderabad.webp"
+                                alt="Choose the Right Joint Replacement Surgeon Hyderabad"
+                                class="w-12 h-12 sm:w-16 sm:h-16 object-cover rounded-lg flex-shrink-0">
+                            <p class="text-xs sm:text-sm font-medium text-gray-700 line-clamp-2 self-center">Choose the
+                                Right Joint Replacement Surgeon Hyderabad</p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-gray-100 rounded-xl border border-gray-200 p-3 sm:p-4 mt-6">
+                    <!-- Left: Get A Quick Callback Form -->
+                    <div
+                        class="p-6 lg:p-8 bg-gradient-to-br from-yellow-100 via-yellow-50 to-white flex flex-col justify-center">
+
+                        <form class="space-y-3 lg:space-y-4 max-w-md mx-auto w-full"
+                            action="https://old.germantenhospitals.com/send_email.php" method="post">
+                            <h2
+                                class="text-lg lg:text-xl font-bold mb-4 lg:mb-5 text-red-700 tracking-tight flex items-center gap-2">
+                                <span class="text-xl lg:text-2xl">📞</span> Get A Quick Callback
+                            </h2>
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium mb-2 text-gray-700">Full
+                                        Name<span class="text-red-500">*</span></label>
+                                    <input type="text" id="customFirstName" name="name"
+                                        placeholder="Enter your full name" required
+                                        class="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 focus:outline-none focus:border-red-300 transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-2 text-gray-700">Mobile
+                                        Number</label>
+                                    <input type="tel" id="customPhone" name="phone" placeholder="+91" required
+                                        class="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 focus:outline-none focus:border-red-300 transition-all">
+                                </div>
+                            </div>
+                            <div style="position:absolute; left:-9999px;">
+                                <label>Website</label>
+                                <input type="text" name="website" value="">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2 text-gray-700">Email
+                                    Address</label>
+                                <input type="email" id="customEmail" name="email" placeholder="Enter your email address"
+                                    required
+                                    class="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 focus:outline-none focus:border-red-300 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2 text-gray-700">Message</label>
+                                <textarea id="customMessage" name="notes" rows="3 lg:rows-4"
+                                    placeholder="Enter your query"
+                                    class="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 focus:outline-none focus:border-red-300 transition-all resize-none"></textarea>
+                            </div>
+                            <input type="hidden" name="form_name" id="form_name" value="Appointment Form" />
+                            <input type="hidden" name="page_link" id="page_link" />
+                            <input type="hidden" name="source" id="source" value="web-ads" />
+                            <button type="submit"
+                                class="w-full font-semibold py-3 px-6 rounded-lg transition-all duration-300 text-base shadow-md hover:shadow-lg transform hover:scale-[1.02] bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white">
+                                ✨ Submit Appointment
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
     </div>
   </main>
 
   <!-- Footer Component -->
   <div id="footer-container"></div>
+
+  <!-- Apply a header offset only when the injected navbar is truly fixed -->
+  <script>
+    (function () {
+      "use strict";
+
+      const root = document.documentElement;
+      const navbarContainer = document.getElementById("navbar-container");
+
+      if (!navbarContainer) {
+        return;
+      }
+
+      let resizeObserver = null;
+      let scheduledFrame = null;
+
+      function getFixedHeaderBottom() {
+        const containerRect = navbarContainer.getBoundingClientRect();
+
+        if (containerRect.height > 1) {
+          return 0;
+        }
+
+        const candidates = [
+          navbarContainer,
+          ...navbarContainer.querySelectorAll(
+            "header, nav, [class*='navbar'], [class*='header']"
+          )
+        ];
+
+        return candidates.reduce(function (largestBottom, element) {
+          const styles = window.getComputedStyle(element);
+
+          if (styles.position !== "fixed") {
+            return largestBottom;
+          }
+
+          const rect = element.getBoundingClientRect();
+
+          if (rect.height <= 0 || rect.bottom <= 0) {
+            return largestBottom;
+          }
+
+          return Math.max(largestBottom, rect.bottom);
+        }, 0);
+      }
+
+      function updateHeroOffset() {
+        scheduledFrame = null;
+
+        const offset = Math.max(0, Math.round(getFixedHeaderBottom()));
+        root.style.setProperty("--gh-fixed-header-offset", offset + "px");
+      }
+
+      function scheduleUpdate() {
+        if (scheduledFrame !== null) {
+          cancelAnimationFrame(scheduledFrame);
+        }
+
+        scheduledFrame = requestAnimationFrame(updateHeroOffset);
+      }
+
+      const navbarObserver = new MutationObserver(scheduleUpdate);
+
+      navbarObserver.observe(navbarContainer, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+        attributeFilter: ["class", "style"]
+      });
+
+      if ("ResizeObserver" in window) {
+        resizeObserver = new ResizeObserver(scheduleUpdate);
+        resizeObserver.observe(navbarContainer);
+      }
+
+      window.addEventListener("resize", scheduleUpdate, { passive: true });
+      window.addEventListener("orientationchange", scheduleUpdate, { passive: true });
+      window.addEventListener("load", scheduleUpdate);
+
+      document.addEventListener("DOMContentLoaded", scheduleUpdate);
+      scheduleUpdate();
+    })();
+  </script>
 
   <!-- Scripts -->
   <script src="../js/script.js"></script>

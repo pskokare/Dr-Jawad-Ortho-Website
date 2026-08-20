@@ -17,11 +17,13 @@
         fetchpriority="high">
     <!-- Production Tailwind CSS -->
     <link rel="stylesheet" href="css/tailwind.css">
+
     <!-- Critical CSS loaded asynchronously -->
     <link rel="preload" href="css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
         <link rel="stylesheet" href="css/styles.min.css">
     </noscript>
+    <link rel="stylesheet" href="css/styles.css">
     <!-- Font Awesome: show fallback while icon fonts load -->
     <style>
         @font-face {
@@ -93,12 +95,8 @@
             }
         }
     </style>
-    <!-- Non-critical CSS - Load asynchronously -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    </noscript>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/webp" href="Images/dr-jawad-logo.webp">
     <link rel="canonical" href="https://drjawadortho.com/">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -473,8 +471,8 @@
             }
 
             .hero-cta {
-                padding: 0.45rem 0.95rem;
-                font-size: 0.7rem;
+                padding: 0.25rem 0.75rem;
+                font-size: 0.65rem;
             }
         }
 
@@ -488,12 +486,12 @@
             }
 
             .hero-cta {
-                padding: 0.4rem 0.85rem;
+                padding: 0.2rem 0.65rem;
             }
         }
 
         .homepage-section-heading {
-            font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+            font-family: Georgia, "Times New Roman", serif !important;
             font-size: clamp(31px, 2.1vw, 44px) !important;
             font-weight: 750 !important;
             color: #0d1b3d !important;
@@ -557,7 +555,7 @@
             z-index: 20;
             width: 100%;
             margin-top: -60px;
-            padding: 0 0 12px;
+            padding: 0 0 6px;
             overflow: visible;
             background: radial-gradient(circle at 10% 0%, rgba(246, 173, 0, .09), transparent 24%),
                 linear-gradient(180deg, #fffdf9 0%, #fffaf2 100%) !important;
@@ -586,7 +584,7 @@
         .statistics-count-card {
             position: relative;
             display: flex;
-            min-height: 84px;
+            min-height: 70px;
             align-items: center;
             justify-content: center;
             flex-direction: column;
@@ -893,8 +891,8 @@
         @media (max-width: 768px) {
             .statistics-achievements-section {
                 margin-top: -64px !important;
-                padding-right: 8px !important;
-                padding-left: 8px !important;
+                padding-right: 4px !important;
+                padding-left: 4px !important;
             }
 
             .statistics-achievements-section .statistics-card-shell {
@@ -902,7 +900,7 @@
             }
 
             .statistics-achievements-section .statistics-count-card {
-                min-height: 112px !important;
+                min-height: 96px !important;
                 padding: 16px 8px 15px !important;
             }
 
@@ -941,7 +939,7 @@
         @media (max-width: 768px) {
             .statistics-achievements-section {
                 margin-top: -58px !important;
-                padding: 0 0 16px !important;
+                padding: 0 0 8px !important;
                 overflow: hidden !important;
             }
 
@@ -956,7 +954,7 @@
 
             .statistics-achievements-section .statistics-count-card {
                 min-width: 0 !important;
-                min-height: 88px !important;
+                min-height: 74px !important;
                 padding: 10px 4px 11px !important;
             }
 
@@ -991,7 +989,7 @@
             }
 
             .statistics-achievements-section .statistics-count-card {
-                min-height: 78px !important;
+                min-height: 64px !important;
                 padding: 8px 2px 10px !important;
             }
 
@@ -3224,22 +3222,29 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                gap: 6px;
+                gap: 4px;
             }
 
             .german-doctors-mobile-dot {
                 width: 7px;
                 height: 7px;
+                min-width: 0;
+                min-height: 0;
                 padding: 0;
+                margin: 0;
                 background: #f3b7ba;
                 border: 0;
                 border-radius: 50%;
                 cursor: pointer;
-                transition: width 0.25s ease, background 0.25s ease;
+                transition:
+                    width 0.25s ease,
+                    height 0.25s ease,
+                    background 0.25s ease;
             }
 
             .german-doctors-mobile-dot.is-active {
-                width: 20px;
+                width: 11px;
+                height: 11px;
                 background: var(--german-red);
                 border-radius: 999px;
             }
@@ -3595,25 +3600,30 @@
         #media-interviews-section .media-carousel-dots {
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 4px;
         }
 
         #media-interviews-section .media-carousel-dot {
             width: 7px;
             height: 7px;
+            min-width: 0;
+            min-height: 0;
             padding: 0;
+            margin: 0;
             background: #d4d8df;
             border: 0;
             border-radius: 50%;
             cursor: pointer;
             transition:
                 width 0.25s ease,
+                height 0.25s ease,
                 background-color 0.25s ease,
                 border-radius 0.25s ease;
         }
 
         #media-interviews-section .media-carousel-dot.is-active {
-            width: 22px;
+            width: 11px;
+            height: 11px;
             background: var(--media-red);
             border-radius: 999px;
         }
@@ -3768,6 +3778,15 @@
         body {
             font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
             background: #fefcf8;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: Georgia, "Times New Roman", serif !important;
         }
 
         /* smooth transitions, clean look */
@@ -4725,7 +4744,7 @@
                                                 class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
                                                 • Knee Replacement
                                             </a>
-                                            <a href="/hip-replacement"
+                                            <a href="/hip-replacement-surgery-in-hyderabad"
                                                 class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
                                                 • Hip Replacement
                                             </a>
@@ -4784,7 +4803,7 @@
                                             <!-- <a href="/internal-medicine" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
                                         • Internal Medicine
                                     </a> -->
-                                            <a href="/partial-knee-replacement"
+                                            <a href="/partial-knee-replacement-in-hyderabad"
                                                 class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
                                                 • Partial Knee Replacement
                                             </a>
@@ -4799,7 +4818,7 @@
                                             <!-- <a href="#" class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
                                         • VISCO Supplementation
                                     </a> -->
-                                            <a href="/spine-surgical-treatment"
+                                            <a href="/spine-specialist-in-hyderabad"
                                                 class="block px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 hover:text-amber-600 rounded-xl transition-all duration-300 font-medium text-sm">
                                                 • Spine Surgical Treatment
                                             </a>
@@ -4965,7 +4984,7 @@
                                     <a href="/best-knee-replacement-surgeon-in-hyderabad"
                                         class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Knee
                                         Replacement</a>
-                                    <a href="/partial-knee-replacement"
+                                    <a href="/partial-knee-replacement-in-hyderabad"
                                         class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Partial Knee
                                         Replacement</a>
                                     <a href="/trauma-and-fractures"
@@ -4979,7 +4998,7 @@
                             <div class="border-t border-gray-100 mt-2 pt-2">
                                 <div class="text-xs font-semibold text-amber-300 mb-1">HIP</div>
                                 <div class="space-y-1">
-                                    <a href="/hip-replacement"
+                                    <a href="/hip-replacement-surgery-in-hyderabad"
                                         class="block py-1 text-gray-600 hover:text-amber-600 text-sm">•
                                         Hip Replacement</a>
                                     <a href="/joint-replacement"
@@ -4992,7 +5011,7 @@
                                 <div class="space-y-1">
                                     <a href="/best-spine-surgeon-in-hyderabad"
                                         class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Spine Center</a>
-                                    <a href="/spine-surgical-treatment"
+                                    <a href="/spine-specialist-in-hyderabad"
                                         class="block py-1 text-gray-600 hover:text-amber-600 text-sm">• Spine Surgical
                                         Treatment</a>
                                     <a href="/spine-non-surgical-treatment"
@@ -5080,12 +5099,12 @@
             <div class="slides-container relative h-full w-full bg-white">
                 <!-- Slide 1 -->
                 <div class="slide active absolute inset-0 transition-opacity duration-1000" style="opacity:1">
-                    <img src="Images/Home-Page-Images/HeroSlider1-1.webp" alt="Slide 6" width="1920" height="1080"
+                    <img src="https://res.cloudinary.com/awhmw4uq/image/upload/v1787130400/dr-jawad-hero-slider.png" alt="Slide 6" width="1920" height="1080"
                         class="w-full h-full object-cover object-center block" fetchpriority="high" decoding="async"
                         loading="eager">
                     <div class="slide-content">
                         <div class="slide-content-inner">
-                            <h2 class="hero-heading">Dr. Mir Jawad Khan</h2>
+                            <h2 class="hero-heading">Dr. Mir Jawad Zar Khan</h2>
                             <p class="hero-subline">Over 26+ Years of Excellence in Orthopedic &amp; Joint Replacement
                                 Surgery, Delivering Trusted Care</p>
                             <div class="hero-cta-group">
@@ -5098,7 +5117,7 @@
                 </div>
                 <!-- Slide 2 -->
                 <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
-                    <img src="Images/Home-Page-Images/HeroSlider2-2.webp" alt="Slide 8" width="1920" height="1080"
+                    <img src="https://res.cloudinary.com/awhmw4uq/image/upload/v1787130396/knee-pain-hero-slider.png" alt="Slide 8" width="1920" height="1080"
                         class="w-full h-full object-cover object-center block" loading="lazy" decoding="async">
                     <div class="slide-content">
                         <div class="slide-content-inner">
@@ -5116,7 +5135,7 @@
                 </div>
                 <!-- Slide 3 -->
                 <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
-                    <img src="Images/Home-Page-Images/HeroSlider3-3.webp" alt="Slide 1" width="1920" height="1080"
+                    <img src="https://res.cloudinary.com/awhmw4uq/image/upload/v1787130401/doctors-group-hero-slider.png" alt="Slide 1" width="1920" height="1080"
                         class="w-full h-full object-cover object-center block" loading="lazy" decoding="async">
                     <div class="slide-content">
                         <div class="slide-content-inner">
@@ -5184,7 +5203,8 @@
         </div>
     </section>
     <!-- Statistics and Achievements Section -->
-    <section class="statistics-achievements-section bg-yellow-400" aria-label="Hospital statistics and achievements">
+    <section class="statistics-achievements-section bg-yellow-400" style="margin-top: 40px;"
+        aria-label="Hospital statistics and achievements">
 
 
         <div class="statistics-achievements-container">
@@ -6251,7 +6271,7 @@
                         <h3 class="text-sm font-bold text-gray-800 text-center leading-tight">Knee Replacement</h3>
                     </a>
                     <!-- Hip Replacement -->
-                    <a href="hip-replacement"
+                    <a href="hip-replacement-surgery-in-hyderabad"
                         class="exp-card group snap-start flex-shrink-0 w-[140px] sm:w-[155px] md:w-[170px] bg-white rounded-xl border-2 border-gray-100 hover:border-yellow-400 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer p-4 no-underline">
                         <div
                             class="w-14 h-14 mx-auto mb-3 rounded-full bg-gradient-to-br from-gray-800 to-yellow-900 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -6326,7 +6346,7 @@
                         <h3 class="text-sm font-bold text-gray-800 text-center leading-tight">OATS Procedure</h3>
                     </a>
                     <!-- Joint Replacement -->
-                    <a href="joint-replacement"
+                    <a href="joint-replacement-surgery-in-hyderabad"
                         class="exp-card group snap-start flex-shrink-0 w-[140px] sm:w-[155px] md:w-[170px] bg-white rounded-xl border-2 border-gray-100 hover:border-yellow-400 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer p-4 no-underline">
                         <div
                             class="w-14 h-14 mx-auto mb-3 rounded-full bg-gradient-to-br from-gray-800 to-yellow-900 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -6338,7 +6358,7 @@
                         <h3 class="text-sm font-bold text-gray-800 text-center leading-tight">Joint Replacement</h3>
                     </a>
                     <!-- Shoulder Surgery -->
-                    <a href="shoulder-surgery"
+                    <a href="shoulder-replacement-surgery-in-hyderabad"
                         class="exp-card group snap-start flex-shrink-0 w-[140px] sm:w-[155px] md:w-[170px] bg-white rounded-xl border-2 border-gray-100 hover:border-yellow-400 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer p-4 no-underline">
                         <div
                             class="w-14 h-14 mx-auto mb-3 rounded-full bg-gradient-to-br from-gray-800 to-yellow-900 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -6374,7 +6394,7 @@
                         <h3 class="text-sm font-bold text-gray-800 text-center leading-tight">General Orthopedics</h3>
                     </a>
                     <!-- Partial Knee Replacement -->
-                    <a href="partial-knee-replacement"
+                    <a href="partial-knee-replacement-in-hyderabad"
                         class="exp-card group snap-start flex-shrink-0 w-[140px] sm:w-[155px] md:w-[170px] bg-white rounded-xl border-2 border-gray-100 hover:border-yellow-400 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer p-4 no-underline">
                         <div
                             class="w-14 h-14 mx-auto mb-3 rounded-full bg-gradient-to-br from-gray-800 to-yellow-900 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -6400,7 +6420,7 @@
                             Surgery</h3>
                     </a>
                     <!-- Spine Surgical Treatment -->
-                    <a href="spine-surgical-treatment"
+                    <a href="spine-specialist-in-hyderabad"
                         class="exp-card group snap-start flex-shrink-0 w-[140px] sm:w-[155px] md:w-[170px] bg-white rounded-xl border-2 border-gray-100 hover:border-yellow-400 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer p-4 no-underline">
                         <div
                             class="w-14 h-14 mx-auto mb-3 rounded-full bg-gradient-to-br from-gray-800 to-yellow-900 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -6586,8 +6606,8 @@
                     <div class="flex animate-marquee space-x-4 sm:space-x-6 py-4 sm:py-6 px-2 sm:px-4">
                         <!-- Award 1 -->
                         <div class="flex-shrink-0 group">
-                            <div
-                                class="w-32 h-32 sm:w-40 sm:h-40 lg:w-52 lg:h-52 rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
                                 <img src="Images/Home-Page-Images/Award1.webp" alt="Award 1" width="208" height="208"
                                     class="w-full h-full object-cover">
                                 <div
@@ -6599,226 +6619,415 @@
                         </div>
                         <!-- Award 2 -->
                         <div class="flex-shrink-0 group">
-                            <div
-                                class="w-32 h-32 sm:w-40 sm:h-40 lg:w-52 lg:h-52 rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
                                 <img src="Images/Home-Page-Images/Award2.webp" alt="Award 2" width="208" height="208"
                                     class="w-full h-full object-cover">
                             </div>
                         </div>
+
+
                         <!-- Award 3 -->
                         <div class="flex-shrink-0 group">
-                            <div
-                                class="w-32 h-32 sm:w-40 sm:h-40 lg:w-52 lg:h-52 rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
                                 <img src="Images/Home-Page-Images/Award3.webp" alt="Award 3" width="208" height="208"
                                     class="w-full h-full object-cover">
                             </div>
                         </div>
                         <!-- Award 4 -->
                         <div class="flex-shrink-0 group">
-                            <div
-                                class="w-32 h-32 sm:w-40 sm:h-40 lg:w-52 lg:h-52 rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
                                 <img src="Images/Home-Page-Images/Award4.webp" alt="Award 4" width="208" height="208"
                                     class="w-full h-full object-cover">
                             </div>
                         </div>
-                        <!-- Award 5 -->
-                        <div class="flex-shrink-0 group">
-                            <div
-                                class="w-32 h-32 sm:w-40 sm:h-40 lg:w-52 lg:h-52 rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
-                                <img src="Images/Home-Page-Images/Award5.webp" alt="Award 5" width="208" height="208"
-                                    class="w-full h-full object-cover">
-                            </div>
-                        </div>
-                        <!-- Award 6 -->
-                        <div class="flex-shrink-0 group">
-                            <div
-                                class="w-32 h-32 sm:w-40 sm:h-40 lg:w-52 lg:h-52 rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
-                                <img src="Images/Home-Page-Images/Award6.webp" alt="Award 6" width="208" height="208"
-                                    class="w-full h-full object-cover">
-                            </div>
-                        </div>
-                        <!-- Award 7 -->
-                        <div class="flex-shrink-0 group">
-                            <div
-                                class="w-32 h-32 sm:w-40 sm:h-40 lg:w-52 lg:h-52 rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
-                                <img src="Images/Home-Page-Images/Award7.webp" alt="Award 7" width="208" height="208"
-                                    class="w-full h-full object-cover">
-                            </div>
-                        </div>
+
                         <!-- Award 8 -->
                         <div class="flex-shrink-0 group">
-                            <div
-                                class="w-32 h-32 sm:w-40 sm:h-40 lg:w-52 lg:h-52 rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
                                 <img src="Images/Home-Page-Images/Award8.webp" alt="Award 8" width="208" height="208"
                                     class="w-full h-full object-cover">
                             </div>
                         </div>
                         <!-- Award 9 -->
                         <div class="flex-shrink-0 group">
-                            <div
-                                class="w-32 h-32 sm:w-40 sm:h-40 lg:w-52 lg:h-52 rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
                                 <img src="Images/Home-Page-Images/Award9.webp" alt="Award 9" width="208" height="208"
                                     class="w-full h-full object-cover">
                             </div>
                         </div>
                         <!-- Award 10 -->
                         <div class="flex-shrink-0 group">
-                            <div
-                                class="w-32 h-32 sm:w-40 sm:h-40 lg:w-52 lg:h-52 rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
-                                <img src="Images/Home-Page-Images/Award10.webp" alt="Award 10" width="208" height="208"
-                                    class="w-full h-full object-cover">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/award_16.webp" alt="Award 10"
+                                    width="208" height="208" class="w-full h-full object-cover">
                             </div>
                         </div>
                         <!-- Award 11 -->
                         <div class="flex-shrink-0 group">
-                            <div
-                                class="w-32 h-32 sm:w-40 sm:h-40 lg:w-52 lg:h-52 rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
-                                <img src="Images/Home-Page-Images/Award11.webp" alt="Award 11" width="208" height="208"
-                                    class="w-full h-full object-cover">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/Awarded-as-center-of-excellence.webp"
+                                    alt="Award 11" width="208" height="208" class="w-full h-full object-cover">
                             </div>
                         </div>
                         <!-- Award 12 -->
                         <div class="flex-shrink-0 group">
-                            <div
-                                class="w-32 h-32 sm:w-40 sm:h-40 lg:w-52 lg:h-52 rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
-                                <img src="Images/Home-Page-Images/Award12.webp" alt="Award 12" width="208" height="208"
-                                    class="w-full h-full object-cover">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/Coffee Table book Dr Mir Jawad Zar Khan-2_2.webp"
+                                    alt="Award 12" width="208" height="208" class="w-full h-full object-cover">
                             </div>
                         </div>
                         <!-- Award 13 -->
                         <div class="flex-shrink-0 group">
-                            <div
-                                class="w-32 h-32 sm:w-40 sm:h-40 lg:w-52 lg:h-52 rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
-                                <img src="Images/Home-Page-Images/Award13.webp" alt="Award 13" width="208" height="208"
-                                    class="w-full h-full object-cover">
-                            </div>
-                        </div>
-                        <!-- Award 14 -->
-                        <div class="flex-shrink-0 group">
-                            <div
-                                class="w-32 h-32 sm:w-40 sm:h-40 lg:w-52 lg:h-52 rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
-                                <img src="Images/Home-Page-Images/Award14.webp" alt="Award 14" width="208" height="208"
-                                    class="w-full h-full object-cover">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/Deputy Cm_26.webp" alt="Award 13"
+                                    width="208" height="208" class="w-full h-full object-cover">
                             </div>
                         </div>
                         <!-- Award 15 -->
                         <div class="flex-shrink-0 group">
-                            <div
-                                class="w-32 h-32 sm:w-40 sm:h-40 lg:w-52 lg:h-52 rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
-                                <img src="Images/Home-Page-Images/Award15.webp" alt="Award 15" width="208" height="208"
-                                    class="w-full h-full object-cover">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/German_23.webp" alt="Award 15"
+                                    width="208" height="208" class="w-full h-full object-cover">
                             </div>
                         </div>
                         <!-- Award 16 -->
                         <div class="flex-shrink-0 group">
-                            <div
-                                class="w-32 h-32 sm:w-40 sm:h-40 lg:w-52 lg:h-52 rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
-                                <img src="Images/Home-Page-Images/Award16.webp" alt="Award 16" width="208" height="208"
-                                    class="w-full h-full object-cover">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/image34.webp" alt="Award 16"
+                                    width="208" height="208" class="w-full h-full object-cover">
                             </div>
                         </div>
                         <!-- Award 17 -->
                         <div class="flex-shrink-0 group">
-                            <div
-                                class="w-32 h-32 sm:w-40 sm:h-40 lg:w-52 lg:h-52 rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
-                                <img src="Images/Home-Page-Images/Award17.webp" alt="Award 17" width="208" height="208"
-                                    class="w-full h-full object-cover">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/Insight.webp" alt="Award 17"
+                                    width="208" height="208" class="w-full h-full object-cover">
                             </div>
                         </div>
                         <!-- Award 18 -->
                         <div class="flex-shrink-0 group">
-                            <div
-                                class="w-32 h-32 sm:w-40 sm:h-40 lg:w-52 lg:h-52 rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
-                                <img src="Images/Home-Page-Images/Award18.webp" alt="Award 18" width="208" height="208"
-                                    class="w-full h-full object-cover">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/image14.webp" alt="Award 18"
+                                    width="208" height="208" class="w-full h-full object-cover">
                             </div>
                         </div>
                         <!-- Award 19 -->
                         <div class="flex-shrink-0 group">
-                            <div
-                                class="w-32 h-32 sm:w-40 sm:h-40 lg:w-52 lg:h-52 rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
-                                <img src="Images/Home-Page-Images/award19.webp" alt="Award 19" width="208" height="208"
-                                    class="w-full h-full object-cover">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/image16.webp" alt="Award 19"
+                                    width="208" height="208" class="w-full h-full object-cover">
                             </div>
                         </div>
                         <!-- Award 20 -->
                         <div class="flex-shrink-0 group">
-                            <div
-                                class="w-32 h-32 sm:w-40 sm:h-40 lg:w-52 lg:h-52 rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
-                                <img src="Images/Home-Page-Images/Award20.webp" alt="Award 20" width="208" height="208"
-                                    class="w-full h-full object-cover">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/image20.webp" alt="Award 20"
+                                    width="208" height="208" class="w-full h-full object-cover">
                             </div>
                         </div>
                         <!-- Award 21 -->
                         <div class="flex-shrink-0 group">
-                            <div
-                                class="w-32 h-32 sm:w-40 sm:h-40 lg:w-52 lg:h-52 rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
-                                <img src="Images/Home-Page-Images/Award21.webp" alt="Award 21" width="208" height="208"
-                                    class="w-full h-full object-cover">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/Insightsuccess-Magazine.webp"
+                                    alt="Award 21" width="208" height="208" class="w-full h-full object-cover">
                             </div>
                         </div>
                         <!-- Award 22 -->
                         <div class="flex-shrink-0 group">
-                            <div
-                                class="w-32 h-32 sm:w-40 sm:h-40 lg:w-52 lg:h-52 rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
-                                <img src="Images/Home-Page-Images/Award22.webp" alt="Award 22" width="208" height="208"
-                                    class="w-full h-full object-cover">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/jawad sir web_4.webp " alt="Award 22"
+                                    width="208" height="208" class="w-full h-full object-cover">
                             </div>
                         </div>
                         <!-- Award 23 -->
                         <div class="flex-shrink-0 group">
-                            <div
-                                class="w-32 h-32 sm:w-40 sm:h-40 lg:w-52 lg:h-52 rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
-                                <img src="Images/Home-Page-Images/Award23.webp" alt="Award 23" width="208" height="208"
-                                    class="w-full h-full object-cover">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/image23.webp" alt="Award 23"
+                                    width="208" height="208" class="w-full h-full object-cover">
                             </div>
                         </div>
                         <!-- Award 24 -->
                         <div class="flex-shrink-0 group">
-                            <div
-                                class="w-32 h-32 sm:w-40 sm:h-40 lg:w-52 lg:h-52 rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
-                                <img src="Images/Home-Page-Images/Award24.webp" alt="Award 24" width="208" height="208"
-                                    class="w-full h-full object-cover">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/image24.webp" alt="Award 24"
+                                    width="208" height="208" class="w-full h-full object-cover">
                             </div>
                         </div>
                         <!-- Award 25 -->
                         <div class="flex-shrink-0 group">
-                            <div
-                                class="w-32 h-32 sm:w-40 sm:h-40 lg:w-52 lg:h-52 rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
-                                <img src="Images/Home-Page-Images/Award25.webp" alt="Award 25" width="208" height="208"
-                                    class="w-full h-full object-cover">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/image25.webp" alt="Award 25"
+                                    width="208" height="208" class="w-full h-full object-cover">
                             </div>
                         </div>
                         <!-- Award 26 -->
                         <div class="flex-shrink-0 group">
-                            <div
-                                class="w-32 h-32 sm:w-40 sm:h-40 lg:w-52 lg:h-52 rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
-                                <img src="Images/Home-Page-Images/Award26.webp" alt="Award 26" width="208" height="208"
-                                    class="w-full h-full object-cover">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/image26.jpg" alt="Award 26" width="208"
+                                    height="208" class="w-full h-full object-cover">
                             </div>
                         </div>
                         <!-- Award 27 -->
                         <div class="flex-shrink-0 group">
-                            <div
-                                class="w-32 h-32 sm:w-40 sm:h-40 lg:w-52 lg:h-52 rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
-                                <img src="Images/Home-Page-Images/Award27.webp" alt="Award 27" width="208" height="208"
-                                    class="w-full h-full object-cover">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/image27.png" alt="Award 27" width="208"
+                                    height="208" class="w-full h-full object-cover">
                             </div>
                         </div>
-                        <!-- Award 28 -->
-                        <div class="flex-shrink-0 group">
-                            <div
-                                class="w-32 h-32 sm:w-40 sm:h-40 lg:w-52 lg:h-52 rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
-                                <img src="Images/Home-Page-Images/Award28.webp" alt="Award 28" width="208" height="208"
-                                    class="w-full h-full object-cover">
-                            </div>
-                        </div>
+
                         <!-- Award 29 -->
                         <div class="flex-shrink-0 group">
-                            <div
-                                class="w-32 h-32 sm:w-40 sm:h-40 lg:w-52 lg:h-52 rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
-                                <img src="Images/Home-Page-Images/Award29.webp" alt="Award 29" width="208" height="208"
-                                    class="w-full h-full object-cover">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/image29.webp" alt="Award 29"
+                                    width="208" height="208" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <div class="flex-shrink-0 group">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/image30.webp" alt="Award 29"
+                                    width="208" height="208" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <div class="flex-shrink-0 group">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/image31.webp" alt="Award 29"
+                                    width="208" height="208" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <div class="flex-shrink-0 group">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/Medgate today- Dr Mir Jawad Zar Khan-1_5.webp"
+                                    alt="Award 29" width="208" height="208" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <div class="flex-shrink-0 group">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/news today_9.webp" alt="Award 29"
+                                    width="208" height="208" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <!-- Award 14 -->
+                        <div class="flex-shrink-0 group">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/edited dr s_3.webp" alt="Award 14"
+                                    width="208" height="208" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <div class="flex-shrink-0 group">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/P-Award.webp" alt="Award 29"
+                                    width="208" height="208" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <div class="flex-shrink-0 group">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/P-Award-creative.webp" alt="Award 29"
+                                    width="208" height="208" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <div class="flex-shrink-0 group">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/p-awards.webp" alt="Award 29"
+                                    width="208" height="208" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <div class="flex-shrink-0 group">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/Times Award Event_13.webp"
+                                    alt="Award 29" width="208" height="208" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <div class="flex-shrink-0 group">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/Times Excellence award 2022_22.webp"
+                                    alt="Award 29" width="208" height="208" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <div class="flex-shrink-0 group">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/Times of india Award_27.webp"
+                                    alt="Award 29" width="208" height="208" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <div class="flex-shrink-0 group">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/Times of india Yoga Day_6.webp"
+                                    alt="Award 29" width="208" height="208" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <div class="flex-shrink-0 group">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/Times Rankings-1_14.webp"
+                                    alt="Award 29" width="208" height="208" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <div class="flex-shrink-0 group">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/Times Rankings-2_11.webp"
+                                    alt="Award 29" width="208" height="208" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <div class="flex-shrink-0 group">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/Times Rankings-3_12.webp"
+                                    alt="Award 29" width="208" height="208" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <div class="flex-shrink-0 group">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/adabhyderabad.webp" alt="Award 29"
+                                    width="208" height="208" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <div class="flex-shrink-0 group">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/critical-surgery-to-fix-a-failed-spine-operation.webp"
+                                    alt="Award 29" width="208" height="208" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <div class="flex-shrink-0 group">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/eenadu.webp" alt="Award 29" width="208"
+                                    height="208" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <div class="flex-shrink-0 group">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/how-to-protect-yourself-from-osteoporosis.webp"
+                                    alt="Award 29" width="208" height="208" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <div class="flex-shrink-0 group">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/saisat-news-article.webp"
+                                    alt="Award 29" width="208" height="208" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <div class="flex-shrink-0 group">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/sakshi.webp" alt="Award 29" width="208"
+                                    height="208" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <div class="flex-shrink-0 group">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/sakshi-allinone.jpg" alt="Award 29"
+                                    width="208" height="208" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <div class="flex-shrink-0 group">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/sakshi-assam.jpg" alt="Award 29"
+                                    width="208" height="208" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <div class="flex-shrink-0 group">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/sakshi-rosaih.webp" alt="Award 29"
+                                    width="208" height="208" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <div class="flex-shrink-0 group">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/times-of-india-02-370x370.webp"
+                                    alt="Award 29" width="208" height="208" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <div class="flex-shrink-0 group">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/times-of-india-article.webp"
+                                    alt="Award 29" width="208" height="208" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <div class="flex-shrink-0 group">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/urdu.webp" alt="Award 29" width="208"
+                                    height="208" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <div class="flex-shrink-0 group">
+                            <div style="width: 45vw; height: 45vw; max-width: 240px; max-height: 240px;"
+                                class="rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white">
+                                <img src="Images/AboutUs-page-Images/News-Awards/urdu-telugu.jpg" alt="Award 29"
+                                    width="208" height="208" class="w-full h-full object-cover">
                             </div>
                         </div>
                     </div>
@@ -8231,7 +8440,14 @@
                         clearInterval(timer);
                         setInterval(function () {
                             var btn = wrap.querySelector('[aria-label*="next" i], [class*="next" i], button[class*="arrow" i]:last-of-type');
-                            if (btn) btn.click();
+                            if (btn) {
+                                // Prevent this programmatic click from bubbling past the
+                                // widget wrapper (e.g. closing the mobile navbar menu).
+                                var stopBubble = function (e) { e.stopPropagation(); };
+                                wrap.addEventListener('click', stopBubble, true);
+                                btn.click();
+                                wrap.removeEventListener('click', stopBubble, true);
+                            }
                         }, 4000);
                     } else if (attempts > 20) {
                         clearInterval(timer);
@@ -8552,6 +8768,37 @@
     </script>
     <!-- Floating Navigation Menu (loaded from components/floating-nav.html via js/script.js) -->
     <floating-nav></floating-nav>
+    <!-- Award hover modal -->
+    <div id="award-modal"
+        style="display:none; position:fixed; inset:0; z-index:10000; align-items:center; justify-content:center; background-color:rgba(0,0,0,0.8);">
+        <span id="award-modal-close"
+            style="position:absolute; top:1rem; right:1rem; color:#fff; font-size:2rem; cursor:pointer; z-index:10001;">&times;</span>
+        <img id="award-modal-img" src="" alt="Award preview"
+            style="width:600px; height:600px; max-width:90vw; max-height:90vh; object-fit:contain; border-radius:0.75rem; background:#fff; box-shadow:0 25px 50px -12px rgba(0,0,0,0.5);">
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const modal = document.getElementById('award-modal');
+            const modalImg = document.getElementById('award-modal-img');
+            const closeBtn = document.getElementById('award-modal-close');
+            const awardImgs = document.querySelectorAll('.animate-marquee img');
+            awardImgs.forEach(function (img) {
+                img.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    modalImg.src = img.src;
+                    modal.style.display = 'flex';
+                });
+            });
+            closeBtn.addEventListener('click', function () {
+                modal.style.display = 'none';
+            });
+            modal.addEventListener('click', function (e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+    </script>
     <!-- Scripts -->
     <script src="js/script.js" defer></script>
 </body>
