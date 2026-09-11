@@ -393,6 +393,10 @@ gtag('config', 'G-B7BXJEHXWK');
         .marquee-rtl {
             animation: scroll-rtl 40s linear infinite;
         }
+        .marquee-wrapper:hover .marquee-ltr,
+        .marquee-wrapper:hover .marquee-rtl {
+            animation-play-state: paused;
+        }
         @keyframes scroll-ltr {
             from { transform: translateX(-50%); }
             to { transform: translateX(0); }
