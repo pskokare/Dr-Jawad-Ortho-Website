@@ -4,18 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="google-site-verification" content="gyGSLLzdQLlIEsLrhnGzWjOoQDhyTo8sxocDXKNkG7w" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robotic Surgery in Hyderabad | Dr. Mir Jawad Zar ScdKsI964KbnwdHvlRVjaN3N</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Robotic Knee Replacement in Hyderabad | Robotic Surgery - Dr.Jawad </title>
     <meta name="description"
-        content="Consult Dr. Mir Jawad Zar Khan for advanced robotic surgery in Hyderabad at Germanten Hospitals. Sub-millimetre precision, 3D planning, faster recovery. Book today.">
-    <script src="https://cdn.tailwindcss.com"></script>
+        content="Advanced robotic knee replacement in Hyderabad with the fully automated CUVIS-joint system and sub-millimetre precision from Dr. Jawad. Book a consultation.">
+    <script src="https://cdn.tailwindcss.com">
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/4.0.0/uicons-thin-rounded/css/uicons-thin-rounded.css">
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="icon" type="image/webp" href="../Images/dr-jawad-logo.webp">
-    <link rel="canonical" href="https://drjawadortho.com/robotic-surgery-in-hyderabad">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/webp" href="Images/dr-jawad-logo.webp">
+    <link rel="canonical" href="https://drjawadortho.com/robotic-knee-replacement-in-hyderabad">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <style>
+        /* Shared site scroll progress bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.2);
+            z-index: 9999;
+            transition: opacity 0.3s ease;
+        }
+
+        .scroll-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #ff4d01 0%, #eab308 50%, #facc15 100%);
+            border-radius: 0 1px 1px 0;
+            transition: width 0.1s ease-out;
+            box-shadow: 0 0 10px rgba(202, 138, 4, 0.5);
+        }
+
+        .scroll-progress.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
         :root {
             --hip-fixed-header: 0px;
         }
@@ -115,6 +141,15 @@
             color: #d71920;
         }
 
+        .hero-highlight {
+            color: #d71920;
+        }
+
+        .hero-title-primary-line {
+            display: inline-block;
+            white-space: nowrap;
+        }
+
         .hero-divider {
             display: flex;
             align-items: center;
@@ -137,6 +172,72 @@
             color: #263d53;
             font-size: clamp(.94rem, 1.4vw, 1.05rem);
             line-height: 1.75;
+        }
+
+        .hero-action-buttons {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.85rem;
+            margin-top: 1.35rem;
+        }
+
+        .hero-appointment-button,
+        .hero-explore-button {
+            display: inline-flex;
+            min-height: 48px;
+            align-items: center;
+            justify-content: center;
+            gap: 0.65rem;
+            padding: 0.8rem 1.25rem;
+            border-radius: 0.7rem;
+            font-size: 0.88rem;
+            font-weight: 700;
+            line-height: 1;
+            text-decoration: none;
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                background-color 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .hero-appointment-button {
+            border: 1px solid #f4c400;
+            background: #f4c400;
+            color: #092b4c;
+            box-shadow: 0 7px 18px rgba(244, 196, 0, 0.2);
+        }
+
+        .hero-explore-button {
+            border: 1px solid #cbd5e1;
+            background: rgba(255, 255, 255, 0.92);
+            color: #092b4c;
+            box-shadow: 0 7px 18px rgba(9, 43, 76, 0.08);
+        }
+
+        .hero-appointment-button:hover,
+        .hero-appointment-button:focus-visible {
+            background: #d71920;
+            border-color: #d71920;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 22px rgba(215, 25, 32, 0.22);
+        }
+
+        .hero-explore-button:hover,
+        .hero-explore-button:focus-visible {
+            background: #f4c400;
+            border-color: #f4c400;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 22px rgba(9, 43, 76, 0.18);
+        }
+
+        .hero-appointment-button:focus-visible,
+        .hero-explore-button:focus-visible {
+            outline: 3px solid rgba(244, 196, 0, 0.35);
+            outline-offset: 3px;
         }
 
         .hero-actions {
@@ -250,6 +351,27 @@
                 background: #eff7ff;
                 height: auto !important;
             }
+
+            .hero-title-primary-line {
+                white-space: normal;
+            }
+
+            @media (max-width: 767px) {
+                .hero-action-buttons {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: 0.7rem;
+                    margin-top: 1.1rem;
+                }
+
+                .hero-appointment-button,
+                .hero-explore-button {
+                    width: 100%;
+                    min-height: 46px;
+                }
+            }
+
+
 
             .hero-media {
                 display: flex;
@@ -1473,33 +1595,20 @@
             transform: translateY(-50%) scale(1);
         }
 
-        /* Active state styling */
-        .related-sidebar-list a[href="/robotic-surgery-in-hyderabad"] {
+        /* Yellow background only for the current treatment */
+        .related-sidebar-list a.current-treatment {
             background: #f4c400 !important;
             border-color: #f4c400 !important;
         }
 
-        .related-sidebar-list a[href="/robotic-surgery-in-hyderabad"]::before {
+        .related-sidebar-list a.current-treatment::before {
             display: none;
         }
 
-        .related-sidebar-list a[href="/robotic-surgery-in-hyderabad"] span,
-        .related-sidebar-list a[href="/robotic-surgery-in-hyderabad"] i {
+        .related-sidebar-list a.current-treatment span,
+        .related-sidebar-list a.current-treatment i {
             color: #111827 !important;
-        }
 
-        .related-sidebar-list a[href="/robotic-surgery-in-hyderabad"]::after {
-            border-color: #fffdf7;
-            background: #f4c400;
-        }
-
-        .related-sidebar-list a[href="/robotic-surgery-in-hyderabad"] .absolute {
-            display: none;
-        }
-
-        .related-sidebar-list a[href="/robotic-surgery-in-hyderabad"]:hover .related-treatment-icon,
-        .related-sidebar-list a[href="/robotic-surgery-in-hyderabad"]:focus-visible .related-treatment-icon {
-            color: #d71920 !important;
         }
 
         .flaticon-credit {
@@ -3467,8 +3576,14 @@
                 transition: none !important;
             }
         }
+        /* Preserve the shared footer's yellow column headings. */
+        #footer-container h4.text-yellow-400,
+        #footer-container h5.text-yellow-400 {
+            color: #facc15 !important;
+        }
     </style>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B7BXJEHXWK"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B7BXJEHXWK">
+    </script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -3478,11 +3593,12 @@
     </script>
 
     <!-- Apex cura web forms script start -->
-    <script src="https://suite.apexcura.com/api/public/scripts/germantenContactForm.js"></script>
+    <script src="https://suite.apexcura.com/api/public/scripts/germantenContactForm.js">
+    </script>
     <!-- Apex cura web forms script end -->
 
-    <!-- FAQ Schema -->
-    <script type="application/ld+json">
+    <!-- Legacy FAQ schema retained as inactive source data; replaced below -->
+    <script type="application/json" data-replaced-faq-schema>
     {
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -3753,6 +3869,193 @@
             font-weight: 900
         }
 
+        .back-pain-carousel {
+            position: relative;
+            width: 100%;
+            min-width: 0;
+            margin-top: 1.25rem
+        }
+
+        .back-pain-carousel-viewport {
+            width: 100%;
+            min-width: 0;
+            overflow: hidden;
+            padding: .25rem .15rem 1rem;
+            touch-action: pan-y
+        }
+
+        .back-pain-carousel-track {
+            display: flex !important;
+            width: max-content;
+            min-width: 100%;
+            gap: 1rem;
+            align-items: stretch;
+            will-change: transform;
+            transition: transform .55s cubic-bezier(.22, 1, .36, 1)
+        }
+
+        .back-pain-carousel-track>.back-pain-cause-card {
+            position: relative;
+            display: block !important;
+            flex-grow: 0 !important;
+            flex-shrink: 0 !important;
+            flex-basis: calc((100vw - 1rem)/2);
+            width: 22rem;
+            min-width: 18rem;
+            max-width: none;
+            min-height: 18rem;
+            padding: 1.25rem 1.15rem 1.15rem;
+            overflow: hidden;
+            white-space: normal;
+            word-break: normal;
+            overflow-wrap: break-word;
+            border: 1px solid #e6e8eb;
+            border-top: 4px solid #e9c52c;
+            border-radius: 1rem;
+            background: linear-gradient(145deg, #fff 0%, #fffdf4 100%);
+            box-shadow: 0 8px 22px rgba(9, 43, 76, .07);
+            transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease
+        }
+
+        .back-pain-cause-card::after {
+            content: "";
+            position: absolute;
+            right: -2.5rem;
+            bottom: -2.5rem;
+            width: 7rem;
+            height: 7rem;
+            border-radius: 50%;
+            background: rgba(215, 25, 32, .045)
+        }
+
+        .back-pain-cause-card:hover {
+            transform: translateY(-5px);
+            border-color: #e9c52c;
+            box-shadow: 0 15px 30px rgba(9, 43, 76, .13)
+        }
+
+        .back-pain-cause-card h3 {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            min-height: 3rem;
+            align-items: center;
+            justify-content: center;
+            margin: 0 0 .8rem;
+            color: #092b4c;
+            font-size: 1rem;
+            line-height: 1.4;
+            text-align: center;
+            word-break: normal
+        }
+
+        .back-pain-cause-card p {
+            position: relative;
+            z-index: 1;
+            margin: 0;
+            color: #43576a;
+            font-size: .86rem;
+            line-height: 1.7;
+            text-align: justify;
+            word-break: normal
+        }
+
+        .back-pain-carousel-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: .75rem;
+            margin-top: .25rem
+        }
+
+        .back-pain-carousel-button {
+            display: grid;
+            width: 2.45rem;
+            height: 2.45rem;
+            place-items: center;
+            border: 1px solid #e9c52c;
+            border-radius: 50%;
+            background: #fff;
+            color: #d71920;
+            box-shadow: 0 5px 14px rgba(9, 43, 76, .08);
+            transition: .25s
+        }
+
+        .back-pain-carousel-button:hover,
+        .back-pain-carousel-button:focus-visible {
+            background: #d71920;
+            border-color: #d71920;
+            color: #fff;
+            transform: translateY(-2px)
+        }
+
+        .back-pain-carousel-status {
+            min-width: 4.2rem;
+            color: #657383;
+            font-size: .76rem;
+            font-weight: 700;
+            text-align: center
+        }
+
+        .back-pain-care-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+            margin-top: 1.25rem
+        }
+
+        .back-pain-care-card {
+            position: relative;
+            padding: 1.25rem;
+            border: 1px solid #e8eaed;
+            border-radius: 1rem;
+            background: #fff;
+            box-shadow: 0 8px 22px rgba(9, 43, 76, .06);
+            transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease
+        }
+
+        .back-pain-care-card:hover {
+            transform: translateY(-5px);
+            border-color: #e9c52c;
+            box-shadow: 0 15px 30px rgba(9, 43, 76, .12)
+        }
+
+        .back-pain-care-icon {
+            display: grid;
+            width: 2.8rem;
+            height: 2.8rem;
+            margin: 0 auto .85rem;
+            place-items: center;
+            border-radius: .8rem;
+            background: #fff3ef;
+            color: #d71920;
+            font-size: 1.05rem
+        }
+
+        .back-pain-care-card h3 {
+            min-height: 2.6rem;
+            margin: 0 0 .75rem;
+            color: #092b4c;
+            font-size: 1rem;
+            text-align: center
+        }
+
+        .back-pain-care-card p {
+            margin: 0;
+            color: #43576a;
+            font-size: .86rem;
+            line-height: 1.72;
+            text-align: justify
+        }
+
+        .back-pain-care-card a {
+            color: #b31319;
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: #e9c52c;
+            text-underline-offset: 3px
+        }
+
         .robotic-page-content {
             --r: #d71920;
             --y: #e9c52c;
@@ -3955,6 +4258,11 @@
                 grid-row: 6
             }
 
+            .treatment-main.robotic-page-content>section:nth-child(7) {
+                grid-column: 1/-1;
+                grid-row: 7
+            }
+
             .main-content-grid>#page-right-sidebar {
                 grid-column: 9/-1;
                 grid-row: 1/4
@@ -4036,41 +4344,535 @@
             }
         }
 
+        @media(max-width:1023px) {
+            .back-pain-care-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr))
+            }
+        }
+
+        @media(max-width:767px) {
+            .back-pain-carousel-track>.back-pain-cause-card {
+                flex-basis: calc(100vw - 3.5rem);
+                width: calc(100vw - 3.5rem);
+                min-width: 0;
+                min-height: 17rem
+            }
+
+            .back-pain-care-grid {
+                grid-template-columns: 1fr
+            }
+
+            .back-pain-care-card h3 {
+                min-height: 0
+            }
+        }
+
         @media(max-width:380px) {
             .robotic-hero-benefits {
                 grid-template-columns: 1fr
+            }
+        }
+
+        /* Final carousel sizing overrides */
+        .reference-hero .hero-overlay {
+            background: linear-gradient(90deg,
+                    rgba(239, 247, 255, .96) 0%,
+                    rgba(239, 247, 255, .88) 30%,
+                    rgba(239, 247, 255, .30) 50%,
+                    rgba(239, 247, 255, 0) 64%,
+                    transparent 100%);
+        }
+
+        @media (min-width: 1024px) {
+            .main-content-grid {
+                row-gap: 0 !important;
+            }
+
+            .treatment-main.robotic-page-content>section:nth-child(5),
+            .treatment-main.robotic-page-content>section:nth-child(6),
+            .treatment-main.robotic-page-content>section:nth-child(7) {
+                margin-top: 2rem;
+            }
+
+            .treatment-main.robotic-page-content>section:nth-child(1) {
+                grid-column: 1 / 9;
+                grid-row: 1;
+            }
+
+            .treatment-main.robotic-page-content>section:nth-child(2) {
+                grid-column: 1 / 9;
+                grid-row: 2;
+            }
+
+            .treatment-main.robotic-page-content>section:nth-child(3) {
+                grid-column: 1 / 9;
+                grid-row: 3;
+            }
+
+            .treatment-main.robotic-page-content>section:nth-child(4) {
+                display: contents;
+                margin-top: 0;
+            }
+
+            .surgical-split-section>.surgical-care-intro {
+                grid-column: 1 / 9;
+                grid-row: 4;
+            }
+
+            .surgical-split-section>.surgical-care-cards {
+                grid-column: 1 / -1;
+                grid-row: 5;
+                margin-top: 2rem;
+            }
+
+            .treatment-main.robotic-page-content>section:nth-child(5) {
+                grid-column: 1 / -1;
+                grid-row: 6;
+            }
+
+            .treatment-main.robotic-page-content>section:nth-child(6) {
+                grid-column: 1 / -1;
+                grid-row: 7;
+            }
+
+            .treatment-main.robotic-page-content>section:nth-child(7) {
+                grid-column: 1 / -1;
+                grid-row: 8;
+            }
+
+            .main-content-grid>#page-right-sidebar {
+                grid-column: 9 / -1;
+                grid-row: 1 / 5;
+            }
+        }
+
+        .surgical-split-section {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .surgical-care-cards .back-pain-care-grid {
+            margin-top: 0;
+        }
+
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .reference-hero .hero-overlay {
+                background: linear-gradient(90deg,
+                        rgba(239, 247, 255, .96) 0%,
+                        rgba(239, 247, 255, .86) 38%,
+                        rgba(239, 247, 255, .28) 58%,
+                        rgba(239, 247, 255, 0) 74%,
+                        transparent 100%);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .reference-hero .hero-overlay {
+                background: linear-gradient(180deg, #f7fbff 0%, #eff7ff 100%);
+            }
+        }
+
+        .back-pain-carousel-track>.back-pain-cause-card {
+            min-height: 15rem;
+            padding-bottom: .55rem;
+        }
+
+        .back-pain-care-carousel,
+        .back-pain-care-viewport {
+            width: 100%;
+            min-width: 0;
+        }
+
+        .back-pain-care-viewport {
+            overflow: hidden;
+            padding: .25rem .15rem .5rem;
+            touch-action: pan-y;
+        }
+
+        .back-pain-care-carousel .back-pain-care-grid {
+            display: flex !important;
+            width: max-content;
+            min-width: 100%;
+            align-items: stretch;
+            gap: 1rem;
+            margin-top: 1.25rem;
+            will-change: transform;
+            transition: transform .55s cubic-bezier(.22, 1, .36, 1);
+        }
+
+        .back-pain-care-carousel .back-pain-care-card {
+            display: block !important;
+            flex-grow: 0 !important;
+            flex-shrink: 0 !important;
+            width: 22rem;
+            min-width: 18rem;
+            max-width: none;
+            padding-bottom: .75rem;
+            overflow: hidden;
+            white-space: normal;
+            word-break: normal;
+            overflow-wrap: break-word;
+        }
+
+        .surgical-care-carousel .back-pain-care-card {
+            border-top: 3px solid #d71920;
+            background: linear-gradient(145deg, #ffffff 0%, #fff8f8 100%);
+        }
+
+        .surgical-care-carousel .back-pain-care-card h3 {
+            color: #d71920;
+        }
+
+        @media (max-width: 767px) {
+            .back-pain-carousel-track>.back-pain-cause-card {
+                min-height: 14rem;
+                padding-bottom: .45rem;
+            }
+        }
+    </style>
+    <style>
+        /* Robotic knee replacement article layout */
+        .robotic-knee-card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+            margin-top: 1.25rem;
+        }
+
+        .robotic-knee-card-grid article,
+        .robotic-knee-benefit-card,
+        .robotic-knee-process-card {
+            position: relative;
+            padding: 1.2rem;
+            border: 1px solid #e7e9ed;
+            border-top: 3px solid #e9c52c;
+            border-radius: 1rem;
+            background: linear-gradient(145deg, #fff 0%, #fffdf5 100%);
+            box-shadow: 0 8px 22px rgba(9, 43, 76, .07);
+            transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+        }
+
+        .robotic-knee-card-grid article:hover,
+        .robotic-knee-benefit-card:hover,
+        .robotic-knee-process-card:hover {
+            transform: translateY(-5px);
+            border-color: #d71920;
+            box-shadow: 0 15px 30px rgba(9, 43, 76, .12);
+        }
+
+        .robotic-knee-card-number {
+            display: grid;
+            width: 2.6rem;
+            height: 2.6rem;
+            margin: 0 auto .8rem;
+            place-items: center;
+            border-radius: 50%;
+            background: #d71920;
+            color: #fff;
+            font-size: .78rem;
+            font-weight: 800;
+        }
+
+        .robotic-knee-card-grid h3,
+        .robotic-knee-benefit-card h3,
+        .robotic-knee-process-card h3 {
+            min-height: 2.6rem;
+            margin: 0 0 .7rem;
+            color: #d71920;
+            text-align: center;
+        }
+
+        .robotic-knee-card-grid p,
+        .robotic-knee-benefit-card p,
+        .robotic-knee-process-card p {
+            margin: 0;
+            font-size: .86rem;
+            line-height: 1.72;
+            text-align: justify;
+        }
+
+        .robotic-evidence-note {
+            margin-top: 1rem !important;
+            padding: .9rem 1rem;
+            border-left: 4px solid #e9c52c;
+            background: #fffbea;
+            border-radius: .3rem .75rem .75rem .3rem;
+        }
+
+        .robotic-knee-carousel,
+        .robotic-knee-carousel-viewport {
+            width: 100%;
+            min-width: 0;
+        }
+
+        .robotic-knee-carousel-viewport {
+            overflow: hidden;
+            padding: .3rem .15rem .65rem;
+            touch-action: pan-y;
+        }
+
+        .robotic-knee-carousel-track {
+            display: flex;
+            width: max-content;
+            min-width: 100%;
+            align-items: stretch;
+            gap: 1rem;
+            margin-top: 1rem;
+            transition: transform .55s cubic-bezier(.22, 1, .36, 1);
+            will-change: transform;
+        }
+
+        .robotic-knee-benefit-card {
+            flex: 0 0 auto;
+            width: 22rem;
+            min-width: 18rem;
+        }
+
+        .robotic-advantages-section {
+            overflow: hidden !important;
+        }
+
+        .robotic-advantages-section .robotic-knee-carousel,
+        .robotic-advantages-section .robotic-knee-carousel-viewport {
+            width: 100% !important;
+            max-width: 100% !important;
+            min-width: 0 !important;
+            overflow: hidden !important;
+        }
+
+        .robotic-advantages-section .robotic-knee-benefit-card {
+            min-width: 0;
+            padding: 1rem;
+        }
+
+        .robotic-knee-process-card {
+            flex: 0 0 auto;
+            width: 22rem;
+            min-width: 18rem;
+        }
+
+        .robotic-knee-benefit-card>span {
+            display: grid;
+            width: 2.8rem;
+            height: 2.8rem;
+            margin: 0 auto .85rem;
+            place-items: center;
+            border-radius: .8rem;
+            background: #fff0ed;
+            color: #d71920;
+        }
+
+        .robotic-knee-two-column {
+            display: grid;
+            grid-template-columns: 1.25fr .75fr;
+            gap: 1.5rem;
+            align-items: stretch;
+        }
+
+        .robotic-knee-cost-panel {
+            padding: 1.35rem;
+            border: 1px solid #f1d56c;
+            border-radius: 1rem;
+            background: linear-gradient(145deg, #fffdf4, #fff7e4);
+        }
+
+        .robotic-knee-check-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: .75rem;
+            margin: 1rem 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .robotic-knee-check-list li {
+            display: flex;
+            gap: .65rem;
+            padding: .85rem;
+            border-radius: .8rem;
+            background: #f8fafc;
+            color: #344b60;
+            font-size: .86rem;
+            line-height: 1.55;
+        }
+
+        .robotic-knee-check-list i {
+            flex: 0 0 auto;
+            margin-top: .25rem;
+            color: #d71920;
+        }
+
+        .robotic-knee-stat-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1rem;
+            margin: 1.25rem 0;
+        }
+
+        .robotic-knee-stat-grid article {
+            display: flex;
+            min-height: 7rem;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            border: 1px solid #e8eaed;
+            border-radius: 1rem;
+            background: #fbfcfd;
+            text-align: center;
+        }
+
+        .robotic-knee-stat-grid strong {
+            color: #d71920;
+            font-family: Georgia, serif;
+            font-size: 1.45rem;
+        }
+
+        .robotic-knee-stat-grid span {
+            margin-top: .35rem;
+            color: #43576a;
+            font-size: .78rem;
+            line-height: 1.4;
+        }
+
+        @media(min-width:1024px) {
+            .main-content-grid {
+                row-gap: 0 !important;
+                align-items: start;
+                align-content: start;
+            }
+
+            .treatment-main.robotic-page-content {
+                display: contents;
+            }
+
+            .robotic-intro-section {
+                grid-column: 1/9;
+                grid-row: 1;
+                margin: 0 !important;
+            }
+
+            .robotic-definition-section {
+                grid-column: 1/9;
+                grid-row: 2;
+                margin: 12px 0 0 !important;
+            }
+
+            .robotic-process-section {
+                grid-column: 1/9;
+                grid-row: 3;
+                margin: 12px 0 0 !important;
+            }
+
+            .treatment-main.robotic-page-content>section.robotic-advantages-section:nth-child(4) {
+                display: block !important;
+                grid-column: 1/9 !important;
+                grid-row: 4 !important;
+                justify-self: stretch !important;
+                width: auto !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+                margin: 12px 0 0 !important;
+                overflow: hidden !important;
+            }
+
+            .robotic-suitability-section {
+                grid-column: 1/-1;
+                grid-row: 5;
+                margin-top: 2rem;
+            }
+
+            .robotic-why-section {
+                grid-column: 1/-1;
+                grid-row: 6;
+                margin-top: 2rem;
+            }
+
+            .main-content-grid>#page-right-sidebar {
+                grid-column: 9/-1;
+                grid-row: 1/5;
+                align-self: start;
+            }
+        }
+
+        @media(max-width:1023px) {
+
+            .robotic-knee-card-grid,
+            .robotic-knee-stat-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .robotic-knee-two-column {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width:767px) {
+
+            .robotic-knee-card-grid,
+            .robotic-knee-check-list {
+                grid-template-columns: 1fr;
+            }
+
+            .robotic-knee-stat-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .robotic-knee-benefit-card {
+                width: calc(100vw - 3.5rem);
+                min-width: 0;
             }
         }
     </style>
 </head>
 
 <body class="ortho-page bg-gray-50">
+    <!-- Shared Site Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress">
+        <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+    </div>
+
     <!-- Navbar Component -->
-    <div id="navbar-container"></div>
+    <div id="navbar-container">
+    </div>
 
     <!-- Hero Section -->
     <section class="reference-hero hero-desktop-fix bg-white">
         <div class="hero-media w-full hero-height">
-            <img src="https://res.cloudinary.com/awhmw4uq/image/upload/v1788842406/robotic-surgery.png"
-                alt="Hip Replacement Surgery" width="1920" height="1080">
+            <img src="https://res.cloudinary.com/awhmw4uq/image/upload/v1789111091/robotic-knee-replacement.png"
+                alt="Robotic knee replacement surgery in Hyderabad" width="1920" height="1080">
             <div class="hero-overlay">
                 <div class="max-w-xl text-left robotic-hero-copy">
                     <span class="homepage-section-eyebrow">
-                        <i class="fa-solid fa-heart-pulse"></i>
+                        <i class="fa-solid fa-heart-pulse">
+                        </i>
                         Advanced Joint Care. Personal Attention.
                     </span>
-                    <h1 class="hero-title"><span class="hero-highlight">Robotic Surgery in Hyderabad</span></h1>
-                    <div class="hero-divider" aria-hidden="true"><i class="fa-solid fa-bone"></i></div>
-                    <p class="hero-description">Dr. Mir Jawad Zar Khan delivers advanced robotic joint replacement using
-                        a personalised 3D surgical plan for precise implant positioning, faster recovery, and durable
-                        outcomes.</p>
-                    <div class="robotic-hero-benefits"><span>Sub-millimetre accuracy</span><span>Faster
-                            recovery</span><span>Longer-lasting implants</span><span>Personalised 3D planning</span>
+                    <h1 class="hero-title">
+                        <span class="hero-highlight">
+                            <span class="hero-title-primary-line">Robotic Knee Replacement</span>
+                            <br>
+                            in Hyderabad
+                        </span>
+                    </h1>
+                    <div class="hero-divider" aria-hidden="true">
+                        <i class="fa-solid fa-bone">
+                        </i>
                     </div>
-                    <div class="hero-actions"><a href="/book-an-appointment" class="appointment-cta"><i
-                                class="fa-solid fa-calendar-check"></i><span>Book Appointment</span></a><a
-                            href="/contact" class="hero-secondary-cta"><span>Explore Robotic Surgery</span><i
-                                class="fa-solid fa-arrow-right"></i></a></div>
+                    <p class="hero-description">Your Knee Deserves the Precision of a Fully Automated Robot, Guided by
+                        an Expert Surgeon.</p>
+
+                    <div class="hero-action-buttons">
+                        <a href="/book-an-oppointment" class="hero-appointment-button">
+                            <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+                            <span>Book Appointment</span>
+                        </a>
+
+                        <a href="/contact" class="hero-explore-button">
+                            <span>Explore Knee Robotic Surgery</span>
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -4085,13 +4887,17 @@
                 <nav class="flex items-center flex-wrap gap-1 sm:gap-2 text-xs sm:text-sm" aria-label="Breadcrumb">
                     <a href="/"
                         class="inline-flex items-center text-gray-600 hover:text-blue-700 transition-colors duration-200 font-medium">
-                        <i class="fa-solid fa-home mr-1 text-[10px] sm:text-xs"></i>
+                        <i class="fa-solid fa-home mr-1 text-[10px] sm:text-xs">
+                        </i>
                         <span>Home</span>
                     </a>
-                    <i class="fa-solid fa-chevron-right text-gray-400 text-[8px] sm:text-[10px] mx-1"></i>
+                    <i class="fa-solid fa-chevron-right text-gray-400 text-[8px] sm:text-[10px] mx-1">
+                    </i>
                     <span class="text-gray-500 font-medium">Treatments</span>
-                    <i class="fa-solid fa-chevron-right text-gray-400 text-[8px] sm:text-[10px] mx-1"></i>
-                    <span class="text-blue-700 font-semibold truncate" aria-current="page">Robotic Surgery</span>
+                    <i class="fa-solid fa-chevron-right text-gray-400 text-[8px] sm:text-[10px] mx-1">
+                    </i>
+                    <span class="text-blue-700 font-semibold truncate" aria-current="page">Robotic Knee
+                        Replacement</span>
                 </nav>
             </div>
         </div>
@@ -4112,7 +4918,8 @@
                             <p class="text-[10px] text-gray-700  tracking-wider mb-1">Medically Reviewed By</p>
                             <div class="flex items-center gap-2">
                                 <h3 class="text-base sm:text-lg font-semibold text-gray-900">Dr. Mir Jawad Zar Khan</h3>
-                                <i class="fa-solid fa-circle-check text-red-600 text-sm"></i>
+                                <i class="fa-solid fa-circle-check text-red-600 text-sm">
+                                </i>
                             </div>
                             <p class="text-xs text-gray-800 mt-1 leading-snug">MBBS, MS (Ortho), M.Ch (Ortho),
                                 Fellowship in Arthroplasty, Munich, Germany.</p>
@@ -4127,7 +4934,8 @@
                         <div class="flex flex-col items-center text-center text-gray-900 group cursor-default px-3">
                             <div
                                 class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm mb-1 transition-transform duration-300 group-hover:scale-110">
-                                <i class="fa-solid fa-user-doctor text-lg text-red-600"></i>
+                                <i class="fa-solid fa-user-doctor text-lg text-red-600">
+                                </i>
                             </div>
                             <span class="font-bold text-sm">26+</span>
                             <span class="text-[10px] sm:text-xs text-gray-800 leading-tight">Years of Experience</span>
@@ -4135,7 +4943,8 @@
                         <div class="flex flex-col items-center text-center text-gray-900 group cursor-default px-3">
                             <div
                                 class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm mb-1 transition-transform duration-300 group-hover:scale-110">
-                                <i class="fa-solid fa-bone text-lg text-red-600"></i>
+                                <i class="fa-solid fa-bone text-lg text-red-600">
+                                </i>
                             </div>
                             <span class="font-bold text-sm">Specialist in</span>
                             <span class="text-[10px] sm:text-xs text-gray-800 leading-tight">Joint Replacement &
@@ -4144,7 +4953,8 @@
                         <div class="flex flex-col items-center text-center text-gray-900 group cursor-default px-3">
                             <div
                                 class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm mb-1 transition-transform duration-300 group-hover:scale-110">
-                                <i class="fa-solid fa-globe text-lg text-red-600"></i>
+                                <i class="fa-solid fa-globe text-lg text-red-600">
+                                </i>
                             </div>
                             <span class="font-bold text-sm">International</span>
                             <span class="text-[10px] sm:text-xs text-gray-800 leading-tight">Fellowship (Germany)</span>
@@ -4152,7 +4962,8 @@
                         <div class="flex flex-col items-center text-center text-gray-900 group cursor-default px-3">
                             <div
                                 class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm mb-1 transition-transform duration-300 group-hover:scale-110">
-                                <i class="fa-solid fa-hospital text-lg text-red-600"></i>
+                                <i class="fa-solid fa-hospital text-lg text-red-600">
+                                </i>
                             </div>
                             <span class="font-bold text-sm">Chairman,</span>
                             <span class="text-[10px] sm:text-xs text-gray-800 leading-tight">Germanten Hospitals</span>
@@ -4167,207 +4978,218 @@
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 main-content-grid">
                     <!-- Main Content Area -->
                     <div class="treatment-main robotic-page-content lg:col-span-8 space-y-8">
-                        <section class="robotic-content-card reveal"><span class="robotic-section-label"><i
-                                    class="fa-solid fa-heart-pulse"></i>Precision Joint Care</span>
-                            <h2>What Is Robotic Joint Replacement Surgery?</h2>
-                            <p>Robotic joint replacement surgery uses a robotic arm system guided by preoperative CT
-                                imaging to assist the surgeon in making precise bone cuts and positioning implants. The
-                                level of accuracy achieved goes well beyond what freehand techniques can reliably
-                                deliver. Before a single incision is made, the system builds a three-dimensional model
-                                of the patient's joint. This model becomes the surgical map for the entire procedure.
-                            </p>
-                            <p>At Germanten Hospitals, Dr. Jawad uses this real-time 3D map throughout surgery. The
-                                robotic arm responds dynamically to the patient's position and keeps every movement
-                                within the exact boundaries planned in advance. Bone cuts are accurate to sub-millimetre
-                                tolerances. Implants are seated at the angle and depth that best match the patient's
-                                natural joint mechanics. Surrounding muscles and ligaments are protected throughout.</p>
-                            <p>The outcome is a procedure that is safer, more predictable, and designed to deliver
-                                significantly better long-term results. Implant positioning directly determines how long
-                                an implant lasts, and robotic assistance gets that positioning right every time.</p>
+                        <section class="robotic-content-card reveal robotic-intro-section">
+                            <span class="robotic-section-label"><i class="fa-solid fa-robot"></i> Robotic Knee
+                                Care</span>
+                            <h2>Robotic Knee Replacement in Hyderabad</h2>
+                            <p><strong><em>Your Knee Deserves the Precision of a Fully Automated Robot, Guided by an
+                                        Expert Surgeon.</em></strong></p>
+                            <p>When knee arthritis reaches the point where surgery is the right step, the single biggest
+                                factor in how long your new knee lasts and how natural it feels is how precisely the
+                                implant is positioned. This is exactly where robotic knee replacement changes the
+                                outcome. At Germanten Hospitals, Dr. Mir Jawad Zar Khan performs robotic total knee
+                                replacement surgery in Hyderabad using the CUVIS-joint system, a fully automated active
+                                robotic platform that carries out the bone cuts to a sub-millimetre plan while the
+                                surgeon directs every step.</p>
+                            <p>If you have been searching for a robotic knee replacement surgeon in Hyderabad, a robotic
+                                knee replacement doctor near you, or simply the most precise and predictable way to
+                                treat a worn knee, this page explains how robotic knee replacement surgery in Hyderabad
+                                works, the advantages of knee replacement using robotics, and why Dr. Jawad is among the
+                                best robotic knee replacement doctors in the city.</p>
+                            <p class="robotic-note"><strong>Book your robotic knee replacement consultation today. Our
+                                    team will confirm your appointment within 24 hours.</strong></p>
                         </section>
-                        <section class="robotic-content-card reveal"><span class="robotic-section-label"><i
-                                    class="fa-solid fa-hospital"></i>Why Germanten Hospitals</span>
-                            <h2>Why Choose Robotic Surgery in Hyderabad at Germanten Hospitals?</h2>
-                            <div class="robotic-reason-grid">
-                                <article><span>01</span>
-                                    <div>
-                                        <h3>A surgical plan built entirely around your anatomy</h3>
-                                        <p>No two patients share the same joint geometry. Before surgery, a CT scan maps
-                                            your exact bone structure, alignment, and soft tissue balance. Dr. Jawad
-                                            uses this data to simulate the procedure digitally. He selects the implant
-                                            size, plans bone cuts, and confirms alignment targets, all before entering
-                                            the operating theatre. On the day of surgery, the robotic system enforces
-                                            that plan in real time.</p>
+
+                        <section class="robotic-content-card reveal robotic-definition-section">
+                            <span class="robotic-section-label"><i class="fa-solid fa-circle-info"></i> Understanding
+                                the Technology</span>
+                            <h2>What Is Robotic Knee Replacement Surgery?</h2>
+                            <p>Robotic knee replacement surgery is a knee replacement performed with the assistance of a
+                                surgical robot that plans and executes the procedure from a precise 3D map of your own
+                                knee. It is not a robot operating on its own. The surgeon plans the surgery, controls it
+                                and makes every clinical decision, while the robot delivers the plan with a level of
+                                accuracy that freehand technique cannot consistently match.</p>
+                            <p>Dr. Jawad performs robotic knee replacement using the CUVIS-joint system, which stands
+                                apart from many robots in Hyderabad because it is a fully automated, active robotic
+                                system rather than a semi-automated guide. Where most robotic systems keep the surgeon
+                                cutting within set boundaries, the CUVIS-joint robot actively performs the bone
+                                resection itself, under the surgeon's control, to the exact plan built from your CT
+                                scan. This is what advanced robotic knee replacement looks like today.</p>
+                        </section>
+
+                        <section class="robotic-content-card reveal robotic-process-section">
+                            <span class="robotic-section-label"><i class="fa-solid fa-gears"></i> Three-Stage
+                                Process</span>
+                            <h2>How Robotic Knee Replacement Works</h2>
+                            <p>The precision of a robotic knee comes from planning the entire surgery before the first
+                                cut and then executing that plan exactly. The process has three core stages.</p>
+                            <div class="robotic-knee-carousel robotic-knee-process-carousel" data-robotic-knee-carousel
+                                data-desktop-cards="2" aria-label="Robotic knee replacement process carousel">
+                                <div class="robotic-knee-carousel-viewport">
+                                    <div class="robotic-knee-carousel-track">
+                                        <article class="robotic-knee-process-card"><span
+                                                class="robotic-knee-card-number">01</span>
+                                            <h3>3D CT-Based Surgical Planning</h3>
+                                            <p>Before surgery, a CT scan of your knee is used to build a detailed
+                                                three-dimensional model of your exact bone structure. The system
+                                                analyses your anatomy and plans the procedure on this model, predicting
+                                                the correct implant sizes with a very high degree of accuracy before you
+                                                ever enter the operating theatre.</p>
+                                        </article>
+                                        <article class="robotic-knee-process-card"><span
+                                                class="robotic-knee-card-number">02</span>
+                                            <h3>Precise Robotic Bone Cutting</h3>
+                                            <p>During surgery, the CUVIS-joint robot performs the bone resection to the
+                                                planned model with an error margin within 1mm and a cutting-angle error
+                                                kept below 1 degree, so the plan simulated on the computer is reproduced
+                                                almost exactly in your knee.</p>
+                                        </article>
+                                        <article class="robotic-knee-process-card"><span
+                                                class="robotic-knee-card-number">03</span>
+                                            <h3>Real-Time Gap Balancing and Alignment</h3>
+                                            <p>The system checks and adjusts the balance of the inner and outer knee in
+                                                real time during surgery and aligns the implant to your own natural
+                                                rotational axes, not just to a straight line. This functional alignment,
+                                                along with preserving the natural joint line, is what makes a robotic
+                                                knee feel more natural and reduces the need for unnecessary soft-tissue
+                                                release.</p>
+                                        </article>
                                     </div>
-                                </article>
-                                <article><span>02</span>
-                                    <div>
-                                        <h3>Precision that eliminates alignment error</h3>
-                                        <p>The robotic arm operates within boundaries defined by your surgical plan and
-                                            will not permit cuts outside those boundaries. This removes the risk of
-                                            misalignment, which is one of the most common causes of early implant
-                                            failure. Your implant is placed exactly where it should be, at the correct
-                                            angle, every time.</p>
+                                </div>
+                            </div>
+                            <p class="robotic-evidence-note">These accuracy figures are drawn from clinical studies of
+                                the CUVIS-joint system, including large Indian patient series published in the <a
+                                    href="https://link.springer.com/article/10.1007/s43465-023-00859-w" target="_blank"
+                                    rel="noopener">Indian Journal of Orthopaedics</a>, which give this technology
+                                strong, locally relevant evidence.</p>
+                        </section>
+
+                        <section class="robotic-content-card reveal robotic-advantages-section">
+                            <span class="robotic-section-label"><i class="fa-solid fa-star"></i> Patient Benefits</span>
+                            <h2>Advantages of Robotic Knee Surgery</h2>
+                            <p>The advantages of robotic knee surgery all follow from one thing: an implant positioned
+                                more accurately than freehand technique allows. For patients, this translates into real,
+                                tangible benefits.</p>
+                            <div class="robotic-knee-carousel" data-robotic-knee-carousel data-desktop-cards="2"
+                                aria-label="Advantages of robotic knee surgery carousel">
+                                <div class="robotic-knee-carousel-viewport">
+                                    <div class="robotic-knee-carousel-track">
+                                        <article class="robotic-knee-benefit-card"><span><i
+                                                    class="fa-solid fa-bullseye"></i></span>
+                                            <h3>More Accurate Implant Positioning</h3>
+                                            <p>Implant position directly determines how long a knee replacement lasts.
+                                                Robotic accuracy places the implant at the correct angle and depth every
+                                                time, reducing the alignment errors that are a leading cause of early
+                                                implant failure.</p>
+                                        </article>
+                                        <article class="robotic-knee-benefit-card"><span><i
+                                                    class="fa-solid fa-person-walking"></i></span>
+                                            <h3>A More Natural-Feeling Knee</h3>
+                                            <p>By balancing the knee and aligning the implant to your own anatomy,
+                                                robotic knee replacement produces a joint that many patients describe as
+                                                feeling closer to their natural knee.</p>
+                                        </article>
+                                        <article class="robotic-knee-benefit-card"><span><i
+                                                    class="fa-solid fa-shield-heart"></i></span>
+                                            <h3>Less Soft-Tissue Damage</h3>
+                                            <p>Because the cuts are precise and planned, there is less need for
+                                                excessive cutting and fewer unnecessary soft-tissue releases, which
+                                                means less trauma to the muscles and ligaments around the knee.</p>
+                                        </article>
+                                        <article class="robotic-knee-benefit-card"><span><i
+                                                    class="fa-solid fa-bolt"></i></span>
+                                            <h3>Faster Recovery and Less Pain</h3>
+                                            <p>Reduced tissue trauma leads to less post-operative pain and a quicker
+                                                return to walking. Most patients at Germanten Hospitals begin walking
+                                                within hours of surgery.</p>
+                                        </article>
+                                        <article class="robotic-knee-benefit-card"><span><i
+                                                    class="fa-solid fa-hourglass-half"></i></span>
+                                            <h3>Longer-Lasting Results</h3>
+                                            <p>Better alignment means more even wear on the implant, which supports a
+                                                longer implant life and a lower chance of needing revision surgery in
+                                                the future.</p>
+                                        </article>
                                     </div>
-                                </article>
-                                <article><span>03</span>
-                                    <div>
-                                        <h3>Less trauma, faster recovery</h3>
-                                        <p>Because the robotic system guides each movement precisely, there is no need
-                                            for excessive cutting or intraoperative adjustment. Muscles and ligaments
-                                            are disturbed as little as possible. Patients experience less post-operative
-                                            pain, lower blood loss, and return to daily activity sooner. Most patients
-                                            at Germanten Hospitals are walking within four hours of surgery.</p>
-                                    </div>
-                                </article>
-                                <article><span>04</span>
-                                    <div>
-                                        <h3>Implants that last longer</h3>
-                                        <p>Implant longevity is directly tied to how accurately it is positioned. Even
-                                            small alignment errors cause uneven wear and shorten implant life. Studies
-                                            published in peer-reviewed journals including The Lancet have shown that
-                                            robotic-assisted joint replacement consistently achieves superior alignment
-                                            outcomes compared to conventional surgery, with significantly longer implant
-                                            survival as a result.</p>
-                                    </div>
-                                </article>
-                                <article><span>05</span>
-                                    <div>
-                                        <h3>Full-spectrum safety: navigation and nerve monitoring</h3>
-                                        <p>Every robotic procedure at Germanten Hospitals is supported by 3D
-                                            intraoperative navigation and IONM nerve monitoring running continuously
-                                            throughout surgery. These are independent safety layers that protect the
-                                            patient at every stage of the procedure, from the first incision through to
-                                            closure.</p>
-                                    </div>
-                                </article>
+                                </div>
                             </div>
                         </section>
-                        <section class="robotic-content-card reveal"><span class="robotic-section-label">Treatment
-                                Options</span>
-                            <h2>Procedures Performed with Robotic Assistance</h2>
-                            <p>Dr. Jawad and his team at Germanten Hospitals use robotic surgical assistance across a
-                                full range of joint replacement procedures:</p>
-                            <div class="robotic-procedure-grid">
-                                <article>
-                                    <h3>Total Knee Replacement</h3>
-                                    <p>The most common robotic procedure, used when advanced arthritis has affected the
-                                        full knee joint and resurface is required.</p>
-                                </article>
-                                <article>
-                                    <h3>Partial Knee Replacement</h3>
-                                    <p>Used when only one compartment of the knee is damaged. Robotic guidance is
-                                        especially valuable here because the precision required is greater than in a
-                                        total replacement.</p>
-                                </article>
-                                <article>
-                                    <h3>Total Hip Replacement</h3>
-                                    <p>Robotic assistance ensures correct cup positioning and accurate leg length
-                                        restoration, which are the two most technically demanding aspects of hip
-                                        surgery.</p>
-                                </article>
-                                <article>
-                                    <h3>Revision Joint Replacement</h3>
-                                    <p>For patients whose previous implant has failed. Robotic assistance helps the
-                                        surgeon navigate the additional complexity of a second procedure.</p>
-                                </article>
-                                <article>
-                                    <h3>Shoulder Replacement</h3>
-                                    <p>Advanced shoulder arthritis and rotator cuff arthropathy cases where robotic
-                                        precision improves component positioning and functional outcomes.</p>
-                                </article>
+
+                        <section class="robotic-content-card reveal robotic-suitability-section">
+                            <div class="robotic-knee-two-column">
+                                <div>
+                                    <span class="robotic-section-label"><i class="fa-solid fa-user-check"></i> Patient
+                                        Suitability</span>
+                                    <h2>Who Is Robotic Knee Replacement Suitable For?</h2>
+                                    <p>Robotic knee replacement is suitable for most patients who are candidates for a
+                                        knee replacement, and it is especially valuable for certain groups. If you are a
+                                        candidate for a conventional knee replacement, you are almost always a candidate
+                                        for a robotic one.</p>
+                                    <ul class="robotic-knee-check-list">
+                                        <li><i class="fa-solid fa-check"></i><span>Patients with significant knee
+                                                deformity, malalignment or complex anatomy, where precise planning
+                                                matters most</span></li>
+                                        <li><i class="fa-solid fa-check"></i><span>Younger, active patients who need
+                                                their implant to perform well and last as long as possible</span></li>
+                                        <li><i class="fa-solid fa-check"></i><span>Patients who want the most precise
+                                                and predictable outcome currently available</span></li>
+                                        <li><i class="fa-solid fa-check"></i><span>Patients with high expectations for
+                                                returning to an active lifestyle after surgery</span></li>
+                                    </ul>
+                                    <p>During your consultation, Dr. Jawad assesses your imaging, joint condition,
+                                        overall health and goals to confirm whether robotic knee replacement is the
+                                        right approach. For patients whose arthritis affects only one part of the knee,
+                                        <a
+                                            href="https://drjawadortho.com/robotic-partial-knee-replacement-in-hyderabad">robotic
+                                            partial knee replacement</a> may be the better option.
+                                    </p>
+                                </div>
+                                <div class="robotic-knee-cost-panel">
+                                    <span class="robotic-section-label"><i class="fa-solid fa-indian-rupee-sign"></i>
+                                        Transparent Estimate</span>
+                                    <h2>Robotic Knee Replacement Surgery Cost in Hyderabad</h2>
+                                    <p>One of the most common questions is about robotic knee replacement surgery cost
+                                        in Hyderabad, and in India more broadly. There is no single fixed price, because
+                                        the cost of robotic knee replacement in Hyderabad depends on the type of
+                                        procedure, whether one or both knees are treated, the implant selected and your
+                                        individual clinical needs. Robotic knee replacement is widely covered by health
+                                        insurance as a medically necessary procedure, and Germanten Hospitals accepts
+                                        most major insurance and TPA providers. The clearest way to get an accurate
+                                        figure is a consultation, where a written, transparent estimate is provided
+                                        after your assessment.</p>
+                                </div>
                             </div>
                         </section>
-                        <section class="robotic-content-card reveal"><span class="robotic-section-label">Internationally
-                                Trained Expertise</span>
-                            <h2>Dr. Mir Jawad Zar Khan: Leading Robotic Orthopaedic Surgeon in Hyderabad</h2>
-                            <p>Dr. Jawad brings over 26 years of orthopaedic and joint replacement experience to every
-                                robotic procedure he performs. He holds an MS in Orthopaedics from Osmania University,
-                                graduating as Gold Medalist, and an M.Ch in Orthopaedics. He completed a fellowship in
-                                arthroplasty at a world-renowned orthopaedic institute in Munich, Germany. There he
-                                trained alongside internationally recognised joint replacement specialists including Dr.
-                                Vladimir Martinek, Honorary Professor and Head of Knee Replacement at University
-                                Hospital Munich.</p>
-                            <p>He has performed more than 10,000 joint replacements, arthroscopic reconstructions, and
-                                spine surgeries, and maintains active research collaborations with his German surgical
-                                colleagues through Germanten Hospitals. He has been recognised with the Champions of
-                                Change Award, multiple Times of India excellence rankings, and has been felicitated by
-                                the Governors of Telangana State.</p>
-                            <p>When you choose robotic surgery in Hyderabad at Germanten Hospitals, you are not just
-                                choosing the technology. You are choosing a surgeon who has trained at the highest
-                                levels internationally and has the clinical experience to use that technology to its
-                                full potential.</p>
-                        </section>
-                        <section class="robotic-content-card reveal"><span class="robotic-section-label">Patient
-                                Suitability</span>
-                            <h2>Who Is Robotic Joint Replacement Suitable For?</h2>
-                            <p>Robotic joint replacement is appropriate for most patients who require a knee, hip, or
-                                shoulder replacement. It is particularly beneficial for:</p>
-                            <ul class="robotic-check-list">
-                                <li><i class="fa-solid fa-circle-check"></i>Patients with significant joint deformity,
-                                    malalignment, or complex anatomy</li>
-                                <li><i class="fa-solid fa-circle-check"></i>Younger, active patients who need their
-                                    implant to perform well for as long as possible</li>
-                                <li><i class="fa-solid fa-circle-check"></i>Patients undergoing revision surgery where a
-                                    previous implant has failed</li>
-                                <li><i class="fa-solid fa-circle-check"></i>Patients with high expectations for
-                                    post-operative function and return to activity</li>
-                                <li><i class="fa-solid fa-circle-check"></i>Any patient who wants the most precise and
-                                    predictable surgical outcome currently available</li>
-                            </ul>
-                            <p class="robotic-note">During your consultation, Dr. Jawad will assess your imaging, joint
-                                condition, overall health, and lifestyle goals to determine whether robotic surgery is
-                                the right approach for you.</p>
-                        </section>
-                        <section class="robotic-content-card reveal"><span class="robotic-section-label">Your Treatment
-                                Journey</span>
-                            <h2>The Robotic Surgery Process at Germanten Hospitals</h2>
-                            <div class="robotic-timeline">
-                                <article><span>01</span>
-                                    <div>
-                                        <h3>Consultation and imaging</h3>
-                                        <p>A detailed clinical consultation with Dr. Jawad, including weight-bearing
-                                            X-rays and a CT scan. Your joint anatomy is mapped in full and a
-                                            personalised 3D surgical plan is built from your imaging data.</p>
-                                    </div>
+
+                        <section class="robotic-content-card reveal robotic-why-section">
+                            <span class="robotic-section-label"><i class="fa-solid fa-award"></i> Experience and
+                                Technology</span>
+                            <h2>Why Choose Dr. Jawad for Robotic Knee Replacement in Hyderabad</h2>
+                            <p>Choosing a robotic knee replacement specialist in Hyderabad is about more than the
+                                machine. The technology is only as good as the surgeon directing it, and this is where
+                                Dr. Jawad stands out. He brings over 26 years of orthopedic and joint replacement
+                                experience, an MS in Orthopedics from Osmania University where he was Gold Medalist, an
+                                M.Ch in Orthopedics, and a fellowship in arthroplasty from Munich, Germany, where he
+                                trained alongside internationally recognized joint replacement specialists.</p>
+                            <div class="robotic-knee-stat-grid">
+                                <article><strong>26+</strong><span>Years of orthopedic experience</span></article>
+                                <article><strong>10,000+</strong><span>Joint replacements performed</span></article>
+                                <article><strong>&lt;1 mm</strong><span>Planned robotic cutting accuracy</span>
                                 </article>
-                                <article><span>02</span>
-                                    <div>
-                                        <h3>Pre-surgical planning</h3>
-                                        <p>Dr. Jawad reviews and finalises your surgical plan digitally before the day
-                                            of surgery. Implant size, bone cut angles, and alignment targets are all
-                                            confirmed. You enter the operating theatre with a complete, validated plan
-                                            already in place.</p>
-                                    </div>
-                                </article>
-                                <article><span>03</span>
-                                    <div>
-                                        <h3>Robotic-assisted surgery</h3>
-                                        <p>The procedure is performed by Dr. Jawad using a robotic arm system guided by
-                                            your 3D plan in real time. IONM nerve monitoring runs continuously
-                                            throughout. The robotic arm enforces the boundaries of your plan while the
-                                            surgeon remains in control of every decision.</p>
-                                    </div>
-                                </article>
-                                <article><span>04</span>
-                                    <div>
-                                        <h3>Same-day mobilisation</h3>
-                                        <p>Most patients at Germanten Hospitals begin walking within four hours of
-                                            surgery. The physiotherapy team starts rehabilitation the same day, taking
-                                            advantage of the reduced tissue trauma that robotic assistance makes
-                                            possible.</p>
-                                    </div>
-                                </article>
-                                <article><span>05</span>
-                                    <div>
-                                        <h3>Recovery and follow-up</h3>
-                                        <p>Regular follow-up appointments allow Dr. Jawad and his team to monitor your
-                                            recovery, adjust your physiotherapy protocol, and confirm your implant is
-                                            performing as planned. Most patients return to daily activities within two
-                                            to four weeks.</p>
-                                    </div>
-                                </article>
+                                <article><strong>CUVIS</strong><span>Fully automated active robot</span></article>
                             </div>
+                            <p>With more than 10,000 joint replacements performed, Dr. Jawad has the clinical experience
+                                to use the CUVIS-joint system to its full potential, which is what separates a good
+                                robotic knee replacement doctor in Hyderabad from an outstanding one. This page sits
+                                within his wider <a href="https://drjawadortho.com/robotic-surgery-in-hyderabad">robotic
+                                    joint replacement programme</a>, and patients can also read about <a
+                                    href="https://drjawadortho.com/best-knee-replacement-surgeon-in-hyderabad">total
+                                    knee replacement</a> and the full <a
+                                    href="https://drjawadortho.com/joint-replacement-surgery-in-hyderabad">joint
+                                    replacement surgery in Hyderabad</a>.</p>
+                            <p class="robotic-note"><strong>If you are considering robotic knee replacement, book a
+                                    consultation with Dr. Jawad, a leading robotic knee replacement surgeon in
+                                    Hyderabad, at Germanten Hospitals, Attapur. Call 9989635555 today.</strong></p>
                         </section>
                     </div>
 
@@ -4381,145 +5203,187 @@
                             </div>
                             <div class="related-sidebar-list space-y-2 text-xs sm:text-sm">
 
-                                <a href="/back-pain-treatment-in-hyderabad"
+                                <a href="/robotic-surgery-in-hyderabad"
                                     class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-knee-joint" aria-hidden="true"></i>
-                                    <span class="font-medium">Back Pian Treatment</span>
-                                    <i class="fa-solid fa-chevron-right text-xs "></i>
+                                    <i class="related-treatment-icon fa-solid fa-robot" aria-hidden="true"></i>
+                                    </i>
+                                    <span>Robotic Surgery</span>
+                                    <i class="fa-solid fa-chevron-right text-xs">
+                                    </i>
                                 </a>
 
-                                <a href="/robotic-surgery-in-hyderabad"
+                                <a href="/robotic-knee-replacement-in-hyderabad"
                                     class="current-treatment flex items-center justify-between p-3 rounded-xl font-semibold transition-all duration-300">
-                                    <i class="related-treatment-icon fa-solid fa-robot" aria-hidden="true"></i>
-                                    <span>Robotic Surgery</span>
+                                    <i class="related-treatment-icon fa-solid fa-robot" aria-hidden="true">
+                                    </i>
+                                    <span>Robotic Knee Replacement</span>
+                                    <i class="fa-solid fa-chevron-right text-xs">
+                                    </i>
+                                </a>
+
+                                <a href="/back-pain-treatment-in-hyderabad"
+                                    class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
+                                    <i class="related-treatment-icon fi fi-tr-lower-back" aria-hidden="true">
+                                    </i>
+                                    <span>Back Pain Treatment</span>
                                     <i class="fa-solid fa-chevron-right text-xs"></i>
                                 </a>
 
 
                                 <a href="/partial-knee-replacement-in-hyderabad"
                                     class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-knee-joint" aria-hidden="true"></i>
+                                    <i class="related-treatment-icon fi fi-tr-knee-joint" aria-hidden="true">
+                                    </i>
                                     <span class="font-medium">Partial Knee Replacement</span>
-                                    <i class="fa-solid fa-chevron-right text-xs "></i>
+                                    <i class="fa-solid fa-chevron-right text-xs ">
+                                    </i>
                                 </a>
                                 <!-- Active item -->
                                 <a href="/hip-replacement-surgery-in-hyderabad"
                                     class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-pelvis" aria-hidden="true"></i>
-                                    <span class="font-medium">Hip Replacement</span>
-                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
-                                </a>
-
-                                <a href="/robotic-knee-replacement-in-hyderabad"
-                                    class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fa-solid fa-robot" aria-hidden="true">
+                                    <i class="related-treatment-icon fi fi-tr-pelvis" aria-hidden="true">
                                     </i>
-                                    <span class="font-medium">Robotic Knee Replacement</span>
-                                    <i class="fa-solid fa-chevron-right text-xs "></i>
+                                    <span class="font-medium">Hip Replacement</span>
+                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400">
+                                    </i>
                                 </a>
 
                                 <a href="/trauma-and-fractures"
                                     class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-bone-break" aria-hidden="true"></i>
+                                    <i class="related-treatment-icon fi fi-tr-bone-break" aria-hidden="true">
+                                    </i>
                                     <span class="font-medium">Trauma and Fractures</span>
-                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400">
+                                    </i>
                                 </a>
                                 <a href="/arthroscopy"
                                     class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-knee-joint" aria-hidden="true"></i>
+                                    <i class="related-treatment-icon fi fi-tr-knee-joint" aria-hidden="true">
+                                    </i>
                                     <span class="font-medium">Arthroscopy & Sports Injuries</span>
-                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400">
+                                    </i>
                                 </a>
                                 <a href="/best-spine-surgeon-in-hyderabad"
                                     class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-spine" aria-hidden="true"></i>
+                                    <i class="related-treatment-icon fi fi-tr-spine" aria-hidden="true">
+                                    </i>
                                     <span class="font-medium">Best Spine Surgeon in Hyderabad</span>
-                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400">
+                                    </i>
                                 </a>
                                 <a href="/spine-specialist-in-hyderabad"
                                     class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-spine" aria-hidden="true"></i>
+                                    <i class="related-treatment-icon fi fi-tr-spine" aria-hidden="true">
+                                    </i>
                                     <span class="font-medium">Spine Surgical Treatment</span>
-                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400">
+                                    </i>
                                 </a>
                                 <a href="/spine-non-surgical-treatment"
                                     class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-lower-back" aria-hidden="true"></i>
+                                    <i class="related-treatment-icon fi fi-tr-lower-back" aria-hidden="true">
+                                    </i>
                                     <span class="font-medium">Spine Non Surgical Treatment</span>
-                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400">
+                                    </i>
                                 </a>
                                 <a href="/alternative-treatments-for-knee-arthritis-back-problems"
                                     class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-hands-heart" aria-hidden="true"></i>
+                                    <i class="related-treatment-icon fi fi-tr-hands-heart" aria-hidden="true">
+                                    </i>
                                     <span class="font-medium">Alternative Treatments For Knee Arthritis & Back
                                         Problems</span>
-                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400">
+                                    </i>
                                 </a>
                                 <a href="/oats-procedure"
                                     class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-knee-joint" aria-hidden="true"></i>
+                                    <i class="related-treatment-icon fi fi-tr-knee-joint" aria-hidden="true">
+                                    </i>
                                     <span class="font-medium">OATS Procedure</span>
-                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400">
+                                    </i>
                                 </a>
                                 <a href="/eswt"
                                     class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-bolt" aria-hidden="true"></i>
+                                    <i class="related-treatment-icon fi fi-tr-bolt" aria-hidden="true">
+                                    </i>
                                     <span class="font-medium">ESWT</span>
-                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400">
+                                    </i>
                                 </a>
                                 <a href="/shoulder-replacement-surgery-in-hyderabad"
                                     class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-shoulder-joint" aria-hidden="true"></i>
+                                    <i class="related-treatment-icon fi fi-tr-shoulder-joint" aria-hidden="true">
+                                    </i>
                                     <span class="font-medium">Shoulder Surgery</span>
-                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400">
+                                    </i>
                                 </a>
                                 <a href="/general-orthopedics"
                                     class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-bone" aria-hidden="true"></i>
+                                    <i class="related-treatment-icon fi fi-tr-bone" aria-hidden="true">
+                                    </i>
                                     <span class="font-medium">General Orthopedics</span>
-                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400">
+                                    </i>
                                 </a>
                                 <a href="/rheumatoid-arthritis"
                                     class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-knee-joint" aria-hidden="true"></i>
+                                    <i class="related-treatment-icon fi fi-tr-knee-joint" aria-hidden="true">
+                                    </i>
                                     <span class="font-medium">Rheumatoid Arthritis</span>
-                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400">
+                                    </i>
                                 </a>
                                 <a href="/joint-replacement-surgery-in-hyderabad"
                                     class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-pelvis" aria-hidden="true"></i>
+                                    <i class="related-treatment-icon fi fi-tr-pelvis" aria-hidden="true">
+                                    </i>
                                     <span class="font-medium">Joint Replacement</span>
-                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400">
+                                    </i>
                                 </a>
                                 <a href="/sciatica-treatment-in-hyderabad"
                                     class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-lower-back" aria-hidden="true"></i>
+                                    <i class="related-treatment-icon fi fi-tr-lower-back" aria-hidden="true">
+                                    </i>
                                     <span class="font-medium">Sciatica Treatment</span>
-                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400">
+                                    </i>
                                 </a>
                                 <a href="/foot-and-ankle-surgery"
                                     class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-barefoot" aria-hidden="true"></i>
+                                    <i class="related-treatment-icon fi fi-tr-barefoot" aria-hidden="true">
+                                    </i>
                                     <span class="font-medium">Foot And Ankle Surgery</span>
-                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400">
+                                    </i>
                                 </a>
                                 <a href="/pain-management"
                                     class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-bolt" aria-hidden="true"></i>
+                                    <i class="related-treatment-icon fi fi-tr-bolt" aria-hidden="true">
+                                    </i>
                                     <span class="font-medium">Pain Management</span>
-                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400">
+                                    </i>
                                 </a>
                                 <a href="/hand-microvascular-surgery"
                                     class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-hand-paper" aria-hidden="true"></i>
+                                    <i class="related-treatment-icon fi fi-tr-hand-paper" aria-hidden="true">
+                                    </i>
                                     <span class="font-medium">Hand & Microvascular Surgery</span>
-                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400">
+                                    </i>
                                 </a>
                                 <a href="/cartilage-transplantation"
                                     class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-dna" aria-hidden="true"></i>
+                                    <i class="related-treatment-icon fi fi-tr-dna" aria-hidden="true">
+                                    </i>
                                     <span class="font-medium">Cartilage Transplantation</span>
-                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400">
+                                    </i>
                                 </a>
                             </div>
 
@@ -4529,16 +5393,21 @@
                         <div class="sidebar-appointment-card">
                             <h3>Book an Appointment</h3>
                             <div class="appointment-detail">
-                                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                                <i class="fa-solid fa-phone" aria-hidden="true">
+                                </i>
                                 <a href="tel:04023242424">+91 99896 35555</a>
                             </div>
                             <div class="appointment-detail">
-                                <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                                <i class="fa-regular fa-calendar" aria-hidden="true">
+                                </i>
                                 <span>Mon - Sat: 9:00 AM - 6:00 PM</span>
                             </div>
-                            <div class="appointment-divider"><span>or</span></div>
+                            <div class="appointment-divider">
+                                <span>or</span>
+                            </div>
                             <a href="/contact-us" class="appointment-online-button">
-                                <i class="fa-regular fa-calendar-check" aria-hidden="true"></i>
+                                <i class="fa-regular fa-calendar-check" aria-hidden="true">
+                                </i>
                                 <span>Schedule Online</span>
                             </a>
                             <p>We are here to help you move better and live better.</p>
@@ -4570,19 +5439,21 @@
                             <!-- Latest News -->
                             <div class="jawad-latest-shell reveal" data-jawad-carousel="news" data-start="0"
                                 aria-label="Latest News and Awards carousel" tabindex="0">
-                                <i class="fa-solid fa-trophy jawad-news-decor jawad-news-decor-one"
-                                    aria-hidden="true"></i>
-                                <i class="fa-solid fa-award jawad-news-decor jawad-news-decor-two"
-                                    aria-hidden="true"></i>
+                                <i class="fa-solid fa-trophy jawad-news-decor jawad-news-decor-one" aria-hidden="true">
+                                </i>
+                                <i class="fa-solid fa-award jawad-news-decor jawad-news-decor-two" aria-hidden="true">
+                                </i>
 
                                 <div class="jawad-latest-layout">
                                     <div class="jawad-latest-copy">
                                         <span class="jawad-latest-kicker">
-                                            <i class="fa-solid fa-trophy"></i>
+                                            <i class="fa-solid fa-trophy">
+                                            </i>
                                             Milestones
                                         </span>
                                         <h2>Latest News &amp; Awards</h2>
-                                        <div class="jawad-section-rule" aria-hidden="true"></div>
+                                        <div class="jawad-section-rule" aria-hidden="true">
+                                        </div>
                                         <p>Recognizing excellence, innovation and a continued commitment to better joint
                                             care.</p>
                                     </div>
@@ -4606,7 +5477,8 @@
                                                     <a class="jawad-card-link"
                                                         href="/germanten-hospital-has-earned-a-prestigious-position-in-the-times-health-survey">
                                                         View Details <i class="fa-solid fa-arrow-right"
-                                                            aria-hidden="true"></i>
+                                                            aria-hidden="true">
+                                                        </i>
                                                     </a>
                                                 </div>
                                             </article>
@@ -4630,7 +5502,8 @@
                                                     <a class="jawad-card-link"
                                                         href="/indias-most-trusted-orthopedic-treatment-centers">
                                                         View Details <i class="fa-solid fa-arrow-right"
-                                                            aria-hidden="true"></i>
+                                                            aria-hidden="true">
+                                                        </i>
                                                     </a>
                                                 </div>
                                             </article>
@@ -4652,7 +5525,8 @@
                                                     <a class="jawad-card-link"
                                                         href="/times-of-india-award-of-iconic-joint-replacement-surgeon-of-telangana">
                                                         View Details <i class="fa-solid fa-arrow-right"
-                                                            aria-hidden="true"></i>
+                                                            aria-hidden="true">
+                                                        </i>
                                                     </a>
                                                 </div>
                                             </article>
@@ -4673,7 +5547,8 @@
                                                     <a class="jawad-card-link"
                                                         href="/dr-mir-jawad-zar-khan-awarded-by-the-honble-president-of-india-shri-ram-nath-kovind">
                                                         View Details <i class="fa-solid fa-arrow-right"
-                                                            aria-hidden="true"></i>
+                                                            aria-hidden="true">
+                                                        </i>
                                                     </a>
                                                 </div>
                                             </article>
@@ -4685,25 +5560,32 @@
                                     aria-label="Latest news navigation">
                                     <button class="jawad-carousel-button" type="button" data-carousel-prev
                                         aria-label="Show previous news item">
-                                        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                                        <i class="fa-solid fa-arrow-left" aria-hidden="true">
+                                        </i>
                                     </button>
                                     <button class="jawad-carousel-button" type="button" data-carousel-next
                                         aria-label="Show next news item">
-                                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                                        <i class="fa-solid fa-arrow-right" aria-hidden="true">
+                                        </i>
                                     </button>
                                 </div>
 
                                 <div class="jawad-carousel-dots jawad-latest-dots" aria-label="Choose a news item">
                                     <button class="jawad-carousel-dot" type="button" data-carousel-dot="0"
-                                        aria-label="Show news item 1"></button>
+                                        aria-label="Show news item 1">
+                                    </button>
                                     <button class="jawad-carousel-dot" type="button" data-carousel-dot="1"
-                                        aria-label="Show news item 2"></button>
+                                        aria-label="Show news item 2">
+                                    </button>
                                     <button class="jawad-carousel-dot" type="button" data-carousel-dot="2"
-                                        aria-label="Show news item 3"></button>
+                                        aria-label="Show news item 3">
+                                    </button>
                                     <button class="jawad-carousel-dot" type="button" data-carousel-dot="3"
-                                        aria-label="Show news item 4"></button>
+                                        aria-label="Show news item 4">
+                                    </button>
                                 </div>
-                                <p class="sr-only" data-carousel-status aria-live="polite"></p>
+                                <p class="sr-only" data-carousel-status aria-live="polite">
+                                </p>
                             </div>
 
                             <!-- Recent Post -->
@@ -4712,7 +5594,8 @@
                                 <div class="jawad-recent-heading">
                                     <div class="jawad-recent-title-group">
                                         <span class="jawad-recent-title-icon" aria-hidden="true">
-                                            <i class="fa-solid fa-newspaper"></i>
+                                            <i class="fa-solid fa-newspaper">
+                                            </i>
                                         </span>
                                         <h2>Recent Post</h2>
                                     </div>
@@ -4721,11 +5604,13 @@
                                         aria-label="Recent post navigation">
                                         <button class="jawad-carousel-button" type="button" data-carousel-prev
                                             aria-label="Show previous blog post">
-                                            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                                            <i class="fa-solid fa-arrow-left" aria-hidden="true">
+                                            </i>
                                         </button>
                                         <button class="jawad-carousel-button" type="button" data-carousel-next
                                             aria-label="Show next blog post">
-                                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                                            <i class="fa-solid fa-arrow-right" aria-hidden="true">
+                                            </i>
                                         </button>
                                     </div>
                                 </div>
@@ -4747,12 +5632,13 @@
                                                     technology
                                                     and surgeon credentials can support safer joint replacement care.
                                                 </p>
-                                                <span class="jawad-post-meta"><i class="fa-regular fa-clock"
-                                                        aria-hidden="true"></i> 6 min read</span>
+                                                <span class="jawad-post-meta">
+                                                    <i class="fa-regular fa-clock" aria-hidden="true">
+                                                    </i> 6 min read</span>
                                                 <a class="jawad-read-button"
                                                     href="/blogs/choose-joint-replacement-hospital-surgeon-hyderabad">
-                                                    Read Article <i class="fa-solid fa-arrow-right"
-                                                        aria-hidden="true"></i>
+                                                    Read Article <i class="fa-solid fa-arrow-right" aria-hidden="true">
+                                                    </i>
                                                 </a>
                                             </div>
                                         </article>
@@ -4771,12 +5657,13 @@
                                                 <p class="jawad-post-excerpt">Understand the lifestyle, injury and joint
                                                     health factors behind the changing age profile of knee replacement.
                                                 </p>
-                                                <span class="jawad-post-meta"><i class="fa-regular fa-clock"
-                                                        aria-hidden="true"></i> 5 min read</span>
+                                                <span class="jawad-post-meta">
+                                                    <i class="fa-regular fa-clock" aria-hidden="true">
+                                                    </i> 5 min read</span>
                                                 <a class="jawad-read-button"
                                                     href="/blogs/younger-patients-knee-replacement">
-                                                    Read Article <i class="fa-solid fa-arrow-right"
-                                                        aria-hidden="true"></i>
+                                                    Read Article <i class="fa-solid fa-arrow-right" aria-hidden="true">
+                                                    </i>
                                                 </a>
                                             </div>
                                         </article>
@@ -4794,12 +5681,13 @@
                                                 <p class="jawad-post-excerpt">Compare robotic-assisted and traditional
                                                     knee
                                                     replacement methods, including planning, precision and recovery.</p>
-                                                <span class="jawad-post-meta"><i class="fa-regular fa-clock"
-                                                        aria-hidden="true"></i> 7 min read</span>
+                                                <span class="jawad-post-meta">
+                                                    <i class="fa-regular fa-clock" aria-hidden="true">
+                                                    </i> 7 min read</span>
                                                 <a class="jawad-read-button"
                                                     href="/blogs/robotic-vs-traditional-knee-replacement">
-                                                    Read Article <i class="fa-solid fa-arrow-right"
-                                                        aria-hidden="true"></i>
+                                                    Read Article <i class="fa-solid fa-arrow-right" aria-hidden="true">
+                                                    </i>
                                                 </a>
                                             </div>
                                         </article>
@@ -4816,11 +5704,12 @@
                                                 <p class="jawad-post-excerpt">Learn the common causes and warning signs
                                                     of
                                                     knee pain after 50 and when specialist evaluation may help.</p>
-                                                <span class="jawad-post-meta"><i class="fa-regular fa-clock"
-                                                        aria-hidden="true"></i> 6 min read</span>
+                                                <span class="jawad-post-meta">
+                                                    <i class="fa-regular fa-clock" aria-hidden="true">
+                                                    </i> 6 min read</span>
                                                 <a class="jawad-read-button" href="/blogs/knee-pain-after-50">
-                                                    Read Article <i class="fa-solid fa-arrow-right"
-                                                        aria-hidden="true"></i>
+                                                    Read Article <i class="fa-solid fa-arrow-right" aria-hidden="true">
+                                                    </i>
                                                 </a>
                                             </div>
                                         </article>
@@ -4831,20 +5720,26 @@
                                     <div class="jawad-carousel-dots jawad-recent-dots"
                                         aria-label="Choose a recent blog post">
                                         <button class="jawad-carousel-dot" type="button" data-carousel-dot="0"
-                                            aria-label="Show blog post 1"></button>
+                                            aria-label="Show blog post 1">
+                                        </button>
                                         <button class="jawad-carousel-dot" type="button" data-carousel-dot="1"
-                                            aria-label="Show blog post 2"></button>
+                                            aria-label="Show blog post 2">
+                                        </button>
                                         <button class="jawad-carousel-dot" type="button" data-carousel-dot="2"
-                                            aria-label="Show blog post 3"></button>
+                                            aria-label="Show blog post 3">
+                                        </button>
                                         <button class="jawad-carousel-dot" type="button" data-carousel-dot="3"
-                                            aria-label="Show blog post 4"></button>
+                                            aria-label="Show blog post 4">
+                                        </button>
                                     </div>
                                     <span class="jawad-swipe-cue">
-                                        <i class="fa-regular fa-hand-pointer" aria-hidden="true"></i>
+                                        <i class="fa-regular fa-hand-pointer" aria-hidden="true">
+                                        </i>
                                         Swipe or use arrows to explore
                                     </span>
                                 </div>
-                                <p class="sr-only" data-carousel-status aria-live="polite"></p>
+                                <p class="sr-only" data-carousel-status aria-live="polite">
+                                </p>
                             </div>
                         </div>
                         <!-- Doctor Callback Section -->
@@ -4858,7 +5753,8 @@
                                     <form class="w-full" action="https://old.germantenhospitals.com/send_email.php"
                                         method="post">
                                         <span class="homepage-section-eyebrow">
-                                            <i class="fa-solid fa-phone-volume"></i>
+                                            <i class="fa-solid fa-phone-volume">
+                                            </i>
                                             Contact Us
                                         </span>
                                         <h2 class="homepage-section-heading mb-5 flex items-center gap-2">
@@ -4912,7 +5808,8 @@
 
                                                 <textarea id="customMessage" name="notes" rows="3"
                                                     placeholder="Describe your concern"
-                                                    class="w-full resize-none rounded border border-gray-300 bg-white px-3 py-2 text-sm outline-none transition focus:border-red-400 focus:ring-2 focus:ring-red-100"></textarea>
+                                                    class="w-full resize-none rounded border border-gray-300 bg-white px-3 py-2 text-sm outline-none transition focus:border-red-400 focus:ring-2 focus:ring-red-100">
+</textarea>
                                             </div>
                                         </div>
 
@@ -4948,7 +5845,8 @@
                                     class="callback-info-panel order-3 flex items-center justify-center px-6 pb-7 text-center lg:col-span-3 lg:justify-start lg:px-4 lg:pb-0 lg:text-left reveal">
                                     <div>
                                         <span class="homepage-section-eyebrow">
-                                            <i class="fa-solid fa-user-doctor"></i>
+                                            <i class="fa-solid fa-user-doctor">
+                                            </i>
                                             Expert
                                         </span>
                                         <h2 class="homepage-section-heading">
@@ -4965,91 +5863,104 @@
 
                         <!-- FAQ Section -->
                         <section class="faq-section bg-white rounded-xl border border-gray-200 p-6 reveal">
-                            <span class="homepage-section-eyebrow">
-                                <i class="fa-solid fa-question-circle"></i>
-                                Get Answers
-                            </span>
-                            <h2 class="homepage-section-heading mb-4">
-                                Frequently Asked Questions
-                            </h2>
+                            <span class="homepage-section-eyebrow"><i class="fa-solid fa-question-circle"></i> Get
+                                Answers</span>
+                            <h2 class="homepage-section-heading mb-4">Frequently Asked Questions</h2>
                             <div class="faq-grid">
                                 <div class="faq-item">
                                     <button class="faq-question" type="button" aria-expanded="false">
                                         <span class="faq-toggle" aria-hidden="true"><i
                                                 class="fa-solid fa-plus"></i></span>
-                                        <h4>Is robotic surgery in Hyderabad available for hip replacement as well as
-                                            knee?</h4>
+                                        <h4>Who is the best robotic knee replacement doctor in Hyderabad?</h4>
                                     </button>
                                     <div class="faq-answer">
-                                        <p class="text-gray-700 leading-relaxed text-justify mt-2">
-                                            Yes. Dr. Jawad performs robotic-assisted total knee replacement, partial
-                                            knee replacement, and total hip replacement at Germanten Hospitals. Robotic
-                                            assistance is particularly effective for hip replacement because it ensures
-                                            precise cup positioning and accurate leg length restoration, which are the
-                                            aspects of hip surgery where alignment errors most commonly occur.
-                                        </p>
+                                        <p class="text-gray-700 leading-relaxed text-justify mt-2">Dr. Mir Jawad Zar
+                                            Khan is recognized among the best robotic knee replacement doctors in
+                                            Hyderabad. He combines over 26 years of experience and international
+                                            fellowship training with the fully automated CUVIS-joint robotic system,
+                                            giving patients both surgical expertise and advanced technology.</p>
                                     </div>
                                 </div>
                                 <div class="faq-item">
                                     <button class="faq-question" type="button" aria-expanded="false">
                                         <span class="faq-toggle" aria-hidden="true"><i
                                                 class="fa-solid fa-plus"></i></span>
-                                        <h4>Does a robot perform the surgery?</h4>
+                                        <h4>Does a robot perform the knee replacement on its own?</h4>
                                     </button>
                                     <div class="faq-answer">
-                                        <p class="text-gray-700 leading-relaxed text-justify mt-2">
-                                            No. Dr. Jawad is in control of every aspect of the procedure. The robotic
-                                            arm assists him by maintaining the precision of bone cuts within the
-                                            boundaries of the pre-planned surgical map. The surgeon's clinical judgement
-                                            directs every decision throughout.
-                                        </p>
+                                        <p class="text-gray-700 leading-relaxed text-justify mt-2">No. Dr. Jawad plans
+                                            and controls the entire procedure and makes every clinical decision. The
+                                            CUVIS-joint robot executes the bone cuts to the surgeon's pre-planned 3D
+                                            model with high precision, but the surgeon directs every step of the
+                                            surgery.</p>
                                     </div>
                                 </div>
                                 <div class="faq-item">
                                     <button class="faq-question" type="button" aria-expanded="false">
                                         <span class="faq-toggle" aria-hidden="true"><i
                                                 class="fa-solid fa-plus"></i></span>
-                                        <h4>How much does robotic joint replacement cost in Hyderabad?</h4>
+                                        <h4>What are the main advantages of robotic knee surgery?</h4>
                                     </button>
                                     <div class="faq-answer">
-                                        <p class="text-gray-700 leading-relaxed text-justify mt-2">
-                                            The cost depends on the specific procedure, implant selection, and your
-                                            individual clinical requirements. Germanten Hospitals accepts most major
-                                            insurance and TPA providers. Please contact the team directly for a
-                                            transparent estimate.
-                                        </p>
+                                        <p class="text-gray-700 leading-relaxed text-justify mt-2">The main advantages
+                                            of robotic knee surgery are more accurate implant positioning, a more
+                                            natural-feeling knee, less soft-tissue damage, faster recovery with less
+                                            pain, and a longer-lasting implant due to better alignment.</p>
                                     </div>
                                 </div>
                                 <div class="faq-item">
                                     <button class="faq-question" type="button" aria-expanded="false">
                                         <span class="faq-toggle" aria-hidden="true"><i
                                                 class="fa-solid fa-plus"></i></span>
-                                        <h4>What is recovery like after robotic joint replacement?</h4>
+                                        <h4>What is the cost of robotic knee replacement in Hyderabad?</h4>
                                     </button>
                                     <div class="faq-answer">
-                                        <p class="text-gray-700 leading-relaxed text-justify mt-2">
-                                            Most patients begin walking the same day as surgery. A return to light daily
-                                            activities is typically possible within two to four weeks. Full recovery,
-                                            including completion of physiotherapy, is usually achieved between six weeks
-                                            and three months depending on the procedure and the patient's overall
-                                            health.
-                                        </p>
+                                        <p class="text-gray-700 leading-relaxed text-justify mt-2">The cost of robotic
+                                            knee replacement in Hyderabad depends on the procedure, implant selection,
+                                            whether one or both knees are treated, and your individual needs. Robotic
+                                            knee replacement is widely covered by health insurance, and a written
+                                            estimate is provided at consultation.</p>
                                     </div>
                                 </div>
                                 <div class="faq-item">
                                     <button class="faq-question" type="button" aria-expanded="false">
                                         <span class="faq-toggle" aria-hidden="true"><i
                                                 class="fa-solid fa-plus"></i></span>
-                                        <h4>Is robotic surgery safer than conventional joint replacement?</h4>
+                                        <h4>How is the CUVIS-joint robot different from other robotic systems?</h4>
                                     </button>
                                     <div class="faq-answer">
-                                        <p class="text-gray-700 leading-relaxed text-justify mt-2">
-                                            Robotic-assisted surgery adds a layer of precision that reduces the risk of
-                                            misalignment and implant malpositioning compared to conventional freehand
-                                            techniques. The additional safety measures at Germanten Hospitals, including
-                                            IONM nerve monitoring and 3D intraoperative navigation, provide further
-                                            protection throughout the procedure.
-                                        </p>
+                                        <p class="text-gray-700 leading-relaxed text-justify mt-2">CUVIS-joint is a
+                                            fully automated, active robotic system, which means it performs the bone
+                                            resection itself to the surgeon's plan, rather than only guiding the
+                                            surgeon's own cuts. This is a next-generation approach that supports very
+                                            high accuracy in implant positioning and alignment.</p>
+                                    </div>
+                                </div>
+                                <div class="faq-item">
+                                    <button class="faq-question" type="button" aria-expanded="false">
+                                        <span class="faq-toggle" aria-hidden="true"><i
+                                                class="fa-solid fa-plus"></i></span>
+                                        <h4>How soon can I walk after robotic knee replacement?</h4>
+                                    </button>
+                                    <div class="faq-answer">
+                                        <p class="text-gray-700 leading-relaxed text-justify mt-2">Most patients at
+                                            Germanten Hospitals begin walking within hours of surgery, helped by the
+                                            reduced tissue trauma that robotic precision allows. A return to light daily
+                                            activity is typically possible within two to four weeks.</p>
+                                    </div>
+                                </div>
+                                <div class="faq-item">
+                                    <button class="faq-question" type="button" aria-expanded="false">
+                                        <span class="faq-toggle" aria-hidden="true"><i
+                                                class="fa-solid fa-plus"></i></span>
+                                        <h4>Is robotic knee replacement better than traditional knee replacement?</h4>
+                                    </button>
+                                    <div class="faq-answer">
+                                        <p class="text-gray-700 leading-relaxed text-justify mt-2">Robotic knee
+                                            replacement improves the accuracy of implant positioning and alignment
+                                            compared with freehand technique, which supports better function and a
+                                            longer-lasting implant. The surgeon's skill and experience remain equally
+                                            important to the outcome.</p>
                                     </div>
                                 </div>
                             </div>
@@ -5077,7 +5988,8 @@
                 <button onclick="closeNewsModal()"
                     class="text-gray-500 hover:text-gray-700 transition-colors duration-200">
 
-                    <i class="fas fa-times text-2xl"></i>
+                    <i class="fas fa-times text-2xl">
+                    </i>
 
                 </button>
 
@@ -5106,7 +6018,8 @@
 
 
     <!-- Footer Component -->
-    <div id="footer-container"></div>
+    <div id="footer-container">
+    </div>
 
     <!-- Apply the same responsive navbar offset used on testimonials.html -->
     <script>
@@ -5203,8 +6116,52 @@
         });
     </script>
 
-    <!-- Scripts -->
-    <script src="/js/script.js"></script>
+    <!-- Shared Site Scroll Progress Bar JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollProgressBar = document.getElementById('scrollProgressBar');
+
+            if (!scrollProgress || !scrollProgressBar) return;
+
+            function updateScrollProgress() {
+                const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrollPercentage = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+
+                scrollProgressBar.style.width = scrollPercentage + '%';
+                scrollProgress.classList.toggle('hidden', scrollTop <= 100);
+            }
+
+            function throttle(func, limit) {
+                let inThrottle;
+                return function () {
+                    if (!inThrottle) {
+                        func.apply(this, arguments);
+                        inThrottle = true;
+                        setTimeout(function () { inThrottle = false; }, limit);
+                    }
+                };
+            }
+
+            window.addEventListener('scroll', throttle(updateScrollProgress, 10));
+            scrollProgress.addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            scrollProgress.addEventListener('mouseenter', function () {
+                scrollProgressBar.style.boxShadow = '0 0 20px rgba(202, 138, 4, 0.8)';
+            });
+            scrollProgress.addEventListener('mouseleave', function () {
+                scrollProgressBar.style.boxShadow = '0 0 10px rgba(202, 138, 4, 0.5)';
+            });
+
+            updateScrollProgress();
+        });
+    </script>
+
+    <!-- Shared Navbar, Footer and Floating Navigation Script -->
+    <script src="js/script.js">
+    </script>
 
     <!-- Hip Tab Switching Script -->
     <script>
@@ -5719,15 +6676,20 @@
 
                             <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4">
 
-                              <li><strong>Implant / prosthesis cost:</strong> The artificial joint is a big part of the bill. Different materials and designs have different price points. High-performance implants that are built for better wear resistance or higher flexibility often cost more.</li>
+                              <li>
+<strong>Implant / prosthesis cost:</strong> The artificial joint is a big part of the bill. Different materials and designs have different price points. High-performance implants that are built for better wear resistance or higher flexibility often cost more.</li>
 
-                              <li><strong>Surgeon and anesthesia fees:</strong> This covers the orthopedic surgeon's fee and the cost of the anesthesia team.</li>
+                              <li>
+<strong>Surgeon and anesthesia fees:</strong> This covers the orthopedic surgeon's fee and the cost of the anesthesia team.</li>
 
-                              <li><strong>Operation theatre and surgical team charges:</strong> This includes the use of the operating room, sterilization, surgical instruments, and support staff.</li>
+                              <li>
+<strong>Operation theatre and surgical team charges:</strong> This includes the use of the operating room, sterilization, surgical instruments, and support staff.</li>
 
-                              <li><strong>Hospital stay and room charges:</strong> Most people stay in the hospital for around 3–5 days after surgery for pain control, physiotherapy initiation, wound checks, and monitoring for early complications like infection or clot formation. Each extra day adds to the final bill.</li>
+                              <li>
+<strong>Hospital stay and room charges:</strong> Most people stay in the hospital for around 3–5 days after surgery for pain control, physiotherapy initiation, wound checks, and monitoring for early complications like infection or clot formation. Each extra day adds to the final bill.</li>
 
-                              <li><strong>Pre-surgery tests and scans:</strong> Blood tests, ECG, X-rays, sometimes MRI, and medical clearance from a physician are all part of the preparation.</li>
+                              <li>
+<strong>Pre-surgery tests and scans:</strong> Blood tests, ECG, X-rays, sometimes MRI, and medical clearance from a physician are all part of the preparation.</li>
 
                             </ul>
 
@@ -5955,13 +6917,17 @@
 
                             <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4">
 
-                              <li><strong>Detailed Discussion:</strong> The doctor will ask about your symptoms, daily activities, medical history, and any recent injuries.</li>
+                              <li>
+<strong>Detailed Discussion:</strong> The doctor will ask about your symptoms, daily activities, medical history, and any recent injuries.</li>
 
-                              <li><strong>Physical Examination:</strong> They will check joint movement, pain points, muscle strength, flexibility, and posture.</li>
+                              <li>
+<strong>Physical Examination:</strong> They will check joint movement, pain points, muscle strength, flexibility, and posture.</li>
 
-                              <li><strong>Diagnostic Tests:</strong> Based on the findings, you may undergo X-rays, MRI, ultrasound, or blood tests.</li>
+                              <li>
+<strong>Diagnostic Tests:</strong> Based on the findings, you may undergo X-rays, MRI, ultrasound, or blood tests.</li>
 
-                              <li><strong>Personalized Treatment Plan:</strong> The doctor will then recommend medications, exercises, lifestyle changes, or other treatments suited to your condition.</li>
+                              <li>
+<strong>Personalized Treatment Plan:</strong> The doctor will then recommend medications, exercises, lifestyle changes, or other treatments suited to your condition.</li>
 
                             </ul>
 
@@ -5973,13 +6939,17 @@
 
                             <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4">
 
-                              <li><strong>Physiotherapy:</strong> Strengthens muscles, improves joint mobility, and helps relieve pain.</li>
+                              <li>
+<strong>Physiotherapy:</strong> Strengthens muscles, improves joint mobility, and helps relieve pain.</li>
 
-                              <li><strong>Exercise Therapy:</strong> Customized exercise plans help reduce stiffness and improve stability.</li>
+                              <li>
+<strong>Exercise Therapy:</strong> Customized exercise plans help reduce stiffness and improve stability.</li>
 
-                              <li><strong>Pain-Relief Injections:</strong> Used only in select cases for quick relief.</li>
+                              <li>
+<strong>Pain-Relief Injections:</strong> Used only in select cases for quick relief.</li>
 
-                              <li><strong>Orthotic Devices:</strong> Braces, belts, and supports help reduce stress on weak joints.</li>
+                              <li>
+<strong>Orthotic Devices:</strong> Braces, belts, and supports help reduce stress on weak joints.</li>
 
                             </ul>
 
@@ -6151,11 +7121,14 @@
 
                             <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4">
 
-                              <li><strong>Microfracture:</strong> Tiny holes are drilled into the bone under the damaged cartilage to make it bleed and form a clot that later turns into scar-like cartilage.</li>
+                              <li>
+<strong>Microfracture:</strong> Tiny holes are drilled into the bone under the damaged cartilage to make it bleed and form a clot that later turns into scar-like cartilage.</li>
 
-                              <li><strong>Cell-based repair (like ACI / MACI):</strong> Healthy cartilage cells are taken from the patient, grown in a lab, and then implanted back into the defect.</li>
+                              <li>
+<strong>Cell-based repair (like ACI / MACI):</strong> Healthy cartilage cells are taken from the patient, grown in a lab, and then implanted back into the defect.</li>
 
-                              <li><strong>Scaffold or membrane techniques (like AMIC):</strong> A collagen membrane is placed over the area after microfracture to help cells stay in place and mature.</li>
+                              <li>
+<strong>Scaffold or membrane techniques (like AMIC):</strong> A collagen membrane is placed over the area after microfracture to help cells stay in place and mature.</li>
 
                             </ul>
 
@@ -6261,11 +7234,14 @@
 
                             <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4">
 
-                              <li><strong>Best for focal lesions, not end-stage arthritis:</strong> If most of the joint is already worn down, joint replacement or other surgical options may still be more realistic.</li>
+                              <li>
+<strong>Best for focal lesions, not end-stage arthritis:</strong> If most of the joint is already worn down, joint replacement or other surgical options may still be more realistic.</li>
 
-                              <li><strong>Rehab still matters:</strong> You can't just get the gel and immediately go running. A proper, phased rehabilitation plan with protected weight-bearing and controlled physiotherapy over weeks to months is crucial.</li>
+                              <li>
+<strong>Rehab still matters:</strong> You can't just get the gel and immediately go running. A proper, phased rehabilitation plan with protected weight-bearing and controlled physiotherapy over weeks to months is crucial.</li>
 
-                              <li><strong>Long-term durability is still being tracked:</strong> Early and mid-term results are encouraging, but truly long-term data (10+ years across large patient groups) are still being collected.</li>
+                              <li>
+<strong>Long-term durability is still being tracked:</strong> Early and mid-term results are encouraging, but truly long-term data (10+ years across large patient groups) are still being collected.</li>
 
                             </ul>
 
@@ -7016,6 +7992,329 @@
         });
     </script>
 
+    <!-- Robotic Knee Replacement FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type":"Question","name":"Who is the best robotic knee replacement doctor in Hyderabad?","acceptedAnswer":{"@type":"Answer","text":"Dr. Mir Jawad Zar Khan is recognized among the best robotic knee replacement doctors in Hyderabad. He combines over 26 years of experience and international fellowship training with the fully automated CUVIS-joint robotic system, giving patients both surgical expertise and advanced technology."}},
+            {"@type":"Question","name":"Does a robot perform the knee replacement on its own?","acceptedAnswer":{"@type":"Answer","text":"No. Dr. Jawad plans and controls the entire procedure and makes every clinical decision. The CUVIS-joint robot executes the bone cuts to the surgeon's pre-planned 3D model with high precision, but the surgeon directs every step of the surgery."}},
+            {"@type":"Question","name":"What are the main advantages of robotic knee surgery?","acceptedAnswer":{"@type":"Answer","text":"The main advantages of robotic knee surgery are more accurate implant positioning, a more natural-feeling knee, less soft-tissue damage, faster recovery with less pain, and a longer-lasting implant due to better alignment."}},
+            {"@type":"Question","name":"What is the cost of robotic knee replacement in Hyderabad?","acceptedAnswer":{"@type":"Answer","text":"The cost of robotic knee replacement in Hyderabad depends on the procedure, implant selection, whether one or both knees are treated, and your individual needs. Robotic knee replacement is widely covered by health insurance, and a written estimate is provided at consultation."}},
+            {"@type":"Question","name":"How is the CUVIS-joint robot different from other robotic systems?","acceptedAnswer":{"@type":"Answer","text":"CUVIS-joint is a fully automated, active robotic system, which means it performs the bone resection itself to the surgeon's plan, rather than only guiding the surgeon's own cuts. This is a next-generation approach that supports very high accuracy in implant positioning and alignment."}},
+            {"@type":"Question","name":"How soon can I walk after robotic knee replacement?","acceptedAnswer":{"@type":"Answer","text":"Most patients at Germanten Hospitals begin walking within hours of surgery, helped by the reduced tissue trauma that robotic precision allows. A return to light daily activity is typically possible within two to four weeks."}},
+            {"@type":"Question","name":"Is robotic knee replacement better than traditional knee replacement?","acceptedAnswer":{"@type":"Answer","text":"Robotic knee replacement improves the accuracy of implant positioning and alignment compared with freehand technique, which supports better function and a longer-lasting implant. The surgeon's skill and experience remain equally important to the outcome."}}
+        ]
+    }
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('[data-back-pain-carousel]').forEach(function (carousel) {
+                const viewport = carousel.querySelector('.back-pain-carousel-viewport');
+                const track = carousel.querySelector('.back-pain-carousel-track');
+                const previousButton = carousel.querySelector('[data-carousel-prev]');
+                const nextButton = carousel.querySelector('[data-carousel-next]');
+                const status = carousel.querySelector('.back-pain-carousel-status');
+                const originalCards = Array.from(track.children).map(function (card) {
+                    return card.cloneNode(true);
+                });
+                const total = originalCards.length;
+                let visibleCards = 1;
+                let currentIndex = 1;
+                let autoPlayTimer = null;
+                let touchStartX = 0;
+                let isMoving = false;
+
+                function getVisibleCards() {
+                    return window.matchMedia('(min-width: 768px)').matches ? 2 : 1;
+                }
+
+                function setCardWidths() {
+                    const gap = 16;
+                    const availableWidth = viewport.clientWidth - (gap * (visibleCards - 1));
+                    const cardWidth = Math.max(0, availableWidth / visibleCards);
+                    track.querySelectorAll('.back-pain-cause-card').forEach(function (card) {
+                        card.style.setProperty('flex', '0 0 ' + cardWidth + 'px', 'important');
+                        card.style.setProperty('width', cardWidth + 'px', 'important');
+                        card.style.setProperty('min-width', cardWidth + 'px', 'important');
+                        card.style.setProperty('max-width', cardWidth + 'px', 'important');
+                    });
+                }
+
+                function getStep() {
+                    const firstCard = track.querySelector('.back-pain-cause-card');
+                    if (!firstCard) return viewport.clientWidth;
+                    return firstCard.getBoundingClientRect().width + 16;
+                }
+
+                function updateStatus() {
+                    const logicalIndex = ((currentIndex - visibleCards) % total + total) % total;
+                    if (status) status.textContent = (logicalIndex + 1) + ' of ' + total;
+                }
+
+                function moveTrack(animate) {
+                    track.style.transition = animate ? 'transform .55s cubic-bezier(.22,1,.36,1)' : 'none';
+                    track.style.transform = 'translate3d(' + (-currentIndex * getStep()) + 'px,0,0)';
+                    updateStatus();
+                }
+
+                function buildCarousel() {
+                    visibleCards = getVisibleCards();
+                    track.innerHTML = '';
+                    originalCards.slice(-visibleCards).forEach(function (card) {
+                        const clone = card.cloneNode(true);
+                        clone.setAttribute('aria-hidden', 'true');
+                        track.appendChild(clone);
+                    });
+                    originalCards.forEach(function (card) {
+                        track.appendChild(card.cloneNode(true));
+                    });
+                    originalCards.slice(0, visibleCards).forEach(function (card) {
+                        const clone = card.cloneNode(true);
+                        clone.setAttribute('aria-hidden', 'true');
+                        track.appendChild(clone);
+                    });
+                    currentIndex = visibleCards;
+                    requestAnimationFrame(function () {
+                        setCardWidths();
+                        moveTrack(false);
+                    });
+                }
+
+                function goTo(direction) {
+                    if (isMoving) return;
+                    isMoving = true;
+                    currentIndex += direction;
+                    moveTrack(true);
+                }
+
+                function startAutoPlay() {
+                    stopAutoPlay();
+                    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                        autoPlayTimer = window.setInterval(function () { goTo(1); }, 3200);
+                    }
+                }
+
+                function stopAutoPlay() {
+                    if (autoPlayTimer) window.clearInterval(autoPlayTimer);
+                    autoPlayTimer = null;
+                }
+
+                track.addEventListener('transitionend', function () {
+                    if (currentIndex >= total + visibleCards) {
+                        currentIndex = visibleCards;
+                        moveTrack(false);
+                    } else if (currentIndex < visibleCards) {
+                        currentIndex = total + visibleCards - 1;
+                        moveTrack(false);
+                    }
+                    isMoving = false;
+                });
+
+                if (previousButton) previousButton.addEventListener('click', function () { goTo(-1); startAutoPlay(); });
+                if (nextButton) nextButton.addEventListener('click', function () { goTo(1); startAutoPlay(); });
+                carousel.addEventListener('mouseenter', stopAutoPlay);
+                carousel.addEventListener('mouseleave', startAutoPlay);
+                carousel.addEventListener('focusin', stopAutoPlay);
+                carousel.addEventListener('focusout', startAutoPlay);
+                viewport.addEventListener('touchstart', function (event) {
+                    touchStartX = event.changedTouches[0].clientX;
+                    stopAutoPlay();
+                }, { passive: true });
+                viewport.addEventListener('touchend', function (event) {
+                    const difference = touchStartX - event.changedTouches[0].clientX;
+                    if (Math.abs(difference) > 45) goTo(difference > 0 ? 1 : -1);
+                    startAutoPlay();
+                }, { passive: true });
+
+                let resizeTimer;
+                window.addEventListener('resize', function () {
+                    window.clearTimeout(resizeTimer);
+                    resizeTimer = window.setTimeout(function () {
+                        isMoving = false;
+                        buildCarousel();
+                    }, 180);
+                });
+
+                buildCarousel();
+                startAutoPlay();
+            });
+
+            document.querySelectorAll('[data-care-carousel]').forEach(function (carousel) {
+                const viewport = carousel.querySelector('.back-pain-care-viewport');
+                const track = carousel.querySelector('.back-pain-care-grid');
+                const originals = Array.from(track.children).map(function (card) {
+                    return card.cloneNode(true);
+                });
+                const total = originals.length;
+                let visibleCards = 1;
+                let currentIndex = 1;
+                let timer = null;
+                let moving = false;
+                let touchStartX = 0;
+
+                function countVisibleCards() {
+                    if (window.matchMedia('(min-width: 1024px)').matches) return 3;
+                    if (window.matchMedia('(min-width: 768px)').matches) return 2;
+                    return 1;
+                }
+
+                function sizeCards() {
+                    const gap = 16;
+                    const cardWidth = Math.max(0, (viewport.clientWidth - gap * (visibleCards - 1)) / visibleCards);
+                    track.querySelectorAll('.back-pain-care-card').forEach(function (card) {
+                        card.style.setProperty('flex', '0 0 ' + cardWidth + 'px', 'important');
+                        card.style.setProperty('width', cardWidth + 'px', 'important');
+                        card.style.setProperty('min-width', cardWidth + 'px', 'important');
+                        card.style.setProperty('max-width', cardWidth + 'px', 'important');
+                    });
+                }
+
+                function stepWidth() {
+                    const card = track.querySelector('.back-pain-care-card');
+                    return card ? card.getBoundingClientRect().width + 16 : viewport.clientWidth;
+                }
+
+                function move(animate) {
+                    track.style.transition = animate ? 'transform .55s cubic-bezier(.22,1,.36,1)' : 'none';
+                    track.style.transform = 'translate3d(' + (-currentIndex * stepWidth()) + 'px,0,0)';
+                }
+
+                function build() {
+                    visibleCards = countVisibleCards();
+                    track.innerHTML = '';
+                    originals.slice(-visibleCards).forEach(function (card) {
+                        const clone = card.cloneNode(true);
+                        clone.setAttribute('aria-hidden', 'true');
+                        track.appendChild(clone);
+                    });
+                    originals.forEach(function (card) { track.appendChild(card.cloneNode(true)); });
+                    originals.slice(0, visibleCards).forEach(function (card) {
+                        const clone = card.cloneNode(true);
+                        clone.setAttribute('aria-hidden', 'true');
+                        track.appendChild(clone);
+                    });
+                    currentIndex = visibleCards;
+                    requestAnimationFrame(function () {
+                        sizeCards();
+                        move(false);
+                    });
+                }
+
+                function next(direction) {
+                    if (moving) return;
+                    moving = true;
+                    currentIndex += direction;
+                    move(true);
+                }
+
+                function stop() {
+                    if (timer) window.clearInterval(timer);
+                    timer = null;
+                }
+
+                function start() {
+                    stop();
+                    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                        timer = window.setInterval(function () { next(1); }, 3400);
+                    }
+                }
+
+                track.addEventListener('transitionend', function () {
+                    if (currentIndex >= total + visibleCards) {
+                        currentIndex = visibleCards;
+                        move(false);
+                    } else if (currentIndex < visibleCards) {
+                        currentIndex = total + visibleCards - 1;
+                        move(false);
+                    }
+                    moving = false;
+                });
+
+                carousel.addEventListener('mouseenter', stop);
+                carousel.addEventListener('mouseleave', start);
+                carousel.addEventListener('focusin', stop);
+                carousel.addEventListener('focusout', start);
+                viewport.addEventListener('touchstart', function (event) {
+                    touchStartX = event.changedTouches[0].clientX;
+                    stop();
+                }, { passive: true });
+                viewport.addEventListener('touchend', function (event) {
+                    const difference = touchStartX - event.changedTouches[0].clientX;
+                    if (Math.abs(difference) > 45) next(difference > 0 ? 1 : -1);
+                    start();
+                }, { passive: true });
+
+                let resizeTimer;
+                window.addEventListener('resize', function () {
+                    window.clearTimeout(resizeTimer);
+                    resizeTimer = window.setTimeout(function () {
+                        moving = false;
+                        build();
+                    }, 180);
+                });
+
+                build();
+                start();
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('[data-robotic-knee-carousel]').forEach(function (carousel) {
+                const viewport = carousel.querySelector('.robotic-knee-carousel-viewport');
+                const track = carousel.querySelector('.robotic-knee-carousel-track');
+                const originals = Array.from(track.children).map(function (card) { return card.cloneNode(true); });
+                let index = 0;
+                let timer = null;
+                let startX = 0;
+                function visibleCards() {
+                    const desktopCards = Number(carousel.dataset.desktopCards || 3);
+                    return window.innerWidth >= 1024 ? desktopCards : window.innerWidth >= 768 ? 2 : 1;
+                }
+                function cardWidth() { const first = track.firstElementChild; return first ? first.getBoundingClientRect().width + 16 : 0; }
+                function build() {
+                    track.replaceChildren();
+                    const copies = Math.max(3, Math.ceil((visibleCards() + 2) / originals.length) + 1);
+                    for (let i = 0; i < copies; i += 1) originals.forEach(function (card) { track.appendChild(card.cloneNode(true)); });
+                    const owner = carousel.closest('.robotic-content-card');
+                    const ownerStyle = owner ? window.getComputedStyle(owner) : null;
+                    const ownerContentWidth = owner ? owner.clientWidth - parseFloat(ownerStyle.paddingLeft || 0) - parseFloat(ownerStyle.paddingRight || 0) : viewport.clientWidth;
+                    const availableWidth = Math.min(ownerContentWidth, carousel.parentElement.clientWidth || ownerContentWidth);
+                    carousel.style.width = availableWidth + 'px';
+                    carousel.style.maxWidth = '100%';
+                    viewport.style.width = availableWidth + 'px';
+                    viewport.style.maxWidth = '100%';
+                    const width = (availableWidth - (visibleCards() - 1) * 16) / visibleCards();
+                    Array.from(track.children).forEach(function (card) { card.style.width = width + 'px'; card.style.minWidth = width + 'px'; });
+                    index = 0;
+                    track.style.transition = 'none';
+                    track.style.transform = 'translate3d(0,0,0)';
+                    requestAnimationFrame(function () { track.style.transition = 'transform .55s cubic-bezier(.22,1,.36,1)'; });
+                }
+                function next() {
+                    index += 1;
+                    track.style.transform = 'translate3d(-' + (index * cardWidth()) + 'px,0,0)';
+                    if (index >= originals.length) setTimeout(function () { index = 0; track.style.transition = 'none'; track.style.transform = 'translate3d(0,0,0)'; requestAnimationFrame(function () { track.style.transition = 'transform .55s cubic-bezier(.22,1,.36,1)'; }); }, 580);
+                }
+                function play() { clearInterval(timer); timer = setInterval(next, 3400); }
+                carousel.addEventListener('mouseenter', function () { clearInterval(timer); });
+                carousel.addEventListener('mouseleave', play);
+                carousel.addEventListener('focusin', function () { clearInterval(timer); });
+                carousel.addEventListener('focusout', play);
+                viewport.addEventListener('touchstart', function (event) { startX = event.touches[0].clientX; clearInterval(timer); }, { passive: true });
+                viewport.addEventListener('touchend', function (event) { if (startX - event.changedTouches[0].clientX > 40) next(); play(); }, { passive: true });
+                let resizeTimer;
+                window.addEventListener('resize', function () { clearTimeout(resizeTimer); resizeTimer = setTimeout(function () { build(); play(); }, 180); });
+                build();
+                if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) play();
+            });
+        });
+    </script>
+    <floating-nav></floating-nav>
 </body>
 
 </html>

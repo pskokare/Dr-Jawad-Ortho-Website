@@ -4,18 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="google-site-verification" content="gyGSLLzdQLlIEsLrhnGzWjOoQDhyTo8sxocDXKNkG7w" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robotic Surgery in Hyderabad | Dr. Mir Jawad Zar ScdKsI964KbnwdHvlRVjaN3N</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Back Pain Treatment in Hyderabad | Back Pain Doctor - Dr. Jawad</title>
     <meta name="description"
         content="Consult Dr. Mir Jawad Zar Khan for advanced robotic surgery in Hyderabad at Germanten Hospitals. Sub-millimetre precision, 3D planning, faster recovery. Book today.">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/4.0.0/uicons-thin-rounded/css/uicons-thin-rounded.css">
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="icon" type="image/webp" href="../Images/dr-jawad-logo.webp">
-    <link rel="canonical" href="https://drjawadortho.com/robotic-surgery-in-hyderabad">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/webp" href="Images/dr-jawad-logo.webp">
+    <link rel="canonical" href="https://drjawadortho.com/back-pain-treatment-in-hyderabad">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <style>
+        /* Shared site scroll progress bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.2);
+            z-index: 9999;
+            transition: opacity 0.3s ease;
+        }
+
+        .scroll-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #ff4d01 0%, #eab308 50%, #facc15 100%);
+            border-radius: 0 1px 1px 0;
+            transition: width 0.1s ease-out;
+            box-shadow: 0 0 10px rgba(202, 138, 4, 0.5);
+        }
+
+        .scroll-progress.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
         :root {
             --hip-fixed-header: 0px;
         }
@@ -139,6 +165,73 @@
             line-height: 1.75;
         }
 
+        .hero-action-buttons {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.85rem;
+            margin-top: 1.35rem;
+        }
+
+        .hero-appointment-button,
+        .hero-explore-button {
+            display: inline-flex;
+            min-height: 48px;
+            align-items: center;
+            justify-content: center;
+            gap: 0.65rem;
+            padding: 0.8rem 1.25rem;
+            border-radius: 0.7rem;
+            font-size: 0.88rem;
+            font-weight: 700;
+            line-height: 1;
+            text-decoration: none;
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                background-color 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .hero-appointment-button {
+            border: 1px solid #f4c400;
+            background: #f4c400;
+            color: #092b4c;
+            box-shadow: 0 7px 18px rgba(244, 196, 0, 0.2);
+        }
+
+        .hero-explore-button {
+            border: 1px solid #cbd5e1;
+            background: rgba(255, 255, 255, 0.92);
+            color: #092b4c;
+            box-shadow: 0 7px 18px rgba(9, 43, 76, 0.08);
+        }
+
+        .hero-appointment-button:hover,
+        .hero-appointment-button:focus-visible {
+            background: #d71920;
+            border-color: #d71920;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 22px rgba(215, 25, 32, 0.22);
+        }
+
+        .hero-explore-button:hover,
+        .hero-explore-button:focus-visible {
+            background: #f4c400;
+            border-color: #f4c400;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 22px rgba(9, 43, 76, 0.18);
+        }
+
+        .hero-appointment-button:focus-visible,
+        .hero-explore-button:focus-visible {
+            outline: 3px solid rgba(244, 196, 0, 0.35);
+            outline-offset: 3px;
+        }
+
+
         .hero-actions {
             display: flex;
             flex-wrap: wrap;
@@ -241,6 +334,21 @@
 
             .hero-title {
                 font-size: clamp(2.2rem, 5vw, 2.75rem);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hero-action-buttons {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 0.7rem;
+                margin-top: 1.1rem;
+            }
+
+            .hero-appointment-button,
+            .hero-explore-button {
+                width: 100%;
+                min-height: 46px;
             }
         }
 
@@ -1474,31 +1582,31 @@
         }
 
         /* Active state styling */
-        .related-sidebar-list a[href="/robotic-surgery-in-hyderabad"] {
+        .related-sidebar-list a[href="/back-pain-treatment-in-hyderabad"] {
             background: #f4c400 !important;
             border-color: #f4c400 !important;
         }
 
-        .related-sidebar-list a[href="/robotic-surgery-in-hyderabad"]::before {
+        .related-sidebar-list a[href="/back-pain-treatment-in-hyderabad"]::before {
             display: none;
         }
 
-        .related-sidebar-list a[href="/robotic-surgery-in-hyderabad"] span,
-        .related-sidebar-list a[href="/robotic-surgery-in-hyderabad"] i {
+        .related-sidebar-list a[href="/back-pain-treatment-in-hyderabad"] span,
+        .related-sidebar-list a[href="/back-pain-treatment-in-hyderabad"] i {
             color: #111827 !important;
         }
 
-        .related-sidebar-list a[href="/robotic-surgery-in-hyderabad"]::after {
+        .related-sidebar-list a[href="/back-pain-treatment-in-hyderabad"]::after {
             border-color: #fffdf7;
             background: #f4c400;
         }
 
-        .related-sidebar-list a[href="/robotic-surgery-in-hyderabad"] .absolute {
+        .related-sidebar-list a[href="/back-pain-treatment-in-hyderabad"] .absolute {
             display: none;
         }
 
-        .related-sidebar-list a[href="/robotic-surgery-in-hyderabad"]:hover .related-treatment-icon,
-        .related-sidebar-list a[href="/robotic-surgery-in-hyderabad"]:focus-visible .related-treatment-icon {
+        .related-sidebar-list a[href="/back-pain-treatment-in-hyderabad"]:hover .related-treatment-icon,
+        .related-sidebar-list a[href="/back-pain-treatment-in-hyderabad"]:focus-visible .related-treatment-icon {
             color: #d71920 !important;
         }
 
@@ -3468,7 +3576,8 @@
             }
         }
     </style>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B7BXJEHXWK"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B7BXJEHXWK">
+    </script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -3478,11 +3587,12 @@
     </script>
 
     <!-- Apex cura web forms script start -->
-    <script src="https://suite.apexcura.com/api/public/scripts/germantenContactForm.js"></script>
+    <script src="https://suite.apexcura.com/api/public/scripts/germantenContactForm.js">
+    </script>
     <!-- Apex cura web forms script end -->
 
-    <!-- FAQ Schema -->
-    <script type="application/ld+json">
+    <!-- Legacy FAQ schema retained as inactive source data; replaced below -->
+    <script type="application/json" data-replaced-faq-schema>
     {
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -3753,6 +3863,193 @@
             font-weight: 900
         }
 
+        .back-pain-carousel {
+            position: relative;
+            width: 100%;
+            min-width: 0;
+            margin-top: 1.25rem
+        }
+
+        .back-pain-carousel-viewport {
+            width: 100%;
+            min-width: 0;
+            overflow: hidden;
+            padding: .25rem .15rem 1rem;
+            touch-action: pan-y
+        }
+
+        .back-pain-carousel-track {
+            display: flex !important;
+            width: max-content;
+            min-width: 100%;
+            gap: 1rem;
+            align-items: stretch;
+            will-change: transform;
+            transition: transform .55s cubic-bezier(.22, 1, .36, 1)
+        }
+
+        .back-pain-carousel-track>.back-pain-cause-card {
+            position: relative;
+            display: block !important;
+            flex-grow: 0 !important;
+            flex-shrink: 0 !important;
+            flex-basis: calc((100vw - 1rem)/2);
+            width: 22rem;
+            min-width: 18rem;
+            max-width: none;
+            min-height: 18rem;
+            padding: 1.25rem 1.15rem 1.15rem;
+            overflow: hidden;
+            white-space: normal;
+            word-break: normal;
+            overflow-wrap: break-word;
+            border: 1px solid #e6e8eb;
+            border-top: 4px solid #e9c52c;
+            border-radius: 1rem;
+            background: linear-gradient(145deg, #fff 0%, #fffdf4 100%);
+            box-shadow: 0 8px 22px rgba(9, 43, 76, .07);
+            transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease
+        }
+
+        .back-pain-cause-card::after {
+            content: "";
+            position: absolute;
+            right: -2.5rem;
+            bottom: -2.5rem;
+            width: 7rem;
+            height: 7rem;
+            border-radius: 50%;
+            background: rgba(215, 25, 32, .045)
+        }
+
+        .back-pain-cause-card:hover {
+            transform: translateY(-5px);
+            border-color: #e9c52c;
+            box-shadow: 0 15px 30px rgba(9, 43, 76, .13)
+        }
+
+        .back-pain-cause-card h3 {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            min-height: 3rem;
+            align-items: center;
+            justify-content: center;
+            margin: 0 0 .8rem;
+            color: #092b4c;
+            font-size: 1rem;
+            line-height: 1.4;
+            text-align: center;
+            word-break: normal
+        }
+
+        .back-pain-cause-card p {
+            position: relative;
+            z-index: 1;
+            margin: 0;
+            color: #43576a;
+            font-size: .86rem;
+            line-height: 1.7;
+            text-align: justify;
+            word-break: normal
+        }
+
+        .back-pain-carousel-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: .75rem;
+            margin-top: .25rem
+        }
+
+        .back-pain-carousel-button {
+            display: grid;
+            width: 2.45rem;
+            height: 2.45rem;
+            place-items: center;
+            border: 1px solid #e9c52c;
+            border-radius: 50%;
+            background: #fff;
+            color: #d71920;
+            box-shadow: 0 5px 14px rgba(9, 43, 76, .08);
+            transition: .25s
+        }
+
+        .back-pain-carousel-button:hover,
+        .back-pain-carousel-button:focus-visible {
+            background: #d71920;
+            border-color: #d71920;
+            color: #fff;
+            transform: translateY(-2px)
+        }
+
+        .back-pain-carousel-status {
+            min-width: 4.2rem;
+            color: #657383;
+            font-size: .76rem;
+            font-weight: 700;
+            text-align: center
+        }
+
+        .back-pain-care-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+            margin-top: 1.25rem
+        }
+
+        .back-pain-care-card {
+            position: relative;
+            padding: 1.25rem;
+            border: 1px solid #e8eaed;
+            border-radius: 1rem;
+            background: #fff;
+            box-shadow: 0 8px 22px rgba(9, 43, 76, .06);
+            transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease
+        }
+
+        .back-pain-care-card:hover {
+            transform: translateY(-5px);
+            border-color: #e9c52c;
+            box-shadow: 0 15px 30px rgba(9, 43, 76, .12)
+        }
+
+        .back-pain-care-icon {
+            display: grid;
+            width: 2.8rem;
+            height: 2.8rem;
+            margin: 0 auto .85rem;
+            place-items: center;
+            border-radius: .8rem;
+            background: #fff3ef;
+            color: #d71920;
+            font-size: 1.05rem
+        }
+
+        .back-pain-care-card h3 {
+            min-height: 2.6rem;
+            margin: 0 0 .75rem;
+            color: #092b4c;
+            font-size: 1rem;
+            text-align: center
+        }
+
+        .back-pain-care-card p {
+            margin: 0;
+            color: #43576a;
+            font-size: .86rem;
+            line-height: 1.72;
+            text-align: justify
+        }
+
+        .back-pain-care-card a {
+            color: #b31319;
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: #e9c52c;
+            text-underline-offset: 3px
+        }
+
         .robotic-page-content {
             --r: #d71920;
             --y: #e9c52c;
@@ -3955,6 +4252,11 @@
                 grid-row: 6
             }
 
+            .treatment-main.robotic-page-content>section:nth-child(7) {
+                grid-column: 1/-1;
+                grid-row: 7
+            }
+
             .main-content-grid>#page-right-sidebar {
                 grid-column: 9/-1;
                 grid-row: 1/4
@@ -4036,41 +4338,243 @@
             }
         }
 
+        @media(max-width:1023px) {
+            .back-pain-care-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr))
+            }
+        }
+
+        @media(max-width:767px) {
+            .back-pain-carousel-track>.back-pain-cause-card {
+                flex-basis: calc(100vw - 3.5rem);
+                width: calc(100vw - 3.5rem);
+                min-width: 0;
+                min-height: 17rem
+            }
+
+            .back-pain-care-grid {
+                grid-template-columns: 1fr
+            }
+
+            .back-pain-care-card h3 {
+                min-height: 0
+            }
+        }
+
         @media(max-width:380px) {
             .robotic-hero-benefits {
                 grid-template-columns: 1fr
             }
         }
+
+        /* Final carousel sizing overrides */
+        .reference-hero .hero-overlay {
+            background: linear-gradient(90deg,
+                    rgba(239, 247, 255, .96) 0%,
+                    rgba(239, 247, 255, .88) 30%,
+                    rgba(239, 247, 255, .30) 50%,
+                    rgba(239, 247, 255, 0) 64%,
+                    transparent 100%);
+        }
+
+        @media (min-width: 1024px) {
+            .main-content-grid {
+                row-gap: 0 !important;
+            }
+
+            .treatment-main.robotic-page-content>section:nth-child(5),
+            .treatment-main.robotic-page-content>section:nth-child(6),
+            .treatment-main.robotic-page-content>section:nth-child(7) {
+                margin-top: 2rem;
+            }
+
+            .treatment-main.robotic-page-content>section:nth-child(1) {
+                grid-column: 1 / 9;
+                grid-row: 1;
+            }
+
+            .treatment-main.robotic-page-content>section:nth-child(2) {
+                grid-column: 1 / 9;
+                grid-row: 2;
+            }
+
+            .treatment-main.robotic-page-content>section:nth-child(3) {
+                grid-column: 1 / 9;
+                grid-row: 3;
+            }
+
+            .treatment-main.robotic-page-content>section:nth-child(4) {
+                display: contents;
+                margin-top: 0;
+            }
+
+            .surgical-split-section>.surgical-care-intro {
+                grid-column: 1 / 9;
+                grid-row: 4;
+            }
+
+            .surgical-split-section>.surgical-care-cards {
+                grid-column: 1 / -1;
+                grid-row: 5;
+                margin-top: 2rem;
+            }
+
+            .treatment-main.robotic-page-content>section:nth-child(5) {
+                grid-column: 1 / -1;
+                grid-row: 6;
+            }
+
+            .treatment-main.robotic-page-content>section:nth-child(6) {
+                grid-column: 1 / -1;
+                grid-row: 7;
+            }
+
+            .treatment-main.robotic-page-content>section:nth-child(7) {
+                grid-column: 1 / -1;
+                grid-row: 8;
+            }
+
+            .main-content-grid>#page-right-sidebar {
+                grid-column: 9 / -1;
+                grid-row: 1 / 5;
+            }
+        }
+
+        .surgical-split-section {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .surgical-care-cards .back-pain-care-grid {
+            margin-top: 0;
+        }
+
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .reference-hero .hero-overlay {
+                background: linear-gradient(90deg,
+                        rgba(239, 247, 255, .96) 0%,
+                        rgba(239, 247, 255, .86) 38%,
+                        rgba(239, 247, 255, .28) 58%,
+                        rgba(239, 247, 255, 0) 74%,
+                        transparent 100%);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .reference-hero .hero-overlay {
+                background: linear-gradient(180deg, #f7fbff 0%, #eff7ff 100%);
+            }
+        }
+
+        .back-pain-carousel-track>.back-pain-cause-card {
+            min-height: 15rem;
+            padding-bottom: .55rem;
+        }
+
+        .back-pain-care-carousel,
+        .back-pain-care-viewport {
+            width: 100%;
+            min-width: 0;
+        }
+
+        .back-pain-care-viewport {
+            overflow: hidden;
+            padding: .25rem .15rem .5rem;
+            touch-action: pan-y;
+        }
+
+        .back-pain-care-carousel .back-pain-care-grid {
+            display: flex !important;
+            width: max-content;
+            min-width: 100%;
+            align-items: stretch;
+            gap: 1rem;
+            margin-top: 1.25rem;
+            will-change: transform;
+            transition: transform .55s cubic-bezier(.22, 1, .36, 1);
+        }
+
+        .back-pain-care-carousel .back-pain-care-card {
+            display: block !important;
+            flex-grow: 0 !important;
+            flex-shrink: 0 !important;
+            width: 22rem;
+            min-width: 18rem;
+            max-width: none;
+            padding-bottom: .75rem;
+            overflow: hidden;
+            white-space: normal;
+            word-break: normal;
+            overflow-wrap: break-word;
+        }
+
+        .surgical-care-carousel .back-pain-care-card {
+            border-top: 3px solid #d71920;
+            background: linear-gradient(145deg, #ffffff 0%, #fff8f8 100%);
+        }
+
+        .surgical-care-carousel .back-pain-care-card h3 {
+            color: #d71920;
+        }
+
+        @media (max-width: 767px) {
+            .back-pain-carousel-track>.back-pain-cause-card {
+                min-height: 14rem;
+                padding-bottom: .45rem;
+            }
+        }
+
+        /* Preserve the shared footer's yellow column headings. */
+        #footer-container h4.text-yellow-400,
+        #footer-container h5.text-yellow-400 {
+            color: #facc15 !important;
+        }
     </style>
 </head>
 
 <body class="ortho-page bg-gray-50">
+    <!-- Shared Site Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress">
+        <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+    </div>
+
     <!-- Navbar Component -->
-    <div id="navbar-container"></div>
+    <div id="navbar-container">
+    </div>
 
     <!-- Hero Section -->
     <section class="reference-hero hero-desktop-fix bg-white">
         <div class="hero-media w-full hero-height">
-            <img src="https://res.cloudinary.com/awhmw4uq/image/upload/v1788842406/robotic-surgery.png"
+            <img src="https://res.cloudinary.com/awhmw4uq/image/upload/v1789025609/back-pain-treatment-in-hyderabad.png"
                 alt="Hip Replacement Surgery" width="1920" height="1080">
             <div class="hero-overlay">
                 <div class="max-w-xl text-left robotic-hero-copy">
                     <span class="homepage-section-eyebrow">
-                        <i class="fa-solid fa-heart-pulse"></i>
+                        <i class="fa-solid fa-heart-pulse">
+                        </i>
                         Advanced Joint Care. Personal Attention.
                     </span>
-                    <h1 class="hero-title"><span class="hero-highlight">Robotic Surgery in Hyderabad</span></h1>
-                    <div class="hero-divider" aria-hidden="true"><i class="fa-solid fa-bone"></i></div>
-                    <p class="hero-description">Dr. Mir Jawad Zar Khan delivers advanced robotic joint replacement using
-                        a personalised 3D surgical plan for precise implant positioning, faster recovery, and durable
-                        outcomes.</p>
-                    <div class="robotic-hero-benefits"><span>Sub-millimetre accuracy</span><span>Faster
-                            recovery</span><span>Longer-lasting implants</span><span>Personalised 3D planning</span>
+                    <h1 class="hero-title">
+                        <span class="hero-highlight">Back Pain Treatment in Hyderabad</span>
+                    </h1>
+                    <div class="hero-divider" aria-hidden="true">
+                        <i class="fa-solid fa-bone">
+                        </i>
                     </div>
-                    <div class="hero-actions"><a href="/book-an-appointment" class="appointment-cta"><i
-                                class="fa-solid fa-calendar-check"></i><span>Book Appointment</span></a><a
-                            href="/contact" class="hero-secondary-cta"><span>Explore Robotic Surgery</span><i
-                                class="fa-solid fa-arrow-right"></i></a></div>
+                    <p class="hero-description">Back Pain That Will Not Settle Needs a Specialist, Not Another Round of
+                        Rest.</p>
+
+                    <div class="hero-action-buttons">
+                        <a href="/book-an-oppointment" class="hero-appointment-button">
+                            <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+                            <span>Book Appointment</span>
+                        </a>
+
+                        <a href="/contact" class="hero-explore-button">
+                            <span>Explore Back Pain Treatment</span>
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -4085,13 +4589,16 @@
                 <nav class="flex items-center flex-wrap gap-1 sm:gap-2 text-xs sm:text-sm" aria-label="Breadcrumb">
                     <a href="/"
                         class="inline-flex items-center text-gray-600 hover:text-blue-700 transition-colors duration-200 font-medium">
-                        <i class="fa-solid fa-home mr-1 text-[10px] sm:text-xs"></i>
+                        <i class="fa-solid fa-home mr-1 text-[10px] sm:text-xs">
+                        </i>
                         <span>Home</span>
                     </a>
-                    <i class="fa-solid fa-chevron-right text-gray-400 text-[8px] sm:text-[10px] mx-1"></i>
+                    <i class="fa-solid fa-chevron-right text-gray-400 text-[8px] sm:text-[10px] mx-1">
+                    </i>
                     <span class="text-gray-500 font-medium">Treatments</span>
-                    <i class="fa-solid fa-chevron-right text-gray-400 text-[8px] sm:text-[10px] mx-1"></i>
-                    <span class="text-blue-700 font-semibold truncate" aria-current="page">Robotic Surgery</span>
+                    <i class="fa-solid fa-chevron-right text-gray-400 text-[8px] sm:text-[10px] mx-1">
+                    </i>
+                    <span class="text-blue-700 font-semibold truncate" aria-current="page">Back Pain Treatment</span>
                 </nav>
             </div>
         </div>
@@ -4112,7 +4619,8 @@
                             <p class="text-[10px] text-gray-700  tracking-wider mb-1">Medically Reviewed By</p>
                             <div class="flex items-center gap-2">
                                 <h3 class="text-base sm:text-lg font-semibold text-gray-900">Dr. Mir Jawad Zar Khan</h3>
-                                <i class="fa-solid fa-circle-check text-red-600 text-sm"></i>
+                                <i class="fa-solid fa-circle-check text-red-600 text-sm">
+                                </i>
                             </div>
                             <p class="text-xs text-gray-800 mt-1 leading-snug">MBBS, MS (Ortho), M.Ch (Ortho),
                                 Fellowship in Arthroplasty, Munich, Germany.</p>
@@ -4127,7 +4635,8 @@
                         <div class="flex flex-col items-center text-center text-gray-900 group cursor-default px-3">
                             <div
                                 class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm mb-1 transition-transform duration-300 group-hover:scale-110">
-                                <i class="fa-solid fa-user-doctor text-lg text-red-600"></i>
+                                <i class="fa-solid fa-user-doctor text-lg text-red-600">
+                                </i>
                             </div>
                             <span class="font-bold text-sm">26+</span>
                             <span class="text-[10px] sm:text-xs text-gray-800 leading-tight">Years of Experience</span>
@@ -4135,7 +4644,8 @@
                         <div class="flex flex-col items-center text-center text-gray-900 group cursor-default px-3">
                             <div
                                 class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm mb-1 transition-transform duration-300 group-hover:scale-110">
-                                <i class="fa-solid fa-bone text-lg text-red-600"></i>
+                                <i class="fa-solid fa-bone text-lg text-red-600">
+                                </i>
                             </div>
                             <span class="font-bold text-sm">Specialist in</span>
                             <span class="text-[10px] sm:text-xs text-gray-800 leading-tight">Joint Replacement &
@@ -4144,7 +4654,8 @@
                         <div class="flex flex-col items-center text-center text-gray-900 group cursor-default px-3">
                             <div
                                 class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm mb-1 transition-transform duration-300 group-hover:scale-110">
-                                <i class="fa-solid fa-globe text-lg text-red-600"></i>
+                                <i class="fa-solid fa-globe text-lg text-red-600">
+                                </i>
                             </div>
                             <span class="font-bold text-sm">International</span>
                             <span class="text-[10px] sm:text-xs text-gray-800 leading-tight">Fellowship (Germany)</span>
@@ -4152,7 +4663,8 @@
                         <div class="flex flex-col items-center text-center text-gray-900 group cursor-default px-3">
                             <div
                                 class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm mb-1 transition-transform duration-300 group-hover:scale-110">
-                                <i class="fa-solid fa-hospital text-lg text-red-600"></i>
+                                <i class="fa-solid fa-hospital text-lg text-red-600">
+                                </i>
                             </div>
                             <span class="font-bold text-sm">Chairman,</span>
                             <span class="text-[10px] sm:text-xs text-gray-800 leading-tight">Germanten Hospitals</span>
@@ -4167,207 +4679,324 @@
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 main-content-grid">
                     <!-- Main Content Area -->
                     <div class="treatment-main robotic-page-content lg:col-span-8 space-y-8">
-                        <section class="robotic-content-card reveal"><span class="robotic-section-label"><i
-                                    class="fa-solid fa-heart-pulse"></i>Precision Joint Care</span>
-                            <h2>What Is Robotic Joint Replacement Surgery?</h2>
-                            <p>Robotic joint replacement surgery uses a robotic arm system guided by preoperative CT
-                                imaging to assist the surgeon in making precise bone cuts and positioning implants. The
-                                level of accuracy achieved goes well beyond what freehand techniques can reliably
-                                deliver. Before a single incision is made, the system builds a three-dimensional model
-                                of the patient's joint. This model becomes the surgical map for the entire procedure.
+                        <section class="robotic-content-card reveal">
+                            <span class="robotic-section-label"><i class="fa-solid fa-spine"></i> Back Pain Care</span>
+                            <h2>Back Pain Treatment in Hyderabad</h2>
+                            <p><strong><em>Back Pain That Will Not Settle Needs a Specialist, Not Another Round of
+                                        Rest.</em></strong></p>
+                            <p>Back pain is one of the most common reasons adults in Hyderabad visit an orthopedic
+                                clinic, and one of the most frequently ignored. Whether it is a dull ache in the lower
+                                back at the end of a long workday, a sharp pain that shoots down the leg, stiffness that
+                                makes bending or sitting difficult, or pain that flares every time you lift something,
+                                back pain is a signal that a structure in your spine needs proper attention.</p>
+                            <p>Most people wait too long. They rest, take over-the-counter painkillers, cut back on
+                                activity, and hope it settles on its own. Some short-term strains do improve that way.
+                                But for the large number of people whose pain keeps returning or steadily worsens, delay
+                                allows the underlying problem to progress and narrows the treatment options available
+                                later.</p>
+                            <p>Dr. Mir Jawad Zar Khan is widely recognized as the best doctor for back pain in
+                                Hyderabad, with over 26 years of dedicated orthopedic experience, an international
+                                fellowship in arthroplasty from Munich, Germany, and a complete range of surgical and
+                                non-surgical back pain treatment options under one roof. If you have been searching for
+                                a back pain doctor near me, a lower back pain doctor, a lower back pain specialist in
+                                Hyderabad, or a back pain doctor specialist in Hyderabad who gives a real diagnosis
+                                rather than another prescription, this is where that search ends.</p>
+                            <p class="robotic-note"><strong>Book your back pain consultation today. Our team will
+                                    confirm your appointment within 24 hours.</strong></p>
+                        </section>
+
+                        <section class="robotic-content-card reveal">
+                            <span class="robotic-section-label"><i class="fa-solid fa-notes-medical"></i> Common
+                                Causes</span>
+                            <h2>What Causes Back Pain?</h2>
+                            <p>The spine is a complex column of bones, discs, joints, nerves, ligaments and muscles, and
+                                back pain can arise from any of them. Identifying the exact source is the whole basis of
+                                effective treatment, which is why an accurate diagnosis by a qualified back pain doctor
+                                in Hyderabad matters before any treatment begins. Treating the wrong cause wastes time
+                                and lets the real problem advance.</p>
+                            <p>The most common causes of back pain seen at our facility in Hyderabad are the following.
                             </p>
-                            <p>At Germanten Hospitals, Dr. Jawad uses this real-time 3D map throughout surgery. The
-                                robotic arm responds dynamically to the patient's position and keeps every movement
-                                within the exact boundaries planned in advance. Bone cuts are accurate to sub-millimetre
-                                tolerances. Implants are seated at the angle and depth that best match the patient's
-                                natural joint mechanics. Surrounding muscles and ligaments are protected throughout.</p>
-                            <p>The outcome is a procedure that is safer, more predictable, and designed to deliver
-                                significantly better long-term results. Implant positioning directly determines how long
-                                an implant lasts, and robotic assistance gets that positioning right every time.</p>
-                        </section>
-                        <section class="robotic-content-card reveal"><span class="robotic-section-label"><i
-                                    class="fa-solid fa-hospital"></i>Why Germanten Hospitals</span>
-                            <h2>Why Choose Robotic Surgery in Hyderabad at Germanten Hospitals?</h2>
-                            <div class="robotic-reason-grid">
-                                <article><span>01</span>
-                                    <div>
-                                        <h3>A surgical plan built entirely around your anatomy</h3>
-                                        <p>No two patients share the same joint geometry. Before surgery, a CT scan maps
-                                            your exact bone structure, alignment, and soft tissue balance. Dr. Jawad
-                                            uses this data to simulate the procedure digitally. He selects the implant
-                                            size, plans bone cuts, and confirms alignment targets, all before entering
-                                            the operating theatre. On the day of surgery, the robotic system enforces
-                                            that plan in real time.</p>
+                            <div class="back-pain-carousel" data-back-pain-carousel
+                                aria-label="Common causes of back pain carousel">
+                                <div class="back-pain-carousel-viewport">
+                                    <div class="back-pain-carousel-track">
+                                        <article class="back-pain-cause-card">
+                                            <h3>Muscle and Ligament Strain</h3>
+                                            <p>The most common cause of short-term back pain, usually from lifting
+                                                incorrectly, a sudden awkward movement, or overuse. It often settles
+                                                with the right conservative care but can become recurrent if the
+                                                underlying habits are not corrected.</p>
+                                        </article>
+                                        <article class="back-pain-cause-card">
+                                            <h3>Slip Disc (Herniated Disc)</h3>
+                                            <p>When the soft inner part of a spinal disc pushes out and presses on a
+                                                nearby nerve, it causes back pain that often radiates into the leg or
+                                                arm. This is one of the most frequent causes of significant lower back
+                                                pain treatment in Hyderabad.</p>
+                                        </article>
+                                        <article class="back-pain-cause-card">
+                                            <h3>Sciatica</h3>
+                                            <p>Pain that travels from the lower back through the buttock and down the
+                                                leg, caused when the sciatic nerve is compressed, most often by a slip
+                                                disc. Sciatica is a symptom of an underlying spine problem rather than a
+                                                diagnosis on its own.</p>
+                                        </article>
+                                        <article class="back-pain-cause-card">
+                                            <h3>Spinal Stenosis</h3>
+                                            <p>A narrowing of the spinal canal that puts pressure on the spinal cord or
+                                                nerves, causing back pain, leg pain and difficulty walking, most
+                                                commonly in older adults.</p>
+                                        </article>
+                                        <article class="back-pain-cause-card">
+                                            <h3>Cervical and Lumbar Spondylosis</h3>
+                                            <p>Age-related wear of the spine that affects the neck or lower back,
+                                                producing pain and stiffness that often eases with movement and worsens
+                                                after long periods of sitting.</p>
+                                        </article>
+                                        <article class="back-pain-cause-card">
+                                            <h3>Degenerative Disc Disease</h3>
+                                            <p>Gradual loss of height and cushioning in the spinal discs with age, a
+                                                common contributor to chronic lower back pain.</p>
+                                        </article>
+                                        <article class="back-pain-cause-card">
+                                            <h3>Spondylolisthesis</h3>
+                                            <p>When one vertebra slips forward over the one below it, causing lower back
+                                                pain and, in some cases, nerve compression.</p>
+                                        </article>
+                                        <article class="back-pain-cause-card">
+                                            <h3>Osteoporosis and Vertebral Fractures</h3>
+                                            <p>Weakened bones can fracture in the spine, sometimes from minor stress,
+                                                causing sudden and significant back pain. These are managed alongside
+                                                our <a href="https://drjawadortho.com/trauma-and-fractures">trauma and
+                                                    fractures</a> care.</p>
+                                        </article>
+                                        <article class="back-pain-cause-card">
+                                            <h3>Posture and Desk-Related Back Pain</h3>
+                                            <p>Long hours of sitting with poor posture, very common among Hyderabad's IT
+                                                and office workforce, place continuous load on the lower spine and are
+                                                an increasingly frequent cause of back pain in younger adults.</p>
+                                        </article>
+                                        <article class="back-pain-cause-card">
+                                            <h3>Scoliosis and Spinal Deformity</h3>
+                                            <p>An abnormal curvature of the spine that can cause back pain and, in
+                                                significant cases, needs specialist correction. Full information is on
+                                                our <a
+                                                    href="https://drjawadortho.com/scoliosis-treatment-in-hyderabad">scoliosis
+                                                    treatment</a> page.</p>
+                                        </article>
+                                        <article class="back-pain-cause-card">
+                                            <h3>Inflammatory Back Pain</h3>
+                                            <p>Conditions such as ankylosing spondylitis and other inflammatory
+                                                arthritis can cause persistent back pain, particularly in younger
+                                                patients, and are managed through our <a
+                                                    href="https://drjawadortho.com/rheumatoid-arthritis">rheumatoid
+                                                    arthritis</a> service.</p>
+                                        </article>
                                     </div>
-                                </article>
-                                <article><span>02</span>
-                                    <div>
-                                        <h3>Precision that eliminates alignment error</h3>
-                                        <p>The robotic arm operates within boundaries defined by your surgical plan and
-                                            will not permit cuts outside those boundaries. This removes the risk of
-                                            misalignment, which is one of the most common causes of early implant
-                                            failure. Your implant is placed exactly where it should be, at the correct
-                                            angle, every time.</p>
-                                    </div>
-                                </article>
-                                <article><span>03</span>
-                                    <div>
-                                        <h3>Less trauma, faster recovery</h3>
-                                        <p>Because the robotic system guides each movement precisely, there is no need
-                                            for excessive cutting or intraoperative adjustment. Muscles and ligaments
-                                            are disturbed as little as possible. Patients experience less post-operative
-                                            pain, lower blood loss, and return to daily activity sooner. Most patients
-                                            at Germanten Hospitals are walking within four hours of surgery.</p>
-                                    </div>
-                                </article>
-                                <article><span>04</span>
-                                    <div>
-                                        <h3>Implants that last longer</h3>
-                                        <p>Implant longevity is directly tied to how accurately it is positioned. Even
-                                            small alignment errors cause uneven wear and shorten implant life. Studies
-                                            published in peer-reviewed journals including The Lancet have shown that
-                                            robotic-assisted joint replacement consistently achieves superior alignment
-                                            outcomes compared to conventional surgery, with significantly longer implant
-                                            survival as a result.</p>
-                                    </div>
-                                </article>
-                                <article><span>05</span>
-                                    <div>
-                                        <h3>Full-spectrum safety: navigation and nerve monitoring</h3>
-                                        <p>Every robotic procedure at Germanten Hospitals is supported by 3D
-                                            intraoperative navigation and IONM nerve monitoring running continuously
-                                            throughout surgery. These are independent safety layers that protect the
-                                            patient at every stage of the procedure, from the first incision through to
-                                            closure.</p>
-                                    </div>
-                                </article>
+                                </div>
                             </div>
                         </section>
-                        <section class="robotic-content-card reveal"><span class="robotic-section-label">Treatment
-                                Options</span>
-                            <h2>Procedures Performed with Robotic Assistance</h2>
-                            <p>Dr. Jawad and his team at Germanten Hospitals use robotic surgical assistance across a
-                                full range of joint replacement procedures:</p>
-                            <div class="robotic-procedure-grid">
-                                <article>
-                                    <h3>Total Knee Replacement</h3>
-                                    <p>The most common robotic procedure, used when advanced arthritis has affected the
-                                        full knee joint and resurface is required.</p>
-                                </article>
-                                <article>
-                                    <h3>Partial Knee Replacement</h3>
-                                    <p>Used when only one compartment of the knee is damaged. Robotic guidance is
-                                        especially valuable here because the precision required is greater than in a
-                                        total replacement.</p>
-                                </article>
-                                <article>
-                                    <h3>Total Hip Replacement</h3>
-                                    <p>Robotic assistance ensures correct cup positioning and accurate leg length
-                                        restoration, which are the two most technically demanding aspects of hip
-                                        surgery.</p>
-                                </article>
-                                <article>
-                                    <h3>Revision Joint Replacement</h3>
-                                    <p>For patients whose previous implant has failed. Robotic assistance helps the
-                                        surgeon navigate the additional complexity of a second procedure.</p>
-                                </article>
-                                <article>
-                                    <h3>Shoulder Replacement</h3>
-                                    <p>Advanced shoulder arthritis and rotator cuff arthropathy cases where robotic
-                                        precision improves component positioning and functional outcomes.</p>
-                                </article>
+
+                        <section class="robotic-content-card reveal">
+                            <span class="robotic-section-label"><i class="fa-solid fa-triangle-exclamation"></i> Warning
+                                Signs</span>
+                            <h2>Symptoms That Need a Back Pain Doctor</h2>
+                            <p>The following symptoms should prompt a visit to a back pain specialist in Hyderabad
+                                without delay. Early assessment leads to earlier and more effective treatment.</p>
+                            <p>Back pain that lasts more than two to three weeks and has not responded to rest, pain
+                                that radiates from the back into a leg or arm, numbness, tingling or a pins and needles
+                                sensation in a limb, weakness or a heavy feeling in the leg, pain that is worse when
+                                sitting, coughing or sneezing, pain that wakes you from sleep, stiffness that no longer
+                                eases with movement, and any back pain following a fall or injury are all indicators
+                                that a clinical assessment is overdue.</p>
+                            <p>One set of symptoms needs urgent care. If back pain comes with loss of bladder or bowel
+                                control, or numbness around the groin and inner thighs, treat it as an emergency and
+                                seek immediate hospital care.</p>
+                            <p class="robotic-note"><strong>Do not wait for the pain to take over your life. Book a
+                                    consultation with the best back pain doctor in Hyderabad today.</strong></p>
+                        </section>
+
+                        <section class="surgical-split-section reveal">
+                            <div class="robotic-content-card surgical-care-intro">
+                                <span class="robotic-section-label"><i class="fa-solid fa-user-doctor"></i> Surgical
+                                    Care</span>
+                                <h2>Surgical Treatment for Back Pain: When It Is the Right Step</h2>
+                                <p>Surgery for back pain is recommended only when conservative care has been fully
+                                    pursued without sufficient relief, when there is significant nerve compression
+                                    causing weakness, or when imaging shows a structural problem that will not improve
+                                    without correction. When surgery is needed, modern techniques are often minimally
+                                    invasive, with smaller incisions and faster recovery than traditional open surgery.
+                                    Dr. Jawad is also recognized as the <a
+                                        href="https://drjawadortho.com/best-spine-surgeon-in-hyderabad">best spine
+                                        surgeon in Hyderabad</a> for these procedures.</p>
+                            </div>
+                            <div class="robotic-content-card surgical-care-cards">
+                                <div class="back-pain-care-carousel surgical-care-carousel" data-care-carousel
+                                    aria-label="Surgical back pain treatments carousel">
+                                    <div class="back-pain-care-viewport">
+                                        <div class="back-pain-care-grid">
+                                            <article class="back-pain-care-card"><span class="back-pain-care-icon"><i
+                                                        class="fa-solid fa-scissors"></i></span>
+                                                <h3>Microdiscectomy</h3>
+                                                <p>A minimally invasive procedure that removes the small portion of a
+                                                    herniated disc pressing on a nerve, relieving the leg and back pain
+                                                    caused by the compression while preserving as much of the natural
+                                                    disc as possible.</p>
+                                            </article>
+                                            <article class="back-pain-care-card"><span class="back-pain-care-icon"><i
+                                                        class="fa-solid fa-arrows-up-down"></i></span>
+                                                <h3>Spinal Decompression</h3>
+                                                <p>For spinal stenosis, decompression surgery removes the bone or tissue
+                                                    narrowing the spinal canal, relieving pressure on the nerves and the
+                                                    pain, numbness and walking difficulty it causes.</p>
+                                            </article>
+                                            <article class="back-pain-care-card"><span class="back-pain-care-icon"><i
+                                                        class="fa-solid fa-link"></i></span>
+                                                <h3>Spinal Fusion</h3>
+                                                <p>For spinal instability, spondylolisthesis or certain degenerative
+                                                    conditions, spinal fusion joins two or more vertebrae using bone
+                                                    grafts and implants to stabilize that segment of the spine and
+                                                    reduce pain.</p>
+                                            </article>
+                                            <article class="back-pain-care-card"><span class="back-pain-care-icon"><i
+                                                        class="fa-solid fa-person-rays"></i></span>
+                                                <h3>Deformity Correction</h3>
+                                                <p>For significant scoliosis and other spinal deformities, corrective
+                                                    surgery restores alignment and relieves the associated pain. Full
+                                                    information is on our <a
+                                                        href="https://drjawadortho.com/scoliosis-treatment-in-hyderabad">scoliosis
+                                                        treatment</a> page.</p>
+                                            </article>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </section>
-                        <section class="robotic-content-card reveal"><span class="robotic-section-label">Internationally
-                                Trained Expertise</span>
-                            <h2>Dr. Mir Jawad Zar Khan: Leading Robotic Orthopaedic Surgeon in Hyderabad</h2>
-                            <p>Dr. Jawad brings over 26 years of orthopaedic and joint replacement experience to every
-                                robotic procedure he performs. He holds an MS in Orthopaedics from Osmania University,
-                                graduating as Gold Medalist, and an M.Ch in Orthopaedics. He completed a fellowship in
-                                arthroplasty at a world-renowned orthopaedic institute in Munich, Germany. There he
-                                trained alongside internationally recognised joint replacement specialists including Dr.
-                                Vladimir Martinek, Honorary Professor and Head of Knee Replacement at University
-                                Hospital Munich.</p>
-                            <p>He has performed more than 10,000 joint replacements, arthroscopic reconstructions, and
-                                spine surgeries, and maintains active research collaborations with his German surgical
-                                colleagues through Germanten Hospitals. He has been recognised with the Champions of
-                                Change Award, multiple Times of India excellence rankings, and has been felicitated by
-                                the Governors of Telangana State.</p>
-                            <p>When you choose robotic surgery in Hyderabad at Germanten Hospitals, you are not just
-                                choosing the technology. You are choosing a surgeon who has trained at the highest
-                                levels internationally and has the clinical experience to use that technology to its
-                                full potential.</p>
+
+                        <section class="robotic-content-card reveal">
+                            <span class="robotic-section-label"><i class="fa-solid fa-stethoscope"></i> Diagnosis</span>
+                            <h2>How We Diagnose Back Pain</h2>
+                            <p>Accurate diagnosis is the foundation of effective back pain treatment in Hyderabad at our
+                                centre. A precise diagnosis requires more than a single X-ray. The following evaluation
+                                is carried out at your first consultation.</p>
+                            <p>A detailed clinical history covers when the pain started, where it is felt, whether it
+                                radiates, what makes it better or worse, and what activities it is limiting. A thorough
+                                physical examination assesses posture, spinal movement, muscle strength, reflexes, nerve
+                                function and specific tests designed to identify the affected structure. Imaging begins
+                                with X-rays to assess alignment and bone, and progresses to MRI when detail on the
+                                discs, nerves and soft tissues is needed. Blood tests are ordered where an inflammatory
+                                or metabolic cause is suspected.</p>
+                            <p>Following the evaluation, every patient receives a clear, plain-language explanation of
+                                their diagnosis and a personalized treatment plan covering all available options before
+                                any decision is made.</p>
                         </section>
-                        <section class="robotic-content-card reveal"><span class="robotic-section-label">Patient
-                                Suitability</span>
-                            <h2>Who Is Robotic Joint Replacement Suitable For?</h2>
-                            <p>Robotic joint replacement is appropriate for most patients who require a knee, hip, or
-                                shoulder replacement. It is particularly beneficial for:</p>
-                            <ul class="robotic-check-list">
-                                <li><i class="fa-solid fa-circle-check"></i>Patients with significant joint deformity,
-                                    malalignment, or complex anatomy</li>
-                                <li><i class="fa-solid fa-circle-check"></i>Younger, active patients who need their
-                                    implant to perform well for as long as possible</li>
-                                <li><i class="fa-solid fa-circle-check"></i>Patients undergoing revision surgery where a
-                                    previous implant has failed</li>
-                                <li><i class="fa-solid fa-circle-check"></i>Patients with high expectations for
-                                    post-operative function and return to activity</li>
-                                <li><i class="fa-solid fa-circle-check"></i>Any patient who wants the most precise and
-                                    predictable surgical outcome currently available</li>
-                            </ul>
-                            <p class="robotic-note">During your consultation, Dr. Jawad will assess your imaging, joint
-                                condition, overall health, and lifestyle goals to determine whether robotic surgery is
-                                the right approach for you.</p>
-                        </section>
-                        <section class="robotic-content-card reveal"><span class="robotic-section-label">Your Treatment
-                                Journey</span>
-                            <h2>The Robotic Surgery Process at Germanten Hospitals</h2>
-                            <div class="robotic-timeline">
-                                <article><span>01</span>
-                                    <div>
-                                        <h3>Consultation and imaging</h3>
-                                        <p>A detailed clinical consultation with Dr. Jawad, including weight-bearing
-                                            X-rays and a CT scan. Your joint anatomy is mapped in full and a
-                                            personalised 3D surgical plan is built from your imaging data.</p>
+
+                        <section class="robotic-content-card reveal">
+                            <span class="robotic-section-label"><i class="fa-solid fa-person-walking"></i> Conservative
+                                Care</span>
+                            <h2>Non-Surgical Back Pain Treatment in Hyderabad</h2>
+                            <p>The large majority of back pain is treated successfully without surgery, especially when
+                                addressed early. As the best hospital for back pain in Hyderabad, our non-surgical
+                                programme is offered as a genuine first-line option, not as a formality before surgery
+                                is recommended. The following non-surgical treatments are available.</p>
+                            <div class="back-pain-care-carousel" data-care-carousel
+                                aria-label="Non-surgical back pain treatments carousel">
+                                <div class="back-pain-care-viewport">
+                                    <div class="back-pain-care-grid">
+                                        <article class="back-pain-care-card"><span class="back-pain-care-icon"><i
+                                                    class="fa-solid fa-person-walking"></i></span>
+                                            <h3>Structured Physiotherapy</h3>
+                                            <p>A customized exercise programme strengthens the muscles that support the
+                                                spine, improves flexibility, corrects posture and addresses the movement
+                                                patterns that contribute to back pain. Physiotherapy is the single most
+                                                effective non-surgical treatment for most causes of lower back pain.
+                                                Full details are on our <a
+                                                    href="https://drjawadortho.com/spine-non-surgical-treatment">non-surgical
+                                                    spine treatment</a> page.</p>
+                                        </article>
+                                        <article class="back-pain-care-card"><span class="back-pain-care-icon"><i
+                                                    class="fa-solid fa-pills"></i></span>
+                                            <h3>Medication and Activity Modification</h3>
+                                            <p>Anti-inflammatory medication and pain relievers control symptoms during a
+                                                flare, while guided activity changes protect the spine and support
+                                                recovery without the harm caused by prolonged bed rest.</p>
+                                        </article>
+                                        <article class="back-pain-care-card"><span class="back-pain-care-icon"><i
+                                                    class="fa-solid fa-syringe"></i></span>
+                                            <h3>Image-Guided Spinal Injections</h3>
+                                            <p>Epidural steroid injections and nerve root blocks, administered under
+                                                imaging guidance for precision, reduce inflammation around a compressed
+                                                nerve and provide significant relief for sciatica and other
+                                                nerve-related back pain.</p>
+                                        </article>
+                                        <article class="back-pain-care-card"><span class="back-pain-care-icon"><i
+                                                    class="fa-solid fa-wave-square"></i></span>
+                                            <h3>RF Denervation</h3>
+                                            <p>For chronic back pain arising from the facet joints of the spine,
+                                                radiofrequency ablation provides long-lasting pain relief without
+                                                surgery.</p>
+                                        </article>
+                                        <article class="back-pain-care-card"><span class="back-pain-care-icon"><i
+                                                    class="fa-solid fa-bolt"></i></span>
+                                            <h3>ESWT</h3>
+                                            <p>For chronic soft-tissue and muscular back pain, <a
+                                                    href="https://drjawadortho.com/eswt">ESWT</a> delivers focused
+                                                acoustic energy that stimulates healing at the tissue level without any
+                                                surgical intervention.</p>
+                                        </article>
+                                        <article class="back-pain-care-card"><span class="back-pain-care-icon"><i
+                                                    class="fa-solid fa-hand-holding-medical"></i></span>
+                                            <h3>Pain Management</h3>
+                                            <p>Our dedicated <a href="https://drjawadortho.com/pain-management">pain
+                                                    management</a> team provides specialist interventional care for
+                                                patients with chronic back pain who need targeted, lasting relief as
+                                                part of an overall treatment programme.</p>
+                                        </article>
+                                        <article class="back-pain-care-card"><span class="back-pain-care-icon"><i
+                                                    class="fa-solid fa-chair"></i></span>
+                                            <h3>Posture Correction and Ergonomics</h3>
+                                            <p>For the growing number of desk-related back pain patients in Hyderabad,
+                                                guided posture correction and workspace ergonomics are built into the
+                                                treatment plan to prevent recurrence.</p>
+                                        </article>
+                                        <article class="back-pain-care-card"><span class="back-pain-care-icon"><i
+                                                    class="fa-solid fa-seedling"></i></span>
+                                            <h3>Alternative and Regenerative Treatments</h3>
+                                            <p>Patients interested in complementary non-surgical approaches can explore
+                                                detailed options on our <a
+                                                    href="https://drjawadortho.com/alternative-treatments-for-knee-arthritis-back-problems">alternative
+                                                    treatments for knee arthritis and back problems</a> page.</p>
+                                        </article>
                                     </div>
-                                </article>
-                                <article><span>02</span>
-                                    <div>
-                                        <h3>Pre-surgical planning</h3>
-                                        <p>Dr. Jawad reviews and finalises your surgical plan digitally before the day
-                                            of surgery. Implant size, bone cut angles, and alignment targets are all
-                                            confirmed. You enter the operating theatre with a complete, validated plan
-                                            already in place.</p>
-                                    </div>
-                                </article>
-                                <article><span>03</span>
-                                    <div>
-                                        <h3>Robotic-assisted surgery</h3>
-                                        <p>The procedure is performed by Dr. Jawad using a robotic arm system guided by
-                                            your 3D plan in real time. IONM nerve monitoring runs continuously
-                                            throughout. The robotic arm enforces the boundaries of your plan while the
-                                            surgeon remains in control of every decision.</p>
-                                    </div>
-                                </article>
-                                <article><span>04</span>
-                                    <div>
-                                        <h3>Same-day mobilisation</h3>
-                                        <p>Most patients at Germanten Hospitals begin walking within four hours of
-                                            surgery. The physiotherapy team starts rehabilitation the same day, taking
-                                            advantage of the reduced tissue trauma that robotic assistance makes
-                                            possible.</p>
-                                    </div>
-                                </article>
-                                <article><span>05</span>
-                                    <div>
-                                        <h3>Recovery and follow-up</h3>
-                                        <p>Regular follow-up appointments allow Dr. Jawad and his team to monitor your
-                                            recovery, adjust your physiotherapy protocol, and confirm your implant is
-                                            performing as planned. Most patients return to daily activities within two
-                                            to four weeks.</p>
-                                    </div>
-                                </article>
+                                </div>
                             </div>
+                        </section>
+
+                        <section class="robotic-content-card reveal">
+                            <span class="robotic-section-label"><i class="fa-solid fa-hospital"></i> Complete Spine
+                                Care</span>
+                            <h2>Why This Is the Best Hospital for Back Pain in Hyderabad</h2>
+                            <p>Patients searching for the best hospital for back pain in Hyderabad, the best hospital
+                                for lower back pain in Hyderabad, the best doctor for lower back pain in Hyderabad, or
+                                the best orthopedic doctor for back pain in Hyderabad will find that this facility
+                                delivers on every standard that matters.</p>
+                            <p>The treating specialist has 26 years of dedicated orthopedic and spine experience with
+                                international fellowship training. The non-surgical programme is comprehensive and
+                                genuinely offered as the first step, covering physiotherapy, image-guided injections, RF
+                                denervation, ESWT and interventional pain care. Surgical options, when needed, range
+                                from minimally invasive microdiscectomy to decompression, fusion and deformity
+                                correction. All spinal injections are image-guided for precision. Costs are transparent
+                                and written estimates are provided before any procedure, and the administrative team
+                                handles insurance coordination.</p>
+                            <p>This is the best back pain treatment in Hyderabad because it covers every stage of care,
+                                from early conservative treatment to complex spine surgery, under the guidance of the
+                                same senior specialist. Patients with broader concerns can access our full <a
+                                    href="https://drjawadortho.com/best-orthopedic-doctor-in-hyderabad">orthopedic
+                                    specialist services</a> for an overview of every condition and treatment available.
+                            </p>
+                            <p class="robotic-note"><strong>If you are looking for lasting lower back pain treatment in
+                                    Hyderabad, book your consultation today. Our team will confirm your appointment
+                                    within 24 hours.</strong></p>
                         </section>
                     </div>
 
@@ -4381,33 +5010,22 @@
                             </div>
                             <div class="related-sidebar-list space-y-2 text-xs sm:text-sm">
 
-                                <a href="/back-pain-treatment-in-hyderabad"
-                                    class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-knee-joint" aria-hidden="true"></i>
-                                    <span class="font-medium">Back Pian Treatment</span>
-                                    <i class="fa-solid fa-chevron-right text-xs "></i>
-                                </a>
-
                                 <a href="/robotic-surgery-in-hyderabad"
-                                    class="current-treatment flex items-center justify-between p-3 rounded-xl font-semibold transition-all duration-300">
+                                    class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
                                     <i class="related-treatment-icon fa-solid fa-robot" aria-hidden="true"></i>
+                                    </i>
                                     <span>Robotic Surgery</span>
-                                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                                    <i class="fa-solid fa-chevron-right text-xs">
+                                    </i>
                                 </a>
 
-
-                                <a href="/partial-knee-replacement-in-hyderabad"
-                                    class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-knee-joint" aria-hidden="true"></i>
-                                    <span class="font-medium">Partial Knee Replacement</span>
-                                    <i class="fa-solid fa-chevron-right text-xs "></i>
-                                </a>
-                                <!-- Active item -->
-                                <a href="/hip-replacement-surgery-in-hyderabad"
-                                    class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-pelvis" aria-hidden="true"></i>
-                                    <span class="font-medium">Hip Replacement</span>
-                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                                <a href="/back-pain-treatment-in-hyderabad"
+                                    class="current-treatment flex items-center justify-between p-3 rounded-xl font-semibold transition-all duration-300">
+                                    <i class="related-treatment-icon fi fi-tr-lower-back" aria-hidden="true">
+                                    </i>
+                                    <span>Back Pain Treatment</span>
+                                    <i class="fa-solid fa-chevron-right text-xs">
+                                    </i>
                                 </a>
 
                                 <a href="/robotic-knee-replacement-in-hyderabad"
@@ -4418,108 +5036,161 @@
                                     <i class="fa-solid fa-chevron-right text-xs "></i>
                                 </a>
 
+
+                                <a href="/partial-knee-replacement-in-hyderabad"
+                                    class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
+                                    <i class="related-treatment-icon fi fi-tr-knee-joint" aria-hidden="true">
+                                    </i>
+                                    <span class="font-medium">Partial Knee Replacement</span>
+                                    <i class="fa-solid fa-chevron-right text-xs ">
+                                    </i>
+                                </a>
+                                <!-- Active item -->
+                                <a href="/hip-replacement-surgery-in-hyderabad"
+                                    class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
+                                    <i class="related-treatment-icon fi fi-tr-pelvis" aria-hidden="true">
+                                    </i>
+                                    <span class="font-medium">Hip Replacement</span>
+                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400">
+                                    </i>
+                                </a>
+
                                 <a href="/trauma-and-fractures"
                                     class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-bone-break" aria-hidden="true"></i>
+                                    <i class="related-treatment-icon fi fi-tr-bone-break" aria-hidden="true">
+                                    </i>
                                     <span class="font-medium">Trauma and Fractures</span>
-                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400">
+                                    </i>
                                 </a>
                                 <a href="/arthroscopy"
                                     class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-knee-joint" aria-hidden="true"></i>
+                                    <i class="related-treatment-icon fi fi-tr-knee-joint" aria-hidden="true">
+                                    </i>
                                     <span class="font-medium">Arthroscopy & Sports Injuries</span>
-                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400">
+                                    </i>
                                 </a>
                                 <a href="/best-spine-surgeon-in-hyderabad"
                                     class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-spine" aria-hidden="true"></i>
+                                    <i class="related-treatment-icon fi fi-tr-spine" aria-hidden="true">
+                                    </i>
                                     <span class="font-medium">Best Spine Surgeon in Hyderabad</span>
-                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400">
+                                    </i>
                                 </a>
                                 <a href="/spine-specialist-in-hyderabad"
                                     class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-spine" aria-hidden="true"></i>
+                                    <i class="related-treatment-icon fi fi-tr-spine" aria-hidden="true">
+                                    </i>
                                     <span class="font-medium">Spine Surgical Treatment</span>
-                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400">
+                                    </i>
                                 </a>
                                 <a href="/spine-non-surgical-treatment"
                                     class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-lower-back" aria-hidden="true"></i>
+                                    <i class="related-treatment-icon fi fi-tr-lower-back" aria-hidden="true">
+                                    </i>
                                     <span class="font-medium">Spine Non Surgical Treatment</span>
-                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400">
+                                    </i>
                                 </a>
                                 <a href="/alternative-treatments-for-knee-arthritis-back-problems"
                                     class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-hands-heart" aria-hidden="true"></i>
+                                    <i class="related-treatment-icon fi fi-tr-hands-heart" aria-hidden="true">
+                                    </i>
                                     <span class="font-medium">Alternative Treatments For Knee Arthritis & Back
                                         Problems</span>
-                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400">
+                                    </i>
                                 </a>
                                 <a href="/oats-procedure"
                                     class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-knee-joint" aria-hidden="true"></i>
+                                    <i class="related-treatment-icon fi fi-tr-knee-joint" aria-hidden="true">
+                                    </i>
                                     <span class="font-medium">OATS Procedure</span>
-                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400">
+                                    </i>
                                 </a>
                                 <a href="/eswt"
                                     class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-bolt" aria-hidden="true"></i>
+                                    <i class="related-treatment-icon fi fi-tr-bolt" aria-hidden="true">
+                                    </i>
                                     <span class="font-medium">ESWT</span>
-                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400">
+                                    </i>
                                 </a>
                                 <a href="/shoulder-replacement-surgery-in-hyderabad"
                                     class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-shoulder-joint" aria-hidden="true"></i>
+                                    <i class="related-treatment-icon fi fi-tr-shoulder-joint" aria-hidden="true">
+                                    </i>
                                     <span class="font-medium">Shoulder Surgery</span>
-                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400">
+                                    </i>
                                 </a>
                                 <a href="/general-orthopedics"
                                     class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-bone" aria-hidden="true"></i>
+                                    <i class="related-treatment-icon fi fi-tr-bone" aria-hidden="true">
+                                    </i>
                                     <span class="font-medium">General Orthopedics</span>
-                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400">
+                                    </i>
                                 </a>
                                 <a href="/rheumatoid-arthritis"
                                     class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-knee-joint" aria-hidden="true"></i>
+                                    <i class="related-treatment-icon fi fi-tr-knee-joint" aria-hidden="true">
+                                    </i>
                                     <span class="font-medium">Rheumatoid Arthritis</span>
-                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400">
+                                    </i>
                                 </a>
                                 <a href="/joint-replacement-surgery-in-hyderabad"
                                     class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-pelvis" aria-hidden="true"></i>
+                                    <i class="related-treatment-icon fi fi-tr-pelvis" aria-hidden="true">
+                                    </i>
                                     <span class="font-medium">Joint Replacement</span>
-                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400">
+                                    </i>
                                 </a>
                                 <a href="/sciatica-treatment-in-hyderabad"
                                     class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-lower-back" aria-hidden="true"></i>
+                                    <i class="related-treatment-icon fi fi-tr-lower-back" aria-hidden="true">
+                                    </i>
                                     <span class="font-medium">Sciatica Treatment</span>
-                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400">
+                                    </i>
                                 </a>
                                 <a href="/foot-and-ankle-surgery"
                                     class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-barefoot" aria-hidden="true"></i>
+                                    <i class="related-treatment-icon fi fi-tr-barefoot" aria-hidden="true">
+                                    </i>
                                     <span class="font-medium">Foot And Ankle Surgery</span>
-                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400">
+                                    </i>
                                 </a>
                                 <a href="/pain-management"
                                     class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-bolt" aria-hidden="true"></i>
+                                    <i class="related-treatment-icon fi fi-tr-bolt" aria-hidden="true">
+                                    </i>
                                     <span class="font-medium">Pain Management</span>
-                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400">
+                                    </i>
                                 </a>
                                 <a href="/hand-microvascular-surgery"
                                     class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-hand-paper" aria-hidden="true"></i>
+                                    <i class="related-treatment-icon fi fi-tr-hand-paper" aria-hidden="true">
+                                    </i>
                                     <span class="font-medium">Hand & Microvascular Surgery</span>
-                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400">
+                                    </i>
                                 </a>
                                 <a href="/cartilage-transplantation"
                                     class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-dna" aria-hidden="true"></i>
+                                    <i class="related-treatment-icon fi fi-tr-dna" aria-hidden="true">
+                                    </i>
                                     <span class="font-medium">Cartilage Transplantation</span>
-                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                                    <i class="fa-solid fa-chevron-right text-xs text-gray-400">
+                                    </i>
                                 </a>
                             </div>
 
@@ -4529,16 +5200,21 @@
                         <div class="sidebar-appointment-card">
                             <h3>Book an Appointment</h3>
                             <div class="appointment-detail">
-                                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                                <i class="fa-solid fa-phone" aria-hidden="true">
+                                </i>
                                 <a href="tel:04023242424">+91 99896 35555</a>
                             </div>
                             <div class="appointment-detail">
-                                <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                                <i class="fa-regular fa-calendar" aria-hidden="true">
+                                </i>
                                 <span>Mon - Sat: 9:00 AM - 6:00 PM</span>
                             </div>
-                            <div class="appointment-divider"><span>or</span></div>
+                            <div class="appointment-divider">
+                                <span>or</span>
+                            </div>
                             <a href="/contact-us" class="appointment-online-button">
-                                <i class="fa-regular fa-calendar-check" aria-hidden="true"></i>
+                                <i class="fa-regular fa-calendar-check" aria-hidden="true">
+                                </i>
                                 <span>Schedule Online</span>
                             </a>
                             <p>We are here to help you move better and live better.</p>
@@ -4547,7 +5223,7 @@
                         <!-- Video Section -->
                         <div class="mt-6 rounded-xl overflow-hidden shadow-md border border-gray-200 video-container">
                             <video
-                                src="https://res.cloudinary.com/awhmw4uq/video/upload/v1788842560/robotic-surgery-video.mp4"
+                                src="https://res.cloudinary.com/awhmw4uq/video/upload/v1789111622/back-pain-treatment.mp4"
                                 controls loop autoplay muted playsinline class="w-full video-element"
                                 poster="https://res.cloudinary.com/awhmw4uq/image/upload/v1787846894/hip-replacement.png"
                                 aria-label="Hip Replacement Surgery Video">
@@ -4570,19 +5246,21 @@
                             <!-- Latest News -->
                             <div class="jawad-latest-shell reveal" data-jawad-carousel="news" data-start="0"
                                 aria-label="Latest News and Awards carousel" tabindex="0">
-                                <i class="fa-solid fa-trophy jawad-news-decor jawad-news-decor-one"
-                                    aria-hidden="true"></i>
-                                <i class="fa-solid fa-award jawad-news-decor jawad-news-decor-two"
-                                    aria-hidden="true"></i>
+                                <i class="fa-solid fa-trophy jawad-news-decor jawad-news-decor-one" aria-hidden="true">
+                                </i>
+                                <i class="fa-solid fa-award jawad-news-decor jawad-news-decor-two" aria-hidden="true">
+                                </i>
 
                                 <div class="jawad-latest-layout">
                                     <div class="jawad-latest-copy">
                                         <span class="jawad-latest-kicker">
-                                            <i class="fa-solid fa-trophy"></i>
+                                            <i class="fa-solid fa-trophy">
+                                            </i>
                                             Milestones
                                         </span>
                                         <h2>Latest News &amp; Awards</h2>
-                                        <div class="jawad-section-rule" aria-hidden="true"></div>
+                                        <div class="jawad-section-rule" aria-hidden="true">
+                                        </div>
                                         <p>Recognizing excellence, innovation and a continued commitment to better joint
                                             care.</p>
                                     </div>
@@ -4606,7 +5284,8 @@
                                                     <a class="jawad-card-link"
                                                         href="/germanten-hospital-has-earned-a-prestigious-position-in-the-times-health-survey">
                                                         View Details <i class="fa-solid fa-arrow-right"
-                                                            aria-hidden="true"></i>
+                                                            aria-hidden="true">
+                                                        </i>
                                                     </a>
                                                 </div>
                                             </article>
@@ -4630,7 +5309,8 @@
                                                     <a class="jawad-card-link"
                                                         href="/indias-most-trusted-orthopedic-treatment-centers">
                                                         View Details <i class="fa-solid fa-arrow-right"
-                                                            aria-hidden="true"></i>
+                                                            aria-hidden="true">
+                                                        </i>
                                                     </a>
                                                 </div>
                                             </article>
@@ -4652,7 +5332,8 @@
                                                     <a class="jawad-card-link"
                                                         href="/times-of-india-award-of-iconic-joint-replacement-surgeon-of-telangana">
                                                         View Details <i class="fa-solid fa-arrow-right"
-                                                            aria-hidden="true"></i>
+                                                            aria-hidden="true">
+                                                        </i>
                                                     </a>
                                                 </div>
                                             </article>
@@ -4673,7 +5354,8 @@
                                                     <a class="jawad-card-link"
                                                         href="/dr-mir-jawad-zar-khan-awarded-by-the-honble-president-of-india-shri-ram-nath-kovind">
                                                         View Details <i class="fa-solid fa-arrow-right"
-                                                            aria-hidden="true"></i>
+                                                            aria-hidden="true">
+                                                        </i>
                                                     </a>
                                                 </div>
                                             </article>
@@ -4685,25 +5367,32 @@
                                     aria-label="Latest news navigation">
                                     <button class="jawad-carousel-button" type="button" data-carousel-prev
                                         aria-label="Show previous news item">
-                                        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                                        <i class="fa-solid fa-arrow-left" aria-hidden="true">
+                                        </i>
                                     </button>
                                     <button class="jawad-carousel-button" type="button" data-carousel-next
                                         aria-label="Show next news item">
-                                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                                        <i class="fa-solid fa-arrow-right" aria-hidden="true">
+                                        </i>
                                     </button>
                                 </div>
 
                                 <div class="jawad-carousel-dots jawad-latest-dots" aria-label="Choose a news item">
                                     <button class="jawad-carousel-dot" type="button" data-carousel-dot="0"
-                                        aria-label="Show news item 1"></button>
+                                        aria-label="Show news item 1">
+                                    </button>
                                     <button class="jawad-carousel-dot" type="button" data-carousel-dot="1"
-                                        aria-label="Show news item 2"></button>
+                                        aria-label="Show news item 2">
+                                    </button>
                                     <button class="jawad-carousel-dot" type="button" data-carousel-dot="2"
-                                        aria-label="Show news item 3"></button>
+                                        aria-label="Show news item 3">
+                                    </button>
                                     <button class="jawad-carousel-dot" type="button" data-carousel-dot="3"
-                                        aria-label="Show news item 4"></button>
+                                        aria-label="Show news item 4">
+                                    </button>
                                 </div>
-                                <p class="sr-only" data-carousel-status aria-live="polite"></p>
+                                <p class="sr-only" data-carousel-status aria-live="polite">
+                                </p>
                             </div>
 
                             <!-- Recent Post -->
@@ -4712,7 +5401,8 @@
                                 <div class="jawad-recent-heading">
                                     <div class="jawad-recent-title-group">
                                         <span class="jawad-recent-title-icon" aria-hidden="true">
-                                            <i class="fa-solid fa-newspaper"></i>
+                                            <i class="fa-solid fa-newspaper">
+                                            </i>
                                         </span>
                                         <h2>Recent Post</h2>
                                     </div>
@@ -4721,11 +5411,13 @@
                                         aria-label="Recent post navigation">
                                         <button class="jawad-carousel-button" type="button" data-carousel-prev
                                             aria-label="Show previous blog post">
-                                            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                                            <i class="fa-solid fa-arrow-left" aria-hidden="true">
+                                            </i>
                                         </button>
                                         <button class="jawad-carousel-button" type="button" data-carousel-next
                                             aria-label="Show next blog post">
-                                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                                            <i class="fa-solid fa-arrow-right" aria-hidden="true">
+                                            </i>
                                         </button>
                                     </div>
                                 </div>
@@ -4747,12 +5439,13 @@
                                                     technology
                                                     and surgeon credentials can support safer joint replacement care.
                                                 </p>
-                                                <span class="jawad-post-meta"><i class="fa-regular fa-clock"
-                                                        aria-hidden="true"></i> 6 min read</span>
+                                                <span class="jawad-post-meta">
+                                                    <i class="fa-regular fa-clock" aria-hidden="true">
+                                                    </i> 6 min read</span>
                                                 <a class="jawad-read-button"
                                                     href="/blogs/choose-joint-replacement-hospital-surgeon-hyderabad">
-                                                    Read Article <i class="fa-solid fa-arrow-right"
-                                                        aria-hidden="true"></i>
+                                                    Read Article <i class="fa-solid fa-arrow-right" aria-hidden="true">
+                                                    </i>
                                                 </a>
                                             </div>
                                         </article>
@@ -4771,12 +5464,13 @@
                                                 <p class="jawad-post-excerpt">Understand the lifestyle, injury and joint
                                                     health factors behind the changing age profile of knee replacement.
                                                 </p>
-                                                <span class="jawad-post-meta"><i class="fa-regular fa-clock"
-                                                        aria-hidden="true"></i> 5 min read</span>
+                                                <span class="jawad-post-meta">
+                                                    <i class="fa-regular fa-clock" aria-hidden="true">
+                                                    </i> 5 min read</span>
                                                 <a class="jawad-read-button"
                                                     href="/blogs/younger-patients-knee-replacement">
-                                                    Read Article <i class="fa-solid fa-arrow-right"
-                                                        aria-hidden="true"></i>
+                                                    Read Article <i class="fa-solid fa-arrow-right" aria-hidden="true">
+                                                    </i>
                                                 </a>
                                             </div>
                                         </article>
@@ -4794,12 +5488,13 @@
                                                 <p class="jawad-post-excerpt">Compare robotic-assisted and traditional
                                                     knee
                                                     replacement methods, including planning, precision and recovery.</p>
-                                                <span class="jawad-post-meta"><i class="fa-regular fa-clock"
-                                                        aria-hidden="true"></i> 7 min read</span>
+                                                <span class="jawad-post-meta">
+                                                    <i class="fa-regular fa-clock" aria-hidden="true">
+                                                    </i> 7 min read</span>
                                                 <a class="jawad-read-button"
                                                     href="/blogs/robotic-vs-traditional-knee-replacement">
-                                                    Read Article <i class="fa-solid fa-arrow-right"
-                                                        aria-hidden="true"></i>
+                                                    Read Article <i class="fa-solid fa-arrow-right" aria-hidden="true">
+                                                    </i>
                                                 </a>
                                             </div>
                                         </article>
@@ -4816,11 +5511,12 @@
                                                 <p class="jawad-post-excerpt">Learn the common causes and warning signs
                                                     of
                                                     knee pain after 50 and when specialist evaluation may help.</p>
-                                                <span class="jawad-post-meta"><i class="fa-regular fa-clock"
-                                                        aria-hidden="true"></i> 6 min read</span>
+                                                <span class="jawad-post-meta">
+                                                    <i class="fa-regular fa-clock" aria-hidden="true">
+                                                    </i> 6 min read</span>
                                                 <a class="jawad-read-button" href="/blogs/knee-pain-after-50">
-                                                    Read Article <i class="fa-solid fa-arrow-right"
-                                                        aria-hidden="true"></i>
+                                                    Read Article <i class="fa-solid fa-arrow-right" aria-hidden="true">
+                                                    </i>
                                                 </a>
                                             </div>
                                         </article>
@@ -4831,20 +5527,26 @@
                                     <div class="jawad-carousel-dots jawad-recent-dots"
                                         aria-label="Choose a recent blog post">
                                         <button class="jawad-carousel-dot" type="button" data-carousel-dot="0"
-                                            aria-label="Show blog post 1"></button>
+                                            aria-label="Show blog post 1">
+                                        </button>
                                         <button class="jawad-carousel-dot" type="button" data-carousel-dot="1"
-                                            aria-label="Show blog post 2"></button>
+                                            aria-label="Show blog post 2">
+                                        </button>
                                         <button class="jawad-carousel-dot" type="button" data-carousel-dot="2"
-                                            aria-label="Show blog post 3"></button>
+                                            aria-label="Show blog post 3">
+                                        </button>
                                         <button class="jawad-carousel-dot" type="button" data-carousel-dot="3"
-                                            aria-label="Show blog post 4"></button>
+                                            aria-label="Show blog post 4">
+                                        </button>
                                     </div>
                                     <span class="jawad-swipe-cue">
-                                        <i class="fa-regular fa-hand-pointer" aria-hidden="true"></i>
+                                        <i class="fa-regular fa-hand-pointer" aria-hidden="true">
+                                        </i>
                                         Swipe or use arrows to explore
                                     </span>
                                 </div>
-                                <p class="sr-only" data-carousel-status aria-live="polite"></p>
+                                <p class="sr-only" data-carousel-status aria-live="polite">
+                                </p>
                             </div>
                         </div>
                         <!-- Doctor Callback Section -->
@@ -4858,7 +5560,8 @@
                                     <form class="w-full" action="https://old.germantenhospitals.com/send_email.php"
                                         method="post">
                                         <span class="homepage-section-eyebrow">
-                                            <i class="fa-solid fa-phone-volume"></i>
+                                            <i class="fa-solid fa-phone-volume">
+                                            </i>
                                             Contact Us
                                         </span>
                                         <h2 class="homepage-section-heading mb-5 flex items-center gap-2">
@@ -4912,7 +5615,8 @@
 
                                                 <textarea id="customMessage" name="notes" rows="3"
                                                     placeholder="Describe your concern"
-                                                    class="w-full resize-none rounded border border-gray-300 bg-white px-3 py-2 text-sm outline-none transition focus:border-red-400 focus:ring-2 focus:ring-red-100"></textarea>
+                                                    class="w-full resize-none rounded border border-gray-300 bg-white px-3 py-2 text-sm outline-none transition focus:border-red-400 focus:ring-2 focus:ring-red-100">
+</textarea>
                                             </div>
                                         </div>
 
@@ -4948,7 +5652,8 @@
                                     class="callback-info-panel order-3 flex items-center justify-center px-6 pb-7 text-center lg:col-span-3 lg:justify-start lg:px-4 lg:pb-0 lg:text-left reveal">
                                     <div>
                                         <span class="homepage-section-eyebrow">
-                                            <i class="fa-solid fa-user-doctor"></i>
+                                            <i class="fa-solid fa-user-doctor">
+                                            </i>
                                             Expert
                                         </span>
                                         <h2 class="homepage-section-heading">
@@ -4966,7 +5671,8 @@
                         <!-- FAQ Section -->
                         <section class="faq-section bg-white rounded-xl border border-gray-200 p-6 reveal">
                             <span class="homepage-section-eyebrow">
-                                <i class="fa-solid fa-question-circle"></i>
+                                <i class="fa-solid fa-question-circle">
+                                </i>
                                 Get Answers
                             </span>
                             <h2 class="homepage-section-heading mb-4">
@@ -4975,18 +5681,89 @@
                             <div class="faq-grid">
                                 <div class="faq-item">
                                     <button class="faq-question" type="button" aria-expanded="false">
-                                        <span class="faq-toggle" aria-hidden="true"><i
-                                                class="fa-solid fa-plus"></i></span>
-                                        <h4>Is robotic surgery in Hyderabad available for hip replacement as well as
-                                            knee?</h4>
+                                        <span class="faq-toggle" aria-hidden="true">
+                                            <i class="fa-solid fa-plus">
+                                            </i>
+                                        </span>
+                                        <h4>Who is the best doctor for back pain in Hyderabad?</h4>
                                     </button>
                                     <div class="faq-answer">
                                         <p class="text-gray-700 leading-relaxed text-justify mt-2">
-                                            Yes. Dr. Jawad performs robotic-assisted total knee replacement, partial
-                                            knee replacement, and total hip replacement at Germanten Hospitals. Robotic
-                                            assistance is particularly effective for hip replacement because it ensures
-                                            precise cup positioning and accurate leg length restoration, which are the
-                                            aspects of hip surgery where alignment errors most commonly occur.
+                                            Dr. Mir Jawad Zar Khan is consistently recognized as the best doctor for
+                                            back pain in Hyderabad. He is an internationally trained orthopedic and
+                                            spine specialist with 26 years of experience, covering the full range of
+                                            back pain causes and treatments from conservative care to spine surgery.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="faq-item">
+                                    <button class="faq-question" type="button" aria-expanded="false">
+                                        <span class="faq-toggle" aria-hidden="true">
+                                            <i class="fa-solid fa-plus">
+                                            </i>
+                                        </span>
+                                        <h4>What is the best treatment for lower back pain without surgery?</h4>
+                                    </button>
+                                    <div class="faq-answer">
+                                        <p class="text-gray-700 leading-relaxed text-justify mt-2">
+                                            Physiotherapy, image-guided spinal injections, RF denervation, ESWT and
+                                            interventional pain management are the most effective non-surgical
+                                            treatments for lower back pain. The right combination depends on the
+                                            underlying diagnosis, which is confirmed through a proper clinical
+                                            assessment. Most back pain is treated successfully without surgery.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="faq-item">
+                                    <button class="faq-question" type="button" aria-expanded="false">
+                                        <span class="faq-toggle" aria-hidden="true">
+                                            <i class="fa-solid fa-plus">
+                                            </i>
+                                        </span>
+                                        <h4>When does back pain need to see a doctor?</h4>
+                                    </button>
+                                    <div class="faq-answer">
+                                        <p class="text-gray-700 leading-relaxed text-justify mt-2">
+                                            See a back pain specialist in Hyderabad if pain lasts more than two to three
+                                            weeks, radiates into a leg or arm, comes with numbness or weakness, follows
+                                            an injury, or wakes you at night. Loss of bladder or bowel control alongside
+                                            back pain is a medical emergency needing immediate care.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="faq-item">
+                                    <button class="faq-question" type="button" aria-expanded="false">
+                                        <span class="faq-toggle" aria-hidden="true">
+                                            <i class="fa-solid fa-plus">
+                                            </i>
+                                        </span>
+                                        <h4>What is the cost of back pain treatment in Hyderabad?</h4>
+                                    </button>
+                                    <div class="faq-answer">
+                                        <p class="text-gray-700 leading-relaxed text-justify mt-2">
+                                            Non-surgical treatment costs vary by the type and number of sessions
+                                            required. For surgical options, written cost estimates are provided at the
+                                            time of consultation. Major health insurance policies cover medically
+                                            necessary spine surgery, and our team manages all insurance coordination and
+                                            pre-authorisation.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="faq-item">
+                                    <button class="faq-question" type="button" aria-expanded="false">
+                                        <span class="faq-toggle" aria-hidden="true">
+                                            <i class="fa-solid fa-plus">
+                                            </i>
+                                        </span>
+                                        <h4>Which doctor should I see for lower back pain, orthopedic or neurologist?
+                                        </h4>
+                                    </button>
+                                    <div class="faq-answer">
+                                        <p class="text-gray-700 leading-relaxed text-justify mt-2">
+                                            For most mechanical and structural back pain, an orthopedic and spine
+                                            specialist is the right choice, as they manage both the non-surgical and
+                                            surgical treatment of the spine. Dr. Jawad is an experienced spine
+                                            specialist who treats the full range of back and lower back pain conditions.
                                         </p>
                                     </div>
                                 </div>
@@ -4994,14 +5771,13 @@
                                     <button class="faq-question" type="button" aria-expanded="false">
                                         <span class="faq-toggle" aria-hidden="true"><i
                                                 class="fa-solid fa-plus"></i></span>
-                                        <h4>Does a robot perform the surgery?</h4>
+                                        <h4>Do you treat back pain in patients of all ages?</h4>
                                     </button>
                                     <div class="faq-answer">
                                         <p class="text-gray-700 leading-relaxed text-justify mt-2">
-                                            No. Dr. Jawad is in control of every aspect of the procedure. The robotic
-                                            arm assists him by maintaining the precision of bone cuts within the
-                                            boundaries of the pre-planned surgical map. The surgeon's clinical judgement
-                                            directs every decision throughout.
+                                            Yes. From young professionals with desk-related and disc-related back pain
+                                            to older adults with spondylosis, stenosis and osteoporotic fractures, our
+                                            facility manages back pain across the full age spectrum.
                                         </p>
                                     </div>
                                 </div>
@@ -5009,46 +5785,13 @@
                                     <button class="faq-question" type="button" aria-expanded="false">
                                         <span class="faq-toggle" aria-hidden="true"><i
                                                 class="fa-solid fa-plus"></i></span>
-                                        <h4>How much does robotic joint replacement cost in Hyderabad?</h4>
+                                        <h4>How do I book a back pain consultation in Hyderabad?</h4>
                                     </button>
                                     <div class="faq-answer">
                                         <p class="text-gray-700 leading-relaxed text-justify mt-2">
-                                            The cost depends on the specific procedure, implant selection, and your
-                                            individual clinical requirements. Germanten Hospitals accepts most major
-                                            insurance and TPA providers. Please contact the team directly for a
-                                            transparent estimate.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="faq-item">
-                                    <button class="faq-question" type="button" aria-expanded="false">
-                                        <span class="faq-toggle" aria-hidden="true"><i
-                                                class="fa-solid fa-plus"></i></span>
-                                        <h4>What is recovery like after robotic joint replacement?</h4>
-                                    </button>
-                                    <div class="faq-answer">
-                                        <p class="text-gray-700 leading-relaxed text-justify mt-2">
-                                            Most patients begin walking the same day as surgery. A return to light daily
-                                            activities is typically possible within two to four weeks. Full recovery,
-                                            including completion of physiotherapy, is usually achieved between six weeks
-                                            and three months depending on the procedure and the patient's overall
-                                            health.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="faq-item">
-                                    <button class="faq-question" type="button" aria-expanded="false">
-                                        <span class="faq-toggle" aria-hidden="true"><i
-                                                class="fa-solid fa-plus"></i></span>
-                                        <h4>Is robotic surgery safer than conventional joint replacement?</h4>
-                                    </button>
-                                    <div class="faq-answer">
-                                        <p class="text-gray-700 leading-relaxed text-justify mt-2">
-                                            Robotic-assisted surgery adds a layer of precision that reduces the risk of
-                                            misalignment and implant malpositioning compared to conventional freehand
-                                            techniques. The additional safety measures at Germanten Hospitals, including
-                                            IONM nerve monitoring and 3D intraoperative navigation, provide further
-                                            protection throughout the procedure.
+                                            Call the clinic directly, fill in the appointment form on this page, or use
+                                            the callback request option. Our team will confirm your slot and advise you
+                                            on which imaging and reports to bring.
                                         </p>
                                     </div>
                                 </div>
@@ -5077,7 +5820,8 @@
                 <button onclick="closeNewsModal()"
                     class="text-gray-500 hover:text-gray-700 transition-colors duration-200">
 
-                    <i class="fas fa-times text-2xl"></i>
+                    <i class="fas fa-times text-2xl">
+                    </i>
 
                 </button>
 
@@ -5106,7 +5850,8 @@
 
 
     <!-- Footer Component -->
-    <div id="footer-container"></div>
+    <div id="footer-container">
+    </div>
 
     <!-- Apply the same responsive navbar offset used on testimonials.html -->
     <script>
@@ -5203,8 +5948,52 @@
         });
     </script>
 
-    <!-- Scripts -->
-    <script src="/js/script.js"></script>
+    <!-- Shared Site Scroll Progress Bar JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollProgressBar = document.getElementById('scrollProgressBar');
+
+            if (!scrollProgress || !scrollProgressBar) return;
+
+            function updateScrollProgress() {
+                const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrollPercentage = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+
+                scrollProgressBar.style.width = scrollPercentage + '%';
+                scrollProgress.classList.toggle('hidden', scrollTop <= 100);
+            }
+
+            function throttle(func, limit) {
+                let inThrottle;
+                return function () {
+                    if (!inThrottle) {
+                        func.apply(this, arguments);
+                        inThrottle = true;
+                        setTimeout(function () { inThrottle = false; }, limit);
+                    }
+                };
+            }
+
+            window.addEventListener('scroll', throttle(updateScrollProgress, 10));
+            scrollProgress.addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            scrollProgress.addEventListener('mouseenter', function () {
+                scrollProgressBar.style.boxShadow = '0 0 20px rgba(202, 138, 4, 0.8)';
+            });
+            scrollProgress.addEventListener('mouseleave', function () {
+                scrollProgressBar.style.boxShadow = '0 0 10px rgba(202, 138, 4, 0.5)';
+            });
+
+            updateScrollProgress();
+        });
+    </script>
+
+    <!-- Shared Navbar, Footer and Floating Navigation Script -->
+    <script src="js/script.js">
+    </script>
 
     <!-- Hip Tab Switching Script -->
     <script>
@@ -5719,15 +6508,20 @@
 
                             <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4">
 
-                              <li><strong>Implant / prosthesis cost:</strong> The artificial joint is a big part of the bill. Different materials and designs have different price points. High-performance implants that are built for better wear resistance or higher flexibility often cost more.</li>
+                              <li>
+<strong>Implant / prosthesis cost:</strong> The artificial joint is a big part of the bill. Different materials and designs have different price points. High-performance implants that are built for better wear resistance or higher flexibility often cost more.</li>
 
-                              <li><strong>Surgeon and anesthesia fees:</strong> This covers the orthopedic surgeon's fee and the cost of the anesthesia team.</li>
+                              <li>
+<strong>Surgeon and anesthesia fees:</strong> This covers the orthopedic surgeon's fee and the cost of the anesthesia team.</li>
 
-                              <li><strong>Operation theatre and surgical team charges:</strong> This includes the use of the operating room, sterilization, surgical instruments, and support staff.</li>
+                              <li>
+<strong>Operation theatre and surgical team charges:</strong> This includes the use of the operating room, sterilization, surgical instruments, and support staff.</li>
 
-                              <li><strong>Hospital stay and room charges:</strong> Most people stay in the hospital for around 3–5 days after surgery for pain control, physiotherapy initiation, wound checks, and monitoring for early complications like infection or clot formation. Each extra day adds to the final bill.</li>
+                              <li>
+<strong>Hospital stay and room charges:</strong> Most people stay in the hospital for around 3–5 days after surgery for pain control, physiotherapy initiation, wound checks, and monitoring for early complications like infection or clot formation. Each extra day adds to the final bill.</li>
 
-                              <li><strong>Pre-surgery tests and scans:</strong> Blood tests, ECG, X-rays, sometimes MRI, and medical clearance from a physician are all part of the preparation.</li>
+                              <li>
+<strong>Pre-surgery tests and scans:</strong> Blood tests, ECG, X-rays, sometimes MRI, and medical clearance from a physician are all part of the preparation.</li>
 
                             </ul>
 
@@ -5955,13 +6749,17 @@
 
                             <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4">
 
-                              <li><strong>Detailed Discussion:</strong> The doctor will ask about your symptoms, daily activities, medical history, and any recent injuries.</li>
+                              <li>
+<strong>Detailed Discussion:</strong> The doctor will ask about your symptoms, daily activities, medical history, and any recent injuries.</li>
 
-                              <li><strong>Physical Examination:</strong> They will check joint movement, pain points, muscle strength, flexibility, and posture.</li>
+                              <li>
+<strong>Physical Examination:</strong> They will check joint movement, pain points, muscle strength, flexibility, and posture.</li>
 
-                              <li><strong>Diagnostic Tests:</strong> Based on the findings, you may undergo X-rays, MRI, ultrasound, or blood tests.</li>
+                              <li>
+<strong>Diagnostic Tests:</strong> Based on the findings, you may undergo X-rays, MRI, ultrasound, or blood tests.</li>
 
-                              <li><strong>Personalized Treatment Plan:</strong> The doctor will then recommend medications, exercises, lifestyle changes, or other treatments suited to your condition.</li>
+                              <li>
+<strong>Personalized Treatment Plan:</strong> The doctor will then recommend medications, exercises, lifestyle changes, or other treatments suited to your condition.</li>
 
                             </ul>
 
@@ -5973,13 +6771,17 @@
 
                             <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4">
 
-                              <li><strong>Physiotherapy:</strong> Strengthens muscles, improves joint mobility, and helps relieve pain.</li>
+                              <li>
+<strong>Physiotherapy:</strong> Strengthens muscles, improves joint mobility, and helps relieve pain.</li>
 
-                              <li><strong>Exercise Therapy:</strong> Customized exercise plans help reduce stiffness and improve stability.</li>
+                              <li>
+<strong>Exercise Therapy:</strong> Customized exercise plans help reduce stiffness and improve stability.</li>
 
-                              <li><strong>Pain-Relief Injections:</strong> Used only in select cases for quick relief.</li>
+                              <li>
+<strong>Pain-Relief Injections:</strong> Used only in select cases for quick relief.</li>
 
-                              <li><strong>Orthotic Devices:</strong> Braces, belts, and supports help reduce stress on weak joints.</li>
+                              <li>
+<strong>Orthotic Devices:</strong> Braces, belts, and supports help reduce stress on weak joints.</li>
 
                             </ul>
 
@@ -6151,11 +6953,14 @@
 
                             <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4">
 
-                              <li><strong>Microfracture:</strong> Tiny holes are drilled into the bone under the damaged cartilage to make it bleed and form a clot that later turns into scar-like cartilage.</li>
+                              <li>
+<strong>Microfracture:</strong> Tiny holes are drilled into the bone under the damaged cartilage to make it bleed and form a clot that later turns into scar-like cartilage.</li>
 
-                              <li><strong>Cell-based repair (like ACI / MACI):</strong> Healthy cartilage cells are taken from the patient, grown in a lab, and then implanted back into the defect.</li>
+                              <li>
+<strong>Cell-based repair (like ACI / MACI):</strong> Healthy cartilage cells are taken from the patient, grown in a lab, and then implanted back into the defect.</li>
 
-                              <li><strong>Scaffold or membrane techniques (like AMIC):</strong> A collagen membrane is placed over the area after microfracture to help cells stay in place and mature.</li>
+                              <li>
+<strong>Scaffold or membrane techniques (like AMIC):</strong> A collagen membrane is placed over the area after microfracture to help cells stay in place and mature.</li>
 
                             </ul>
 
@@ -6261,11 +7066,14 @@
 
                             <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4">
 
-                              <li><strong>Best for focal lesions, not end-stage arthritis:</strong> If most of the joint is already worn down, joint replacement or other surgical options may still be more realistic.</li>
+                              <li>
+<strong>Best for focal lesions, not end-stage arthritis:</strong> If most of the joint is already worn down, joint replacement or other surgical options may still be more realistic.</li>
 
-                              <li><strong>Rehab still matters:</strong> You can't just get the gel and immediately go running. A proper, phased rehabilitation plan with protected weight-bearing and controlled physiotherapy over weeks to months is crucial.</li>
+                              <li>
+<strong>Rehab still matters:</strong> You can't just get the gel and immediately go running. A proper, phased rehabilitation plan with protected weight-bearing and controlled physiotherapy over weeks to months is crucial.</li>
 
-                              <li><strong>Long-term durability is still being tracked:</strong> Early and mid-term results are encouraging, but truly long-term data (10+ years across large patient groups) are still being collected.</li>
+                              <li>
+<strong>Long-term durability is still being tracked:</strong> Early and mid-term results are encouraging, but truly long-term data (10+ years across large patient groups) are still being collected.</li>
 
                             </ul>
 
@@ -7016,6 +7824,277 @@
         });
     </script>
 
+    <!-- Back Pain FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type":"Question","name":"Who is the best doctor for back pain in Hyderabad?","acceptedAnswer":{"@type":"Answer","text":"Dr. Mir Jawad Zar Khan is consistently recognized as the best doctor for back pain in Hyderabad. He is an internationally trained orthopedic and spine specialist with 26 years of experience, covering the full range of back pain causes and treatments from conservative care to spine surgery."}},
+            {"@type":"Question","name":"What is the best treatment for lower back pain without surgery?","acceptedAnswer":{"@type":"Answer","text":"Physiotherapy, image-guided spinal injections, RF denervation, ESWT and interventional pain management are the most effective non-surgical treatments for lower back pain. The right combination depends on the underlying diagnosis, which is confirmed through a proper clinical assessment. Most back pain is treated successfully without surgery."}},
+            {"@type":"Question","name":"When does back pain need to see a doctor?","acceptedAnswer":{"@type":"Answer","text":"See a back pain specialist in Hyderabad if pain lasts more than two to three weeks, radiates into a leg or arm, comes with numbness or weakness, follows an injury, or wakes you at night. Loss of bladder or bowel control alongside back pain is a medical emergency needing immediate care."}},
+            {"@type":"Question","name":"What is the cost of back pain treatment in Hyderabad?","acceptedAnswer":{"@type":"Answer","text":"Non-surgical treatment costs vary by the type and number of sessions required. For surgical options, written cost estimates are provided at the time of consultation. Major health insurance policies cover medically necessary spine surgery, and our team manages all insurance coordination and pre-authorisation."}},
+            {"@type":"Question","name":"Which doctor should I see for lower back pain, orthopedic or neurologist?","acceptedAnswer":{"@type":"Answer","text":"For most mechanical and structural back pain, an orthopedic and spine specialist is the right choice, as they manage both the non-surgical and surgical treatment of the spine. Dr. Jawad is an experienced spine specialist who treats the full range of back and lower back pain conditions."}},
+            {"@type":"Question","name":"Do you treat back pain in patients of all ages?","acceptedAnswer":{"@type":"Answer","text":"Yes. From young professionals with desk-related and disc-related back pain to older adults with spondylosis, stenosis and osteoporotic fractures, our facility manages back pain across the full age spectrum."}},
+            {"@type":"Question","name":"How do I book a back pain consultation in Hyderabad?","acceptedAnswer":{"@type":"Answer","text":"Call the clinic directly, fill in the appointment form on this page, or use the callback request option. Our team will confirm your slot and advise you on which imaging and reports to bring."}}
+        ]
+    }
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('[data-back-pain-carousel]').forEach(function (carousel) {
+                const viewport = carousel.querySelector('.back-pain-carousel-viewport');
+                const track = carousel.querySelector('.back-pain-carousel-track');
+                const previousButton = carousel.querySelector('[data-carousel-prev]');
+                const nextButton = carousel.querySelector('[data-carousel-next]');
+                const status = carousel.querySelector('.back-pain-carousel-status');
+                const originalCards = Array.from(track.children).map(function (card) {
+                    return card.cloneNode(true);
+                });
+                const total = originalCards.length;
+                let visibleCards = 1;
+                let currentIndex = 1;
+                let autoPlayTimer = null;
+                let touchStartX = 0;
+                let isMoving = false;
+
+                function getVisibleCards() {
+                    return window.matchMedia('(min-width: 768px)').matches ? 2 : 1;
+                }
+
+                function setCardWidths() {
+                    const gap = 16;
+                    const availableWidth = viewport.clientWidth - (gap * (visibleCards - 1));
+                    const cardWidth = Math.max(0, availableWidth / visibleCards);
+                    track.querySelectorAll('.back-pain-cause-card').forEach(function (card) {
+                        card.style.setProperty('flex', '0 0 ' + cardWidth + 'px', 'important');
+                        card.style.setProperty('width', cardWidth + 'px', 'important');
+                        card.style.setProperty('min-width', cardWidth + 'px', 'important');
+                        card.style.setProperty('max-width', cardWidth + 'px', 'important');
+                    });
+                }
+
+                function getStep() {
+                    const firstCard = track.querySelector('.back-pain-cause-card');
+                    if (!firstCard) return viewport.clientWidth;
+                    return firstCard.getBoundingClientRect().width + 16;
+                }
+
+                function updateStatus() {
+                    const logicalIndex = ((currentIndex - visibleCards) % total + total) % total;
+                    if (status) status.textContent = (logicalIndex + 1) + ' of ' + total;
+                }
+
+                function moveTrack(animate) {
+                    track.style.transition = animate ? 'transform .55s cubic-bezier(.22,1,.36,1)' : 'none';
+                    track.style.transform = 'translate3d(' + (-currentIndex * getStep()) + 'px,0,0)';
+                    updateStatus();
+                }
+
+                function buildCarousel() {
+                    visibleCards = getVisibleCards();
+                    track.innerHTML = '';
+                    originalCards.slice(-visibleCards).forEach(function (card) {
+                        const clone = card.cloneNode(true);
+                        clone.setAttribute('aria-hidden', 'true');
+                        track.appendChild(clone);
+                    });
+                    originalCards.forEach(function (card) {
+                        track.appendChild(card.cloneNode(true));
+                    });
+                    originalCards.slice(0, visibleCards).forEach(function (card) {
+                        const clone = card.cloneNode(true);
+                        clone.setAttribute('aria-hidden', 'true');
+                        track.appendChild(clone);
+                    });
+                    currentIndex = visibleCards;
+                    requestAnimationFrame(function () {
+                        setCardWidths();
+                        moveTrack(false);
+                    });
+                }
+
+                function goTo(direction) {
+                    if (isMoving) return;
+                    isMoving = true;
+                    currentIndex += direction;
+                    moveTrack(true);
+                }
+
+                function startAutoPlay() {
+                    stopAutoPlay();
+                    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                        autoPlayTimer = window.setInterval(function () { goTo(1); }, 3200);
+                    }
+                }
+
+                function stopAutoPlay() {
+                    if (autoPlayTimer) window.clearInterval(autoPlayTimer);
+                    autoPlayTimer = null;
+                }
+
+                track.addEventListener('transitionend', function () {
+                    if (currentIndex >= total + visibleCards) {
+                        currentIndex = visibleCards;
+                        moveTrack(false);
+                    } else if (currentIndex < visibleCards) {
+                        currentIndex = total + visibleCards - 1;
+                        moveTrack(false);
+                    }
+                    isMoving = false;
+                });
+
+                if (previousButton) previousButton.addEventListener('click', function () { goTo(-1); startAutoPlay(); });
+                if (nextButton) nextButton.addEventListener('click', function () { goTo(1); startAutoPlay(); });
+                carousel.addEventListener('mouseenter', stopAutoPlay);
+                carousel.addEventListener('mouseleave', startAutoPlay);
+                carousel.addEventListener('focusin', stopAutoPlay);
+                carousel.addEventListener('focusout', startAutoPlay);
+                viewport.addEventListener('touchstart', function (event) {
+                    touchStartX = event.changedTouches[0].clientX;
+                    stopAutoPlay();
+                }, { passive: true });
+                viewport.addEventListener('touchend', function (event) {
+                    const difference = touchStartX - event.changedTouches[0].clientX;
+                    if (Math.abs(difference) > 45) goTo(difference > 0 ? 1 : -1);
+                    startAutoPlay();
+                }, { passive: true });
+
+                let resizeTimer;
+                window.addEventListener('resize', function () {
+                    window.clearTimeout(resizeTimer);
+                    resizeTimer = window.setTimeout(function () {
+                        isMoving = false;
+                        buildCarousel();
+                    }, 180);
+                });
+
+                buildCarousel();
+                startAutoPlay();
+            });
+
+            document.querySelectorAll('[data-care-carousel]').forEach(function (carousel) {
+                const viewport = carousel.querySelector('.back-pain-care-viewport');
+                const track = carousel.querySelector('.back-pain-care-grid');
+                const originals = Array.from(track.children).map(function (card) {
+                    return card.cloneNode(true);
+                });
+                const total = originals.length;
+                let visibleCards = 1;
+                let currentIndex = 1;
+                let timer = null;
+                let moving = false;
+                let touchStartX = 0;
+
+                function countVisibleCards() {
+                    if (window.matchMedia('(min-width: 1024px)').matches) return 3;
+                    if (window.matchMedia('(min-width: 768px)').matches) return 2;
+                    return 1;
+                }
+
+                function sizeCards() {
+                    const gap = 16;
+                    const cardWidth = Math.max(0, (viewport.clientWidth - gap * (visibleCards - 1)) / visibleCards);
+                    track.querySelectorAll('.back-pain-care-card').forEach(function (card) {
+                        card.style.setProperty('flex', '0 0 ' + cardWidth + 'px', 'important');
+                        card.style.setProperty('width', cardWidth + 'px', 'important');
+                        card.style.setProperty('min-width', cardWidth + 'px', 'important');
+                        card.style.setProperty('max-width', cardWidth + 'px', 'important');
+                    });
+                }
+
+                function stepWidth() {
+                    const card = track.querySelector('.back-pain-care-card');
+                    return card ? card.getBoundingClientRect().width + 16 : viewport.clientWidth;
+                }
+
+                function move(animate) {
+                    track.style.transition = animate ? 'transform .55s cubic-bezier(.22,1,.36,1)' : 'none';
+                    track.style.transform = 'translate3d(' + (-currentIndex * stepWidth()) + 'px,0,0)';
+                }
+
+                function build() {
+                    visibleCards = countVisibleCards();
+                    track.innerHTML = '';
+                    originals.slice(-visibleCards).forEach(function (card) {
+                        const clone = card.cloneNode(true);
+                        clone.setAttribute('aria-hidden', 'true');
+                        track.appendChild(clone);
+                    });
+                    originals.forEach(function (card) { track.appendChild(card.cloneNode(true)); });
+                    originals.slice(0, visibleCards).forEach(function (card) {
+                        const clone = card.cloneNode(true);
+                        clone.setAttribute('aria-hidden', 'true');
+                        track.appendChild(clone);
+                    });
+                    currentIndex = visibleCards;
+                    requestAnimationFrame(function () {
+                        sizeCards();
+                        move(false);
+                    });
+                }
+
+                function next(direction) {
+                    if (moving) return;
+                    moving = true;
+                    currentIndex += direction;
+                    move(true);
+                }
+
+                function stop() {
+                    if (timer) window.clearInterval(timer);
+                    timer = null;
+                }
+
+                function start() {
+                    stop();
+                    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                        timer = window.setInterval(function () { next(1); }, 3400);
+                    }
+                }
+
+                track.addEventListener('transitionend', function () {
+                    if (currentIndex >= total + visibleCards) {
+                        currentIndex = visibleCards;
+                        move(false);
+                    } else if (currentIndex < visibleCards) {
+                        currentIndex = total + visibleCards - 1;
+                        move(false);
+                    }
+                    moving = false;
+                });
+
+                carousel.addEventListener('mouseenter', stop);
+                carousel.addEventListener('mouseleave', start);
+                carousel.addEventListener('focusin', stop);
+                carousel.addEventListener('focusout', start);
+                viewport.addEventListener('touchstart', function (event) {
+                    touchStartX = event.changedTouches[0].clientX;
+                    stop();
+                }, { passive: true });
+                viewport.addEventListener('touchend', function (event) {
+                    const difference = touchStartX - event.changedTouches[0].clientX;
+                    if (Math.abs(difference) > 45) next(difference > 0 ? 1 : -1);
+                    start();
+                }, { passive: true });
+
+                let resizeTimer;
+                window.addEventListener('resize', function () {
+                    window.clearTimeout(resizeTimer);
+                    resizeTimer = window.setTimeout(function () {
+                        moving = false;
+                        build();
+                    }, 180);
+                });
+
+                build();
+                start();
+            });
+        });
+    </script>
+
+    <floating-nav></floating-nav>
 </body>
 
 </html>
