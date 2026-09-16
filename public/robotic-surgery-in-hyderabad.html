@@ -4,18 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="google-site-verification" content="gyGSLLzdQLlIEsLrhnGzWjOoQDhyTo8sxocDXKNkG7w" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Robotic Surgery in Hyderabad | Dr. Mir Jawad Zar ScdKsI964KbnwdHvlRVjaN3N</title>
     <meta name="description"
         content="Consult Dr. Mir Jawad Zar Khan for advanced robotic surgery in Hyderabad at Germanten Hospitals. Sub-millimetre precision, 3D planning, faster recovery. Book today.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/4.0.0/uicons-thin-rounded/css/uicons-thin-rounded.css">
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="icon" type="image/webp" href="../Images/dr-jawad-logo.webp">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/webp" href="Images/dr-jawad-logo.webp">
     <link rel="canonical" href="https://drjawadortho.com/robotic-surgery-in-hyderabad">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <style>
+        /* Shared site scroll progress bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.2);
+            z-index: 9999;
+            transition: opacity 0.3s ease;
+        }
+
+        .scroll-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #ff4d01 0%, #eab308 50%, #facc15 100%);
+            border-radius: 0 1px 1px 0;
+            transition: width 0.1s ease-out;
+            box-shadow: 0 0 10px rgba(202, 138, 4, 0.5);
+        }
+
+        .scroll-progress.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
         :root {
             --hip-fixed-header: 0px;
         }
@@ -3467,6 +3492,12 @@
                 transition: none !important;
             }
         }
+
+        /* Preserve the shared footer's yellow column headings. */
+        #footer-container h4.text-yellow-400,
+        #footer-container h5.text-yellow-400 {
+            color: #facc15 !important;
+        }
     </style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-B7BXJEHXWK"></script>
     <script>
@@ -4045,6 +4076,11 @@
 </head>
 
 <body class="ortho-page bg-gray-50">
+    <!-- Shared Site Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress">
+        <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+    </div>
+
     <!-- Navbar Component -->
     <div id="navbar-container"></div>
 
@@ -4383,7 +4419,8 @@
 
                                 <a href="/back-pain-treatment-in-hyderabad"
                                     class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
-                                    <i class="related-treatment-icon fi fi-tr-knee-joint" aria-hidden="true"></i>
+                                    <i class="related-treatment-icon fi fi-tr-lower-back" aria-hidden="true">
+                                    </i>
                                     <span class="font-medium">Back Pian Treatment</span>
                                     <i class="fa-solid fa-chevron-right text-xs "></i>
                                 </a>
@@ -4409,6 +4446,12 @@
                                     <span class="font-medium">Hip Replacement</span>
                                     <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
                                 </a>
+
+                                <a href="/neck-pain-treatment-in-hyderabad"
+                                    class="flex items-center justify-between rounded-xl p-3 font-semibold transition-all duration-300"
+                                    aria-current="page"><i class="related-treatment-icon fi fi-tr-spine"
+                                        aria-hidden="true"></i><span>Neck Pain Treatment</span><i
+                                        class="fa-solid fa-chevron-right text-xs"></i></a>
 
                                 <a href="/robotic-knee-replacement-in-hyderabad"
                                     class="flex items-center justify-between p-3 rounded-xl text-gray-800 transition-all duration-300">
@@ -5203,8 +5246,51 @@
         });
     </script>
 
-    <!-- Scripts -->
-    <script src="/js/script.js"></script>
+    <!-- Shared Site Scroll Progress Bar JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollProgressBar = document.getElementById('scrollProgressBar');
+
+            if (!scrollProgress || !scrollProgressBar) return;
+
+            function updateScrollProgress() {
+                const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrollPercentage = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+
+                scrollProgressBar.style.width = scrollPercentage + '%';
+                scrollProgress.classList.toggle('hidden', scrollTop <= 100);
+            }
+
+            function throttle(func, limit) {
+                let inThrottle;
+                return function () {
+                    if (!inThrottle) {
+                        func.apply(this, arguments);
+                        inThrottle = true;
+                        setTimeout(function () { inThrottle = false; }, limit);
+                    }
+                };
+            }
+
+            window.addEventListener('scroll', throttle(updateScrollProgress, 10));
+            scrollProgress.addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            scrollProgress.addEventListener('mouseenter', function () {
+                scrollProgressBar.style.boxShadow = '0 0 20px rgba(202, 138, 4, 0.8)';
+            });
+            scrollProgress.addEventListener('mouseleave', function () {
+                scrollProgressBar.style.boxShadow = '0 0 10px rgba(202, 138, 4, 0.5)';
+            });
+
+            updateScrollProgress();
+        });
+    </script>
+
+    <!-- Shared Navbar, Footer and Floating Navigation Script -->
+    <script src="js/script.js"></script>
 
     <!-- Hip Tab Switching Script -->
     <script>
@@ -7016,6 +7102,7 @@
         });
     </script>
 
+    <floating-nav></floating-nav>
 </body>
 
 </html>
