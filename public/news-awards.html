@@ -138,15 +138,14 @@
             }
         }
 
-        /* Gallery Layout - 5 images single row on desktop, 2 per row on mobile */
+        /* Gallery Layout - 6 images single row on desktop, 2 per row on mobile */
         @media (min-width: 769px) {
-            .flex.justify-center.items-center.gap-3.sm\\:gap-4.md\\:gap-6.lg\\:gap-8.max-w-6xl.mx-auto.flex-wrap {
+            .flex.justify-center.items-center.gap-3.sm\\:gap-4.md\\:gap-6.lg\\:gap-8.w-full.overflow-x-auto {
                 display: flex !important;
                 flex-wrap: nowrap !important;
                 justify-content: center !important;
                 align-items: center !important;
                 gap: 1.5rem !important;
-                max-width: 100% !important;
                 width: 100% !important;
                 overflow-x: auto !important;
             }
@@ -168,7 +167,7 @@
         }
 
         @media (max-width: 768px) {
-            .flex.justify-center.items-center.gap-3.sm\\:gap-4.md\\:gap-6.lg\\:gap-8.max-w-6xl.mx-auto.flex-wrap {
+            .flex.justify-center.items-center.gap-3.sm\\:gap-4.md\\:gap-6.lg\\:gap-8.w-full.overflow-x-auto {
                 display: flex !important;
                 flex-wrap: wrap !important;
                 justify-content: center !important;
@@ -347,7 +346,7 @@
     <section class="hero-section relative w-full banner-section">
         <!-- Image with bottom border only -->
         <div class="border-b-4 border-yellow-400 w-full">
-            <img src="Images/AboutUs-page-Images/News-Awards/Herosectionimage.webp"
+            <img src="Images/AboutUs-page-Images/News-Awards/Herosectionimage1.webp"
                 alt="News and Awards - Germanten Hospitals" width="1920" height="1080" class="hero-image w-full"
                 onerror="this.onerror=null; this.src='https://via.placeholder.com/1920x1080?text=News+and+Awards';">
         </div>
@@ -462,30 +461,24 @@
         <section class="py-8 sm:py-10 md:py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-blue-50">
             <div class="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
 
-                <!-- Gallery Grid : 5 Images Single Row -->
+                <!-- Gallery Grid : 6 Images Single Row -->
                 <div
-                    class="flex justify-center items-center gap-3 sm:gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto flex-wrap">
+                    class="flex justify-center items-center gap-3 sm:gap-4 md:gap-6 lg:gap-8 w-full overflow-x-auto">
 
                     <!-- Image 1 -->
                     <div
                         class="gallery-item relative group cursor-pointer transition-all duration-300 hover:-translate-y-2">
-                        <img src="Images/AboutUs-page-Images/News-Awards/Image1.webp" alt="Award 1" width="256" height="256"
+                        <img src="Images/AboutUs-page-Images/News-Awards/news-image12.webp" alt="Award 1" width="256" height="256"
                             class="gallery-img max-h-40 sm:max-h-48 md:max-h-56 lg:max-h-64 object-contain border-4 border-yellow-400 rounded-xl sm:rounded-2xl transition-transform duration-300 group-hover:scale-105"
                             onclick="openGallery(0)">
                     </div>
 
-                    <!-- Image 2 -->
-                    <div
-                        class="gallery-item relative group cursor-pointer transition-all duration-300 hover:-translate-y-2">
-                        <img src="Images/AboutUs-page-Images/News-Awards/image2.webp" alt="Award 2" width="256" height="256"
-                            class="gallery-img max-h-40 sm:max-h-48 md:max-h-56 lg:max-h-64 object-contain border-4 border-yellow-400 rounded-xl sm:rounded-2xl transition-transform duration-300 group-hover:scale-105"
-                            onclick="openGallery(1)">
-                    </div>
+                   
 
                     <!-- Image 3 -->
                     <div
                         class="gallery-item relative group cursor-pointer transition-all duration-300 hover:-translate-y-2">
-                        <img src="Images/AboutUs-page-Images/News-Awards/image3.webp" alt="Award 3" width="256" height="256"
+                        <img src="Images/AboutUs-page-Images/News-Awards/image2.webp" alt="Award 3" width="256" height="256"
                             class="gallery-img max-h-40 sm:max-h-48 md:max-h-56 lg:max-h-64 object-contain border-4 border-yellow-400 rounded-xl sm:rounded-2xl transition-transform duration-300 group-hover:scale-105"
                             onclick="openGallery(2)">
                     </div>
@@ -493,7 +486,7 @@
                     <!-- Image 4 -->
                     <div
                         class="gallery-item relative group cursor-pointer transition-all duration-300 hover:-translate-y-2">
-                        <img src="Images/AboutUs-page-Images/News-Awards/image4.webp" alt="Award 4" width="256" height="256"
+                        <img src="Images/AboutUs-page-Images/News-Awards/image3.webp" alt="Award 4" width="256" height="256"
                             class="gallery-img max-h-40 sm:max-h-48 md:max-h-56 lg:max-h-64 object-contain border-4 border-yellow-400 rounded-xl sm:rounded-2xl transition-transform duration-300 group-hover:scale-105"
                             onclick="openGallery(3)">
                     </div>
@@ -501,9 +494,17 @@
                     <!-- Image 5 -->
                     <div
                         class="gallery-item relative group cursor-pointer transition-all duration-300 hover:-translate-y-2">
-                        <img src="Images/AboutUs-page-Images/News-Awards/image5.webp" alt="Award 5" width="256" height="256"
+                        <img src="Images/AboutUs-page-Images/News-Awards/image4.webp" alt="Award 5" width="256" height="256"
                             class="gallery-img max-h-40 sm:max-h-48 md:max-h-56 lg:max-h-64 object-contain border-4 border-yellow-400 rounded-xl sm:rounded-2xl transition-transform duration-300 group-hover:scale-105"
                             onclick="openGallery(4)">
+                    </div>
+
+                    <!-- Image 6 -->
+                    <div
+                        class="gallery-item relative group cursor-pointer transition-all duration-300 hover:-translate-y-2">
+                        <img src="Images/AboutUs-page-Images/News-Awards/image5.webp" alt="Award 6" width="256" height="256"
+                            class="gallery-img max-h-40 sm:max-h-48 md:max-h-56 lg:max-h-64 object-contain border-4 border-yellow-400 rounded-xl sm:rounded-2xl transition-transform duration-300 group-hover:scale-105"
+                            onclick="openGallery(5)">
                     </div>
 
                 </div>
@@ -1406,6 +1407,132 @@
                     </div>
                 </div>
 
+                <!-- News Image 1 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(121)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/news-image1.webp" alt="News Image 1 - Dr. Mir Jawad Zar Khan Award Ceremony" width="208" height="208"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Image 2 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(122)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/news-image2.webp" alt="News Image 2 - Dr. Mir Jawad Zar Khan Recognition Event" width="208" height="208"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Image 3 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(123)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/news-image3.webp" alt="News Image 3 - Dr. Mir Jawad Zar Khan Medical Achievement" width="208" height="208"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Image 4 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(124)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/news-image4.webp" alt="News Image 4 - Dr. Mir Jawad Zar Khan Award Presentation" width="208" height="208"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Image 5 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(125)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/news-image5.webp" alt="News Image 5 - Dr. Mir Jawad Zar Khan Honor Ceremony" width="208" height="208"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Image 6 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(126)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/news-image6.webp" alt="News Image 6 - Dr. Mir Jawad Zar Khan Medical Excellence Award" width="208" height="208"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Image 7 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(127)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/news-image7.webp" alt="News Image 7 - Dr. Mir Jawad Zar Khan Healthcare Recognition" width="208" height="208"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Image 8 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(128)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/news-image8.webp" alt="News Image 8 - Dr. Mir Jawad Zar Khan Orthopedic Achievement" width="208" height="208"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Image 9 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(129)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/news-image9.webp" alt="News Image 9 - Dr. Mir Jawad Zar Khan Medical Innovation Award" width="208" height="208"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Image 10 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(130)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/news-image10.webp" alt="News Image 10 - Dr. Mir Jawad Zar Khan Healthcare Leadership Award" width="208" height="208"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Image 11 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(131)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/news-image11.webp" alt="News Image 11 - Dr. Mir Jawad Zar Khan Medical Service Award" width="208" height="208"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Image 12 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(132)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/news-image12.webp" alt="News Image 12 - Dr. Mir Jawad Zar Khan Orthopedic Excellence Award" width="208" height="208"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Image 13 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(133)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/news-image13.webp" alt="News Image 13 - Dr. Mir Jawad Zar Khan Surgical Achievement Award" width="208" height="208"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <!-- News Image 14 -->
+                <div class="group relative cursor-pointer" onclick="openAwardsModal(134)">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white p-2 border-2 border-red-500">
+                        <img src="Images/AboutUs-page-Images/News-Awards/news-image14.webp" alt="News Image 14 - Dr. Mir Jawad Zar Khan Medical Leadership Award" width="208" height="208"
+                            class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
             </div>
 
         </div>
@@ -1484,8 +1611,12 @@
     <script>
         // ========== GALLERY IMAGES ARRAY ==========
         const galleryImages = [
-            { src: 'Images/AboutUs-page-Images/News-Awards/Image1.webp', alt: 'Award 1' },
-            { src: 'Images/AboutUs-page-Images/News-Awards/image2.webp', alt: 'Award 2' }
+            { src: 'Images/AboutUs-page-Images/News-Awards/news-image12.webp', alt: 'Award 1' },
+            { src: 'Images/AboutUs-page-Images/News-Awards/Image1.webp', alt: 'Award 2' },
+            { src: 'Images/AboutUs-page-Images/News-Awards/image2.webp', alt: 'Award 3' },
+            { src: 'Images/AboutUs-page-Images/News-Awards/image3.webp', alt: 'Award 4' },
+            { src: 'Images/AboutUs-page-Images/News-Awards/image4.webp', alt: 'Award 5' },
+            { src: 'Images/AboutUs-page-Images/News-Awards/image5.webp', alt: 'Award 6' }
         ];
 
         let currentImageIndex = 0;
