@@ -216,70 +216,122 @@
         }
     }
 
-    /* Treatments dropdown responsive styles */
+    /* Interactive desktop navigation and dropdown items */
     @media (min-width: 1024px) {
-        .treatments-dropdown>div>.flex {
-            display: flex !important;
-            flex-direction: row !important;
-            flex-wrap: nowrap !important;
-            gap: 0.75rem !important;
-            overflow-x: hidden !important;
-            overflow-y: hidden !important;
-            justify-content: center !important;
-            width: 100% !important;
+        nav .nav-item {
+            transform: translateY(0);
         }
 
+        nav .nav-item:hover,
+        nav .nav-item:focus-visible {
+            transform: translateY(-2px);
+        }
+
+        nav .group>div.absolute {
+            translate: 0 10px;
+            pointer-events: none;
+        }
+
+        nav .group:hover>div.absolute,
+        nav .group:focus-within>div.absolute {
+            translate: 0 0;
+            pointer-events: auto;
+        }
+
+        nav .group>div.absolute a {
+            position: relative;
+            transform: translateX(0);
+            border-radius: 4px;
+            transition: transform 220ms ease, background-color 220ms ease,
+                color 220ms ease, padding-left 220ms ease;
+        }
+
+        nav .group>div.absolute a:hover,
+        nav .group>div.absolute a:focus-visible {
+            transform: translateX(6px);
+            padding-left: 0.75rem;
+            background-color: rgba(255, 255, 255, 0.08);
+            outline: none;
+        }
+
+        /* Treatments mega menu: all category columns stay in one horizontal row */
         .treatments-dropdown {
             left: 50% !important;
             transform: translateX(-50%) !important;
+            width: 1200px !important;
+            max-width: calc(100vw - 48px) !important;
+            z-index: 99999 !important;
+        }
+
+        .treatments-dropdown>div {
+            padding: 1rem !important;
+        }
+
+        .treatments-dropdown>div>.flex {
+            display: grid !important;
+            grid-template-columns: repeat(7, minmax(145px, 1fr)) !important;
+            align-items: start !important;
+            gap: 0 !important;
+            width: 100% !important;
+            overflow-x: auto !important;
+            overflow-y: hidden !important;
+            scroll-behavior: smooth;
         }
 
         .treatments-dropdown .space-y-1 {
-            flex: 0 0 auto;
-            min-width: 130px;
-            max-width: 145px;
+            min-width: 0 !important;
+            max-width: none !important;
+            height: 100%;
+            padding: 0 0.65rem;
+            border-right: 1px solid rgba(255, 255, 255, 0.14);
         }
-    }
 
-    @media (max-width: 1023px) {
-        .treatments-dropdown>div>.flex {
+        .treatments-dropdown .space-y-1:first-child {
+            padding-left: 0.25rem;
+        }
+
+        .treatments-dropdown .space-y-1:last-child {
+            padding-right: 0.25rem;
+            border-right: 0;
+        }
+
+        .treatments-dropdown .space-y-1>div:first-child {
+            min-height: 3.75rem !important;
             display: flex !important;
-            flex-direction: row !important;
-            flex-wrap: nowrap !important;
-            gap: 0.75rem !important;
-            overflow-x: auto !important;
-            overflow-y: hidden !important;
+            align-items: flex-start !important;
             justify-content: flex-start !important;
-            width: 100% !important;
+            line-height: 1.35;
+            white-space: normal;
+        }
+
+        .treatments-dropdown .space-y-1>a {
+            min-height: 2.35rem;
+            display: flex !important;
+            align-items: center;
+            line-height: 1.25;
+            white-space: normal;
         }
 
         .treatments-dropdown>div>.flex::-webkit-scrollbar {
-            height: 6px;
+            height: 5px;
         }
 
         .treatments-dropdown>div>.flex::-webkit-scrollbar-track {
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 3px;
+            border-radius: 999px;
         }
 
         .treatments-dropdown>div>.flex::-webkit-scrollbar-thumb {
-            background: rgba(251, 191, 36, 0.5);
-            border-radius: 3px;
-        }
-
-        .treatments-dropdown>div>.flex::-webkit-scrollbar-thumb:hover {
-            background: rgba(251, 191, 36, 0.7);
-        }
-
-        .treatments-dropdown .space-y-1 {
-            flex: 0 0 auto;
-            min-width: 130px;
+            background: rgba(251, 191, 36, 0.55);
+            border-radius: 999px;
         }
     }
 
-    /* Ensure treatments dropdown has maximum z-index */
-    .treatments-dropdown {
-        z-index: 99999 !important;
+    /* Keep the existing mobile treatment menu layout unchanged */
+    @media (max-width: 1023px) {
+        .treatments-dropdown {
+            z-index: 99999 !important;
+        }
     }
 </style>
 
@@ -347,7 +399,7 @@
                             class="fas fa-chevron-down ml-1 text-xs transition-transform duration-300 group-hover:rotate-180"></i>
                     </button>
                     <div
-                        class="treatments-dropdown absolute left-1/2 transform -translate-x-1/2 mt-5 w-[1400px] max-w-[99vw] bg-gradient-to-br from-[#cf3339] to-[#b91c1c] rounded-none shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[9999] border border-red-800/40">
+                        class="treatments-dropdown absolute left-1/2 transform -translate-x-1/2 mt-5 w-[1200px] max-w-[calc(100vw-48px)] bg-gradient-to-br from-[#cf3339] to-[#b91c1c] rounded-none shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[9999] border border-red-800/40">
                         <div class="p-4">
                             <div class="flex flex-row gap-5 flex-nowrap overflow-x-auto overflow-y-hidden">
 
@@ -365,19 +417,35 @@
 
                                     <a href="/back-pain-treatment-in-hyderabad"
                                         class="block px-2 py-1.5 text-sm text-white hover:text-amber-200 transition-colors duration-200 font-medium border-b border-white/15 pb-1.5">
-                                        Back Pain</a> 
-                                        
+                                        Back Pain</a>
+
                                     <a href="/neck-pain-treatment-in-hyderabad"
                                         class="block px-2 py-1.5 text-sm text-white hover:text-amber-200 transition-colors duration-200 font-medium border-b border-white/15 pb-1.5">
-                                        Neck Pain</a>  
-                                        
+                                        Neck Pain</a>
+
                                     <a href="/shoulder-pain-treatment-in-hyderabad"
                                         class="block px-2 py-1.5 text-sm text-white hover:text-amber-200 transition-colors duration-200 font-medium border-b border-white/15 pb-1.5">
-                                        Shoulder Pain</a>    
-                                        
+                                        Shoulder Pain</a>
+
                                     <a href="/hip-pain-treatment-in-hyderabad"
                                         class="block px-2 py-1.5 text-sm text-white hover:text-amber-200 transition-colors duration-200 font-medium border-b border-white/15 pb-1.5">
-                                        Hip Pain</a>     
+                                        Hip Pain</a>
+
+                                    <a href="/elbow-pain-treatment-in-hyderabad"
+                                        class="block px-2 py-1.5 text-sm text-white hover:text-amber-200 transition-colors duration-200 font-medium border-b border-white/15 pb-1.5">
+                                        Elbow Pain</a>    
+                                    
+                                    <a href="/hand-wrist-pain-treatment-in-hyderabad"
+                                        class="block px-2 py-1.5 text-sm text-white hover:text-amber-200 transition-colors duration-200 font-medium border-b border-white/15 pb-1.5">
+                                        Hand Wrist Pain</a>
+                                        
+                                    <a href="/heel-pain-treatment-in-hyderabad"
+                                        class="block px-2 py-1.5 text-sm text-white hover:text-amber-200 transition-colors duration-200 font-medium border-b border-white/15 pb-1.5">
+                                        Heel Pain</a>   
+                                        
+                                    <a href="/foot-and-ankle-pain-treatment-in-hyderabad"
+                                        class="block px-2 py-1.5 text-sm text-white hover:text-amber-200 transition-colors duration-200 font-medium border-b border-white/15 pb-1.5">
+                                        Foot and  Ankle Pain</a>     
 
                                 </div>
 
@@ -392,7 +460,7 @@
                                     <a href="/robotic-knee-replacement-in-hyderabad"
                                         class="block px-2 py-1.5 text-sm text-white hover:text-amber-200 transition-colors duration-200 font-medium border-b border-white/15 pb-1.5">
                                         Robotic Knee Replacement
-                                    </a>    
+                                    </a>
 
                                 </div>
 
@@ -681,21 +749,38 @@
                                 class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">•
                                 Knee Pain</a>
 
-                             <a href="/back-pain-treatment-in-hyderabad"
+                            <a href="/back-pain-treatment-in-hyderabad"
                                 class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">•
                                 Back Pain</a>
 
-                              <a href="/neck-pain-treatment-in-hyderabad"
+                            <a href="/neck-pain-treatment-in-hyderabad"
                                 class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">•
-                                Neck Pain</a>   
+                                Neck Pain</a>
 
-                              <a href="/shoulder-pain-treatment-in-hyderabad"
+                            <a href="/shoulder-pain-treatment-in-hyderabad"
                                 class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">•
                                 Shoulder Pain</a>
-                                
-                              <a href="/hip-pain-treatment-in-hyderabad"
+
+                            <a href="/hip-pain-treatment-in-hyderabad"
                                 class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">•
-                                Hip Pain</a>  
+                                Hip Pain</a>
+
+                            <a href="/elbow-pain-treatment-in-hyderabad"
+                                class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">•
+                                Elbow Pain</a>    
+
+                            
+                            <a href="/hand-wrist-pain-treatment-in-hyderabad"
+                                class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">•
+                                Hand Wrist Pain</a>   
+                                
+                            <a href="/heel-pain-treatment-in-hyderabad"
+                                class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">•
+                                Heel Pain</a>   
+
+                            <a href="/foot-and-ankle-pain-treatment-in-hyderabad"
+                                class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">•
+                                Foot and Ankle Pain</a>       
 
                         </div>
                     </div>
@@ -709,7 +794,7 @@
                                 class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">•
                                 Robotic Surgery</a>
 
-                             <a href="/robotic-knee-replacement-in-hyderabad"
+                            <a href="/robotic-knee-replacement-in-hyderabad"
                                 class="block py-1.5 text-white hover:text-amber-200 text-sm border-b border-white/15">•
                                 Robotic Knee Replacement</a>
 

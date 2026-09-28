@@ -1,8 +1,9 @@
-// Load navbar component
+// Load navbar component - Now integrated directly in HTML for instant loading on index.html
+// This function is kept for compatibility with other pages
 async function loadNavbar() {
     try {
         const navbarContainer = document.getElementById('navbar-container');
-        if (!navbarContainer) return;
+        if (!navbarContainer) return; // Only skip if container doesn't exist
 
         // Check if we're in the treatments, blogs, latestnews, or recentpost folder and adjust path accordingly
         const navbarPath = window.location.pathname.includes('/treatments/') || window.location.pathname.includes('/blogs/') || window.location.pathname.includes('/latestnews/') || window.location.pathname.includes('/recentpost/') ? '../components/navbar.html' : 'components/navbar.html';
@@ -354,13 +355,24 @@ class HeroSlider {
     }
 }
 
-// Load navbar immediately to prevent delay
-loadNavbar();
-
+// Load navbar immediately to prevent delay (only for pages that don't have navbar integrated)
+// For index.html, navbar is integrated directly for instant loading
 // Initialize everything else when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     loadFooter();
     loadFloatingNav();
+    
+    // Load navbar dynamically for pages that don't have it integrated
+    // Skip loading for index.html since navbar is already integrated
+    if (!window.location.pathname.endsWith('index.html') && !window.location.pathname.endsWith('/')) {
+        loadNavbar();
+    }
+    
+    // Initialize navbar functionality for integrated navbar
+    // Skip for index.html since it has inline navbar script
+    if (document.querySelector('nav') && !window.location.pathname.endsWith('index.html') && !window.location.pathname.endsWith('/')) {
+        initializeNavbar();
+    }
     
     // Initialize hero slider on any page that has the slider
     if (document.getElementById('heroSlider')) {
@@ -373,10 +385,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Scrolling Progress Bar Functionality
 function initializeProgressBar() {
+    // Check for index.html progress bar (scrollProgress)
+    const scrollProgress = document.getElementById('scrollProgress');
+    const scrollProgressBar = document.getElementById('scrollProgressBar');
+    
+    // Check for navbar.html progress bar (progress-bar)
     const progressBar = document.getElementById('progress-bar');
     
-    if (progressBar) {
+    if (scrollProgress && scrollProgressBar) {
         // Set initial opacity to 0
+        scrollProgress.style.opacity = '0';
+        
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            
+            // Update progress bar width
+            scrollProgressBar.style.width = `${scrollPercent}%`;
+            
+            // Show/hide progress bar based on scroll position
+            if (scrollTop > 10) {
+                scrollProgress.style.opacity = '1';
+            } else {
+                scrollProgress.style.opacity = '0';
+            }
+        });
+        
+        // Also handle page load scroll position
+        const initialScrollTop = window.scrollY;
+        if (initialScrollTop > 10) {
+            scrollProgress.style.opacity = '1';
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (initialScrollTop / docHeight) * 100;
+            scrollProgressBar.style.width = `${scrollPercent}%`;
+        }
+    } else if (progressBar) {
+        // Handle navbar.html progress bar (used by other pages)
         progressBar.style.opacity = '0';
         
         window.addEventListener('scroll', () => {
