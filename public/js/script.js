@@ -277,13 +277,15 @@ class HeroSlider {
         this.indicators = document.querySelectorAll('.slide-indicator');
         this.totalSlides = this.slides.length;
         this.autoPlayInterval = null;
+        this.isReady = false;
         
         this.init();
     }
     
     init() {
-        // Show first slide
-        this.showSlide(0);
+        // First slide is already visible in HTML with opacity:1
+        // Wait for first paint before enabling transitions
+        this.waitForLCP();
         
         // Add event listeners
         document.getElementById('prevSlide')?.addEventListener('click', () => this.prevSlide());
@@ -292,9 +294,6 @@ class HeroSlider {
         this.indicators.forEach((indicator, index) => {
             indicator.addEventListener('click', () => this.goToSlide(index));
         });
-        
-        // Start autoplay
-        this.startAutoPlay();
         
         // Pause on hover
         const slider = document.getElementById('heroSlider');
@@ -308,16 +307,48 @@ class HeroSlider {
         });
     }
     
+    waitForLCP() {
+        // Check for reduced motion preference
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        
+        if (prefersReducedMotion) {
+            this.enableTransitions();
+            return;
+        }
+        
+        // Check if mobile view for longer LCP delay
+        const isMobile = window.innerWidth <= 768;
+        const delayTime = isMobile ? 4000 : 2000;
+        
+        // Wait for first paint and LCP to register
+        requestAnimationFrame(() => {
+            // Additional delay to ensure LCP is registered
+            setTimeout(() => {
+                this.enableTransitions();
+            }, delayTime);
+        });
+    }
+    
+    enableTransitions() {
+        this.isReady = true;
+        document.getElementById('heroSlider').classList.add('hero-slider-ready');
+        
+        // Start autoplay only after LCP is registered
+        this.startAutoPlay();
+    }
+    
     showSlide(index) {
-        // Hide all slides
-        this.slides.forEach(slide => {
-            slide.classList.remove('active');
-            slide.style.opacity = '0';
-        });
-        this.indicators.forEach(indicator => {
-            indicator.classList.remove('active');
-            indicator.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
-        });
+        // Hide all slides (only if ready - first slide stays visible initially)
+        if (this.isReady) {
+            this.slides.forEach(slide => {
+                slide.classList.remove('active');
+                slide.style.opacity = '0';
+            });
+            this.indicators.forEach(indicator => {
+                indicator.classList.remove('active');
+                indicator.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+            });
+        }
         
         // Show current slide
         this.slides[index].classList.add('active');
@@ -504,6 +535,23 @@ document.addEventListener('keydown', (e) => {
             c.classList.remove('rotated');
         });
     }
+});
+
+// Lazy load videos on user interaction
+document.addEventListener('DOMContentLoaded', () => {
+    const videoCards = document.querySelectorAll('.video-card');
+    
+    videoCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const video = card.querySelector('video');
+            if (video && video.dataset.src && !video.src) {
+                video.src = video.dataset.src;
+                video.load();
+                video.muted = false;
+                video.play().catch(e => console.log('Autoplay prevented:', e));
+            }
+        });
+    });
 });
 
 // Add hover effect for desktop dropdowns

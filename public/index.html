@@ -12,8 +12,10 @@
     <!-- DNS Prefetch and preconnect for external resources -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    <!-- Preload the hero LCP image -->
-    <link rel="preload" as="image" href="Images/Home-Page-Images/HeroSlider1-1.webp" type="image/webp"
+    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
+    <!-- Preload the hero LCP image - very small mobile version for fastest LCP -->
+    <link rel="preload" as="image"
+        href="https://res.cloudinary.com/awhmw4uq/image/upload/f_auto,q_auto:eco,w_320,c_limit/v1787130400/dr-jawad-hero-slider.png"
         fetchpriority="high">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -90,8 +92,6 @@
             }
         }
     </style>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/webp" href="Images/dr-jawad-logo.webp">
     <link rel="canonical" href="https://drjawadortho.com/">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -358,6 +358,22 @@
             height: 100%;
             object-fit: cover;
             object-position: right center;
+        }
+
+        /* Enable slide transitions only after LCP is registered */
+        #heroSlider:not(.hero-slider-ready) .slide:not(.active) {
+            opacity: 0 !important;
+        }
+
+        #heroSlider.hero-slider-ready .slide {
+            transition: opacity 1s ease;
+        }
+
+        /* Ensure first slide is always visible on mobile for LCP */
+        @media (max-width: 768px) {
+            #heroSlider .slide.active {
+                opacity: 1 !important;
+            }
         }
 
         .slide-content {
@@ -1571,31 +1587,49 @@
             text-align: left;
             text-decoration: none !important;
             transition:
+                color 0.35s ease,
                 border-color 0.25s ease,
                 box-shadow 0.25s ease,
                 transform 0.25s ease;
+            z-index: 1;
         }
 
         .germanten-combined-action::before {
             position: absolute;
-            inset: auto 0 0;
-            height: 3px;
+            inset: 0;
             content: "";
-            background: linear-gradient(90deg, var(--gc-gold), #ffd86f);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.25s ease;
+            background: linear-gradient(135deg, #f6ad00 0%, #fbbf24 100%);
+            transform: translateX(-101%);
+            transition: transform 0.45s ease;
+            z-index: -1;
+            border-radius: inherit;
         }
 
         .germanten-combined-action:hover {
-            color: var(--gc-navy);
+            color: #401f00;
             border-color: rgba(245, 173, 0, 0.7);
             box-shadow: 0 14px 30px rgba(15, 23, 42, 0.1);
             transform: translateY(-4px);
         }
 
         .germanten-combined-action:hover::before {
-            transform: scaleX(1);
+            transform: translateX(0);
+        }
+
+        .germanten-combined-action-icon,
+        .germanten-combined-action-title,
+        .germanten-combined-action-description,
+        .germanten-combined-action-arrow {
+            position: relative;
+            z-index: 2;
+            transition: color 0.35s ease;
+        }
+
+        .germanten-combined-action:hover .germanten-combined-action-icon,
+        .germanten-combined-action:hover .germanten-combined-action-title,
+        .germanten-combined-action:hover .germanten-combined-action-description,
+        .germanten-combined-action:hover .germanten-combined-action-arrow {
+            color: #401f00;
         }
 
         .germanten-combined-action-icon {
@@ -1679,10 +1713,18 @@
             }
         }
 
+        /* Tablet */
+        @media (max-width: 1024px) and (min-width: 641px) {
+            .germanten-combined-actions {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 12px;
+            }
+        }
+
         /* Mobile */
         @media (max-width: 640px) {
             .germanten-combined-section {
-                padding: 40px 10px 44px;
+                padding: 40px 10px 100px;
             }
 
             .germanten-combined-heading h1 {
@@ -1788,27 +1830,30 @@
 
             .germanten-combined-actions {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
-                gap: 9px;
+                gap: 10px;
                 margin-top: 22px;
             }
 
             .germanten-combined-action {
                 display: flex;
-                min-height: 76px;
+                min-height: 70px;
                 align-items: center;
                 justify-content: center;
-                padding: 10px 6px;
+                padding: 12px 16px;
             }
 
-            .germanten-combined-action-copy,
-            .germanten-combined-action-arrow {
+            .germanten-combined-action-copy {
                 display: none;
             }
 
             .germanten-combined-action-icon {
-                width: 42px;
-                height: 42px;
+                width: 44px;
+                height: 44px;
                 font-size: 20px;
+            }
+
+            .germanten-combined-action-arrow {
+                display: block;
             }
         }
 
@@ -5751,9 +5796,16 @@
             <div class="slides-container relative h-full w-full bg-white">
 
                 <!-- Slide 1 -->
-                <div class="slide active absolute inset-0 transition-opacity duration-1000" style="opacity:1">
-                    <img src="https://res.cloudinary.com/awhmw4uq/image/upload/v1787130400/dr-jawad-hero-slider.png"
-                        alt="Slide 6" width="1920" height="1080" class="w-full h-full object-cover object-center block"
+                <div class="slide active absolute inset-0" style="opacity:1">
+                    <img src="https://res.cloudinary.com/awhmw4uq/image/upload/f_auto,q_auto:eco,w_320,c_limit/v1787130400/dr-jawad-hero-slider.png"
+                        srcset="https://res.cloudinary.com/awhmw4uq/image/upload/f_auto,q_auto:eco,w_320,c_limit/v1787130400/dr-jawad-hero-slider.png 320w,
+                                https://res.cloudinary.com/awhmw4uq/image/upload/f_auto,q_auto:good,w_640,c_limit/v1787130400/dr-jawad-hero-slider.png 640w,
+                                https://res.cloudinary.com/awhmw4uq/image/upload/f_auto,q_auto:good,w_1280,c_limit/v1787130400/dr-jawad-hero-slider.png 1280w,
+                                https://res.cloudinary.com/awhmw4uq/image/upload/f_auto,q_auto:best,w_1920,c_limit/v1787130400/dr-jawad-hero-slider.png 1920w,
+                                https://res.cloudinary.com/awhmw4uq/image/upload/f_auto,q_auto:best,w_2560,c_limit/v1787130400/dr-jawad-hero-slider.png 2560w"
+                        sizes="(max-width: 640px) 320px, (max-width: 1280px) 640px, (max-width: 1920px) 1280px, 1920px"
+                        alt="Dr. Mir Jawad Zar Khan, orthopedic and joint replacement surgeon in Hyderabad"
+                        width="1920" height="1080" class="w-full h-full object-cover object-center block"
                         fetchpriority="high" decoding="async" loading="eager">
 
                     <div class="slide-content">
@@ -5780,9 +5832,17 @@
 
 
                 <!-- Slide 2 -->
-                <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
-                    <img src="https://res.cloudinary.com/awhmw4uq/image/upload/v1787746765/heroslider-4.png"
-                        alt="Slide 4" width="1920" height="1080" class="w-full h-full object-cover object-center">
+                <div class="slide absolute inset-0 opacity-0">
+                    <img src="https://res.cloudinary.com/awhmw4uq/image/upload/f_auto,q_auto:eco,w_320,c_limit/v1787746765/heroslider-4.png"
+                        srcset="https://res.cloudinary.com/awhmw4uq/image/upload/f_auto,q_auto:eco,w_320,c_limit/v1787746765/heroslider-4.png 320w,
+                                https://res.cloudinary.com/awhmw4uq/image/upload/f_auto,q_auto:good,w_640,c_limit/v1787746765/heroslider-4.png 640w,
+                                https://res.cloudinary.com/awhmw4uq/image/upload/f_auto,q_auto:good,w_1280,c_limit/v1787746765/heroslider-4.png 1280w,
+                                https://res.cloudinary.com/awhmw4uq/image/upload/f_auto,q_auto:best,w_1920,c_limit/v1787746765/heroslider-4.png 1920w,
+                                https://res.cloudinary.com/awhmw4uq/image/upload/f_auto,q_auto:best,w_2560,c_limit/v1787746765/heroslider-4.png 2560w"
+                        sizes="(max-width: 640px) 320px, (max-width: 1280px) 640px, (max-width: 1920px) 1280px, 1920px"
+                        alt="Dr. Mir Jawad Zar Khan Champions of Change award"
+                        width="1920" height="1080" class="w-full h-full object-cover object-center"
+                        loading="lazy" decoding="async" fetchpriority="low">
 
                     <!-- Added Text Content -->
                     <div class="slide-content">
@@ -5810,10 +5870,17 @@
 
 
                 <!-- Slide 3 -->
-                <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
-                    <img src="https://res.cloudinary.com/awhmw4uq/image/upload/v1787130396/knee-pain-hero-slider.png"
-                        alt="Slide 8" width="1920" height="1080" class="w-full h-full object-cover object-center block"
-                        loading="lazy" decoding="async">
+                <div class="slide absolute inset-0 opacity-0">
+                    <img src="https://res.cloudinary.com/awhmw4uq/image/upload/f_auto,q_auto:eco,w_320,c_limit/v1787130396/knee-pain-hero-slider.png"
+                        srcset="https://res.cloudinary.com/awhmw4uq/image/upload/f_auto,q_auto:eco,w_320,c_limit/v1787130396/knee-pain-hero-slider.png 320w,
+                                https://res.cloudinary.com/awhmw4uq/image/upload/f_auto,q_auto:good,w_640,c_limit/v1787130396/knee-pain-hero-slider.png 640w,
+                                https://res.cloudinary.com/awhmw4uq/image/upload/f_auto,q_auto:good,w_1280,c_limit/v1787130396/knee-pain-hero-slider.png 1280w,
+                                https://res.cloudinary.com/awhmw4uq/image/upload/f_auto,q_auto:best,w_1920,c_limit/v1787130396/knee-pain-hero-slider.png 1920w,
+                                https://res.cloudinary.com/awhmw4uq/image/upload/f_auto,q_auto:best,w_2560,c_limit/v1787130396/knee-pain-hero-slider.png 2560w"
+                        sizes="(max-width: 640px) 320px, (max-width: 1280px) 640px, (max-width: 1920px) 1280px, 1920px"
+                        alt="Joint replacement program with patient care"
+                        width="1920" height="1080" class="w-full h-full object-cover object-center block"
+                        loading="lazy" decoding="async" fetchpriority="low">
 
                     <div class="slide-content">
                         <div class="slide-content-inner">
@@ -5843,10 +5910,17 @@
 
 
                 <!-- Slide 4 -->
-                <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
-                    <img src="https://res.cloudinary.com/awhmw4uq/image/upload/v1787130401/doctors-group-hero-slider.png"
-                        alt="Slide 1" width="1920" height="1080" class="w-full h-full object-cover object-center block"
-                        loading="lazy" decoding="async">
+                <div class="slide absolute inset-0 opacity-0">
+                    <img src="https://res.cloudinary.com/awhmw4uq/image/upload/f_auto,q_auto:eco,w_320,c_limit/v1787130401/doctors-group-hero-slider.png"
+                        srcset="https://res.cloudinary.com/awhmw4uq/image/upload/f_auto,q_auto:eco,w_320,c_limit/v1787130401/doctors-group-hero-slider.png 320w,
+                                https://res.cloudinary.com/awhmw4uq/image/upload/f_auto,q_auto:good,w_640,c_limit/v1787130401/doctors-group-hero-slider.png 640w,
+                                https://res.cloudinary.com/awhmw4uq/image/upload/f_auto,q_auto:good,w_1280,c_limit/v1787130401/doctors-group-hero-slider.png 1280w,
+                                https://res.cloudinary.com/awhmw4uq/image/upload/f_auto,q_auto:best,w_1920,c_limit/v1787130401/doctors-group-hero-slider.png 1920w,
+                                https://res.cloudinary.com/awhmw4uq/image/upload/f_auto,q_auto:best,w_2560,c_limit/v1787130401/doctors-group-hero-slider.png 2560w"
+                        sizes="(max-width: 640px) 320px, (max-width: 1280px) 640px, (max-width: 1920px) 1280px, 1920px"
+                        alt="Best orthopaedic doctor in Hyderabad"
+                        width="1920" height="1080" class="w-full h-full object-cover object-center block"
+                        loading="lazy" decoding="async" fetchpriority="low">
 
                     <div class="slide-content">
                         <div class="slide-content-inner">
@@ -5875,9 +5949,17 @@
 
 
                 <!-- Slide 5 -->
-                <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
-                    <img src="https://res.cloudinary.com/awhmw4uq/image/upload/v1787746764/heroslider-2.png"
-                        alt="Slide 5" width="1920" height="1080" class="w-full h-full object-cover object-center">
+                <div class="slide absolute inset-0 opacity-0">
+                    <img src="https://res.cloudinary.com/awhmw4uq/image/upload/f_auto,q_auto:eco,w_320,c_limit/v1787746764/heroslider-2.png"
+                        srcset="https://res.cloudinary.com/awhmw4uq/image/upload/f_auto,q_auto:eco,w_320,c_limit/v1787746764/heroslider-2.png 320w,
+                                https://res.cloudinary.com/awhmw4uq/image/upload/f_auto,q_auto:good,w_640,c_limit/v1787746764/heroslider-2.png 640w,
+                                https://res.cloudinary.com/awhmw4uq/image/upload/f_auto,q_auto:good,w_1280,c_limit/v1787746764/heroslider-2.png 1280w,
+                                https://res.cloudinary.com/awhmw4uq/image/upload/f_auto,q_auto:best,w_1920,c_limit/v1787746764/heroslider-2.png 1920w,
+                                https://res.cloudinary.com/awhmw4uq/image/upload/f_auto,q_auto:best,w_2560,c_limit/v1787746764/heroslider-2.png 2560w"
+                        sizes="(max-width: 640px) 320px, (max-width: 1280px) 640px, (max-width: 1920px) 1280px, 1920px"
+                        alt="Robotic joint replacement technology"
+                        width="1920" height="1080" class="w-full h-full object-cover object-center"
+                        loading="lazy" decoding="async" fetchpriority="low">
 
                     <!-- Added Text Content -->
                     <div class="slide-content">
@@ -5906,9 +5988,17 @@
 
 
                 <!-- Slide 6 -->
-                <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
-                    <img src="https://res.cloudinary.com/awhmw4uq/image/upload/v1787746768/heroslider-3.png"
-                        alt="Slide 2" width="1920" height="1080" class="w-full h-full object-cover object-center">
+                <div class="slide absolute inset-0 opacity-0">
+                    <img src="https://res.cloudinary.com/awhmw4uq/image/upload/f_auto,q_auto:eco,w_320,c_limit/v1787746768/heroslider-3.png"
+                        srcset="https://res.cloudinary.com/awhmw4uq/image/upload/f_auto,q_auto:eco,w_320,c_limit/v1787746768/heroslider-3.png 320w,
+                                https://res.cloudinary.com/awhmw4uq/image/upload/f_auto,q_auto:good,w_640,c_limit/v1787746768/heroslider-3.png 640w,
+                                https://res.cloudinary.com/awhmw4uq/image/upload/f_auto,q_auto:good,w_1280,c_limit/v1787746768/heroslider-3.png 1280w,
+                                https://res.cloudinary.com/awhmw4uq/image/upload/f_auto,q_auto:best,w_1920,c_limit/v1787746768/heroslider-3.png 1920w,
+                                https://res.cloudinary.com/awhmw4uq/image/upload/f_auto,q_auto:best,w_2560,c_limit/v1787746768/heroslider-3.png 2560w"
+                        sizes="(max-width: 640px) 320px, (max-width: 1280px) 640px, (max-width: 1920px) 1280px, 1920px"
+                        alt="Move better live without pain orthopedic care"
+                        width="1920" height="1080" class="w-full h-full object-cover object-center"
+                        loading="lazy" decoding="async" fetchpriority="low">
 
                     <!-- Added Text Content -->
                     <div class="slide-content">
@@ -6168,7 +6258,7 @@
                     fractures, arthritis, sports injuries and advanced joint
                     replacement treatment at Germanten Hospitals, Attapur.
                     Book your consultation today for expert orthopedic care.
-                    <a href="contact-us" class="contact-link">
+                    <a href="contact" class="contact-link">
                         <span class="contact-anim">Contact Us <i class="fa-solid fa-arrow-right"
                                 aria-hidden="true"></i></span>
                     </a>
@@ -9161,7 +9251,7 @@
                                 <div class="video-card">
                                     <div class="iframe-wrapper">
                                         <iframe src="https://www.youtube.com/embed/uin-yl_eyAg?start=1"
-                                            title="Advanced Surgical Procedures" frameborder="0"
+                                            title="Advanced Surgical Procedures" frameborder="0" loading="lazy"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                             allowfullscreen></iframe>
                                     </div>
@@ -9177,7 +9267,7 @@
                                 <div class="video-card">
                                     <div class="iframe-wrapper">
                                         <iframe src="https://www.youtube.com/embed/QhenDMZH22c?start=3"
-                                            title="Spine and Pain Management" frameborder="0"
+                                            title="Spine and Pain Management" frameborder="0" loading="lazy"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                             allowfullscreen></iframe>
                                     </div>
@@ -9193,7 +9283,7 @@
                                 <div class="video-card">
                                     <div class="iframe-wrapper">
                                         <iframe src="https://www.youtube.com/embed/bY_vTlFd6WA?start=15"
-                                            title="Dr. Mir Jawad Zar Khan Interview" frameborder="0"
+                                            title="Dr. Mir Jawad Zar Khan Interview" frameborder="0" loading="lazy"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                             allowfullscreen></iframe>
                                     </div>
@@ -9209,7 +9299,7 @@
                                 <div class="video-card">
                                     <div class="iframe-wrapper">
                                         <iframe src="https://www.youtube.com/embed/uin-yl_eyAg?start=1"
-                                            title="Advanced Surgical Procedures" frameborder="0"
+                                            title="Advanced Surgical Procedures" frameborder="0" loading="lazy"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                             allowfullscreen></iframe>
                                     </div>
@@ -9631,572 +9721,1029 @@
             </div>
         </main>
 
-        <!-- Video Marquee Section -->
+  <!-- Video Marquee Section -->
+
         <section id="recovery-video-marquee" class="py-10 sm:py-12 bg-gray-50">
+
             <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+
                 <!-- Section Header -->
+
                 <div class="text-center mb-8 sm:mb-10">
+
                     <span class="homepage-section-eyebrow">Patient Stories</span>
+
                     <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 homepage-section-heading">
+
                         Recovery Journeys
+
                     </h2>
+
                 </div>
 
                 <!-- Video Marquee Container -->
+
                 <div class="relative overflow-hidden video-marquee-container">
+
                     <!-- Left White Shadow -->
+
                     <div
+
                         class="absolute left-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none">
+
                     </div>
 
                     <!-- Right White Shadow -->
+
                     <div
+
                         class="absolute right-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none">
+
                     </div>
 
                     <!-- Marquee Track -->
+
                     <div class="video-marquee-track flex gap-4 sm:gap-6 animate-marquee hover:pause-animation">
+
                         <!-- First Set of Videos -->
+
                         <div class="video-card flex-shrink-0 w-48 sm:w-56 md:w-64">
-                            <div class="relative rounded-xl overflow-hidden bg-white shadow-md group cursor-pointer">
-                                <video src="Images/videos/jawad-reel-1.mp4" loop playsinline
+
+                            <div class="relative rounded-xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 shadow-md group cursor-pointer">
+
+                                <video src="Images/videos/jawad-reel-1.mp4" preload="metadata" loop playsinline muted
+
                                     class="w-full h-64 sm:h-72 object-cover video-element">
+
                                 </video>
+
                                 <div
+
                                     class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+
                                     <div class="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center">
+
                                         <i class="fa-solid fa-play text-red-600 text-lg ml-1"></i>
+
                                     </div>
+
                                 </div>
+
                                 <div
+
                                     class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
+
                                     <p class="text-white text-sm font-medium">Varun</p>
+
                                 </div>
+
                             </div>
+
                         </div>
 
                         <div class="video-card flex-shrink-0 w-48 sm:w-56 md:w-64">
-                            <div class="relative rounded-xl overflow-hidden bg-white shadow-md group cursor-pointer">
-                                <video src="Images/videos/jawad-reel-2.mp4" loop playsinline
+
+                            <div class="relative rounded-xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 shadow-md group cursor-pointer">
+
+                                <video src="Images/videos/jawad-reel-2.mp4" preload="metadata" loop playsinline muted
+
                                     class="w-full h-64 sm:h-72 object-cover video-element">
+
                                 </video>
+
                                 <div
+
                                     class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+
                                     <div class="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center">
+
                                         <i class="fa-solid fa-play text-red-600 text-lg ml-1"></i>
+
                                     </div>
+
                                 </div>
+
                                 <div
+
                                     class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
+
                                     <p class="text-white text-sm font-medium">Mayank</p>
+
                                 </div>
+
                             </div>
+
                         </div>
 
                         <div class="video-card flex-shrink-0 w-48 sm:w-56 md:w-64">
-                            <div class="relative rounded-xl overflow-hidden bg-white shadow-md group cursor-pointer">
-                                <video src="Images/videos/jawad-reel-3.mp4" loop playsinline
+
+                            <div class="relative rounded-xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 shadow-md group cursor-pointer">
+
+                                <video src="Images/videos/jawad-reel-3.mp4" preload="metadata" loop playsinline muted
+
                                     class="w-full h-64 sm:h-72 object-cover video-element">
+
                                 </video>
+
                                 <div
+
                                     class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+
                                     <div class="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center">
+
                                         <i class="fa-solid fa-play text-red-600 text-lg ml-1"></i>
+
                                     </div>
+
                                 </div>
+
                                 <div
+
                                     class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
+
                                     <p class="text-white text-sm font-medium">I Love You</p>
+
                                 </div>
+
                             </div>
+
                         </div>
 
                         <div class="video-card flex-shrink-0 w-48 sm:w-56 md:w-64">
-                            <div class="relative rounded-xl overflow-hidden bg-white shadow-md group cursor-pointer">
-                                <video src="Images/videos/jawad-reel-4.mp4" loop playsinline
+
+                            <div class="relative rounded-xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 shadow-md group cursor-pointer">
+
+                                <video src="Images/videos/jawad-reel-4.mp4" preload="metadata" loop playsinline muted
+
                                     class="w-full h-64 sm:h-72 object-cover video-element">
+
                                 </video>
+
                                 <div
+
                                     class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+
                                     <div class="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center">
+
                                         <i class="fa-solid fa-play text-red-600 text-lg ml-1"></i>
+
                                     </div>
+
                                 </div>
+
                                 <div
+
                                     class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
+
                                     <p class="text-white text-sm font-medium">Success Story</p>
+
                                 </div>
+
                             </div>
+
                         </div>
 
                         <div class="video-card flex-shrink-0 w-48 sm:w-56 md:w-64">
-                            <div class="relative rounded-xl overflow-hidden bg-white shadow-md group cursor-pointer">
-                                <video src="Images/videos/jawad-reel-5.mp4" loop playsinline
+
+                            <div class="relative rounded-xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 shadow-md group cursor-pointer">
+
+                                <video src="Images/videos/jawad-reel-5.mp4" preload="metadata" loop playsinline muted
+
                                     class="w-full h-64 sm:h-72 object-cover video-element">
+
                                 </video>
+
                                 <div
+
                                     class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+
                                     <div class="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center">
+
                                         <i class="fa-solid fa-play text-red-600 text-lg ml-1"></i>
+
                                     </div>
+
                                 </div>
+
                                 <div
+
                                     class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
+
                                     <p class="text-white text-sm font-medium">Happy Patient</p>
+
                                 </div>
+
                             </div>
+
                         </div>
 
                         <div class="video-card flex-shrink-0 w-48 sm:w-56 md:w-64">
-                            <div class="relative rounded-xl overflow-hidden bg-white shadow-md group cursor-pointer">
-                                <video src="Images/videos/jawad-reel-6.mp4" loop playsinline
+
+                            <div class="relative rounded-xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 shadow-md group cursor-pointer">
+
+                                <video src="Images/videos/jawad-reel-6.mp4" preload="metadata" loop playsinline muted
+
                                     class="w-full h-64 sm:h-72 object-cover video-element">
+
                                 </video>
+
                                 <div
+
                                     class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+
                                     <div class="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center">
+
                                         <i class="fa-solid fa-play text-red-600 text-lg ml-1"></i>
+
                                     </div>
+
                                 </div>
+
                                 <div
+
                                     class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
+
                                     <p class="text-white text-sm font-medium">Recovery</p>
+
                                 </div>
+
                             </div>
+
                         </div>
 
                         <!-- Duplicate set for seamless looping -->
+
                         <div class="video-card flex-shrink-0 w-48 sm:w-56 md:w-64">
-                            <div class="relative rounded-xl overflow-hidden bg-white shadow-md group cursor-pointer">
-                                <video src="Images/videos/jawad-reel-1.mp4" loop playsinline
+
+                            <div class="relative rounded-xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 shadow-md group cursor-pointer">
+
+                                <video src="Images/videos/jawad-reel-1.mp4" preload="metadata" loop playsinline muted
+
                                     class="w-full h-64 sm:h-72 object-cover video-element">
+
                                 </video>
+
                                 <div
+
                                     class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+
                                     <div class="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center">
+
                                         <i class="fa-solid fa-play text-red-600 text-lg ml-1"></i>
+
                                     </div>
+
                                 </div>
+
                                 <div
+
                                     class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
+
                                     <p class="text-white text-sm font-medium">Varun</p>
+
                                 </div>
+
                             </div>
+
                         </div>
 
                         <div class="video-card flex-shrink-0 w-48 sm:w-56 md:w-64">
-                            <div class="relative rounded-xl overflow-hidden bg-white shadow-md group cursor-pointer">
-                                <video src="Images/videos/jawad-reel-2.mp4" loop playsinline
+
+                            <div class="relative rounded-xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 shadow-md group cursor-pointer">
+
+                                <video src="Images/videos/jawad-reel-2.mp4" preload="metadata" loop playsinline muted
+
                                     class="w-full h-64 sm:h-72 object-cover video-element">
+
                                 </video>
+
                                 <div
+
                                     class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+
                                     <div class="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center">
+
                                         <i class="fa-solid fa-play text-red-600 text-lg ml-1"></i>
+
                                     </div>
+
                                 </div>
+
                                 <div
+
                                     class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
+
                                     <p class="text-white text-sm font-medium">Mayank</p>
+
                                 </div>
+
                             </div>
+
                         </div>
 
                         <div class="video-card flex-shrink-0 w-48 sm:w-56 md:w-64">
-                            <div class="relative rounded-xl overflow-hidden bg-white shadow-md group cursor-pointer">
-                                <video src="Images/videos/jawad-reel-3.mp4" loop playsinline
+
+                            <div class="relative rounded-xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 shadow-md group cursor-pointer">
+
+                                <video src="Images/videos/jawad-reel-3.mp4" preload="metadata" loop playsinline muted
+
                                     class="w-full h-64 sm:h-72 object-cover video-element">
+
                                 </video>
+
                                 <div
+
                                     class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+
                                     <div class="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center">
+
                                         <i class="fa-solid fa-play text-red-600 text-lg ml-1"></i>
+
                                     </div>
+
                                 </div>
+
                                 <div
+
                                     class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
+
                                     <p class="text-white text-sm font-medium">I Love You</p>
+
                                 </div>
+
                             </div>
+
                         </div>
 
                         <div class="video-card flex-shrink-0 w-48 sm:w-56 md:w-64">
-                            <div class="relative rounded-xl overflow-hidden bg-white shadow-md group cursor-pointer">
-                                <video src="Images/videos/jawad-reel-4.mp4" loop playsinline
+
+                            <div class="relative rounded-xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 shadow-md group cursor-pointer">
+
+                                <video src="Images/videos/jawad-reel-4.mp4" preload="metadata" loop playsinline muted
+
                                     class="w-full h-64 sm:h-72 object-cover video-element">
+
                                 </video>
+
                                 <div
+
                                     class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+
                                     <div class="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center">
+
                                         <i class="fa-solid fa-play text-red-600 text-lg ml-1"></i>
+
                                     </div>
+
                                 </div>
+
                                 <div
+
                                     class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
+
                                     <p class="text-white text-sm font-medium">Success Story</p>
+
                                 </div>
+
                             </div>
+
                         </div>
 
                         <div class="video-card flex-shrink-0 w-48 sm:w-56 md:w-64">
-                            <div class="relative rounded-xl overflow-hidden bg-white shadow-md group cursor-pointer">
-                                <video src="Images/videos/jawad-reel-5.mp4" loop playsinline
+
+                            <div class="relative rounded-xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 shadow-md group cursor-pointer">
+
+                                <video src="Images/videos/jawad-reel-5.mp4" preload="metadata" loop playsinline muted
+
                                     class="w-full h-64 sm:h-72 object-cover video-element">
+
                                 </video>
+
                                 <div
+
                                     class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+
                                     <div class="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center">
+
                                         <i class="fa-solid fa-play text-red-600 text-lg ml-1"></i>
+
                                     </div>
+
                                 </div>
+
                                 <div
+
                                     class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
+
                                     <p class="text-white text-sm font-medium">Happy Patient</p>
+
                                 </div>
+
                             </div>
+
                         </div>
 
                         <div class="video-card flex-shrink-0 w-48 sm:w-56 md:w-64">
-                            <div class="relative rounded-xl overflow-hidden bg-white shadow-md group cursor-pointer">
-                                <video src="Images/videos/jawad-reel-6.mp4" loop playsinline
+
+                            <div class="relative rounded-xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 shadow-md group cursor-pointer">
+
+                                <video src="Images/videos/jawad-reel-6.mp4" preload="metadata" loop playsinline muted
+
                                     class="w-full h-64 sm:h-72 object-cover video-element">
+
                                 </video>
+
                                 <div
+
                                     class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+
                                     <div class="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center">
+
                                         <i class="fa-solid fa-play text-red-600 text-lg ml-1"></i>
+
                                     </div>
+
                                 </div>
+
                                 <div
+
                                     class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
+
                                     <p class="text-white text-sm font-medium">Recovery</p>
+
                                 </div>
+
                             </div>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </section>
 
         <style>
+
             /* Video Marquee Styles */
+
             .video-marquee-container {
+
                 width: 100%;
+
                 overflow: hidden;
+
                 position: relative;
+
             }
 
             /* Soft fade shadows on both sides of the marquee */
+
             .video-marquee-container>.absolute.left-0,
+
             .video-marquee-container>.absolute.right-0 {
+
                 width: 100px !important;
+
                 z-index: 20 !important;
+
                 opacity: 1;
+
                 pointer-events: none;
+
             }
 
             .video-marquee-container>.absolute.left-0 {
+
                 background: linear-gradient(to right,
+
                         #f9fafb 0%,
+
                         rgba(249, 250, 251, 0.94) 32%,
+
                         rgba(249, 250, 251, 0) 100%) !important;
+
             }
 
             .video-marquee-container>.absolute.right-0 {
+
                 background: linear-gradient(to left,
+
                         #f9fafb 0%,
+
                         rgba(249, 250, 251, 0.94) 32%,
+
                         rgba(249, 250, 251, 0) 100%) !important;
+
             }
 
             .video-marquee-track {
+
                 display: flex;
+
                 width: max-content;
+
                 animation: marquee 30s linear infinite;
+
             }
 
             .video-marquee-track:hover {
+
                 animation-play-state: paused;
+
             }
 
             @keyframes marquee {
+
                 0% {
+
                     transform: translateX(0);
+
                 }
 
                 100% {
+
                     transform: translateX(-50%);
+
                 }
+
             }
 
             .video-card {
+
                 transition: transform 0.3s ease;
+
             }
 
             .video-card:hover {
+
                 transform: scale(1.05);
+
             }
 
             .video-element {
+
                 height: 20rem !important;
+
                 transition: opacity 0.3s ease;
+
             }
 
             @media (min-width: 640px) {
+
                 .video-element {
+
                     height: 22rem !important;
+
                 }
+
             }
 
             @media (max-width: 639.98px) {
 
                 .video-marquee-container>.absolute.left-0,
+
                 .video-marquee-container>.absolute.right-0 {
+
                     width: 52px !important;
+
                 }
 
                 #recovery-video-marquee .video-marquee-track {
+
                     align-items: stretch !important;
+
                 }
 
                 #recovery-video-marquee .video-marquee-container .video-card {
+
                     flex: 0 0 210px !important;
+
                     width: 210px !important;
+
                     min-width: 210px !important;
+
                     max-width: 210px !important;
+
                     height: 352px !important;
+
                     min-height: 352px !important;
+
                     max-height: 352px !important;
+
                     align-self: stretch !important;
+
                 }
 
                 #recovery-video-marquee .video-marquee-container .video-card>.group,
+
                 #recovery-video-marquee .video-marquee-container .video-card .video-element {
+
                     display: block;
+
                     width: 100% !important;
+
                     height: 352px !important;
+
                     min-height: 352px !important;
+
                     max-height: 352px !important;
+
                     object-fit: cover;
+
                 }
+
             }
 
             /* Remove the text displayed over the bottom of every video */
+
             .video-card .group>.absolute.bottom-0 {
+
                 display: none !important;
+
             }
 
             .video-card:hover .video-element {
+
                 opacity: 0.9;
+
             }
 
             @media (prefers-reduced-motion: reduce) {
+
                 .video-marquee-track {
+
                     animation: none;
+
                 }
+
             }
 
             /* Add margin to demo.html page */
+
             .ortho-page {
+
                 margin-left: 1rem;
+
                 margin-right: 1rem;
+
             }
 
             @media (min-width: 640px) {
+
                 .ortho-page {
+
                     margin-left: 1.5rem;
+
                     margin-right: 1.5rem;
+
                 }
+
             }
 
             @media (min-width: 1024px) {
+
                 .ortho-page {
+
                     margin-left: 2rem;
+
                     margin-right: 2rem;
+
                 }
+
             }
 
             /* Keep the centered play control visible while the video is paused */
+
             .video-card .group>.absolute.inset-0 {
+
                 opacity: 1 !important;
+
                 background: transparent !important;
+
                 cursor: pointer;
+
             }
 
             /* Circular play button matching the reference design */
+
             .video-card .group>.absolute.inset-0>div {
+
                 display: inline-flex !important;
+
                 align-items: center;
+
                 justify-content: center;
+
                 width: 66px !important;
+
                 height: 66px !important;
+
                 border: 1.5px solid rgba(255, 255, 255, 0.9);
+
                 border-radius: 50%;
+
                 background: rgba(20, 20, 20, 0.34) !important;
+
                 box-shadow: 0 5px 18px rgba(0, 0, 0, 0.22);
+
                 backdrop-filter: blur(2px);
+
                 -webkit-backdrop-filter: blur(2px);
+
                 transition: transform 0.2s ease, background-color 0.2s ease;
+
             }
 
             .video-card .group>.absolute.inset-0:hover>div {
+
                 background: rgba(20, 20, 20, 0.48) !important;
+
                 transform: scale(1.06);
+
             }
 
             .video-card .group>.absolute.inset-0 i {
+
                 margin-left: 4px !important;
+
                 color: #ffffff !important;
+
                 font-size: 19px !important;
+
             }
 
             /* Hide the play overlay only while its video is playing */
+
             .video-card.is-playing .group>.absolute.inset-0 {
+
                 opacity: 0 !important;
+
                 pointer-events: none;
+
             }
 
             .video-card:focus-visible {
+
                 outline: 3px solid #dc2626;
+
                 outline-offset: 4px;
+
                 border-radius: 0.75rem;
+
             }
 
             @media (max-width: 639.98px) {
+
                 .video-card .group>.absolute.inset-0>div {
+
                     width: 58px !important;
+
                     height: 58px !important;
+
                 }
 
                 .video-card .group>.absolute.inset-0 i {
+
                     font-size: 17px !important;
+
                 }
+
             }
+
         </style>
 
         <script>
+
             document.addEventListener('DOMContentLoaded', function () {
+
                 document.querySelectorAll('.video-marquee-container').forEach(function (container) {
+
                     var cards = Array.prototype.slice.call(
+
                         container.querySelectorAll('.video-card')
+
                     );
 
                     var videos = Array.prototype.slice.call(
+
                         container.querySelectorAll('.video-element')
+
                     );
 
                     function setPlayState(card, video) {
+
                         var icon = card.querySelector('.fa-solid');
 
                         card.classList.remove('is-playing');
+
                         card.setAttribute('aria-label', 'Play video');
 
                         if (icon) {
+
                             icon.classList.remove('fa-pause');
+
                             icon.classList.add('fa-play');
+
                         }
 
                         if (!video.paused) {
+
                             video.pause();
+
                         }
+
                     }
 
                     function setPauseState(card) {
+
                         var icon = card.querySelector('.fa-solid');
 
                         card.classList.add('is-playing');
+
                         card.setAttribute('aria-label', 'Pause video');
 
                         if (icon) {
+
                             icon.classList.remove('fa-play');
+
                             icon.classList.add('fa-pause');
+
                         }
+
                     }
 
                     function pauseAllVideos(exceptVideo) {
+
                         cards.forEach(function (card) {
+
                             var currentVideo = card.querySelector('.video-element');
 
                             if (currentVideo && currentVideo !== exceptVideo) {
+
                                 setPlayState(card, currentVideo);
+
                             }
+
                         });
+
                     }
 
                     cards.forEach(function (card) {
+
                         var video = card.querySelector('.video-element');
+
                         var patientName = card.querySelector('p');
 
                         if (!video) {
+
                             return;
+
                         }
 
                         /* Videos remain paused until the user clicks a card */
+
                         video.removeAttribute('autoplay');
+
                         video.removeAttribute('muted');
+
                         video.defaultMuted = false;
+
                         video.muted = false;
+
                         video.volume = 1;
+
                         video.pause();
 
+                        /* Load and display a real frame before the first click. */
+
+                        function showVideoPreview() {
+
+                            try {
+
+                                if (video.duration && video.currentTime === 0) {
+
+                                    video.currentTime = Math.min(0.1, video.duration / 2);
+
+                                }
+
+                            } catch (error) {
+
+                                /* Keep the video paused if seeking is not yet available. */
+
+                            }
+
+                        }
+
+                        if (video.readyState >= 1) {
+
+                            showVideoPreview();
+
+                        } else {
+
+                            video.addEventListener('loadedmetadata', showVideoPreview, { once: true });
+
+                            video.load();
+
+                        }
+
                         card.setAttribute('role', 'button');
+
                         card.setAttribute('tabindex', '0');
+
                         card.setAttribute(
+
                             'aria-label',
+
                             'Play ' + (patientName ? patientName.textContent.trim() : 'patient story') + ' video'
+
                         );
 
                         function toggleVideo(event) {
+
                             if (event) {
+
                                 event.preventDefault();
+
                             }
 
                             if (video.paused || video.ended) {
+
                                 pauseAllVideos(video);
 
                                 video.play().then(function () {
+
                                     setPauseState(card);
+
                                 }).catch(function () {
+
                                     setPlayState(card, video);
+
                                 });
+
                             } else {
+
                                 setPlayState(card, video);
+
                             }
+
                         }
 
                         card.addEventListener('click', toggleVideo);
 
                         card.addEventListener('keydown', function (event) {
+
                             if (event.key === 'Enter' || event.key === ' ') {
+
                                 toggleVideo(event);
+
                             }
+
                         });
 
                         /* Stop the video as soon as the mouse leaves its card */
+
                         card.addEventListener('mouseleave', function () {
+
                             setPlayState(card, video);
+
                         });
 
                         video.addEventListener('play', function () {
+
                             setPauseState(card);
+
                         });
 
                         video.addEventListener('pause', function () {
+
                             card.classList.remove('is-playing');
+
                         });
 
                         video.addEventListener('ended', function () {
+
                             setPlayState(card, video);
+
                         });
+
                     });
 
                     /* Stop every video when the pointer leaves the complete marquee */
+
                     container.addEventListener('mouseleave', function () {
+
                         pauseAllVideos();
+
                     });
+
                 });
+
             });
-        </script>
+
+        </script>"
 
         <!-- FAQ Section -->
         <section class="py-12 sm:py-16 bg-gray-50">
@@ -10472,8 +11019,26 @@
     <section class="py-3 sm:py-4 bg-white">
         <div class="reviews-widget-wrap">
             <div id="JFWebsiteWidget-019f6a6984c070008dac67d94c0bd23737d0"></div>
-            <script src="https://www.jotform.com/website-widgets/embed/019f6a6984c070008dac67d94c0bd23737d0"
-                async></script>
+            <script>
+                // Lazy load Jotform widget when reviews section is near viewport
+                document.addEventListener('DOMContentLoaded', function() {
+                    const reviewsSection = document.querySelector('.reviews-widget-wrap');
+                    if (reviewsSection) {
+                        const observer = new IntersectionObserver((entries) => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    const script = document.createElement('script');
+                                    script.src = 'https://www.jotform.com/website-widgets/embed/019f6a6984c070008dac67d94c0bd23737d0';
+                                    script.async = true;
+                                    document.body.appendChild(script);
+                                    observer.disconnect();
+                                }
+                            });
+                        }, { rootMargin: '200px' });
+                        observer.observe(reviewsSection);
+                    }
+                });
+            </script>
         </div>
         <script>
             // Auto-carousel for reviews widget (works when widget renders inline in the DOM)
